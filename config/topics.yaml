@@ -1,0 +1,171 @@
+topics:
+  - name: LLM 推理加速
+    slug: llm-inference
+    weight: 2.0
+    keywords:
+      - llm inference
+      - large language model inference
+      - inference acceleration
+      - kv cache
+      - paged attention
+      - speculative decoding
+      - continuous batching
+      - prefix cache
+      - long context inference
+      - serving
+      - throughput
+      - latency
+      - vllm
+      - sglang
+      - tensorrt-llm
+
+  - name: 多模态推理加速
+    slug: multimodal-inference
+    weight: 1.8
+    keywords:
+      - multimodal inference
+      - vision language model
+      - vlm
+      - mllm
+      - video understanding
+      - multimodal serving
+      - visual token pruning
+      - image token compression
+      - video token compression
+
+  - name: Agent
+    slug: agent
+    weight: 1.6
+    keywords:
+      - agent
+      - ai agent
+      - autonomous agent
+      - tool use
+      - function calling
+      - multi-agent
+      - agent memory
+      - browser agent
+      - gui agent
+      - computer use
+
+  - name: Agent Reasoning / Test-time Scaling
+    slug: agent-reasoning
+    weight: 1.7
+    keywords:
+      - test-time scaling
+      - reasoning
+      - reasoning trace
+      - tree search
+      - monte carlo tree search
+      - mcts
+      - self-reflection
+      - verifier
+      - process supervision
+      - reward model
+      - chain-of-thought
+      - planning
+
+  - name: World Model
+    slug: world-model
+    weight: 1.5
+    keywords:
+      - world model
+      - latent dynamics
+      - model-based reinforcement learning
+      - embodied ai
+      - environment model
+      - planning with world models
+      - simulation
+
+  - name: Video Generation
+    slug: video-generation
+    weight: 1.6
+    keywords:
+      - video generation
+      - text-to-video
+      - image-to-video
+      - video diffusion
+      - video editing
+      - long video generation
+      - diffusion transformer
+      - consistency model
+
+  - name: AI Infra / Serving Systems
+    slug: ai-infra-serving
+    weight: 1.8
+    keywords:
+      - llm serving
+      - inference serving
+      - distributed inference
+      - serving system
+      - gpu scheduling
+      - npu scheduling
+      - ai infrastructure
+      - model serving
+      - memory management
+      - batching
+      - load balancing
+      - disaggregated serving
+
+  - name: RAG / Long Context
+    slug: rag-long-context
+    weight: 1.4
+    keywords:
+      - retrieval augmented generation
+      - rag
+      - agentic rag
+      - graph rag
+      - long context
+      - context compression
+      - retrieval
+      - hybrid search
+      - memory compression
+      - rope scaling
+      - ring attention
+
+  - name: Code Agent / SWE Agent
+    slug: code-agent
+    weight: 1.4
+    keywords:
+      - code agent
+      - software engineering agent
+      - swe-bench
+      - automated debugging
+      - program repair
+      - repository-level
+      - coding agent
+      - code generation
+
+  - name: Model Compression / Quantization
+    slug: model-compression
+    weight: 1.7
+    keywords:
+      - quantization
+      - model compression
+      - pruning
+      - distillation
+      - int4
+      - fp8
+      - low-bit
+      - activation quantization
+      - kv cache quantization
+      - sparsity
+
+quality:
+  min_score: 3.0
+  open_source_bonus: 2.0
+  require_abstract_signal: true
+  exclude_keywords:
+    - survey
+    - position paper
+    - perspective
+
+fetch:
+  arxiv_categories:
+    - cs.AI
+    - cs.CL
+    - cs.LG
+    - cs.CV
+    - cs.DC
+    - cs.RO
+  max_results: 300
