@@ -151,10 +151,20 @@ def code_link_has_content(url: str) -> bool:
             parts = [p for p in parsed.path.strip("/").split("/") if p]
             if len(parts) < 2:
                 return False
-            api = f"https://api.github.com/repos/{parts[0]}/{parts[1]}"
+            owner, repo = parts[0], parts[1]
+            html_url = f"https://github.com/{owner}/{repo}"
+            html_req = urllib.request.Request(html_url, headers={"User-Agent": "Mozilla/5.0 dailyarxivpapers-link-check"})
+            with urllib.request.urlopen(html_req, timeout=25) as html_resp:
+                body = html_resp.read(800000).decode("utf-8", errors="ignore")
+            if "This repository is empty" in body:
+                return False
+            if re.search(rf'href="/{re.escape(owner)}/{re.escape(repo)}/(tree|blob)/', body):
+                return True
+            api = f"https://api.github.com/repos/{owner}/{repo}"
             req = urllib.request.Request(api, headers={"User-Agent": "dailyarxivpapers-link-check"})
             with urllib.request.urlopen(req, timeout=20) as resp:
-                return 200 <= resp.status < 300
+                meta = json.loads(resp.read().decode("utf-8"))
+            return int(meta.get("size") or 0) > 0
         req = urllib.request.Request(url, headers={"User-Agent": "dailyarxivpapers-link-check"})
         with urllib.request.urlopen(req, timeout=20) as resp:
             return 200 <= resp.status < 400
