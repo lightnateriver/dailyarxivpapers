@@ -129,9 +129,50 @@ def github_search_url(title: str) -> str:
     return f"https://github.com/search?q={q}&type=repositories"
 
 
+def normalize_url(url: str) -> str:
+    return url.rstrip(".,;:。），)]}")
+
+
 def detect_code_links(text: str) -> list[str]:
     urls = re.findall(r"https?://[^\s)\]}>,]+", text)
-    return [u for u in urls if "github.com" in u.lower() or "gitlab.com" in u.lower()]
+    code_urls = []
+    for u in urls:
+        cleaned = normalize_url(u)
+        if "github.com" in cleaned.lower() or "gitlab.com" in cleaned.lower():
+            code_urls.append(cleaned)
+    return code_urls
+
+
+def code_link_has_content(url: str) -> bool:
+    url = normalize_url(url)
+    parsed = urllib.parse.urlparse(url)
+    try:
+        if parsed.netloc.lower() == "github.com":
+            parts = [p for p in parsed.path.strip("/").split("/") if p]
+            if len(parts) < 2:
+                return False
+            api = f"https://api.github.com/repos/{parts[0]}/{parts[1]}"
+            req = urllib.request.Request(api, headers={"User-Agent": "dailyarxivpapers-link-check"})
+            with urllib.request.urlopen(req, timeout=20) as resp:
+                return 200 <= resp.status < 300
+        req = urllib.request.Request(url, headers={"User-Agent": "dailyarxivpapers-link-check"})
+        with urllib.request.urlopen(req, timeout=20) as resp:
+            return 200 <= resp.status < 400
+    except Exception:
+        return False
+
+
+def keep_valid_code_links(papers: list[dict]) -> None:
+    cache: dict[str, bool] = {}
+    for paper in papers:
+        valid = []
+        for url in paper.get("code_links", []):
+            url = normalize_url(url)
+            if url not in cache:
+                cache[url] = code_link_has_content(url)
+            if cache[url]:
+                valid.append(url)
+        paper["code_links"] = valid
 
 
 def score_paper(paper: dict, config: dict) -> dict:
@@ -332,6 +373,7 @@ def main() -> int:
             selected.append(sp)
             seen[p["id"]] = {"first_seen": target.isoformat(), "title": p["title"]}
     selected.sort(key=lambda x: x["score"], reverse=True)
+    keep_valid_code_links(selected)
     report = render_daily(target, selected, len(dated))
     if not args.ignore_seen:
         save_seen(seen)
