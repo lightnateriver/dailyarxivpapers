@@ -37,17 +37,23 @@ def default_date() -> dt.date:
     return dt.date.today() - dt.timedelta(days=1)
 
 
-def arxiv_query(categories: list[str]) -> str:
+def arxiv_query(categories: list[str], target: dt.date | None = None) -> str:
     cat_q = " OR ".join(f"cat:{c}" for c in categories)
+    if target:
+        day = target.strftime("%Y%m%d")
+        # arXiv API supports submittedDate range. Use it so a daily run does not miss
+        # yesterday's papers when newer papers have already pushed them out of the
+        # first max_results page sorted by update time.
+        return f"({cat_q}) AND submittedDate:[{day}0000 TO {day}2359]"
     return f"({cat_q})"
 
 
-def fetch_arxiv(config: dict) -> list[dict]:
+def fetch_arxiv(config: dict, target: dt.date | None = None) -> list[dict]:
     fetch_cfg = config.get("fetch", {})
     categories = fetch_cfg.get("arxiv_categories", ["cs.AI", "cs.CL", "cs.LG", "cs.CV"])
     max_results = int(fetch_cfg.get("max_results", 300))
     params = {
-        "search_query": arxiv_query(categories),
+        "search_query": arxiv_query(categories, target),
         "start": 0,
         "max_results": max_results,
         "sortBy": "lastUpdatedDate",
@@ -206,45 +212,93 @@ def render_index(reports: list[dict], config: dict) -> None:
     (DOCS / "index.html").write_text(content, encoding="utf-8")
 
 
+def primary_topic(p: dict) -> dict:
+    return p["topics"][0] if p.get("topics") else {"name": "Other", "slug": "other", "hits": []}
+
+
 def render_daily(target: dt.date, selected: list[dict], fetched_count: int) -> dict:
     date_s = target.isoformat()
     DAILY.mkdir(parents=True, exist_ok=True)
     DATA.mkdir(parents=True, exist_ok=True)
-    topic_counts: dict[str, int] = {}
-    cards = []
+
+    grouped: dict[str, dict] = {}
     for p in selected:
-        for t in p["topics"]:
-            topic_counts[t["name"]] = topic_counts.get(t["name"], 0) + 1
-        brief = chinese_brief(p)
-        badges = "".join(f'<span class="badge">{html.escape(t["name"])}</span>' for t in p["topics"][:4])
-        open_badge = '<span class="badge open">发现开源链接</span>' if p["code_links"] else '<span class="badge closed">未发现开源仓库</span>'
-        code_links = "".join(f'<a href="{html.escape(u)}">GitHub/Code</a>' for u in p["code_links"])
-        if not code_links:
-            code_links = f'<a href="{html.escape(p["github_search_url"])}">GitHub 搜索</a>'
-        innovations = "".join(f"<li>{html.escape(x)}</li>" for x in brief["innovation"])
-        authors = ", ".join(p["authors"][:8]) + (" 等" if len(p["authors"]) > 8 else "")
-        cards.append(f'''
-        <article class="card">
-          <div class="badges">{badges}{open_badge}<span class="badge score">score {p["score"]}</span></div>
-          <h2 class="paper-title">{html.escape(p["title"])}</h2>
-          <div class="meta"><strong>作者：</strong>{html.escape(authors or 'Unknown')}</div>
-          <div class="meta"><strong>作者单位：</strong>{html.escape(org_hint(p["authors"]))}</div>
-          <div class="meta"><strong>是否开源：</strong>{'是，发现开源链接' if p["code_links"] else '未发现开源仓库，提供 GitHub 搜索入口'}</div>
-          <div class="paper-section"><strong>论文简要</strong>{html.escape(brief["brief"])}</div>
-          <div class="paper-section"><strong>核心创新点</strong><ul class="compact">{innovations}</ul></div>
-          <div class="paper-section"><strong>解决什么场景的问题</strong>{html.escape(brief["scenario"])}</div>
-          <div class="links"><a href="{html.escape(p["abs_url"])}">arXiv</a><a href="{html.escape(p["pdf_url"])}">PDF</a>{code_links}</div>
-        </article>''')
-    topic_html = "".join(f'<div class="stat"><div class="num">{n}</div><div class="label">{html.escape(k)}</div></div>' for k, n in sorted(topic_counts.items(), key=lambda x: -x[1]))
+        topic = primary_topic(p)
+        name = topic["name"]
+        if name not in grouped:
+            grouped[name] = {"slug": topic.get("slug", "other"), "name": name, "papers": [], "keywords": []}
+        grouped[name]["papers"].append(p)
+        grouped[name]["keywords"].extend(topic.get("hits", []))
+
+    groups = sorted(grouped.values(), key=lambda g: len(g["papers"]), reverse=True)
+    open_count = sum(1 for p in selected if p.get("code_links"))
+    nav_html = "".join(
+        f'<a class="nav-chip" href="#{html.escape(g["slug"])}">{html.escape(g["name"])} · {len(g["papers"])} 篇</a>'
+        for g in groups
+    )
+
+    category_html = []
+    for idx, group in enumerate(groups):
+        papers = sorted(group["papers"], key=lambda p: (bool(p.get("code_links")), p["score"]), reverse=True)
+        top_title = papers[0]["title"] if papers else ""
+        keyword_preview = " / ".join(sorted(set(group["keywords"]))[:6]) or "相关关键词"
+        paper_items = []
+        for p in papers:
+            brief = chinese_brief(p)
+            topic_badges = "".join(f'<span class="badge">{html.escape(t["name"])}</span>' for t in p["topics"][:4])
+            open_badge = '<span class="badge open">Code 已确认</span>' if p["code_links"] else '<span class="badge closed">开源未确认</span>'
+            innovations = "".join(f"<li>{html.escape(x)}</li>" for x in brief["innovation"])
+            authors = ", ".join(p["authors"][:6]) + (" 等" if len(p["authors"]) > 6 else "")
+            code_links = "".join(f'<a href="{html.escape(u)}">Code</a>' for u in p["code_links"])
+            links = f'<a href="{html.escape(p["abs_url"])}">arXiv</a><a href="{html.escape(p["pdf_url"])}">PDF</a>{code_links}'
+            paper_items.append(f'''
+            <details class="paper-card">
+              <summary>
+                <div>
+                  <div class="badges">{topic_badges}{open_badge}</div>
+                  <div class="paper-title">{html.escape(p["title"])}</div>
+                  <div class="meta"><strong>作者：</strong>{html.escape(authors or 'Unknown')}</div>
+                  <div class="paper-preview">{html.escape(brief["brief"][:180])}...</div>
+                </div>
+                <div class="paper-side">
+                  <span class="badge score">score {p["score"]}</span>
+                  <span class="meta">点击展开</span>
+                </div>
+              </summary>
+              <div class="paper-body">
+                <div class="info-block brief"><div class="info-title">论文简要</div>{html.escape(brief["brief"])}</div>
+                <div class="info-block innovation"><div class="info-title">核心创新点</div><ul class="compact">{innovations}</ul></div>
+                <div class="info-block scenario"><div class="info-title">解决场景</div>{html.escape(brief["scenario"])}</div>
+                <div class="info-block"><div class="info-title">作者单位</div>{html.escape(org_hint(p["authors"]))}</div>
+                <div class="info-block"><div class="info-title">开源状态</div>{'已在 arXiv 元数据中发现真实代码链接。' if p["code_links"] else '未在 arXiv 摘要/元数据中确认开源仓库，因此不展示代码入口。'}</div>
+                <div class="info-block"><div class="info-title">命中关键词</div>{html.escape('、'.join(p.get("matched_keywords", [])[:8]) or '无')}</div>
+                <div class="info-block links-block"><div class="info-title">论文链接</div><div class="links">{links}</div></div>
+              </div>
+            </details>''')
+        category_html.append(f'''
+        <details class="category-card" id="{html.escape(group["slug"])}" {'open' if idx < 3 else ''}>
+          <summary>
+            <div>
+              <div class="category-title">{html.escape(group["name"])}</div>
+              <div class="category-meta">关键词：{html.escape(keyword_preview)}</div>
+              <div class="category-meta">类目最高分论文：{html.escape(top_title)}</div>
+            </div>
+            <div class="category-count">{len(papers)} 篇</div>
+          </summary>
+          <div class="category-body">{''.join(paper_items)}</div>
+        </details>''')
+
     content = f'''<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>{date_s} AI Paper Digest</title><link rel="stylesheet" href="../assets/style.css"></head>
-<body><main class="container"><nav class="nav"><a href="../index.html">← 首页</a><span class="meta">{date_s}</span></nav><section class="hero"><div class="eyebrow">Daily Digest</div><h1>{date_s} AI 论文日报</h1><p class="subtitle">抓取前一天 arXiv 新发布/更新论文，按相关度、质量信号和开源倾向筛选。第一版摘要基于元数据自动生成，后续可接入 LLM 深度摘要。</p></section>
-<section class="panel"><div class="summary-bar"><div class="stat"><div class="num">{fetched_count}</div><div class="label">抓取论文</div></div><div class="stat"><div class="num">{len(selected)}</div><div class="label">入选论文</div></div>{topic_html}</div></section>
-<section class="grid">{''.join(cards) if cards else '<div class="card"><h2>今日没有符合条件的新论文</h2><p class="meta">可调整关键词或降低相关度阈值。</p></div>'}</section><footer class="footer">Generated by Daily Arxiv Papers.</footer></main></body></html>'''
+<body><main class="container"><nav class="nav"><a href="../index.html">← 首页</a><span class="meta">{date_s}</span></nav>
+<section class="hero"><div><div class="eyebrow">Daily Research Board</div><h1>{date_s} AI 论文看板</h1><p class="subtitle">按研究方向聚合的 arXiv 日报。类目卡片可收缩，论文卡片点击后展开详情；只有确认存在真实代码链接时才展示 Code。</p></div><div class="panel"><div class="eyebrow">Design Spec</div><p class="meta">Aesthetic: Editorial / magazine. Palette: warm paper, teal accent, amber notes. Layout: asymmetric hero + collapsible research board.</p></div></section>
+<section class="panel"><div class="summary-bar"><div class="stat"><div class="num">{fetched_count}</div><div class="label">抓取论文</div></div><div class="stat"><div class="num">{len(selected)}</div><div class="label">入选论文</div></div><div class="stat"><div class="num">{len(groups)}</div><div class="label">覆盖方向</div></div><div class="stat"><div class="num">{open_count}</div><div class="label">确认开源</div></div></div></section>
+<section class="panel"><div class="eyebrow">Topic Navigation</div><div class="category-nav">{nav_html or '<span class="meta">暂无类目</span>'}</div></section>
+<section class="board">{''.join(category_html) if category_html else '<div class="card"><h2>今日没有符合条件的新论文</h2><p class="meta">可调整关键词或降低相关度阈值。</p></div>'}</section>
+<footer class="footer">Generated by Daily Arxiv Papers. No unverified GitHub search links are shown.</footer></main></body></html>'''
     (DAILY / f"{date_s}.html").write_text(content, encoding="utf-8")
-    report = {"date": date_s, "count": len(selected), "fetched_count": fetched_count, "papers": selected}
+    report = {"date": date_s, "count": len(selected), "fetched_count": fetched_count, "open_source_count": open_count, "topics": [{"name": g["name"], "slug": g["slug"], "count": len(g["papers"])} for g in groups], "papers": selected}
     (DATA / f"{date_s}.json").write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
     return report
-
 
 def existing_reports() -> list[dict]:
     reports = []
@@ -265,7 +319,7 @@ def main() -> int:
     args = ap.parse_args()
     target = dt.date.fromisoformat(args.date) if args.date else default_date()
     config = load_config()
-    papers = fetch_arxiv(config)
+    papers = fetch_arxiv(config, target)
     dated = [p for p in papers if paper_date_matches(p, target)]
     seen = load_seen()
     selected = []
