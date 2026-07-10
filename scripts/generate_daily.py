@@ -435,6 +435,24 @@ def render_daily(target: dt.date, selected: list[dict], fetched_count: int) -> d
     (DATA / f"{date_s}.json").write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
     return report
 
+
+def existing_paper_ids_before(target: dt.date) -> set[str]:
+    ids: set[str] = set()
+    if not DATA.exists():
+        return ids
+    for f in DATA.glob("*.json"):
+        try:
+            d = json.loads(f.read_text(encoding="utf-8"))
+            report_date = dt.date.fromisoformat(d.get("date", "9999-12-31"))
+            if report_date >= target:
+                continue
+            for paper in d.get("papers", []):
+                ids.add((paper.get("id") or "").split("v")[0])
+        except Exception:
+            continue
+    return ids
+
+
 def existing_reports() -> list[dict]:
     reports = []
     if DATA.exists():
@@ -459,9 +477,13 @@ def main() -> int:
         papers = fetch_arxiv(config, target)
     dated = [p for p in papers if paper_date_matches(p, target)]
     seen = load_seen()
+    previous_ids = existing_paper_ids_before(target)
     selected = []
     min_score = float(config.get("quality", {}).get("min_score", 3.0))
     for p in dated:
+        base_id = p["id"].split("v")[0]
+        if base_id in previous_ids:
+            continue
         if not args.ignore_seen and p["id"] in seen:
             continue
         sp = score_paper(p, config)
