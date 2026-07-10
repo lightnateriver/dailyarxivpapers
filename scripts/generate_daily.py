@@ -8,6 +8,8 @@ import html
 import json
 import re
 import sys
+import time
+import urllib.error
 import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
@@ -44,51 +46,63 @@ def arxiv_query(categories: list[str], target: dt.date | None = None) -> str:
         # arXiv API supports submittedDate range. Use it so a daily run does not miss
         # yesterday's papers when newer papers have already pushed them out of the
         # first max_results page sorted by update time.
-        return f"({cat_q}) AND submittedDate:[{day}0000 TO {day}2359]"
+        return f"submittedDate:[{day}0000 TO {day}2359] AND ({cat_q})"
     return f"({cat_q})"
 
 
 def fetch_arxiv(config: dict, target: dt.date | None = None) -> list[dict]:
     fetch_cfg = config.get("fetch", {})
     categories = fetch_cfg.get("arxiv_categories", ["cs.AI", "cs.CL", "cs.LG", "cs.CV"])
-    max_results = int(fetch_cfg.get("max_results", 300))
-    params = {
-        "search_query": arxiv_query(categories, target),
-        "start": 0,
-        "max_results": max_results,
-        "sortBy": "lastUpdatedDate",
-        "sortOrder": "descending",
-    }
-    url = "https://export.arxiv.org/api/query?" + urllib.parse.urlencode(params)
-    with urllib.request.urlopen(url, timeout=60) as resp:
-        xml = resp.read()
-    root = ET.fromstring(xml)
-    papers = []
-    for entry in root.findall("a:entry", ARXIV_NS):
-        arxiv_id_url = entry.findtext("a:id", default="", namespaces=ARXIV_NS)
-        arxiv_id = arxiv_id_url.rstrip("/").split("/")[-1]
-        title = clean_text(entry.findtext("a:title", default="", namespaces=ARXIV_NS))
-        abstract = clean_text(entry.findtext("a:summary", default="", namespaces=ARXIV_NS))
-        published = parse_time(entry.findtext("a:published", default="", namespaces=ARXIV_NS))
-        updated = parse_time(entry.findtext("a:updated", default="", namespaces=ARXIV_NS))
-        authors = [clean_text(a.findtext("a:name", default="", namespaces=ARXIV_NS)) for a in entry.findall("a:author", ARXIV_NS)]
-        categories = [c.attrib.get("term", "") for c in entry.findall("a:category", ARXIV_NS)]
-        pdf = ""
-        for link in entry.findall("a:link", ARXIV_NS):
-            if link.attrib.get("title") == "pdf" or link.attrib.get("type") == "application/pdf":
-                pdf = link.attrib.get("href", "")
-        papers.append({
-            "id": arxiv_id,
-            "title": title,
-            "abstract": abstract,
-            "published": published.isoformat() if published else "",
-            "updated": updated.isoformat() if updated else "",
-            "authors": authors,
-            "categories": categories,
-            "abs_url": arxiv_id_url,
-            "pdf_url": pdf or arxiv_id_url.replace("/abs/", "/pdf/"),
-        })
-    return papers
+    per_category = int(fetch_cfg.get("max_results", 120))
+    papers_by_id: dict[str, dict] = {}
+    for idx, category in enumerate(categories):
+        if idx:
+            time.sleep(3)
+        params = {
+            "search_query": arxiv_query([category], target),
+            "start": 0,
+            "max_results": per_category,
+            "sortBy": "submittedDate" if target else "lastUpdatedDate",
+            "sortOrder": "descending",
+        }
+        url = "https://export.arxiv.org/api/query?" + urllib.parse.urlencode(params)
+        xml = b""
+        for attempt in range(4):
+            try:
+                with urllib.request.urlopen(url, timeout=60) as resp:
+                    xml = resp.read()
+                break
+            except urllib.error.HTTPError as e:
+                if e.code == 429 and attempt < 3:
+                    time.sleep(8 * (attempt + 1))
+                    continue
+                raise
+        root = ET.fromstring(xml)
+        for entry in root.findall("a:entry", ARXIV_NS):
+            arxiv_id_url = entry.findtext("a:id", default="", namespaces=ARXIV_NS)
+            arxiv_id = arxiv_id_url.rstrip("/").split("/")[-1]
+            title = clean_text(entry.findtext("a:title", default="", namespaces=ARXIV_NS))
+            abstract = clean_text(entry.findtext("a:summary", default="", namespaces=ARXIV_NS))
+            published = parse_time(entry.findtext("a:published", default="", namespaces=ARXIV_NS))
+            updated = parse_time(entry.findtext("a:updated", default="", namespaces=ARXIV_NS))
+            authors = [clean_text(a.findtext("a:name", default="", namespaces=ARXIV_NS)) for a in entry.findall("a:author", ARXIV_NS)]
+            cats = [c.attrib.get("term", "") for c in entry.findall("a:category", ARXIV_NS)]
+            pdf = ""
+            for link in entry.findall("a:link", ARXIV_NS):
+                if link.attrib.get("title") == "pdf" or link.attrib.get("type") == "application/pdf":
+                    pdf = link.attrib.get("href", "")
+            papers_by_id[arxiv_id] = {
+                "id": arxiv_id,
+                "title": title,
+                "abstract": abstract,
+                "published": published.isoformat() if published else "",
+                "updated": updated.isoformat() if updated else "",
+                "authors": authors,
+                "categories": cats,
+                "abs_url": arxiv_id_url,
+                "pdf_url": pdf or arxiv_id_url.replace("/abs/", "/pdf/"),
+            }
+    return list(papers_by_id.values())
 
 
 def parse_time(s: str) -> dt.datetime | None:
@@ -99,6 +113,76 @@ def parse_time(s: str) -> dt.datetime | None:
 
 def clean_text(s: str) -> str:
     return re.sub(r"\s+", " ", s or "").strip()
+
+
+MONTHS = {
+    "Jan": 1, "Feb": 2, "Mar": 3, "Apr": 4, "May": 5, "Jun": 6,
+    "Jul": 7, "Aug": 8, "Sep": 9, "Oct": 10, "Nov": 11, "Dec": 12,
+}
+
+
+def parse_recent_date(header: str) -> dt.date | None:
+    m = re.search(r"(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun),\s+(\d{1,2})\s+(\w{3})\s+(\d{4})", header)
+    if not m:
+        return None
+    return dt.date(int(m.group(3)), MONTHS[m.group(2)], int(m.group(1)))
+
+
+def strip_tags(text: str) -> str:
+    text = re.sub(r"<[^>]+>", " ", text)
+    return html.unescape(clean_text(text))
+
+
+def parse_recent_block(block: str, target: dt.date) -> list[dict]:
+    papers = []
+    for item in re.finditer(r"<dt>(.*?)</dt>\s*<dd>(.*?)</dd>", block, re.S):
+        dt_html, dd_html = item.group(1), item.group(2)
+        id_match = re.search(r'id="(\d{4}\.\d{4,5})"', dt_html)
+        if not id_match:
+            continue
+        arxiv_id = id_match.group(1) + "v1"
+        title_match = re.search(r"<div class='list-title mathjax'>\s*<span class='descriptor'>Title:</span>(.*?)</div>", dd_html, re.S)
+        authors_match = re.search(r"<div class='list-authors'>(.*?)</div>", dd_html, re.S)
+        subjects_match = re.search(r"<div class='list-subjects'>(.*?)</div>", dd_html, re.S)
+        abstract_match = re.search(r"<p class='mathjax'>(.*?)</p>", dd_html, re.S)
+        comments_match = re.search(r"<div class='list-comments mathjax'>(.*?)</div>", dd_html, re.S)
+        authors = []
+        if authors_match:
+            authors = [strip_tags(a) for a in re.findall(r"<a [^>]*>(.*?)</a>", authors_match.group(1), re.S)]
+        subject_text = strip_tags(subjects_match.group(1)) if subjects_match else ""
+        cats = re.findall(r"\(([a-z\-]+\.[A-Z]{2})\)", subject_text)
+        abstract = strip_tags(abstract_match.group(1)) if abstract_match else ""
+        comments = strip_tags(comments_match.group(1)) if comments_match else ""
+        if comments:
+            abstract = f"{abstract} {comments}"
+        bare_id = arxiv_id.removesuffix("v1")
+        papers.append({
+            "id": arxiv_id,
+            "title": strip_tags(title_match.group(1)) if title_match else bare_id,
+            "abstract": abstract,
+            "published": dt.datetime.combine(target, dt.time(0, 0, tzinfo=dt.timezone.utc)).isoformat(),
+            "updated": dt.datetime.combine(target, dt.time(0, 0, tzinfo=dt.timezone.utc)).isoformat(),
+            "authors": authors,
+            "categories": cats,
+            "abs_url": f"https://arxiv.org/abs/{bare_id}",
+            "pdf_url": f"https://arxiv.org/pdf/{bare_id}",
+        })
+    return papers
+
+
+def fetch_arxiv_recent_html(target: dt.date) -> list[dict]:
+    url = "https://arxiv.org/list/cs/recent?skip=0&show=1000"
+    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 dailyarxivpapers"})
+    with urllib.request.urlopen(req, timeout=120) as resp:
+        page = resp.read().decode("utf-8", errors="ignore")
+    headers = list(re.finditer(r"<h3>(.*?)</h3>", page, re.S))
+    for i, h in enumerate(headers):
+        header = strip_tags(h.group(1))
+        if parse_recent_date(header) == target:
+            start = h.end()
+            end = headers[i + 1].start() if i + 1 < len(headers) else page.find("</dl>", start)
+            return parse_recent_block(page[start:end], target)
+    return []
 
 
 def paper_date_matches(paper: dict, target: dt.date) -> bool:
@@ -258,7 +342,7 @@ def render_index(reports: list[dict], config: dict) -> None:
           <p><a href="./daily/{latest["date"]}.html">查看 {latest["date"]} 日报 →</a></p>
         </div>'''
     content = f'''<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Paper Radar</title><link rel="stylesheet" href="./assets/style.css"></head>
-<body><main class="container"><section class="hero"><div class="eyebrow">AI Paper Radar</div><h1>每日 AI 论文雷达</h1><p class="subtitle">浅色扁平化 arXiv 论文日报，关注 LLM 推理加速、多模态推理、Agent、世界模型、视频生成和 AI Infra。</p></section>{latest_html}
+<body><main class="container"><section class="hero"><div class="eyebrow">AI Paper Radar</div><h1>每日AI 论文</h1><p class="subtitle">浅色扁平化 arXiv 论文日报，关注 LLM 推理加速、多模态推理、Agent、世界模型、视频生成和 AI Infra。</p></section>{latest_html}
 <section class="grid"><div class="card"><h3>最近日报</h3><ul class="date-list">{items or '<li>暂无日报</li>'}</ul></div><div class="card"><h3>关注方向</h3><div class="topic-cloud">{topics}</div></div></section><footer class="footer">Generated by Daily Arxiv Papers.</footer></main></body></html>'''
     (DOCS / "index.html").write_text(content, encoding="utf-8")
 
@@ -370,7 +454,9 @@ def main() -> int:
     args = ap.parse_args()
     target = dt.date.fromisoformat(args.date) if args.date else default_date()
     config = load_config()
-    papers = fetch_arxiv(config, target)
+    papers = fetch_arxiv_recent_html(target)
+    if not papers:
+        papers = fetch_arxiv(config, target)
     dated = [p for p in papers if paper_date_matches(p, target)]
     seen = load_seen()
     selected = []
