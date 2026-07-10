@@ -484,7 +484,7 @@ def main() -> int:
         base_id = p["id"].split("v")[0]
         if base_id in previous_ids:
             continue
-        if not args.ignore_seen and p["id"] in seen:
+        if not args.ignore_seen and p["id"] in seen and seen[p["id"]].get("first_seen") != target.isoformat():
             continue
         sp = score_paper(p, config)
         if sp["score"] >= min_score and sp["topics"]:
