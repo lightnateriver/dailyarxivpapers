@@ -98,3 +98,18 @@ ul.compact { padding-left: 20px; margin: 6px 0 0; }
 .deep-card { background: #fffdf8; border: 1px solid var(--line); }
 .deep-body { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 @media (max-width: 800px) { .deep-body { grid-template-columns: 1fr; } }
+
+.section-title { font-family: "Noto Serif SC", "Source Han Serif SC", serif; font-size: 32px; margin: 10px 0 14px; letter-spacing: -0.03em; }
+.deep-read-panel { margin-top: 18px; }
+.deep-card { background: #fffdf8; border: 1px solid var(--line); }
+.deep-title-en { font-size: 22px; line-height: 1.35; margin-top: 8px; }
+.deep-title-zh { font-size: 15px; color: var(--teal); margin-top: 6px; font-weight: 700; }
+.deep-inst { font-size: 12px; color: var(--muted); margin-top: 8px; }
+.deep-body { grid-template-columns: 1fr 1fr; }
+.deep-summary { grid-column: 1; }
+.deep-innovation { grid-column: 2; }
+.deep-scenario { grid-column: 1 / -1; }
+@media (max-width: 800px) {
+  .deep-body { grid-template-columns: 1fr; }
+  .deep-summary, .deep-innovation, .deep-scenario { grid-column: 1; }
+}

@@ -13,7 +13,9 @@
       ],
       "scenario_cn": "适用于仓库级代码补全、代码助手、SWE Agent 等场景，尤其是在大型代码库里生成函数实现时，需要遵循项目内 API、类型定义、工具函数和编码约定的情况。它重点解决现有检索方法难以找到“实现步骤相似但表面不相似”的参考代码，从而减少幻觉 API、错误依赖调用和不符合仓库规范的生成结果。",
       "opensource_status": "未确认开源",
-      "code_url": ""
+      "code_url": "",
+      "title_en": "ProjAgent: Procedural Similarity Retrieval for Repository-Level Code Generation",
+      "title_zh": "ProjAgent：面向仓库级代码生成的过程相似性检索"
     },
     "2607.08215v1": {
       "id": "2607.08215v1",
@@ -27,7 +29,9 @@
       ],
       "scenario_cn": "适用于评估大模型推理系统从 CUDA/GPU 生态迁移到华为昇腾等非 GPU AI 加速器时的工程风险，尤其对 MoE 服务、多模态 VLM 服务、vLLM-Ascend 部署和国产算力选型有参考价值。它解决的是“替代加速器能不能真正承载复杂生产推理负载、需要付出多大软件与运维代价”的问题。",
       "opensource_status": "未确认开源",
-      "code_url": ""
+      "code_url": "",
+      "title_en": "On the Limitations of Non-GPU AI Accelerators for Large-Model Inference: A Field Study of MoE and Multimodal Serving on Huawei Ascend",
+      "title_zh": "非 GPU AI 加速器在大模型推理中的局限性：华为昇腾上 MoE 与多模态服务的实地研究"
     },
     "2607.08116v1": {
       "id": "2607.08116v1",
@@ -41,7 +45,9 @@
       ],
       "scenario_cn": "适用于移动端/边缘端希望获得更强大模型推理能力，但本地算力和内存不足的场景，例如无线网络下的端云协同智能体、移动推理服务和边缘 AI 系统。它解决的是 inference-time scaling 虽能增强推理能力、但很难直接部署在资源受限设备上的问题。",
       "opensource_status": "已确认开源",
-      "code_url": "https://github.com/NICE-HKU/MORES"
+      "code_url": "https://github.com/NICE-HKU/MORES",
+      "title_en": "MORES: Mobile Reasoning-as-a-Service via Distributed LLM Inference-Time Scaling",
+      "title_zh": "MORES：通过分布式大语言模型推理时扩展实现移动端推理即服务"
     },
     "2607.08027v1": {
       "id": "2607.08027v1",
@@ -55,7 +61,9 @@
       ],
       "scenario_cn": "适用于需要把大语言模型压缩到更低算力或更高吞吐部署环境中的场景，尤其是希望获得真实硬件加速而不仅仅是稀疏参数减少时。它解决的是结构化剪枝常见的精度损失问题，适合 LLM/VLM 的推理优化、模型压缩和工程部署研究。",
       "opensource_status": "未确认开源",
-      "code_url": ""
+      "code_url": "",
+      "title_en": "Structured Pruning of Large Language Models via Power Transformation and Sign-Preserving Score Aggregation with Adaptive Feature Retention",
+      "title_zh": "基于幂变换与保号分数聚合并结合自适应特征保留的大语言模型结构化剪枝"
     },
     "2607.08565v1": {
       "id": "2607.08565v1",
@@ -69,7 +77,9 @@
       ],
       "scenario_cn": "适用于 Claude Code、OpenClaw 一类 Agent 驱动的 LLM 服务系统，尤其适合存在多轮会话、较高 KV 复用、并采用全局 KV 存储或 PD 分离/协同架构的推理集群。它解决的是缓存命中优先策略造成的负载失衡与吞吐受限问题。",
       "opensource_status": "未确认开源",
-      "code_url": ""
+      "code_url": "",
+      "title_en": "SMetric: Rethink LLM Scheduling for Serving Agents with Balanced Session-centric Scheduling",
+      "title_zh": "SMetric：通过均衡的会话中心调度重构面向智能体服务的大语言模型调度"
     },
     "2607.08010v1": {
       "id": "2607.08010v1",
@@ -83,7 +93,9 @@
       ],
       "scenario_cn": "适用于低时延、强可靠性的工业 Agent 系统，尤其是告警分诊、运维 SOP 执行、跨异构后端查询等重复程序步骤较多的场景。它解决的是生产 Agent 每次重复生成代码带来的延迟浪费、稳定性波动和可运维性不足问题。",
       "opensource_status": "未确认开源",
-      "code_url": ""
+      "code_url": "",
+      "title_en": "Tool-Making and Self-Evolving LLM Agents in Low-Latency Systems",
+      "title_zh": "低时延系统中的工具生成与自进化大语言模型智能体"
     },
     "2607.08423v1": {
       "id": "2607.08423v1",
@@ -97,7 +109,9 @@
       ],
       "scenario_cn": "适用于 AI 营养师、饮食健康助手、食品图像分析与公共健康 Agent 的评测与研究场景。它解决的是现有 benchmark 无法衡量模型在营养估计、风险感知和个性化建议方面真实可用性的缺口。",
       "opensource_status": "已确认开源",
-      "code_url": "https://anonymous.4open.science/r/OmniFood-Bench-7D0B"
+      "code_url": "https://anonymous.4open.science/r/OmniFood-Bench-7D0B",
+      "title_en": "OmniFood-Bench: Evaluating VLMs for Nutrient Reasoning and Personalized Health Advice",
+      "title_zh": "OmniFood-Bench：面向营养推理与个性化健康建议的视觉语言模型评测"
     },
     "2607.08029v1": {
       "id": "2607.08029v1",
@@ -111,7 +125,9 @@
       ],
       "scenario_cn": "适用于 Jetson Orin NX/AGX 等边缘设备上的小型多模态模型部署、压缩与性能调优场景。它解决的是工程人员在不同组件该不该量化、量化后是否真能加速、不同硬件上策略是否可迁移等部署决策问题。",
       "opensource_status": "未确认开源",
-      "code_url": ""
+      "code_url": "",
+      "title_en": "Rethinking Small VLM Quantization: From Component-Wise Analysis to Hardware-Aware Edge Deployment",
+      "title_zh": "重新审视小型视觉语言模型量化：从组件级分析到硬件感知的边缘部署"
     },
     "2607.08093v1": {
       "id": "2607.08093v1",
@@ -125,7 +141,9 @@
       ],
       "scenario_cn": "它主要解决现有数据科学 Agent 评测里对因果推理覆盖不足的问题，适用于评估会做表格分析、因果发现、因果效应估计或反事实分析的智能体系统，也适用于研究 Agent 在不完美观测条件下的鲁棒性与校准能力。",
       "opensource_status": "未确认开源",
-      "code_url": ""
+      "code_url": "",
+      "title_en": "CausalDS: Benchmarking Causal Reasoning in Data-Science Agents",
+      "title_zh": "CausalDS：数据科学智能体中的因果推理基准评测"
     },
     "2607.08057v1": {
       "id": "2607.08057v1",
@@ -139,7 +157,9 @@
       ],
       "scenario_cn": "它解决的是 LLM 在线推理服务中 KV Cache 带来的显存压力、吞吐受限和成本高的问题，适用于设计或优化推理引擎、Serving 框架、跨设备内存编排和长上下文服务系统的工程场景，也适合作为研究 KV cache 优化方向的系统性参考。",
       "opensource_status": "已确认开源",
-      "code_url": "https://github.com/jjiantong/Awesome-KV-Cache-Optimization"
+      "code_url": "https://github.com/jjiantong/Awesome-KV-Cache-Optimization",
+      "title_en": "Towards Efficient Large Language Model Serving: A Survey on System-Aware KV Cache Optimization",
+      "title_zh": "迈向高效大语言模型服务：系统感知 KV Cache 优化综述"
     }
   }
 }

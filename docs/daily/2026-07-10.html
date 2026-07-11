@@ -4,25 +4,26 @@
 <section class="panel"><div class="summary-bar"><div class="stat"><div class="num">497</div><div class="label">抓取论文</div></div><div class="stat"><div class="num">83</div><div class="label">入选论文</div></div><div class="stat"><div class="num">9</div><div class="label">覆盖方向</div></div><div class="stat"><div class="num">0</div><div class="label">确认开源</div></div></div></section>
 <section class="panel"><div class="eyebrow">Topic Navigation</div><div class="category-nav"><a class="nav-chip" href="#agent">Agent · 30 篇</a><a class="nav-chip" href="#llm-inference">LLM 推理加速 · 13 篇</a><a class="nav-chip" href="#rag-long-context">RAG / Long Context · 12 篇</a><a class="nav-chip" href="#agent-reasoning">Agent Reasoning / Test-time Scaling · 11 篇</a><a class="nav-chip" href="#model-compression">Model Compression / Quantization · 6 篇</a><a class="nav-chip" href="#video-generation">Video Generation · 4 篇</a><a class="nav-chip" href="#world-model">World Model · 4 篇</a><a class="nav-chip" href="#multimodal-inference">多模态推理加速 · 2 篇</a><a class="nav-chip" href="#code-agent">Code Agent / SWE Agent · 1 篇</a></div></section>
 
+
 <section class="panel deep-read-panel">
   <div class="eyebrow">Deep Read Preview</div>
   <h2 class="section-title">今日精读版卡片（首批 10 篇）</h2>
-  <p class="subtitle">这部分不再展示作者姓名，改为作者单位；摘要总结、核心创新点和解决场景均基于论文正文/摘要片段重新整理。你先看这 10 篇的效果，如果满意，我再把前两天页面全部按同样标准重做。</p>
+  <p class="subtitle">标题改为“英文原题 + 中文翻译”，作者单位降级为小字信息；卡片内容只保留你真正关心的三块：摘要总结、核心创新点、解决的问题 / 适用场景。</p>
   <div class="board">
         <details class="paper-card deep-card" open>
           <summary>
             <div>
               <div class="badges"><span class="badge">精读版</span><span class="badge closed">未确认开源</span></div>
-              <div class="paper-title">2607.08691v1 · University of California, Irvine</div>
-              <div class="paper-preview"><strong>这篇论文提出了面向仓库级代码生成的系统 ProjAgent，目标是在真实代码仓库中为待实现函数补全正确代码，同时处理跨文件依赖与项目特定约定。其核心做法是把目标函数分解为中间推理步骤，并按步骤检索仓库中“过程逻辑相似”的已有函数，而不只依赖词法、结构或语义相似性。系统还将这种 procedural context 与常规语义检索结合，并利用编译器与静态分析反馈迭代修复生成代码。在 REPOCOD 上，论文报告 Pass@1 达到 41.14%，优于已有检索式基线。</strong></div>
+              <div class="paper-title deep-title-en">ProjAgent: Procedural Similarity Retrieval for Repository-Level Code Generation</div>
+              <div class="deep-title-zh">ProjAgent：面向仓库级代码生成的过程相似性检索</div>
+              <div class="deep-inst">University of California, Irvine</div>
             </div>
             <div class="paper-side"><span class="meta">点击收起</span></div>
           </summary>
           <div class="paper-body deep-body">
-            <div class="info-block brief"><div class="info-title">摘要总结</div>这篇论文提出了面向仓库级代码生成的系统 ProjAgent，目标是在真实代码仓库中为待实现函数补全正确代码，同时处理跨文件依赖与项目特定约定。其核心做法是把目标函数分解为中间推理步骤，并按步骤检索仓库中“过程逻辑相似”的已有函数，而不只依赖词法、结构或语义相似性。系统还将这种 procedural context 与常规语义检索结合，并利用编译器与静态分析反馈迭代修复生成代码。在 REPOCOD 上，论文报告 Pass@1 达到 41.14%，优于已有检索式基线。</div>
-            <div class="info-block innovation"><div class="info-title">核心创新点</div><ul class="compact"><li>将 procedural similarity 作为仓库级代码生成中的显式检索信号，用来发现标识符和应用领域不同但过程逻辑相近的函数。</li><li>把目标函数分解为中间推理步骤，并通过 agentic workflow 在每一步检索具有相似 procedural behavior 的仓库函数。</li><li>将 procedural context 与传统 semantic retrieval 结合，构造更丰富的 repository context 供代码生成使用。</li><li>引入保守的静态分析反馈循环，基于编译器和静态分析结果对生成代码进行迭代修复。</li></ul></div>
-            <div class="info-block scenario"><div class="info-title">解决的问题 / 适用场景</div>适用于仓库级代码补全、代码助手、SWE Agent 等场景，尤其是在大型代码库里生成函数实现时，需要遵循项目内 API、类型定义、工具函数和编码约定的情况。它重点解决现有检索方法难以找到“实现步骤相似但表面不相似”的参考代码，从而减少幻觉 API、错误依赖调用和不符合仓库规范的生成结果。</div>
-            <div class="info-block"><div class="info-title">作者单位</div>University of California, Irvine</div>
+            <div class="info-block brief deep-summary"><div class="info-title">摘要总结</div>这篇论文提出了面向仓库级代码生成的系统 ProjAgent，目标是在真实代码仓库中为待实现函数补全正确代码，同时处理跨文件依赖与项目特定约定。其核心做法是把目标函数分解为中间推理步骤，并按步骤检索仓库中“过程逻辑相似”的已有函数，而不只依赖词法、结构或语义相似性。系统还将这种 procedural context 与常规语义检索结合，并利用编译器与静态分析反馈迭代修复生成代码。在 REPOCOD 上，论文报告 Pass@1 达到 41.14%，优于已有检索式基线。</div>
+            <div class="info-block innovation deep-innovation"><div class="info-title">核心创新点</div><ul class="compact"><li>将 procedural similarity 作为仓库级代码生成中的显式检索信号，用来发现标识符和应用领域不同但过程逻辑相近的函数。</li><li>把目标函数分解为中间推理步骤，并通过 agentic workflow 在每一步检索具有相似 procedural behavior 的仓库函数。</li><li>将 procedural context 与传统 semantic retrieval 结合，构造更丰富的 repository context 供代码生成使用。</li><li>引入保守的静态分析反馈循环，基于编译器和静态分析结果对生成代码进行迭代修复。</li></ul></div>
+            <div class="info-block scenario deep-scenario"><div class="info-title">解决的问题 / 适用场景</div>适用于仓库级代码补全、代码助手、SWE Agent 等场景，尤其是在大型代码库里生成函数实现时，需要遵循项目内 API、类型定义、工具函数和编码约定的情况。它重点解决现有检索方法难以找到“实现步骤相似但表面不相似”的参考代码，从而减少幻觉 API、错误依赖调用和不符合仓库规范的生成结果。</div>
             <div class="info-block links-block"><div class="info-title">论文链接</div><div class="links"><a href="https://arxiv.org/abs/2607.08691">arXiv</a><a href="https://arxiv.org/pdf/2607.08691">PDF</a></div></div>
           </div>
         </details>
@@ -30,16 +31,16 @@
           <summary>
             <div>
               <div class="badges"><span class="badge">精读版</span><span class="badge closed">未确认开源</span></div>
-              <div class="paper-title">2607.08215v1 · School of Data Science, The Chinese University of Hong Kong, Shenzhen</div>
-              <div class="paper-preview"><strong>这篇论文是一项面向华为昇腾平台的大模型推理实地研究，系统记录了将两个高要求推理工作负载迁移到 16 卡 Ascend 910 + CANN + vLLM-Ascend 环境中的实际成本与问题。两个案例分别是 W8A8 的 MoE 裁判模型 DeepSeek-V4-Flash 大规模对前沿模型做价值对齐/安全评测，以及 bf16 的多模态医学视觉语言模型 DeepSeek-V4-Flash-Vision 在 MMMU/MMMU-Pro 上的评测。论文指出，为了让系统达到可用状态，作者需要对厂商推理插件做 12 处源码级补丁，并关闭若干吞吐优化特性以保证数值正确性。最终作者把问题归纳为软件栈成熟度、并行性脆弱、内核数值故障、图编译不成熟、高级特性不稳定、性能与扩展性天花板、可观测性弱、生态碎片化等 8 类平台限制。</strong></div>
+              <div class="paper-title deep-title-en">On the Limitations of Non-GPU AI Accelerators for Large-Model Inference: A Field Study of MoE and Multimodal Serving on Huawei Ascend</div>
+              <div class="deep-title-zh">非 GPU AI 加速器在大模型推理中的局限性：华为昇腾上 MoE 与多模态服务的实地研究</div>
+              <div class="deep-inst">School of Data Science, The Chinese University of Hong Kong, Shenzhen</div>
             </div>
             <div class="paper-side"><span class="meta">点击收起</span></div>
           </summary>
           <div class="paper-body deep-body">
-            <div class="info-block brief"><div class="info-title">摘要总结</div>这篇论文是一项面向华为昇腾平台的大模型推理实地研究，系统记录了将两个高要求推理工作负载迁移到 16 卡 Ascend 910 + CANN + vLLM-Ascend 环境中的实际成本与问题。两个案例分别是 W8A8 的 MoE 裁判模型 DeepSeek-V4-Flash 大规模对前沿模型做价值对齐/安全评测，以及 bf16 的多模态医学视觉语言模型 DeepSeek-V4-Flash-Vision 在 MMMU/MMMU-Pro 上的评测。论文指出，为了让系统达到可用状态，作者需要对厂商推理插件做 12 处源码级补丁，并关闭若干吞吐优化特性以保证数值正确性。最终作者把问题归纳为软件栈成熟度、并行性脆弱、内核数值故障、图编译不成熟、高级特性不稳定、性能与扩展性天花板、可观测性弱、生态碎片化等 8 类平台限制。</div>
-            <div class="info-block innovation"><div class="info-title">核心创新点</div><ul class="compact"><li>基于两个具体且高负载的真实推理案例，对非 GPU 加速器迁移成本进行了 field study，而不是只做抽象性能比较。</li><li>系统性归纳了 8 类平台级限制，并对每一类给出 symptom、evidence 和 likely root cause。</li><li>量化了把 MoE 与多模态大模型工作负载迁移到 Ascend 平台所需的源码补丁、特性关闭和运维兜底工作。</li><li>在数值正确性、并发行为和端到端 benchmark 质量层面验证了这两个工作负载虽然可运行，但代价显著。</li></ul></div>
-            <div class="info-block scenario"><div class="info-title">解决的问题 / 适用场景</div>适用于评估大模型推理系统从 CUDA/GPU 生态迁移到华为昇腾等非 GPU AI 加速器时的工程风险，尤其对 MoE 服务、多模态 VLM 服务、vLLM-Ascend 部署和国产算力选型有参考价值。它解决的是“替代加速器能不能真正承载复杂生产推理负载、需要付出多大软件与运维代价”的问题。</div>
-            <div class="info-block"><div class="info-title">作者单位</div>School of Data Science, The Chinese University of Hong Kong, Shenzhen</div>
+            <div class="info-block brief deep-summary"><div class="info-title">摘要总结</div>这篇论文是一项面向华为昇腾平台的大模型推理实地研究，系统记录了将两个高要求推理工作负载迁移到 16 卡 Ascend 910 + CANN + vLLM-Ascend 环境中的实际成本与问题。两个案例分别是 W8A8 的 MoE 裁判模型 DeepSeek-V4-Flash 大规模对前沿模型做价值对齐/安全评测，以及 bf16 的多模态医学视觉语言模型 DeepSeek-V4-Flash-Vision 在 MMMU/MMMU-Pro 上的评测。论文指出，为了让系统达到可用状态，作者需要对厂商推理插件做 12 处源码级补丁，并关闭若干吞吐优化特性以保证数值正确性。最终作者把问题归纳为软件栈成熟度、并行性脆弱、内核数值故障、图编译不成熟、高级特性不稳定、性能与扩展性天花板、可观测性弱、生态碎片化等 8 类平台限制。</div>
+            <div class="info-block innovation deep-innovation"><div class="info-title">核心创新点</div><ul class="compact"><li>基于两个具体且高负载的真实推理案例，对非 GPU 加速器迁移成本进行了 field study，而不是只做抽象性能比较。</li><li>系统性归纳了 8 类平台级限制，并对每一类给出 symptom、evidence 和 likely root cause。</li><li>量化了把 MoE 与多模态大模型工作负载迁移到 Ascend 平台所需的源码补丁、特性关闭和运维兜底工作。</li><li>在数值正确性、并发行为和端到端 benchmark 质量层面验证了这两个工作负载虽然可运行，但代价显著。</li></ul></div>
+            <div class="info-block scenario deep-scenario"><div class="info-title">解决的问题 / 适用场景</div>适用于评估大模型推理系统从 CUDA/GPU 生态迁移到华为昇腾等非 GPU AI 加速器时的工程风险，尤其对 MoE 服务、多模态 VLM 服务、vLLM-Ascend 部署和国产算力选型有参考价值。它解决的是“替代加速器能不能真正承载复杂生产推理负载、需要付出多大软件与运维代价”的问题。</div>
             <div class="info-block links-block"><div class="info-title">论文链接</div><div class="links"><a href="https://arxiv.org/abs/2607.08215">arXiv</a><a href="https://arxiv.org/pdf/2607.08215">PDF</a></div></div>
           </div>
         </details>
@@ -47,16 +48,16 @@
           <summary>
             <div>
               <div class="badges"><span class="badge">精读版</span><span class="badge open">已确认开源</span></div>
-              <div class="paper-title">2607.08116v1 · Department of Electrical and Computer Engineering, University of Hong Kong</div>
-              <div class="paper-preview"><strong>这篇论文提出 Mobile Reasoning-as-a-Service（MORES）框架，把大模型推理阶段的“推理计算”视为一种可通过无线网络按需调用的服务，以支持资源受限的边缘设备。论文聚焦隐式推理，将递归式隐藏状态更新拆分到边缘设备和服务器两侧协同执行，使终端可以在需要时借用云侧算力。为优化长期性能，作者把计算与通信联合调度建模为优化问题，并用语义化的 MoE 深度强化学习算法进行求解。实验显示，该方法相较 SAC 基线可带来约 18% 的系统吞吐提升。</strong></div>
+              <div class="paper-title deep-title-en">MORES: Mobile Reasoning-as-a-Service via Distributed LLM Inference-Time Scaling</div>
+              <div class="deep-title-zh">MORES：通过分布式大语言模型推理时扩展实现移动端推理即服务</div>
+              <div class="deep-inst">Department of Electrical and Computer Engineering, University of Hong Kong</div>
             </div>
             <div class="paper-side"><span class="meta">点击收起</span></div>
           </summary>
           <div class="paper-body deep-body">
-            <div class="info-block brief"><div class="info-title">摘要总结</div>这篇论文提出 Mobile Reasoning-as-a-Service（MORES）框架，把大模型推理阶段的“推理计算”视为一种可通过无线网络按需调用的服务，以支持资源受限的边缘设备。论文聚焦隐式推理，将递归式隐藏状态更新拆分到边缘设备和服务器两侧协同执行，使终端可以在需要时借用云侧算力。为优化长期性能，作者把计算与通信联合调度建模为优化问题，并用语义化的 MoE 深度强化学习算法进行求解。实验显示，该方法相较 SAC 基线可带来约 18% 的系统吞吐提升。</div>
-            <div class="info-block innovation"><div class="info-title">核心创新点</div><ul class="compact"><li>提出 Mobile Reasoning-as-a-Service 框架，将 LLM inference-time scaling 中的推理过程作为可供移动设备按需访问的计算服务。</li><li>针对 implicit reasoning 的递归结构，把隐藏状态更新拆分到边缘与服务器之间进行协同推理。</li><li>将计算资源分配与无线通信调度联合建模，通过调整 recurrent steps 数量和 transmission pruning rate 实现自适应控制。</li><li>设计 semantic router 与语义 MoE 架构，用于实时专家选择并支撑高效的 DRL 调度策略。</li></ul></div>
-            <div class="info-block scenario"><div class="info-title">解决的问题 / 适用场景</div>适用于移动端/边缘端希望获得更强大模型推理能力，但本地算力和内存不足的场景，例如无线网络下的端云协同智能体、移动推理服务和边缘 AI 系统。它解决的是 inference-time scaling 虽能增强推理能力、但很难直接部署在资源受限设备上的问题。</div>
-            <div class="info-block"><div class="info-title">作者单位</div>Department of Electrical and Computer Engineering, University of Hong Kong</div>
+            <div class="info-block brief deep-summary"><div class="info-title">摘要总结</div>这篇论文提出 Mobile Reasoning-as-a-Service（MORES）框架，把大模型推理阶段的“推理计算”视为一种可通过无线网络按需调用的服务，以支持资源受限的边缘设备。论文聚焦隐式推理，将递归式隐藏状态更新拆分到边缘设备和服务器两侧协同执行，使终端可以在需要时借用云侧算力。为优化长期性能，作者把计算与通信联合调度建模为优化问题，并用语义化的 MoE 深度强化学习算法进行求解。实验显示，该方法相较 SAC 基线可带来约 18% 的系统吞吐提升。</div>
+            <div class="info-block innovation deep-innovation"><div class="info-title">核心创新点</div><ul class="compact"><li>提出 Mobile Reasoning-as-a-Service 框架，将 LLM inference-time scaling 中的推理过程作为可供移动设备按需访问的计算服务。</li><li>针对 implicit reasoning 的递归结构，把隐藏状态更新拆分到边缘与服务器之间进行协同推理。</li><li>将计算资源分配与无线通信调度联合建模，通过调整 recurrent steps 数量和 transmission pruning rate 实现自适应控制。</li><li>设计 semantic router 与语义 MoE 架构，用于实时专家选择并支撑高效的 DRL 调度策略。</li></ul></div>
+            <div class="info-block scenario deep-scenario"><div class="info-title">解决的问题 / 适用场景</div>适用于移动端/边缘端希望获得更强大模型推理能力，但本地算力和内存不足的场景，例如无线网络下的端云协同智能体、移动推理服务和边缘 AI 系统。它解决的是 inference-time scaling 虽能增强推理能力、但很难直接部署在资源受限设备上的问题。</div>
             <div class="info-block links-block"><div class="info-title">论文链接</div><div class="links"><a href="https://arxiv.org/abs/2607.08116">arXiv</a><a href="https://arxiv.org/pdf/2607.08116">PDF</a><a href="https://github.com/NICE-HKU/MORES">Code</a></div></div>
           </div>
         </details>
@@ -64,16 +65,16 @@
           <summary>
             <div>
               <div class="badges"><span class="badge">精读版</span><span class="badge closed">未确认开源</span></div>
-              <div class="paper-title">2607.08027v1 · Chubu University; Panasonic Holdings Corporation</div>
-              <div class="paper-preview"><strong>这篇论文研究如何把原本用于非结构化剪枝的 AFR 方法有效迁移到大语言模型的结构化剪枝中，以兼顾精度保持和实际推理加速。作者指出，直接把 AFR 的权重级分数聚合到神经元级会遇到三类问题：异构分数分布不匹配、符号信息丢失导致无法判断优化方向一致性、以及异常值主导聚合结果。为此，论文提出由幂变换、保符号分数聚合和基于分位数的异常值去除组成的一体化方法。实验在 Llama-3-8B、Vicuna-v1.5-13B 和 LLaVA-v1.5-13B 上表明，该方法在保持接近非结构化剪枝精度的同时，实现了结构化剪枝带来的实际推理加速。</strong></div>
+              <div class="paper-title deep-title-en">Structured Pruning of Large Language Models via Power Transformation and Sign-Preserving Score Aggregation with Adaptive Feature Retention</div>
+              <div class="deep-title-zh">基于幂变换与保号分数聚合并结合自适应特征保留的大语言模型结构化剪枝</div>
+              <div class="deep-inst">Chubu University; Panasonic Holdings Corporation</div>
             </div>
             <div class="paper-side"><span class="meta">点击收起</span></div>
           </summary>
           <div class="paper-body deep-body">
-            <div class="info-block brief"><div class="info-title">摘要总结</div>这篇论文研究如何把原本用于非结构化剪枝的 AFR 方法有效迁移到大语言模型的结构化剪枝中，以兼顾精度保持和实际推理加速。作者指出，直接把 AFR 的权重级分数聚合到神经元级会遇到三类问题：异构分数分布不匹配、符号信息丢失导致无法判断优化方向一致性、以及异常值主导聚合结果。为此，论文提出由幂变换、保符号分数聚合和基于分位数的异常值去除组成的一体化方法。实验在 Llama-3-8B、Vicuna-v1.5-13B 和 LLaVA-v1.5-13B 上表明，该方法在保持接近非结构化剪枝精度的同时，实现了结构化剪枝带来的实际推理加速。</div>
-            <div class="info-block innovation"><div class="info-title">核心创新点</div><ul class="compact"><li>明确识别了 AFR 迁移到结构化剪枝时的三大核心问题：ReFer 与 SNIP 分数分布不匹配、优化方向符号信息丢失、以及异常值干扰。</li><li>对 SNIP 分数施加幂变换进行非线性分布对齐，以压缩低重要度区域噪声、保留高重要度区域信号。</li><li>提出 sign-preserving score aggregation，先对带符号分数求均值再取绝对值，用于评估神经元内部优化方向的一致性。</li><li>使用 2nd/98th percentile 的分位数异常值去除，再与上述两步集成为统一剪枝流程，在 50% 剪枝率下实现约 1.56-1.57× 推理加速。</li></ul></div>
-            <div class="info-block scenario"><div class="info-title">解决的问题 / 适用场景</div>适用于需要把大语言模型压缩到更低算力或更高吞吐部署环境中的场景，尤其是希望获得真实硬件加速而不仅仅是稀疏参数减少时。它解决的是结构化剪枝常见的精度损失问题，适合 LLM/VLM 的推理优化、模型压缩和工程部署研究。</div>
-            <div class="info-block"><div class="info-title">作者单位</div>Chubu University; Panasonic Holdings Corporation</div>
+            <div class="info-block brief deep-summary"><div class="info-title">摘要总结</div>这篇论文研究如何把原本用于非结构化剪枝的 AFR 方法有效迁移到大语言模型的结构化剪枝中，以兼顾精度保持和实际推理加速。作者指出，直接把 AFR 的权重级分数聚合到神经元级会遇到三类问题：异构分数分布不匹配、符号信息丢失导致无法判断优化方向一致性、以及异常值主导聚合结果。为此，论文提出由幂变换、保符号分数聚合和基于分位数的异常值去除组成的一体化方法。实验在 Llama-3-8B、Vicuna-v1.5-13B 和 LLaVA-v1.5-13B 上表明，该方法在保持接近非结构化剪枝精度的同时，实现了结构化剪枝带来的实际推理加速。</div>
+            <div class="info-block innovation deep-innovation"><div class="info-title">核心创新点</div><ul class="compact"><li>明确识别了 AFR 迁移到结构化剪枝时的三大核心问题：ReFer 与 SNIP 分数分布不匹配、优化方向符号信息丢失、以及异常值干扰。</li><li>对 SNIP 分数施加幂变换进行非线性分布对齐，以压缩低重要度区域噪声、保留高重要度区域信号。</li><li>提出 sign-preserving score aggregation，先对带符号分数求均值再取绝对值，用于评估神经元内部优化方向的一致性。</li><li>使用 2nd/98th percentile 的分位数异常值去除，再与上述两步集成为统一剪枝流程，在 50% 剪枝率下实现约 1.56-1.57× 推理加速。</li></ul></div>
+            <div class="info-block scenario deep-scenario"><div class="info-title">解决的问题 / 适用场景</div>适用于需要把大语言模型压缩到更低算力或更高吞吐部署环境中的场景，尤其是希望获得真实硬件加速而不仅仅是稀疏参数减少时。它解决的是结构化剪枝常见的精度损失问题，适合 LLM/VLM 的推理优化、模型压缩和工程部署研究。</div>
             <div class="info-block links-block"><div class="info-title">论文链接</div><div class="links"><a href="https://arxiv.org/abs/2607.08027">arXiv</a><a href="https://arxiv.org/pdf/2607.08027">PDF</a></div></div>
           </div>
         </details>
@@ -81,16 +82,16 @@
           <summary>
             <div>
               <div class="badges"><span class="badge">精读版</span><span class="badge closed">未确认开源</span></div>
-              <div class="paper-title">2607.08565v1 · 上海交通大学并行与分布式系统研究所；阿里巴巴集团；上海科技大学</div>
-              <div class="paper-preview"><strong>这篇论文研究面向 Agent 工作负载的 LLM 服务调度问题，指出现有调度器过度追求 KV 缓存命中，会把请求集中到少数实例上，导致部分机器过载、其余机器空闲，从而限制集群整体吞吐。论文基于两份真实轨迹分析发现，Agent 场景中请求更依赖完整响应，且跨请求 KV 复用比例显著高于普通聊天场景。作者提出 SMetric，用“会话首请求做纯负载均衡、后续请求做缓存感知路由”的平衡式 session-centric 调度方法，在保持较高本地复用的同时改善集群负载均衡。实验显示，在带全局 KV 存储的 PD-colocation 场景下可提升集群 TPS 10%–16%，在 PD-disaggregation 场景下可提升 prefill TPS 2%–34%，且逐 token 延迟更优。</strong></div>
+              <div class="paper-title deep-title-en">SMetric: Rethink LLM Scheduling for Serving Agents with Balanced Session-centric Scheduling</div>
+              <div class="deep-title-zh">SMetric：通过均衡的会话中心调度重构面向智能体服务的大语言模型调度</div>
+              <div class="deep-inst">上海交通大学并行与分布式系统研究所；阿里巴巴集团；上海科技大学</div>
             </div>
             <div class="paper-side"><span class="meta">点击收起</span></div>
           </summary>
           <div class="paper-body deep-body">
-            <div class="info-block brief"><div class="info-title">摘要总结</div>这篇论文研究面向 Agent 工作负载的 LLM 服务调度问题，指出现有调度器过度追求 KV 缓存命中，会把请求集中到少数实例上，导致部分机器过载、其余机器空闲，从而限制集群整体吞吐。论文基于两份真实轨迹分析发现，Agent 场景中请求更依赖完整响应，且跨请求 KV 复用比例显著高于普通聊天场景。作者提出 SMetric，用“会话首请求做纯负载均衡、后续请求做缓存感知路由”的平衡式 session-centric 调度方法，在保持较高本地复用的同时改善集群负载均衡。实验显示，在带全局 KV 存储的 PD-colocation 场景下可提升集群 TPS 10%–16%，在 PD-disaggregation 场景下可提升 prefill TPS 2%–34%，且逐 token 延迟更优。</div>
-            <div class="info-block innovation"><div class="info-title">核心创新点</div><ul class="compact"><li>系统分析了 Agent 服务场景与人类聊天场景的调度差异，指出生产轨迹中 KV 复用占比超过 80%，明显高于聊天场景的 54%–62%。</li><li>提出 balanced session-centric scheduling：每个 agent session 的首个请求仅按负载均衡路由，后续请求再按缓存感知路由。</li><li>利用工作负载的 session 内局部性，只平衡一小部分请求（每个会话的首请求）就能在不明显牺牲本地 KV 复用的情况下实现集群均衡。</li><li>调度指标直接使用 session turn 信息，能够仅从用户输入高效、准确地推导，使调度器保持简洁且无状态。</li></ul></div>
-            <div class="info-block scenario"><div class="info-title">解决的问题 / 适用场景</div>适用于 Claude Code、OpenClaw 一类 Agent 驱动的 LLM 服务系统，尤其适合存在多轮会话、较高 KV 复用、并采用全局 KV 存储或 PD 分离/协同架构的推理集群。它解决的是缓存命中优先策略造成的负载失衡与吞吐受限问题。</div>
-            <div class="info-block"><div class="info-title">作者单位</div>上海交通大学并行与分布式系统研究所；阿里巴巴集团；上海科技大学</div>
+            <div class="info-block brief deep-summary"><div class="info-title">摘要总结</div>这篇论文研究面向 Agent 工作负载的 LLM 服务调度问题，指出现有调度器过度追求 KV 缓存命中，会把请求集中到少数实例上，导致部分机器过载、其余机器空闲，从而限制集群整体吞吐。论文基于两份真实轨迹分析发现，Agent 场景中请求更依赖完整响应，且跨请求 KV 复用比例显著高于普通聊天场景。作者提出 SMetric，用“会话首请求做纯负载均衡、后续请求做缓存感知路由”的平衡式 session-centric 调度方法，在保持较高本地复用的同时改善集群负载均衡。实验显示，在带全局 KV 存储的 PD-colocation 场景下可提升集群 TPS 10%–16%，在 PD-disaggregation 场景下可提升 prefill TPS 2%–34%，且逐 token 延迟更优。</div>
+            <div class="info-block innovation deep-innovation"><div class="info-title">核心创新点</div><ul class="compact"><li>系统分析了 Agent 服务场景与人类聊天场景的调度差异，指出生产轨迹中 KV 复用占比超过 80%，明显高于聊天场景的 54%–62%。</li><li>提出 balanced session-centric scheduling：每个 agent session 的首个请求仅按负载均衡路由，后续请求再按缓存感知路由。</li><li>利用工作负载的 session 内局部性，只平衡一小部分请求（每个会话的首请求）就能在不明显牺牲本地 KV 复用的情况下实现集群均衡。</li><li>调度指标直接使用 session turn 信息，能够仅从用户输入高效、准确地推导，使调度器保持简洁且无状态。</li></ul></div>
+            <div class="info-block scenario deep-scenario"><div class="info-title">解决的问题 / 适用场景</div>适用于 Claude Code、OpenClaw 一类 Agent 驱动的 LLM 服务系统，尤其适合存在多轮会话、较高 KV 复用、并采用全局 KV 存储或 PD 分离/协同架构的推理集群。它解决的是缓存命中优先策略造成的负载失衡与吞吐受限问题。</div>
             <div class="info-block links-block"><div class="info-title">论文链接</div><div class="links"><a href="https://arxiv.org/abs/2607.08565">arXiv</a><a href="https://arxiv.org/pdf/2607.08565">PDF</a></div></div>
           </div>
         </details>
@@ -98,16 +99,16 @@
           <summary>
             <div>
               <div class="badges"><span class="badge">精读版</span><span class="badge closed">未确认开源</span></div>
-              <div class="paper-title">2607.08010v1 · Amazon, Fulfillment Technologies &amp; Robotics</div>
-              <div class="paper-preview"><strong>这篇论文提出一种“先制工具、后给 Agent 调用”的生产系统方案，用离线/部署前的 tool-making 流程替代在线反复生成代码的推理循环。该流程会在真实环境中采集执行轨迹、观察后端 schema 与取值、生成候选工具，并基于标注样例进行修复和版本化。作者将其部署到履约中心告警分诊系统，在 44 节点 SOP 和异构指标后端场景中，工具调用将 p50 延迟降低 42%，在 1500 条历史告警上把端到端错误率最多降低 53%。进一步地，结构化工具返回还支持更简单的 direct-call 架构，在受控消融中额外带来 62% 的 p50 延迟下降。</strong></div>
+              <div class="paper-title deep-title-en">Tool-Making and Self-Evolving LLM Agents in Low-Latency Systems</div>
+              <div class="deep-title-zh">低时延系统中的工具生成与自进化大语言模型智能体</div>
+              <div class="deep-inst">Amazon, Fulfillment Technologies &amp; Robotics</div>
             </div>
             <div class="paper-side"><span class="meta">点击收起</span></div>
           </summary>
           <div class="paper-body deep-body">
-            <div class="info-block brief"><div class="info-title">摘要总结</div>这篇论文提出一种“先制工具、后给 Agent 调用”的生产系统方案，用离线/部署前的 tool-making 流程替代在线反复生成代码的推理循环。该流程会在真实环境中采集执行轨迹、观察后端 schema 与取值、生成候选工具，并基于标注样例进行修复和版本化。作者将其部署到履约中心告警分诊系统，在 44 节点 SOP 和异构指标后端场景中，工具调用将 p50 延迟降低 42%，在 1500 条历史告警上把端到端错误率最多降低 53%。进一步地，结构化工具返回还支持更简单的 direct-call 架构，在受控消融中额外带来 62% 的 p50 延迟下降。</div>
-            <div class="info-block innovation"><div class="info-title">核心创新点</div><ul class="compact"><li>提出 agentic tool-making pipeline，在部署前把重复 SOP 步骤编译成经过验证和版本化的工具，而不是在每次请求时重新写代码。</li><li>工具生成过程直接扎根于真实运行环境：采集执行轨迹、观察后端 schema 和数值，再生成与修复候选工具。</li><li>运行时采用“优先直接调用工具，必要时再回退到代码生成”的混合执行策略。</li><li>版本化工具不仅降低延迟和误差，还提升可审计性，并能暴露规格说明缺口与上游数据漂移。</li></ul></div>
-            <div class="info-block scenario"><div class="info-title">解决的问题 / 适用场景</div>适用于低时延、强可靠性的工业 Agent 系统，尤其是告警分诊、运维 SOP 执行、跨异构后端查询等重复程序步骤较多的场景。它解决的是生产 Agent 每次重复生成代码带来的延迟浪费、稳定性波动和可运维性不足问题。</div>
-            <div class="info-block"><div class="info-title">作者单位</div>Amazon, Fulfillment Technologies &amp; Robotics</div>
+            <div class="info-block brief deep-summary"><div class="info-title">摘要总结</div>这篇论文提出一种“先制工具、后给 Agent 调用”的生产系统方案，用离线/部署前的 tool-making 流程替代在线反复生成代码的推理循环。该流程会在真实环境中采集执行轨迹、观察后端 schema 与取值、生成候选工具，并基于标注样例进行修复和版本化。作者将其部署到履约中心告警分诊系统，在 44 节点 SOP 和异构指标后端场景中，工具调用将 p50 延迟降低 42%，在 1500 条历史告警上把端到端错误率最多降低 53%。进一步地，结构化工具返回还支持更简单的 direct-call 架构，在受控消融中额外带来 62% 的 p50 延迟下降。</div>
+            <div class="info-block innovation deep-innovation"><div class="info-title">核心创新点</div><ul class="compact"><li>提出 agentic tool-making pipeline，在部署前把重复 SOP 步骤编译成经过验证和版本化的工具，而不是在每次请求时重新写代码。</li><li>工具生成过程直接扎根于真实运行环境：采集执行轨迹、观察后端 schema 和数值，再生成与修复候选工具。</li><li>运行时采用“优先直接调用工具，必要时再回退到代码生成”的混合执行策略。</li><li>版本化工具不仅降低延迟和误差，还提升可审计性，并能暴露规格说明缺口与上游数据漂移。</li></ul></div>
+            <div class="info-block scenario deep-scenario"><div class="info-title">解决的问题 / 适用场景</div>适用于低时延、强可靠性的工业 Agent 系统，尤其是告警分诊、运维 SOP 执行、跨异构后端查询等重复程序步骤较多的场景。它解决的是生产 Agent 每次重复生成代码带来的延迟浪费、稳定性波动和可运维性不足问题。</div>
             <div class="info-block links-block"><div class="info-title">论文链接</div><div class="links"><a href="https://arxiv.org/abs/2607.08010">arXiv</a><a href="https://arxiv.org/pdf/2607.08010">PDF</a></div></div>
           </div>
         </details>
@@ -115,16 +116,16 @@
           <summary>
             <div>
               <div class="badges"><span class="badge">精读版</span><span class="badge open">已确认开源</span></div>
-              <div class="paper-title">2607.08423v1 · 作者单位待进一步解析</div>
-              <div class="paper-preview"><strong>这篇论文提出 OmniFood-Bench，一个面向营养推理与个性化健康建议的 VLM 基准，用于评估模型是否能从食物图像一路推理到营养估计和安全建议。该基准基于 MM-Food-100K 构建，覆盖三个递进能力：基础感知（食材与烹饪方式）、定量推理（份量与营养画像）以及安全关键建议（面向特定疾病的建议）。作者评测了 6 个主流 VLM，发现模型虽然在菜品命名上接近人类水平，但在质量估计上表现严重失效，并且会对高风险糖尿病画像生成错误的“安全”建议。论文据此提出了面向公共健康 Agent 可信性的更严格评测标准。</strong></div>
+              <div class="paper-title deep-title-en">OmniFood-Bench: Evaluating VLMs for Nutrient Reasoning and Personalized Health Advice</div>
+              <div class="deep-title-zh">OmniFood-Bench：面向营养推理与个性化健康建议的视觉语言模型评测</div>
+              <div class="deep-inst">作者单位待进一步解析</div>
             </div>
             <div class="paper-side"><span class="meta">点击收起</span></div>
           </summary>
           <div class="paper-body deep-body">
-            <div class="info-block brief"><div class="info-title">摘要总结</div>这篇论文提出 OmniFood-Bench，一个面向营养推理与个性化健康建议的 VLM 基准，用于评估模型是否能从食物图像一路推理到营养估计和安全建议。该基准基于 MM-Food-100K 构建，覆盖三个递进能力：基础感知（食材与烹饪方式）、定量推理（份量与营养画像）以及安全关键建议（面向特定疾病的建议）。作者评测了 6 个主流 VLM，发现模型虽然在菜品命名上接近人类水平，但在质量估计上表现严重失效，并且会对高风险糖尿病画像生成错误的“安全”建议。论文据此提出了面向公共健康 Agent 可信性的更严格评测标准。</div>
-            <div class="info-block innovation"><div class="info-title">核心创新点</div><ul class="compact"><li>提出了面向饮食健康 Agent 的 OmniFood-Bench，不再只测粗粒度食物分类，而是评估从隐藏食材识别到质量估计再到医疗建议的完整推理链。</li><li>将评测任务分为基础感知、定量推理和安全关键建议三个层级，系统覆盖真实饮食管理中的关键能力。</li><li>揭示了“Semantic-Physical Gap”：模型会识别菜名，但在物理质量估计和营养推断上出现灾难性失误。</li><li>在疾病特定建议评测中发现模型会对高风险糖尿病画像产生有害的良性幻觉建议，强调安全对齐的重要性。</li></ul></div>
-            <div class="info-block scenario"><div class="info-title">解决的问题 / 适用场景</div>适用于 AI 营养师、饮食健康助手、食品图像分析与公共健康 Agent 的评测与研究场景。它解决的是现有 benchmark 无法衡量模型在营养估计、风险感知和个性化建议方面真实可用性的缺口。</div>
-            <div class="info-block"><div class="info-title">作者单位</div>作者单位待进一步解析</div>
+            <div class="info-block brief deep-summary"><div class="info-title">摘要总结</div>这篇论文提出 OmniFood-Bench，一个面向营养推理与个性化健康建议的 VLM 基准，用于评估模型是否能从食物图像一路推理到营养估计和安全建议。该基准基于 MM-Food-100K 构建，覆盖三个递进能力：基础感知（食材与烹饪方式）、定量推理（份量与营养画像）以及安全关键建议（面向特定疾病的建议）。作者评测了 6 个主流 VLM，发现模型虽然在菜品命名上接近人类水平，但在质量估计上表现严重失效，并且会对高风险糖尿病画像生成错误的“安全”建议。论文据此提出了面向公共健康 Agent 可信性的更严格评测标准。</div>
+            <div class="info-block innovation deep-innovation"><div class="info-title">核心创新点</div><ul class="compact"><li>提出了面向饮食健康 Agent 的 OmniFood-Bench，不再只测粗粒度食物分类，而是评估从隐藏食材识别到质量估计再到医疗建议的完整推理链。</li><li>将评测任务分为基础感知、定量推理和安全关键建议三个层级，系统覆盖真实饮食管理中的关键能力。</li><li>揭示了“Semantic-Physical Gap”：模型会识别菜名，但在物理质量估计和营养推断上出现灾难性失误。</li><li>在疾病特定建议评测中发现模型会对高风险糖尿病画像产生有害的良性幻觉建议，强调安全对齐的重要性。</li></ul></div>
+            <div class="info-block scenario deep-scenario"><div class="info-title">解决的问题 / 适用场景</div>适用于 AI 营养师、饮食健康助手、食品图像分析与公共健康 Agent 的评测与研究场景。它解决的是现有 benchmark 无法衡量模型在营养估计、风险感知和个性化建议方面真实可用性的缺口。</div>
             <div class="info-block links-block"><div class="info-title">论文链接</div><div class="links"><a href="https://arxiv.org/abs/2607.08423">arXiv</a><a href="https://arxiv.org/pdf/2607.08423">PDF</a><a href="https://anonymous.4open.science/r/OmniFood-Bench-7D0B">Code</a></div></div>
           </div>
         </details>
@@ -132,16 +133,16 @@
           <summary>
             <div>
               <div class="badges"><span class="badge">精读版</span><span class="badge closed">未确认开源</span></div>
-              <div class="paper-title">2607.08029v1 · 作者单位待进一步解析</div>
-              <div class="paper-preview"><strong>这篇论文面向 3B 以下小型 VLM 的边缘部署，系统研究视觉编码器、projector 和 LLM backbone 三个组件的分量化行为，并在 Jetson Orin NX 与 AGX 上比较六种量化配置。论文发现，量化敏感性主要由结构范式而非参数规模决定：MoE 主干比 dense 主干更能缓解 INT4 噪声。作者还发现 SigLIP 编码器在 Jetson Ampere 上会出现异常的 INT8 延迟，这属于特定硬件-内核-软件栈交互，而不是 SigLIP 本身缺陷。此外，LLM INT4 虽然显著节省显存，但 token 生成可能因反量化开销变慢。</strong></div>
+              <div class="paper-title deep-title-en">Rethinking Small VLM Quantization: From Component-Wise Analysis to Hardware-Aware Edge Deployment</div>
+              <div class="deep-title-zh">重新审视小型视觉语言模型量化：从组件级分析到硬件感知的边缘部署</div>
+              <div class="deep-inst">作者单位待进一步解析</div>
             </div>
             <div class="paper-side"><span class="meta">点击收起</span></div>
           </summary>
           <div class="paper-body deep-body">
-            <div class="info-block brief"><div class="info-title">摘要总结</div>这篇论文面向 3B 以下小型 VLM 的边缘部署，系统研究视觉编码器、projector 和 LLM backbone 三个组件的分量化行为，并在 Jetson Orin NX 与 AGX 上比较六种量化配置。论文发现，量化敏感性主要由结构范式而非参数规模决定：MoE 主干比 dense 主干更能缓解 INT4 噪声。作者还发现 SigLIP 编码器在 Jetson Ampere 上会出现异常的 INT8 延迟，这属于特定硬件-内核-软件栈交互，而不是 SigLIP 本身缺陷。此外，LLM INT4 虽然显著节省显存，但 token 生成可能因反量化开销变慢。</div>
-            <div class="info-block innovation"><div class="info-title">核心创新点</div><ul class="compact"><li>把 VLM 拆分为视觉编码器、projector 和 LLM backbone，分别测量其量化对精度、显存、各阶段延迟和能效的影响。</li><li>提出并验证五个部署导向假设，覆盖结构/规模敏感性、SigLIP 延迟异常、显存节省与 TPOT 的关系、复合量化误差交互以及跨平台可迁移性。</li><li>发现 SigLIP 的 vision INT8 延迟异常是 Jetson Ampere 上特定部署栈的编码器-内核-硬件交互问题，而非通用模型缺陷。</li><li>指出复合量化误差整体上近似可加，但在跨模态对齐路径上存在依赖具体架构的非加性行为，并据此给出硬件感知精度分配建议。</li></ul></div>
-            <div class="info-block scenario"><div class="info-title">解决的问题 / 适用场景</div>适用于 Jetson Orin NX/AGX 等边缘设备上的小型多模态模型部署、压缩与性能调优场景。它解决的是工程人员在不同组件该不该量化、量化后是否真能加速、不同硬件上策略是否可迁移等部署决策问题。</div>
-            <div class="info-block"><div class="info-title">作者单位</div>作者单位待进一步解析</div>
+            <div class="info-block brief deep-summary"><div class="info-title">摘要总结</div>这篇论文面向 3B 以下小型 VLM 的边缘部署，系统研究视觉编码器、projector 和 LLM backbone 三个组件的分量化行为，并在 Jetson Orin NX 与 AGX 上比较六种量化配置。论文发现，量化敏感性主要由结构范式而非参数规模决定：MoE 主干比 dense 主干更能缓解 INT4 噪声。作者还发现 SigLIP 编码器在 Jetson Ampere 上会出现异常的 INT8 延迟，这属于特定硬件-内核-软件栈交互，而不是 SigLIP 本身缺陷。此外，LLM INT4 虽然显著节省显存，但 token 生成可能因反量化开销变慢。</div>
+            <div class="info-block innovation deep-innovation"><div class="info-title">核心创新点</div><ul class="compact"><li>把 VLM 拆分为视觉编码器、projector 和 LLM backbone，分别测量其量化对精度、显存、各阶段延迟和能效的影响。</li><li>提出并验证五个部署导向假设，覆盖结构/规模敏感性、SigLIP 延迟异常、显存节省与 TPOT 的关系、复合量化误差交互以及跨平台可迁移性。</li><li>发现 SigLIP 的 vision INT8 延迟异常是 Jetson Ampere 上特定部署栈的编码器-内核-硬件交互问题，而非通用模型缺陷。</li><li>指出复合量化误差整体上近似可加，但在跨模态对齐路径上存在依赖具体架构的非加性行为，并据此给出硬件感知精度分配建议。</li></ul></div>
+            <div class="info-block scenario deep-scenario"><div class="info-title">解决的问题 / 适用场景</div>适用于 Jetson Orin NX/AGX 等边缘设备上的小型多模态模型部署、压缩与性能调优场景。它解决的是工程人员在不同组件该不该量化、量化后是否真能加速、不同硬件上策略是否可迁移等部署决策问题。</div>
             <div class="info-block links-block"><div class="info-title">论文链接</div><div class="links"><a href="https://arxiv.org/abs/2607.08029">arXiv</a><a href="https://arxiv.org/pdf/2607.08029">PDF</a></div></div>
           </div>
         </details>
@@ -149,16 +150,16 @@
           <summary>
             <div>
               <div class="badges"><span class="badge">精读版</span><span class="badge closed">未确认开源</span></div>
-              <div class="paper-title">2607.08093v1 · University of Michigan, Department of Statistics</div>
-              <div class="paper-preview"><strong>这篇论文提出了 CausalDS，一个面向数据科学智能体因果推理能力的基准。该基准基于因果图与结构因果模型生成表格数据，并叠加 observation layer、变量映射和故事化场景，构造从相关性、因果识别到反事实与中介效应在内的多层任务。论文还设计了统一评测框架与评分方法，用于分析智能体在内容正确性、弃答行为、不完全观测和不确定性量化上的表现。</strong></div>
+              <div class="paper-title deep-title-en">CausalDS: Benchmarking Causal Reasoning in Data-Science Agents</div>
+              <div class="deep-title-zh">CausalDS：数据科学智能体中的因果推理基准评测</div>
+              <div class="deep-inst">University of Michigan, Department of Statistics</div>
             </div>
             <div class="paper-side"><span class="meta">点击收起</span></div>
           </summary>
           <div class="paper-body deep-body">
-            <div class="info-block brief"><div class="info-title">摘要总结</div>这篇论文提出了 CausalDS，一个面向数据科学智能体因果推理能力的基准。该基准基于因果图与结构因果模型生成表格数据，并叠加 observation layer、变量映射和故事化场景，构造从相关性、因果识别到反事实与中介效应在内的多层任务。论文还设计了统一评测框架与评分方法，用于分析智能体在内容正确性、弃答行为、不完全观测和不确定性量化上的表现。</div>
-            <div class="info-block innovation"><div class="info-title">核心创新点</div><ul class="compact"><li>提出 CausalDS 基准，把因果图、SCM 生成的表格数据、变量映射和 story generation 组合成可控评测场景。</li><li>任务集覆盖 Pearl hierarchy 不同层级，包括预测、条件相关、碰撞点现象、因果结构识别、ATE、ETT、NDE 等具体任务。</li><li>设计了 observation layer 与 recoverability/identifiability 相关机制，使评测能显式考察不完全观测和不确定性量化带来的困难。</li><li>除 headline results 外，还引入 repeated-attempt stability、pass@k 等指标，分析智能体多次尝试时的稳定性与失败模式。</li></ul></div>
-            <div class="info-block scenario"><div class="info-title">解决的问题 / 适用场景</div>它主要解决现有数据科学 Agent 评测里对因果推理覆盖不足的问题，适用于评估会做表格分析、因果发现、因果效应估计或反事实分析的智能体系统，也适用于研究 Agent 在不完美观测条件下的鲁棒性与校准能力。</div>
-            <div class="info-block"><div class="info-title">作者单位</div>University of Michigan, Department of Statistics</div>
+            <div class="info-block brief deep-summary"><div class="info-title">摘要总结</div>这篇论文提出了 CausalDS，一个面向数据科学智能体因果推理能力的基准。该基准基于因果图与结构因果模型生成表格数据，并叠加 observation layer、变量映射和故事化场景，构造从相关性、因果识别到反事实与中介效应在内的多层任务。论文还设计了统一评测框架与评分方法，用于分析智能体在内容正确性、弃答行为、不完全观测和不确定性量化上的表现。</div>
+            <div class="info-block innovation deep-innovation"><div class="info-title">核心创新点</div><ul class="compact"><li>提出 CausalDS 基准，把因果图、SCM 生成的表格数据、变量映射和 story generation 组合成可控评测场景。</li><li>任务集覆盖 Pearl hierarchy 不同层级，包括预测、条件相关、碰撞点现象、因果结构识别、ATE、ETT、NDE 等具体任务。</li><li>设计了 observation layer 与 recoverability/identifiability 相关机制，使评测能显式考察不完全观测和不确定性量化带来的困难。</li><li>除 headline results 外，还引入 repeated-attempt stability、pass@k 等指标，分析智能体多次尝试时的稳定性与失败模式。</li></ul></div>
+            <div class="info-block scenario deep-scenario"><div class="info-title">解决的问题 / 适用场景</div>它主要解决现有数据科学 Agent 评测里对因果推理覆盖不足的问题，适用于评估会做表格分析、因果发现、因果效应估计或反事实分析的智能体系统，也适用于研究 Agent 在不完美观测条件下的鲁棒性与校准能力。</div>
             <div class="info-block links-block"><div class="info-title">论文链接</div><div class="links"><a href="https://arxiv.org/abs/2607.08093">arXiv</a><a href="https://arxiv.org/pdf/2607.08093">PDF</a></div></div>
           </div>
         </details>
@@ -166,16 +167,16 @@
           <summary>
             <div>
               <div class="badges"><span class="badge">精读版</span><span class="badge open">已确认开源</span></div>
-              <div class="paper-title">2607.08057v1 · The University of Melbourne; Huazhong University of Science and Technology</div>
-              <div class="paper-preview"><strong>这是一篇关于大语言模型服务系统中 KV Cache 优化的综述，聚焦 system-aware KV infrastructure for serving LLMs。论文从系统行为视角将现有工作系统化为三大维度：执行与调度、放置与迁移、表示与保留，并进一步讨论跨行为协同设计与开放挑战。其目标是为现代 LLM serving 中高内存占用、高成本的 KV cache 问题提供统一理解框架。</strong></div>
+              <div class="paper-title deep-title-en">Towards Efficient Large Language Model Serving: A Survey on System-Aware KV Cache Optimization</div>
+              <div class="deep-title-zh">迈向高效大语言模型服务：系统感知 KV Cache 优化综述</div>
+              <div class="deep-inst">The University of Melbourne; Huazhong University of Science and Technology</div>
             </div>
             <div class="paper-side"><span class="meta">点击收起</span></div>
           </summary>
           <div class="paper-body deep-body">
-            <div class="info-block brief"><div class="info-title">摘要总结</div>这是一篇关于大语言模型服务系统中 KV Cache 优化的综述，聚焦 system-aware KV infrastructure for serving LLMs。论文从系统行为视角将现有工作系统化为三大维度：执行与调度、放置与迁移、表示与保留，并进一步讨论跨行为协同设计与开放挑战。其目标是为现代 LLM serving 中高内存占用、高成本的 KV cache 问题提供统一理解框架。</div>
-            <div class="info-block innovation"><div class="info-title">核心创新点</div><ul class="compact"><li>提出面向系统的 KV Cache 优化分类法，将研究统一归纳为 temporal 的 execution/scheduling、spatial 的 placement/migration、structural 的 representation/retention 三个维度。</li><li>不仅综述 KV-centric scheduling、pipelining、hardware-aware execution，还覆盖 disaggregated inference 和 compute offloading 等系统实现路径。</li><li>系统整理 KV 表示与保留方向的方法，包括量化、低秩近似、结构压缩，以及分配复用和驱逐策略。</li><li>分析 cross-behavior co-design affinity 与 behavior-objective links，并总结该领域的关键观察和开放挑战。</li></ul></div>
-            <div class="info-block scenario"><div class="info-title">解决的问题 / 适用场景</div>它解决的是 LLM 在线推理服务中 KV Cache 带来的显存压力、吞吐受限和成本高的问题，适用于设计或优化推理引擎、Serving 框架、跨设备内存编排和长上下文服务系统的工程场景，也适合作为研究 KV cache 优化方向的系统性参考。</div>
-            <div class="info-block"><div class="info-title">作者单位</div>The University of Melbourne; Huazhong University of Science and Technology</div>
+            <div class="info-block brief deep-summary"><div class="info-title">摘要总结</div>这是一篇关于大语言模型服务系统中 KV Cache 优化的综述，聚焦 system-aware KV infrastructure for serving LLMs。论文从系统行为视角将现有工作系统化为三大维度：执行与调度、放置与迁移、表示与保留，并进一步讨论跨行为协同设计与开放挑战。其目标是为现代 LLM serving 中高内存占用、高成本的 KV cache 问题提供统一理解框架。</div>
+            <div class="info-block innovation deep-innovation"><div class="info-title">核心创新点</div><ul class="compact"><li>提出面向系统的 KV Cache 优化分类法，将研究统一归纳为 temporal 的 execution/scheduling、spatial 的 placement/migration、structural 的 representation/retention 三个维度。</li><li>不仅综述 KV-centric scheduling、pipelining、hardware-aware execution，还覆盖 disaggregated inference 和 compute offloading 等系统实现路径。</li><li>系统整理 KV 表示与保留方向的方法，包括量化、低秩近似、结构压缩，以及分配复用和驱逐策略。</li><li>分析 cross-behavior co-design affinity 与 behavior-objective links，并总结该领域的关键观察和开放挑战。</li></ul></div>
+            <div class="info-block scenario deep-scenario"><div class="info-title">解决的问题 / 适用场景</div>它解决的是 LLM 在线推理服务中 KV Cache 带来的显存压力、吞吐受限和成本高的问题，适用于设计或优化推理引擎、Serving 框架、跨设备内存编排和长上下文服务系统的工程场景，也适合作为研究 KV cache 优化方向的系统性参考。</div>
             <div class="info-block links-block"><div class="info-title">论文链接</div><div class="links"><a href="https://arxiv.org/abs/2607.08057">arXiv</a><a href="https://arxiv.org/pdf/2607.08057">PDF</a><a href="https://github.com/jjiantong/Awesome-KV-Cache-Optimization">Code</a></div></div>
           </div>
         </details></div>
