@@ -92,3 +92,9 @@ ul.compact { padding-left: 20px; margin: 6px 0 0; }
   .panel, .card { padding: 18px; border-radius: 18px; }
   .date-list li { flex-direction: column; gap: 4px; }
 }
+
+.section-title { font-family: "Noto Serif SC", "Source Han Serif SC", serif; font-size: 32px; margin: 10px 0 14px; letter-spacing: -0.03em; }
+.deep-read-panel { margin-top: 18px; }
+.deep-card { background: #fffdf8; border: 1px solid var(--line); }
+.deep-body { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 800px) { .deep-body { grid-template-columns: 1fr; } }
