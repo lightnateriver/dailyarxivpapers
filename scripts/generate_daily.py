@@ -171,7 +171,7 @@ def parse_recent_block(block: str, target: dt.date) -> list[dict]:
 
 
 def fetch_arxiv_recent_html(target: dt.date) -> list[dict]:
-    url = "https://arxiv.org/list/cs/recent?skip=0&show=1000"
+    url = "https://arxiv.org/list/cs/recent?skip=0&show=2000"
     req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 dailyarxivpapers"})
     with urllib.request.urlopen(req, timeout=120) as resp:
         page = resp.read().decode("utf-8", errors="ignore")
@@ -469,6 +469,7 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--date", help="target arXiv date YYYY-MM-DD; default: yesterday")
     ap.add_argument("--ignore-seen", action="store_true", help="include already seen papers, useful for first manual preview")
+    ap.add_argument("--fail-on-empty-fetch", action="store_true", help="exit non-zero when upstream fetch returns zero papers")
     args = ap.parse_args()
     target = dt.date.fromisoformat(args.date) if args.date else default_date()
     config = load_config()
@@ -476,6 +477,8 @@ def main() -> int:
     if not papers:
         papers = fetch_arxiv(config, target)
     dated = [p for p in papers if paper_date_matches(p, target)]
+    if args.fail_on_empty_fetch and len(dated) == 0:
+        raise SystemExit(f"Upstream fetch returned zero papers for {target.isoformat()}")
     seen = load_seen()
     previous_ids = existing_paper_ids_before(target)
     selected = []
