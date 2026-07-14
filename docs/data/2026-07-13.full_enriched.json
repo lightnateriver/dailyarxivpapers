@@ -42,16 +42,15 @@
       "institutions_raw": "未明确披露",
       "content_snippet": "The growing adoption of large language model-based agents within operating system workflows has increased the importance of energy-efficient inference on laptop-class systems-on-chip (SoCs). While cloud offloading remains common, it introduces reliability and privacy concerns that are particularly problematic for agentic workloads. Recent laptop SoCs, therefore, incorporate neural processing engines (NPUs) optimized for energy efficiency; however, effectively mapping attention mechanisms onto NPUs remains challenging due to architectural diversity and explicit data-movement programming models. In this work, we present STEEL, the first open-source implementation of FlashAttention targeting XDNA-like NPUs. STEEL introduces a dataflow formulation of prefill attention, enabling efficient exploitation of spatial parallelism and on-chip memory. Furthermore, STEEL addresses the load imbalance induced by the causal mask by leveraging a sparsity-aware pipeline placement onto the NPU array, reducing synchronization overhead and improving utilization. We evaluate STEEL on the AMD Ryzen AI 9 HX 370 SoC and compare its performance against optimized CPU and GPU implementations. Experimental results show that STEEL reduces energy consumption by an average of 9.17x and 1.75x relative to CPU and GPU baselines, respectively. On XDNA 1, STEEL achieves an average 9.6x latency reduction over the prior state of the art, and delivers a 22.8x speedup on average compared to a layer-by-layer attention implementation on XDNA 2.",
       "is_ascend": true,
-      "title_zh": "STEEL：面向 AMD XDNA NPU 的稀疏性感知融合注意力，用于长序列能效推理",
+      "title_zh": "STEEL：面向 AMD XDNA NPU 的稀疏性感知融合注意力，用于长序列高能效推理",
       "institution": "未明确披露",
-      "summary_cn": "该论文针对笔记本级 SoC 上大语言模型代理推理的能效问题，提出了在 AMD XDNA 类 NPU 上实现高效注意力计算的方法。作者将 prefill attention 重写为适合 NPU 数据流执行的形式，以更好利用空间并行性和片上存储。进一步地，论文针对因果掩码带来的负载不均衡，设计了稀疏性感知的流水线放置策略，从而降低同步开销并提升阵列利用率。",
+      "summary_cn": "这篇论文面向笔记本级 SoC 上的大语言模型推理，研究如何将注意力机制高效映射到 AMD 的 XDNA 类 NPU。作者提出 STEEL，将 prefill 阶段注意力重构为适合 NPU 数据流执行的融合实现，以更好利用片上存储与空间并行性。针对因果掩码带来的负载不均衡问题，论文进一步引入稀疏性感知的流水线放置策略，以降低同步开销并提升阵列利用率。",
       "innovations": [
-        "提出面向 XDNA 类 NPU 的首个开源 FlashAttention 实现 STEEL。",
-        "设计了适配 NPU 架构的数据流式 prefill attention 公式化方法，以利用空间并行和片上内存。",
-        "针对因果掩码导致的负载不均衡，引入稀疏性感知的流水线映射策略。",
-        "在不依赖云端卸载的前提下，面向本地代理式工作负载优化长序列注意力的能效执行。"
+        "提出首个面向 XDNA 类 NPU 的开源 FlashAttention 实现。",
+        "设计了 prefill attention 的数据流式表达，使注意力计算更适配显式数据搬运和片上存储受限的 NPU 架构。",
+        "针对因果掩码引发的负载不均衡，提出稀疏性感知的流水线映射方法，以减少同步开销。"
       ],
-      "scenario_cn": "面向需要在笔记本级 SoC 本地运行大模型代理的场景，解决长序列注意力在 NPU 上难以高效映射、数据搬运复杂以及因果掩码导致利用率低的问题。适用于强调隐私、可靠性和低功耗的端侧/本地智能体推理。",
+      "scenario_cn": "解决长序列注意力在笔记本级 NPU 上难以高效部署、能耗高且映射复杂的问题，适用于端侧大模型、操作系统智能体及注重隐私和离线可靠性的本地推理场景。",
       "opensource_status": "未确认开源",
       "code_url": "",
       "title_en": "STEEL: Sparsity-Aware Fused Attention for Energy-Efficient Long-Sequence Inference on AMD's XDNA NPU"
@@ -91,16 +90,16 @@
       "institutions_raw": "未明确披露",
       "content_snippet": "Exposed documents such as emails, chat threads, tickets, and incident notes routinely leak credentials, but during incident response a leaked secret is only half the story. Responders also need to identify the ``door'' the secret opens: the account, tenant, endpoint, database, cloud resource, or other system that the credential could allow an attacker to access. Traditional secret scanners rely on regular expressions or trained classifiers which work well on well-formatted code, yet they struggle when a credential is fragmented, reformatted, or far from the resource it unlocks, and they report the secret string without naming what it opens. We present Secret Scanner Agent (SSA), a multi-agent large-language-model system that extracts both the secret and its associated door, together with supporting evidence, from unstructured exposed documents. SSA pairs a detection agent that favors recall with a review agent that filters false positives and recovers missing context. Because real credential data is sensitive, we evaluate SSA on synthetic benchmarks we generated that span 23 secret types and multiple document formats, scored with a three-step pipeline of programmatic matching, an LLM judge, and human review. Across six models, multi-agent SSA improves extraction precision over a single-agent variant, with the largest gains on door extraction, by up to 16 percentage points. SSA matches a regular-expression scanner's precision while more than tripling its recall, and against thirteen security analysts it is more precise, recovers nearly twice as many secret--door pairs, and runs five to seventeen times faster. By returning the secret, its door, and supporting evidence in one result, SSA turns credential detection into an actionable finding for triage and remediation.",
       "is_ascend": true,
-      "title_zh": "Secret Scanner Agent：从非结构化文档中提取密钥及其访问上下文",
+      "title_zh": "秘密扫描代理：从非结构化文档中提取密钥及其访问上下文",
       "institution": "未明确披露",
-      "summary_cn": "这篇论文提出 Secret Scanner Agent（SSA），用于从邮件、聊天记录、工单和事故笔记等非结构化泄露文档中，同时提取凭据秘密及其可访问的目标对象（如账号、租户、端点、数据库或云资源）。作者认为传统基于正则或分类器的方法更适合结构化代码场景，难以处理被拆分、重排或与访问目标相距较远的凭据。SSA 通过多智能体协作，不仅定位 secret，还返回其对应“door”及支持证据，使结果更适合应急响应和后续处置。",
+      "summary_cn": "这篇论文提出 Secret Scanner Agent（SSA），用于从邮件、聊天记录、工单和事故笔记等非结构化泄露文档中，同时提取凭据秘密及其对应可访问的目标对象。作者认为在事件响应中，仅发现密钥字符串还不够，更关键的是识别它能打开哪一扇“门”，例如账户、租户、数据库或云资源。为此，SSA 采用多代理设计，在保留高召回的同时补足上下文并过滤误报，使输出结果更适合后续研判和处置。",
       "innovations": [
-        "提出面向非结构化泄露文档的多智能体秘密扫描框架，同时抽取 secret 与其对应的访问对象“door”。",
-        "设计了偏重召回的检测 agent 与负责过滤误报、补全上下文的审查 agent 协同机制。",
-        "构建了覆盖 23 类 secret 和多种文档格式的合成评测基准，并采用程序匹配、LLM 评审和人工复核三阶段评测流程。",
-        "将传统“只找密钥字符串”的检测结果扩展为包含 secret、door 与证据的可执行安全发现。"
+        "提出同时抽取“secret”和其对应“door”的任务定义，把传统秘密检测扩展为可直接用于处置的关联提取问题。",
+        "设计了由检测代理与复核代理组成的多代理系统，前者偏重召回，后者负责过滤误报并恢复缺失上下文。",
+        "面向敏感数据难以公开评测的问题，构建了覆盖多种秘密类型和文档格式的合成基准，并结合程序匹配、LLM 评审和人工复核进行三阶段评估。",
+        "输出中显式返回秘密、访问对象及支撑证据，增强了安全响应中的可解释性与可操作性。"
       ],
-      "scenario_cn": "适用于安全应急响应、泄露排查、合规审计和内部安全运营场景，尤其适合处理邮件、聊天、工单、事故记录等非结构化文本中的凭据泄露问题。它解决的不仅是“有没有泄露 secret”，还包括“该 secret 能打开什么系统入口”的定位问题。",
+      "scenario_cn": "面向安全事件响应、泄露排查和凭据治理场景，适用于在非结构化文档中识别泄露凭据，并判断这些凭据可能对应的账户、服务、数据库或云资源，帮助分析人员快速分诊和修复风险。",
       "opensource_status": "未确认开源",
       "code_url": "",
       "title_en": "Secret Scanner Agent: Extracting Secrets and Access Context from Unstructured Documents"
@@ -142,16 +141,16 @@
       "institutions_raw": "未明确披露",
       "content_snippet": "Engineering design intent is often communicated through rasterized orthographic drawings. However, downstream workflows inherently require editable and parametrically defined 3D computer-aided design (CAD) models. To bridge this gap, we introduce Ortho2CAD, a vision-language model (VLM) specifically designed to translate rasterized orthographic drawings directly into editable CadQuery code, which can then be seamlessly converted into 3D CAD models. To train the model effectively, we utilize supervised fine-tuning (SFT) for instances where explicit CadQuery code labels already exist, and we apply geometry-grounded reinforcement learning (RL) to optimize the model in scenarios where ground-truth labels are absent. To enable learning at scale, we create a pythonOCC-based drawing generator that renders first-angle orthographic projections from STEP models, complete with dashed hidden lines and key dimensions. On existing datasets encompassing settings both with and without CadQuery supervision, we generate orthographic drawings and show that our model produces 100% syntactically valid code. Moreover, it achieves a 3D CAD intersection-over-union (IoU) accuracy that surpasses all baselines, with an average relative improvement of over 7% compared directly against the next best performing model. We show that leveraging VLMs with SFT and RL techniques can effectively pave the way forward for orthographic drawing to 3D CAD reconstruction. Our implementation is available at this https URL .",
       "is_ascend": false,
-      "title_zh": "Ortho2CAD：使用视觉语言模型从正投影工程图生成三维 CAD",
+      "title_zh": "Ortho2CAD：利用视觉语言模型从正交工程图生成三维 CAD",
       "institution": "未明确披露",
-      "summary_cn": "这篇论文提出 Ortho2CAD，目标是把栅格化正投影工程图直接转换为可编辑的 CadQuery 代码，再进一步生成三维 CAD 模型。方法结合了有监督微调与几何约束强化学习，以适应既有代码标注和无标注两种训练场景。作者还构建了基于 pythonOCC 的工程图生成器，用于从 STEP 模型批量渲染带隐藏线和尺寸信息的正投影视图。实验表明，该方法生成的代码语法有效，并在三维 CAD 重建精度上优于基线。",
+      "summary_cn": "这篇论文提出 Ortho2CAD，目标是把栅格化的正交工程图直接转换为可编辑的 CadQuery 代码，并进一步生成参数化三维 CAD 模型。方法上结合了有标注样本上的监督微调，以及在缺少真实 CadQuery 标签时基于几何约束的强化学习。为支持大规模训练，作者还构建了基于 pythonOCC 的工程图生成器，用于从 STEP 模型渲染带隐藏线和关键尺寸的正投影视图。实验表明，该方法生成的代码语法始终有效，并在三维 CAD 重建精度上超过了现有基线。",
       "innovations": [
-        "提出从正投影工程图到可编辑 CadQuery 代码的端到端 VLM 方案，而不仅是输出静态三维形状。",
-        "结合监督微调与几何约束强化学习，兼顾有标注和无标注场景下的训练。",
-        "构建基于 pythonOCC 的工程图数据生成流程，可从 STEP 模型生成带隐藏线和关键尺寸的正投影视图。",
-        "将输出形式设计为参数化 CAD 代码，便于后续编辑、转换和工程集成。"
+        "提出面向正交工程图到可编辑三维 CAD 重建的 VLM 框架，直接输出 CadQuery 代码而非仅生成几何形状。",
+        "结合监督微调与几何驱动强化学习，使模型在有无显式代码标签两种设置下都能训练。",
+        "构建基于 pythonOCC 的正交工程图生成流程，从 STEP 模型自动渲染带隐藏线和尺寸标注的训练数据。",
+        "强调生成结果的可编辑性与参数化表达，使输出更适合下游工程设计工作流。"
       ],
-      "scenario_cn": "主要解决传统工程图难以直接进入可编辑三维 CAD 工作流的问题。适用于机械设计、制造建模、工业数字化建模以及历史二维图纸向三维参数化模型迁移等场景。",
+      "scenario_cn": "主要解决传统工程图难以直接进入现代可编辑 CAD 工作流的问题，适用于机械设计、工业建模、工程制图数字化和从历史二维图纸恢复参数化三维模型等场景。",
       "opensource_status": "已确认开源",
       "code_url": "https://github.com/AdityaJoglekar/Ortho2CAD",
       "title_en": "Ortho2CAD: 3D CAD generation from orthographic drawings using vision language models"
@@ -193,16 +192,15 @@
       "institutions_raw": "未明确披露",
       "content_snippet": "Large language models (LLMs) remain expensive to fine-tune because full-parameter updates require substantial memory, compute, and per-task storage. We study whether saliency signals originally developed for pruning can be reused to choose where a model should adapt. We propose Super, a sparse parameter-efficient fine-tuning (PEFT) method that fixes a small trainable support using a Wanda-style activation-weighted magnitude score [Sun et al., 2023] computed from a calibration pass. We then introduce Supra, a hybrid adapter that combines this sparse update with LoRA while preserving a matched trainable-parameter budget through a simple budget-splitting rule. In single-seed Math17K arithmetic experiments on Llama-3.2-1B and Meta-Llama-3-8B, the best Super/Supra variants achieve the highest average accuracy among the tested schedule-selected adapter configurations. We also include a PaFi-style magnitude-only support as a closest training-free sparse baseline and find that low-score supports under both magnitude and Wanda-style orderings can be effective. These results suggest that simple pruning-inspired orderings can provide useful fixed sparse supports for PEFT, especially when combined with low-rank adapters.",
       "is_ascend": false,
-      "title_zh": "Super-Tuning：从激活感知剪枝到稀疏微调",
+      "title_zh": "Super-Tuning：从感知激活的剪枝到稀疏微调",
       "institution": "未明确披露",
-      "summary_cn": "这篇论文研究能否把原本用于剪枝的显著性信号复用于参数高效微调中的参数选择。作者提出 Super，用一次校准得到的 Wanda 风格激活加权幅值分数来固定少量可训练参数的稀疏支撑；进一步提出 Supra，在相同可训练参数预算下把稀疏更新与 LoRA 结合。摘要表明，这类受剪枝启发的简单排序能够为 PEFT 提供有效的固定稀疏可训练位置。",
+      "summary_cn": "这篇论文研究能否把原本用于模型剪枝的显著性信号，直接拿来决定大语言模型在微调时应该更新哪些参数。作者提出稀疏参数高效微调方法 Super，用一次校准前向过程得到的 Wanda 风格激活加权分数固定可训练参数支撑集；进一步提出与 LoRA 结合的混合适配器 Supra，在相同可训练参数预算下进行联合适配。实验表明，这类受剪枝启发的固定稀疏支撑在参数高效微调中是有效的，尤其与低秩适配结合时表现更好。",
       "innovations": [
-        "提出 Super，将 Wanda 风格的激活加权幅值分数从剪枝场景迁移到稀疏参数高效微调中的可训练参数选址。",
-        "提出 Supra，在匹配的训练参数预算下结合固定稀疏更新与 LoRA 低秩适配。",
-        "引入简单的预算拆分规则，用于在稀疏更新与 LoRA 之间分配可训练参数。",
-        "比较了 Wanda 风格排序与仅基于幅值的训练前稀疏支撑基线，讨论不同分数区间支撑的有效性。"
+        "提出 Super 方法：将剪枝中的 Wanda 风格激活加权幅值分数迁移到 PEFT，用于一次性选择固定的稀疏可训练参数支撑集。",
+        "提出 Supra 混合适配器，把稀疏更新与 LoRA 结合，并设计简单的参数预算拆分规则以保证公平比较。",
+        "引入 PaFi 风格的纯幅值训练前基线，并比较高分/低分支撑集效果，说明不同排序下的固定稀疏支撑都可能有效。"
       ],
-      "scenario_cn": "面向大语言模型微调成本高的问题，适用于希望在有限显存、算力和任务存储开销下进行参数高效适配的场景，尤其适合研究稀疏 PEFT、压缩微调和任务定制化部署。",
+      "scenario_cn": "面向大语言模型参数高效微调场景，重点解决全参数微调显存、算力和任务存储开销高的问题。适用于希望在有限训练预算下，通过少量可训练参数完成任务适配的模型压缩与高效微调场景。",
       "opensource_status": "已确认开源",
       "code_url": "https://github.com/vectozavr/SuperTuning",
       "title_en": "Super-Tuning: From Activation-Aware Pruning to Sparse Fine-Tuning"
@@ -259,16 +257,16 @@
       "institutions_raw": "未明确披露",
       "content_snippet": "Large Language Model (LLM) agents have shown promise in multi-step planning tasks, but existing approaches like LATS (Language Agent Tree Search) and ReAct rely heavily on LLM inference during planning, leading to high computational costs and stochastic behavior. We present \\textbf{GATS} (Graph-Augmented Tree Search), a planning framework that combines systematic UCB1-based tree search with a layered world model to eliminate LLM calls during inference while achieving superior planning performance. Our three-layer world model integrates: (L1) exact symbolic action matching, (L2) statistics learned from execution logs, and (L3) LLM-based prediction for unknown actions. On synthetic planning tasks with branching paths and dead-ends, GATS achieves \\textbf{100\\% success rate} compared to 92 % for LATS and 64\\% for ReAct. On a comprehensive stress test spanning 12 challenging scenarios -- including coding workflows, web navigation, and long-horizon tasks -- GATS maintains \\textbf{100\\% success} while LATS drops to 88.9 % and ReAct to 23.9%. GATS requires \\textbf{zero LLM calls per task} during planning (vs. 37 per task for LATS) and produces deterministic plans with zero variance across runs. Our results demonstrate that systematic search with learned world models can substantially outperform LLM-guided exploration for agent planning.",
       "is_ascend": false,
-      "title_zh": "GATS：结合分层世界模型的图增强树搜索，用于高效智能体规划",
+      "title_zh": "GATS：基于分层世界模型的图增强树搜索，用于高效智能体规划",
       "institution": "未明确披露",
-      "summary_cn": "这篇论文提出 GATS，一种面向多步任务规划的框架，目标是在推理阶段避免频繁调用大语言模型。方法将基于 UCB1 的系统化树搜索与分层世界模型结合，在已知动作上使用精确匹配和统计信息，在未知动作上再借助 LLM 预测。作者强调该设计可在保持甚至提升规划效果的同时，降低规划成本并提升结果确定性。",
+      "summary_cn": "这篇论文提出 GATS，一种用于智能体多步规划的图增强树搜索框架，目标是在推理阶段减少对大语言模型调用的依赖。方法将系统化的 UCB1 树搜索与分层世界模型结合，在已知动作上进行精确匹配，在未知情形下再借助学习到的统计信息和预测能力。论文核心主张是，通过更结构化的搜索与世界建模，可以在降低推理成本的同时获得更稳定的规划表现。",
       "innovations": [
-        "提出 Graph-Augmented Tree Search，将图增强搜索与树搜索结合，用于智能体规划。",
-        "构建三层世界模型：精确符号动作匹配、执行日志统计学习、以及面向未知动作的 LLM 预测。",
-        "在推理阶段实现零 LLM 调用的规划流程，降低了传统 LLM 规划方法的计算开销与随机性。",
-        "将系统化搜索与学习得到的世界模型结合，作为替代纯 LLM 引导探索的规划机制。"
+        "提出 Graph-Augmented Tree Search，将图结构增强与树搜索结合，用于改进智能体规划过程中的状态探索与决策。",
+        "构建三层世界模型，包括符号级动作匹配、基于执行日志的统计层，以及面向未知动作的预测层。",
+        "强调在规划推理过程中不再依赖实时 LLM 调用，从而降低计算开销并减少随机性。",
+        "将系统化搜索替代纯语言驱动的探索，突出确定性规划与可复现性的优势。"
       ],
-      "scenario_cn": "适用于需要多步决策、长程规划和稳定执行的智能体任务，如编码流程、网页导航和复杂工作流执行。它主要解决现有 LLM 规划方法推理成本高、行为随机、在复杂分支和死路环境中稳定性不足的问题。",
+      "scenario_cn": "适用于需要多步决策与长链规划的智能体任务，如编码工作流、网页导航和复杂任务执行等场景，尤其适合希望降低在线推理成本、提高规划稳定性和可重复性的系统。",
       "opensource_status": "未确认开源",
       "code_url": "",
       "title_en": "GATS: Graph-Augmented Tree Search with Layered World Models for Efficient Agent Planning"
@@ -327,14 +325,14 @@
       "is_ascend": false,
       "title_zh": "BlockServe：面向高吞吐扩散大语言模型服务的块粒度连续批处理",
       "institution": "未明确披露",
-      "summary_cn": "这篇论文关注扩散大语言模型在线/离线服务中的批处理低效问题，核心挑战在于不同请求收敛速度不同，导致快请求被慢请求拖住。为此，作者提出 BlockServe，通过块粒度调度、混合状态执行和面向计算的准入控制来提升批处理效率。该方法旨在减少计算空泡和尾延迟，从而提高扩散 LLM 推理吞吐。",
+      "summary_cn": "该论文针对扩散大语言模型服务中的收敛异质性问题，提出连续批处理框架 BlockServe。其核心思想是在块边界及时移除已完成请求，并通过混合状态执行支持异构批次并行解码，从而减少慢请求拖累快请求造成的计算空泡和尾延迟。论文还引入计算感知的准入控制，以令牌预算方式扩展有效批容量，用于提升离线推理吞吐。",
       "innovations": [
-        "提出块粒度连续批处理机制，在块边界即时移除已完成请求，缓解不同请求收敛异步带来的拖尾问题。",
-        "设计混合状态执行方案，将双缓存和并行解码扩展到异构批次中。",
-        "利用 gather-scatter 索引支持异构状态下的高效执行。",
-        "提出面向计算感知的准入控制，通过 token 预算补充策略扩大有效批容量。"
+        "提出块粒度调度机制，在块边界即时驱逐已完成请求，缓解异步收敛导致的批处理低效问题。",
+        "设计混合状态执行方案，将双缓存与并行解码扩展到异构批次，并借助 gather-scatter 索引完成状态管理。",
+        "引入计算感知的准入控制器，通过令牌预算化补充请求来提升有效批容量。",
+        "将上述机制统一到 dLLM 连续批处理框架中，面向高吞吐离线推理服务。"
       ],
-      "scenario_cn": "主要解决扩散大语言模型服务中因请求收敛速度不一致带来的吞吐下降与尾延迟问题，适用于高吞吐离线推理、批量生成服务以及 AI 推理基础设施优化场景。",
+      "scenario_cn": "解决扩散大语言模型在多请求并发服务时因不同序列收敛速度不一致而造成的吞吐损失与尾延迟问题。适用于离线批量推理、模型服务平台和高负载推理集群等需要提高 dLLM 服务效率的场景。",
       "opensource_status": "未确认开源",
       "code_url": "",
       "title_en": "BlockServe: Block-Grained Continuous Batching for High-Throughput Diffusion LLM Serving"
@@ -390,16 +388,16 @@
       "institutions_raw": "未明确披露",
       "content_snippet": "Process Reward Models (PRMs) have been proven to be highly effective in guiding test-time scaling (TTS) methods, which significantly boost the capabilities of LLM-based multi-agent systems. However, existing PRMs are text-based: they re-encode the entire trajectory text from scratch. In long multi-agent rollouts, the scoring cost, growing quadratically with respect to sequence length L, creates a severe computational bottleneck, severely limiting PRMs' application in long-context scenarios. To resolve this, we introduce KV-PRM, a highly efficient process reward model that eliminates the heavy text re-encoding by directly reading the KV cache produced naturally during the LLM's generation phase. By processing a single \"verify token\" against the pre-existing KV cache, KV-PRM reduces the scoring cost from O(L^2) to O(L). We formally prove that the KV cache contains strictly greater information capacity than text, and is more efficient for downstream reward modeling. Empirically, across the MATH, GSM8K, and AIME benchmarks, KV-PRM matches or strictly outperforms text-PRMs under various TTS methods such as Beam Search, MCTS, and Weighted Voting, with up to a 5,000x reduction in scoring FLOPs, a 37x reduction in latency, and a 34x reduction in per-sequence memory footprint compared to text-based PRMs.",
       "is_ascend": false,
-      "title_zh": "KV-PRM：通过 KV-Cache 迁移实现面向多智能体测试时扩展的高效过程奖励建模",
+      "title_zh": "KV-PRM：通过 KV 缓存迁移实现高效过程奖励建模，用于多智能体测试时扩展",
       "institution": "未明确披露",
-      "summary_cn": "这篇论文提出 KV-PRM，用于提升多智能体测试时扩展场景下过程奖励模型的计算效率。作者指出，现有基于文本的 PRM 需要反复对完整轨迹重新编码，在长轨迹和长上下文下成本很高。KV-PRM 直接复用生成阶段自然产生的 KV cache，只通过一个验证 token 进行评分，从而避免了昂贵的全文本重编码。",
+      "summary_cn": "这篇论文提出 KV-PRM，用于提升多智能体测试时扩展中过程奖励模型的计算效率。作者指出，现有文本式 PRM 需要反复对完整轨迹文本重新编码，在长轨迹和长上下文场景下会带来明显开销。KV-PRM 直接读取生成阶段自然产生的 KV cache 来完成打分，从而避免重复编码，并在保持甚至提升效果的同时显著降低计算负担。",
       "innovations": [
-        "提出基于 KV cache 的过程奖励模型 KV-PRM，用缓存表示替代全文本重编码进行打分。",
-        "将 PRM 打分复杂度从随轨迹长度二次增长降为线性增长，以适应长多智能体 rollout 场景。",
-        "从理论上论证 KV cache 相比文本具有更高的信息容量，并更适合下游奖励建模。",
-        "将该方法适配到 Beam Search、MCTS、Weighted Voting 等多种测试时扩展策略中。"
+        "提出基于 KV cache 的过程奖励建模方法，用缓存表征替代对完整文本轨迹的重复编码。",
+        "通过只处理单个验证 token 与已有 KV cache 交互，实现更高效的奖励评分机制。",
+        "从理论上论证 KV cache 相比文本具有更强的信息承载能力，更适合作为下游奖励建模输入。",
+        "将该方法应用到多种测试时扩展策略中，强调其对长轨迹、多智能体推理场景的适配性。"
       ],
-      "scenario_cn": "适用于多智能体推理、测试时搜索、长轨迹决策和长上下文评估等场景，尤其是在需要频繁调用 PRM 对中间过程打分时。它解决的是传统文本 PRM 在长序列 rollout 中计算和内存开销过大的瓶颈问题。",
+      "scenario_cn": "适用于多智能体协作推理、测试时搜索、长轨迹打分与长上下文决策等场景，尤其适合需要频繁调用过程奖励模型但又受限于推理成本和时延的系统。",
       "opensource_status": "未确认开源",
       "code_url": "",
       "title_en": "KV-PRM: Efficient Process Reward Modeling via KV-Cache Transfer for Multi-Agent Test-Time Scaling"
@@ -453,16 +451,16 @@
       "institutions_raw": "未明确披露",
       "content_snippet": "As large language models (LLMs) scale, their memory and computation demands have grown substantially, making weight-only quantization a widely adopted technique for reducing model size with minimal accuracy loss. However, on current GPUs, CUDA-core-based dequantization introduces substantial instruction overhead, on-chip traffic, and pipeline stalls, making it a major bottleneck for high-throughput, cloud-scale LLM serving. To address these limitations, we propose StreamDQ, a lightweight architectural enhancement that enables on-the-fly dequantization in the memory subsystem for high-throughput, large-batch LLM inference. StreamDQ integrates compact DeQuantization Blocks (DQBs) into the base die of high-bandwidth memory (HBM) and performs inline dequantization on standard memory loads. A lightweight sideband tag on each memory read request selects the dequantization mode while preserving conventional load semantics. By relocating dequantization to the memory side, StreamDQ eliminates GPU-side CUDA-core-based dequantization, thereby reducing on-chip traffic on the GPU and avoiding extra HBM write-back and reload of dequantized weights at large batch sizes. Our evaluation shows that StreamDQ achieves up to 7.08$\\times$ speedup and 90.23\\% lower energy for mixed-precision GEMM, with only 0.127\\,mm$^2$ area and 0.355\\,W power overhead per DQB in a 12\\,nm CMOS process. For end-to-end LLM inference, StreamDQ reduces latency by up to 54.68\\% and improves decode throughput by up to 2.20$\\times$.",
       "is_ascend": false,
-      "title_zh": "StreamDQ：在定制 HBM 中进行近存权重量化反量化以实现可扩展的 AI 推理加速",
+      "title_zh": "StreamDQ：在定制 HBM 中进行近内存权重量化反量化的可扩展 AI 推理加速",
       "institution": "未明确披露",
-      "summary_cn": "这篇论文研究大模型推理中权重量化后的反量化瓶颈问题，指出现有 GPU 上基于 CUDA Core 的反量化会带来额外指令开销、片上流量与流水线阻塞。作者提出 StreamDQ，将反量化能力下沉到 HBM 存储子系统，在内存读取过程中在线完成权重反量化。该方法的目标是降低 GPU 侧负担，并提升大批量 LLM 推理的延迟与吞吐表现。",
+      "summary_cn": "该论文关注大模型权重量化推理中的反量化瓶颈，指出当前 GPU 上基于 CUDA 核的反量化会带来额外指令开销、片上流量与流水线停顿。为此，作者提出 StreamDQ，将轻量级反量化模块集成到 HBM 存储子系统中，在标准内存加载过程中在线完成反量化。这样可把反量化从 GPU 侧迁移到内存侧，减少片上数据搬运与额外写回重载开销，从而提升大批量 LLM 推理效率。",
       "innovations": [
-        "提出 StreamDQ 架构，把权重反量化从 GPU 计算侧迁移到 HBM 近存侧执行。",
-        "在 HBM 基底中集成紧凑的 DeQuantization Blocks，实现标准内存加载路径上的在线反量化。",
-        "设计轻量 sideband tag 机制，在保持常规 load 语义的同时选择不同反量化模式。",
-        "避免大批量场景下反量化权重的额外写回与重读，减少 GPU 片上流量和流水线停顿。"
+        "提出 StreamDQ 架构，将权重反量化下沉到 HBM 近内存侧执行，而非依赖 GPU 计算核心完成。",
+        "设计紧凑型 DeQuantization Block（DQB），支持在标准内存加载路径上进行在线反量化。",
+        "引入轻量级 sideband tag 机制，在保持常规 load 语义的同时选择不同反量化模式。",
+        "针对大批量 LLM 推理减少 GPU 片上流量以及反量化后的额外写回与重载开销。"
       ],
-      "scenario_cn": "主要解决大语言模型云端高吞吐推理中，权重量化后的反量化成为性能瓶颈的问题，适用于大批量 LLM 服务、量化模型部署以及面向存算协同优化的 AI 推理硬件设计场景。",
+      "scenario_cn": "面向采用仅权重量化的大语言模型推理系统，重点解决云端大吞吐、长批次场景下 GPU 侧反量化成为性能瓶颈的问题。适用于需要提升量化 LLM 服务吞吐、降低能耗的推理硬件与系统设计场景。",
       "opensource_status": "未确认开源",
       "code_url": "",
       "title_en": "StreamDQ: Near-Memory Weight DeQuantization in Custom HBM for Scalable AI Inference Acceleration"
@@ -515,16 +513,16 @@
       "institutions_raw": "未明确披露",
       "content_snippet": "Human egocentric video is a scalable supervision source for humanoid policy learning, but current pipelines struggle with hand-object occlusion, oversimplified motion, or specialized capture hardware. We introduce AgenticFocus, a Mixed Reality synthesis pipeline that converts ordinary first-person-view human videos into robot-trainable demonstrations by restoring occluded object geometry, reconstructing full-hand motion, and retargeting it to a humanoid embodiment through camera-relative alignment and layered compositing. The resulting dataset pairs focused visual observations with synchronized robot actions and states. AgenticFocus achieves lower trajectory error and smoother wrist motion than cross-embodiment baselines, with SPARC scores of -5.18 versus -5.56 and -6.05.",
       "is_ascend": false,
-      "title_zh": "AgenticFocus：从人类第一视角视频生成保留物体的混合现实合成数据，用于灵巧人形机器人学习",
+      "title_zh": "AgenticFocus：从人类第一视角视频生成保留物体的混合现实合成数据，用于灵巧类人机器人学习",
       "institution": "未明确披露",
-      "summary_cn": "这篇论文提出 AgenticFocus，一套将普通人类第一视角视频转换为可供人形机器人学习示范数据的混合现实合成流程。方法重点解决手部遮挡物体、动作表达过于简化以及依赖专用采集硬件等问题，同时恢复被遮挡物体几何、重建完整手部动作，并将其重定向到人形机器人。最终得到的是聚焦视觉观测与同步机器人动作/状态配对的数据表示。",
+      "summary_cn": "该论文提出 AgenticFocus，一种混合现实合成流水线，可将普通人类第一视角视频转换为可供类人机器人训练的示范数据。方法重点解决手物遮挡、手部运动信息不完整以及跨形体迁移困难等问题，通过恢复被遮挡物体几何、重建完整手部动作，并基于相机相对对齐与分层合成将其重定向到类人机器人。最终得到聚焦视觉观测以及同步机器人动作和状态组成的数据集，用于灵巧操作学习。",
       "innovations": [
-        "提出从普通人类 FPV 视频生成机器人可训练示范数据的混合现实合成流水线。",
-        "结合被遮挡物体几何恢复与完整手部运动重建，增强演示数据的可用性。",
-        "通过相机相对对齐与分层合成，将人类动作重定向到人形机器人身体形态。",
-        "构建同时包含视觉观测、机器人动作和状态的同步训练数据表示。"
+        "提出从普通人类 FPV 视频到机器人可训练示范数据的混合现实合成流程。",
+        "结合被遮挡物体几何恢复与完整手部运动重建，缓解手物交互中的关键信息缺失。",
+        "通过相机相对对齐和分层合成实现向类人机器人形体的动作重定向。",
+        "构建同时包含聚焦视觉观测、机器人动作与状态的同步训练数据表示。"
       ],
-      "scenario_cn": "主要解决仅依赖人类第一视角视频时，如何为灵巧人形机器人学习构造高质量示范数据的问题，适用于模仿学习、机器人操作学习以及从人类视频迁移到机器人策略训练的场景。",
+      "scenario_cn": "解决类人机器人灵巧操作学习中高质量示范数据稀缺、跨人机形体迁移困难以及手物遮挡严重的问题。适用于利用日常人类第一视角视频构建机器人操作数据集，以及训练需要手部精细操作能力的类人机器人策略。",
       "opensource_status": "未确认开源",
       "code_url": "",
       "title_en": "AgenticFocus: Object-Preserving Mixed Reality Synthesis from Human FPV Video for Dexterous Humanoid Learning"
@@ -577,14 +575,14 @@
       "is_ascend": false,
       "title_zh": "ARCANA：面向 ARC-AGI-2 推理的反思式多智能体程序合成框架",
       "institution": "未明确披露",
-      "summary_cn": "这篇论文提出 ARCANA，一个在严格测试时间和硬件约束下求解 ARC-AGI-2 任务的多智能体协作框架。方法将任务拆解为感知、假设生成、符号执行和反思式修正等迭代阶段，并通过共享黑板和元控制器协调多个角色。整体思路是把结构化程序搜索与基于失败反馈的多轮自我修正结合起来，以提升抽象变换任务中的推理效率和解题质量。",
+      "summary_cn": "这篇论文提出 ARCANA，一个用于求解 ARC-AGI-2 任务的协作式多智能体框架。方法将任务拆解为感知、假设生成、符号执行和反思修正等迭代阶段，并在严格测试时延与硬件限制下组织这些组件协同工作。整体思路是把结构化程序搜索与多轮自我纠错结合起来，以提升抽象推理任务中的求解效率和解题质量。",
       "innovations": [
-        "提出面向 ARC-AGI-2 的多智能体程序合成框架，将感知、假设生成、验证和反思拆分为协作模块。",
-        "引入感知 grounding agent，从网格输入中构建以对象为中心的场景图表示。",
-        "结合潜在程序策略与符号执行器，对候选 DSL 程序进行生成和基于示例的验证。",
-        "使用 reflective agent 基于失败案例生成反馈，并通过学习得到的元控制器调度多轮迭代。"
+        "提出由多类专职代理组成的程序合成框架，覆盖感知建模、程序提议、符号验证和反思反馈等环节。",
+        "引入以对象为中心的场景图表示，将原始网格任务转化为更结构化的感知中间表征。",
+        "通过共享的可微黑板机制实现代理之间的信息交互与协作更新。",
+        "使用学习到的元控制器进行代理调度，把程序搜索与失败驱动的反思式修正结合起来。"
       ],
-      "scenario_cn": "适用于 ARC 类抽象推理、符号程序搜索、结构化变换求解等需要高组合泛化能力的任务场景，特别是在测试时间和算力受限时。它主要解决复杂抽象推理任务中单次生成不稳定、程序候选验证困难以及需要多轮纠错的问题。",
+      "scenario_cn": "适用于 ARC-AGI-2 这类抽象规则归纳和程序合成任务，也适合资源受限条件下需要结合感知、符号执行和反思纠错的复杂推理系统。",
       "opensource_status": "未确认开源",
       "code_url": "",
       "title_en": "ARCANA: A Reflective Multi-Agent Program Synthesis Framework for ARC-AGI-2 Reasoning"
@@ -638,14 +636,14 @@
       "is_ascend": false,
       "title_zh": "L-MAD：法律推理中多智能体辩论结构的系统性评估",
       "institution": "未明确披露",
-      "summary_cn": "这篇论文提出了 Legal Multi-Agent Debate（L-MAD）框架，用于在法律文本蕴含任务中系统评估不同多智能体辩论结构与结果聚合方法的效果。作者让多个智能体扮演不同法律专家角色，比较其与强单智能体基线的表现差异。结果表明，多智能体协作在法律推理这一高结构化、高知识密度场景中具有明显潜力，但其收益受辩论组织方式影响很大。",
+      "summary_cn": "该论文提出 L-MAD 框架，系统评估多智能体辩论在法律文本蕴含任务中的不同辩论结构与聚合方法效果。方法通过为多个智能体分配不同法律专家角色，比较其相对强单智能体基线的表现。论文还分析了辩论规模的影响，指出增加智能体数量有助于降低不一致性并提升准确率，但增加讨论轮数可能带来过度审议漂移，放大原有错误。",
       "innovations": [
-        "提出面向法律文本蕴含任务的 L-MAD 框架，系统比较多种多智能体辩论结构与聚合方法。",
-        "通过为智能体分配不同专家角色，研究角色分工对法律推理质量的影响。",
-        "分析辩论规模效应，揭示智能体数量增加与讨论轮次增加带来的不同结果。",
-        "提出“过度审议漂移”现象，指出多轮讨论可能放大错误而非持续提升推理质量。"
+        "提出面向法律文本蕴含任务的 Legal Multi-Agent Debate（L-MAD）系统化评测框架。",
+        "将不同专家角色分配给多个智能体，用于研究角色化协作在高结构化法律推理中的作用。",
+        "系统比较辩论结构与结果聚合方式，刻画多智能体法律推理的性能边界。",
+        "识别并提出“过度审议漂移”现象，揭示多轮讨论可能导致错误相互强化的风险。"
       ],
-      "scenario_cn": "主要解决多智能体辩论在法律推理这类高风险、高结构化任务中是否可靠有效的问题，适用于法律文本蕴含、法律辅助分析以及其他需要审慎协作推理的专业决策场景。",
+      "scenario_cn": "面向高风险、知识密集且结构化程度高的法律推理场景，例如法律文本蕴含判断与辅助法务分析。适用于评估多智能体协作是否值得用于法律任务，以及在部署时如何控制智能体数量和讨论轮数以降低风险。",
       "opensource_status": "未确认开源",
       "code_url": "",
       "title_en": "L-MAD: A Systematic Evaluation of Multi-Agent Debate Structures in Legal Reasoning"
@@ -695,14 +693,14 @@
       "is_ascend": false,
       "title_zh": "面向多语言视觉选择题的小型视觉语言模型测试时扩展",
       "institution": "未明确披露",
-      "summary_cn": "该论文研究测试时扩展（Test-Time Scaling, TTS）在小型开源视觉语言模型上的有效性，任务是多语言视觉选择题。作者比较了 self-consistency、先描述后推理并结合 PRM 引导束搜索，以及多种后处理选择器，发现决定效果的关键主要不是搜索或验证机制本身，而是输出可解析性与单条推理链是否有足够生成预算。基于摘要可知，论文强调应优先保证答案格式可提取、推理链能完整结束，而复杂测试时策略带来的额外收益有限。",
+      "summary_cn": "这篇论文研究测试时扩展（test-time scaling）能否迁移到小型开源视觉语言模型上，并在多语言视觉选择题基准 EXAMS-V 上进行了系统比较。作者发现，影响效果的关键不在于复杂搜索或验证机制本身，而在于推理链是否能正确输出可解析答案，以及单条推理链是否有足够的解码预算完成作答。结论是，改进提示格式与增加单链 token 预算，比引入更复杂的 PRM 引导搜索或后验选择器更有效。",
       "innovations": [
-        "系统比较了多种测试时扩展策略在小型开源 VLM 多语言视觉选择题任务上的实际作用。",
-        "指出测试时扩展效果的关键在于答案可解析性，而非更复杂的搜索或验证模块。",
-        "发现增加单条推理链的生成预算比单纯增加采样链数更关键。",
-        "验证了训练后或免训练的后验选择器并未稳定优于多数投票，反而策略模型本身的能力提升更重要。"
+        "系统比较小型 VLM 在多语言视觉选择题上的多种测试时扩展策略，包括 self-consistency、PRM 引导 beam search 和后验选择器。",
+        "指出 parseability 是测试时扩展成败的关键因素，并通过标准答案提示与引导修复步骤缓解推理链不落到答案字母的问题。",
+        "证明增加单条推理链的解码预算比单纯增加采样链数更重要，给出对小模型测试时扩展更实用的经验结论。",
+        "发现复杂验证器和 PRM 并未稳定优于多数投票，为小型多模态模型的测试时扩展提供了负结果和方法学边界。"
       ],
-      "scenario_cn": "适用于多语言视觉问答、视觉选择题和小参数量视觉语言模型的推理增强场景，尤其适合评估在有限算力下是否值得引入复杂测试时搜索与验证机制。也适用于需要优化多模态推理输出格式、提高答案可提取性的应用。",
+      "scenario_cn": "适用于多语言视觉问答、教育测评类视觉选择题以及小型开源 VLM 的推理增强场景。主要解决小模型在测试时扩展中到底该优先优化提示可解析性、解码预算还是复杂搜索机制的问题。",
       "opensource_status": "未确认开源",
       "code_url": "",
       "title_en": "Test-Time Scaling for Small VLMs on Multilingual Visual MCQ"
@@ -751,16 +749,16 @@
       "institutions_raw": "未明确披露",
       "content_snippet": "We present a practical pipeline for recovering source code from stripped binary functions by combining reverse engineering, anchor-based source code retrieval, and large language model reasoning. Our binary-to-source-code retrieval method attempts to identify the source function from a source code database, rather than generating approximate decompiled pseudocode. It extracts anchors such as strings, constants, external calls, and available function names using Ghidra, retrieves candidate files via an inverted-index search database, narrows candidates to likely function snippets, and re-ranks them with a large language model (LLM) based on disassembly, decompiled code, and source metadata. Confident matches can also serve as anchors in later passes. In an evaluation backed by our high-fidelity source code database on a stripped, optimized tcpdump binary, our proposed binary-to-source matching method achieves 95.2% assembly instruction coverage. Experiments on a GitHub-based retrieval database showed lower performance with 35.5% instruction coverage on average, mainly due to retrieval misses. These results show that source-level binary recovery excels with high-quality databases and remains a useful tool in noisy environments.",
       "is_ascend": false,
-      "title_zh": "利用基于锚点的检索与大语言模型推理，从二进制函数中实用化恢复源代码",
+      "title_zh": "基于锚点检索与大语言模型推理的二进制函数源代码实用恢复",
       "institution": "未明确披露",
-      "summary_cn": "这篇论文提出一条从被剥离符号的二进制函数中恢复源代码的实用化流程，将逆向分析、锚点式源码检索和大语言模型推理结合起来。方法不是直接生成近似伪代码，而是从源码库中识别最可能对应的源函数。它借助 Ghidra 提取字符串、常量、外部调用和可用函数名等锚点，先做候选检索与缩小范围，再让 LLM 结合反汇编、反编译结果和源码元信息进行重排序。结果表明，在高质量源码数据库支持下，该方法能够覆盖大部分二进制指令对应的源码。",
+      "summary_cn": "这篇论文提出了一条从剥离符号的二进制函数中恢复源代码的实用流程，核心思路是把问题转化为源函数检索而不是伪代码生成。方法先利用 Ghidra 从二进制中提取字符串、常量、外部调用和可用函数名等锚点，再通过倒排索引检索候选源码文件与函数片段，最后结合反汇编、反编译结果和源码元数据由大语言模型进行重排序与推理匹配。高置信匹配还可以反过来作为后续轮次的新锚点，形成迭代增强。实验显示，该方法在高质量源码库上具有较强的源级恢复能力，在噪声更高的数据库环境中也仍然具备实用价值。",
       "innovations": [
-        "提出面向二进制到源码恢复的锚点式检索流程，以源码匹配替代仅生成近似反编译伪代码。",
-        "结合 Ghidra 提取的字符串、常量、外部调用与函数名等多类锚点进行分阶段候选定位。",
-        "引入 LLM 对反汇编、反编译结果和源码元信息进行联合推理与重排序，提高匹配精度。",
-        "支持将高置信匹配结果继续作为后续检索的锚点，形成迭代式恢复流程。"
+        "提出面向剥离符号二进制函数的源代码恢复流水线，将任务重点放在源函数检索而非近似伪代码生成。",
+        "设计锚点驱动检索机制，综合利用字符串、常量、外部调用和函数名等信息进行候选缩小。",
+        "引入 LLM 结合反汇编、反编译结果与源码元数据做候选重排序与推理判断。",
+        "支持将高置信匹配结果作为后续轮次的新锚点，实现迭代式恢复增强。"
       ],
-      "scenario_cn": "主要解决剥离符号、优化后二进制程序难以追溯原始源码的问题。适用于逆向工程、漏洞分析、软件审计、遗留系统恢复以及安全研究中二进制与源码对齐的场景。",
+      "scenario_cn": "主要解决二进制程序缺失源码或符号信息时的源代码恢复与定位问题，适用于逆向工程、安全分析、漏洞研究、软件溯源，以及在大型源码库中为二进制函数寻找对应实现的场景。",
       "opensource_status": "未确认开源",
       "code_url": "",
       "title_en": "Practical Source Code Recovery from Binary Functions Using Anchor-Based Retrieval and LLM Reasoning"
@@ -806,14 +804,14 @@
       "is_ascend": false,
       "title_zh": "SiFAR：面向低时延大语言模型推理的无同步全归约",
       "institution": "未明确披露",
-      "summary_cn": "该论文关注推理模型与 Agent 系统中的 LLM 单 token 生成时延问题，核心瓶颈在于低批量解码场景下张量并行带来的 All-Reduce 同步开销。作者提出 SiFAR，通过重构通信与模型执行流程来减少通信前后屏障带来的等待时间，并结合交换机侧归约能力进一步优化扩展性。论文主要基于标题和摘要表明，该方法旨在在不改变低时延推理目标的前提下，降低多 GPU 推理中的通信延迟。",
+      "summary_cn": "这篇论文关注推理型模型和智能体系统中的大语言模型逐 token 生成时延问题，核心目标是降低张量并行推理中的 All-Reduce 通信开销。作者提出 SiFAR，通过减少通信前后同步屏障带来的等待，提升低批量、低时延场景下的推理效率。论文主要从通信机制与模型执行协同设计的角度，优化多 GPU 扩展时的端到端吞吐表现。",
       "innovations": [
-        "提出 Synchronization-Free All-Reduce（SiFAR），面向低时延 LLM 推理解码阶段减少 All-Reduce 的同步开销。",
-        "通过通信与模型执行协同设计，引入双缓冲以消除 oneshot 算法中的底部屏障依赖。",
-        "利用现代交换机的 in-switch reduction，提出 redundant pull，以兼顾 oneshot 的低同步优势和更高 GPU 数下的可扩展性。",
-        "提出 speculative reduction，在顶部屏障之前提前启动数据传输，并通过轻量校验保证正确性。"
+        "提出 Synchronization-Free All-Reduce（SiFAR），面向低时延 LLM 推理场景降低 All-Reduce 同步开销。",
+        "通过通信与模型执行协同设计，引入双缓冲思路，去除 oneshot 算法中的底部屏障约束。",
+        "利用现代交换机中的 in-switch reduction，提出 redundant pull，以兼顾更高 GPU 数量下的扩展性与低同步优势。",
+        "提出 speculative reduction，在保证正确性的前提下提前发起数据传输，以降低顶部屏障带来的额外等待。"
       ],
-      "scenario_cn": "适用于需要低时延逐 token 生成的大语言模型推理场景，尤其是 reasoning model、Agent system 等中间推理 token 很多、端到端时延直接受单步解码延迟影响的系统。也适用于采用张量并行、并在多 GPU 上部署的大模型在线推理服务。",
+      "scenario_cn": "适用于大语言模型低时延在线推理，尤其是 reasoning model、agentic system 这类对逐 token 延迟敏感的场景。主要解决张量并行在多 GPU 扩展时 All-Reduce 同步与通信开销过高的问题。",
       "opensource_status": "未确认开源",
       "code_url": "",
       "title_en": "SiFAR: Synchronization-Free All-Reduce for Low-Latency LLM Inference"
@@ -853,16 +851,15 @@
       "institutions_raw": "未明确披露",
       "content_snippet": "In thsi paper, based on the leap-frog discretization in time and the mixed virtual element discretization in space, we developed a linearized and structure-preserving numerical algorithm. The main contributions of this work lie in that we not only provide a rigorous proof of the energy dissipation property of the fully discrete numerical scheme, but also establish the unconditionally optimal convergence analysis by means of a inverse inequality. The core of the proof lies in the classified discussion of the relationship between \\(\\tau\\) and $h$. Finally, two numerical examples are provided to validate the correctness of the theoretical analysis as well as the energy dissipation property of the proposed scheme.",
       "is_ascend": false,
-      "title_zh": "扩展 Fisher-Kolmogorov 方程的线性化且保持结构的混合虚单元方法",
+      "title_zh": "扩展 Fisher-Kolmogorov 方程的线性化保结构混合虚单元方法",
       "institution": "未明确披露",
-      "summary_cn": "该论文研究扩展 Fisher-Kolmogorov 方程的数值求解方法，提出一种时间上基于 leap-frog 离散、空间上基于混合虚单元离散的线性化保结构算法。摘要表明，作者从理论上证明了该全离散格式的能量耗散性质，并给出了无条件最优收敛分析。最后通过数值实验验证理论分析与所提方法的能量耗散特性。",
+      "summary_cn": "这篇论文研究扩展 Fisher-Kolmogorov 方程的数值求解方法，提出了一种时间上基于 leap-frog 离散、空间上基于混合虚单元离散的线性化保结构算法。作者证明了该全离散格式具有能量耗散性质，并给出了无条件最优收敛分析。论文重点在于数值分析与结构保持，而非 AI 推理或模型系统。",
       "innovations": [
-        "提出一种针对扩展 Fisher-Kolmogorov 方程的线性化、保结构混合虚单元数值算法。",
-        "严格证明了所构造全离散格式具有能量耗散性质。",
-        "借助逆不等式建立了该方法的无条件最优收敛性分析。",
-        "在证明过程中对时间步长与空间网格尺度关系进行了分类讨论。"
+        "提出一种针对扩展 Fisher-Kolmogorov 方程的线性化、保结构混合虚单元全离散算法。",
+        "严格证明所提数值格式满足能量耗散性质。",
+        "借助逆不等式并分类讨论时间步长与空间网格关系，建立了无条件最优收敛分析。"
       ],
-      "scenario_cn": "适用于扩展 Fisher-Kolmogorov 方程这类偏微分方程的稳定数值模拟与理论分析场景，特别是在关注离散格式能量耗散性质和收敛性的科学计算问题中。",
+      "scenario_cn": "适用于偏微分方程数值计算与科学计算研究，主要解决扩展 Fisher-Kolmogorov 方程离散求解中结构保持和收敛性分析问题。不属于大模型推理、多模态推理或智能体方向。",
       "opensource_status": "未确认开源",
       "code_url": "",
       "title_en": "A Linearized and structure-preserving mixed virtual element method for the extended Fisher-Kolmogorov equation"
@@ -905,16 +902,16 @@
       "institutions_raw": "未明确披露",
       "content_snippet": "Vision-language-action models (VLAs) inherit semantic capabilities from pretrained VLMs, yet large-scale post-training on robot data and architectural modifications can reshape the backbone so extensively that it becomes difficult to isolate what the VLM contributes to control. Directly converting pretrained VLMs into VLAs with minimal architectural change offers a more transparent path to understanding how VLM capabilities transfer across model scales. The core obstacle is output-distribution mismatch: predicting actions as bare numeric token sequences moves generation away from the VLM's pretrained language distribution, degrading the capabilities we seek to preserve. To address this, we propose CLAP (Causal Language-Action Prediction), which prepends each numeric action sequence with a natural-language action description, causally conditioning precise action-token prediction on a language-action plan without modifying the backbone architecture. With single-epoch fine-tuning alone, 2B CLAP achieves 90.8% on LIBERO (+14.9 pt over VLA-0) and improves robustness on LIBERO-PRO under language, object, and spatial perturbations. We will release CLAP at 0.8B, 2B, and 4B as an open-weight, multi-scale compact VLA family from a single VLM lineage, enabling controlled analysis of VLM-to-VLA capability transfer.",
       "is_ascend": false,
-      "title_zh": "CLAP：通过语言-动作对齐实现从视觉语言模型到视觉语言动作模型的直接适配",
+      "title_zh": "CLAP：通过语言-动作 grounding 直接将视觉语言模型适配为视觉语言动作模型",
       "institution": "未明确披露",
-      "summary_cn": "该论文研究如何在尽量少改动骨干网络结构的前提下，将预训练视觉语言模型直接转化为视觉语言动作模型。作者指出关键障碍在于动作输出若仅表示为裸数值 token 序列，会偏离原有语言分布，从而损害预训练 VLM 的语义能力迁移。为此，论文提出 CLAP，在数值动作序列前加入自然语言动作描述，使动作预测建立在语言-动作计划的因果条件之上。",
+      "summary_cn": "这篇论文研究如何在尽量少改动骨干架构的前提下，将预训练视觉语言模型直接转化为视觉语言动作模型。作者认为关键障碍在于动作预测的数值 token 分布与原有语言分布不匹配，因此提出 CLAP，在动作序列前加入自然语言动作描述，以语言-动作计划来因果条件化后续精确动作 token 的预测。该方法旨在更透明地分析 VLM 的语义能力如何迁移到机器人控制中。",
       "innovations": [
-        "提出 CLAP（Causal Language-Action Prediction），通过在动作 token 前加入自然语言动作描述来缓解输出分布失配问题。",
-        "在不修改骨干架构的前提下，探索从预训练 VLM 到 VLA 的直接适配路径。",
-        "将精确动作 token 预测因果地建立在语言-动作计划之上，以更好保留 VLM 的预训练语义能力。",
-        "计划发布同一 VLM 血统下的多尺度紧凑型开放权重 VLA 家族，以支持受控分析能力迁移。"
+        "提出 CLAP（Causal Language-Action Prediction），在不修改骨干架构的前提下实现从 VLM 到 VLA 的直接适配。",
+        "针对动作数值 token 与预训练语言分布不匹配的问题，引入自然语言动作描述作为前缀，建立语言到动作的因果条件化预测机制。",
+        "强调以最小架构改动保留并分析 VLM 原有能力，为研究不同模型尺度下 VLM 到 VLA 的能力迁移提供更透明路径。",
+        "计划提供同一 VLM 谱系下多尺度紧凑型 VLA 家族，支持受控比较与迁移分析。"
       ],
-      "scenario_cn": "适用于机器人操作与具身智能场景，尤其是在希望将已有视觉语言模型快速迁移为视觉语言动作模型、并保留其语义理解能力的任务中。也适合研究不同模型尺度下 VLM 能力如何迁移到控制任务。",
+      "scenario_cn": "适用于机器人操作、具身智能控制和视觉语言动作建模场景。主要解决将预训练 VLM 直接迁移到动作控制时，动作输出分布偏离语言分布、导致原有语义能力难以保留的问题。",
       "opensource_status": "未确认开源",
       "code_url": "",
       "title_en": "CLAP: Direct VLM-to-VLA Adaptation via Language-Action Grounding"
@@ -956,16 +953,16 @@
       "institutions_raw": "未明确披露",
       "content_snippet": "Recent benchmarks for VLMs largely assess single- or limited-view perception, leaving untested the core cognitive ability to integrate observations across viewpoints into a coherent, world-centric (allocentric) 3D mental model. We introduce MultiView-Bench, a diagnostic benchmark expressly designed to evaluate multi-view integration for holistic 3D scene comprehension. Unlike existing datasets that focus on pixel-level mapping or camera-relative navigation, MultiView-Bench requires models to decouple object positioning from transient perspectives and ground them in a fixed global coordinate system. This capability serves as a prerequisite for VLMs before being deployed for downstream tasks such as mechanical part assembly. Our systematic evaluation of frontier VLMs reveals consistent failure modes: strong performance on 2D planar relations from a single image, but marked difficulty with 3D spatial relations and with aggregating information across views. We further identify biases in VLMs, such as struggles with unconventional axis directions and sensitivity to object colorways and texture variations. Acknowledging these limitations, we propose ViewNavigator, a multi-agent framework that actively selects informative viewpoints, perceives, and fuses multi-view evidence, improving diverse base models on MultiView-Bench even under a strict budget-matched comparison (and by 3-5x for the full agent).",
       "is_ascend": false,
-      "title_zh": "MultiView-Bench：面向视觉语言模型以世界为中心的多视角整合诊断基准",
+      "title_zh": "MultiView-Bench：面向视觉语言模型世界中心多视角整合能力的诊断基准",
       "institution": "未明确披露",
-      "summary_cn": "这篇论文提出了 MultiView-Bench，用于诊断视觉语言模型是否具备跨不同视角整合观察信息、形成统一三维场景表征的能力。与只考察单视角感知或相机相对导航的基准不同，它要求模型将物体位置锚定到固定的全局坐标系中。实验表明，当前前沿 VLM 在单图二维关系上表现较强，但在三维空间关系理解和跨视角信息融合上存在明显短板。作者还提出了多智能体框架 ViewNavigator，通过主动选择视角并融合多视角证据来提升基座模型表现。",
+      "summary_cn": "这篇论文提出了 MultiView-Bench，用于诊断视觉语言模型是否能够把来自不同视角的观察整合成统一的、以世界坐标为中心的三维场景表示。与只考察单视角感知或相机相对关系的基准不同，它重点评估模型能否摆脱瞬时视角影响，在固定全局坐标系中理解物体位置关系。作者系统评测了前沿 VLM，发现它们虽然在单图像二维关系上表现较强，但在三维空间关系理解和跨视角信息聚合方面存在明显短板。针对这些问题，论文还提出了 ViewNavigator，通过主动选择视角并融合多视角证据来提升基座模型表现。",
       "innovations": [
-        "提出专门评测 VLM 多视角整合与世界中心三维理解能力的诊断基准 MultiView-Bench。",
-        "将评测重点从像素级映射或相机相对任务转向跨视角的全局坐标系建模能力。",
-        "系统揭示当前 VLM 在非常规坐标轴方向、颜色纹理变化及三维关系整合上的失效模式与偏差。",
-        "提出多智能体框架 ViewNavigator，通过主动选取信息量更高的视角并融合证据来改进多视角理解。"
+        "提出 MultiView-Bench，专门评估 VLM 的世界中心（allocentric）多视角整合与整体三维场景理解能力。",
+        "将评测重点从像素级映射或相机相对导航，转向固定全局坐标系下的物体定位与跨视角融合。",
+        "系统揭示了 VLM 在非常规坐标轴方向、颜色与纹理变化等因素上的偏置与失败模式。",
+        "提出多智能体框架 ViewNavigator，通过主动选择信息量更高的视角并融合证据来改进多视角理解。"
       ],
-      "scenario_cn": "面向需要三维场景整体理解的多模态推理任务，重点解决模型无法把多个视角下的观察统一到同一世界坐标系中的问题。适用于机械装配、机器人感知、复杂三维场景理解等部署前能力评估与增强场景。",
+      "scenario_cn": "主要解决视觉语言模型难以把多个观察视角整合为统一三维心智模型的问题，适用于需要完整三维场景理解的场景，例如机械零件装配前的空间理解与多视角感知评测。",
       "opensource_status": "未确认开源",
       "code_url": "",
       "title_en": "MultiView-Bench: A Diagnostic Benchmark for World-Centric Multi-View Integration in VLMs"
@@ -1007,16 +1004,16 @@
       "institutions_raw": "未明确披露",
       "content_snippet": "Despite strong performance on many multimodal tasks, vision-language models (VLMs) still struggle with basic object counting. We investigate whether this reflects missing internal knowledge or a gap between internal representations and verbalized outputs. Training simple probes on activations from four VLMs across five counting datasets reveals that nonlinear probes can reliably detect counting errors, suggesting that VLMs often encode the correct count even when they output the wrong answer. SVCCA analysis shows that probes trained on ground-truth counts and probes trained on model outputs occupy a partially shared activation subspace but read out along misaligned directions. We further validate our findings using a causal steering intervention, proving that strengthening the direction of count-identified probes does improve model counting performance. Motivated by this result, we propose a detector-guided self-correction method that selectively re-prompts the model only when an internal error detector predicts failure. This simple inference-time intervention improves counting accuracy by up to 15.6 absolute percentage points, without any parameter updates. Our results establish activation-based error probing as both a practical tool for improving VLM counting and a mechanistic lens on the gap between internal knowledge and model outputs.",
       "is_ascend": false,
-      "title_zh": "计数其实存在，但发生了错位：理解并纠正视觉语言模型中的计数失败",
+      "title_zh": "计数信息存在但读出失配：理解并纠正视觉语言模型中的计数失败",
       "institution": "未明确披露",
-      "summary_cn": "这篇论文研究视觉语言模型为什么在基础目标计数任务上仍频繁出错。作者通过在多个 VLM 激活上训练探针发现，模型内部往往已经编码了正确计数，只是在输出阶段未能正确读出。进一步分析表明，面向真实计数与面向模型输出的读出方向只部分对齐，从而导致“知道但说错”。基于这一发现，论文提出检测器引导的自纠错方法，仅在内部错误检测器预测失败时才重提示模型，从而在不改参数的前提下提升计数表现。",
+      "summary_cn": "这篇论文研究视觉语言模型为什么在目标计数上经常出错，核心结论是模型内部往往已经编码了正确计数，但最终语言输出没有把它正确读出来。作者在多个计数数据集和四个 VLM 上训练激活探针，发现非线性探针可以较可靠地识别计数错误，说明问题并不完全是知识缺失。进一步的表示分析表明，真实计数与模型输出对应的读出方向存在失配。基于这一发现，论文提出一种由内部错误检测器触发的自纠正推理策略，在不更新参数的前提下提升计数表现。",
       "innovations": [
-        "通过激活探针分析证明 VLM 计数失败往往不是完全缺失知识，而是内部表征与外显输出之间存在错位。",
-        "使用 SVCCA 分析真实计数读出与模型输出读出的共享与错位子空间，提供机制层面的解释。",
-        "通过因果 steering 干预验证：强化与正确计数相关的方向可以实际改善模型计数性能。",
-        "提出检测器引导的选择性自纠错推理方法，只在预测会出错时触发重提示，避免全面重复推理。"
+        "提出用激活探针分析 VLM 计数失败，证明模型内部表示中常已包含正确计数信息。",
+        "通过 SVCCA 分析揭示真实计数与模型语言输出在激活空间中的部分共享与读出方向失配。",
+        "使用因果 steering 干预验证：增强与正确计数相关的表示方向，能够改善模型计数性能。",
+        "提出 detector-guided self-correction，仅在内部错误检测器预测失败时进行重提示，实现推理时纠错。"
       ],
-      "scenario_cn": "用于解决视觉语言模型在目标计数、数量问答和细粒度视觉推理中“内部知道但输出错误”的问题。适用于多模态问答、视觉分析系统以及无需重新训练参数即可提升推理可靠性的推理时校正场景。",
+      "scenario_cn": "主要解决视觉语言模型在目标计数任务中“内部知道但回答错误”的问题，适用于多模态问答、视觉分析、需要精确计数的感知系统，以及希望通过推理时干预提升 VLM 可靠性的场景。",
       "opensource_status": "未确认开源",
       "code_url": "",
       "title_en": "The Count Is There, but Misaligned: Understanding and Correcting Counting Failures in VLMs"
@@ -1059,16 +1056,16 @@
       "institutions_raw": "未明确披露",
       "content_snippet": "Reliable autonomous driving requires full-scene perception that couples foreground objects with dense semantic layout. Recently, 4D millimeter-wave radar has emerged as a robust and affordable sensor, yet its sparse returns make radar-camera fusion necessary for comprehensive scene understanding. Existing radar-camera methods mainly optimize detection, while dual-task systems usually decode boxes and occupancy with limited interaction. To address this gap and advance radar-based multi-task learning, we propose \\method, a 4D radar-camera framework for 360$^\\circ$ full-scene perception, which models semantic occupancy as a persistent scene state rather than a terminal output. \\method{} follows a cross-modal state reasoning paradigm, where the occupancy state is modeled and propagated through stages for coarse-to-fine feature aggregation. Specifically, State-guided BEV Enhancement (SBE) strengthens intra-frame BEV representation, while Doppler-guided Temporal Fusion (DTF) preserves state evidence over longer temporal horizons. Beyond the model, we further extend ManTruckScenes with satellite-map-based generated occupancy labels and pair it with OmniHD-Scenes in a unified cross-dataset detection-and-occupancy protocol. The resulting experiments cover accuracy, robustness, ablation, and efficiency under one radar-camera multi-task evaluation framework. Code and labels will be released upon acceptance.",
       "is_ascend": false,
-      "title_zh": "4DR360：用于 4D 雷达-相机全场景感知中联合 3D 检测与占用预测的状态推理",
+      "title_zh": "4DR360：用于4D雷达-相机全景感知中联合三维检测与占用预测的状态推理",
       "institution": "未明确披露",
-      "summary_cn": "这篇论文提出了一个面向自动驾驶 360° 全场景感知的 4D 雷达-相机多任务框架，同时处理 3D 目标检测与语义占用预测。其核心思路是不把占用预测视为最终输出，而是把它建模为可在多阶段传播的场景状态，用于指导跨模态特征聚合。论文还扩展了数据标注与统一评测协议，以便在雷达-相机多任务场景下系统评估精度、鲁棒性与效率。",
+      "summary_cn": "该论文提出了一个面向自动驾驶全场景感知的4D雷达-相机联合框架，同时处理3D目标检测与语义占用预测。核心思路是将占用视为可持续演化的场景状态，而不是最终一次性输出，并通过跨模态的状态推理逐步聚合粗到细的特征。作者还构建了统一的跨数据集检测与占用评测协议，以系统评估该类多任务方法。",
       "innovations": [
-        "将语义占用从终端预测结果改为可持续传播的场景状态，用于联合优化检测与占用预测。",
-        "提出跨模态状态推理范式，在粗到细的过程中传播 occupancy state 以增强特征聚合。",
-        "设计 State-guided BEV Enhancement（SBE）以增强单帧 BEV 表征。",
-        "设计 Doppler-guided Temporal Fusion（DTF）以利用多普勒信息保留更长时间范围内的状态证据。"
+        "提出4D雷达-相机联合感知框架，将3D检测与占用预测放在统一多任务设定中建模",
+        "把语义占用定义为可传播的场景状态，通过跨阶段状态推理增强全场景理解",
+        "设计State-guided BEV Enhancement以增强单帧BEV表征",
+        "设计Doppler-guided Temporal Fusion以利用多普勒信息保留更长时间范围内的状态证据"
       ],
-      "scenario_cn": "面向自动驾驶中的全场景环境感知，尤其适用于需要同时理解前景目标与稠密场景布局的场景。适合使用 4D 毫米波雷达与相机融合，在光照受限、成本敏感或复杂天气条件下提升稳健感知能力。",
+      "scenario_cn": "面向自动驾驶中的360度全景环境感知，解决4D毫米波雷达回波稀疏、单做检测难以获得完整场景语义布局的问题，适用于需要同时理解动态目标和稠密环境占用的感知系统。",
       "opensource_status": "未确认开源",
       "code_url": "",
       "title_en": "4DR360: State Reasoning for Joint 3D Detection and Occupancy Prediction in 4D Radar-Camera Full-Scene Perception"
@@ -1107,16 +1104,16 @@
       "institutions_raw": "未明确披露",
       "content_snippet": "Modern AI systems are increasingly being evaluated for their ability to reason, code, prove theorems, use tools, and long-horizon research tasks. These are powerful capabilities, but they share a structural limitation: the representational frame within which the model operates, including its conceptual vocabulary, the space of admissible solutions it can search, and the criteria by which success is evaluated, is typically fixed and supplied in advance. This paper argues that building stronger intelligent systems capable of open-ended innovation requires additional classes of operations: the creation, stabilization, and reuse of new representational primitives, which alter the space being searched rather than simply searching within it. We characterize the distance between current AI systems and genuinely open-ended intelligence through two gaps. The first is the vocabulary gap, the difficulty of inventing and stabilizing new representational primitives rather than merely recombining existing ones. The second is the verifier gap, the difficulty of judging the value of a new primitive when its full payoff may be visible only after future reuse. We interpret both gaps through a unified framework of intelligence as cognitive discrepancy reduction. By viewing intelligent behaviors as a sequence of cognitive transformations, we distinguish intra-space transformations which operate within a fixed representational frame, from generative transformations which may modify the frame itself. On this basis, we propose a ladder of innovation autonomy and outline several directions for advancing open-ended AI, including objectives that reward useful representational change, persistent memory architectures for invented primitives, and adaptive verification mechanisms capable of evolving alongside the representations they evaluate.",
       "is_ascend": false,
-      "title_zh": "超越固定表征：开放式 AI 中的词汇缺口与验证器缺口",
+      "title_zh": "超越固定表征：开放式人工智能中的词汇鸿沟与验证鸿沟",
       "institution": "未明确披露",
-      "summary_cn": "这篇论文讨论了当前 AI 系统在推理、编程、定理证明和长周期研究任务中面临的共同结构性限制，即通常只能在预先给定的表征框架内搜索解。作者提出，真正开放式的智能不仅需要在既有空间内搜索，还需要创造、稳定并复用新的表征原语。论文据此提出“词汇缺口”和“验证器缺口”两个核心问题，并给出一个关于创新自主性的分析框架。",
+      "summary_cn": "该论文讨论当前AI系统在推理、编程、证明和工具使用等任务中虽然能力增强，但通常仍受限于预先给定的表征框架。作者提出，要实现真正开放式的创新能力，系统不仅要在既有解空间中搜索，还要能够发明、稳定并复用新的表征原语。论文进一步用统一框架分析“词汇鸿沟”和“验证鸿沟”，并给出推进开放式AI的若干研究方向。",
       "innovations": [
-        "提出“词汇缺口”，用于刻画模型发明并稳定新表征原语而非仅重组已有概念的困难。",
-        "提出“验证器缺口”，强调新原语价值往往要在后续复用中才能显现，因而难以即时评估。",
-        "将智能统一解释为认知差异缩减过程，并区分固定表征空间内的变换与可改变表征框架的生成式变换。",
-        "提出创新自主性阶梯，并讨论奖励有用表征变化、持久记忆架构和自适应验证机制等研究方向。"
+        "提出“词汇鸿沟”概念，刻画AI发明并稳定新表征原语的困难",
+        "提出“验证鸿沟”概念，刻画新原语价值往往需经未来复用才能显现的评估难题",
+        "将上述两类鸿沟统一到“认知差异缩减”的智能框架下进行解释",
+        "提出创新自主性阶梯，并讨论奖励表征变化、持久记忆与自适应验证机制等方向"
       ],
-      "scenario_cn": "适用于研究开放式 AI、创新型智能体和长期自主研究系统，重点关注系统如何突破固定概念空间的约束。也适合用于分析 Agent 在发明新工具、新抽象和新评估标准时面临的能力瓶颈。",
+      "scenario_cn": "面向开放式AI与长期创新型智能体研究，解决现有系统过度依赖固定概念词汇、固定搜索空间和固定评估标准的问题，适用于研究能够持续产生新概念和新解法的AI系统。",
       "opensource_status": "未确认开源",
       "code_url": "",
       "title_en": "Beyond Fixed Representations: The Vocabulary and Verifier Gaps in Open-Ended AI"
@@ -1157,16 +1154,15 @@
       "institutions_raw": "未明确披露",
       "content_snippet": "Decentralized multi-robot coordination under partial observability remains challenging, especially in communication-free settings where agents must act solely from local sensor observations. Privileged policy distillation provides a promising approach by transferring knowledge from a globally informed oracle to sensor-constrained students. However, in multi-agent systems, the same local observation may correspond to multiple global configurations requiring qualitatively different cooperative actions, making the conditional action distribution inherently multi-modal. Standard deterministic distillation collapses these modes to their mean, often yielding invalid or hesitant actions. To address this issue, we propose CoDiMAD, a three-stage framework that trains a privileged oracle with MAPPO, constructs an offline dataset of local-observation-oracle-action pairs, and distills the oracle into decentralized students parameterized as conditional denoising diffusion probabilistic models. By approximating the conditional oracle-action distribution through the diffusion reverse process, CoDiMAD samples decisive actions from coherent coordination modes rather than averaging across them. Theoretical analysis characterizes the mode-averaging failure of deterministic distillation and the distributional recovery property of diffusion-based distillation. Experiments on three cooperative tasks show that CoDiMAD consistently outperforms direct local MARL and deterministic distillation baselines. The source code will be made publicly available upon acceptance.",
       "is_ascend": false,
-      "title_zh": "CoDiMAD：用于无通信多机器人协同的基于扩散的特权蒸馏",
+      "title_zh": "CoDiMAD：基于扩散的特权蒸馏，用于无通信多机器人协同",
       "institution": "未明确披露",
-      "summary_cn": "该论文研究部分可观测、且机器人之间不能通信时的多机器人去中心化协同问题。作者提出 CoDiMAD，用一个拥有全局信息的特权教师策略生成离线数据，再把其行为蒸馏为基于条件扩散模型的学生策略。核心思想是用扩散模型刻画“相同局部观测对应多种合理协同行为”的多峰动作分布，从而避免确定性蒸馏把多种模式平均后产生犹豫或无效动作。",
+      "summary_cn": "这篇论文研究部分可观测且无法通信的多机器人协同控制问题。作者指出，在多智能体场景下，同一本地观测可能对应多个全局状态与协作动作模式，传统确定性蒸馏容易把这些模式平均掉，导致动作犹豫或无效。为此，论文提出 CoDiMAD，用扩散模型蒸馏具备全局信息的特权策略，使学生策略能够从多峰动作分布中采样出一致且果断的协同行为。",
       "innovations": [
-        "指出多机器人特权蒸馏中的关键难点是局部观测条件下动作分布天然多模态。",
-        "提出三阶段 CoDiMAD 框架：训练特权 oracle、构建离线配对数据、再蒸馏为条件扩散学生策略。",
-        "利用条件扩散逆过程恢复协调动作分布，而不是像确定性蒸馏那样做模式平均。",
-        "给出关于确定性蒸馏模式平均失效与扩散蒸馏分布恢复性质的理论分析。"
+        "指出多机器人特权蒸馏中的关键难点在于局部观测条件下动作分布天然多模态，理论分析了确定性蒸馏的模式平均失效问题。",
+        "提出三阶段 CoDiMAD 框架：先训练特权 oracle，再构建离线蒸馏数据集，最后以条件扩散模型蒸馏去中心化学生策略。",
+        "利用扩散逆过程恢复条件动作分布，从而保留不同协同模式，而不是退化为均值动作。"
       ],
-      "scenario_cn": "适用于多机器人在局部感知、无显式通信条件下完成协作任务的场景，解决传统去中心化策略难以处理多种潜在全局配置、从而输出含糊动作的问题。可用于需要稳健协同决策的分布式机器人系统。",
+      "scenario_cn": "解决无通信、局部观测条件下多机器人需要隐式协作但传统蒸馏难以表达多种协同模式的问题，适用于仓储机器人、群体导航、协作搬运等去中心化多机器人任务。",
       "opensource_status": "未确认开源",
       "code_url": "",
       "title_en": "CoDiMAD: Diffusion-Based Privileged Distillation for Communication-Free Multi-Robot Coordination"
@@ -1213,16 +1209,16 @@
       "institutions_raw": "未明确披露",
       "content_snippet": "The evolution of recommender systems can be explored by asking how they utilize information at scale. Throughout most of the historical period under consideration during the past two decades, industrial systems have relied on raw IDs, which are discrete, globally unique, and semantically opaque identifiers that enable exact lookup, logging, and item-specific memorization at scale. Over time, however, recommender systems have sought to utilize richer sources of information, including item content, context, multimodal signals, and cross-domain structure. This development has led to a new stage in which part of such information is no longer used solely as auxiliary features around item identity, but is increasingly encapsulated in semantic IDs that provide a more structured, model-facing form of identity. We argue that this shift goes beyond the rise of generative recommendation over traditional methods. Indeed, it reflects a broader evolution in how recommender systems utilize information under industrial-scale constraints. This paper looks at the past, present, and future to examine three connected questions: why raw IDs dominated the early development of recommender systems, why semantic information is increasingly being encapsulated in IDs today, and what may come next once recommendations move beyond semantic retrieval. In particular, we introduce semantic planning as a possible future direction in which the system first predicts the semantic target of the next exposure, and only then instantiates that target as a specific item or generated creative. We further argue that such a shift may require changes not only in model design but also in evaluation and in the way recommender systems coordinate the objectives of users, platforms, and providers.",
       "is_ascend": false,
-      "title_zh": "从原始 ID 到语义规划：推荐系统如何在大规模场景中利用信息",
+      "title_zh": "从原始ID到语义规划：推荐系统如何在大规模下利用信息",
       "institution": "未明确披露",
-      "summary_cn": "这篇论文从信息利用方式的角度回顾并分析了推荐系统的发展路径。作者指出，工业推荐系统长期依赖语义不透明但可精确索引的原始 ID，而近年来越来越多的语义信息被封装进面向模型的语义 ID。进一步地，论文提出“语义规划”这一未来方向，即系统先预测下一次曝光的语义目标，再将其具体实例化为某个物品或生成内容。",
+      "summary_cn": "该论文从信息利用方式的角度回顾并讨论推荐系统的发展路径。作者指出，工业推荐长期依赖原始ID进行精确检索和记忆，而近年来更多语义信息被封装进“语义ID”，使其成为模型可直接操作的结构化身份表示。论文进一步提出“语义规划”作为未来方向，即系统先预测下一次曝光的语义目标，再实例化为具体物品或生成内容。",
       "innovations": [
-        "从信息利用而非单纯模型范式的角度，系统性解释推荐系统从原始 ID 到语义 ID 的演进。",
-        "提出语义 ID 不只是辅助特征，而是逐步成为结构化、模型可消费的身份表示。",
-        "提出“语义规划”作为推荐未来方向，主张先预测语义目标，再决定具体物品或生成创意。",
-        "指出这一转变不仅影响模型设计，也会影响评测方式以及用户、平台、供给方目标协调机制。"
+        "从信息利用演化视角系统梳理推荐系统由原始ID走向语义ID的历史与趋势",
+        "提出语义ID不仅是辅助特征增强，而是模型侧身份表示方式的变化",
+        "提出“语义规划”作为推荐系统可能的下一阶段范式",
+        "指出这一转变不仅影响模型设计，也会影响评估方式及用户、平台、供给方目标协调"
       ],
-      "scenario_cn": "适用于大规模工业推荐系统、生成式推荐和跨模态内容分发场景，尤其适合需要融合内容语义、上下文和跨域信号的平台。也适合用于思考从检索式推荐走向更高层语义决策与内容生成的系统设计。",
+      "scenario_cn": "面向大规模工业推荐系统，讨论如何在保持系统可扩展性的同时更充分利用内容、上下文、多模态和跨域信息，适用于下一代语义检索、生成式推荐和语义层规划推荐场景。",
       "opensource_status": "未确认开源",
       "code_url": "",
       "title_en": "From Raw IDs to Semantic Planning: How Recommender Systems Utilize Information at Scale"
@@ -1263,16 +1259,16 @@
       "institutions_raw": "未明确披露",
       "content_snippet": "Version control systems are essential for collaborative software development, yet tools like git remain challenging for many practitioners. Recent advances in Large Language Models (LLMs) offer promising capabilities for interpreting developer intent, but their effectiveness in repository management tasks is limited by the need for formal reasoning. This work introduces Git-Assistant, an AI-based assistant that combines LLMs with automated planning to support developers in executing non-trivial git operations. The assistant analyzes repository context, translates natural language requests into actionable command sequences, and incorporates planning techniques to ensure correctness and safety. We present a systematic evaluation methodology using synthetic and randomized git environments, comparing the performance of LLM-only and planning-augmented variants across multiple metrics. Experimental results demonstrate that integrating formal reasoning with LLMs improves reliability and reduces errors in repository management, highlighting the potential of hybrid AI approaches for intelligent developer assistance.",
       "is_ascend": false,
-      "title_zh": "Git-Assistant：基于规划的 Git 仓库更新支持",
+      "title_zh": "Git-Assistant：基于规划的Git仓库更新支持",
       "institution": "未明确披露",
-      "summary_cn": "这篇论文提出了一个结合大语言模型与自动规划技术的 Git 仓库操作助手，用于帮助开发者完成较复杂的版本控制任务。系统能够分析仓库上下文，将自然语言请求转化为可执行命令序列，并借助规划方法提升操作的正确性与安全性。论文还在合成和随机化的 Git 环境中设计了系统评测方法，对比了纯 LLM 与规划增强版本的表现。",
+      "summary_cn": "该论文提出Git-Assistant，一个将大语言模型与自动规划结合起来的Git操作助手。系统能够结合仓库上下文理解开发者的自然语言请求，并将其转化为可执行的命令序列，同时借助规划机制提升操作的正确性与安全性。作者还在合成和随机化的Git环境中系统比较了纯LLM方案与规划增强方案的表现。",
       "innovations": [
-        "将大语言模型与自动规划结合，用于支持非平凡的 Git 仓库管理操作。",
-        "构建从自然语言请求到仓库上下文感知命令序列的执行流程。",
-        "通过规划机制增强操作正确性与安全性，而不是仅依赖语言模型直接生成命令。",
-        "提出基于合成与随机化 Git 环境的系统化评测方法，用于比较 LLM-only 与规划增强方案。"
+        "提出将LLM与自动规划结合的Git仓库管理助手，用于支持复杂版本控制操作",
+        "能够基于仓库上下文解析自然语言意图并生成可执行命令序列",
+        "通过规划机制增强Git操作过程中的正确性与安全性",
+        "构建了在合成与随机化Git环境中的系统评测方法，用于比较纯LLM与混合方案"
       ],
-      "scenario_cn": "适用于软件开发中的版本控制辅助场景，特别是分支、合并、回滚、同步等容易出错的复杂 Git 操作。也适合面向开发工具链中的智能助手设计，提升仓库管理任务的可靠性与可解释性。",
+      "scenario_cn": "面向软件开发与版本控制辅助，解决开发者在执行非平凡Git操作时容易出错、仅靠语言模型难以保证形式正确性的问题，适用于代码协作、仓库维护和开发者智能助手场景。",
       "opensource_status": "未确认开源",
       "code_url": "",
       "title_en": "Git-Assistant: Planning-Based Support for Updating Git Repositories"
@@ -1316,16 +1312,15 @@
       "institutions_raw": "未明确披露",
       "content_snippet": "While large-scale text-to-image generative models have achieved unprecedented visual performance, their inherent reliance on multi-step iterative solvers incurs severe inference latency. Few-step distillation targeting the Classifier-Free Guidance (CFG) trajectory has emerged as the prevalent dual-dimensional compression paradigm. However, existing frameworks remain subjugated by a coarse-grained blind injection paradigm that perpetually enforces a globally static guidance strength while indiscriminately sampling the supervisor timestep. This state-agnostic design completely disregards the intrinsic nature of image generation as a dynamic evolutionary process characterized by progressive entropy reduction, which not only restricts the performance boundary of few-step compression but also precipitates severe CFG over-conditioning artifacts. To transcend these limitations, we re-examine the distillation procedure through the theoretical lens of Information Theory, formally modeling it as a dynamic mutual information game constrained by the Information Bottleneck (IB) principle. Specifically, we dismantle traditional blind assumptions via a dual-track adaptive framework. To determine the injection target, we propose an instance-aware selection mechanism that transmutes the intractable KL divergence constraint into a zero-overhead closed-form solution predicated on the local vector field norm. To regulate the injection strength, we introduce an entropy-aware schedule that dynamically decays alongside the SNR, applying maximal thrust for initial structural anchoring before smoothly reverting to the natural manifold to refine micro-details. Extensive empirical evaluations corroborate that our framework fundamentally eradicates over-conditioning artifacts, shattering the performance ceiling to achieve SOTA generative fidelity under extremely stringent 2-step configurations.",
       "is_ascend": false,
-      "title_zh": "IB-Flow：信息瓶颈引导的 CFG 蒸馏，用于少步文本生成图像",
+      "title_zh": "IB-Flow：信息瓶颈引导的 CFG 蒸馏，用于少步文本到图像生成",
       "institution": "未明确披露",
-      "summary_cn": "该论文聚焦文本生成图像模型的少步推理蒸馏，目标是在尽量少的采样步数下保持生成质量。作者从信息论与信息瓶颈视角重新审视 CFG 蒸馏过程，认为现有方法对指导强度和监督时间步的处理过于静态，忽略了图像生成过程中信息熵逐步降低的动态特征。基于此，论文提出自适应目标选择与自适应指导强度调度机制，以减轻过强条件约束带来的伪影，并提升极少步数下的生成表现。",
+      "summary_cn": "这篇论文关注文本到图像模型在少步采样下的高质量生成问题，目标是在降低推理步数的同时保持生成效果。作者从信息论和信息瓶颈视角重新审视 CFG 蒸馏过程，认为现有方法使用固定引导强度和盲目采样监督时间步，忽略了生成过程随时间演化的动态特性。基于此，论文提出一种双轨自适应框架，分别自适应选择注入目标与调节注入强度，以缓解过强条件约束带来的伪影。",
       "innovations": [
-        "从信息瓶颈原理出发，将 CFG 少步蒸馏建模为动态互信息约束问题。",
-        "提出实例感知的注入目标选择机制，用局部向量场范数构造闭式判据替代粗粒度静态选择。",
-        "提出随 SNR/熵动态衰减的指导强度调度策略，使早期更强调结构、后期回归细节精修。",
-        "系统性指出并缓解传统盲目静态注入范式导致的过度条件化伪影问题。"
+        "将少步 CFG 蒸馏建模为受信息瓶颈约束的动态互信息过程，为蒸馏策略提供理论视角。",
+        "提出实例感知的注入目标选择机制，用局部向量场范数构造闭式选择准则，替代粗粒度的盲目注入。",
+        "提出随熵与 SNR 变化的自适应引导强度调度，使早期更强调结构约束、后期回归自然流形以细化细节。"
       ],
-      "scenario_cn": "用于需要降低文生图推理时延的场景，尤其适合希望用极少采样步数完成图像生成、同时尽量保持质量与稳定性的系统。它主要解决传统 CFG 少步蒸馏中指导强度固定、监督步选择僵化而导致的质量上限和伪影问题。",
+      "scenario_cn": "解决文本到图像扩散模型推理步数高、少步蒸馏易出现过条件化伪影和质量下降的问题，适用于对低延迟图像生成有要求的交互式创作与在线生成场景。",
       "opensource_status": "未确认开源",
       "code_url": "",
       "title_en": "IB-Flow: Information Bottleneck-Guided CFG Distillation for Few-Step Text-to-Image Generation"
@@ -1370,16 +1365,16 @@
       "institutions_raw": "未明确披露",
       "content_snippet": "The signed integer alphabet contains one more negative representable value than positive. Yet, by convention, the standard symmetric integer quantizer fixes its scale to be strictly positive, which assigns this extra representable value to the negative tail and can force clipping of positive outliers. In this work, we show that, at few-bit precision, such clipping is a non-trivial source of quantization error. Asymmetric quantization addresses this problem with a zero point, shifting the grid toward the observed data range; however, this flexibility is well-known to carry a runtime penalty. For example, in this http URL on an AMD EPYC(TM) \"Turin\" CPU, a 4-bit symmetric format uses up to 9% less memory with up to 2.45$\\times$ higher throughput than its asymmetric counterpart. We highlight signed symmetric quantization as a third option that retains the runtime profile of symmetric quantization without the penalty of the asymmetric format: our signed absmax grid places the extra representable value on the dominant-outlier tail through a principled and lightweight sign selection rule while keeping the zero point at zero. Our theoretical analysis offers two main results. First, we establish the signed absmax grid as conditionally bound-optimal on $\\ell_2$ quantization error, and show that the condition holds for 88-99% of weight groups across pre-trained large language models (LLMs) at low bit widths. Second, we show that negating the scale of a standard symmetric quantizer is analytically equivalent to a unit zero point shift on the same signed integer alphabet. We empirically validate our proposal on models from the Qwen3, Qwen3.5, and Llama3 families, and observe improvement in perplexity and downstream few-shot accuracy over the standard unsigned symmetric quantizer at no extra inference cost",
       "is_ascend": false,
-      "title_zh": "面向低比特整数的带符号对称量化",
+      "title_zh": "面向低比特整数的有符号对称量化",
       "institution": "未明确披露",
-      "summary_cn": "该论文研究低比特整数权重量化中，标准对称量化因正负可表示范围不对称而带来的误差问题。作者指出，常规对称量化固定正尺度后，会把额外的一个可表示值分配给负侧，从而可能裁剪正向离群值；这一问题在少比特场景下并不可以忽略。为此，论文提出带符号对称量化，在保持零点为零和对称量化运行特性的同时，通过轻量的符号选择规则把额外表示能力分配给主导离群值一侧。",
+      "summary_cn": "这篇论文研究低比特整数权重量化中的一个常被忽视的问题：有符号整数可表示的负值比正值多一个，而标准对称量化通常固定正尺度，容易让正向离群值被裁剪。作者提出有符号对称量化方案，在保持零点为零和对称量化运行特性的前提下，通过轻量的符号选择把额外可表示值分配到离群值占主导的一侧。论文从理论和实验上说明，这一方法在少比特量化下可以降低误差且不引入非对称量化的运行时开销。",
       "innovations": [
-        "提出 signed symmetric quantization 作为标准对称量化与非对称量化之外的第三种选择。",
-        "设计 signed absmax 网格，通过原则性的符号选择规则将额外可表示值放到主导离群值尾部。",
-        "从理论上证明该量化网格在一定条件下对 ℓ2 量化误差具有最优性。",
-        "证明对标准对称量化取负尺度在解析上等价于在同一有符号整数表上做单位零点平移，建立了与非对称量化的联系。"
+        "指出标准对称量化在低比特下因整数符号域不对称而带来实际可观的裁剪误差。",
+        "提出 signed absmax 量化网格，通过原则化的尺度符号选择，将额外可表示值分配到主导离群值一侧。",
+        "证明该方法在条件满足时对 ℓ2 量化误差具有边界最优性，并分析其与零点平移之间的解析等价关系。",
+        "在保留对称量化推理效率与内存优势的同时，提供区别于非对称量化的第三种设计选项。"
       ],
-      "scenario_cn": "适用于大模型权重的低比特整数压缩与高效推理场景，尤其关注既想保持对称量化的部署效率、又希望减少离群值裁剪误差的任务。它解决的是标准对称量化在少比特下表示范围分配不均导致精度受损的问题。",
+      "scenario_cn": "解决大模型权重在 few-bit 量化时因标准对称量化网格分配不均导致的误差问题，适用于低比特 LLM 压缩、高吞吐推理和对运行时开销敏感的部署场景。",
       "opensource_status": "未确认开源",
       "code_url": "",
       "title_en": "Signed Symmetric Quantization for Few-Bit Integers"
@@ -1423,16 +1418,16 @@
       "institutions_raw": "未明确披露",
       "content_snippet": "Generated videos provide useful visual motion priors for robot manipulation, but their visual plausibility does not imply physical executability. A generated video usually lacks metric geometry, grasp grounding, robot kinematic feasibility, and execution-time feedback, which makes direct trajectory replay unreliable in real-world manipulation. This paper presents GenVid2Robot, a rigid-geometric consistency framework that converts generated video motion into executable real-robot manipulation trajectories. Given an initial RGB-D observation and a task instruction, GenVid2Robot samples task-relevant semantic anchors from the real first frame, tracks these anchors through generated video candidates, and verifies whether the resulting 2D motion can be explained by first-frame RGB-D anchors under a sparse relative $SE(3)$ model. In this way, generated videos are treated as uncertain visual motion hypotheses rather than direct robot demonstrations. Only geometrically consistent motion is transferred to the robot. The accepted relative motion is then applied to the real grasp-time TCP pose selected by mask-constrained grasping, producing a grasp-conditioned execution trajectory that is consistent with both the visual motion prior and the physical grasp configuration. To reduce execution mismatch caused by RGB-D noise, calibration residuals, and small contact-induced displacement, a bounded depth-compensation module corrects local depth-direction errors without assuming full online replanning. Real-robot experiments demonstrate that GenVid2Robot improves the reliability of generated-video-guided manipulation by grounding visual motion priors with sparse metric geometry, grasp constraints, robot feasibility checking, and bounded execution feedback.",
       "is_ascend": false,
-      "title_zh": "GenVid2Robot：通过刚性几何一致性从视频生成到机器人操作",
+      "title_zh": "GenVid2Robot：通过刚性几何一致性将视频生成转化为机器人操作",
       "institution": "未明确披露",
-      "summary_cn": "这篇论文关注如何把视频生成模型产生的视觉运动先验转化为真实机器人可执行的操作轨迹。作者提出 GenVid2Robot，将生成视频视为不确定的运动假设，通过首帧 RGB-D 锚点、稀疏相对 SE(3) 几何验证、抓取约束和有界深度补偿来筛选并落地可执行动作。方法的核心是用几何一致性和机器人可行性约束，弥合“看起来合理”和“物理上可执行”之间的差距。",
+      "summary_cn": "这篇论文关注如何把生成视频中的运动先验安全地转化为真实机器人的可执行操作轨迹。作者提出 GenVid2Robot，将生成视频视为不确定的运动假设，而不是直接可回放的示教轨迹，并利用首帧 RGB-D 观测、语义锚点跟踪以及稀疏相对 SE(3) 几何验证来筛选可执行运动。方法还结合抓取约束和有界深度补偿，以降低执行时因深度噪声和接触扰动带来的偏差。",
       "innovations": [
-        "提出刚性几何一致性框架，把生成视频中的运动先验转化为真实机器人可执行轨迹。",
-        "基于首帧 RGB-D 观测采样语义锚点，并用稀疏相对 SE(3) 模型验证二维运动是否与真实几何一致。",
-        "将生成视频视为待验证的视觉运动假设，而不是直接当作机器人示教轨迹。",
-        "引入掩码约束抓取与有界深度补偿模块，以减小执行阶段由噪声和接触扰动带来的偏差。"
+        "提出刚性几何一致性框架，用首帧 RGB-D 锚点和稀疏相对 SE(3) 模型验证生成视频中的二维运动是否具有真实几何可解释性。",
+        "将生成视频重新定义为视觉运动假设源，而非直接机器人示教，从而只迁移几何一致的运动先验。",
+        "结合掩码约束抓取得到的抓取时 TCP 位姿，把通过验证的相对运动转换为满足抓取条件的执行轨迹。",
+        "设计有界深度补偿模块，在不依赖完整在线重规划的前提下修正局部深度方向误差。"
       ],
-      "scenario_cn": "面向视频生成引导的机器人操作任务，适用于抓取、操控等需要把视觉生成结果转成真实机械臂动作的场景，尤其适合缺少高质量机器人示教轨迹但拥有生成视频先验的系统。",
+      "scenario_cn": "面向机器人操作与具身智能场景，解决生成视频看起来合理但缺乏真实几何、抓取约束和运动学可执行性的问题。适用于基于视频生成结果引导抓取、搬运和物体操作等真实机器人任务。",
       "opensource_status": "未确认开源",
       "code_url": "",
       "title_en": "GenVid2Robot: From Video Generation to Robot Manipulation via Rigid-Geometric Consistency"
@@ -1483,14 +1478,14 @@
       "is_ascend": false,
       "title_zh": "视频生成模型是通用视觉学习器",
       "institution": "未明确披露",
-      "summary_cn": "这篇论文主张，大规模文生视频生成可以作为通用视觉智能的重要预训练范式。作者提出 GenCeption，利用预训练的视频生成扩散骨干构建一个可由文本指令驱动的前馈感知模型，从而统一处理多种视觉任务。摘要强调，视频生成预训练不仅服务于合成，还可能为面向物理世界的通用视觉学习提供基础路径。",
+      "summary_cn": "这篇论文主张大规模文生视频生成可以成为通用视觉模型的预训练范式，因为它同时提供时空先验、视觉-语言对齐和良好扩展性。作者提出 GenCeption，基于预训练视频生成扩散骨干构建前馈式感知模型，并通过文本指令驱动完成多种视觉任务。结果表明，该模型能够在深度、法线、相机位姿、分割和关键点预测等任务上达到很强表现，说明视频生成不仅能做合成，也可能成为通用视觉智能的基础路径。",
       "innovations": [
-        "提出将大规模视频生成作为通用视觉模型预训练范式的观点。",
-        "提出 GenCeption，把预训练视频生成扩散骨干转化为可文本驱动的前馈感知模型。",
-        "在统一框架下覆盖深度估计、法线估计、相机位姿、指代表达分割和三维关键点预测等多类视觉任务。",
-        "展示出从合成人类视频向真实世界与分布外类别泛化的潜力。"
+        "提出 GenCeption：把预训练视频生成扩散骨干转化为可由文本指令驱动的前馈式通用感知模型。",
+        "系统论证大规模文生视频生成可作为通用视觉学习的预训练范式，强调其时空先验、视觉语言对齐和可扩展性优势。",
+        "在统一框架下覆盖多类视觉任务，展示视频生成预训练相较其他视频预训练路线的通用性潜力。",
+        "观察到仅用合成人类视频训练的模型可泛化到真实视频及分布外类别，体现出初步的涌现泛化能力。"
       ],
-      "scenario_cn": "面向通用视觉感知建模，适用于希望用单一预训练骨干统一支持多任务视觉理解的场景，如机器人感知、三维理解、视觉语言对齐和复杂场景解析。",
+      "scenario_cn": "面向通用视觉理解与多任务感知建模，解决传统视觉模型往往任务割裂、预训练范式不统一的问题。适用于希望用单一基础模型支持多种视觉几何与语义任务的研究和系统场景。",
       "opensource_status": "未确认开源",
       "code_url": "",
       "title_en": "Video Generation Models are General-Purpose Vision Learners"
@@ -1541,14 +1536,13 @@
       "is_ascend": false,
       "title_zh": "用于具身动作条件世界模型的因果去偏潜在动作模型",
       "institution": "未明确披露",
-      "summary_cn": "这篇论文研究具身动作条件世界模型中潜在动作表示的偏置问题。作者指出，现有潜在动作模型常因仅用重建目标训练，而把背景、未接触物体等与动作无关的视觉因素混入动作表示中；为此提出 CD-LAM，通过具身中心重建、动作中心对比学习和潜在空间校准来学习更可控的潜在动作。该方法旨在降低对大规模动作标注数据的依赖，同时提升世界模型对机器人动作的跟随性与稳健性。",
+      "summary_cn": "这篇论文研究无标签视频中学到的潜在动作表示，为什么会妨碍具身动作条件世界模型的可控性。作者指出，现有潜在动作模型常把背景、未交互物体等与动作无关的视觉因素混入动作表示中，并提出 CD-LAM 进行因果去偏。该方法通过具身中心重建、动作中心对比学习和潜在空间校准三个微调目标，学习更聚焦动作、可校准且不塌缩的潜在动作表示，从而提升世界模型的动作跟随和适配能力。",
       "innovations": [
-        "识别并刻画了潜在动作模型中的动作无关偏置，指出其是可控动作条件世界模型的重要障碍。",
-        "提出 CD-LAM，以因果去偏方式改进基于潜在动作模型的动作条件世界模型。",
-        "设计三类高效微调目标：具身中心重建、动作中心对比学习和潜在空间校准。",
-        "引入用于评估潜在动作偏置、动作跟随能力和鲁棒性的指标体系。"
+        "指出潜在动作模型中的动作无关偏置是制约动作条件世界模型可控性的关键问题，并给出相应评测指标。",
+        "提出 CD-LAM 因果去偏框架，用于提升基于潜在动作的动作条件世界模型的可控性与鲁棒性。",
+        "设计三类高效微调目标：具身中心重建、动作中心对比学习和潜在空间校准，分别强化动作相关性、具身聚焦和表示稳定性。"
       ],
-      "scenario_cn": "面向机器人规划、策略评估和数据增强中的动作条件世界建模，适用于难以大规模采集动作标注数据、但希望从无标注视频中学习可控动作表示的具身智能场景。",
+      "scenario_cn": "面向机器人规划、策略评估、数据增强等具身世界模型应用，解决无标签视频学习得到的潜在动作表示混入背景和无关视觉因素、导致控制性不足的问题。适用于需要用较少动作标注数据训练可控世界模型的机器人与具身智能场景。",
       "opensource_status": "未确认开源",
       "code_url": "",
       "title_en": "Causally Debiased Latent Action Model for Embodied Action Conditioned World Models"
@@ -1589,16 +1583,16 @@
       "institutions_raw": "未明确披露",
       "content_snippet": "We present DemoBridge, an toolkit that turns a single-view RGB stereo recording of a human hand demonstration into an executable, physics-validated robot-arm trajectory. Retargeting across the embodiment gap is hard. A robot arm reaches a target with a long, articulated body whose links carry far more collision volume than a hand. Solving inverse kinematics for the mapped end-effector pose often yields no collision-free solution, and a trajectory imposes this at every waypoint. A single view adds noise, leaving the demonstrated reference inaccurate. At the core of DemoBridge is a single collision-aware planner. It optimizes the whole joint trajectory at once, reasoning jointly over alternative grasp poses, whole-arm and grasped-object collision, and fidelity to the demonstrated path. A physics simulator runs in the loop. It validates each phase as it is produced and backtracks on failure, so a demonstration that cannot be reproduced as given is re-planned rather than discarded. The resulting action sequence is dynamically stable and faithful to the demonstrated manipulation. It also doubles as a ready-to-use simulation rollout for policy learning. Grasp timing is inferred automatically, and the perception backends, robot, and pipeline stages are swappable from configuration. We evaluate whole-pipeline retargeting on three real-demonstration tasks and the planner on a controlled synthetic benchmark. Our code is available at this https URL .",
       "is_ascend": false,
-      "title_zh": "DemoBridge：用于单视角人类示范重定向的仿真闭环工具包",
+      "title_zh": "DemoBridge：一个用于单视角人类示范重定向的仿真闭环工具包",
       "institution": "未明确披露",
-      "summary_cn": "这篇论文提出 DemoBridge，用于把单视角 RGB 立体采集到的人手操作示范转换为机器人手臂可执行、并经过物理验证的轨迹。方法核心是一个碰撞感知规划器，会联合优化整条关节轨迹，同时考虑抓取姿态选择、机械臂与被抓物体的碰撞，以及对原始示范路径的忠实性。系统还把物理仿真器置于规划环路中，在每个阶段进行验证并在失败时回溯重规划，从而避免直接丢弃无法原样复现的示范。",
+      "summary_cn": "这篇论文提出 DemoBridge，用于把单视角 RGB 立体记录到的人手操作示范，转化为可执行且经过物理验证的机械臂轨迹。方法核心是一个碰撞感知规划器，对整条关节轨迹进行联合优化，同时考虑抓取姿态选择、机械臂与被抓取物体的碰撞，以及对原始示范路径的保真。系统还将物理仿真器置于闭环中，对各阶段结果进行验证并在失败时回溯重规划，从而提高轨迹可执行性与动态稳定性。",
       "innovations": [
-        "提出单一的碰撞感知全局规划器，对整条关节轨迹一次性优化，而不是逐点独立求解逆运动学。",
-        "在规划过程中联合考虑替代抓取姿态、整臂碰撞、抓持物体碰撞以及对演示轨迹的保真度。",
-        "将物理仿真放入闭环，按阶段验证生成结果并在失败时回溯重规划，提高轨迹可执行性与动态稳定性。",
-        "可自动推断抓取时机，并支持通过配置替换感知后端、机器人平台和流水线阶段。"
+        "提出单一的碰撞感知全轨迹规划器，联合优化抓取姿态、整臂碰撞约束与示范轨迹保真度。",
+        "将物理仿真置于规划闭环中，对生成阶段逐步验证，并在失败时回溯重规划而不是直接丢弃示范。",
+        "支持从单视角人类手部示范自动推断抓取时机，降低示范采集与重定向门槛。",
+        "系统组件可配置替换，包括感知后端、机器人本体和流水线阶段，便于复用到不同平台。"
       ],
-      "scenario_cn": "面向把人类手部演示迁移到机器人手臂执行的操作学习与模仿任务，尤其适用于单视角观测、示范存在噪声、且人手与机械臂在形态和碰撞体积上差异较大的场景。也适用于为后续策略学习直接生成可用的仿真 rollout。",
+      "scenario_cn": "面向把人类手部操作示范迁移到机械臂执行的问题，适用于单视角示教、机器人模仿学习数据构建、抓取与操作任务重放，以及为后续策略学习提供可直接使用的仿真 rollout 场景。",
       "opensource_status": "未确认开源",
       "code_url": "",
       "title_en": "DemoBridge: A Simulation-in-the-Loop Toolkit for Single-View Human Demonstration Retargeting"
@@ -1642,13 +1636,13 @@
       "is_ascend": false,
       "title_zh": "一卡车聪：在真实环境中检测并度量单向套利",
       "institution": "未明确披露",
-      "summary_cn": "这篇论文研究中心化加密货币交易所中的单向套利行为，重点是在缺乏地址和交易者身份标识的匿名现货交易数据中识别这类模式。作者提出了一套新的推断方法，用于从公开成交数据中恢复可能的单向套利序列，并据此分析其规模、利润和时间变化趋势。结果表明，这类定价偏差在真实交易平台上持续存在，但单次套利的平均收益有限。 ",
+      "summary_cn": "这篇论文研究中心化加密货币交易所中的单向套利行为，并提出一种在匿名现货交易数据中推断这类交易序列的方法。作者基于多年 Binance 和 Kraken 交易数据识别出大量疑似单向套利序列，并估计了其在整体交易量和总利润中的占比。结果表明这类定价偏差在交易所中持续存在，但单笔套利的平均收益较低，且随着时间推移套利速度更快、单次盈利下降。",
       "innovations": [
-        "提出一种面向匿名化现货成交数据的单向套利推断方法，不依赖地址或交易者身份链接。",
-        "将该方法应用到长期的大规模真实交易数据上，对单向套利的频率、成交占比和利润进行系统测量。",
-        "分析了套利速度与单次盈利能力随时间的演化，揭示中心化交易所中定价偏差与竞争加剧的动态特征。"
+        "提出一种从缺乏地址和交易者标识的匿名现货交易数据中推断单向套利的新方法。",
+        "对多个中心化交易所的长期真实交易数据进行系统测量，量化单向套利的频率、成交量占比与利润规模。",
+        "分析单向套利随时间的演化趋势，揭示其执行速度提升而单次盈利下降的现象。"
       ],
-      "scenario_cn": "适用于研究中心化交易所中的算法交易行为、市场微观结构和价格偏差问题，也可用于监管分析、交易平台评估以及对套利机会形成条件的后续研究。",
+      "scenario_cn": "用于识别和评估中心化交易所中的算法交易与跨币种定价偏差，适用于金融市场微观结构研究、交易所监测、加密市场效率分析以及套利行为实证测量场景。",
       "opensource_status": "未确认开源",
       "code_url": "",
       "title_en": "A Truckload of Satoshis: Detecting and Measuring One-Way Arbitrage in the Wild"
@@ -1688,16 +1682,16 @@
       "institutions_raw": "未明确披露",
       "content_snippet": "Recent work has reported Emergent Misalignment (EM), where language models fine-tuned on narrow, domain-specific misaligned datasets abruptly acquire broadly misaligned behavior, alongside evidence that this behavior can be reversed through limited realignment. We systematically study repeated alignment and misalignment cycles using controlled fine-tuning loops while tracking behavioral performance, and LoRA representations throughout training. Although we reproduce EM, we find that both misalignment and realignment are highly sensitive to superficial dataset characteristics, with apparent rapid realignment largely disappearing after controlling for response-length differences. We further find that previously reported mechanistic signatures, including representational phase transitions in LoRA space, do not consistently correlate with behavioral misalignment across training. Our results suggest that current evidence for EM is less robust than previously claimed and highlight the need for evaluation protocols that carefully control for these surface level dataset artifacts to identify the robustness of the EM phenomenon.",
       "is_ascend": false,
-      "title_zh": "一种涌现的幻象：涌现性失配与再对齐真的是稳健现象吗？",
+      "title_zh": "一种涌现的幻象：涌现性失配与重新对齐真的是稳健现象吗？",
       "institution": "未明确披露",
-      "summary_cn": "这篇论文系统检验了所谓“涌现性失配”和“快速再对齐”现象是否可靠存在。作者通过受控的反复对齐/失配微调循环，同时跟踪行为表现和 LoRA 表征变化，发现虽然能够复现失配现象，但失配与再对齐都对数据集表面特征非常敏感。进一步控制回答长度等因素后，先前报告中的快速再对齐现象明显减弱，而一些被认为具有机制意义的 LoRA 相变信号也并不稳定对应行为失配。 ",
+      "summary_cn": "这篇论文重新检验了近期关于“涌现性失配”和“快速重新对齐”的结论是否稳健。作者通过受控的反复对齐/失配微调循环，同时跟踪行为表现和 LoRA 表征，发现虽然能够复现实验中的失配现象，但失配与重新对齐对数据集表面特征非常敏感。进一步控制回复长度差异后，先前声称的快速重新对齐现象大幅减弱，而一些被认为具有机制解释意义的 LoRA 表征变化也并不稳定对应行为失配。",
       "innovations": [
-        "设计了受控的重复对齐—失配微调循环，用于系统性检验涌现性失配及其逆转现象的稳健性。",
-        "同时跟踪行为表现与 LoRA 表征演化，对既有机制解释进行并行验证。",
-        "指出回答长度等表层数据特征会显著影响失配与再对齐评估，说明以往结论可能受数据伪影干扰。",
-        "发现先前报告的 LoRA 表征相变并不总能稳定对应行为层面的失配。"
+        "设计受控的重复对齐/失配微调循环，以系统评估涌现性失配与重新对齐的可重复性。",
+        "指出数据集表面特征，尤其是回复长度差异，会显著影响对失配和重新对齐的观察结论。",
+        "对先前提出的 LoRA 空间表征相变等机制性信号进行复核，发现其与行为失配并不稳定相关。",
+        "强调需要更严格控制表层伪因素的评测协议，以判断该现象是否真正稳健。"
       ],
-      "scenario_cn": "适用于大语言模型对齐、安全与可控性研究，尤其是在评估模型是否会因狭窄失配数据而出现广泛失配行为，以及如何设计更稳健的对齐实验和评测协议时具有参考价值。",
+      "scenario_cn": "面向大语言模型安全对齐与失配评测，适用于研究微调是否会导致广泛失配行为、如何设计更可靠的对齐评估协议，以及分析参数高效微调下行为变化与表征变化关系的场景。",
       "opensource_status": "未确认开源",
       "code_url": "",
       "title_en": "An Emergent Mirage: Is Emergent Misalignment and Realignment Indeed a Robust Phenomenon?"
@@ -1738,15 +1732,16 @@
       "institutions_raw": "未明确披露",
       "content_snippet": "In this study, we examine the opportunities brought by Large Language Models (LLMs) to various aspects of fundamental analysis of companies based on their reports as well as data and documents describing macroeconomic situation like GDP and inflation changes as well as documents filled to the U.S. Securities and Exchange Commission (SEC) which can be found in EDGAR. We were preprocessing those data and than sending via API to gpt-4o model in a Retrieval-Augmented Generation (RAG) like regime. We prepared as well a document describing an exemplar investor knowledge based on Kitchin cycles. We were scanning data important for analysis of 9 companies for 4 weeks. Using LLM we were producing automatic briefs about them. They were sent to nine participants who are individual investors to evaluate usefulness of such approach to data analysis.",
       "is_ascend": false,
-      "title_zh": "用大语言模型增强基本面分析：一种基于 RAG 的投资者简报生成系统",
+      "title_zh": "用大语言模型增强基本面分析：一个用于生成投资者简报的基于 RAG 的系统",
       "institution": "未明确披露",
-      "summary_cn": "这篇论文研究如何利用大语言模型辅助公司基本面分析，并构建一个基于 RAG 的投资者简报自动生成系统。系统整合公司报告、宏观经济数据以及美国 SEC/EDGAR 文件等资料，经预处理后输入模型生成面向投资者的分析简报。作者还结合示例性投资知识文档，并在多家公司、持续数周的跟踪场景中让投资者参与主观效用评估。 ",
+      "summary_cn": "这篇论文研究如何利用大语言模型增强公司的基本面分析，并构建了一个基于 RAG 的自动投资者简报生成系统。作者对公司报告、宏观经济数据以及美国 SEC/EDGAR 文档进行预处理后，送入 gpt-4o 生成面向投资者的分析简报，同时加入一个关于 Kitchin 周期的示例知识文档。系统连续数周跟踪多家公司，并由个人投资者对生成简报的实用性进行评估。",
       "innovations": [
-        "构建了一个面向基本面分析的 RAG 式系统，将公司报告、宏观经济信息和监管披露文档统一纳入生成流程。",
-        "引入示例性投资知识文档作为辅助知识来源，增强自动简报的分析背景。",
-        "将自动生成简报用于持续跟踪多家公司，并通过真实投资者反馈评估其实用性。"
+        "构建将公司报告、宏观经济信息与 SEC/EDGAR 文档结合起来的 RAG 式投资简报生成流程。",
+        "把结构化与非结构化金融信息统一预处理后输入大语言模型，用于自动化基本面分析支持。",
+        "引入示例性投资知识文档作为补充上下文，以增强生成简报的分析视角。",
+        "通过真实投资者参与评估，验证自动生成投资简报在实际使用中的潜在价值。"
       ],
-      "scenario_cn": "适用于面向个人或研究型投资者的公司跟踪、信息整合与自动化简报生成场景，尤其适合需要从财报、监管文件和宏观数据中快速提炼要点的基本面研究流程。",
+      "scenario_cn": "用于辅助公司基本面研究与投资信息整理，适用于个人投资者或研究人员从财报、监管披露和宏观数据中自动生成分析简报的场景，也适合金融研究工作流中的信息聚合与初步研判。",
       "opensource_status": "未确认开源",
       "code_url": "",
       "title_en": "Augmenting Fundamental Analysis with Large Language Models: A RAG-Based System for Generating Investor Briefs"
@@ -1786,14 +1781,14 @@
       "is_ascend": false,
       "title_zh": "面向源代码仓库的语义与质量感知检索评估",
       "institution": "未明确披露",
-      "summary_cn": "这篇论文评估了一个面向源代码仓库的检索原型系统，目标是解决自然语言查询、实现意图查询以及质量导向查询下，传统关键词检索效果不足的问题。系统结合了函数级切分、文本与代码嵌入、向量数据库，以及由大语言模型生成的代码质量元数据，并比较了语义检索、质量过滤检索、混合检索和自动路由四种模式。作者在教育场景的 C 语言代码语料上进行人工相关性评测，结果表明语义检索整体表现最强，而质量元数据对显式质量导向查询更有帮助。",
+      "summary_cn": "该论文评估了一个面向源代码仓库的检索原型系统，重点解决自然语言查询、实现意图表达以及代码质量导向查询下，传统关键词检索效果有限的问题。系统结合函数级切分、代码与文本嵌入、向量数据库以及由大模型生成的质量元数据，并比较语义检索、质量过滤检索、混合检索和自动路由四种模式。作者在教育场景下的 C 语言代码语料上进行人工标注评测，结果显示语义检索整体表现最好，而质量元数据对明确关注代码质量的查询更有帮助。",
       "innovations": [
-        "提出并系统评估了一个同时结合代码语义表示与质量元数据的源代码仓库检索框架。",
-        "将检索对象细化到函数片段级别，以支持比文件级更细粒度的代码检索。",
-        "设计了语义检索、质量过滤、混合检索和自动路由四种检索模式，并比较不同模式的适用性。",
-        "引入由大语言模型生成的代码质量评分元数据，用于支持质量导向的检索需求。"
+        "构建了一个同时结合函数级代码切分、文本/代码嵌入、向量存储和质量元数据的源代码仓库检索评估框架。",
+        "系统性比较了语义检索、质量过滤检索、混合检索和自动路由四种不同检索模式在代码仓库场景下的表现。",
+        "引入由大模型生成的代码质量元数据，用于支持面向代码质量的检索需求，而不仅仅是语义匹配。",
+        "评估了自动路由机制根据查询类型选择检索模式的可行性，验证其在所报告查询集上的有效性。"
       ],
-      "scenario_cn": "适用于代码搜索、代码复用、教学代码库检索以及开发者用自然语言查找实现思路或高质量代码片段的场景。尤其适合查询不依赖精确关键词、而更关注语义相似性或代码质量属性的源代码仓库检索任务。",
+      "scenario_cn": "适用于软件工程、代码搜索和代码知识库检索场景，尤其适合用户用自然语言描述需求、希望按实现意图找代码，或需要筛选代码质量较高片段的场景。",
       "opensource_status": "未确认开源",
       "code_url": "",
       "title_en": "Evaluating Semantic and Quality-Aware Retrieval for Source Code Repositories"
@@ -1836,14 +1831,14 @@
       "is_ascend": false,
       "title_zh": "探索程序流程图在多模态大语言模型代码生成中的潜力",
       "institution": "未明确披露",
-      "summary_cn": "这篇论文研究在代码生成任务中，向多模态大语言模型同时提供题目文本和程序流程图，是否能够提升生成效果。作者基于 AtCoder 题目，从示例解答代码生成流程图，并将其与题目描述一起输入 GPT-4o 进行实验。结果表明，加入流程图能够带来性能提升，同时流程图细节越充分，效果通常越好；与 few-shot 方法相比，流程图也表现出稳定的辅助作用。",
+      "summary_cn": "该论文研究在代码生成任务中，为多模态大语言模型提供程序流程图是否能够提升效果。作者将示例解法代码生成的流程图，与题目文本一起输入 GPT-4o，用于 AtCoder 编程题代码生成，并与少样本学习方案进行比较。结果表明，引入流程图这一视觉信息能够带来性能提升，也说明软件图示在辅助多模态代码生成方面具有实际潜力。",
       "innovations": [
-        "首次系统探索将程序流程图作为视觉输入，引入多模态大模型代码生成任务中的效果。",
-        "构建了由示例解答代码生成流程图并与题目文本联合输入模型的实验范式。",
-        "分析了不同抽象程度流程图对代码生成效果的影响，发现更丰富的流程信息通常更有帮助。",
-        "将流程图辅助与 few-shot 学习进行对比，讨论了两类提示增强方式的相对作用。"
+        "系统研究了将程序流程图作为视觉输入引入多模态大语言模型代码生成任务的效果。",
+        "比较了不同抽象程度流程图对生成性能的影响，分析流程图细节程度与效果之间的关系。",
+        "将流程图增强方式与 Few-Shot Learning 进行对比，探讨视觉辅助和示例学习两类增强手段的差异。",
+        "把软件工程中常见的图示表达形式引入多模态代码生成研究，拓展了代码生成输入模态设计空间。"
       ],
-      "scenario_cn": "适用于编程竞赛题求解、教育编程辅助、自动代码生成以及需要把算法流程显式可视化后再交给多模态模型理解的场景。特别适合输入本身包含过程结构、控制流或算法步骤信息的代码生成任务。",
+      "scenario_cn": "适用于编程题求解、自动代码生成、教育辅助编程和软件开发支持等场景，尤其适合题意复杂、控制流程明显、仅靠文本描述不足以充分表达程序逻辑的任务。",
       "opensource_status": "未确认开源",
       "code_url": "",
       "title_en": "Exploring the Potential of Program Flowcharts on Code Generation Using Multimodal LLMs"
@@ -1881,16 +1876,16 @@
       "institutions_raw": "未明确披露",
       "content_snippet": "In the digital era, Portable Document Format (PDF) is one of the most widely used file formats for storing and exchanging digital documents due to its platform independence and rich functionality. However, these same capabilities have also made PDF files an attractive attack vector for cyberattackers, who embed malicious code within seemingly legitimate documents to compromise target systems. This paper presents a novel interpretable Tsetlin Machine (TM)-based framework for PDF malware detection. The proposed framework extracts salient features from PDF documents through static analysis without executing the files and employs rule-based learning to accurately classify benign and malicious PDF documents. Numerical evaluation on the RIT-PDFMal-2026 dataset demonstrates that the proposed framework achieves competitive performance, attaining an accuracy of 98.02% compared with several ML classifiers and existing methods. Moreover, the proposed framework provides intrinsic interpretability by transparently explaining its classification decisions. The combination of competitive detection performance, computational efficiency, and intrinsic interpretability makes the proposed framework a promising solution for practical PDF malware detection.",
       "is_ascend": false,
-      "title_zh": "利用可解释的 Tsetlin Machine 进行 PDF 恶意软件检测",
+      "title_zh": "利用可解释 Tsetlin 机进行 PDF 恶意软件检测",
       "institution": "未明确披露",
-      "summary_cn": "这篇论文提出了一个基于可解释 Tsetlin Machine 的 PDF 恶意软件检测框架，重点是在不执行文件的前提下，通过静态分析提取 PDF 文档中的关键特征，并完成恶意与正常样本分类。作者将其与多种机器学习分类器和已有方法进行比较，表明该方法具有有竞争力的检测性能。论文还强调该方法具备内在可解释性，能够透明说明分类决策依据。",
+      "summary_cn": "该论文提出了一种基于可解释 Tsetlin 机的 PDF 恶意软件检测框架，目标是在不执行文件的前提下，通过静态分析识别恶意 PDF。方法从 PDF 文档中提取关键特征，并使用基于规则的学习模型完成良性与恶意分类。论文强调该方法不仅具备有竞争力的检测性能，还能直接给出可解释的判别依据，因此更适合实际安全检测部署。",
       "innovations": [
-        "提出了一种面向 PDF 恶意软件检测的 Tsetlin Machine 框架，将规则学习用于静态检测任务。",
-        "在无需动态执行文档的条件下，通过静态分析提取特征并完成恶意检测，提升了部署可行性。",
-        "方法具备内在可解释性，可直接给出规则级别的决策解释，而非仅提供黑盒预测结果。",
-        "将检测性能、计算效率与可解释性结合，面向实际安全检测场景进行了方法设计。"
+        "提出了一个基于 Tsetlin 机的 PDF 恶意软件检测框架，将静态特征提取与可解释规则学习结合起来。",
+        "方法在不执行 PDF 文件的条件下完成检测，降低了动态分析带来的运行与安全成本。",
+        "相比常见黑盒机器学习分类器，该方法提供了内生的可解释性，能够透明说明分类决策依据。",
+        "将可解释性、计算效率和检测效果结合起来，面向实际 PDF 安全防护场景进行了方法设计。"
       ],
-      "scenario_cn": "适用于企业安全网关、邮件附件检测、终端文档安全审查等需要识别恶意 PDF 文件的场景。尤其适合对可解释性有要求、且希望避免执行可疑样本带来风险的静态安全检测任务。",
+      "scenario_cn": "适用于网络安全、终端防护、邮件附件检测和文档安全审查等场景，解决恶意 PDF 隐蔽嵌入代码、传统方法解释性不足的问题，适合需要高可解释性的安全检测环境。",
       "opensource_status": "未确认开源",
       "code_url": "",
       "title_en": "Leveraging Interpretable Tsetlin Machine for PDF Malware Detection"
