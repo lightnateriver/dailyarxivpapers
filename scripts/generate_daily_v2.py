@@ -15,7 +15,9 @@ RESUME_FILE = None  # set in main()
 VERTICAL_EXCLUDE = [
     'nutrition', 'nutrient', 'health advice', 'diabetes', 'clinical', 'therapy', 'hepatocellular',
     'cardiovascular', 'medical', 'underwater', 'drone', 'uav', 'agri', 'agric', 'robotic surface swabbing',
-    'food', 'deepfake', 'table tennis', 'disease risk', 'healthcare', 'patient', 'farmland', 'crop', 'aquatic'
+    'food', 'deepfake', 'table tennis', 'disease risk', 'healthcare', 'patient', 'farmland', 'crop', 'aquatic',
+    'robot', 'robotic', 'robotics', 'autonomous driving', 'inspection', 'inspect', 'patrol',
+    'pathology', 'pathological', 'histopathology', 'whole slide image', 'wsi'
 ]
 EDGE_EXCLUDE = [
     'edge deployment', 'edge systems', 'edgeai', 'on-device', 'mobile reasoning', 'mobile reasoning-as-a-service',
