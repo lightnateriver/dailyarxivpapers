@@ -42,6 +42,7 @@ if git rev-parse --verify origin/main >/dev/null 2>&1; then
 fi
 
 python3 scripts/generate_daily.py --date "${TARGET_DATE}" --fail-on-empty-fetch
+python3 scripts/generate_daily_v2.py --date "${TARGET_DATE}"
 
 DAILY_HTML="docs/daily/${TARGET_DATE}.html"
 DAILY_JSON="docs/data/${TARGET_DATE}.json"
