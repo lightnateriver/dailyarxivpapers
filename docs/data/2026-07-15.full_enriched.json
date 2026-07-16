@@ -1,0 +1,2034 @@
+{
+  "date": "2026-07-15",
+  "count": 38,
+  "fetched_count": 583,
+  "papers": [
+    {
+      "id": "2607.13034v1",
+      "title": "Do AI Agents Know When a Task Is Simple? Toward Complexity-Aware Reasoning and Execution",
+      "abstract": "Large language model (LLM) agents increasingly automate multi-step engineering and informatics workflows, yet they rarely ask how much effort a task actually requires. They often follow a maximum-context-first strategy--re-reading files and dependencies they have already seen--turning a one-line edit into a small code-base audit. We argue the missing capability is task-aware execution-scope estimation: judging a task's difficulty, the information it truly needs, and the shortest reliable path before committing budget. We formalize minimum-sufficient execution and the Agent Cognitive Redundancy Ratio (ACRR), and propose E3 (Estimate, Execute, Expand): the agent estimates an initial operating point, executes a minimum viable path, and expands scope only when verification fails. On MSE-Bench--a deterministic benchmark of 121 edits in a capability-controlled simulator--E3 matches the strongest baseline's 100% success while cutting cost by 85%, tokens by 91%, and inspected files by 92%, and further beats a strong adaptive retrieval baseline by 16%; the gains survive held-out instruction wording and essentially every cost weighting. A companion real-model harness (LLM-Case) corroborates the effect on a live gpt-4o agent editing a real open-source library, with every candidate patch graded by actually running the project's real pytest suite against a measured oracle: the over-reading is milder but real, and E3 is the leanest and fastest policy at comparable task success--its one shortfall a provider rate-limit, not a wrong edit. We frame this as a controlled probe of execution redundancy, not a measurement of any deployed agent, and position task-aware execution as a step toward engineering-grounded AI (EGAI)--agents whose effort is anchored in the engineering reality of the task. We release the framework and benchmark.",
+      "published": "2026-07-15T00:00:00+00:00",
+      "updated": "2026-07-15T00:00:00+00:00",
+      "authors": [
+        "Junjie Yin",
+        "Xinyu Feng"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.SE",
+        "eess.SY"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.13034",
+      "pdf_url": "https://arxiv.org/pdf/2607.13034",
+      "score": 7.8,
+      "topics": [
+        {
+          "name": "Agent",
+          "slug": "agent",
+          "hits": [
+            "agent",
+            "ai agent"
+          ]
+        },
+        {
+          "name": "Agent Reasoning / Test-time Scaling",
+          "slug": "agent-reasoning",
+          "hits": [
+            "reasoning"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "agent",
+        "ai agent",
+        "reasoning"
+      ],
+      "code_links": [
+        "https://github.com/eejyin/Do-AI-Agents-Know-When-a-Task-Is-Simple-Toward-Complexity-Aware-Reasoning-and-Execution"
+      ],
+      "github_search_url": "https://github.com/search?q=Do%20AI%20Agents%20Know%20When%20a%20Task%20Is%20Simple%3F%20Toward%20Complexity-Aware%20Reasoning%20and%20Execution%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Large language model (LLM) agents increasingly automate multi-step engineering and informatics workflows, yet they rarely ask how much effort a task actually requires. They often follow a maximum-context-first strategy--re-reading files and dependencies they have already seen--turning a one-line edit into a small code-base audit. We argue the missing capability is task-aware execution-scope estimation: judging a task's difficulty, the information it truly needs, and the shortest reliable path before committing budget. We formalize minimum-sufficient execution and the Agent Cognitive Redundancy Ratio (ACRR), and propose E3 (Estimate, Execute, Expand): the agent estimates an initial operating point, executes a minimum viable path, and expands scope only when verification fails. On MSE-Bench--a deterministic benchmark of 121 edits in a capability-controlled simulator--E3 matches the strongest baseline's 100% success while cutting cost by 85%, tokens by 91%, and inspected files by 92%, and further beats a strong adaptive retrieval baseline by 16%; the gains survive held-out instruction wording and essentially every cost weighting. A companion real-model harness (LLM-Case) corroborates the effect on a live gpt-4o agent editing a real open-source library, with every candidate patch graded by actually running the project's real pytest suite against a measured oracle: the over-reading is milder but real, and E3 is the leanest and fastest policy at comparable task success--its one shortfall a provider rate-limit, not a wrong edit. We frame this as a controlled probe of execution redundancy, not a measurement of any deployed agent, and position task-aware execution as a step toward engineering-grounded AI (EGAI)--agents whose effort is anchored in the engineering reality of the task. We release the framework and benchmark.",
+      "is_ascend": false,
+      "title_zh": "AI Agent 知道任务何时足够简单吗？迈向复杂度感知的推理与执行",
+      "institution": "未明确披露",
+      "summary_cn": "该论文关注 LLM Agent 在工程任务中常见的“过度阅读”和执行冗余问题，提出让 agent 先判断任务复杂度、信息需求和最短可靠执行路径。作者形式化了最小充分执行与 Agent Cognitive Redundancy Ratio（ACRR），并提出 E3（Estimate, Execute, Expand）策略：先估计、再走最小可行路径，只有验证失败时才扩展范围。在所述基准与真实代码编辑验证中，E3 在保持成功率可比的同时显著降低了成本、token 消耗和文件检查量。",
+      "innovations": [
+        "提出任务感知执行范围估计问题，强调 agent 应先判断任务需要多少上下文与代价，而不是默认最大上下文优先。",
+        "定义最小充分执行与 ACRR，用于刻画和衡量 agent 的认知冗余。",
+        "提出 E3 策略，通过“估计-执行-扩展”的闭环控制执行开销，仅在验证失败时扩大搜索与读取范围。",
+        "构建 MSE-Bench 与配套真实模型测试框架，用可复现实验分析 agent 执行冗余而不仅是最终成功率。"
+      ],
+      "scenario_cn": "适用于代码编辑、工程自动化和多步信息学任务中的 LLM Agent，解决 agent 为简单任务读取过多上下文、成本过高、执行路径过长的问题，尤其适合需要控制推理预算和工具开销的智能体系统。",
+      "opensource_status": "已确认开源",
+      "code_url": "https://github.com/eejyin/Do-AI-Agents-Know-When-a-Task-Is-Simple-Toward-Complexity-Aware-Reasoning-and-Execution",
+      "title_en": "Do AI Agents Know When a Task Is Simple? Toward Complexity-Aware Reasoning and Execution"
+    },
+    {
+      "id": "2607.12894v1",
+      "title": "Hy-Embodied-VLM-1.0: Efficient Physical-World Agents",
+      "abstract": "Building capable embodied agents requires not only multimodal perception and understanding, but also agentic capabilities for reasoning about actions, adapting to evolving situations, and interacting with the physical world. In this report, we introduce Hy-Embodied-VLM-1.0, an efficient and powerful embodied foundation model specifically designed for embodied agents operating in the physical world. To cultivate such capabilities from the pre-training stage onward, we define an action-centric capability taxonomy comprising three progressive dimensions: Action-Relevant State Understanding, Action-Transition Reasoning, and Sequential and Adaptive Reasoning. Guided by this taxonomy, we develop a systematic data pipeline and curate data mixtures spanning both pre-training and post-training. To deliver strong physical-world understanding and interaction capabilities while supporting latency-sensitive deployment, we build our model on the Hy3-A3B language backbone and the Hy-ViT2 vision encoder. Its efficient Mixture-of-Experts architecture combines strong model capacity with high inference efficiency. We evaluate Hy-Embodied-VLM-1.0 on a comprehensive suite of 38 benchmarks covering embodied perception, physical-world understanding, and embodied reasoning. The model achieves the best performance among similarly sized models on 19 of the 38 benchmarks and substantially outperforms strong competitors, including Qwen3.6-A3B and Cosmos 3. Compared with the previous-generation Hy-Embodied-0.5 MoT-2B, Hy-Embodied-VLM-1.0 improves average performance by 8.4%. Despite activating only 3B parameters, it achieves performance close to that of the previous-generation model with 32B activated parameters. Beyond static benchmark evaluation, Hy-Embodied-VLM-1.0 also demonstrates strong performance on embodied agentic tasks requiring multi-turn interaction and long-horizon reasoning.",
+      "published": "2026-07-15T00:00:00+00:00",
+      "updated": "2026-07-15T00:00:00+00:00",
+      "authors": [
+        "Ziyi Wang",
+        "Xumin Yu",
+        "Yongming Rao",
+        "Yonggen Ling",
+        "Yunheng Li",
+        "Oran Wang",
+        "Mingqi Gao",
+        "Yuchen Zhou",
+        "Yves Liang",
+        "Zuyan Liu",
+        "Yani Zhang",
+        "Rui Huang",
+        "Xiaoran Xu",
+        "Bowen Yuan",
+        "Yifu Yuan",
+        "Xu Tan",
+        "He Zhang",
+        "Yufei Huang",
+        "Shenghao Zhang",
+        "Hongsheng Wu",
+        "Han Hu",
+        "Zhengyou Zhang"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.12894",
+      "pdf_url": "https://arxiv.org/pdf/2607.12894",
+      "score": 7.6,
+      "topics": [
+        {
+          "name": "多模态推理加速",
+          "slug": "multimodal-inference",
+          "hits": [
+            "vlm"
+          ]
+        },
+        {
+          "name": "Agent",
+          "slug": "agent",
+          "hits": [
+            "agent"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "agent",
+        "vlm"
+      ],
+      "code_links": [
+        "https://github.com/Tencent-Hunyuan/HY-Embodied"
+      ],
+      "github_search_url": "https://github.com/search?q=Hy-Embodied-VLM-1.0%3A%20Efficient%20Physical-World%20Agents%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Building capable embodied agents requires not only multimodal perception and understanding, but also agentic capabilities for reasoning about actions, adapting to evolving situations, and interacting with the physical world. In this report, we introduce Hy-Embodied-VLM-1.0, an efficient and powerful embodied foundation model specifically designed for embodied agents operating in the physical world. To cultivate such capabilities from the pre-training stage onward, we define an action-centric capability taxonomy comprising three progressive dimensions: Action-Relevant State Understanding, Action-Transition Reasoning, and Sequential and Adaptive Reasoning. Guided by this taxonomy, we develop a systematic data pipeline and curate data mixtures spanning both pre-training and post-training. To deliver strong physical-world understanding and interaction capabilities while supporting latency-sensitive deployment, we build our model on the Hy3-A3B language backbone and the Hy-ViT2 vision encoder. Its efficient Mixture-of-Experts architecture combines strong model capacity with high inference efficiency. We evaluate Hy-Embodied-VLM-1.0 on a comprehensive suite of 38 benchmarks covering embodied perception, physical-world understanding, and embodied reasoning. The model achieves the best performance among similarly sized models on 19 of the 38 benchmarks and substantially outperforms strong competitors, including Qwen3.6-A3B and Cosmos 3. Compared with the previous-generation Hy-Embodied-0.5 MoT-2B, Hy-Embodied-VLM-1.0 improves average performance by 8.4%. Despite activating only 3B parameters, it achieves performance close to that of the previous-generation model with 32B activated parameters. Beyond static benchmark evaluation, Hy-Embodied-VLM-1.0 also demonstrates strong performance on embodied agentic tasks requiring multi-turn interaction and long-horizon reasoning.",
+      "is_ascend": false,
+      "title_zh": "Hy-Embodied-VLM-1.0：高效物理世界智能体",
+      "institution": "未明确披露",
+      "summary_cn": "这篇论文介绍了面向物理世界具身智能体的基础模型 Hy-Embodied-VLM-1.0，目标是在多模态理解之外进一步具备动作推理、情境适应和现实交互能力。作者围绕动作相关状态理解、动作转移推理和序列式自适应推理构建能力分类，并据此设计预训练与后训练数据管线。模型采用高效的混合专家架构，以较低激活参数支持延迟敏感部署，同时在具身感知、物理世界理解和具身推理基准上展现出较强表现。",
+      "innovations": [
+        "提出面向具身能力培养的动作中心能力分类体系，覆盖状态理解、动作转移推理和序列自适应推理。",
+        "构建贯穿预训练与后训练的系统化数据管线和数据混合策略，以培养物理世界交互能力。",
+        "采用基于 Hy3-A3B 和 Hy-ViT2 的高效混合专家架构，兼顾模型容量与推理效率。",
+        "将模型定位为支持多轮交互和长程推理的物理世界智能体基础模型，而不只是静态多模态理解模型。"
+      ],
+      "scenario_cn": "适用于机器人、具身 AI、物理环境中的多模态交互与任务执行等场景，尤其适合对推理时延和部署效率有要求的系统。它解决的是具身智能体如何同时获得物理世界理解、动作推理和长程交互能力的问题。",
+      "opensource_status": "已确认开源",
+      "code_url": "https://github.com/Tencent-Hunyuan/HY-Embodied",
+      "title_en": "Hy-Embodied-VLM-1.0: Efficient Physical-World Agents"
+    },
+    {
+      "id": "2607.12556v1",
+      "title": "CGRL: Concept-Guided Pruning and Representation Learning for Whole-Slide Image Classification",
+      "abstract": "Weakly supervised whole-slide image (WSI) classification is widely used in computational pathology because slide-level labels are easier to obtain than dense region annotations. Existing multiple instance learning (MIL) methods often aggregate large bags of patch embeddings using mainly visual cues, which can retain many non-informative patches and provide weak alignment between instance features and class-level disease semantics. We propose Concept-Guided Pruning and Representation Learning (CGRL), a simple framework that introduces class-level concept prototypes derived from disease prompts into the MIL pipeline. First, concept-relevance pruning ranks patch instances by their similarity to class concepts and retains the top-K concept-relevant patches for downstream MIL aggregation. Second, concept-guided contrastive representation learning constructs class-wise positive and negative patch sets from the same similarity matrix and optimizes target-class, symmetric auxiliary, and cross-class separation objectives, thereby regularizing the projected concept space. We evaluate CGRL on TCGA-BRCA and TCGA-NSCLC using multiple representative MIL methods. Experimental results show that CGRL improves several model-dataset combinations, with gains depending on the downstream MIL model and dataset. It achieves particularly clear improvements in accuracy and macro-F1 while reducing computational cost through concept-relevance pruning. These findings demonstrate that class-level semantic concepts provide an effective and practical prior for patch selection and representation learning in weakly supervised computational pathology.",
+      "published": "2026-07-15T00:00:00+00:00",
+      "updated": "2026-07-15T00:00:00+00:00",
+      "authors": [
+        "Thuc Huynh",
+        "Tuan Le",
+        "Doanh C. Bui"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.12556",
+      "pdf_url": "https://arxiv.org/pdf/2607.12556",
+      "score": 3.8,
+      "topics": [
+        {
+          "name": "Model Compression / Quantization",
+          "slug": "model-compression",
+          "hits": [
+            "pruning"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "pruning"
+      ],
+      "code_links": [
+        "https://github.com/ThucHuynh44/CGRL"
+      ],
+      "github_search_url": "https://github.com/search?q=CGRL%3A%20Concept-Guided%20Pruning%20and%20Representation%20Learning%20for%20Whole-Slide%20Image%20Classification%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Weakly supervised whole-slide image (WSI) classification is widely used in computational pathology because slide-level labels are easier to obtain than dense region annotations. Existing multiple instance learning (MIL) methods often aggregate large bags of patch embeddings using mainly visual cues, which can retain many non-informative patches and provide weak alignment between instance features and class-level disease semantics. We propose Concept-Guided Pruning and Representation Learning (CGRL), a simple framework that introduces class-level concept prototypes derived from disease prompts into the MIL pipeline. First, concept-relevance pruning ranks patch instances by their similarity to class concepts and retains the top-K concept-relevant patches for downstream MIL aggregation. Second, concept-guided contrastive representation learning constructs class-wise positive and negative patch sets from the same similarity matrix and optimizes target-class, symmetric auxiliary, and cross-class separation objectives, thereby regularizing the projected concept space. We evaluate CGRL on TCGA-BRCA and TCGA-NSCLC using multiple representative MIL methods. Experimental results show that CGRL improves several model-dataset combinations, with gains depending on the downstream MIL model and dataset. It achieves particularly clear improvements in accuracy and macro-F1 while reducing computational cost through concept-relevance pruning. These findings demonstrate that class-level semantic concepts provide an effective and practical prior for patch selection and representation learning in weakly supervised computational pathology.",
+      "is_ascend": false,
+      "title_zh": "CGRL：用于全切片图像分类的概念引导剪枝与表示学习",
+      "institution": "未明确披露",
+      "summary_cn": "这篇论文针对弱监督全切片图像分类中，大量 patch 主要依赖视觉线索聚合、容易保留无关区域且语义对齐不足的问题，提出 CGRL 框架。方法把由疾病提示构造的类别级概念原型引入 MIL 流程，先按与概念的相关性筛选 top-K patch，再通过概念引导的对比学习优化类别相关表示。整体上，它同时提升分类效果并降低计算成本。",
+      "innovations": [
+        "提出概念相关性剪枝机制，利用类别级疾病概念原型对 patch 排序并保留最相关实例，减少无信息区域干扰。",
+        "设计概念引导的对比表示学习方法，从同一相似度矩阵构造类内正负样本与跨类分离目标，增强概念空间的语义规整。",
+        "将文本/概念先验以简单实用的方式注入弱监督 MIL 病理分类流程，实现实例选择与表示学习的统一优化。"
+      ],
+      "scenario_cn": "适用于计算病理中的弱监督全切片图像分类任务，尤其是在只有切片级标签、缺少密集区域标注时。它主要解决病理 patch 聚合中冗余区域过多、实例特征与疾病语义对齐不足的问题。",
+      "opensource_status": "已确认开源",
+      "code_url": "https://github.com/ThucHuynh44/CGRL",
+      "title_en": "CGRL: Concept-Guided Pruning and Representation Learning for Whole-Slide Image Classification"
+    },
+    {
+      "id": "2607.12121v1",
+      "title": "FlashDiff: Efficient Regional Execution and Scheduling for Diffusion Model Serving",
+      "abstract": "Diffusion models have become the central backbone for modern image, video, and audio generation, but their efficient service remains a challenge. Unlike autoregressive decoding, diffusion inference repeatedly updates high-dimensional spatial or temporal latents over many denoising steps. This all-region execution pattern makes generation latency high and limits serving throughput. Existing multi-GPU parallelization methods can reduce per-step computation, but often introduce substantial activation exchange overhead, causing communication to offset or even outweigh the benefits of parallel execution. This paper presents FlashDiff, a diffusion serving system that improves inference efficiency through adaptive regional execution and scheduling. FlashDiff is based on the observation that diffusion refinement is not uniform across latent regions or denoising steps: different regions often stabilize at different rates, while neighboring steps exhibit strong temporal correlation. FlashDiff leverages these properties to selectively execute only regions that require further refinement and to reallocate the resulting compute slack across concurrent serving requests. FlashDiff consists of three mechanisms. First, it decomposes the latent representation into coherent execution regions using early-stage attention signals, preserving semantic structure while exposing fine-grained parallelism. Second, it uses a lightweight runtime controller to estimate region activity and bypass low-impact updates when further refinement is unlikely to affect output quality. Third, it applies an affinity-aware online scheduler that co-locates dependent regions, balances residual load across GPUs, and reuses reclaimed compute capacity to improve serving efficiency. Across real-world image, video, and audio workloads, FlashDiff reduces end-to-end serving latency by 30-97% and improves throughput by 1.2-2.2x.",
+      "published": "2026-07-15T00:00:00+00:00",
+      "updated": "2026-07-15T00:00:00+00:00",
+      "authors": [
+        "Yaqi Qiao",
+        "Ping He",
+        "Songrun Xie",
+        "Ayush Barik",
+        "Chensong Zhang",
+        "Zhengzhong Tu",
+        "Fan Lai"
+      ],
+      "categories": [
+        "cs.DC",
+        "cs.LG"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.12121",
+      "pdf_url": "https://arxiv.org/pdf/2607.12121",
+      "score": 8.4,
+      "topics": [
+        {
+          "name": "LLM 推理加速",
+          "slug": "llm-inference",
+          "hits": [
+            "serving"
+          ]
+        },
+        {
+          "name": "AI Infra / Serving Systems",
+          "slug": "ai-infra-serving",
+          "hits": [
+            "model serving"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "model serving",
+        "serving"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=FlashDiff%3A%20Efficient%20Regional%20Execution%20and%20Scheduling%20for%20Diffusion%20Model%20Serving%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Diffusion models have become the central backbone for modern image, video, and audio generation, but their efficient service remains a challenge. Unlike autoregressive decoding, diffusion inference repeatedly updates high-dimensional spatial or temporal latents over many denoising steps. This all-region execution pattern makes generation latency high and limits serving throughput. Existing multi-GPU parallelization methods can reduce per-step computation, but often introduce substantial activation exchange overhead, causing communication to offset or even outweigh the benefits of parallel execution. This paper presents FlashDiff, a diffusion serving system that improves inference efficiency through adaptive regional execution and scheduling. FlashDiff is based on the observation that diffusion refinement is not uniform across latent regions or denoising steps: different regions often stabilize at different rates, while neighboring steps exhibit strong temporal correlation. FlashDiff leverages these properties to selectively execute only regions that require further refinement and to reallocate the resulting compute slack across concurrent serving requests. FlashDiff consists of three mechanisms. First, it decomposes the latent representation into coherent execution regions using early-stage attention signals, preserving semantic structure while exposing fine-grained parallelism. Second, it uses a lightweight runtime controller to estimate region activity and bypass low-impact updates when further refinement is unlikely to affect output quality. Third, it applies an affinity-aware online scheduler that co-locates dependent regions, balances residual load across GPUs, and reuses reclaimed compute capacity to improve serving efficiency. Across real-world image, video, and audio workloads, FlashDiff reduces end-to-end serving latency by 30-97% and improves throughput by 1.2-2.2x.",
+      "is_ascend": false,
+      "title_zh": "FlashDiff：面向扩散模型服务的高效区域化执行与调度",
+      "institution": "未明确披露",
+      "summary_cn": "这篇论文研究扩散模型在线服务的推理效率问题，指出扩散推理需要在多个去噪步骤中反复更新高维空间或时序潜变量，因而延迟高、吞吐受限。作者提出 FlashDiff，通过识别在不同步骤中仍需继续细化的潜变量区域，只选择性执行这些区域，并将节省出的算力动态分配给并发请求。该方法同时面向图像、视频和音频生成场景，目标是在尽量不影响生成质量的前提下提升服务效率。",
+      "innovations": [
+        "提出面向扩散模型服务的自适应区域化执行框架，利用不同潜变量区域收敛速度不一致的特点跳过低影响更新。",
+        "基于早期注意力信号将潜表示划分为语义一致的执行区域，在保留语义结构的同时暴露更细粒度并行性。",
+        "设计轻量级运行时控制器，用于估计区域活跃度并判断哪些区域仍需进一步细化。",
+        "提出亲和性感知的在线调度器，在多 GPU 上协同放置相关区域并复用释放出的计算资源服务并发请求。"
+      ],
+      "scenario_cn": "解决扩散模型在图像、视频、音频生成服务中推理延迟高、吞吐低，以及多 GPU 并行时通信开销过大的问题。适用于需要高并发、低时延扩散生成服务的推理系统与 AI serving 平台。",
+      "opensource_status": "未确认开源",
+      "code_url": "",
+      "title_en": "FlashDiff: Efficient Regional Execution and Scheduling for Diffusion Model Serving"
+    },
+    {
+      "id": "2607.12503v1",
+      "title": "DynTrace: Tracking Dynamic Object Evidence for 4D Spatio-Temporal Reasoning in MLLMs",
+      "abstract": "4D spatio-temporal reasoning, jointly modeling 3D spatial structure and temporal evolution, is essential for understanding dynamic worlds and enabling embodied interaction. While current Multimodal Large Language Models (MLLMs) show strong capabilities in static scene understanding and coarse-grained 4D tasks, they still have notable limitations in continuous dynamic scene perception, especially in tracking dynamic object evidence for coherent 4D spatio-temporal reasoning. This shortcoming stems mainly from relying on sparse frame-level observations, fragmenting continuous dynamic cues and leaving models unable to disentangle genuine object dynamics from camera-induced apparent motion. Inspired by humans tracking dynamic cues while compensating for viewpoint changes, we propose DynTrace, a training-free framework for 4D spatio-temporal reasoning with two complementary components. Dynamic Trajectory Visualization (DTV) reprojects world-coordinate trajectories onto the image plane, providing geometry-informed visual priors that disentangle genuine object dynamics from camera-induced apparent motion. Meanwhile, the Dynamic Trace Token (DT-Token), organized into a Dynamic Trace Graph (DTG), tracks object-level dynamic cues, trace evolution, and key moments, maintaining continuous dynamic object evidence for coherent 4D reasoning. Together, these two components equip MLLMs with continuously tracked dynamic object evidence, grounded in geometry-informed visual priors and structured spatio-temporal traces. DynTrace consistently improves open-source MLLMs, achieving state-of-the-art results on Dyn-Bench, VLM4D, and DSI-Bench, validating the importance of tracking dynamic object evidence for robust 4D spatio-temporal reasoning.",
+      "published": "2026-07-15T00:00:00+00:00",
+      "updated": "2026-07-15T00:00:00+00:00",
+      "authors": [
+        "Rongxin Gao",
+        "Yuzhi Huang",
+        "Dongxuan Liu",
+        "Chu Li",
+        "Zhenye Wang",
+        "Jie Wu",
+        "Shuzhao Xie",
+        "Jingyan Jiang",
+        "Xinghao Ding",
+        "Xiaotong Tu",
+        "Yue Huang"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.12503",
+      "pdf_url": "https://arxiv.org/pdf/2607.12503",
+      "score": 7.8,
+      "topics": [
+        {
+          "name": "多模态推理加速",
+          "slug": "multimodal-inference",
+          "hits": [
+            "mllm"
+          ]
+        },
+        {
+          "name": "Agent Reasoning / Test-time Scaling",
+          "slug": "agent-reasoning",
+          "hits": [
+            "reasoning"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "mllm",
+        "reasoning"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=DynTrace%3A%20Tracking%20Dynamic%20Object%20Evidence%20for%204D%20Spatio-Temporal%20Reasoning%20in%20MLLMs%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "4D spatio-temporal reasoning, jointly modeling 3D spatial structure and temporal evolution, is essential for understanding dynamic worlds and enabling embodied interaction. While current Multimodal Large Language Models (MLLMs) show strong capabilities in static scene understanding and coarse-grained 4D tasks, they still have notable limitations in continuous dynamic scene perception, especially in tracking dynamic object evidence for coherent 4D spatio-temporal reasoning. This shortcoming stems mainly from relying on sparse frame-level observations, fragmenting continuous dynamic cues and leaving models unable to disentangle genuine object dynamics from camera-induced apparent motion. Inspired by humans tracking dynamic cues while compensating for viewpoint changes, we propose DynTrace, a training-free framework for 4D spatio-temporal reasoning with two complementary components. Dynamic Trajectory Visualization (DTV) reprojects world-coordinate trajectories onto the image plane, providing geometry-informed visual priors that disentangle genuine object dynamics from camera-induced apparent motion. Meanwhile, the Dynamic Trace Token (DT-Token), organized into a Dynamic Trace Graph (DTG), tracks object-level dynamic cues, trace evolution, and key moments, maintaining continuous dynamic object evidence for coherent 4D reasoning. Together, these two components equip MLLMs with continuously tracked dynamic object evidence, grounded in geometry-informed visual priors and structured spatio-temporal traces. DynTrace consistently improves open-source MLLMs, achieving state-of-the-art results on Dyn-Bench, VLM4D, and DSI-Bench, validating the importance of tracking dynamic object evidence for robust 4D spatio-temporal reasoning.",
+      "is_ascend": false,
+      "title_zh": "DynTrace：用于多模态大语言模型四维时空推理的动态目标证据追踪",
+      "institution": "未明确披露",
+      "summary_cn": "该论文聚焦多模态大语言模型在 4D 时空推理中的动态场景理解问题，指出现有方法依赖稀疏帧级观察，难以持续跟踪动态目标证据并区分真实运动与相机运动。作者提出无需训练的 DynTrace 框架，由动态轨迹可视化和动态轨迹 Token/图两部分组成，为模型提供几何感知的连续动态证据。论文表明该方法可提升开源 MLLM 在多个 4D 基准上的表现，说明连续动态证据追踪对稳健时空推理很重要。",
+      "innovations": [
+        "提出训练无关的 DynTrace 框架，用于增强 MLLM 的 4D 时空推理能力。",
+        "设计 Dynamic Trajectory Visualization，通过将世界坐标轨迹重投影到图像平面来提供几何先验。",
+        "提出 Dynamic Trace Token 及 Dynamic Trace Graph，以对象级方式持续跟踪动态线索、演化过程和关键时刻。",
+        "将几何先验与结构化动态证据结合，用于区分真实物体运动与视角变化导致的表观运动。"
+      ],
+      "scenario_cn": "适用于动态场景理解、具身交互、视频时空推理等任务，特别适合需要持续追踪物体运动并理解三维结构随时间变化的场景。它解决的是多模态模型对连续动态证据建模不足、难以做连贯 4D 推理的问题。",
+      "opensource_status": "未确认开源",
+      "code_url": "",
+      "title_en": "DynTrace: Tracking Dynamic Object Evidence for 4D Spatio-Temporal Reasoning in MLLMs"
+    },
+    {
+      "id": "2607.12650v1",
+      "title": "Evidence-Grounded Verified Agentic Reasoning: A Path Toward Eliminating LLM Hallucination in Empirical Inference via Tool-Attested Kernel Proofs",
+      "abstract": "Tool access alone does not make LLM empirical reasoning governable: accepted outputs need not descend from attested evidence, and accepted deductions need not hold up under formal scrutiny. We present EG-VAR (Evidence-Grounded Verified Agentic Reasoning), a Lean 4-based tool-calling architecture in which the Lean kernel is the sole minter of Verified claims via tool-attestation axioms and declared source lifts. Every verified output structurally descends from an attested tool call (Thm. 3.1) and a kernel-checked chain of valid inference (Thm. 3.2); residual outputs are honest Abstain with a replayable audit trail. On a subcollection of TableBench numerical reasoning (n=120), EG-VAR attains 120/120 versus a 95% same-tool baseline; on counterfactual stress tests (5 domains x 2 models), EG-VAR stays 100% source-faithful while same-tool drops to 80-90% (no-tool 50-80%). With the LLM as deployment-time formalizer, residual semantic-formalization error is 3.3% on Sonnet and 1.7% on Opus. We position EG-VAR as a technical-governance interface for high-stakes empirical claims: a formal sidecar makes the target proposition, source scope, evidence boundary, proof obligation, and abstention condition auditable, eliminating unsupported Verified outputs today while turning formalization errors, lift and source-authority disputes, ambiguities, and abstentions into explicit audit targets. Over time, typed sidecars in datasets, APIs, public records, and AI-generated documents can amortize this formalization burden into reusable infrastructure.",
+      "published": "2026-07-15T00:00:00+00:00",
+      "updated": "2026-07-15T00:00:00+00:00",
+      "authors": [
+        "Junyu Ren"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CY",
+        "cs.SE"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.12650",
+      "pdf_url": "https://arxiv.org/pdf/2607.12650",
+      "score": 7.4,
+      "topics": [
+        {
+          "name": "Agent",
+          "slug": "agent",
+          "hits": [
+            "agent"
+          ]
+        },
+        {
+          "name": "Agent Reasoning / Test-time Scaling",
+          "slug": "agent-reasoning",
+          "hits": [
+            "reasoning"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "agent",
+        "reasoning"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Evidence-Grounded%20Verified%20Agentic%20Reasoning%3A%20A%20Path%20Toward%20Eliminating%20LLM%20Hallucination%20in%20Empirical%20Inference%20via%20Tool-Attested%20Kernel%20Proofs%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Tool access alone does not make LLM empirical reasoning governable: accepted outputs need not descend from attested evidence, and accepted deductions need not hold up under formal scrutiny. We present EG-VAR (Evidence-Grounded Verified Agentic Reasoning), a Lean 4-based tool-calling architecture in which the Lean kernel is the sole minter of Verified claims via tool-attestation axioms and declared source lifts. Every verified output structurally descends from an attested tool call (Thm. 3.1) and a kernel-checked chain of valid inference (Thm. 3.2); residual outputs are honest Abstain with a replayable audit trail. On a subcollection of TableBench numerical reasoning (n=120), EG-VAR attains 120/120 versus a 95% same-tool baseline; on counterfactual stress tests (5 domains x 2 models), EG-VAR stays 100% source-faithful while same-tool drops to 80-90% (no-tool 50-80%). With the LLM as deployment-time formalizer, residual semantic-formalization error is 3.3% on Sonnet and 1.7% on Opus. We position EG-VAR as a technical-governance interface for high-stakes empirical claims: a formal sidecar makes the target proposition, source scope, evidence boundary, proof obligation, and abstention condition auditable, eliminating unsupported Verified outputs today while turning formalization errors, lift and source-authority disputes, ambiguities, and abstentions into explicit audit targets. Over time, typed sidecars in datasets, APIs, public records, and AI-generated documents can amortize this formalization burden into reusable infrastructure.",
+      "is_ascend": false,
+      "title_zh": "证据锚定的可验证智能体推理：通过工具认证的内核证明消除经验推断中 LLM 幻觉的路径",
+      "institution": "未明确披露",
+      "summary_cn": "该论文提出 EG-VAR，一种基于 Lean 4 的工具调用推理架构，用于让经验性推断中的“已验证结论”必须来源于经认证的证据和内核检查过的推理链。系统中只有 Lean 内核能够生成 Verified 声明，无法被严格支持的输出则应诚实地 Abstain，并附带可重放的审计轨迹。作者将其定位为高风险经验性判断的技术治理接口，以减少无依据但看似可信的 LLM 输出。",
+      "innovations": [
+        "提出 EG-VAR 架构，将工具认证、公理化来源提升与 Lean 内核证明结合起来，使验证性结论可追溯到具体证据。",
+        "将“Verified”与“Abstain”作为结构化输出机制，未被证据与证明支持的结果不再被包装为确定性答案。",
+        "形式化强调每个已验证输出都必须同时满足证据可追溯性和内核检查的有效推理链要求。",
+        "把形式化侧车视为技术治理接口，使命题范围、证据边界、证明义务和弃答条件都可审计。"
+      ],
+      "scenario_cn": "适用于数值推理、表格推断和其他高风险经验性判断场景，解决 LLM 即使接入工具仍可能输出不受证据约束、不可审计结论的问题，尤其适合需要严格可追溯与可验证推理的系统。",
+      "opensource_status": "未确认开源",
+      "code_url": "",
+      "title_en": "Evidence-Grounded Verified Agentic Reasoning: A Path Toward Eliminating LLM Hallucination in Empirical Inference via Tool-Attested Kernel Proofs"
+    },
+    {
+      "id": "2607.12680v1",
+      "title": "ReflectVLN: Training Vision-Language Navigation Agents with Reflective Reasoning",
+      "abstract": "Existing vision-language navigation methods often couple a VLM with waypoint decoders to produce multi-step action plans, but they typically lack an explicit closed-loop mechanism for tracking semantic progress, diagnosing execution failures, and recovering from error accumulation in long-horizon navigation. To address this gap, we propose ReflectVLN, an agentic VLN framework that organizes decision-making through bidirectionally interactive intention and execution agents. The intention agent performs subtask decomposition and reflection, generating executable subtask descriptions as corrective plans. Conditioned on these descriptions, the execution agent grounds them into short-horizon actions under current observations while monitoring sub-goal progress and detecting off-track behavior. Crucially, ReflectVLN enables closed-loop bidirectional communication: the execution agent emits progress and deviation signals to trigger reflection and subtask updates on demand, and the intention agent returns structured guidance that reconditions subsequent actions for recovery. To encourage temporally coherent decisions with interpretable intermediate rationales, we introduce Action Chain-of-Thought (Action-CoT), a path-conditioned dual-query training scheme for action generation. Experiments on standard VLN benchmarks show that ReflectVLN improves success rates and path efficiency under a constrained data budget, with favorable training cost and fewer high-level intention calls at inference time, while providing interpretable intermediate decisions for analysis and collaboration. Code is available at: this https URL",
+      "published": "2026-07-15T00:00:00+00:00",
+      "updated": "2026-07-15T00:00:00+00:00",
+      "authors": [
+        "Jiahang Wang",
+        "Yirong Yang",
+        "Yanqing Zhu",
+        "Minghua Luo",
+        "Shichao Xie",
+        "Fei Liu",
+        "Mu Xu"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.12680",
+      "pdf_url": "https://arxiv.org/pdf/2607.12680",
+      "score": 7.4,
+      "topics": [
+        {
+          "name": "Agent",
+          "slug": "agent",
+          "hits": [
+            "agent"
+          ]
+        },
+        {
+          "name": "Agent Reasoning / Test-time Scaling",
+          "slug": "agent-reasoning",
+          "hits": [
+            "reasoning"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "agent",
+        "reasoning"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=ReflectVLN%3A%20Training%20Vision-Language%20Navigation%20Agents%20with%20Reflective%20Reasoning%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Existing vision-language navigation methods often couple a VLM with waypoint decoders to produce multi-step action plans, but they typically lack an explicit closed-loop mechanism for tracking semantic progress, diagnosing execution failures, and recovering from error accumulation in long-horizon navigation. To address this gap, we propose ReflectVLN, an agentic VLN framework that organizes decision-making through bidirectionally interactive intention and execution agents. The intention agent performs subtask decomposition and reflection, generating executable subtask descriptions as corrective plans. Conditioned on these descriptions, the execution agent grounds them into short-horizon actions under current observations while monitoring sub-goal progress and detecting off-track behavior. Crucially, ReflectVLN enables closed-loop bidirectional communication: the execution agent emits progress and deviation signals to trigger reflection and subtask updates on demand, and the intention agent returns structured guidance that reconditions subsequent actions for recovery. To encourage temporally coherent decisions with interpretable intermediate rationales, we introduce Action Chain-of-Thought (Action-CoT), a path-conditioned dual-query training scheme for action generation. Experiments on standard VLN benchmarks show that ReflectVLN improves success rates and path efficiency under a constrained data budget, with favorable training cost and fewer high-level intention calls at inference time, while providing interpretable intermediate decisions for analysis and collaboration. Code is available at: this https URL",
+      "is_ascend": false,
+      "title_zh": "ReflectVLN：用反思式推理训练视觉-语言导航智能体",
+      "institution": "未明确披露",
+      "summary_cn": "该论文提出 ReflectVLN，用于解决视觉-语言导航中长时程执行时缺乏显式闭环监控、难以跟踪语义进度和从偏航中恢复的问题。方法通过双向交互的意图智能体与执行智能体协同决策：前者负责子任务分解与反思，后者在当前观测下将子任务落地为短程动作，并监控子目标进展与偏离情况。作者还引入 Action-CoT 训练方案，以促进时间一致且可解释的中间决策。",
+      "innovations": [
+        "提出由意图智能体和执行智能体组成的双智能体闭环导航框架，将高层反思与低层执行显式分离。",
+        "建立执行到意图、意图回执行的双向反馈机制，使系统能够根据进度与偏航信号动态修正子任务。",
+        "引入 Action Chain-of-Thought（Action-CoT）训练方案，以路径条件化的方式提升动作决策的时序一致性和可解释性。",
+        "在受限数据预算下强调更少高层意图调用与更具可分析性的中间推理过程。"
+      ],
+      "scenario_cn": "适用于室内或通用视觉-语言导航任务，解决长时程导航中错误累积、语义进度难跟踪、偏航后难恢复的问题，适合需要可解释中间决策与闭环纠错的导航智能体。",
+      "opensource_status": "未确认开源",
+      "code_url": "",
+      "title_en": "ReflectVLN: Training Vision-Language Navigation Agents with Reflective Reasoning"
+    },
+    {
+      "id": "2607.12480v1",
+      "title": "TRACE: An Operational Reasoning Schema for Auditable Agentic Commitments",
+      "abstract": "This paper defines TRACE (Typed Reasoning And Commitment Evidence): a typed, versioned schema for recording reasoning traces, a reference procedure for writing records against it, and one operating discipline, no durable state change without a record. The paper argues in three layers that reasoning is not in the language model: the autoregressive mechanism natively computes association; chain-of-thought and reinforcement learning inherit its limits; and the formal constructs of reasoning theory, from Socratic procedure to Pearl's ladder, are absent as machinery. The schema answers the absence with fields and tests: the TraceRecord and its causal specialization, an eight-stage reference writer, a gate-first measurement regime, the TRACE-Bench protocol, and the consumers, memory admission, plan gating, temporal regret, and verdict reuse, whose more auditable decisions are the measure of the record. A record-consumer contract states what a record guarantees and what a consumer must honor in return, making the schema an operational interface rather than a passive document. Two worked examples run in the main text: a music-lessons argument traced from sentence to typed verdict, separating association, intervention, and prescription; and a flood search-and-rescue vignette in which a predictive world model reports confident plan success that its own support and out-of-distribution scores contradict, so the record defers the commitment, requests a bounded observation, revises append-only, and clears a different branch. The vignette is illustrative, not empirical; closed-loop evaluation is left to future work, so the contribution is the schema and its contract, not a performance claim. Appendices carry the full schema, writer algorithms and cost model, clinical and policy illustrations, the benchmark protocol, convergence metrics, and usage scenarios.",
+      "published": "2026-07-15T00:00:00+00:00",
+      "updated": "2026-07-15T00:00:00+00:00",
+      "authors": [
+        "Edward Y. Chang",
+        "Emily J. Chang"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.12480",
+      "pdf_url": "https://arxiv.org/pdf/2607.12480",
+      "score": 7.4,
+      "topics": [
+        {
+          "name": "Agent",
+          "slug": "agent",
+          "hits": [
+            "agent"
+          ]
+        },
+        {
+          "name": "Agent Reasoning / Test-time Scaling",
+          "slug": "agent-reasoning",
+          "hits": [
+            "reasoning"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "agent",
+        "reasoning"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=TRACE%3A%20An%20Operational%20Reasoning%20Schema%20for%20Auditable%20Agentic%20Commitments%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "This paper defines TRACE (Typed Reasoning And Commitment Evidence): a typed, versioned schema for recording reasoning traces, a reference procedure for writing records against it, and one operating discipline, no durable state change without a record. The paper argues in three layers that reasoning is not in the language model: the autoregressive mechanism natively computes association; chain-of-thought and reinforcement learning inherit its limits; and the formal constructs of reasoning theory, from Socratic procedure to Pearl's ladder, are absent as machinery. The schema answers the absence with fields and tests: the TraceRecord and its causal specialization, an eight-stage reference writer, a gate-first measurement regime, the TRACE-Bench protocol, and the consumers, memory admission, plan gating, temporal regret, and verdict reuse, whose more auditable decisions are the measure of the record. A record-consumer contract states what a record guarantees and what a consumer must honor in return, making the schema an operational interface rather than a passive document. Two worked examples run in the main text: a music-lessons argument traced from sentence to typed verdict, separating association, intervention, and prescription; and a flood search-and-rescue vignette in which a predictive world model reports confident plan success that its own support and out-of-distribution scores contradict, so the record defers the commitment, requests a bounded observation, revises append-only, and clears a different branch. The vignette is illustrative, not empirical; closed-loop evaluation is left to future work, so the contribution is the schema and its contract, not a performance claim. Appendices carry the full schema, writer algorithms and cost model, clinical and policy illustrations, the benchmark protocol, convergence metrics, and usage scenarios.",
+      "is_ascend": false,
+      "title_zh": "TRACE：一种面向可审计智能体承诺的操作性推理模式",
+      "institution": "未明确披露",
+      "summary_cn": "该论文提出 TRACE（Typed Reasoning And Commitment Evidence），这是一种带类型和版本控制的推理记录模式，用于为智能体的推理过程与承诺决策建立可审计记录。作者同时给出记录写入流程、门控优先的度量方案、基准协议以及记录消费者契约，强调“没有记录就不应发生持久状态变更”。论文核心贡献是把推理记录从被动文档变成可操作接口，用于支持记忆写入、计划门控、后悔分析和结论复用等场景。",
+      "innovations": [
+        "提出 TRACE 这一类型化、版本化的推理与承诺证据模式，用结构化字段表达可审计推理记录。",
+        "定义了参考写入流程、因果特化记录形式以及门控优先的测量机制，使记录生成和使用具有操作规范。",
+        "提出记录-消费者契约，明确记录能保证什么、下游系统必须遵守什么，把记录机制提升为系统接口。",
+        "设计 TRACE-Bench 协议，并将记忆准入、计划门控、时间性后悔分析、结论复用等作为记录消费场景。"
+      ],
+      "scenario_cn": "面向需要审计、追责和风险控制的智能体系统，适用于涉及长期记忆写入、计划执行审批、策略承诺和高风险决策支持的场景。它解决的是智能体推理过程缺乏结构化证据、难以复核和难以约束状态变更的问题。",
+      "opensource_status": "未确认开源",
+      "code_url": "",
+      "title_en": "TRACE: An Operational Reasoning Schema for Auditable Agentic Commitments"
+    },
+    {
+      "id": "2607.12177v1",
+      "title": "The Emerging Paradigm of Geospatial Foundation Models: From Pre-Training to Agentic Reasoning",
+      "abstract": "The analysis of satellite and aerial imagery has entered a new era with the advent of foundation models. This paper describes the concept of Geospatial Foundation Models (GeoFMs), which are artificial intelligence/machine learning (AI/ML) models pre-trained on massive geospatial datasets through varied methodologies. We first articulate the core paradigm shift that GeoFMs enable: a separation of duties, where large-scale model providers perform the computationally intensive pretraining, allowing domain experts to rapidly fine-tune or prompt these models for specific, mission-critical tasks. This approach democratizes access to state-of-the-art AI/ML while maintaining the security and confidentiality of the downstream task. We then explore the novel capabilities unlocked by different types of GeoFMs, distinguishing between the finetunable vision models produced by self-supervised techniques like masked auto-encoding, and the vision-language models produced by contrastive learning which enable zero-shot tasks like open-vocabulary image analysis. Next, we discuss the practical considerations for operationalizing GeoFMs, from performance-cost analysis to the broader MLOps ecosystem. To that end, we introduce a taxonomy of model adaptation strategies and propose a framework for domain experts to select the most cost-effective adaptation approach for their particular mission set. Finally, we present a forward-looking vision of Agentic Geospatial Reasoning, where Large Language Models act as intelligent orchestrators, leveraging GeoFMs as tools to answer high-level user queries in natural language and automate complex analytical workflows, moving the field from perception to cognition.",
+      "published": "2026-07-15T00:00:00+00:00",
+      "updated": "2026-07-15T00:00:00+00:00",
+      "authors": [
+        "Shelley Cazares"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.CV"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.12177",
+      "pdf_url": "https://arxiv.org/pdf/2607.12177",
+      "score": 7.4,
+      "topics": [
+        {
+          "name": "Agent",
+          "slug": "agent",
+          "hits": [
+            "agent"
+          ]
+        },
+        {
+          "name": "Agent Reasoning / Test-time Scaling",
+          "slug": "agent-reasoning",
+          "hits": [
+            "reasoning"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "agent",
+        "reasoning"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=The%20Emerging%20Paradigm%20of%20Geospatial%20Foundation%20Models%3A%20From%20Pre-Training%20to%20Agentic%20Reasoning%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "The analysis of satellite and aerial imagery has entered a new era with the advent of foundation models. This paper describes the concept of Geospatial Foundation Models (GeoFMs), which are artificial intelligence/machine learning (AI/ML) models pre-trained on massive geospatial datasets through varied methodologies. We first articulate the core paradigm shift that GeoFMs enable: a separation of duties, where large-scale model providers perform the computationally intensive pretraining, allowing domain experts to rapidly fine-tune or prompt these models for specific, mission-critical tasks. This approach democratizes access to state-of-the-art AI/ML while maintaining the security and confidentiality of the downstream task. We then explore the novel capabilities unlocked by different types of GeoFMs, distinguishing between the finetunable vision models produced by self-supervised techniques like masked auto-encoding, and the vision-language models produced by contrastive learning which enable zero-shot tasks like open-vocabulary image analysis. Next, we discuss the practical considerations for operationalizing GeoFMs, from performance-cost analysis to the broader MLOps ecosystem. To that end, we introduce a taxonomy of model adaptation strategies and propose a framework for domain experts to select the most cost-effective adaptation approach for their particular mission set. Finally, we present a forward-looking vision of Agentic Geospatial Reasoning, where Large Language Models act as intelligent orchestrators, leveraging GeoFMs as tools to answer high-level user queries in natural language and automate complex analytical workflows, moving the field from perception to cognition.",
+      "is_ascend": false,
+      "title_zh": "地理空间基础模型的新兴范式：从预训练到智能体式推理",
+      "institution": "未明确披露",
+      "summary_cn": "这篇论文系统讨论了地理空间基础模型（GeoFMs）的新范式，概述其在大规模地理空间数据上的预训练方式以及在下游任务中的适配方法。作者强调由模型提供方承担高成本预训练、由领域专家进行快速微调或提示使用的分工模式，并分析了视觉模型、视觉语言模型、成本性能权衡和 MLOps 生态。论文还提出面向未来的智能体式地理空间推理愿景，即让大语言模型编排 GeoFMs 来回答高层自然语言问题并自动化分析流程。",
+      "innovations": [
+        "提出 GeoFMs 的整体范式视角，强调预训练提供方与下游领域专家之间的职责分离。",
+        "区分并梳理了可微调视觉模型与支持零样本任务的视觉语言模型两类能力路径。",
+        "提出模型适配策略分类法，并给出帮助领域专家选择成本效益最优方案的框架。",
+        "提出智能体式地理空间推理愿景，将大语言模型作为编排器来调用 GeoFMs 完成复杂分析工作流。"
+      ],
+      "scenario_cn": "适用于卫星影像、航空影像等地理空间分析任务，尤其适合需要在保密约束下快速适配先进模型的行业场景。它主要解决地理空间基础模型如何从预训练走向低成本部署、任务适配与更高层次自动化推理的问题。",
+      "opensource_status": "未确认开源",
+      "code_url": "",
+      "title_en": "The Emerging Paradigm of Geospatial Foundation Models: From Pre-Training to Agentic Reasoning"
+    },
+    {
+      "id": "2607.12856v1",
+      "title": "Verifier-Based Reinforcement Fine-Tuning of Reasoning Models for Thermal Energy Storage Control",
+      "abstract": "Buildings are expected to shift cooling loads in response to grid conditions. Thermal energy storage (TES) enables this shift, but scheduling it well requires planning hours ahead under storage constraints. Model predictive control (MPC) and reinforcement learning are difficult to scale across buildings. This study instead adapts an open-weight reasoning model through reinforcement learning with verifiable rewards (RLVR). We convert exact offline dynamic-programming (DP) action values into dense rewards for every candidate action. Using only 30 training prompts, reinforcement fine-tuning (RFT) trains the model as an upper-level scheduler that outputs hourly heat-pump setpoints from text-based states and forecasts. Evaluation uses a deliberately simple office-building TES benchmark where exact DP is tractable and the optimum is known. RFT reduces the open-weight model's emissions from 70.5 to 61.2 kg-CO2, close to the DP optimum of 60.8 kg-CO2. GPT-5 nearly matches DP and MPC without task-specific training, while GPT-4o, a non-reasoning LLM, produces higher emissions than the no-storage baseline, so inference-time reasoning appears important. Trace analysis shows that RFT mainly stabilizes observable planning patterns (candidate comparison, look-ahead, and feasibility checking) rather than creating a new strategy. Robustness and generalization tests clarify what transfers: the reinforced planning patterns persist under forecast errors and an unseen TES condition and carry over to a battery task, but its different structure limits the gains. DP-based verifiable rewards offer a practical way to adapt open-weight reasoning models to building storage scheduling. These results motivate higher-fidelity tests of whole-building control and scalable verifiers for city-scale energy management.",
+      "published": "2026-07-15T00:00:00+00:00",
+      "updated": "2026-07-15T00:00:00+00:00",
+      "authors": [
+        "Takumi Shioda",
+        "Kohei Terashima",
+        "Tatsuo Nagai"
+      ],
+      "categories": [
+        "cs.LG"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.12856",
+      "pdf_url": "https://arxiv.org/pdf/2607.12856",
+      "score": 7.4,
+      "topics": [
+        {
+          "name": "Agent Reasoning / Test-time Scaling",
+          "slug": "agent-reasoning",
+          "hits": [
+            "reasoning",
+            "verifier"
+          ]
+        },
+        {
+          "name": "RAG / Long Context",
+          "slug": "rag-long-context",
+          "hits": [
+            "rag"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "rag",
+        "reasoning",
+        "verifier"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Verifier-Based%20Reinforcement%20Fine-Tuning%20of%20Reasoning%20Models%20for%20Thermal%20Energy%20Storage%20Control%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Buildings are expected to shift cooling loads in response to grid conditions. Thermal energy storage (TES) enables this shift, but scheduling it well requires planning hours ahead under storage constraints. Model predictive control (MPC) and reinforcement learning are difficult to scale across buildings. This study instead adapts an open-weight reasoning model through reinforcement learning with verifiable rewards (RLVR). We convert exact offline dynamic-programming (DP) action values into dense rewards for every candidate action. Using only 30 training prompts, reinforcement fine-tuning (RFT) trains the model as an upper-level scheduler that outputs hourly heat-pump setpoints from text-based states and forecasts. Evaluation uses a deliberately simple office-building TES benchmark where exact DP is tractable and the optimum is known. RFT reduces the open-weight model's emissions from 70.5 to 61.2 kg-CO2, close to the DP optimum of 60.8 kg-CO2. GPT-5 nearly matches DP and MPC without task-specific training, while GPT-4o, a non-reasoning LLM, produces higher emissions than the no-storage baseline, so inference-time reasoning appears important. Trace analysis shows that RFT mainly stabilizes observable planning patterns (candidate comparison, look-ahead, and feasibility checking) rather than creating a new strategy. Robustness and generalization tests clarify what transfers: the reinforced planning patterns persist under forecast errors and an unseen TES condition and carry over to a battery task, but its different structure limits the gains. DP-based verifiable rewards offer a practical way to adapt open-weight reasoning models to building storage scheduling. These results motivate higher-fidelity tests of whole-building control and scalable verifiers for city-scale energy management.",
+      "is_ascend": false,
+      "title_zh": "基于验证器的推理模型强化微调用于热能储存控制",
+      "institution": "未明确披露",
+      "summary_cn": "该论文研究如何将开放权重推理模型用于建筑热能储存调度控制。作者采用带可验证奖励的强化学习微调方法，把离线动态规划得到的动作价值转化为稠密奖励，使模型根据文本状态和预测信息输出每小时热泵设定值。结果表明，该方法可使模型的控制效果接近动态规划最优解，并显示推理能力对该任务很重要。",
+      "innovations": [
+        "将带可验证奖励的强化学习微调用于热能储存控制，把精确动态规划动作价值转化为候选动作的稠密奖励",
+        "把推理模型作为上层调度器，直接从文本化状态与预测中生成逐小时控制设定",
+        "通过轨迹分析指出微调主要强化了候选比较、前瞻规划和可行性检查等可观察规划模式",
+        "分析了在预测误差、未见储能条件以及迁移到电池任务时的泛化与鲁棒性边界"
+      ],
+      "scenario_cn": "面向建筑负荷转移和电网响应场景，解决热能储存系统需要提前规划且传统 MPC、强化学习难以跨建筑扩展的问题，适用于建筑储能调度及相关能源管理任务。",
+      "opensource_status": "未确认开源",
+      "code_url": "",
+      "title_en": "Verifier-Based Reinforcement Fine-Tuning of Reasoning Models for Thermal Energy Storage Control"
+    },
+    {
+      "id": "2607.12266v1",
+      "title": "Saturation Makes Quantization Error Additive: A Coverage Model with a Certificate",
+      "abstract": "Mixed-precision quantization must decide which parts of a model to keep at higher precision. A common premise, shared by sensitivity-based methods such as HAWQ and CoopQ, is that the loss from quantizing a set of layers can be reconstructed from per-layer or pairwise sensitivities measured in isolation. We test this premise at the 4-bit weight-and-activation precisions now being deployed, treating the change in loss $f(S)$ from quantizing a layer set $S$ as a set function on the Boolean cube and analyzing it through two classical changes of basis. This analysis yields two findings. First, across configurations drawn from the deployment distribution, 85--93\\% of the variance of $f$ is explained by per-layer effects alone. Second, a monotone transform of a sum of per-layer terms reproduces $f$'s ranking of configurations, misordering at most 2\\% of pairs. We propose the coverage model $f(S)=c\\bigl(1-\\prod_{i\\in S}(1-a_i)\\bigr)$, which reproduces the measured variance profile of $f$ to within a few percent from its $L$ fitted break-rates. This structure supports two predictors of a configuration's loss, each with $L+1$ parameters. The additive model is the optimal first-order predictor. By Parseval's identity its mean-squared error equals the variance of $f$ left unexplained by per-layer effects, which we measure on full lattices, estimate out of sample at full-network scale, and report with every result as a certificate of how well any additive model can do. The coverage model itself is the second predictor. As allocators at matched memory, they attain the lowest KL divergence among the compared allocators on models from 30B to 355B parameters. Below four bits, the resulting allocations continue to solve code and reasoning tasks at budgets where allocations from gradient sensitivities no longer produce terminating generations.",
+      "published": "2026-07-15T00:00:00+00:00",
+      "updated": "2026-07-15T00:00:00+00:00",
+      "authors": [
+        "Joshua Hill"
+      ],
+      "categories": [
+        "cs.LG"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.12266",
+      "pdf_url": "https://arxiv.org/pdf/2607.12266",
+      "score": 7.0,
+      "topics": [
+        {
+          "name": "RAG / Long Context",
+          "slug": "rag-long-context",
+          "hits": [
+            "rag"
+          ]
+        },
+        {
+          "name": "Model Compression / Quantization",
+          "slug": "model-compression",
+          "hits": [
+            "quantization"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "quantization",
+        "rag"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Saturation%20Makes%20Quantization%20Error%20Additive%3A%20A%20Coverage%20Model%20with%20a%20Certificate%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Mixed-precision quantization must decide which parts of a model to keep at higher precision. A common premise, shared by sensitivity-based methods such as HAWQ and CoopQ, is that the loss from quantizing a set of layers can be reconstructed from per-layer or pairwise sensitivities measured in isolation. We test this premise at the 4-bit weight-and-activation precisions now being deployed, treating the change in loss $f(S)$ from quantizing a layer set $S$ as a set function on the Boolean cube and analyzing it through two classical changes of basis. This analysis yields two findings. First, across configurations drawn from the deployment distribution, 85--93\\% of the variance of $f$ is explained by per-layer effects alone. Second, a monotone transform of a sum of per-layer terms reproduces $f$'s ranking of configurations, misordering at most 2\\% of pairs. We propose the coverage model $f(S)=c\\bigl(1-\\prod_{i\\in S}(1-a_i)\\bigr)$, which reproduces the measured variance profile of $f$ to within a few percent from its $L$ fitted break-rates. This structure supports two predictors of a configuration's loss, each with $L+1$ parameters. The additive model is the optimal first-order predictor. By Parseval's identity its mean-squared error equals the variance of $f$ left unexplained by per-layer effects, which we measure on full lattices, estimate out of sample at full-network scale, and report with every result as a certificate of how well any additive model can do. The coverage model itself is the second predictor. As allocators at matched memory, they attain the lowest KL divergence among the compared allocators on models from 30B to 355B parameters. Below four bits, the resulting allocations continue to solve code and reasoning tasks at budgets where allocations from gradient sensitivities no longer produce terminating generations.",
+      "is_ascend": false,
+      "title_zh": "饱和使量化误差呈加性：带证书的覆盖模型",
+      "institution": "未明确披露",
+      "summary_cn": "这篇论文研究混合精度量化中“哪些层应保留更高精度”这一分配问题，重点检验按层单独测得的敏感度能否解释多层联合量化带来的损失变化。作者把量化后损失变化视为关于层集合的集合函数，分析发现当前部署常见的4比特权重与激活量化下，大部分方差可由逐层效应解释。基于这一现象，论文提出覆盖模型和两个低参数预测器，用于预测配置损失并指导在给定内存预算下的精度分配。",
+      "innovations": [
+        "将多层量化带来的损失变化形式化为布尔立方体上的集合函数，并用经典基变换分析其结构。",
+        "发现部署分布中的量化损失在很大程度上可由逐层效应解释，从而为加性近似提供经验依据。",
+        "提出覆盖模型 f(S)=c(1-∏(1-a_i))，用少量按层参数刻画联合量化损失。",
+        "给出基于未解释方差的“证书”，用于量化任何一阶加性预测器可达到的误差上限。"
+      ],
+      "scenario_cn": "适用于大模型权重与激活混合精度量化场景，尤其是在固定显存或内存预算下为不同层分配比特宽度。它要解决的是联合量化效应难以准确建模、传统逐层敏感度方法在低比特下可能失效的问题。",
+      "opensource_status": "未确认开源",
+      "code_url": "",
+      "title_en": "Saturation Makes Quantization Error Additive: A Coverage Model with a Certificate"
+    },
+    {
+      "id": "2607.12391v1",
+      "title": "ReDiTT: Retrieval Augmented Conditional Diffusion Transformers for Asynchronous Time Series",
+      "abstract": "We present a diffusion based model for asynchronous time series prediction, where the goal is to predict the next inter event time and event type. To address the inherent uncertainty of future events, we introduce ReDiTT, a retrieval augmented conditional diffusion transformer that operates in latent space. ReDiTT retrieves structurally similar latent sequences from a memory bank during both training and inference and incorporates them as reference conditions through cross attention. This retrieval based conditioning allows the model to attend to relevant temporal dynamics and provides global structural guidance for generation. As a result, ReDiTT stabilizes long horizon forecasting and improves sample diversity. Experiments on seven real world datasets demonstrate state of the art performance on next event prediction and long horizon forecasting. Our code is available at this https URL .",
+      "published": "2026-07-15T00:00:00+00:00",
+      "updated": "2026-07-15T00:00:00+00:00",
+      "authors": [
+        "Saiyue Lyu",
+        "Zhitian Zhang",
+        "Ruizhi Deng",
+        "Thibaut Durand"
+      ],
+      "categories": [
+        "cs.LG"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.12391",
+      "pdf_url": "https://arxiv.org/pdf/2607.12391",
+      "score": 6.8,
+      "topics": [
+        {
+          "name": "Video Generation",
+          "slug": "video-generation",
+          "hits": [
+            "diffusion transformer"
+          ]
+        },
+        {
+          "name": "RAG / Long Context",
+          "slug": "rag-long-context",
+          "hits": [
+            "retrieval"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "diffusion transformer",
+        "retrieval"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=ReDiTT%3A%20Retrieval%20Augmented%20Conditional%20Diffusion%20Transformers%20for%20Asynchronous%20Time%20Series%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "We present a diffusion based model for asynchronous time series prediction, where the goal is to predict the next inter event time and event type. To address the inherent uncertainty of future events, we introduce ReDiTT, a retrieval augmented conditional diffusion transformer that operates in latent space. ReDiTT retrieves structurally similar latent sequences from a memory bank during both training and inference and incorporates them as reference conditions through cross attention. This retrieval based conditioning allows the model to attend to relevant temporal dynamics and provides global structural guidance for generation. As a result, ReDiTT stabilizes long horizon forecasting and improves sample diversity. Experiments on seven real world datasets demonstrate state of the art performance on next event prediction and long horizon forecasting. Our code is available at this https URL .",
+      "is_ascend": false,
+      "title_zh": "ReDiTT：面向异步时间序列的检索增强条件扩散 Transformer",
+      "institution": "未明确披露",
+      "summary_cn": "这篇论文研究异步时间序列预测，目标是预测下一次事件的发生时间间隔和事件类型。作者提出 ReDiTT，这是一种在潜在空间中工作的检索增强条件扩散 Transformer，会在训练和推理时从记忆库中检索结构相似的潜在序列，并通过交叉注意力作为条件信息输入模型。这样做可以为生成过程提供与当前序列相关的时序模式和更全局的结构引导，从而改善长跨度预测的稳定性与样本多样性。",
+      "innovations": [
+        "提出面向异步时间序列预测的检索增强条件扩散框架，将扩散生成与检索式条件建模结合起来。",
+        "在潜在空间中检索结构相似序列，并通过交叉注意力注入参考条件，使模型能够利用历史结构模式辅助预测。",
+        "在训练和推理阶段都使用检索条件，为长时域预测提供全局结构引导，而不只依赖局部自回归信号。"
+      ],
+      "scenario_cn": "适用于事件流建模和异步时间序列预测场景，例如需要预测下一事件何时发生、会发生什么类型事件，以及进行更长时间跨度事件演化预测的任务。",
+      "opensource_status": "未确认开源",
+      "code_url": "",
+      "title_en": "ReDiTT: Retrieval Augmented Conditional Diffusion Transformers for Asynchronous Time Series"
+    },
+    {
+      "id": "2607.12550v1",
+      "title": "A JoLT for the KV Cache: Near-Lossless KV Cache Compression via Joint Tucker and JL-Residual Allocation for LLMs",
+      "abstract": "The key-value (KV) cache has become the dominant memory cost of transformer inference. It grows with batch size, context length, and depth, and at long context it, rather than the model weights, sets the ceiling on throughput. Two families of methods reduce it. Low-rank methods factor two-dimensional slices of the cache, either per-head matrices or cross-layer feature blocks, and quantization methods lower the bit-width of every entry. Neither family exploits the fact that the cache at a layer is naturally a third-order tensor whose three axes, the heads, the tokens, and the features, carry very different amounts of redundancy. We take this tensor view directly. Our method, JoLT, applies a partial Tucker decomposition that compresses only the token and feature axes while leaving the head and layer axes intact, and then restores the energy that truncation discards with a Johnson-Lindenstrauss (JL) rotated low-bit residual. A single Lagrangian dual allocates the Tucker ranks and the residual bit-widths together, per layer group and separately for keys and values, under one byte budget. The result is a near-lossless 2-3x compression: perplexity, GSM8K accuracy, and RULER needle-in-a-haystack retrieval all stay at or within statistical noise of the uncompressed baseline on both a grouped-query-attention model (Mistral-7B-v0.3) and a multi-head-attention model (LLaMA-2-13B). At 2x, JoLT reconstructs the cache to relative Frobenius error 0.009 (K) and 0.006 (V) on both architectures, roughly an order of magnitude below cross-layer SVD and 4-bit quantization. A randomized-SVD variant, FlashJoLT, delivers a 5-13x compression-time speedup at matched quality.",
+      "published": "2026-07-15T00:00:00+00:00",
+      "updated": "2026-07-15T00:00:00+00:00",
+      "authors": [
+        "Rahul Krishnan",
+        "Volker Schulz"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.CL",
+        "math.OC"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.12550",
+      "pdf_url": "https://arxiv.org/pdf/2607.12550",
+      "score": 4.4,
+      "topics": [
+        {
+          "name": "LLM 推理加速",
+          "slug": "llm-inference",
+          "hits": [
+            "kv cache"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "kv cache"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=A%20JoLT%20for%20the%20KV%20Cache%3A%20Near-Lossless%20KV%20Cache%20Compression%20via%20Joint%20Tucker%20and%20JL-Residual%20Allocation%20for%20LLMs%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "The key-value (KV) cache has become the dominant memory cost of transformer inference. It grows with batch size, context length, and depth, and at long context it, rather than the model weights, sets the ceiling on throughput. Two families of methods reduce it. Low-rank methods factor two-dimensional slices of the cache, either per-head matrices or cross-layer feature blocks, and quantization methods lower the bit-width of every entry. Neither family exploits the fact that the cache at a layer is naturally a third-order tensor whose three axes, the heads, the tokens, and the features, carry very different amounts of redundancy. We take this tensor view directly. Our method, JoLT, applies a partial Tucker decomposition that compresses only the token and feature axes while leaving the head and layer axes intact, and then restores the energy that truncation discards with a Johnson-Lindenstrauss (JL) rotated low-bit residual. A single Lagrangian dual allocates the Tucker ranks and the residual bit-widths together, per layer group and separately for keys and values, under one byte budget. The result is a near-lossless 2-3x compression: perplexity, GSM8K accuracy, and RULER needle-in-a-haystack retrieval all stay at or within statistical noise of the uncompressed baseline on both a grouped-query-attention model (Mistral-7B-v0.3) and a multi-head-attention model (LLaMA-2-13B). At 2x, JoLT reconstructs the cache to relative Frobenius error 0.009 (K) and 0.006 (V) on both architectures, roughly an order of magnitude below cross-layer SVD and 4-bit quantization. A randomized-SVD variant, FlashJoLT, delivers a 5-13x compression-time speedup at matched quality.",
+      "is_ascend": false,
+      "title_zh": "JoLT：针对 KV Cache 的近无损压缩——联合 Tucker 分解与 JL 残差分配方法",
+      "institution": "未明确披露",
+      "summary_cn": "这篇论文关注大语言模型推理中的 KV Cache 内存开销问题，指出其会随着 batch size、上下文长度和模型深度增长，并在长上下文场景下成为吞吐瓶颈。作者提出 JoLT，将 KV Cache 直接视为三阶张量，只压缩 token 轴和 feature 轴，同时保留 head 轴与 layer 轴结构。为弥补截断信息损失，方法进一步加入经过 Johnson-Lindenstrauss 旋转的低比特残差，并在统一字节预算下联合分配秩与残差位宽。",
+      "innovations": [
+        "将 KV Cache 建模为包含 head、token、feature 三个维度的三阶张量，并基于这一结构设计压缩方法，而不是仅做二维切片低秩分解或统一量化。",
+        "提出部分 Tucker 分解，只压缩 token 和 feature 两个维度，从而更有针对性地利用不同轴上的冗余。",
+        "引入 JL 旋转的低比特残差补偿被截断的能量，以实现近无损重建。",
+        "使用单一拉格朗日对偶机制，在统一字节预算下联合分配 Tucker 秩与残差位宽，并分别面向不同层组以及 K/V 进行配置。"
+      ],
+      "scenario_cn": "解决长上下文 LLM 推理中 KV Cache 占用内存过大、进而限制吞吐与部署规模的问题。适用于需要压缩 KV Cache 的大模型推理服务、长上下文问答、检索增强生成及高并发部署场景。",
+      "opensource_status": "未确认开源",
+      "code_url": "",
+      "title_en": "A JoLT for the KV Cache: Near-Lossless KV Cache Compression via Joint Tucker and JL-Residual Allocation for LLMs"
+    },
+    {
+      "id": "2607.12275v1",
+      "title": "Flatness-Preserving Residual Learning for Real-Time Tight Quadrotor Formation Flight",
+      "abstract": "Quadrotors flying in tight formations are severely affected by turbulent aerodynamic interactions, such as downwash, that can cause catastrophic collisions if left unmodeled. To compensate for these effects, we propose a physics-informed residual dynamics learning framework that captures complex aerodynamic interactions while ensuring the joint multi-quadrotor system remains differentially flat. We leverage this preserved flatness to design a computationally efficient feedback linearization controller that is easily tunable with linear control techniques and cancels aerodynamic disturbances via feedforward compensation. Hardware experiments demonstrate our framework reduces average tracking errors by 31% compared to nominal baselines. Crucially, our lightweight approach matches the tracking performance of state-of-the-art nonlinear model predictive control (NMPC) while requiring an order of magnitude less computation. We are the first to show that stable, tight formation flight can be achieved with under 30 seconds of training data and a 5ms loop rate, unlocking high-fidelity aerodynamic compensation for compute-constrained flight stacks.",
+      "published": "2026-07-15T00:00:00+00:00",
+      "updated": "2026-07-15T00:00:00+00:00",
+      "authors": [
+        "Pei-An Hsieh",
+        "Fengjun Yang",
+        "Nikolai Matni",
+        "M. Ani Hsieh"
+      ],
+      "categories": [
+        "cs.RO",
+        "eess.SY"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.12275",
+      "pdf_url": "https://arxiv.org/pdf/2607.12275",
+      "score": 4.4,
+      "topics": [
+        {
+          "name": "LLM 推理加速",
+          "slug": "llm-inference",
+          "hits": [
+            "serving"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "serving"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Flatness-Preserving%20Residual%20Learning%20for%20Real-Time%20Tight%20Quadrotor%20Formation%20Flight%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Quadrotors flying in tight formations are severely affected by turbulent aerodynamic interactions, such as downwash, that can cause catastrophic collisions if left unmodeled. To compensate for these effects, we propose a physics-informed residual dynamics learning framework that captures complex aerodynamic interactions while ensuring the joint multi-quadrotor system remains differentially flat. We leverage this preserved flatness to design a computationally efficient feedback linearization controller that is easily tunable with linear control techniques and cancels aerodynamic disturbances via feedforward compensation. Hardware experiments demonstrate our framework reduces average tracking errors by 31% compared to nominal baselines. Crucially, our lightweight approach matches the tracking performance of state-of-the-art nonlinear model predictive control (NMPC) while requiring an order of magnitude less computation. We are the first to show that stable, tight formation flight can be achieved with under 30 seconds of training data and a 5ms loop rate, unlocking high-fidelity aerodynamic compensation for compute-constrained flight stacks.",
+      "is_ascend": false,
+      "title_zh": "保持平坦性的残差学习：用于实时紧密四旋翼编队飞行",
+      "institution": "未明确披露",
+      "summary_cn": "这篇论文研究四旋翼紧密编队飞行中的空气动力学扰动补偿问题，尤其关注下洗等相互作用对飞行稳定性和安全性的影响。作者提出一种物理启发的残差动力学学习框架，在建模复杂气动交互的同时保持多机系统的微分平坦性。基于这一性质，论文进一步构建计算高效的反馈线性化控制器，用于在实时控制中抵消扰动并实现稳定跟踪。",
+      "innovations": [
+        "提出物理启发的残差动力学学习框架，用于建模多四旋翼之间复杂的空气动力学耦合效应。",
+        "在引入残差学习补偿气动扰动的同时，保持联合多机系统的微分平坦性，便于后续控制设计。",
+        "利用保留的平坦性构建易调参、计算高效的反馈线性化控制器，并结合前馈补偿抵消扰动。",
+        "将学习到的扰动补偿与实时控制紧密结合，面向算力受限飞控系统实现紧密编队飞行。"
+      ],
+      "scenario_cn": "解决四旋翼在紧密编队飞行时因下洗等气动耦合导致的轨迹误差和碰撞风险问题。适用于多无人机协同飞行、近距离编队控制以及对实时性和算力约束敏感的飞行控制系统。",
+      "opensource_status": "未确认开源",
+      "code_url": "",
+      "title_en": "Flatness-Preserving Residual Learning for Real-Time Tight Quadrotor Formation Flight"
+    },
+    {
+      "id": "2607.12696v1",
+      "title": "Less Experts, Faster Decoding: Cost-Aware Speculative Decoding for Mixture-of-Experts",
+      "abstract": "Sparse Mixture-of-Experts (MoE) models have become an important approach for scaling Large Language Models (LLMs), but their inference efficiency depends strongly on expert activation patterns. Speculative decoding (SD) accelerates autoregressive generation by verifying multiple draft tokens in parallel, yet existing draft selection strategies primarily optimize acceptance likelihood. In large-scale MoE models, however, selecting draft tokens also determines the union of experts activated during verification. We observe that confidence-driven SD can introduce \\textit{expert scattering}: high-probability draft tokens may route to disjoint experts, increasing expert-weight memory traffic and reducing the speedup from speculation. Motivated by this observation, we revisit draft-tree selection under the non-uniform memory-cost structure of MoE inference. We propose \\textsc{EcoSpec}, a cost-aware speculative decoding framework that incorporates predicted marginal expert activation cost into draft selection. With a lightweight expert predictor and a dynamic expert buffer, \\textsc{EcoSpec} favors draft paths that preserve high acceptance likelihood while reusing experts already covered by the current verification set, without modifying the target-model verification rule. We evaluate \\textsc{EcoSpec} on three large-scale MoE models, including DeepSeek-V3.1 (671B), Qwen3-235B-A22B, and GPT-OSS-120B, across reasoning, coding, question-answering, and dialogue benchmarks. \\textsc{EcoSpec} consistently reduces active expert footprints and improves end-to-end decoding speed, achieving up to $1.62\\times$ speedup. These results show that accounting for expert activation cost is important for efficient speculative decoding in large-scale MoE models.",
+      "published": "2026-07-15T00:00:00+00:00",
+      "updated": "2026-07-15T00:00:00+00:00",
+      "authors": [
+        "Jincheng Xie",
+        "Runheng Liu",
+        "Heyan Huang",
+        "Yawen Ling",
+        "Hanbin Dai",
+        "Yu Zheng",
+        "Wen Hu"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.DC"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.12696",
+      "pdf_url": "https://arxiv.org/pdf/2607.12696",
+      "score": 4.4,
+      "topics": [
+        {
+          "name": "LLM 推理加速",
+          "slug": "llm-inference",
+          "hits": [
+            "speculative decoding"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "speculative decoding"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Less%20Experts%2C%20Faster%20Decoding%3A%20Cost-Aware%20Speculative%20Decoding%20for%20Mixture-of-Experts%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Sparse Mixture-of-Experts (MoE) models have become an important approach for scaling Large Language Models (LLMs), but their inference efficiency depends strongly on expert activation patterns. Speculative decoding (SD) accelerates autoregressive generation by verifying multiple draft tokens in parallel, yet existing draft selection strategies primarily optimize acceptance likelihood. In large-scale MoE models, however, selecting draft tokens also determines the union of experts activated during verification. We observe that confidence-driven SD can introduce \\textit{expert scattering}: high-probability draft tokens may route to disjoint experts, increasing expert-weight memory traffic and reducing the speedup from speculation. Motivated by this observation, we revisit draft-tree selection under the non-uniform memory-cost structure of MoE inference. We propose \\textsc{EcoSpec}, a cost-aware speculative decoding framework that incorporates predicted marginal expert activation cost into draft selection. With a lightweight expert predictor and a dynamic expert buffer, \\textsc{EcoSpec} favors draft paths that preserve high acceptance likelihood while reusing experts already covered by the current verification set, without modifying the target-model verification rule. We evaluate \\textsc{EcoSpec} on three large-scale MoE models, including DeepSeek-V3.1 (671B), Qwen3-235B-A22B, and GPT-OSS-120B, across reasoning, coding, question-answering, and dialogue benchmarks. \\textsc{EcoSpec} consistently reduces active expert footprints and improves end-to-end decoding speed, achieving up to $1.62\\times$ speedup. These results show that accounting for expert activation cost is important for efficient speculative decoding in large-scale MoE models.",
+      "is_ascend": false,
+      "title_zh": "更少专家，更快解码：面向混合专家模型的成本感知推测解码",
+      "institution": "未明确披露",
+      "summary_cn": "这篇论文研究 MoE 大语言模型中的推测解码加速问题，指出现有草稿 token 选择方法主要关注接受率，却忽略了不同草稿路径会触发不同专家集合，从而影响验证阶段的内存访问成本。作者发现，高置信度草稿 token 可能导致专家分散，增加 expert-weight 的内存流量，抵消推测解码带来的加速收益。为此，论文提出 EcoSpec，在草稿选择时联合考虑接受概率与额外专家激活成本，以提高 MoE 推理效率。",
+      "innovations": [
+        "指出 MoE 推测解码中的关键问题是 expert scattering，即高概率草稿可能激活彼此不重叠的专家集合，从而增加验证成本。",
+        "提出成本感知的推测解码框架 EcoSpec，在草稿树选择中显式建模边际专家激活代价，而非只优化接受率。",
+        "设计轻量级专家预测器与动态专家缓冲机制，优先选择能够复用当前验证集中已覆盖专家的草稿路径。",
+        "在不修改目标模型验证规则的前提下，将专家激活成本纳入解码决策，适配大规模 MoE 推理场景。"
+      ],
+      "scenario_cn": "解决 MoE 大模型在推测解码时因专家激活分散而导致的内存流量上升和端到端加速不足问题。适用于需要提升 DeepSeek、Qwen 等大规模 MoE 模型推理效率的推理服务、代码生成、问答、对话和推理任务场景。",
+      "opensource_status": "未确认开源",
+      "code_url": "",
+      "title_en": "Less Experts, Faster Decoding: Cost-Aware Speculative Decoding for Mixture-of-Experts"
+    },
+    {
+      "id": "2607.12872v1",
+      "title": "Low-Latency Neural Models for Real-Time Music Enhancement",
+      "abstract": "Music recordings and live streams are often affected by noise, reverberation, spectral imbalances, or artifacts that degrade listening quality. While speech enhancement has matured into a well-defined research area, music enhancement is less established because musical signals combine overlapping sources, wide bandwidths, strong dynamics, and intentional production effects. We study real-time music enhancement under strict causal and low-latency constraints. We formulate the task around recovery of the intended produced mix from acoustic and production-oriented degradations, adapt compact causal networks to music, and compare speech-derived real-time baselines, an external music-denoising model, an offline restoration reference, and a music-specific MusicFilterNet-MS variant. On the tested hardware, all causal models run faster than real time, but improvements depend strongly on the dataset, degradation type, and metric family; under several objective criteria, indiscriminate enhancement can worsen the degraded input. The main contribution is therefore a benchmark and an analysis rather than a universal best model: real-time music enhancement is feasible, but robust improvement requires degradation-aware modeling, stereo-aware processing, identity-preserving correction, and evaluation beyond a single objective score.",
+      "published": "2026-07-15T00:00:00+00:00",
+      "updated": "2026-07-15T00:00:00+00:00",
+      "authors": [
+        "Emmanouil Karystinaios",
+        "Jonathan Greif",
+        "David Nadrchal",
+        "Paul Primus",
+        "Gerhard Widmer"
+      ],
+      "categories": [
+        "cs.SD"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.12872",
+      "pdf_url": "https://arxiv.org/pdf/2607.12872",
+      "score": 4.4,
+      "topics": [
+        {
+          "name": "LLM 推理加速",
+          "slug": "llm-inference",
+          "hits": [
+            "latency"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "latency"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Low-Latency%20Neural%20Models%20for%20Real-Time%20Music%20Enhancement%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Music recordings and live streams are often affected by noise, reverberation, spectral imbalances, or artifacts that degrade listening quality. While speech enhancement has matured into a well-defined research area, music enhancement is less established because musical signals combine overlapping sources, wide bandwidths, strong dynamics, and intentional production effects. We study real-time music enhancement under strict causal and low-latency constraints. We formulate the task around recovery of the intended produced mix from acoustic and production-oriented degradations, adapt compact causal networks to music, and compare speech-derived real-time baselines, an external music-denoising model, an offline restoration reference, and a music-specific MusicFilterNet-MS variant. On the tested hardware, all causal models run faster than real time, but improvements depend strongly on the dataset, degradation type, and metric family; under several objective criteria, indiscriminate enhancement can worsen the degraded input. The main contribution is therefore a benchmark and an analysis rather than a universal best model: real-time music enhancement is feasible, but robust improvement requires degradation-aware modeling, stereo-aware processing, identity-preserving correction, and evaluation beyond a single objective score.",
+      "is_ascend": false,
+      "title_zh": "用于实时音乐增强的低延迟神经模型",
+      "institution": "未明确披露",
+      "summary_cn": "该论文研究严格因果、低时延约束下的实时音乐增强任务，目标是从噪声、混响、频谱失衡和制作伪影等退化中恢复更接近预期的成品混音。作者将紧凑型因果网络适配到音乐场景，并比较了多类实时基线、外部音乐去噪模型、离线恢复参考以及音乐专用变体。结果表明实时音乐增强在工程上可行，但提升效果高度依赖数据集、退化类型和评价指标，盲目增强甚至可能劣化音频。",
+      "innovations": [
+        "将实时音乐增强明确表述为在低时延因果约束下恢复“目标制作混音”的问题，而非简单套用语音增强设定。",
+        "系统比较语音领域实时基线、外部音乐去噪模型、离线参考模型与音乐专用因果模型，给出面向音乐增强的基准分析。",
+        "指出单一客观指标不足以评价音乐增强，并总结出退化感知建模、立体声感知处理和身份保持校正等关键方向。"
+      ],
+      "scenario_cn": "面向音乐录音、直播音频和其他需要实时处理的音乐信号增强场景，解决噪声、混响、频谱失衡和制作伪影导致的听感下降问题，适用于低延迟在线音频处理系统。",
+      "opensource_status": "未确认开源",
+      "code_url": "",
+      "title_en": "Low-Latency Neural Models for Real-Time Music Enhancement"
+    },
+    {
+      "id": "2607.11957v1",
+      "title": "Anomalous Frame Detection Using VLM-Based Description Comparison for Extracting Expert-Specific Actions and Contextual Decision-Making Scenes with Intra-Video Self-Similarity",
+      "abstract": "Maintenance of critical infrastructures, such as railways and power plants, is essential for ensuring operational safety and reliability. However, the declining number of skilled maintenance workers highlights the need to transfer expert know-how to less experienced workers. Previous studies have attempted to extract candidates of expert knowledge by comparing videos of manual-based work with those of expert workers, mainly focusing on differences in observable actions. However, expert know-how is often embedded not only in actions but also in contextual decision-making during task execution. This paper proposes a method that detects anomalous frames between two task videos to automatically extract candidate scenes containing expert-specific actions and contextual decision-making scenes. The method generates frame-wise visual descriptions using a vision-language model (VLM). Expert-specific actions are extracted based on frame similarities computed from description comparisons between two videos, while contextual decision-making scenes are extracted using segment similarities derived from intra-video self-similarity of the descriptions. In simulated distribution board maintenance experiments involving 27 task scenarios, the proposed method achieved extraction rates of 65% for action candidates and 61% for decision-scene candidates, improving over conventional methods that achieved 59% and 33%, respectively. These results demonstrate the effectiveness of the proposed approach in discovering candidate scenes containing expert know-how.",
+      "published": "2026-07-15T00:00:00+00:00",
+      "updated": "2026-07-15T00:00:00+00:00",
+      "authors": [
+        "Ryo Sakai",
+        "Kaname Yokoyama"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.11957",
+      "pdf_url": "https://arxiv.org/pdf/2607.11957",
+      "score": 4.0,
+      "topics": [
+        {
+          "name": "多模态推理加速",
+          "slug": "multimodal-inference",
+          "hits": [
+            "vlm"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "vlm"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Anomalous%20Frame%20Detection%20Using%20VLM-Based%20Description%20Comparison%20for%20Extracting%20Expert-Specific%20Actions%20and%20Contextual%20Decision-Making%20Scenes%20with%20Intra-Video%20Self-Similarity%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Maintenance of critical infrastructures, such as railways and power plants, is essential for ensuring operational safety and reliability. However, the declining number of skilled maintenance workers highlights the need to transfer expert know-how to less experienced workers. Previous studies have attempted to extract candidates of expert knowledge by comparing videos of manual-based work with those of expert workers, mainly focusing on differences in observable actions. However, expert know-how is often embedded not only in actions but also in contextual decision-making during task execution. This paper proposes a method that detects anomalous frames between two task videos to automatically extract candidate scenes containing expert-specific actions and contextual decision-making scenes. The method generates frame-wise visual descriptions using a vision-language model (VLM). Expert-specific actions are extracted based on frame similarities computed from description comparisons between two videos, while contextual decision-making scenes are extracted using segment similarities derived from intra-video self-similarity of the descriptions. In simulated distribution board maintenance experiments involving 27 task scenarios, the proposed method achieved extraction rates of 65% for action candidates and 61% for decision-scene candidates, improving over conventional methods that achieved 59% and 33%, respectively. These results demonstrate the effectiveness of the proposed approach in discovering candidate scenes containing expert know-how.",
+      "is_ascend": false,
+      "title_zh": "基于视觉语言模型描述比较与视频内自相似性的异常帧检测：用于提取专家特有动作和情境决策场景",
+      "institution": "未明确披露",
+      "summary_cn": "该论文提出一种比较两段任务视频的自动化方法，用于挖掘包含专家经验的候选片段。方法先用视觉语言模型为每一帧生成文字描述，再通过跨视频描述相似度提取专家特有动作，并结合视频内自相似性提取情境决策场景。实验表明，该方法比传统方法更有效地发现蕴含专家知识的关键片段。",
+      "innovations": [
+        "将逐帧视觉描述比较用于检测两段任务视频中的异常帧，以提取专家特有动作候选片段",
+        "利用基于描述的视频内自相似性构造片段相似度，用于发现体现情境决策的场景",
+        "把专家知识提取从仅关注可观察动作扩展到同时覆盖任务执行中的上下文决策过程"
+      ],
+      "scenario_cn": "面向铁路、电厂等关键基础设施维护场景，解决如何从专家作业视频中自动提炼可迁移经验的问题，适用于专家带教、技能传承和作业分析等场景。",
+      "opensource_status": "未确认开源",
+      "code_url": "",
+      "title_en": "Anomalous Frame Detection Using VLM-Based Description Comparison for Extracting Expert-Specific Actions and Contextual Decision-Making Scenes with Intra-Video Self-Similarity"
+    },
+    {
+      "id": "2607.12112v1",
+      "title": "Continual Learning with Elastic Regularization and Synthetic Replay for Federated MLLM Fine-Tuning",
+      "abstract": "Federated fine-tuning of Multimodal Large Language Models (MLLMs) across distributed networks enables privacy-sensitive adaptation to evolving data streams, yet a fundamental obstacle prevents robust deployment in dynamic environments: catastrophic forgetting, wherein sequential task updates erase previously acquired knowledge across visual, linguistic, and cross-modal representations. Addressing this challenge is especially critical for autonomous networked AI operating in safety-sensitive domains, such as content moderation, where reliable retention of prior knowledge underpins system integrity. To overcome this, we propose Federated Continual Multimodal Learning (FedCMM), a framework that embeds continual-learning safeguards into the federated optimization loop at three complementary levels. At the parameter level, modality-aware elastic weight consolidation computes separate Fisher information matrices for the vision encoder, language backbone, and cross-modal projector, providing granular, asymmetry-aware protection against modality-specific forgetting. At the data level, each client trains a lightweight local generative replay module to synthesize raw-data-free embedding-level multimodal replay tuples without any raw data sharing. At the aggregation level, Task-similarity-aware gradient aggregation autonomously filters and reweights client updates by gradient cosine similarity, suppressing conflicting directions and stabilizing the global learning trajectory. Extensive experiments on two benchmarks demonstrate that FedCMM consistently outperforms recent baselines on accuracy and backward transfer, confirming that holistic, modality-aware optimization enables robust evolutive adaptation across heterogeneous networked AI deployments.",
+      "published": "2026-07-15T00:00:00+00:00",
+      "updated": "2026-07-15T00:00:00+00:00",
+      "authors": [
+        "Jing Liu",
+        "Chenxuanyin Zou",
+        "Jiayang Ren",
+        "Gaoyun Fang",
+        "Chengfang Li",
+        "Yan Wang",
+        "Zhenchao Ma",
+        "Bo Hu"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CV",
+        "cs.DC"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.12112",
+      "pdf_url": "https://arxiv.org/pdf/2607.12112",
+      "score": 4.0,
+      "topics": [
+        {
+          "name": "多模态推理加速",
+          "slug": "multimodal-inference",
+          "hits": [
+            "mllm"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "mllm"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Continual%20Learning%20with%20Elastic%20Regularization%20and%20Synthetic%20Replay%20for%20Federated%20MLLM%20Fine-Tuning%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Federated fine-tuning of Multimodal Large Language Models (MLLMs) across distributed networks enables privacy-sensitive adaptation to evolving data streams, yet a fundamental obstacle prevents robust deployment in dynamic environments: catastrophic forgetting, wherein sequential task updates erase previously acquired knowledge across visual, linguistic, and cross-modal representations. Addressing this challenge is especially critical for autonomous networked AI operating in safety-sensitive domains, such as content moderation, where reliable retention of prior knowledge underpins system integrity. To overcome this, we propose Federated Continual Multimodal Learning (FedCMM), a framework that embeds continual-learning safeguards into the federated optimization loop at three complementary levels. At the parameter level, modality-aware elastic weight consolidation computes separate Fisher information matrices for the vision encoder, language backbone, and cross-modal projector, providing granular, asymmetry-aware protection against modality-specific forgetting. At the data level, each client trains a lightweight local generative replay module to synthesize raw-data-free embedding-level multimodal replay tuples without any raw data sharing. At the aggregation level, Task-similarity-aware gradient aggregation autonomously filters and reweights client updates by gradient cosine similarity, suppressing conflicting directions and stabilizing the global learning trajectory. Extensive experiments on two benchmarks demonstrate that FedCMM consistently outperforms recent baselines on accuracy and backward transfer, confirming that holistic, modality-aware optimization enables robust evolutive adaptation across heterogeneous networked AI deployments.",
+      "is_ascend": false,
+      "title_zh": "用于联邦多模态大语言模型微调的结合弹性正则化与合成回放的持续学习",
+      "institution": "未明确披露",
+      "summary_cn": "该论文研究分布式网络中多模态大语言模型的联邦持续微调问题，重点解决顺序任务更新带来的灾难性遗忘。作者提出 FedCMM，在参数、数据和聚合三个层面同时引入持续学习机制，以在不共享原始数据的前提下保持旧知识并适应新任务。实验显示，该框架在准确率和向后迁移指标上优于现有方法。",
+      "innovations": [
+        "提出 FedCMM 框架，把持续学习保护机制系统性嵌入联邦多模态模型优化流程",
+        "设计面向视觉编码器、语言骨干和跨模态投影器的模态感知弹性权重整合，以更细粒度地抑制遗忘",
+        "引入客户端本地轻量生成式回放模块，在不共享原始数据的条件下合成嵌入级多模态回放样本",
+        "提出基于任务相似度的梯度聚合方法，通过梯度余弦相似度过滤和重加权客户端更新以减少冲突"
+      ],
+      "scenario_cn": "面向隐私敏感、数据持续演化的多模态联邦学习场景，解决多任务顺序微调中旧知识容易被覆盖的问题，适用于内容审核等要求长期稳定记忆的网络化智能系统。",
+      "opensource_status": "未确认开源",
+      "code_url": "",
+      "title_en": "Continual Learning with Elastic Regularization and Synthetic Replay for Federated MLLM Fine-Tuning"
+    },
+    {
+      "id": "2607.12557v1",
+      "title": "Gaussian Mixture Modeling for Event-Aware Visual Allocation in Long Video Understanding",
+      "abstract": "Large Vision-Language Models (LVLMs) face significant challenges in long video understanding due to the excessive computational cost and information loss associated with uniform sampling. Existing keyframe selection methods often treat video frames as atomic entities and allocate visual budgets equally, thereby overlooking high-level semantic structures and introducing substantial redundancy. To address these limitations, we propose GMM-EVA (Gaussian Mixture Modeling for Event-Aware Visual Allocation), which leverages Gaussian Mixture Models to model event-level structure from discrete frame-wise observations. A differentiated allocation strategy is then applied to preserve one primary high-resolution keyframe per event for high-fidelity detail, while utilizing lower-resolution secondary keyframes to maintain temporal context and optimize token budgets. GMM-EVA is a training-free, plug-and-play framework that generalizes robustly across various relevance measures and downstream LVLMs. Extensive experiments on multiple long video benchmarks demonstrate that our method significantly outperforms uniform sampling. Notably, GMM-EVA achieves comparable performance to baseline selection methods while utilizing only approximately half of the visual token budget, highlighting its superior efficiency and effectiveness.",
+      "published": "2026-07-15T00:00:00+00:00",
+      "updated": "2026-07-15T00:00:00+00:00",
+      "authors": [
+        "Yifan Lu",
+        "Ziqi Zhang",
+        "Chunfeng Yuan",
+        "Jun Gao",
+        "Bing Li",
+        "Weiming Hu"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.12557",
+      "pdf_url": "https://arxiv.org/pdf/2607.12557",
+      "score": 4.0,
+      "topics": [
+        {
+          "name": "多模态推理加速",
+          "slug": "multimodal-inference",
+          "hits": [
+            "video understanding"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "video understanding"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Gaussian%20Mixture%20Modeling%20for%20Event-Aware%20Visual%20Allocation%20in%20Long%20Video%20Understanding%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Large Vision-Language Models (LVLMs) face significant challenges in long video understanding due to the excessive computational cost and information loss associated with uniform sampling. Existing keyframe selection methods often treat video frames as atomic entities and allocate visual budgets equally, thereby overlooking high-level semantic structures and introducing substantial redundancy. To address these limitations, we propose GMM-EVA (Gaussian Mixture Modeling for Event-Aware Visual Allocation), which leverages Gaussian Mixture Models to model event-level structure from discrete frame-wise observations. A differentiated allocation strategy is then applied to preserve one primary high-resolution keyframe per event for high-fidelity detail, while utilizing lower-resolution secondary keyframes to maintain temporal context and optimize token budgets. GMM-EVA is a training-free, plug-and-play framework that generalizes robustly across various relevance measures and downstream LVLMs. Extensive experiments on multiple long video benchmarks demonstrate that our method significantly outperforms uniform sampling. Notably, GMM-EVA achieves comparable performance to baseline selection methods while utilizing only approximately half of the visual token budget, highlighting its superior efficiency and effectiveness.",
+      "is_ascend": false,
+      "title_zh": "用于长视频理解中事件感知视觉分配的高斯混合建模",
+      "institution": "未明确披露",
+      "summary_cn": "该论文针对长视频理解中均匀采样计算开销大、信息冗余高的问题，提出 GMM-EVA 方法。它利用高斯混合模型从逐帧观测中建模事件级结构，并对不同事件分配差异化视觉预算：每个事件保留一帧高分辨率关键帧，同时配合低分辨率次关键帧保留时序上下文。该方法无需训练，可作为即插即用模块适配不同长视频理解模型。",
+      "innovations": [
+        "用高斯混合模型从离散逐帧观测中显式建模长视频的事件级语义结构",
+        "提出事件感知的差异化视觉预算分配策略，为每个事件保留高分辨率主关键帧并辅以低分辨率次关键帧",
+        "方法无需训练且可插拔，能够兼容不同相关性度量方式和下游视觉语言模型",
+        "在减少视觉 token 预算的同时尽量保持长视频理解性能，提升效率与有效性"
+      ],
+      "scenario_cn": "面向长视频问答、检索和理解等任务，解决统一采样导致的算力浪费和关键信息遗漏问题，适用于需要在有限视觉 token 预算下处理长时序视频内容的多模态系统。",
+      "opensource_status": "未确认开源",
+      "code_url": "",
+      "title_en": "Gaussian Mixture Modeling for Event-Aware Visual Allocation in Long Video Understanding"
+    },
+    {
+      "id": "2607.11987v1",
+      "title": "Anatomy-Privileged Distillation with Token Routing for MRI-Based Prediction of Perineural Invasion",
+      "abstract": "Perineural invasion (PNI) is associated with poor postoperative outcomes in intrahepatic cholangiocarcinoma, but it is confirmed by surgical pathology. Existing preoperative imaging models often rely on radiologist-defined variables, contrast-enhanced imaging, or manual annotations. We propose an anatomy-privileged teacher--student framework for patient-level PNI prediction from T2-weighted MRI. During training, the teacher uses MRI with tumor and liver masks to learn dense token routing, and the student distills this guidance to retain and aggregate informative tokens under a fixed budget. Anatomical supervision is restricted to training, and the deployed model does not require masks at inference. In 155 patients, the proposed method achieved the highest mean AUROC of 0.750 among matched MRI-only baselines evaluated under the same protocol, with 1.43 GFLOPs and 8.02 ms per case on a Jetson Orin Nano Super Developer Kit.",
+      "published": "2026-07-15T00:00:00+00:00",
+      "updated": "2026-07-15T00:00:00+00:00",
+      "authors": [
+        "Hyunsu Go",
+        "Youngung Han",
+        "Kyeonghun Kim",
+        "Junga Kim",
+        "Dohyun Kweon",
+        "Jinyong Jun",
+        "Sungha Park",
+        "Anna Jung",
+        "Induk Um",
+        "Yului Jeong",
+        "Suah Park",
+        "Jina Jeong",
+        "Pa Hong",
+        "Woo Kyoung Jeong",
+        "Won Jae Lee",
+        "Ken Ying-Kai Liao",
+        "Hyuk-Jae Lee",
+        "Nam-Joon Kim"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.11987",
+      "pdf_url": "https://arxiv.org/pdf/2607.11987",
+      "score": 3.8,
+      "topics": [
+        {
+          "name": "Model Compression / Quantization",
+          "slug": "model-compression",
+          "hits": [
+            "distillation"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "distillation"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Anatomy-Privileged%20Distillation%20with%20Token%20Routing%20for%20MRI-Based%20Prediction%20of%20Perineural%20Invasion%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Perineural invasion (PNI) is associated with poor postoperative outcomes in intrahepatic cholangiocarcinoma, but it is confirmed by surgical pathology. Existing preoperative imaging models often rely on radiologist-defined variables, contrast-enhanced imaging, or manual annotations. We propose an anatomy-privileged teacher--student framework for patient-level PNI prediction from T2-weighted MRI. During training, the teacher uses MRI with tumor and liver masks to learn dense token routing, and the student distills this guidance to retain and aggregate informative tokens under a fixed budget. Anatomical supervision is restricted to training, and the deployed model does not require masks at inference. In 155 patients, the proposed method achieved the highest mean AUROC of 0.750 among matched MRI-only baselines evaluated under the same protocol, with 1.43 GFLOPs and 8.02 ms per case on a Jetson Orin Nano Super Developer Kit.",
+      "is_ascend": false,
+      "title_zh": "基于解剖先验蒸馏与令牌路由的 MRI 神经周围侵犯预测",
+      "institution": "未明确披露",
+      "summary_cn": "这篇论文研究如何仅基于 T2 加权 MRI 在术前预测肝内胆管癌的神经周围侵犯（PNI）。作者提出一种教师-学生框架：训练时教师模型利用肿瘤和肝脏掩码学习解剖先验与令牌路由，学生模型再蒸馏这些指导，在固定计算预算下保留并聚合关键信息。该方法的特点是推理阶段不再需要任何掩码或人工标注，适合实际部署。",
+      "innovations": [
+        "提出 anatomy-privileged 的教师-学生蒸馏框架，把仅训练期可用的解剖监督迁移到部署期无需掩码的学生模型中。",
+        "设计稠密令牌路由机制，在固定令牌预算下筛选并聚合对患者级 PNI 预测更有信息量的表征。",
+        "将解剖监督限制在训练阶段，兼顾医学先验利用与推理时的简化输入要求。"
+      ],
+      "scenario_cn": "面向肝内胆管癌患者的术前影像评估，解决 PNI 只能依赖术后病理确认、而现有影像模型又常依赖人工变量、增强扫描或标注的问题。适用于希望仅用常规 MRI 做预手术风险分层和辅助决策的医疗场景。",
+      "opensource_status": "未确认开源",
+      "code_url": "",
+      "title_en": "Anatomy-Privileged Distillation with Token Routing for MRI-Based Prediction of Perineural Invasion"
+    },
+    {
+      "id": "2607.12652v1",
+      "title": "Barbed Similarity for the $π$-Calculus in Beluga: A Case Study in Coinductive Reasoning",
+      "abstract": "We formalize strong barbed similarity for the pi-calculus in the Beluga proof assistant, completing a line of work addressing the Concurrent Calculi Formalization Benchmark. By extending previous developments to include replication, we give a coinductive encoding of behavioral equivalence based on barbs and internal actions. Using Beluga's copattern-based coinduction, we obtain concise and compositional proofs, including compatibility properties and a context lemma characterizing barbed precongruence. The case study demonstrates the effectiveness of combining HOAS and coinductive reasoning for mechanizing concurrent calculi.",
+      "published": "2026-07-15T00:00:00+00:00",
+      "updated": "2026-07-15T00:00:00+00:00",
+      "authors": [
+        "Lea Trogni",
+        "Gabriele Cecilia",
+        "Alberto Momigliano"
+      ],
+      "categories": [
+        "cs.LO"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.12652",
+      "pdf_url": "https://arxiv.org/pdf/2607.12652",
+      "score": 3.8,
+      "topics": [
+        {
+          "name": "Agent Reasoning / Test-time Scaling",
+          "slug": "agent-reasoning",
+          "hits": [
+            "reasoning"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "reasoning"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Barbed%20Similarity%20for%20the%20%24%CF%80%24-Calculus%20in%20Beluga%3A%20A%20Case%20Study%20in%20Coinductive%20Reasoning%20arxiv%20github&type=repositories",
+      "institutions_raw": "Gabriele Cecilia (School of Computer & Cyber Sciences / Augusta University, Augusta, USA)",
+      "content_snippet": "We formalize strong barbed similarity for the pi-calculus in the Beluga proof assistant, completing a line of work addressing the Concurrent Calculi Formalization Benchmark. By extending previous developments to include replication, we give a coinductive encoding of behavioral equivalence based on barbs and internal actions. Using Beluga's copattern-based coinduction, we obtain concise and compositional proofs, including compatibility properties and a context lemma characterizing barbed precongruence. The case study demonstrates the effectiveness of combining HOAS and coinductive reasoning for mechanizing concurrent calculi.",
+      "is_ascend": false,
+      "title_zh": "在 Beluga 中形式化 π 演算的 Barbed Similarity：一个协归纳推理案例研究",
+      "institution": "Augusta University",
+      "summary_cn": "这篇论文在 Beluga 证明助手中形式化了 π 演算的强 barbed similarity，用于补全并发演算形式化基准中的一条研究路线。作者在既有工作基础上加入复制（replication），并基于可观察行为与内部动作给出一种协归纳的行为等价编码。论文还展示了如何利用 Beluga 的基于 copattern 的协归纳机制，较为简洁地证明兼容性与刻画 barbed precongruence 的上下文引理。",
+      "innovations": [
+        "将强 barbed similarity 在 Beluga 中完成机械化形式化，并扩展到包含 replication 的 π 演算。",
+        "基于 barbs 与内部动作构建协归纳的行为等价编码，用于并发演算语义证明。",
+        "利用 Beluga 的 copattern-based coinduction 实现较为简洁且可组合的证明流程。",
+        "给出兼容性性质与用于刻画 barbed precongruence 的 context lemma 的形式化证明。"
+      ],
+      "scenario_cn": "面向并发演算、进程代数和形式化验证研究，解决 π 演算中行为等价难以机械化证明的问题。适用于证明助手中对并发系统语义、等价性和上下文性质进行严格形式化验证的场景。",
+      "opensource_status": "未确认开源",
+      "code_url": "",
+      "title_en": "Barbed Similarity for the $π$-Calculus in Beluga: A Case Study in Coinductive Reasoning"
+    },
+    {
+      "id": "2607.12818v1",
+      "title": "Breaking Déjà Vu: Independent Auditing of Visual Place Recognition through Vision-Language Reasoning",
+      "abstract": "Visual place recognition (VPR) is a key enabler of accurate localization and long-term autonomous navigation in robotics applications, such as loop closure detection for simultaneous localisation and mapping (SLAM). However, real-world VPR deployment relies on selecting an image matching threshold that balances precision and recall. These thresholds are typically tuned using labeled validation data and fixed during deployment, making them unreliable under environmental changes where ground truth is unavailable. This is particularly problematic in safety-critical robotics, where accepting a false loop closure can corrupt the estimated trajectory and map. In this work, we introduce Visual Place Recognition Auditing, an independent post-retrieval verification framework that leverages Vision-Language Models (VLMs) to assess retrieved matches by reasoning jointly over query and candidate images. Unlike conventional verification methods, our approach performs instance-level verification without requiring architecture-specific confidence measures, dataset-dependent thresholds, or prior knowledge of the deployment environment. We evaluate our method on six benchmark datasets using five state-of-the-art VPR methods and four VLMs. Results show that VLM-based auditing improves recall@1 by 13.6% on average as compared to state-of-the-art methods while reducing false acceptance rates to 12%, maintaining precision above 95% and coverage above 75%.",
+      "published": "2026-07-15T00:00:00+00:00",
+      "updated": "2026-07-15T00:00:00+00:00",
+      "authors": [
+        "Sania Waheed",
+        "Michael Milford",
+        "Sarvapali D. Ramchurn",
+        "Shoaib Ehsan"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.12818",
+      "pdf_url": "https://arxiv.org/pdf/2607.12818",
+      "score": 3.8,
+      "topics": [
+        {
+          "name": "Agent Reasoning / Test-time Scaling",
+          "slug": "agent-reasoning",
+          "hits": [
+            "reasoning"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "reasoning"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Breaking%20D%C3%A9j%C3%A0%20Vu%3A%20Independent%20Auditing%20of%20Visual%20Place%20Recognition%20through%20Vision-Language%20Reasoning%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Visual place recognition (VPR) is a key enabler of accurate localization and long-term autonomous navigation in robotics applications, such as loop closure detection for simultaneous localisation and mapping (SLAM). However, real-world VPR deployment relies on selecting an image matching threshold that balances precision and recall. These thresholds are typically tuned using labeled validation data and fixed during deployment, making them unreliable under environmental changes where ground truth is unavailable. This is particularly problematic in safety-critical robotics, where accepting a false loop closure can corrupt the estimated trajectory and map. In this work, we introduce Visual Place Recognition Auditing, an independent post-retrieval verification framework that leverages Vision-Language Models (VLMs) to assess retrieved matches by reasoning jointly over query and candidate images. Unlike conventional verification methods, our approach performs instance-level verification without requiring architecture-specific confidence measures, dataset-dependent thresholds, or prior knowledge of the deployment environment. We evaluate our method on six benchmark datasets using five state-of-the-art VPR methods and four VLMs. Results show that VLM-based auditing improves recall@1 by 13.6% on average as compared to state-of-the-art methods while reducing false acceptance rates to 12%, maintaining precision above 95% and coverage above 75%.",
+      "is_ascend": false,
+      "title_zh": "打破似曾相识：通过视觉-语言推理实现视觉地点识别的独立审计",
+      "institution": "未明确披露",
+      "summary_cn": "这篇论文研究机器人视觉地点识别（VPR）在真实环境变化下阈值不可靠的问题。作者提出一种独立的检索后审计框架，利用视觉语言模型联合推理查询图像与候选图像，对匹配结果做实例级验证。该方法不依赖特定模型置信度、数据集相关阈值或部署环境先验，目标是降低错误闭环带来的定位与建图风险。",
+      "innovations": [
+        "提出 Visual Place Recognition Auditing，将视觉语言推理用于 VPR 的独立后验审计。",
+        "实现对查询图像与候选图像的实例级联合验证，而不依赖架构特定置信度信号。",
+        "避免使用固定阈值、数据集依赖调参和部署环境先验，提高环境变化下的鲁棒性。",
+        "将该方法定位为安全关键机器人系统中的独立验证层，用于抑制错误接受的匹配结果。"
+      ],
+      "scenario_cn": "解决视觉地点识别在环境变化、缺少真实标注时难以可靠设定匹配阈值的问题。适用于机器人定位、长期自主导航、SLAM 回环检测等对误匹配高度敏感的场景。",
+      "opensource_status": "未确认开源",
+      "code_url": "",
+      "title_en": "Breaking Déjà Vu: Independent Auditing of Visual Place Recognition through Vision-Language Reasoning"
+    },
+    {
+      "id": "2607.12786v1",
+      "title": "CoRe: A Comprehensive Framework for Cross-Image Comparative Reasoning in Vision-Language Models",
+      "abstract": "Cross-image comparative reasoning remains challenging for vision-language models (VLMs), especially when correct prediction requires fine-grained attribute grounding and globally consistent reasoning. We present CoRe, a unified framework for this problem. CoRe includes: (i) CoRe-20K, a large-scale triplet-based training set automatically constructed from structured visual metadata through a multi-expert collaborative pipeline, covering counting, depth, distance, and spatial relations; (ii) TriSR, a structured reward framework that jointly supervises attribute grounding, judgment alignment, and triplet consistency under GRPO optimization; and (iii) CoRe-Bench, the first benchmark dedicated to fine-grained cross-image comparative reasoning. Experiments show that CoRe substantially outperforms existing VLMs on CoRe-Bench while remaining competitive on standard multimodal benchmarks, achieving a 28.2-point gain in partial accuracy over the strongest baseline.",
+      "published": "2026-07-15T00:00:00+00:00",
+      "updated": "2026-07-15T00:00:00+00:00",
+      "authors": [
+        "Lin Peng",
+        "Cong Wan",
+        "Zeyu Guo",
+        "SongLin Dong",
+        "Yihong Gong"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.12786",
+      "pdf_url": "https://arxiv.org/pdf/2607.12786",
+      "score": 3.8,
+      "topics": [
+        {
+          "name": "Agent Reasoning / Test-time Scaling",
+          "slug": "agent-reasoning",
+          "hits": [
+            "reasoning"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "reasoning"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=CoRe%3A%20A%20Comprehensive%20Framework%20for%20Cross-Image%20Comparative%20Reasoning%20in%20Vision-Language%20Models%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Cross-image comparative reasoning remains challenging for vision-language models (VLMs), especially when correct prediction requires fine-grained attribute grounding and globally consistent reasoning. We present CoRe, a unified framework for this problem. CoRe includes: (i) CoRe-20K, a large-scale triplet-based training set automatically constructed from structured visual metadata through a multi-expert collaborative pipeline, covering counting, depth, distance, and spatial relations; (ii) TriSR, a structured reward framework that jointly supervises attribute grounding, judgment alignment, and triplet consistency under GRPO optimization; and (iii) CoRe-Bench, the first benchmark dedicated to fine-grained cross-image comparative reasoning. Experiments show that CoRe substantially outperforms existing VLMs on CoRe-Bench while remaining competitive on standard multimodal benchmarks, achieving a 28.2-point gain in partial accuracy over the strongest baseline.",
+      "is_ascend": false,
+      "title_zh": "CoRe：视觉语言模型中跨图像比较推理的统一综合框架",
+      "institution": "未明确披露",
+      "summary_cn": "这篇论文针对视觉语言模型在跨图像比较推理中的薄弱能力，提出统一框架 CoRe。该框架同时包含自动构建的大规模三元组训练集、面向比较推理的结构化奖励机制，以及专门的细粒度跨图像比较基准。其目标是在属性落地、判断一致性和全局比较推理上系统提升 VLM 的能力。",
+      "innovations": [
+        "提出统一的跨图像比较推理框架 CoRe，覆盖训练数据、优化目标与评测基准三个层面。",
+        "构建 CoRe-20K，通过多专家协作流程和结构化视觉元数据自动生成三元组训练数据。",
+        "设计 TriSR 结构化奖励，在 GRPO 优化下联合监督属性落地、判断对齐与三元组一致性。",
+        "提出 CoRe-Bench，专门评估细粒度跨图像比较推理能力。"
+      ],
+      "scenario_cn": "解决视觉语言模型在多图比较任务中难以进行细粒度属性对齐与全局一致推理的问题。适用于比较计数、深度、距离、空间关系等需要跨图像联合判断的多模态推理场景。",
+      "opensource_status": "未确认开源",
+      "code_url": "",
+      "title_en": "CoRe: A Comprehensive Framework for Cross-Image Comparative Reasoning in Vision-Language Models"
+    },
+    {
+      "id": "2607.12934v1",
+      "title": "Domain-Incremental Remote Sensing Change Detection via Difference-Guided Adaptation and Frequency-Decoupled Distillation",
+      "abstract": "Remote sensing change detection (RSCD) models are prone to catastrophic forgetting when incrementally adapted to new domains. Existing domain-incremental learning (DIL) methods mainly preserve image-level representations but often overlook bitemporal discrepancy cues, which are critical for robust change detection under domain shifts. To address this limitation, we propose DG-FDD, a domain-incremental change detection framework that integrates Difference-Guided Adaptation and Frequency-Decoupled Distillation. Specifically, the Difference-Guided Dynamic Adapter (DGDA) models bitemporal feature discrepancies to promote change-aware feature adaptation and reduce domain-specific interference. Meanwhile, the Frequency-Decoupled Knowledge Distillation strategy with Cross-domain Synthesis (FDKD-CS) separates structural information from domain style in the frequency domain, enabling stable knowledge transfer without historical data. Extensive experiments on three public high-resolution RSCD datasets under two- and three-domain incremental protocols demonstrate that DG-FDD effectively mitigates catastrophic forgetting. Compared with independently trained single-task models, DG-FDD records mean relative changes in F1 and IoU of only -0.23% and -0.45%, respectively, across six two-domain sequences, and -0.69% and -1.31%, respectively, across the three evaluated three-domain sequences. These results indicate a favorable stability-plasticity balance between historical knowledge retention and new-domain adaptation in continual cross-domain change detection.",
+      "published": "2026-07-15T00:00:00+00:00",
+      "updated": "2026-07-15T00:00:00+00:00",
+      "authors": [
+        "Daifeng Peng",
+        "Yaning Li",
+        "Haiyan Guan"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.12934",
+      "pdf_url": "https://arxiv.org/pdf/2607.12934",
+      "score": 3.8,
+      "topics": [
+        {
+          "name": "Model Compression / Quantization",
+          "slug": "model-compression",
+          "hits": [
+            "distillation"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "distillation"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Domain-Incremental%20Remote%20Sensing%20Change%20Detection%20via%20Difference-Guided%20Adaptation%20and%20Frequency-Decoupled%20Distillation%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Remote sensing change detection (RSCD) models are prone to catastrophic forgetting when incrementally adapted to new domains. Existing domain-incremental learning (DIL) methods mainly preserve image-level representations but often overlook bitemporal discrepancy cues, which are critical for robust change detection under domain shifts. To address this limitation, we propose DG-FDD, a domain-incremental change detection framework that integrates Difference-Guided Adaptation and Frequency-Decoupled Distillation. Specifically, the Difference-Guided Dynamic Adapter (DGDA) models bitemporal feature discrepancies to promote change-aware feature adaptation and reduce domain-specific interference. Meanwhile, the Frequency-Decoupled Knowledge Distillation strategy with Cross-domain Synthesis (FDKD-CS) separates structural information from domain style in the frequency domain, enabling stable knowledge transfer without historical data. Extensive experiments on three public high-resolution RSCD datasets under two- and three-domain incremental protocols demonstrate that DG-FDD effectively mitigates catastrophic forgetting. Compared with independently trained single-task models, DG-FDD records mean relative changes in F1 and IoU of only -0.23% and -0.45%, respectively, across six two-domain sequences, and -0.69% and -1.31%, respectively, across the three evaluated three-domain sequences. These results indicate a favorable stability-plasticity balance between historical knowledge retention and new-domain adaptation in continual cross-domain change detection.",
+      "is_ascend": false,
+      "title_zh": "通过差异引导适配与频率解耦蒸馏实现领域增量遥感变化检测",
+      "institution": "未明确披露",
+      "summary_cn": "这篇论文关注遥感变化检测模型在持续适配新领域时容易发生灾难性遗忘的问题。作者提出 DG-FDD 框架，将双时相差异信息显式用于特征适配，并结合频域上的结构/风格解耦蒸馏，在不访问历史数据的情况下稳定迁移旧知识。方法旨在同时保持旧领域性能和适应新领域分布。",
+      "innovations": [
+        "提出 Difference-Guided Dynamic Adapter，通过建模双时相特征差异来增强变化感知适配并降低领域特有干扰。",
+        "提出 Frequency-Decoupled Knowledge Distillation with Cross-domain Synthesis，在频域中分离结构信息与领域风格，支持无历史数据的稳定知识迁移。",
+        "针对领域增量变化检测，把变化线索本身而非仅图像级表征作为持续学习中的核心保留对象。"
+      ],
+      "scenario_cn": "适用于遥感变化检测系统需要不断扩展到新地区、新传感器或新成像条件的场景。它解决的是模型跨领域增量学习时对旧领域变化检测能力遗忘严重、难以兼顾稳定性与可塑性的问题。",
+      "opensource_status": "未确认开源",
+      "code_url": "",
+      "title_en": "Domain-Incremental Remote Sensing Change Detection via Difference-Guided Adaptation and Frequency-Decoupled Distillation"
+    },
+    {
+      "id": "2607.13007v1",
+      "title": "Dynamic Resource Allocation for Ensemble Determinization MCTS",
+      "abstract": "Simulation-based algorithms are especially suited for high-uncertainty environments such as adversarial board games with significant elements of randomness and hidden information. In particular, several Monte Carlo Tree Search (MCTS) variants are commonly used in such domains. In this paper, we propose a series of enhancements for Ensemble Determinization MCTS, introducing two axes for dynamic resource allocation. First, Dynamic Number of Determinizations, increases or decreases the number of currently used determinization trees depending on the behavior of so-far search. Second, Dynamic Simulation Allocation, splits the simulation budget nonuniformly across the determinization trees, using simulation-to-simulation decisions to choose the tree with potentially the best knowledge gain. As benchmark domains, we used three popular tabletop games: Jaipur, Lost Cities, and Splendor. Testing our proposed enhancements in iteration- and time-based settings showed that particular configurations yield a statistically significant increase in the algorithm's strength.",
+      "published": "2026-07-15T00:00:00+00:00",
+      "updated": "2026-07-15T00:00:00+00:00",
+      "authors": [
+        "Jakub Kowalski",
+        "Adam Ciężkowski",
+        "Artur Krzyżyński",
+        "Mark H. M. Winands"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.13007",
+      "pdf_url": "https://arxiv.org/pdf/2607.13007",
+      "score": 3.8,
+      "topics": [
+        {
+          "name": "Agent Reasoning / Test-time Scaling",
+          "slug": "agent-reasoning",
+          "hits": [
+            "mcts"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "mcts"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Dynamic%20Resource%20Allocation%20for%20Ensemble%20Determinization%20MCTS%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Simulation-based algorithms are especially suited for high-uncertainty environments such as adversarial board games with significant elements of randomness and hidden information. In particular, several Monte Carlo Tree Search (MCTS) variants are commonly used in such domains. In this paper, we propose a series of enhancements for Ensemble Determinization MCTS, introducing two axes for dynamic resource allocation. First, Dynamic Number of Determinizations, increases or decreases the number of currently used determinization trees depending on the behavior of so-far search. Second, Dynamic Simulation Allocation, splits the simulation budget nonuniformly across the determinization trees, using simulation-to-simulation decisions to choose the tree with potentially the best knowledge gain. As benchmark domains, we used three popular tabletop games: Jaipur, Lost Cities, and Splendor. Testing our proposed enhancements in iteration- and time-based settings showed that particular configurations yield a statistically significant increase in the algorithm's strength.",
+      "is_ascend": false,
+      "title_zh": "面向集成确定化 MCTS 的动态资源分配",
+      "institution": "未明确披露",
+      "summary_cn": "这篇论文研究高不确定性、含随机性与隐信息环境中的集成确定化蒙特卡洛树搜索。作者提出两类动态资源分配增强：一是根据当前搜索表现动态调整确定化树的数量，二是将模拟预算按非均匀方式动态分配到不同确定化树上。整体目标是在有限计算预算下提升搜索过程中的信息增益与决策质量。",
+      "innovations": [
+        "提出 Dynamic Number of Determinizations，可依据搜索进展动态增减确定化树数量。",
+        "提出 Dynamic Simulation Allocation，在多个确定化树之间非均匀分配模拟预算。",
+        "将模拟到模拟的决策机制用于选择最可能带来知识增益的搜索树。",
+        "把动态资源分配系统性引入 Ensemble Determinization MCTS，以增强其在高不确定性环境下的搜索能力。"
+      ],
+      "scenario_cn": "解决带有随机性和隐藏信息的博弈环境中，固定搜索资源分配不够高效的问题。适用于桌游博弈、对抗性决策和其他高不确定性规划任务中的 MCTS 搜索优化场景。",
+      "opensource_status": "未确认开源",
+      "code_url": "",
+      "title_en": "Dynamic Resource Allocation for Ensemble Determinization MCTS"
+    },
+    {
+      "id": "2607.12792v1",
+      "title": "Silent Alarm: A J-Space Protocol for Comparing Danger Recognition Across Models and Quantization Levels",
+      "abstract": "Jailbreak-robustness research typically evaluates safety through generated responses using an LLM-as-judge approach. Such evaluations, however, are sensitive to the benchmark's grading procedure and capture only observed behavior on a given set of attacks, without directly revealing the hidden fragility of the underlying safety mechanisms. This work proposes JADR (Jacobian Assessment of Danger Recognition), a protocol that measures a model's internal representation through Jacobian space (J-space, a recently proposed workspace of verbalizable concepts) before the first response token is generated. For every prompt and layer we record the top-k J-space tokens; these are grouped into six behavioral scenario axes and compared between a danger sample based on StrongREJECT and a safe control drawn from XSTest and OKTest. The method does not call on an external judge model: the computation runs entirely locally, on the activations of the model under evaluation, which lets us compare both different models against each other and modifications of a single model -- quantization and fine-tuning in particular -- on the same terms. The final comparison rests on the proposed SafetyAUC metric, complemented with bootstrap confidence intervals. The protocol is applied to six models (Qwen3-1.7B, Qwen3-4B, Qwen3-8B, Qwen3-Uncensored-4B, Qwen3-SafeRL-4B, Gemma 2 9B) across three weight-representation regimes -- BF16, INT8, and INT4 -- and checked against an independent behavioral evaluation with the StrongREJECT grader. The metric separates models with a strong versus a weak internal safety mechanism with statistical significance and captures substantively different effects across quantization regimes.",
+      "published": "2026-07-15T00:00:00+00:00",
+      "updated": "2026-07-15T00:00:00+00:00",
+      "authors": [
+        "Roman Prosvirnin",
+        "Victor Minchenkov",
+        "Alexey Soldatov",
+        "Vladimir Bashun"
+      ],
+      "categories": [
+        "cs.CR",
+        "cs.AI"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.12792",
+      "pdf_url": "https://arxiv.org/pdf/2607.12792",
+      "score": 3.8,
+      "topics": [
+        {
+          "name": "Model Compression / Quantization",
+          "slug": "model-compression",
+          "hits": [
+            "quantization"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "quantization"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Silent%20Alarm%3A%20A%20J-Space%20Protocol%20for%20Comparing%20Danger%20Recognition%20Across%20Models%20and%20Quantization%20Levels%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Jailbreak-robustness research typically evaluates safety through generated responses using an LLM-as-judge approach. Such evaluations, however, are sensitive to the benchmark's grading procedure and capture only observed behavior on a given set of attacks, without directly revealing the hidden fragility of the underlying safety mechanisms. This work proposes JADR (Jacobian Assessment of Danger Recognition), a protocol that measures a model's internal representation through Jacobian space (J-space, a recently proposed workspace of verbalizable concepts) before the first response token is generated. For every prompt and layer we record the top-k J-space tokens; these are grouped into six behavioral scenario axes and compared between a danger sample based on StrongREJECT and a safe control drawn from XSTest and OKTest. The method does not call on an external judge model: the computation runs entirely locally, on the activations of the model under evaluation, which lets us compare both different models against each other and modifications of a single model -- quantization and fine-tuning in particular -- on the same terms. The final comparison rests on the proposed SafetyAUC metric, complemented with bootstrap confidence intervals. The protocol is applied to six models (Qwen3-1.7B, Qwen3-4B, Qwen3-8B, Qwen3-Uncensored-4B, Qwen3-SafeRL-4B, Gemma 2 9B) across three weight-representation regimes -- BF16, INT8, and INT4 -- and checked against an independent behavioral evaluation with the StrongREJECT grader. The metric separates models with a strong versus a weak internal safety mechanism with statistical significance and captures substantively different effects across quantization regimes.",
+      "is_ascend": false,
+      "title_zh": "Silent Alarm：一种比较不同模型与量化等级危险识别能力的 J-Space 协议",
+      "institution": "未明确披露",
+      "summary_cn": "这篇论文提出一种新的安全评测协议 JADR，用于在模型生成第一个 token 之前，通过 Jacobian space（J-space）分析模型内部对危险内容的识别机制。与依赖外部裁判模型的传统 jailbreak 评测不同，该方法直接比较被测模型自身激活中的危险相关表征，因此可在统一标准下比较不同模型以及同一模型在量化、微调后的变化。论文还提出 SafetyAUC 指标来总结这种内部安全机制差异。",
+      "innovations": [
+        "提出 JADR 协议，在首个响应 token 生成前基于 J-space 表征评估模型内部危险识别能力，而非只看外显回答结果。",
+        "构建无需外部 judge 的本地化安全评测流程，直接在被测模型激活上完成比较，降低对评分程序的依赖。",
+        "提出 SafetyAUC 指标，并结合分层行为场景轴来量化不同模型及不同量化等级下内部安全机制的差异。",
+        "将该协议用于比较量化与微调对安全机制的影响，为评估 BF16、INT8、INT4 等表示形式下的安全稳健性提供统一工具。"
+      ],
+      "scenario_cn": "适用于大语言模型安全评测、越狱鲁棒性分析以及模型压缩/量化后的安全影响评估。它主要解决传统基于输出打分的方法难以直接揭示内部安全机制强弱、且跨模型或跨量化设置可比性不足的问题。",
+      "opensource_status": "未确认开源",
+      "code_url": "",
+      "title_en": "Silent Alarm: A J-Space Protocol for Comparing Danger Recognition Across Models and Quantization Levels"
+    },
+    {
+      "id": "2607.11986v1",
+      "title": "SpikeDS: Dual Sparsity Spikformer for Perineural Invasion Prediction in 3D MRI",
+      "abstract": "Perineural invasion (PNI) is associated with poor prognosis in cholangiocarcinoma (CCA). However, its detection from 3D MRI remains challenging due to the subtle and spatially heterogeneous imaging signatures at the tumor periphery. Capturing such spatially sparse cues necessitates volumetric analysis of 3D MRI, but existing deep learning approaches incur prohibitive computational costs on volumetric medical images, limiting their clinical deployment. We propose Dual Sparsity Spikformer (SpikeDS), a spiking neural network architecture that jointly exploits activation sparsity from binary spike communication and spatial sparsity from window pruning based on firing rates. SpikeDS introduces Dual Sparsity Spiking Attention (DSSA), which combines two complementary mechanisms. The first is Window-based Expert Mixture Spiking Attention (W-EMSA), which selectively applies attention only to salient windows identified by their firing rates. The second is Cross-Window Spiking Self-Attention (CW-SSA), which enables global context exchange through an asymmetric scheme in which pruned windows still contribute as key-value sources. Evaluated on a clinical cohort of 139 CCA patients via 5-fold cross-validation, SpikeDS achieves an AUC of 0.753 while consuming only 14.4 mJ, surpassing the best baseline in both AUC and energy efficiency. These results suggest that dual sparsity provides an effective hardware-aware strategy for improving the efficiency of 3D spiking transformers without compromising diagnostic performance.",
+      "published": "2026-07-15T00:00:00+00:00",
+      "updated": "2026-07-15T00:00:00+00:00",
+      "authors": [
+        "Induk Um",
+        "Youngung Han",
+        "Kyeonghun Kim",
+        "Yului Jeong",
+        "Jina Jeong",
+        "Hyunsu Go",
+        "Dohyun Kweon",
+        "Sungha Park",
+        "Junga Kim",
+        "Anna Jung",
+        "Suah Park",
+        "Hyuk-Jae Lee",
+        "Pa Hong",
+        "Woo Kyoung Jeong",
+        "Won Jae Lee",
+        "Ken Ying-Kai Liao",
+        "Nam-Joon Kim"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.LG"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.11986",
+      "pdf_url": "https://arxiv.org/pdf/2607.11986",
+      "score": 3.8,
+      "topics": [
+        {
+          "name": "Model Compression / Quantization",
+          "slug": "model-compression",
+          "hits": [
+            "sparsity"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "sparsity"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=SpikeDS%3A%20Dual%20Sparsity%20Spikformer%20for%20Perineural%20Invasion%20Prediction%20in%203D%20MRI%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Perineural invasion (PNI) is associated with poor prognosis in cholangiocarcinoma (CCA). However, its detection from 3D MRI remains challenging due to the subtle and spatially heterogeneous imaging signatures at the tumor periphery. Capturing such spatially sparse cues necessitates volumetric analysis of 3D MRI, but existing deep learning approaches incur prohibitive computational costs on volumetric medical images, limiting their clinical deployment. We propose Dual Sparsity Spikformer (SpikeDS), a spiking neural network architecture that jointly exploits activation sparsity from binary spike communication and spatial sparsity from window pruning based on firing rates. SpikeDS introduces Dual Sparsity Spiking Attention (DSSA), which combines two complementary mechanisms. The first is Window-based Expert Mixture Spiking Attention (W-EMSA), which selectively applies attention only to salient windows identified by their firing rates. The second is Cross-Window Spiking Self-Attention (CW-SSA), which enables global context exchange through an asymmetric scheme in which pruned windows still contribute as key-value sources. Evaluated on a clinical cohort of 139 CCA patients via 5-fold cross-validation, SpikeDS achieves an AUC of 0.753 while consuming only 14.4 mJ, surpassing the best baseline in both AUC and energy efficiency. These results suggest that dual sparsity provides an effective hardware-aware strategy for improving the efficiency of 3D spiking transformers without compromising diagnostic performance.",
+      "is_ascend": false,
+      "title_zh": "SpikeDS：用于 3D MRI 神经周围侵犯预测的双重稀疏 Spikformer",
+      "institution": "未明确披露",
+      "summary_cn": "这篇论文针对胆管癌中神经周围侵犯（PNI）在 3D MRI 上难以识别、且体积医学影像计算代价高的问题，提出了一个名为 SpikeDS 的脉冲神经网络架构。该方法结合脉冲通信带来的激活稀疏性与基于放电率的空间窗口裁剪，以更高效地处理三维影像中的稀疏关键信号。摘要表明，它希望在不牺牲诊断效果的前提下，提高 3D 脉冲 Transformer 的能效与临床可部署性。",
+      "innovations": [
+        "提出 Dual Sparsity Spikformer，将激活稀疏性与空间稀疏性联合用于 3D MRI 分析。",
+        "设计 Dual Sparsity Spiking Attention（DSSA）机制，统一建模两类互补的稀疏策略。",
+        "提出 W-EMSA，仅对由放电率识别出的显著窗口选择性施加注意力，减少无效计算。",
+        "提出 CW-SSA，使被裁剪窗口仍可作为 key-value 来源参与跨窗口全局上下文交换。"
+      ],
+      "scenario_cn": "用于基于 3D MRI 预测胆管癌患者是否存在神经周围侵犯，适合需要从肿瘤边缘细微且空间分散的影像特征中进行判别的医学影像分析场景，也适用于强调能效和硬件部署约束的三维诊断模型设计。",
+      "opensource_status": "未确认开源",
+      "code_url": "",
+      "title_en": "SpikeDS: Dual Sparsity Spikformer for Perineural Invasion Prediction in 3D MRI"
+    },
+    {
+      "id": "2607.12358v1",
+      "title": "ACID: Adaptive Caching for vIDeo generation",
+      "abstract": "Video diffusion models produce high-quality generations but remain slow at inference due to their sequential denoising procedure. Caching-based acceleration methods address this by reusing intermediate model outputs: leading dynamic approaches such as TeaCache, EasyCache, and DiCache accumulate a drift signal and skip expensive model evaluations when accumulated drift stays below a fixed threshold {\\tau}. This threshold controls an apparent tradeoff - raising it yields faster generation at the cost of visual quality, while lowering it preserves quality but sacrifices speed. We show this tradeoff is not fundamental; it is an artifact of holding {\\tau} constant throughout denoising. We identify the existence of critical steps - timesteps where the drift signal changes rapidly - and show that applying a low threshold selectively at these steps while caching aggressively elsewhere recovers most of the quality of conservative caching at substantially higher inference speeds. Building on this insight, we propose ACID, a lightweight, training-free wrapper that monitors the rate of change of each method's existing drift signal to dynamically switch between a low and a high threshold. ACID is signal-agnostic and modular: it requires no retraining and plugs directly into existing dynamic caching methods without modifying their core mechanisms. Evaluated across three caching methods (TeaCache, EasyCache, DiCache) and three open-source video diffusion models (HunyuanVideo, Wan 2.1, CogVideoX), ACID consistently expands the Pareto frontier of visual quality versus inference speed beyond what any fixed threshold achieves. In particular, on TeaCache and HunyuanVideo, ACID achieves up to 2.16x speedup over the no-caching baseline, and up to 38% additional speedup over the conservative fixed-threshold baseline with negligible (<0.3 dB PSNR, <0.01 SSIM, <0.01 LPIPS) quality degradation.",
+      "published": "2026-07-15T00:00:00+00:00",
+      "updated": "2026-07-15T00:00:00+00:00",
+      "authors": [
+        "Om Agrawal",
+        "Saurabh Agarwal",
+        "Aditya Akella"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.12358",
+      "pdf_url": "https://arxiv.org/pdf/2607.12358",
+      "score": 3.6,
+      "topics": [
+        {
+          "name": "Video Generation",
+          "slug": "video-generation",
+          "hits": [
+            "video generation"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "video generation"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=ACID%3A%20Adaptive%20Caching%20for%20vIDeo%20generation%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Video diffusion models produce high-quality generations but remain slow at inference due to their sequential denoising procedure. Caching-based acceleration methods address this by reusing intermediate model outputs: leading dynamic approaches such as TeaCache, EasyCache, and DiCache accumulate a drift signal and skip expensive model evaluations when accumulated drift stays below a fixed threshold {\\tau}. This threshold controls an apparent tradeoff - raising it yields faster generation at the cost of visual quality, while lowering it preserves quality but sacrifices speed. We show this tradeoff is not fundamental; it is an artifact of holding {\\tau} constant throughout denoising. We identify the existence of critical steps - timesteps where the drift signal changes rapidly - and show that applying a low threshold selectively at these steps while caching aggressively elsewhere recovers most of the quality of conservative caching at substantially higher inference speeds. Building on this insight, we propose ACID, a lightweight, training-free wrapper that monitors the rate of change of each method's existing drift signal to dynamically switch between a low and a high threshold. ACID is signal-agnostic and modular: it requires no retraining and plugs directly into existing dynamic caching methods without modifying their core mechanisms. Evaluated across three caching methods (TeaCache, EasyCache, DiCache) and three open-source video diffusion models (HunyuanVideo, Wan 2.1, CogVideoX), ACID consistently expands the Pareto frontier of visual quality versus inference speed beyond what any fixed threshold achieves. In particular, on TeaCache and HunyuanVideo, ACID achieves up to 2.16x speedup over the no-caching baseline, and up to 38% additional speedup over the conservative fixed-threshold baseline with negligible (<0.3 dB PSNR, <0.01 SSIM, <0.01 LPIPS) quality degradation.",
+      "is_ascend": false,
+      "title_zh": "ACID：用于视频生成的自适应缓存",
+      "institution": "未明确披露",
+      "summary_cn": "这篇论文关注视频扩散模型推理速度慢的问题，尤其针对基于缓存的加速方法在速度与画质之间常见的权衡。作者指出，这种权衡并非根本限制，而是由于在整个去噪过程中始终使用固定阈值造成的。为此，论文提出 ACID，这是一种无需训练的轻量包装方法，能够根据漂移信号变化速率动态切换高低阈值，在关键步保质量、在其他步更激进地复用缓存。",
+      "innovations": [
+        "提出“关键步”现象：去噪过程中存在漂移信号快速变化的时间步，需要更保守的缓存策略。",
+        "设计 ACID 动态阈值机制，根据现有漂移信号的变化速率在高低阈值之间自适应切换。",
+        "方法无需重训练、与具体缓存信号解耦，可直接插入现有动态缓存方法而不修改其核心机制。",
+        "将缓存加速从固定阈值策略推广为时变策略，从而改善视频质量与推理速度的帕累托前沿。"
+      ],
+      "scenario_cn": "适用于视频扩散模型推理加速场景，尤其是在希望尽量保持生成质量前提下缩短生成时间的系统中，可用于已有动态缓存加速方法的增强。",
+      "opensource_status": "未确认开源",
+      "code_url": "",
+      "title_en": "ACID: Adaptive Caching for vIDeo generation"
+    },
+    {
+      "id": "2607.12188v1",
+      "title": "Cost-Governed RAG: Unified Per-Tenant Cost Attribution Across Retrieval and Generation in Multi-Tenant LLM Systems",
+      "abstract": "Enterprise Retrieval-Augmented Generation (RAG) deployments face a critical governance gap: while LLM generation cost is metered per token, the retrieval layer - vector memory, similarity compute, and embedding API calls - remains an unattributed shared cost, enabling invisible cross-subsidization among tenants. We present Cost-Governed RAG, an architecture that integrates a codebook-oblivious vector index (TurboVec) with a multi-tenant LLM governance gateway, creating a unified observability stack where embedding, retrieval, and generation costs are jointly attributable per tenant. The architecture exploits TurboVec's deterministic, closed-form memory formula to enable near-exact per-tenant retrieval cost calculation - a property unavailable in graph-based indexes with non-linear memory overhead. Deployed on Snowpark Container Services within a cloud data platform's governance boundary, the system achieves 99.96% end-to-end cost attribution accuracy across 100 simulated tenants (10M vectors, log-normal size distribution) with telemetry overhead below 0.04% of query latency. The architecture reduces retrieval infrastructure cost by 3.1-9.0x compared to managed vector database services under the pricing assumptions detailed in Section IV. We formalize a three-layer cost model and demonstrate that codebook-oblivious quantization enables deterministic per-tenant cost attribution while also removing the shared-codebook leakage surface present in trained quantizers - the latter observation being exploratory and subject to the limitations described in Section VII.",
+      "published": "2026-07-15T00:00:00+00:00",
+      "updated": "2026-07-15T00:00:00+00:00",
+      "authors": [
+        "Navnit Shukla"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.DB",
+        "cs.IR"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.12188",
+      "pdf_url": "https://arxiv.org/pdf/2607.12188",
+      "score": 3.6,
+      "topics": [
+        {
+          "name": "RAG / Long Context",
+          "slug": "rag-long-context",
+          "hits": [
+            "rag",
+            "retrieval"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "rag",
+        "retrieval"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Cost-Governed%20RAG%3A%20Unified%20Per-Tenant%20Cost%20Attribution%20Across%20Retrieval%20and%20Generation%20in%20Multi-Tenant%20LLM%20Systems%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Enterprise Retrieval-Augmented Generation (RAG) deployments face a critical governance gap: while LLM generation cost is metered per token, the retrieval layer - vector memory, similarity compute, and embedding API calls - remains an unattributed shared cost, enabling invisible cross-subsidization among tenants. We present Cost-Governed RAG, an architecture that integrates a codebook-oblivious vector index (TurboVec) with a multi-tenant LLM governance gateway, creating a unified observability stack where embedding, retrieval, and generation costs are jointly attributable per tenant. The architecture exploits TurboVec's deterministic, closed-form memory formula to enable near-exact per-tenant retrieval cost calculation - a property unavailable in graph-based indexes with non-linear memory overhead. Deployed on Snowpark Container Services within a cloud data platform's governance boundary, the system achieves 99.96% end-to-end cost attribution accuracy across 100 simulated tenants (10M vectors, log-normal size distribution) with telemetry overhead below 0.04% of query latency. The architecture reduces retrieval infrastructure cost by 3.1-9.0x compared to managed vector database services under the pricing assumptions detailed in Section IV. We formalize a three-layer cost model and demonstrate that codebook-oblivious quantization enables deterministic per-tenant cost attribution while also removing the shared-codebook leakage surface present in trained quantizers - the latter observation being exploratory and subject to the limitations described in Section VII.",
+      "is_ascend": false,
+      "title_zh": "成本治理型 RAG：多租户大模型系统中检索与生成的统一租户级成本归因",
+      "institution": "未明确披露",
+      "summary_cn": "这篇论文关注企业级多租户 RAG 系统中的成本治理问题，指出现有系统通常只对生成阶段按 token 计费，而检索层成本常被作为共享开销而无法准确归属。作者提出 Cost-Governed RAG 架构，将向量索引、嵌入、检索和生成纳入统一可观测与可归因框架。其核心是利用一种具有确定性内存公式的向量索引，实现接近精确的租户级检索成本核算。",
+      "innovations": [
+        "提出统一的多租户 RAG 成本治理架构，把嵌入、检索、生成三部分成本整合到同一归因体系中。",
+        "利用 codebook-oblivious 向量索引的封闭式内存公式，实现近似精确的每租户检索成本计算。",
+        "形式化三层成本模型，为企业 RAG 的治理、审计与计费提供系统化方法。",
+        "指出不依赖共享码本的量化方式除便于成本归因外，还可能减少训练式量化器中的共享码本泄露面。"
+      ],
+      "scenario_cn": "适用于企业内部部署的多租户 RAG 平台、知识库问答系统和受治理约束的云上大模型应用。它主要解决检索层成本无法按租户透明归因、不同租户之间隐性交叉补贴的问题。",
+      "opensource_status": "未确认开源",
+      "code_url": "",
+      "title_en": "Cost-Governed RAG: Unified Per-Tenant Cost Attribution Across Retrieval and Generation in Multi-Tenant LLM Systems"
+    },
+    {
+      "id": "2607.13031v1",
+      "title": "The Seriality Gap in Video Diffusion Models",
+      "abstract": "When one ball strikes another, then another, video models should predict the consequences of each bounce. In controlled experiments on multi-ball hard-sphere dynamics, we find that the performance of standard bidirectional video diffusion degrades as the causal chain lengthens, even when provided more denoising steps. In a length-matched single-ball control, where ball-ball interactions are absent, the degradation largely disappears, isolating dependent-event structure rather than video length as the cause. Across intervention studies, methods that increase effective serial computation improve performance disproportionately, including autoregressive/blockwise generation and architectural depth. We identify this pattern as the seriality gap: a mismatch between tasks requiring growing serial computation and video diffusion models whose denoising loop does not provide scalable serial compute. We then prove that, for deterministic video prediction, denoising steps do not add serial computation beyond the backbone, indicating a structural obstacle for video diffusion on serial reasoning and simulation tasks.",
+      "published": "2026-07-15T00:00:00+00:00",
+      "updated": "2026-07-15T00:00:00+00:00",
+      "authors": [
+        "Jorge Diaz Chao",
+        "Konpat Preechakul",
+        "Yuxi Liu",
+        "Yutong Bai"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.CV"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.13031",
+      "pdf_url": "https://arxiv.org/pdf/2607.13031",
+      "score": 3.6,
+      "topics": [
+        {
+          "name": "Video Generation",
+          "slug": "video-generation",
+          "hits": [
+            "video diffusion"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "video diffusion"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=The%20Seriality%20Gap%20in%20Video%20Diffusion%20Models%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "When one ball strikes another, then another, video models should predict the consequences of each bounce. In controlled experiments on multi-ball hard-sphere dynamics, we find that the performance of standard bidirectional video diffusion degrades as the causal chain lengthens, even when provided more denoising steps. In a length-matched single-ball control, where ball-ball interactions are absent, the degradation largely disappears, isolating dependent-event structure rather than video length as the cause. Across intervention studies, methods that increase effective serial computation improve performance disproportionately, including autoregressive/blockwise generation and architectural depth. We identify this pattern as the seriality gap: a mismatch between tasks requiring growing serial computation and video diffusion models whose denoising loop does not provide scalable serial compute. We then prove that, for deterministic video prediction, denoising steps do not add serial computation beyond the backbone, indicating a structural obstacle for video diffusion on serial reasoning and simulation tasks.",
+      "is_ascend": false,
+      "title_zh": "视频扩散模型中的串行性鸿沟",
+      "institution": "未明确披露",
+      "summary_cn": "这篇论文研究视频扩散模型在涉及连续因果链条的视频预测任务上的能力边界。作者通过多球硬球动力学控制实验发现，标准双向视频扩散模型会随着因果链条变长而明显退化，而这种退化并不是由视频长度本身造成的。论文将这一现象概括为“串行性鸿沟”，即任务所需的串行计算不断增长，但视频扩散模型的去噪过程并不能相应提供可扩展的串行推理能力。",
+      "innovations": [
+        "通过多球碰撞控制实验系统性区分了事件依赖结构与视频长度对模型性能退化的影响。",
+        "提出“串行性鸿沟”概念，用于刻画视频扩散模型在串行因果推理和模拟任务上的结构性不足。",
+        "通过干预实验表明，增加有效串行计算的方式，如自回归/分块生成和更深结构，会更明显提升表现。",
+        "从理论上论证在确定性视频预测中，额外去噪步并不会在骨干网络之外增加串行计算。"
+      ],
+      "scenario_cn": "适用于分析视频生成或视频预测模型在物理模拟、因果推演、连续交互事件预测等任务中的局限性，也适用于指导需要更强串行推理能力的视频建模方法设计。",
+      "opensource_status": "未确认开源",
+      "code_url": "",
+      "title_en": "The Seriality Gap in Video Diffusion Models"
+    },
+    {
+      "id": "2607.12271v1",
+      "title": "A hybrid analytical-PINN model for subsurface simulation of geothermal heat exchangers in heterogeneous underground",
+      "abstract": "In this paper, a parametric physics-informed neural network for solving the heterogeneous soil thermal problem with borehole heat exchangers (BHEs) as singular sources is developed. There are three novel features in the present framework; namely, (i) the singularity is naturally removed by using analytical line source models; (ii) using the explicit formulation for gradient thermal conductivity enables physics-informed learning of the parametrization featuring the conductivity; (iii) the learned correction is utilized as an efficient universal corrector via superposition principles. We first introduce the decomposition of the temperature change and transform the approximation of the entire heterogeneous response to the correction compensating the difference between the practical solution and idealized homogeneous approximation. In such a way, the delta function singularity is excluded and the bulk heat transfer is captured for the sake of facilitating the effective training of the neural network. The original problem is then reformulated as a governing correction diffusion or advection-diffusion equation subject to a homogeneous initial condition. The linearly varying thermal conductivity is used to model the soil heterogeneity. We propose a physics-informed neural network to approximate a universal corrector with respect to a single borehole with unit heat extraction rate. As a result, the network is trained by minimizing the physics-informed and data-anchored loss function that is evaluated for sampled conductivity parameters on adaptively selected training points. In addition, we include the location indicator function regarding the source as a feature input of network and find that it helps the network to process the local information. We perform numerical tests to exhibit the effectiveness of the proposed method based on three different analytical models.",
+      "published": "2026-07-15T00:00:00+00:00",
+      "updated": "2026-07-15T00:00:00+00:00",
+      "authors": [
+        "Moke Rao",
+        "Thomas Hamacher",
+        "Smajil Halilovic"
+      ],
+      "categories": [
+        "cs.LG"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.12271",
+      "pdf_url": "https://arxiv.org/pdf/2607.12271",
+      "score": 3.4,
+      "topics": [
+        {
+          "name": "World Model",
+          "slug": "world-model",
+          "hits": [
+            "simulation"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "simulation"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=A%20hybrid%20analytical-PINN%20model%20for%20subsurface%20simulation%20of%20geothermal%20heat%20exchangers%20in%20heterogeneous%20underground%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "In this paper, a parametric physics-informed neural network for solving the heterogeneous soil thermal problem with borehole heat exchangers (BHEs) as singular sources is developed. There are three novel features in the present framework; namely, (i) the singularity is naturally removed by using analytical line source models; (ii) using the explicit formulation for gradient thermal conductivity enables physics-informed learning of the parametrization featuring the conductivity; (iii) the learned correction is utilized as an efficient universal corrector via superposition principles. We first introduce the decomposition of the temperature change and transform the approximation of the entire heterogeneous response to the correction compensating the difference between the practical solution and idealized homogeneous approximation. In such a way, the delta function singularity is excluded and the bulk heat transfer is captured for the sake of facilitating the effective training of the neural network. The original problem is then reformulated as a governing correction diffusion or advection-diffusion equation subject to a homogeneous initial condition. The linearly varying thermal conductivity is used to model the soil heterogeneity. We propose a physics-informed neural network to approximate a universal corrector with respect to a single borehole with unit heat extraction rate. As a result, the network is trained by minimizing the physics-informed and data-anchored loss function that is evaluated for sampled conductivity parameters on adaptively selected training points. In addition, we include the location indicator function regarding the source as a feature input of network and find that it helps the network to process the local information. We perform numerical tests to exhibit the effectiveness of the proposed method based on three different analytical models.",
+      "is_ascend": false,
+      "title_zh": "一种用于异质地下环境中地热换热器地下模拟的混合解析-PINN 模型",
+      "institution": "未明确披露",
+      "summary_cn": "这篇论文提出了一个参数化的物理信息神经网络框架，用于求解含钻孔换热器奇异热源的异质土壤传热问题。作者将解析线源模型与 PINN 结合，把原始温度响应分解为理想均质解与修正项，从而规避奇异性并提升学习效率。该方法旨在为地热换热器在复杂地下介质中的热传导或对流-扩散模拟提供更高效的通用求解器。",
+      "innovations": [
+        "将解析线源模型与 PINN 结合，自然去除钻孔换热器带来的奇异源项。",
+        "利用显式的梯度热导率表达，实现对导热率参数化异质性的物理约束学习。",
+        "将学习得到的修正项作为通用 corrector，并通过叠加原理服务于更高效的模拟。",
+        "把源位置指示函数纳入网络输入，增强模型对局部源附近信息的处理能力。"
+      ],
+      "scenario_cn": "面向地热换热器的地下传热模拟，适用于土壤热导率空间变化明显、存在钻孔线源奇异性的地下能源与热管理建模场景，也适合需要快速评估不同地下参数条件下温度场响应的工程分析任务。",
+      "opensource_status": "未确认开源",
+      "code_url": "",
+      "title_en": "A hybrid analytical-PINN model for subsurface simulation of geothermal heat exchangers in heterogeneous underground"
+    },
+    {
+      "id": "2607.12359v1",
+      "title": "ArchSim: Computer Architecture Simulation as a Service",
+      "abstract": "Conducting a complete computer architecture simulation study is challenging because configuration, execution, and analysis are often encoded implicitly in scripts or directory conventions rather than represented explicitly. As a result, studies are difficult to scale, hard to reproduce, and dependent on custom tooling at every stage. We present ArchSim, which makes the structure of a simulation study explicit. In ArchSim, hardware topologies are described as declarative graphs that automatically generate executable simulation code, eliminating hand-written simulator programs. Stateless runners autonomously claim and execute jobs from a shared experiment store, enabling configuration-benchmark matrices to scale without manual orchestration. Simulation outputs are stored as structured artifacts tied to configurations, benchmarks, and hardware components, enabling systematic result exploration without custom parsers. We evaluate ArchSim on a 12 x 8 = 96-configuration simulation matrix spanning memory-bound, compute-bound, and mixed-intensity GPU workloads. Declarative simulation specifications drive full simulations with a median kernel time error of 0.18% relative to hand-written MGPUSim configurations across 95.8% of configurations. The platform introduces only 1.6 seconds of overhead per simulation, negligible relative to realistic simulation workloads.",
+      "published": "2026-07-15T00:00:00+00:00",
+      "updated": "2026-07-15T00:00:00+00:00",
+      "authors": [
+        "Sabila Al Jannat",
+        "Wenhan Lyu",
+        "Le Khanh Trinh Mai",
+        "Huizhi Zhao",
+        "Zhuoyan Zheng",
+        "Katherine E. Isaacs",
+        "Yifan Sun"
+      ],
+      "categories": [
+        "cs.AR"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.12359",
+      "pdf_url": "https://arxiv.org/pdf/2607.12359",
+      "score": 3.4,
+      "topics": [
+        {
+          "name": "World Model",
+          "slug": "world-model",
+          "hits": [
+            "simulation"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "simulation"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=ArchSim%3A%20Computer%20Architecture%20Simulation%20as%20a%20Service%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Conducting a complete computer architecture simulation study is challenging because configuration, execution, and analysis are often encoded implicitly in scripts or directory conventions rather than represented explicitly. As a result, studies are difficult to scale, hard to reproduce, and dependent on custom tooling at every stage. We present ArchSim, which makes the structure of a simulation study explicit. In ArchSim, hardware topologies are described as declarative graphs that automatically generate executable simulation code, eliminating hand-written simulator programs. Stateless runners autonomously claim and execute jobs from a shared experiment store, enabling configuration-benchmark matrices to scale without manual orchestration. Simulation outputs are stored as structured artifacts tied to configurations, benchmarks, and hardware components, enabling systematic result exploration without custom parsers. We evaluate ArchSim on a 12 x 8 = 96-configuration simulation matrix spanning memory-bound, compute-bound, and mixed-intensity GPU workloads. Declarative simulation specifications drive full simulations with a median kernel time error of 0.18% relative to hand-written MGPUSim configurations across 95.8% of configurations. The platform introduces only 1.6 seconds of overhead per simulation, negligible relative to realistic simulation workloads.",
+      "is_ascend": false,
+      "title_zh": "ArchSim：作为服务的计算机体系结构仿真",
+      "institution": "未明确披露",
+      "summary_cn": "这篇论文提出了 ArchSim，用显式、声明式的方式组织计算机体系结构仿真实验的配置、执行与结果分析流程。它将硬件拓扑表示为可生成可执行仿真代码的声明式图结构，并通过无状态运行器从共享实验存储中自动领取和执行任务。摘要强调，该平台的目标是提升大规模仿真研究的可扩展性、可复现性与结果管理能力。",
+      "innovations": [
+        "将体系结构仿真的研究结构显式化，避免依赖隐式脚本和目录约定组织实验。",
+        "使用声明式硬件拓扑图自动生成仿真代码，减少手写模拟器程序的负担。",
+        "设计无状态 runner 从共享实验存储自动认领并执行任务，支持大规模配置-基准组合扩展。",
+        "把仿真输出保存为与配置、基准和硬件组件关联的结构化工件，便于系统化分析而非依赖定制解析器。"
+      ],
+      "scenario_cn": "适用于计算机体系结构研究中的大规模仿真实验管理，尤其适合需要批量比较多种硬件配置、工作负载和组件行为，并强调实验可复现、可追踪和便于分析的研究与平台化场景。",
+      "opensource_status": "未确认开源",
+      "code_url": "",
+      "title_en": "ArchSim: Computer Architecture Simulation as a Service"
+    },
+    {
+      "id": "2607.12086v1",
+      "title": "CityBehavEx: A Scalable and Empirically Validated LLM-Assisted Urban Simulation Platform",
+      "abstract": "Recent LLM-based multi-agent urban simulators can generate semantically rich city routines, but they remain costly to scale and are often weakly validated against empirical mobility patterns. We present CityBehavEx, an interactive LLM-assisted urban simulation platform that scales to city-size populations, exposes agent behavior for inspection, supports empirical validation, and generates mobility patterns that better match real-world spatial, temporal, and semantic distributions. Instead of invoking large language models for every agent action, CityBehavEx combines established human mobility models with fine-tuned cross-encoders that estimate semantic alignment between agent profiles, schedules, and activity transitions. This design enables large-scale simulations, as demonstrated in a case study of 100,000 agents over 75 days in under one hour on a single consumer GPU. The platform allows users to define simulation regions, launch experiments, inspect trajectories and activity traces, debug unrealistic behaviors, and validate generated routines against real-world mobility, time-use, and semantic metrics.",
+      "published": "2026-07-15T00:00:00+00:00",
+      "updated": "2026-07-15T00:00:00+00:00",
+      "authors": [
+        "Gustavo H. Santos",
+        "Aline Viana",
+        "Thiago H Silva"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.CY",
+        "cs.MA",
+        "cs.SI"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.12086",
+      "pdf_url": "https://arxiv.org/pdf/2607.12086",
+      "score": 3.4,
+      "topics": [
+        {
+          "name": "World Model",
+          "slug": "world-model",
+          "hits": [
+            "simulation"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "simulation"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=CityBehavEx%3A%20A%20Scalable%20and%20Empirically%20Validated%20LLM-Assisted%20Urban%20Simulation%20Platform%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Recent LLM-based multi-agent urban simulators can generate semantically rich city routines, but they remain costly to scale and are often weakly validated against empirical mobility patterns. We present CityBehavEx, an interactive LLM-assisted urban simulation platform that scales to city-size populations, exposes agent behavior for inspection, supports empirical validation, and generates mobility patterns that better match real-world spatial, temporal, and semantic distributions. Instead of invoking large language models for every agent action, CityBehavEx combines established human mobility models with fine-tuned cross-encoders that estimate semantic alignment between agent profiles, schedules, and activity transitions. This design enables large-scale simulations, as demonstrated in a case study of 100,000 agents over 75 days in under one hour on a single consumer GPU. The platform allows users to define simulation regions, launch experiments, inspect trajectories and activity traces, debug unrealistic behaviors, and validate generated routines against real-world mobility, time-use, and semantic metrics.",
+      "is_ascend": false,
+      "title_zh": "CityBehavEx：一个可扩展且经过实证验证的 LLM 辅助城市仿真平台",
+      "institution": "未明确披露",
+      "summary_cn": "这篇论文提出了 CityBehavEx，一个面向城市级人口规模的交互式 LLM 辅助城市仿真平台。与对每次智能体行为都调用大语言模型的方法不同，它结合经典的人类出行模型和微调的交叉编码器来估计语义匹配，从而降低成本并提升可扩展性。摘要表明，该平台还强调行为可检查、可调试，并能基于真实世界的出行与时间使用模式进行经验验证。",
+      "innovations": [
+        "提出一种 LLM 辅助而非 LLM 全程驱动的城市仿真架构，以降低大规模模拟成本。",
+        "将经典人类流动模型与微调交叉编码器结合，用于估计代理画像、日程和活动转移之间的语义一致性。",
+        "支持对代理行为、轨迹和活动痕迹进行交互式检查与调试，提升仿真可解释性。",
+        "将经验验证纳入平台设计，针对空间、时间和语义分布与真实世界模式进行对比评估。"
+      ],
+      "scenario_cn": "适用于城市级人群行为与流动仿真，如城市规划、交通出行分析、活动模式研究和政策实验等场景，特别适合既希望保留语义层面的行为合理性，又需要在大规模人口上高效运行和做实证校验的任务。",
+      "opensource_status": "未确认开源",
+      "code_url": "",
+      "title_en": "CityBehavEx: A Scalable and Empirically Validated LLM-Assisted Urban Simulation Platform"
+    },
+    {
+      "id": "2607.12474v1",
+      "title": "From Observation to Insight: Mechanistic World Models and the Quest for Autonomous Discovery",
+      "abstract": "Recent advances in foundation models have transformed AI for Science, enabling remarkably accurate predictive performance across domains ranging from protein folding to weather forecasting. Yet prediction alone does not constitute scientific discovery. Scientific understanding depends on uncovering the reusable explanatory mechanisms that generate observations, whereas contemporary machine learning remains fundamentally organised around predictive mappings rather than explanatory structure. In this paper, we argue that scientific discovery is fundamentally a problem of knowledge organisation. To this end, we introduce Mechanistic World Models, a new design paradigm that places reusable mechanisms at the centre of representation, computation and learning. Drawing on insights from the philosophy of science, we derive the computational capabilities required for discovery, identify the design principles and inductive pressures that encourage explanatory knowledge to emerge, and formalise the anatomy of a mechanism-centric world model. Finally, we show how diverse research directions including mechanistic interpretability, causal representation learning, equation discovery and modular architectures capture complementary ingredients of this paradigm while lacking a unified framework. We propose Mechanistic World Models as a conceptual foundation and computational blueprint for moving AI beyond predictive forecasting towards autonomous scientific discovery.",
+      "published": "2026-07-15T00:00:00+00:00",
+      "updated": "2026-07-15T00:00:00+00:00",
+      "authors": [
+        "Ingmar Posner",
+        "Anson Lei",
+        "Bernhard Schölkopf"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.12474",
+      "pdf_url": "https://arxiv.org/pdf/2607.12474",
+      "score": 3.4,
+      "topics": [
+        {
+          "name": "World Model",
+          "slug": "world-model",
+          "hits": [
+            "world model"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "world model"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=From%20Observation%20to%20Insight%3A%20Mechanistic%20World%20Models%20and%20the%20Quest%20for%20Autonomous%20Discovery%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Recent advances in foundation models have transformed AI for Science, enabling remarkably accurate predictive performance across domains ranging from protein folding to weather forecasting. Yet prediction alone does not constitute scientific discovery. Scientific understanding depends on uncovering the reusable explanatory mechanisms that generate observations, whereas contemporary machine learning remains fundamentally organised around predictive mappings rather than explanatory structure. In this paper, we argue that scientific discovery is fundamentally a problem of knowledge organisation. To this end, we introduce Mechanistic World Models, a new design paradigm that places reusable mechanisms at the centre of representation, computation and learning. Drawing on insights from the philosophy of science, we derive the computational capabilities required for discovery, identify the design principles and inductive pressures that encourage explanatory knowledge to emerge, and formalise the anatomy of a mechanism-centric world model. Finally, we show how diverse research directions including mechanistic interpretability, causal representation learning, equation discovery and modular architectures capture complementary ingredients of this paradigm while lacking a unified framework. We propose Mechanistic World Models as a conceptual foundation and computational blueprint for moving AI beyond predictive forecasting towards autonomous scientific discovery.",
+      "is_ascend": false,
+      "title_zh": "从观测到洞见：机制世界模型与自主发现的探索",
+      "institution": "未明确披露",
+      "summary_cn": "本文讨论为何高精度预测并不等同于科学发现，指出科学理解的核心在于识别能够反复复用的解释性机制，而不仅是建立输入到输出的映射。作者据此提出“机制世界模型”这一概念框架，把可复用机制放在表示、计算与学习的中心位置。论文还尝试从科学哲学与机器学习交叉视角，梳理实现自主科学发现所需的能力与设计原则。",
+      "innovations": [
+        "提出“机制世界模型”这一新的设计范式，主张以可复用解释机制而非纯预测映射作为模型核心。",
+        "将科学发现表述为知识组织问题，并据此总结出支持发现能力的计算需求与归纳压力。",
+        "形式化描述了以机制为中心的世界模型结构，为表示、计算和学习提供统一蓝图。",
+        "把机制可解释性、因果表征学习、方程发现和模块化架构等方向纳入同一统一框架中加以关联。"
+      ],
+      "scenario_cn": "面向 AI for Science 与自主科学发现场景，适用于需要从观测数据中提炼可解释规律、生成机制性理解，而不只是做预测的研究任务。",
+      "opensource_status": "未确认开源",
+      "code_url": "",
+      "title_en": "From Observation to Insight: Mechanistic World Models and the Quest for Autonomous Discovery"
+    },
+    {
+      "id": "2607.12444v1",
+      "title": "Q2NSViz: An Open-source Standalone Visualizer for Quantum Network Simulations",
+      "abstract": "The unique and non-classical features of quantum networks make their simulation and intuitive understanding inherently difficult. In this work, we present Q2NSViz, an open-source Python-based visualization tool for replaying and inspecting quantum-network simulation traces. Q2NSViz reconstructs the time evolution of the simulated network state, including physical topology, stored and in-flight qubits, classical bits and packets, measurements, and entanglement relationships. In this way, it exposes not only physical connectivity, but also the dynamic entanglement-induced structure produced, consumed, and transformed by protocol execution. Q2NSViz is built around a decoupled JSON/NDJSON trace contract, a Qt-free replay engine, and an interactive PyQt6 interface, making it a standalone companion to Q2NS and reusable by other simulation backends that emit the same trace format. By turning execution traces into navigable and reproducible visual artifacts, Q2NSViz provides a zero-coding tool for researchers and educators, narrowing the gap between abstract protocol logic and concrete execution.",
+      "published": "2026-07-15T00:00:00+00:00",
+      "updated": "2026-07-15T00:00:00+00:00",
+      "authors": [
+        "Francesco Mazza",
+        "Marcello Caleffi",
+        "Angela Sara Cacciapuoti"
+      ],
+      "categories": [
+        "cs.NI"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.12444",
+      "pdf_url": "https://arxiv.org/pdf/2607.12444",
+      "score": 3.4,
+      "topics": [
+        {
+          "name": "World Model",
+          "slug": "world-model",
+          "hits": [
+            "simulation"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "simulation"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Q2NSViz%3A%20An%20Open-source%20Standalone%20Visualizer%20for%20Quantum%20Network%20Simulations%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "The unique and non-classical features of quantum networks make their simulation and intuitive understanding inherently difficult. In this work, we present Q2NSViz, an open-source Python-based visualization tool for replaying and inspecting quantum-network simulation traces. Q2NSViz reconstructs the time evolution of the simulated network state, including physical topology, stored and in-flight qubits, classical bits and packets, measurements, and entanglement relationships. In this way, it exposes not only physical connectivity, but also the dynamic entanglement-induced structure produced, consumed, and transformed by protocol execution. Q2NSViz is built around a decoupled JSON/NDJSON trace contract, a Qt-free replay engine, and an interactive PyQt6 interface, making it a standalone companion to Q2NS and reusable by other simulation backends that emit the same trace format. By turning execution traces into navigable and reproducible visual artifacts, Q2NSViz provides a zero-coding tool for researchers and educators, narrowing the gap between abstract protocol logic and concrete execution.",
+      "is_ascend": false,
+      "title_zh": "Q2NSViz：用于量子网络仿真的开源独立可视化工具",
+      "institution": "未明确披露",
+      "summary_cn": "本文介绍了 Q2NSViz，一个基于 Python 的量子网络仿真可视化工具，用于回放和检查量子网络的仿真轨迹。它能够重建网络状态随时间的演化过程，展示物理拓扑、量子比特、经典比特与分组、测量结果以及纠缠关系。该工具通过可交互、可复现的可视化形式，帮助研究者和教学用户更直观地理解抽象协议在执行中的动态行为。",
+      "innovations": [
+        "提出面向量子网络仿真轨迹的独立可视化工具，可系统重建并回放仿真执行过程。",
+        "不仅展示物理连接关系，还显式呈现协议执行过程中生成、消耗和转换的纠缠结构。",
+        "采用解耦的 JSON/NDJSON 轨迹契约与无 Qt 依赖的回放引擎，便于复用于其他仿真后端。",
+        "提供交互式 PyQt6 界面与零编码使用方式，降低量子网络仿真分析与教学门槛。"
+      ],
+      "scenario_cn": "适用于量子网络协议研究、仿真结果分析与教学演示场景，帮助用户理解量子网络执行过程中状态演化与纠缠关系变化。",
+      "opensource_status": "未确认开源",
+      "code_url": "",
+      "title_en": "Q2NSViz: An Open-source Standalone Visualizer for Quantum Network Simulations"
+    },
+    {
+      "id": "2607.12716v1",
+      "title": "Auditable and Transparent Fully Authenticated Disk Encryption via USB Storage Interposition",
+      "abstract": "Full Disk Encryption (FDE) has become increasingly important in the last decades due to the evident confidentiality concerns. In most systems, encryption is provided by an operating system driver, through which the user can transparently access the encrypted disk after supplying the required keys (or the credentials from which those keys are derived). In this work, we explore an alternative approach: the use of an intermediate USB device placed between the host system and the external hard disk, where the encrypted data are stored. Although there are existing devices that follow this inline approach (such as RAID controllers and USB enclosures with built-in encryption), we explore the use of a general-purpose single-board computer running Linux with USB On-The-Go support (e.g. a Raspberry Pi), to provide FADE (Fully Authenticated Disk Encryption). Our system, named CC (Cryptographic Companion), performs the cryptographic operations (encryption/decryption and authentication), providing a standard USB mass-storage interface to the host (which is entirely unaware of the presence of encryption) while relying on the external USB hard disk to store the corresponding encrypted blocks. Our design provides several key advantages: flexibility, low cost, transparency, the use of generic hardware and free and open-source software, adaptability to emerging cryptographic schemes, and mitigations against malicious disk firmware. This paper presents the design and implementation of the CC and an experimental evaluation of our current research prototype, which indicates that it is sufficiently efficient for most common use cases.",
+      "published": "2026-07-15T00:00:00+00:00",
+      "updated": "2026-07-15T00:00:00+00:00",
+      "authors": [
+        "Enrique Soriano-Salvador",
+        "Gorka Guardiola Múzquiz"
+      ],
+      "categories": [
+        "cs.CR"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.12716",
+      "pdf_url": "https://arxiv.org/pdf/2607.12716",
+      "score": 3.2,
+      "topics": [
+        {
+          "name": "RAG / Long Context",
+          "slug": "rag-long-context",
+          "hits": [
+            "rag"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "rag"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Auditable%20and%20Transparent%20Fully%20Authenticated%20Disk%20Encryption%20via%20USB%20Storage%20Interposition%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Full Disk Encryption (FDE) has become increasingly important in the last decades due to the evident confidentiality concerns. In most systems, encryption is provided by an operating system driver, through which the user can transparently access the encrypted disk after supplying the required keys (or the credentials from which those keys are derived). In this work, we explore an alternative approach: the use of an intermediate USB device placed between the host system and the external hard disk, where the encrypted data are stored. Although there are existing devices that follow this inline approach (such as RAID controllers and USB enclosures with built-in encryption), we explore the use of a general-purpose single-board computer running Linux with USB On-The-Go support (e.g. a Raspberry Pi), to provide FADE (Fully Authenticated Disk Encryption). Our system, named CC (Cryptographic Companion), performs the cryptographic operations (encryption/decryption and authentication), providing a standard USB mass-storage interface to the host (which is entirely unaware of the presence of encryption) while relying on the external USB hard disk to store the corresponding encrypted blocks. Our design provides several key advantages: flexibility, low cost, transparency, the use of generic hardware and free and open-source software, adaptability to emerging cryptographic schemes, and mitigations against malicious disk firmware. This paper presents the design and implementation of the CC and an experimental evaluation of our current research prototype, which indicates that it is sufficiently efficient for most common use cases.",
+      "is_ascend": false,
+      "title_zh": "通过 USB 存储中介实现可审计且透明的全认证磁盘加密",
+      "institution": "未明确披露",
+      "summary_cn": "这篇论文提出一种不同于传统操作系统驱动式全盘加密的方案：在主机与外部硬盘之间加入一个通用 USB 中介设备来完成加解密与认证。作者实现了名为 CC（Cryptographic Companion）的系统，它对主机暴露标准 USB 大容量存储接口，而将加密块存储在外部硬盘上。该方案强调透明性、可审计性、低成本和对恶意磁盘固件的缓解能力。",
+      "innovations": [
+        "提出基于 USB 中介设备而非主机操作系统驱动的全认证磁盘加密架构。",
+        "使用通用单板计算机与自由开源软件实现透明的块级加密、解密与认证。",
+        "设计出主机无感知的标准 USB 存储接口，同时在中介侧完成密码学处理。",
+        "从体系结构上提供对恶意磁盘固件的缓解，并增强方案的可审计性与可适配性。"
+      ],
+      "scenario_cn": "适用于外接硬盘、便携式存储和需要主机无感接入加密存储的场景。它要解决的是传统全盘加密依赖主机驱动、审计透明性有限以及外部存储固件潜在不可信的问题。",
+      "opensource_status": "未确认开源",
+      "code_url": "",
+      "title_en": "Auditable and Transparent Fully Authenticated Disk Encryption via USB Storage Interposition"
+    },
+    {
+      "id": "2607.12785v1",
+      "title": "ExtraGS: Enhancing Endoscopic View Extrapolation via Diffusion-Guided 3D Gaussian Splatting",
+      "abstract": "Robot-assisted minimally invasive surgery (MIS) critically depends on reliable endoscopic perception for navigation and safety. However, conventional endoscopes provide only a limited field of view, leaving large portions of surrounding anatomy unobserved. Recent neural rendering approaches, such as Neural Radiance Fields and 3D Gaussian Splatting, enable novel view synthesis from endoscopic videos, but their reliance on sparse observations often leads to severe artifacts when extrapolating beyond the training this http URL this work, we propose ExtraGS, a framework for enhancing endoscopic view extrapolation via diffusion-guided 3D Gaussian Splatting. Starting from an initial reconstruction, we introduce an uncertainty-guided virtual camera sampling strategy to actively explore blind spots and maximize information gain. The rendered views from these sampled locations are refined using a diffusion model to recover plausible anatomical structures, producing pseudo observations that guide further optimization. To prevent the generated content from degrading reliable regions, we adopt a confidence-weighted fine-tuning strategy when incorporating these pseudo this http URL experiments on multiple public endoscopic datasets demonstrate that ExtraGS significantly reduces extrapolation artifacts and achieves state-of-the-art performance in endoscopic novel view synthesis.",
+      "published": "2026-07-15T00:00:00+00:00",
+      "updated": "2026-07-15T00:00:00+00:00",
+      "authors": [
+        "Cheng-Tai Hsieh",
+        "Jiwei Shan",
+        "Han Fang",
+        "Jianshu Hu",
+        "Tao Ni",
+        "Lijun Han",
+        "Yutong Ban",
+        "Shing Shin Cheng",
+        "Hesheng Wang"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.12785",
+      "pdf_url": "https://arxiv.org/pdf/2607.12785",
+      "score": 3.2,
+      "topics": [
+        {
+          "name": "RAG / Long Context",
+          "slug": "rag-long-context",
+          "hits": [
+            "rag"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "rag"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=ExtraGS%3A%20Enhancing%20Endoscopic%20View%20Extrapolation%20via%20Diffusion-Guided%203D%20Gaussian%20Splatting%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Robot-assisted minimally invasive surgery (MIS) critically depends on reliable endoscopic perception for navigation and safety. However, conventional endoscopes provide only a limited field of view, leaving large portions of surrounding anatomy unobserved. Recent neural rendering approaches, such as Neural Radiance Fields and 3D Gaussian Splatting, enable novel view synthesis from endoscopic videos, but their reliance on sparse observations often leads to severe artifacts when extrapolating beyond the training this http URL this work, we propose ExtraGS, a framework for enhancing endoscopic view extrapolation via diffusion-guided 3D Gaussian Splatting. Starting from an initial reconstruction, we introduce an uncertainty-guided virtual camera sampling strategy to actively explore blind spots and maximize information gain. The rendered views from these sampled locations are refined using a diffusion model to recover plausible anatomical structures, producing pseudo observations that guide further optimization. To prevent the generated content from degrading reliable regions, we adopt a confidence-weighted fine-tuning strategy when incorporating these pseudo this http URL experiments on multiple public endoscopic datasets demonstrate that ExtraGS significantly reduces extrapolation artifacts and achieves state-of-the-art performance in endoscopic novel view synthesis.",
+      "is_ascend": false,
+      "title_zh": "ExtraGS：通过扩散引导的三维高斯泼溅增强内窥镜视角外推",
+      "institution": "未明确披露",
+      "summary_cn": "这篇论文面向机器人辅助手术中的内窥镜感知，解决内窥镜视野有限导致未观测解剖区域难以重建的问题。作者提出 ExtraGS，在初始三维高斯泼溅重建基础上，主动采样高不确定性区域的虚拟相机视角，并用扩散模型细化渲染结果，生成伪观测来继续优化重建。该方法旨在减少超出训练视角范围时的新视图合成伪影。",
+      "innovations": [
+        "将扩散模型与 3D Gaussian Splatting 结合，用于增强内窥镜场景中的视角外推能力。",
+        "提出不确定性引导的虚拟相机采样策略，主动探索盲区并提升信息增益。",
+        "利用扩散模型修复采样视角下的渲染结果，生成可用于后续优化的伪观测。",
+        "采用置信度加权微调机制，在引入伪观测时尽量避免破坏原本可靠的重建区域。"
+      ],
+      "scenario_cn": "适用于机器人辅助手术、微创手术导航和内窥镜视频驱动的新视图合成。它主要解决稀疏观测下内窥镜场景外推伪影严重、难以可靠补全未观测解剖区域的问题。",
+      "opensource_status": "未确认开源",
+      "code_url": "",
+      "title_en": "ExtraGS: Enhancing Endoscopic View Extrapolation via Diffusion-Guided 3D Gaussian Splatting"
+    },
+    {
+      "id": "2607.12717v1",
+      "title": "GRAFT: Graph-Matched Retrieval and Fusion of Tables in Data Lakes",
+      "abstract": "Autonomous data agents resolve analytical queries by retrieving and reasoning over evidence in tabular data lakes. Existing methods score tables independently against the query and ignore the joinability and unionability that link them, returning fragmented evidence that downstream agents cannot integrate. We propose GRAFT (Graph-matched Retrieval and Fusion of Tables), structured around two principal contributions. First, we cast table retrieval as a graph matching problem between a query-derived intent graph and a heterogeneous data lake graph, and introduce IGMS, a log-determinant reward that couples semantic relevance, structural compatibility, and evidence diversity in a single objective. Second, we recast subgraph generation as a Markov decision process and learn a value function via implicit Q-learning on self-generated trajectories produced by a canonical compression operator that inverts the homomorphism. We further design a three-stage online pipeline that exploits anchor reachability, predicate admissibility, and reward monotonicity to greatly prune the candidate space before exact IGMS evaluation. On Spider and BIRD adapted to the tabular data lake setting, GRAFT achieves the best Recall, Precision, F1, and Sufficiency among point-wise, greedy-expansion, and structure-aware baselines, with relative gains of 7.8% in F1 and 10.6% in Sufficiency over the strongest baseline, while maintaining high search efficiency.",
+      "published": "2026-07-15T00:00:00+00:00",
+      "updated": "2026-07-15T00:00:00+00:00",
+      "authors": [
+        "Daomin Ji",
+        "Hui Luo",
+        "Zhifeng Bao",
+        "Shane Culpepper",
+        "Shazia Sadiq"
+      ],
+      "categories": [
+        "cs.DB"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.12717",
+      "pdf_url": "https://arxiv.org/pdf/2607.12717",
+      "score": 3.2,
+      "topics": [
+        {
+          "name": "RAG / Long Context",
+          "slug": "rag-long-context",
+          "hits": [
+            "retrieval"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "retrieval"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=GRAFT%3A%20Graph-Matched%20Retrieval%20and%20Fusion%20of%20Tables%20in%20Data%20Lakes%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Autonomous data agents resolve analytical queries by retrieving and reasoning over evidence in tabular data lakes. Existing methods score tables independently against the query and ignore the joinability and unionability that link them, returning fragmented evidence that downstream agents cannot integrate. We propose GRAFT (Graph-matched Retrieval and Fusion of Tables), structured around two principal contributions. First, we cast table retrieval as a graph matching problem between a query-derived intent graph and a heterogeneous data lake graph, and introduce IGMS, a log-determinant reward that couples semantic relevance, structural compatibility, and evidence diversity in a single objective. Second, we recast subgraph generation as a Markov decision process and learn a value function via implicit Q-learning on self-generated trajectories produced by a canonical compression operator that inverts the homomorphism. We further design a three-stage online pipeline that exploits anchor reachability, predicate admissibility, and reward monotonicity to greatly prune the candidate space before exact IGMS evaluation. On Spider and BIRD adapted to the tabular data lake setting, GRAFT achieves the best Recall, Precision, F1, and Sufficiency among point-wise, greedy-expansion, and structure-aware baselines, with relative gains of 7.8% in F1 and 10.6% in Sufficiency over the strongest baseline, while maintaining high search efficiency.",
+      "is_ascend": false,
+      "title_zh": "GRAFT：数据湖中表格的图匹配检索与融合",
+      "institution": "未明确披露",
+      "summary_cn": "这篇论文关注自主数据代理在表格型数据湖中回答分析查询时，如何检索并整合多张相关表格作为证据。作者指出，现有方法通常独立地为每张表打分，忽略表与表之间可连接、可并合的结构关系，导致返回的证据碎片化。为此，论文提出 GRAFT，将检索问题建模为查询意图图与数据湖异构图之间的图匹配，并结合在线剪枝与学习式子图生成来提升检索质量和效率。",
+      "innovations": [
+        "将表格检索从独立表打分改写为查询意图图与数据湖图之间的图匹配问题，显式建模表之间的连接性与可合并性。",
+        "提出 IGMS 奖励目标，将语义相关性、结构兼容性和证据多样性统一到单一目标中进行评估。",
+        "把候选子图生成重述为马尔可夫决策过程，并通过基于自生成轨迹的隐式 Q-learning 学习价值函数。",
+        "设计三阶段在线检索流程，利用锚点可达性、谓词可接受性与奖励单调性对候选空间进行剪枝。"
+      ],
+      "scenario_cn": "适用于企业数据湖、湖仓或多表分析系统中，智能代理需要从多张相关表中检索并拼接证据来回答复杂分析问题的场景，尤其适合需要跨表推理、联结和整合证据的任务。",
+      "opensource_status": "未确认开源",
+      "code_url": "",
+      "title_en": "GRAFT: Graph-Matched Retrieval and Fusion of Tables in Data Lakes"
+    }
+  ]
+}
