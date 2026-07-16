@@ -45,24 +45,50 @@ for i in range(0, len(work), 2):
         f'{json.dumps(payload, ensure_ascii=False)}'
     )
     try:
-        out = subprocess.check_output(['hermes', '-z', prompt], text=True, cwd=str(ROOT), timeout=300)
+        out = subprocess.check_output(['hermes', '-z', prompt], text=True, cwd=str(ROOT), timeout=480)
         txt = re.sub(r'^```json\s*|```$', '', out.strip(), flags=re.S).strip()
+        txt = re.sub(r'(?<=[,\[])\s*,\s*', '', txt)
+        txt = re.sub(r',\s*([}\]])', r'\1', txt)
         enriched = json.loads(txt)
         for item in enriched:
             base = next(x for x in batch if x['id'] == item['id'])
-            base['title_zh'] = item.get('title_zh', '')
+            base['title_zh'] = item.get('title_zh', base['title'])
             base['summary_cn'] = item.get('summary_cn', base.get('abstract', '')[:500])
-            base['innovations'] = item.get('innovations', [])
-            base['scenario_cn'] = item.get('scenario_cn', '')
+            base['innovations'] = item.get('innovations', ['见正文'])
+            base['scenario_cn'] = item.get('scenario_cn', base.get('summary_cn', '')[:300])
             base['institution'] = item.get('institution', '未明确披露')
     except Exception as e:
-        # Fallback: use abstract as summary
+        print(f'[warn] batch failed: {e}', flush=True)
+        # Fallback: retry once with single paper per batch
         for p in batch:
-            p['title_zh'] = p['title']
-            p['summary_cn'] = p.get('abstract', '')[:500]
-            p['innovations'] = []
-            p['scenario_cn'] = ''
-            p['institution'] = '未明确披露'
+            single_payload = [{
+                'id': p['id'], 'title_en': p['title'], 'institutions_raw': '未明确披露',
+                'abstract': p.get('abstract', '')[:2000],
+                'topics': [t['name'] for t in p.get('topics', [])],
+                'code_links': [],
+            }]
+            single_prompt = (
+                '你是认真读论文的研究助理。严格输出 JSON 数组。\n'
+                '字段固定：id, title_zh, summary_cn, innovations, scenario_cn。\n'
+                '用中文。summary_cn 2-4 句；innovations 2-4 条；scenario_cn 说明解决什么问题。\n'
+                f'{json.dumps(single_payload, ensure_ascii=False)}'
+            )
+            try:
+                out2 = subprocess.check_output(['hermes', '-z', single_prompt], text=True, cwd=str(ROOT), timeout=480)
+                txt2 = re.sub(r'^```json\s*|```$', '', out2.strip(), flags=re.S).strip()
+                txt2 = re.sub(r',\s*([}\]])', r'\1', txt2)
+                item2 = json.loads(txt2)[0]
+                p['title_zh'] = item2.get('title_zh', p['title'])
+                p['summary_cn'] = item2.get('summary_cn', p.get('abstract', '')[:500])
+                p['innovations'] = item2.get('innovations', ['见正文'])
+                p['scenario_cn'] = item2.get('scenario_cn', p.get('abstract', '')[:300])
+                p['institution'] = '未明确披露'
+            except Exception:
+                p['title_zh'] = p['title']
+                p['summary_cn'] = p.get('abstract', '')[:500]
+                p['innovations'] = ['见正文：' + p.get('abstract', '')[:100]]
+                p['scenario_cn'] = p.get('abstract', '')[:300]
+                p['institution'] = '未明确披露'
 
 enriched_list = sorted(work, key=lambda p: (0 if p.get('is_ascend') else 1, 0 if p.get('code_links') else 1, -float(p.get('score', 0)), p.get('title', '')))
 OUT.write_text(json.dumps({'date': src['date'], 'count': len(enriched_list), 'fetched_count': src['fetched_count'], 'papers': enriched_list}, ensure_ascii=False, indent=2), encoding='utf-8')

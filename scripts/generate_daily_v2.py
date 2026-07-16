@@ -168,16 +168,38 @@ def summarize_batch(batch: list[dict]) -> list[dict]:
         })
     prompt = (
         '你是认真读论文的研究助理。严格输出 JSON 数组，不要输出任何额外文字。\n'
-        '字段固定：id, title_zh, institution, summary_cn, innovations, scenario_cn, opensource_status, code_url。\n'
-        '要求：title_zh 准确翻译英文标题；summary_cn 2-4 句中文讲清楚论文做什么；innovations 2-4 条真实创新点；scenario_cn 说明解决的问题和适用场景；institution 用机构名，不要作者名；只有 code_links 有真实仓库才可写已确认开源。\n'
-        '你只能依据 abstract 与 title 判断，不要臆造正文中不存在的具体数字。\n\n'
+        '字段固定：id, title_zh, institution, summary_cn, innovations, scenario_cn。\n'
+        '要求：title_zh 准确翻译英文标题；summary_cn 2-4 句中文讲清楚论文做什么；'
+        'innovations 2-4 条真实创新点；scenario_cn 说明解决的问题和适用场景。\n'
+        '用中文。\n\n'
         f'{json.dumps(payload, ensure_ascii=False)}'
     )
-    out = subprocess.check_output(['hermes', '-z', prompt], text=True, cwd=str(ROOT), timeout=240)
-    txt = re.sub(r'^```json\s*|```$', '', out.strip(), flags=re.S).strip()
-    txt = re.sub(r'(?<=[,\[])\s*,\s*', '', txt)
-    txt = re.sub(r',\s*([}\]])', r'\1', txt)
-    return json.loads(txt)
+    try:
+        out = subprocess.check_output(['hermes', '-z', prompt], text=True, cwd=str(ROOT), timeout=480)
+        txt = re.sub(r'^```json\s*|```$', '', out.strip(), flags=re.S).strip()
+        txt = re.sub(r',\s*([}\]])', r'\1', txt)
+        return json.loads(txt)
+    except Exception:
+        # Fallback: process one by one
+        results = []
+        for p in batch:
+            single = [{'id': p['id'], 'title_en': p['title'], 'institutions_raw': '未明确披露',
+                       'abstract': p.get('abstract', '')[:2000],
+                       'topics': [t['name'] for t in p.get('topics', [])]}]
+            sp = ('你是认真读论文的研究助理。严格输出 JSON 数组。\n'
+                  '字段：id, title_zh, summary_cn, innovations, scenario_cn。\n用中文。\n\n'
+                  f'{json.dumps(single, ensure_ascii=False)}')
+            try:
+                o2 = subprocess.check_output(['hermes', '-z', sp], text=True, cwd=str(ROOT), timeout=480)
+                t2 = re.sub(r'^```json\s*|```$', '', o2.strip(), flags=re.S).strip()
+                t2 = re.sub(r',\s*([}\]])', r'\1', t2)
+                results.append(json.loads(t2)[0])
+            except Exception:
+                results.append({'id': p['id'], 'title_zh': p['title'],
+                                'summary_cn': p.get('abstract', '')[:500],
+                                'innovations': ['见正文：' + p.get('abstract', '')[:100]],
+                                'scenario_cn': p.get('abstract', '')[:300]})
+        return results
 
 def ensure_css():
     css = CSS.read_text(encoding='utf-8')
