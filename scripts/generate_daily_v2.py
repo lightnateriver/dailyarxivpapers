@@ -19,7 +19,8 @@ VERTICAL_EXCLUDE = [
     'robot', 'robotic', 'robotics', 'autonomous driving', 'inspection', 'inspect', 'patrol',
     'pathology', 'pathological', 'histopathology', 'whole slide image', 'wsi',
     'medicine', 'biomedical', 'radiology', 'medical imaging', 'remote sensing', 'satellite', 'hyperspectral',
-    'encryption', 'encrypted', 'cryptography', 'cryptographic', 'cipher', 'secret scanner', 'cybersecurity', 'security'
+    'encryption', 'encrypted', 'cryptography', 'cryptographic', 'cipher', 'secret scanner', 'cybersecurity', 'security',
+    'quantum', 'quantization effects in quantum', 'physics', 'physical simulation', 'hamilton-jacobi', 'fluid dynamics'
 ]
 EDGE_EXCLUDE = [
     'edge deployment', 'edge systems', 'edgeai', 'on-device', 'mobile reasoning', 'mobile reasoning-as-a-service',
