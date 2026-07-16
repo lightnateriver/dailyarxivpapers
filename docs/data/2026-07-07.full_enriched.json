@@ -585,8 +585,11 @@
       "is_ascend": true,
       "title_zh": "What Images Cannot Say: Language-Guided Olfactory Representation Learning",
       "summary_cn": "Images tell us what a scene looks like, but rarely what it would feel like to be there. While recent datasets pair visual scenes with electronic-nose measurements, aligning smell signals with images remains challenging because many olfactory cues arise from contextual environmental factors that are not directly visible in pixels. We introduce SCENT, a multimodal framework that uses language guidance as a semantic bridge between vision and olfaction. Our approach leverages Vision-Language Models ",
-      "innovations": [],
-      "scenario_cn": "",
+      "innovations": [
+        "Images tell us what a scene looks like, but rarely what it would feel like to be",
+        " there. While recent datasets pair visual scenes with electronic-nose measuremen"
+      ],
+      "scenario_cn": "Images tell us what a scene looks like, but rarely what it would feel like to be there. While recent datasets pair visual scenes with electronic-nose measurements, aligning smell signals with images remains challenging because many olfactory cues arise from contextual environmental factors that are ",
       "institution": "未明确披露"
     },
     {
@@ -635,8 +638,11 @@
       "is_ascend": true,
       "title_zh": "Retrieving and Refining Winning Noise Tickets for Diffusion-Based Motion Generation",
       "summary_cn": "Diffusion-based text-to-motion models synthesize realistic human motions but often exhibit semantic drift from the input text. Motion is inherently temporal, especially in compositional and long-duration sequences that require semantic consistency across multiple action segments and smooth kinematic transitions throughout the trajectory. We posit that the initial noise is central to this consistency: within the Gaussian noise space, certain instances, i.e. winning noise tickets, carry latent str",
-      "innovations": [],
-      "scenario_cn": "",
+      "innovations": [
+        "Diffusion-based text-to-motion models synthesize realistic human motions but oft",
+        "en exhibit semantic drift from the input text. Motion is inherently temporal, es"
+      ],
+      "scenario_cn": "Diffusion-based text-to-motion models synthesize realistic human motions but often exhibit semantic drift from the input text. Motion is inherently temporal, especially in compositional and long-duration sequences that require semantic consistency across multiple action segments and smooth kinematic",
       "institution": "未明确披露"
     },
     {
@@ -677,8 +683,11 @@
       "is_ascend": true,
       "title_zh": "Propose and Attend: Training-free MLLM Grounding Confidence via Multi-Token Localized Attention",
       "summary_cn": "Multimodal large language models can emit localized predictions, bounding boxes for objects and temporal windows for video and audio events, but they hallucinate these regions prolifically. The model's own token log-probabilities are nearly uninformative: they conflate grounding quality with input ambiguity, and coordinate tokens become near-deterministic once the model commits. We propose Multi-Token Localized Attention (MTLA): a training-free, post-hoc score that measures how strongly a predic",
-      "innovations": [],
-      "scenario_cn": "",
+      "innovations": [
+        "Multimodal large language models can emit localized predictions, bounding boxes ",
+        "for objects and temporal windows for video and audio events, but they hallucinat"
+      ],
+      "scenario_cn": "Multimodal large language models can emit localized predictions, bounding boxes for objects and temporal windows for video and audio events, but they hallucinate these regions prolifically. The model's own token log-probabilities are nearly uninformative: they conflate grounding quality with input a",
       "institution": "未明确披露"
     },
     {
@@ -972,8 +981,11 @@
       "is_ascend": true,
       "title_zh": "From Application-Layer Simulation to Native Meta-Architecture: Structural Tension as an Endogenous Driver for Heterogeneous AI Evolution",
       "summary_cn": "Current large language models (LLMs) are stateless across inference sessions: their behavior is fully determined by input at inference time, and any higher-order cognitive architecture must be simulated at the application layer through prompt engineering and context management. This paper proposes a theoretical framework for submerging such application-layer cognitive protocols into a native meta-architecture by introducing three interlocking mechanisms: (1) Structural Tension, an endogenous los",
-      "innovations": [],
-      "scenario_cn": "",
+      "innovations": [
+        "Current large language models (LLMs) are stateless across inference sessions: th",
+        "eir behavior is fully determined by input at inference time, and any higher-orde"
+      ],
+      "scenario_cn": "Current large language models (LLMs) are stateless across inference sessions: their behavior is fully determined by input at inference time, and any higher-order cognitive architecture must be simulated at the application layer through prompt engineering and context management. This paper proposes a",
       "institution": "未明确披露"
     },
     {
@@ -1011,8 +1023,11 @@
       "is_ascend": true,
       "title_zh": "The Rank-One Corner: How Much Value Equivalence Does a Task Need from a World Model?",
       "summary_cn": "A learned world model is usually judged by how faithfully it reconstructs its observations or predicts reward, as though quality were something the model simply has or lacks. But what a task actually needs from a model is narrower: the few predictive coordinates its queries depend on, which we call the closure. We show that how much of that closure a latent comes to represent is set not by the model's capacity or its observations but by the dimensionality of the objective it is trained against, ",
-      "innovations": [],
-      "scenario_cn": "",
+      "innovations": [
+        "A learned world model is usually judged by how faithfully it reconstructs its ob",
+        "servations or predicts reward, as though quality were something the model simply"
+      ],
+      "scenario_cn": "A learned world model is usually judged by how faithfully it reconstructs its observations or predicts reward, as though quality were something the model simply has or lacks. But what a task actually needs from a model is narrower: the few predictive coordinates its queries depend on, which we call ",
       "institution": "未明确披露"
     },
     {
@@ -1202,8 +1217,11 @@
       "is_ascend": false,
       "title_zh": "FreqDepthKV: Frequency-Guided Depth Sharing for Robust KV Cache Compression in Long-Context LLM Inference",
       "summary_cn": "Long-context LLM inference is increasingly limited by the memory and bandwidth cost of KV caches, yet aggressive compression can remove the layer-specific evidence needed for retrieval and multi-step reasoning. We introduce FreqDepthKV, an inference-time cache compression method that factorizes adjacent-layer KV states into shared low-frequency depth components and sparse high-frequency residuals. A lightweight online probe assigns attention heads to shared-depth, residual-depth, or exact cache ",
-      "innovations": [],
-      "scenario_cn": "",
+      "innovations": [
+        "Long-context LLM inference is increasingly limited by the memory and bandwidth c",
+        "ost of KV caches, yet aggressive compression can remove the layer-specific evide"
+      ],
+      "scenario_cn": "Long-context LLM inference is increasingly limited by the memory and bandwidth cost of KV caches, yet aggressive compression can remove the layer-specific evidence needed for retrieval and multi-step reasoning. We introduce FreqDepthKV, an inference-time cache compression method that factorizes adja",
       "institution": "未明确披露"
     },
     {
