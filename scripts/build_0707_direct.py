@@ -50,11 +50,11 @@ for i in range(0, len(work), 2):
         enriched = json.loads(txt)
         for item in enriched:
             base = next(x for x in batch if x['id'] == item['id'])
-            p['title_zh'] = item.get('title_zh', '')
-            p['summary_cn'] = item.get('summary_cn', base.get('abstract', '')[:500])
-            p['innovations'] = item.get('innovations', [])
-            p['scenario_cn'] = item.get('scenario_cn', '')
-            p['institution'] = item.get('institution', '未明确披露')
+            base['title_zh'] = item.get('title_zh', '')
+            base['summary_cn'] = item.get('summary_cn', base.get('abstract', '')[:500])
+            base['innovations'] = item.get('innovations', [])
+            base['scenario_cn'] = item.get('scenario_cn', '')
+            base['institution'] = item.get('institution', '未明确披露')
     except Exception as e:
         # Fallback: use abstract as summary
         for p in batch:
