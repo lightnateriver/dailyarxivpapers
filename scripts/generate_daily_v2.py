@@ -39,11 +39,20 @@ def strip_tags(s: str) -> str:
 def normalize_url(url: str) -> str:
     return url.rstrip('.,;:。)]}')
 
-def fetch(url: str, timeout: int = 60) -> str:
-    req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0 dailyarxivpapers'})
-    return urllib.request.urlopen(req, timeout=timeout).read().decode('utf-8', errors='ignore')
+def fetch(url, timeout=30):
+    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 dailyarxivpapers/1.0"})
+    for attempt in range(3):
+        try:
+            return urllib.request.urlopen(req, timeout=timeout).read().decode("utf-8", errors="ignore")
+        except Exception as e:
+            if attempt < 2:
+                import time as _time; _time.sleep(5)
+                continue
+            raise
 
 def detect_code_links(text: str) -> list[str]:
+    if not text or len(text) < 50:
+        return []
     urls = []
     for u in re.findall(r'https?://[^\s"\'\)<>]+', text or ''):
         u = normalize_url(u)
@@ -103,18 +112,25 @@ def parse_abs_cached(p: dict):
     cache_file = CACHE_DIR / f'{base}.json'
     if cache_file.exists():
         return json.loads(cache_file.read_text(encoding='utf-8'))
-    page = fetch(p['abs_url'])
+    try:
+        page = fetch(p['abs_url'])
+    except Exception:
+        # arXiv unreachable; build minimal data from base JSON
+        abstract = p.get('abstract', '')
+        return {'abs_page': '', 'html_link': None, 'abstract': abstract, 'fetch_failed': True}
     m = re.search(r'https://arxiv.org/html/[^"\']+', page)
     html_link = m.group(0) if m else None
     abstract = ''
     m_abs = re.search(r'<blockquote class="abstract[^>]*">(.*?)</blockquote>', page, re.S)
     if m_abs:
         abstract = strip_tags(m_abs.group(1).replace('Abstract:', ''))
-    data = {'abs_page': page, 'html_link': html_link, 'abstract': abstract}
+    data = {'abs_page': page, 'html_link': html_link, 'abstract': abstract, 'fetch_failed': False}
     cache_file.write_text(json.dumps(data, ensure_ascii=False), encoding='utf-8')
     return data
 
 def guess_institutions_from_abs(page: str) -> str:
+    if not page or len(page) < 100:
+        return '未明确披露'
     patterns = [
         r'Authors?:\s*(.*?)\s*View a PDF',
         r'Authors?:\s*(.*?)\s*Abstract:',
@@ -159,6 +175,8 @@ def summarize_batch(batch: list[dict]) -> list[dict]:
     )
     out = subprocess.check_output(['hermes', '-z', prompt], text=True, cwd=str(ROOT), timeout=240)
     txt = re.sub(r'^```json\s*|```$', '', out.strip(), flags=re.S).strip()
+    txt = re.sub(r'(?<=[,\[])\s*,\s*', '', txt)
+    txt = re.sub(r',\s*([}\]])', r'\1', txt)
     return json.loads(txt)
 
 def ensure_css():
@@ -226,27 +244,24 @@ def main():
         if p['id'] in resume_map:
             continue
         print(f'prepare {idx}/{len(papers)} {p["id"]}', flush=True)
-        cached = parse_abs_cached(p)
-        page_code = detect_code_links(cached['abs_page'])
-        valid_code = []
-        for u in page_code:
-            if code_link_has_content(u) and u not in valid_code:
-                valid_code.append(u)
+        # Use abstract from base JSON; skip external fetch to avoid network stalls
+        abstract = p.get('abstract', '')
         work.append({
             **p,
-            'institutions_raw': guess_institutions_from_abs(cached['abs_page']),
-            'content_snippet': cached.get('abstract') or p.get('abstract', ''),
-            'abstract': cached.get('abstract') or p.get('abstract', ''),
-            'code_links': valid_code,
+            'institutions_raw': '未明确披露',
+            'content_snippet': abstract,
+            'abstract': abstract,
+            'code_links': [],
+            'code_links_from_meta': p.get('code_links') or p.get('github_search_url') or [],
             'is_ascend': ascend_priority(p)
         })
     enriched_map = dict(resume_map)
-    for i in range(0, len(work), 4):
-        batch = work[i:i+4]
-        print(f'summarize batch {i//4 + 1}/{(len(work)+3)//4}', flush=True)
+    for i in range(0, len(work), 2):
+        batch = work[i:i+2]
+        print(f'summarize batch {i//2 + 1}/{(len(work)+1)//2}', flush=True)
         for item in summarize_batch(batch):
             base = next(x for x in batch if x['id'] == item['id'])
-            code_url = item.get('code_url') if item.get('code_url') in base['code_links'] else (base['code_links'][0] if base['code_links'] else '')
+            code_url = item.get('code_url') if item.get('code_url') in base['code_links'] else (base['code_links'][0] if base['code_links'] else (base.get('code_links_from_meta', [])[0] if base.get('code_links_from_meta') else ''))
             enriched_map[item['id']] = {**base, **item, 'title_en': base['title'], 'institution': item.get('institution') or base['institutions_raw'], 'code_url': code_url, 'opensource_status': '已确认开源' if code_url else '未确认开源'}
         RESUME_FILE.write_text(json.dumps(enriched_map, ensure_ascii=False, indent=2), encoding='utf-8')
     enriched_list = sorted(enriched_map.values(), key=sort_key)
