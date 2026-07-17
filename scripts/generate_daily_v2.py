@@ -155,6 +155,17 @@ def guess_institutions_from_abs(page: str) -> str:
             return ' / '.join(out[:4])
     return '未明确披露'
 
+def is_valid_summary(text: str) -> bool:
+    """Check if hermes returned a real summary vs empty/useless/comment text."""
+    if not text or len(text.strip()) < 20:
+        return False
+    low = text.lower()
+    if low.startswith('comments:') or 'accepted by' in low or 'accepted for' in low:
+        return False
+    if low.startswith('this paper') and len(text) < 50:
+        return False
+    return True
+
 def summarize_batch(batch: list[dict]) -> list[dict]:
     payload = []
     for p in batch:
@@ -178,7 +189,21 @@ def summarize_batch(batch: list[dict]) -> list[dict]:
         out = subprocess.check_output(['hermes', '-z', prompt], text=True, cwd=str(ROOT), timeout=480)
         txt = re.sub(r'^```json\s*|```$', '', out.strip(), flags=re.S).strip()
         txt = re.sub(r',\s*([}\]])', r'\1', txt)
-        return json.loads(txt)
+        results = json.loads(txt)
+        # Validate each result; replace empty/useful fields with abstract-based text
+        for i, item in enumerate(results):
+            orig = batch[i] if i < len(batch) else None
+            abstext = (orig.get('abstract', '') or '') if orig else ''
+            if not is_valid_summary(item.get('summary_cn', '')):
+                item['summary_cn'] = abstext[:500]
+            if not is_valid_summary(item.get('scenario_cn', '')):
+                item['scenario_cn'] = (item.get('summary_cn', '') or abstext)[:300]
+            if not item.get('innovations') or len(item.get('innovations', [])) == 0:
+                summ = item.get('summary_cn', '') or abstext
+                item['innovations'] = ['见正文：' + summ[:80]]
+            if not item.get('title_zh', ''):
+                item['title_zh'] = orig['title'] if orig else ''
+        return results
     except Exception:
         # Fallback: process one by one
         results = []
@@ -193,12 +218,20 @@ def summarize_batch(batch: list[dict]) -> list[dict]:
                 o2 = subprocess.check_output(['hermes', '-z', sp], text=True, cwd=str(ROOT), timeout=480)
                 t2 = re.sub(r'^```json\s*|```$', '', o2.strip(), flags=re.S).strip()
                 t2 = re.sub(r',\s*([}\]])', r'\1', t2)
-                results.append(json.loads(t2)[0])
+                item2 = json.loads(t2)[0]
+                if not is_valid_summary(item2.get('summary_cn', '')):
+                    item2['summary_cn'] = p.get('abstract', '')[:500]
+                if not is_valid_summary(item2.get('scenario_cn', '')):
+                    item2['scenario_cn'] = (item2.get('summary_cn', '') or p.get('abstract', ''))[:300]
+                if not item2.get('innovations') or len(item2.get('innovations', [])) == 0:
+                    item2['innovations'] = ['见正文：' + (item2.get('summary_cn', '') or p.get('abstract', ''))[:80]]
+                results.append(item2)
             except Exception:
+                abstext = p.get('abstract', '')[:500]
                 results.append({'id': p['id'], 'title_zh': p['title'],
-                                'summary_cn': p.get('abstract', '')[:500],
-                                'innovations': ['见正文：' + p.get('abstract', '')[:100]],
-                                'scenario_cn': p.get('abstract', '')[:300]})
+                                'summary_cn': abstext,
+                                'innovations': ['见正文：' + abstext[:100]],
+                                'scenario_cn': abstext[:300]})
         return results
 
 def ensure_css():
