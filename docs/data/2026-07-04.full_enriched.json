@@ -1,0 +1,1572 @@
+{
+  "date": "2026-07-04",
+  "count": 26,
+  "fetched_count": 174,
+  "papers": [
+    {
+      "id": "2607.03651v1",
+      "title": "LLM-Guided Transportation Hub Capacity Planning with Textual Business Inputs",
+      "abstract": "While traditional hub capacity planning models optimize effectively for quantitative inputs, they often fail to digest qualitative business context. We propose a novel framework where a large language model (LLM) agent iteratively proposes hub capacity decisions guided by natural-language business context descriptions. The key mechanism is a chain-of-thought reasoning protocol: the LLM constructs a structured decision table that maps each contextual item to specific capacity adjustments based on the implied direction and magnitude of changes. The new capacity decision is then validated through a feedback loop with an optimization model, which provides routing-based performance metrics to guide the agent's selection. On a real-world 13-hub freight network in the southeastern US, our framework achieves a 2.8% optimality gap relative to the hidden ground-truth, a significant improvement over the 11.0% gap produced by the traditional optimization model without textual business inputs. This demonstrates that LLMs can serve as a contextual bridge, integrating qualitative business insights into Operations Research workflows.",
+      "published": "2026-07-04T00:26:19+00:00",
+      "updated": "2026-07-04T00:26:19+00:00",
+      "authors": [
+        "Xiaoyue Liu",
+        "Zheng Dong"
+      ],
+      "categories": [
+        "cs.LG",
+        "math.OC"
+      ],
+      "abs_url": "http://arxiv.org/abs/2607.03651v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.03651v1",
+      "score": 6.6,
+      "topics": [
+        {
+          "name": "Agent",
+          "slug": "agent",
+          "hits": [
+            "agent"
+          ]
+        },
+        {
+          "name": "Agent Reasoning / Test-time Scaling",
+          "slug": "agent-reasoning",
+          "hits": [
+            "reasoning",
+            "chain-of-thought",
+            "planning"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "agent",
+        "chain-of-thought",
+        "planning",
+        "reasoning"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=LLM-Guided%20Transportation%20Hub%20Capacity%20Planning%20with%20Textual%20Business%20Inputs%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "While traditional hub capacity planning models optimize effectively for quantitative inputs, they often fail to digest qualitative business context. We propose a novel framework where a large language model (LLM) agent iteratively proposes hub capacity decisions guided by natural-language business context descriptions. The key mechanism is a chain-of-thought reasoning protocol: the LLM constructs a structured decision table that maps each contextual item to specific capacity adjustments based on the implied direction and magnitude of changes. The new capacity decision is then validated through a feedback loop with an optimization model, which provides routing-based performance metrics to guide the agent's selection. On a real-world 13-hub freight network in the southeastern US, our framework achieves a 2.8% optimality gap relative to the hidden ground-truth, a significant improvement over the 11.0% gap produced by the traditional optimization model without textual business inputs. This demonstrates that LLMs can serve as a contextual bridge, integrating qualitative business insights into Operations Research workflows.",
+      "code_links_from_meta": "https://github.com/search?q=LLM-Guided%20Transportation%20Hub%20Capacity%20Planning%20with%20Textual%20Business%20Inputs%20arxiv%20github&type=repositories",
+      "is_ascend": true,
+      "title_zh": "LLM引导的交通枢纽容量规划：融合文本业务输入的优化框架",
+      "summary_cn": "传统枢纽容量规划模型对定量输入优化有效，但难以消化定性的业务上下文。本文提出一种新框架，使用LLM智能体在自然语言业务描述引导下迭代提出枢纽容量决策。核心机制是链式思维推理协议：LLM构建结构化决策表，将每条上下文项映射为具体容量调整（基于其隐含的变化方向和幅度）。新容量决策通过优化模型的反馈循环验证，优化模型提供路由性能指标以指导智能体选择。在真实美国东南部13枢纽货运网络上，该方法相对于隐藏真实解的最优性差距为2.8%，而传统无文本输入的优化模型差距为11.0%。",
+      "innovations": [
+        "提出LLM作为「上下文桥梁」，将定性业务洞察融入运筹学工作流，填补定量优化与定性文本输入之间的鸿沟",
+        "链式思维推理协议：LLM自动从自然语言业务描述中提取容量调整信号，构建结构化决策表",
+        "反馈循环验证机制：优化模型的路由性能指标反哺LLM，形成迭代收敛的容量规划闭环",
+        "13枢纽真实货运网络验证，最优性差距从11.0%降至2.8%，提升显著"
+      ],
+      "scenario_cn": "物流/货运网络的枢纽容量规划，特别是需要融合业务人员自然语言描述（如季节性需求波动、区域政策调整、运力限制等定性信息）的运筹优化场景",
+      "title_en": "LLM-Guided Transportation Hub Capacity Planning with Textual Business Inputs",
+      "institution": "未明确披露",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2607.03929v1",
+      "title": "Probe, Don't Prompt: A Hidden-State Probe for Metadata Filtering in Multi-Meta-RAG",
+      "abstract": "Multi-Meta-RAG improves retrieval for multi-hop question answering by filtering a vector store on metadata (the news source) that it extracts from each query by prompting gpt-3.5-turbo. We show this proprietary, free-form extractor can be replaced by a local, deterministic probe trained on the hidden states of a small open-source language model. On all 2556 MultiHop-RAG queries the probe reaches 90.9% set-exact accuracy against 88.0% for a model-free substring baseline and 80.9% for GPT-3.5, a margin that comes entirely from null queries, on which GPT-3.5 never abstains; on non-null queries all three stay within about a point. Because the probe's output space is exactly the fixed 49-source vocabulary, it cannot drift outside the allow-list as the prompted model does. Three design choices make it work: selecting a shallow layer, mean pooling, and class-imbalance-aware multi-label training over the long tail of sources. A 135M-parameter model lands within ~1.5 points of a 1.5B one, so the filter is cheap to output: a partial forward pass through the first few layers plus one linear head, with no API. The code is available at https://github.com/mxpoliakov/Multi-Meta-RAG.",
+      "published": "2026-07-04T15:47:38+00:00",
+      "updated": "2026-07-04T15:47:38+00:00",
+      "authors": [
+        "Mykhailo Poliakov",
+        "Nadiya Shvai"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "abs_url": "http://arxiv.org/abs/2607.03929v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.03929v1",
+      "score": 5.6,
+      "topics": [
+        {
+          "name": "RAG / Long Context",
+          "slug": "rag-long-context",
+          "hits": [
+            "rag",
+            "retrieval"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "rag",
+        "retrieval"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Probe%2C%20Don%27t%20Prompt%3A%20A%20Hidden-State%20Probe%20for%20Metadata%20Filtering%20in%20Multi-Meta-RAG%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Multi-Meta-RAG improves retrieval for multi-hop question answering by filtering a vector store on metadata (the news source) that it extracts from each query by prompting gpt-3.5-turbo. We show this proprietary, free-form extractor can be replaced by a local, deterministic probe trained on the hidden states of a small open-source language model. On all 2556 MultiHop-RAG queries the probe reaches 90.9% set-exact accuracy against 88.0% for a model-free substring baseline and 80.9% for GPT-3.5, a margin that comes entirely from null queries, on which GPT-3.5 never abstains; on non-null queries all three stay within about a point. Because the probe's output space is exactly the fixed 49-source vocabulary, it cannot drift outside the allow-list as the prompted model does. Three design choices make it work: selecting a shallow layer, mean pooling, and class-imbalance-aware multi-label training over the long tail of sources. A 135M-parameter model lands within ~1.5 points of a 1.5B one, so the filter is cheap to output: a partial forward pass through the first few layers plus one linear head, with no API. The code is available at https://github.com/mxpoliakov/Multi-Meta-RAG.",
+      "code_links_from_meta": [
+        "https://github.com/mxpoliakov/Multi-Meta-RAG"
+      ],
+      "is_ascend": true,
+      "title_zh": "用探针代替提示：基于隐状态的元数据过滤探针用于多元RAG",
+      "institution": "未明确披露",
+      "summary_cn": "Multi-Meta-RAG 依赖 GPT-3.5-turbo 从查询中提取元数据（新闻来源）来过滤向量库，以改进多跳问答中的检索质量。本文证明这一专有、自由格式的提取器可以被一个本地的确定性探针替代——该探针在小型开源语言模型的隐状态上训练，输出空间严格限定为固定的49个来源词表，不会像大模型提示那样漂移出白名单。在全部2556条MultiHop-RAG查询上，探针达到90.9%的集合精确准确率，优于无模型子串基线（88.0%）和GPT-3.5（80.9%）。",
+      "innovations": [
+        "首次证明基于LLM隐状态的线性探针可以完全替代GPT-3.5等商用API进行RAG元数据过滤，且性能更优、输出空间可控。",
+        "揭示了三个关键设计选择：浅层隐状态选取、均值池化、以及类别不平衡感知的多标签训练策略，使探针在长尾来源上依然有效。",
+        "135M参数的模型与1.5B模型仅差约1.5个百分点，表明该过滤器推理开销极低——仅需前几层的前向传播加一个线性分类头，完全无需API调用。"
+      ],
+      "scenario_cn": "解决多跳RAG系统中元数据过滤依赖外部闭源API、输出不可控且有漂移风险的问题，适用于需要本地化、低延迟、高确定性元数据过滤的生产RAG系统。",
+      "title_en": "Probe, Don't Prompt: A Hidden-State Probe for Metadata Filtering in Multi-Meta-RAG",
+      "code_url": "https://github.com/mxpoliakov/Multi-Meta-RAG",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2607.03836v1",
+      "title": "When Simpler Is Better: Evaluating Translation Pipelines for Medieval Latin Manuscripts",
+      "abstract": "Despite remarkable progress in machine translation, Vision Language Models (VLMs) struggle on historical manuscripts, a domain that stresses core Natural Language Processing (NLP) capabilities: low-resource transliteration, archaic vocabulary, and noisy input signals. We present a systematic framework for evaluating the full image-to-translation pipeline on medieval Latin manuscripts, a setting in which scribal shorthand, ligatures, and parchment degradation expose failure modes that are invisible in clean-text benchmarks. Benchmarking on the CATMuS Latin dataset reveals a specialization gap: domain-specific Optical Character Recognition (OCR) models reduce character error rate by up to 4.3$\\times$ compared to general-purpose VLMs, despite operating at orders of magnitude fewer parameters. We introduce the Interpres-Parallel-Corpus (IPC), a novel dataset comprising 1,383 aligned manuscript image lines, transcriptions, and expert translations, the first of its kind for medieval Latin. Our experiments uncover a complexity paradox: the simplest pipeline, a specialized OCR model feeding directly into a VLM, outperforms all multi-component variants. Adding retrieval-augmented generation (RAG) or post-OCR correction introduces prompt saturation and error propagation that degrade aggregate translation quality. These findings offer both a new benchmark and practical guidance for deploying translation systems in low-resource historical settings.",
+      "published": "2026-07-04T11:58:52+00:00",
+      "updated": "2026-07-04T11:58:52+00:00",
+      "authors": [
+        "Nguyen Kim Hai Bui",
+        "Md. Easin Arafat",
+        "Tamás Gábor Orosz",
+        "Mufti Mahmud"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "abs_url": "http://arxiv.org/abs/2607.03836v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.03836v1",
+      "score": 4.8,
+      "topics": [
+        {
+          "name": "多模态推理加速",
+          "slug": "multimodal-inference",
+          "hits": [
+            "vision language model",
+            "vlm"
+          ]
+        },
+        {
+          "name": "RAG / Long Context",
+          "slug": "rag-long-context",
+          "hits": [
+            "rag",
+            "retrieval"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "rag",
+        "retrieval",
+        "vision language model",
+        "vlm"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=When%20Simpler%20Is%20Better%3A%20Evaluating%20Translation%20Pipelines%20for%20Medieval%20Latin%20Manuscripts%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Despite remarkable progress in machine translation, Vision Language Models (VLMs) struggle on historical manuscripts, a domain that stresses core Natural Language Processing (NLP) capabilities: low-resource transliteration, archaic vocabulary, and noisy input signals. We present a systematic framework for evaluating the full image-to-translation pipeline on medieval Latin manuscripts, a setting in which scribal shorthand, ligatures, and parchment degradation expose failure modes that are invisible in clean-text benchmarks. Benchmarking on the CATMuS Latin dataset reveals a specialization gap: domain-specific Optical Character Recognition (OCR) models reduce character error rate by up to 4.3$\\times$ compared to general-purpose VLMs, despite operating at orders of magnitude fewer parameters. We introduce the Interpres-Parallel-Corpus (IPC), a novel dataset comprising 1,383 aligned manuscript image lines, transcriptions, and expert translations, the first of its kind for medieval Latin. Our experiments uncover a complexity paradox: the simplest pipeline, a specialized OCR model feeding directly into a VLM, outperforms all multi-component variants. Adding retrieval-augmented generation (RAG) or post-OCR correction introduces prompt saturation and error propagation that degrade aggregate translation quality. These findings offer both a new benchmark and practical guidance for deploying translation systems in low-resource historical settings.",
+      "code_links_from_meta": "https://github.com/search?q=When%20Simpler%20Is%20Better%3A%20Evaluating%20Translation%20Pipelines%20for%20Medieval%20Latin%20Manuscripts%20arxiv%20github&type=repositories",
+      "is_ascend": true,
+      "title_zh": "简单即更好：评估中世纪拉丁文手稿的翻译管线",
+      "institution": "未明确披露",
+      "summary_cn": "本文系统评估了从中世纪拉丁文手稿图像到英文翻译的完整管线。在 CATMuS Latin 数据集上的实验揭示了一个专业化鸿沟：领域专用 OCR 模型比通用 VLM 将字符错误率降低多达 4.3 倍，且参数量少数个数量级。研究还发现一个『复杂度悖论』：最简单的管线——专用 OCR 模型直接接 VLM 翻译——优于所有多组件的复杂变体，而加入 RAG 或 OCR 后校正反而因提示饱和和错误传播降低翻译质量。",
+      "innovations": [
+        "构建了首个面向中世纪拉丁文的 Interpres-Parallel-Corpus (IPC) 对齐数据集，包含 1,383 条手稿图像行、转录和专家翻译",
+        "发现并验证了『复杂度悖论』：简化管线（专用 OCR + VLM）优于引入 RAG 或后校正等复杂组件",
+        "系统揭示了页面级提示注入与错误传播在低资源历史文本翻译中的具体失效模式"
+      ],
+      "scenario_cn": "解决通用 VLM 在低资源历史手稿文本翻译场景中性能不足的问题。适用于历史文献数字化翻译、低资源语言机器翻译管线设计、古籍 OCR 与翻译系统的工程选型——尤其适合强调『组件越少越好』的轻量化部署场景。",
+      "title_en": "When Simpler Is Better: Evaluating Translation Pipelines for Medieval Latin Manuscripts",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2607.03839v1",
+      "title": "Adversarial LassoNet: Robust Feature Selection via Stability-Driven Sparse Learning",
+      "abstract": "Sparse feature selection is critical for high-dimensional machine learning, yet traditional $\\ell_1$-regularized methods are often brittle under observational noise and spurious correlations, leading to unstable feature supports and degraded generalization. Although adversarial training has been widely used to improve model robustness, its interaction with hierarchical sparse feature selection remains underexplored. In this work, we propose Adversarial LassoNet (AdLNet), a stability-driven sparse feature selection framework that integrates input-space adversarial perturbations with the hierarchical sparsity mechanism of LassoNet. We derive a tractable first-order adversarial approximation under local smoothness assumptions and provide an NTK-inspired spectral analysis to characterize how perturbation-driven training can reduce gradient concentration. Experiments on high-dimensional SERS data, six public benchmark datasets, and ColoredMNIST show that AdLNet maintains competitive sparse-selection performance while improving out-of-distribution robustness by 4.4\\% and feature support reproducibility by 6.3\\% under nearly matched support sparsity on ColoredMNIST. On the high-dimensional lung cancer screening dataset, AdLNet achieves a 5.3\\% test accuracy gain and a 6.0\\% AUC improvement over vanilla LassoNet. Code and dataset are available at https://github.com/719573/Adversarial-LassoNet.",
+      "published": "2026-07-04T12:01:53+00:00",
+      "updated": "2026-07-04T12:01:53+00:00",
+      "authors": [
+        "Zhen Huang",
+        "Peicheng Xu",
+        "Junbiao Pang",
+        "Yulong Zheng"
+      ],
+      "categories": [
+        "cs.LG"
+      ],
+      "abs_url": "http://arxiv.org/abs/2607.03839v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.03839v1",
+      "score": 4.1,
+      "topics": [
+        {
+          "name": "Model Compression / Quantization",
+          "slug": "model-compression",
+          "hits": [
+            "sparsity"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "sparsity"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Adversarial%20LassoNet%3A%20Robust%20Feature%20Selection%20via%20Stability-Driven%20Sparse%20Learning%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Sparse feature selection is critical for high-dimensional machine learning, yet traditional $\\ell_1$-regularized methods are often brittle under observational noise and spurious correlations, leading to unstable feature supports and degraded generalization. Although adversarial training has been widely used to improve model robustness, its interaction with hierarchical sparse feature selection remains underexplored. In this work, we propose Adversarial LassoNet (AdLNet), a stability-driven sparse feature selection framework that integrates input-space adversarial perturbations with the hierarchical sparsity mechanism of LassoNet. We derive a tractable first-order adversarial approximation under local smoothness assumptions and provide an NTK-inspired spectral analysis to characterize how perturbation-driven training can reduce gradient concentration. Experiments on high-dimensional SERS data, six public benchmark datasets, and ColoredMNIST show that AdLNet maintains competitive sparse-selection performance while improving out-of-distribution robustness by 4.4\\% and feature support reproducibility by 6.3\\% under nearly matched support sparsity on ColoredMNIST. On the high-dimensional lung cancer screening dataset, AdLNet achieves a 5.3\\% test accuracy gain and a 6.0\\% AUC improvement over vanilla LassoNet. Code and dataset are available at https://github.com/719573/Adversarial-LassoNet.",
+      "code_links_from_meta": "https://github.com/search?q=Adversarial%20LassoNet%3A%20Robust%20Feature%20Selection%20via%20Stability-Driven%20Sparse%20Learning%20arxiv%20github&type=repositories",
+      "is_ascend": true,
+      "title_zh": "对抗性LassoNet：基于稳定性驱动的稀疏学习实现鲁棒特征选择",
+      "institution": "未明确披露",
+      "summary_cn": "本文提出对抗性LassoNet（AdLNet），将输入空间对抗扰动与LassoNet的分层稀疏机制相结合，构建稳定性驱动的稀疏特征选择框架。在局部平滑假设下推导了可计算的一阶对抗近似，并通过NTK谱分析刻画了扰动训练如何降低梯度集中度。在高维肺癌筛查数据集上，AdLNet相比原始LassoNet提升5.3%测试准确率和6.0% AUC；在ColoredMNIST上分布外鲁棒性提升4.4%，特征支持可重复性提升6.3%。",
+      "innovations": [
+        "将对抗训练与LassoNet分层稀疏选择首次结合，提出AdLNet框架，同时保证特征稀疏性和鲁棒性",
+        "理论层面给出可计算的一阶对抗近似推导和NTK谱分析，解释对抗扰动降低梯度集中度的机制",
+        "在多个高维真实数据集上验证，同时提升分布外泛化能力和特征选择稳定性"
+      ],
+      "scenario_cn": "解决高维数据下传统L1正则化特征选择对观测噪声和虚假相关敏感、特征支持不稳定的问题，适用于高维生物医学数据分析、可解释机器学习等需要稳定且鲁棒特征选择的场景。",
+      "title_en": "Adversarial LassoNet: Robust Feature Selection via Stability-Driven Sparse Learning",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2607.03701v1",
+      "title": "SABLE: An NDA-Safe Closed-Loop LLM Framework for Analog Circuit Optimization in Industrial EDA Flows",
+      "abstract": "Large language models (LLMs) can propose circuit-optimization decisions, but industrial analog flows cannot expose foundry PDK content, proprietary schematics, absolute simulation paths, or license-bound tool state to a cloud endpoint. We present SABLE (Safe Analog Boundary for LLM-driven EDA), an NDA-safe closed-loop framework that lets LLMs optimize analog circuits through Cadence Virtuoso, Maestro, and Spectre while returning only scrubbed topology intent, numeric metrics, operating-point summaries, and scoped writeback status. \"NDA-safe\" denotes enforcement under a stated curious-but-passive cloud-provider threat model, not a formal non-interference proof. The framework combines an explicit threat model, a whitelist of 28 scoped SKILL entry points, PDK/path/model scrubbing on every return path, structured Maestro setup and writeback, a strict JSON action contract with six machine-checked stop conditions, and best-so-far state preservation. We evaluate eleven LLM checkpoints from the same documented reset state on two real closed-loop tasks, both run as process-voltage-temperature (PVT) sign-offs across three corners: a 20 GHz LC-VCO tuning-curve task and a two-stage op-amp task. On the LC-VCO task 7 of 11 models pass; on the harder op-amp task, where every metric must hold at the worst corner and a phase-margin gate rejects unstable high-gain points, 4 of 11 pass within a 15-iteration budget. Feedback-path ablations show that removing individual sanitized channels either silently weakens the specification or degrades the search. Model quality differs sharply once the loop requires tool discipline, bias reasoning, and specification repair, yet an NDA-safe boundary still provides enough sanitized feedback for successful analog circuit optimization.",
+      "published": "2026-07-04T04:37:57+00:00",
+      "updated": "2026-07-04T04:37:57+00:00",
+      "authors": [
+        "Xunqi Li",
+        "Chris H. Kim"
+      ],
+      "categories": [
+        "cs.AR",
+        "cs.CR",
+        "cs.LG"
+      ],
+      "abs_url": "http://arxiv.org/abs/2607.03701v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.03701v1",
+      "score": 4.0,
+      "topics": [
+        {
+          "name": "Agent Reasoning / Test-time Scaling",
+          "slug": "agent-reasoning",
+          "hits": [
+            "reasoning"
+          ]
+        },
+        {
+          "name": "World Model",
+          "slug": "world-model",
+          "hits": [
+            "simulation"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "reasoning",
+        "simulation"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=SABLE%3A%20An%20NDA-Safe%20Closed-Loop%20LLM%20Framework%20for%20Analog%20Circuit%20Optimization%20in%20Industrial%20EDA%20Flows%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Large language models (LLMs) can propose circuit-optimization decisions, but industrial analog flows cannot expose foundry PDK content, proprietary schematics, absolute simulation paths, or license-bound tool state to a cloud endpoint. We present SABLE (Safe Analog Boundary for LLM-driven EDA), an NDA-safe closed-loop framework that lets LLMs optimize analog circuits through Cadence Virtuoso, Maestro, and Spectre while returning only scrubbed topology intent, numeric metrics, operating-point summaries, and scoped writeback status. \"NDA-safe\" denotes enforcement under a stated curious-but-passive cloud-provider threat model, not a formal non-interference proof. The framework combines an explicit threat model, a whitelist of 28 scoped SKILL entry points, PDK/path/model scrubbing on every return path, structured Maestro setup and writeback, a strict JSON action contract with six machine-checked stop conditions, and best-so-far state preservation. We evaluate eleven LLM checkpoints from the same documented reset state on two real closed-loop tasks, both run as process-voltage-temperature (PVT) sign-offs across three corners: a 20 GHz LC-VCO tuning-curve task and a two-stage op-amp task. On the LC-VCO task 7 of 11 models pass; on the harder op-amp task, where every metric must hold at the worst corner and a phase-margin gate rejects unstable high-gain points, 4 of 11 pass within a 15-iteration budget. Feedback-path ablations show that removing individual sanitized channels either silently weakens the specification or degrades the search. Model quality differs sharply once the loop requires tool discipline, bias reasoning, and specification repair, yet an NDA-safe boundary still provides enough sanitized feedback for successful analog circuit optimization.",
+      "code_links_from_meta": "https://github.com/search?q=SABLE%3A%20An%20NDA-Safe%20Closed-Loop%20LLM%20Framework%20for%20Analog%20Circuit%20Optimization%20in%20Industrial%20EDA%20Flows%20arxiv%20github&type=repositories",
+      "is_ascend": true,
+      "title_zh": "SABLE：工业EDA流程中模拟电路优化的NDA安全闭环LLM框架",
+      "summary_cn": "大型语言模型能够提出电路优化决策，但工业模拟流程无法将代工厂PDK内容、专有原理图、绝对仿真路径或受许可证约束的工具状态暴露给云端。SABLE（Safe Analog Boundary for LLM-driven EDA）是一个NDA安全的闭环框架，让LLM通过Cadence Virtuoso、Maestro和Spectre优化模拟电路，同时仅返回经过清洗的拓扑意图、数值指标、工作点摘要和受限回写状态。框架结合了显式威胁模型、28个受管SKILL入口点白名单、每条返回路径上的PDK/路径/模型清洗、结构化的Maestro设置与回写、包含六种机器可检查停止条件的严格JSON动作合约，以及最优状态保持。在20 GHz LC-VCO调谐曲线任务和两级运放任务上评估了11个LLM检查点，后者更具挑战性，4/11模型在15次迭代预算内通过。",
+      "innovations": [
+        "提出NDA安全闭环框架，在LLM驱动EDA中实现敏感工业数据零暴露，通过28个白名单SKILL入口点和三条返回路径清洗机制保障数据安全",
+        "设计含六种机器可检查停止条件的严格JSON动作合约，确保LLM操作可验证、可终止",
+        "通过消融实验证明每个经清洗的反馈通道（拓扑意图、数值指标、工作点摘要、回写状态）都对优化成功不可或缺",
+        "在真实的PVT签核场景上验证框架有效性，揭示LLM一旦需要工具纪律、偏置推理和规格修复能力时模型质量差异显著"
+      ],
+      "scenario_cn": "工业EDA中受NDA保护的模拟电路自动化优化，特别适用于代工厂PDK、专有原理图和许可证约束工具无法暴露给云端的环境，可用于LC-VCO调谐曲线优化、两级运放设计等模拟电路PVT签核任务",
+      "title_en": "SABLE: An NDA-Safe Closed-Loop LLM Framework for Analog Circuit Optimization in Industrial EDA Flows",
+      "institution": "未明确披露",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2607.03960v1",
+      "title": "Reward Lightning: Fast Video Generation via Homologous Preference Distillation",
+      "abstract": "Achieving simultaneous preference alignment and distillation acceleration in video diffusion models remains an open challenge. Existing methods optimize the two objectives over mismatched representation spaces, where improving one objective often compromises the other. To overcome this, we propose Reward Lightning, a unified framework that aligns and accelerates a video diffusion model within a single shared representation. Its central principle is homology: both objectives are evaluated on identical latent features, which mitigates the gradient conflicts that arise when they are optimized over disjoint representations. As a foundational component, we first introduce a latent reward model (LRM) that scores videos directly in the latent space, without decoding back to the pixel space. Building on the LRM, homologous preference distillation (HPD) reuses this shared backbone to perform adversarial distillation and preference alignment jointly, yielding few-step generators that remain faithful and well aligned. Extensive experiments demonstrate that the LRM surpasses pixel-level and latent-level reward baselines by $11.0\\%$ and $14.7\\%$ in preference accuracy, and that Reward Lightning generates high-fidelity videos in merely $1$ to $4$ steps, improving the average VBench score by $2.1\\%$ while leading in text alignment, motion quality, and visual quality. Project page: https://reward-lightning.github.io.",
+      "published": "2026-07-04T17:32:35+00:00",
+      "updated": "2026-07-04T17:32:35+00:00",
+      "authors": [
+        "Jiaxiang Cheng",
+        "Bing Ma",
+        "Xuhua Ren",
+        "Kai Yu",
+        "Peng Zhang",
+        "Tianxiang Zheng",
+        "Qinglin Lu"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "http://arxiv.org/abs/2607.03960v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.03960v1",
+      "score": 11.7,
+      "topics": [
+        {
+          "name": "Agent Reasoning / Test-time Scaling",
+          "slug": "agent-reasoning",
+          "hits": [
+            "reward model"
+          ]
+        },
+        {
+          "name": "Video Generation",
+          "slug": "video-generation",
+          "hits": [
+            "video generation",
+            "video diffusion"
+          ]
+        },
+        {
+          "name": "RAG / Long Context",
+          "slug": "rag-long-context",
+          "hits": [
+            "rag"
+          ]
+        },
+        {
+          "name": "Model Compression / Quantization",
+          "slug": "model-compression",
+          "hits": [
+            "distillation"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "distillation",
+        "rag",
+        "reward model",
+        "video diffusion",
+        "video generation"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Reward%20Lightning%3A%20Fast%20Video%20Generation%20via%20Homologous%20Preference%20Distillation%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Achieving simultaneous preference alignment and distillation acceleration in video diffusion models remains an open challenge. Existing methods optimize the two objectives over mismatched representation spaces, where improving one objective often compromises the other. To overcome this, we propose Reward Lightning, a unified framework that aligns and accelerates a video diffusion model within a single shared representation. Its central principle is homology: both objectives are evaluated on identical latent features, which mitigates the gradient conflicts that arise when they are optimized over disjoint representations. As a foundational component, we first introduce a latent reward model (LRM) that scores videos directly in the latent space, without decoding back to the pixel space. Building on the LRM, homologous preference distillation (HPD) reuses this shared backbone to perform adversarial distillation and preference alignment jointly, yielding few-step generators that remain faithful and well aligned. Extensive experiments demonstrate that the LRM surpasses pixel-level and latent-level reward baselines by $11.0\\%$ and $14.7\\%$ in preference accuracy, and that Reward Lightning generates high-fidelity videos in merely $1$ to $4$ steps, improving the average VBench score by $2.1\\%$ while leading in text alignment, motion quality, and visual quality. Project page: https://reward-lightning.github.io.",
+      "code_links_from_meta": "https://github.com/search?q=Reward%20Lightning%3A%20Fast%20Video%20Generation%20via%20Homologous%20Preference%20Distillation%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "Reward Lightning：同源偏好蒸馏实现快速视频生成",
+      "summary_cn": "提出 Reward Lightning 统一框架，在视频扩散模型中同时完成偏好对齐和蒸馏加速。核心思想是同源性（homology）：将对齐目标和蒸馏目标评估在相同的潜在特征空间上，避免传统方法中因表征空间不匹配导致的梯度冲突。首先引入潜在奖励模型（LRM），直接在潜在空间打分而无需解码回像素空间；基于 LRM，同源偏好蒸馏（HPD）复用同一骨干网络联合进行对抗蒸馏和偏好对齐，生成仅需 1-4 步的高保真视频。",
+      "innovations": "1) 提出潜在奖励模型（LRM），直接在视频扩散模型的潜在空间评估视频质量，无需解码至像素空间，偏好预测准确率比像素级和潜在级基线分别提升 11.0% 和 14.7%；2) 提出同源偏好蒸馏（HPD），将对齐目标和加速蒸馏目标映射到同一潜在特征空间，从根本上消除梯度冲突；3) 实现 1-4 步高质量视频生成，VBench 综合得分提升 2.1%，在文本对齐、运动质量和视觉质量上均领先。",
+      "scenario_cn": "适用于需要快速、高质量视频生成的场景，如短视频内容创作、AI 视频生成工具、实时视频编辑和交互式视频生成应用。尤其适合生产环境中对推理速度和生成质量都有高要求的视频生成管线。",
+      "title_en": "Reward Lightning: Fast Video Generation via Homologous Preference Distillation",
+      "institution": "未明确披露",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2607.04037v1",
+      "title": "Reward-Gated On-Policy Distillation",
+      "abstract": "On-policy distillation is a powerful way to transfer reasoning ability from a strong teacher to a smaller student: the student samples trajectories from its own policy, and the teacher provides dense token-level supervision on the states the student actually visits. However, this supervision is not always reliable: a teacher can assign high likelihood to plausible but incorrect solutions, or low likelihood to correct student solutions that follow different reasoning paths. Unconditionally distilling the teacher can therefore reinforce bad modes or erase useful student behavior. To address these limitations, we introduce RG-OPD: Reward-Gated On-Policy Distillation that uses verifier feedback to decide when teacher logits should be trusted. RG-OPD bridges sparse verifier rewards and dense teacher logits, preserving token-level supervision while filtering misleading teacher signals. Across reasoning and coding benchmarks, RG-OPD produces stronger distilled students, outperforming both vanilla reverse-KL distillation and the recent TSD-KD baseline. At 1K generation length, RG-OPD improves over reverse-KL by 2.9 points and over TSD-KD by 4.9 points; in the long-generation setting, it improves over the untuned student by 8.2 points. Our code is available at https://github.com/UoC-tail/RG-OPD.",
+      "published": "2026-07-04T21:51:22+00:00",
+      "updated": "2026-07-04T21:51:22+00:00",
+      "authors": [
+        "Mohammad Sadegh Akhondzadeh",
+        "Vijay Lingam",
+        "Atula Tejaswi",
+        "Chanakya Ekbote",
+        "Sujay Sanghavi",
+        "Aleksandar Bojchevski"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "abs_url": "http://arxiv.org/abs/2607.04037v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.04037v1",
+      "score": 10.7,
+      "topics": [
+        {
+          "name": "LLM 推理加速",
+          "slug": "llm-inference",
+          "hits": [
+            "serving"
+          ]
+        },
+        {
+          "name": "Agent Reasoning / Test-time Scaling",
+          "slug": "agent-reasoning",
+          "hits": [
+            "reasoning",
+            "verifier"
+          ]
+        },
+        {
+          "name": "Model Compression / Quantization",
+          "slug": "model-compression",
+          "hits": [
+            "distillation"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "distillation",
+        "reasoning",
+        "serving",
+        "verifier"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Reward-Gated%20On-Policy%20Distillation%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "On-policy distillation is a powerful way to transfer reasoning ability from a strong teacher to a smaller student: the student samples trajectories from its own policy, and the teacher provides dense token-level supervision on the states the student actually visits. However, this supervision is not always reliable: a teacher can assign high likelihood to plausible but incorrect solutions, or low likelihood to correct student solutions that follow different reasoning paths. Unconditionally distilling the teacher can therefore reinforce bad modes or erase useful student behavior. To address these limitations, we introduce RG-OPD: Reward-Gated On-Policy Distillation that uses verifier feedback to decide when teacher logits should be trusted. RG-OPD bridges sparse verifier rewards and dense teacher logits, preserving token-level supervision while filtering misleading teacher signals. Across reasoning and coding benchmarks, RG-OPD produces stronger distilled students, outperforming both vanilla reverse-KL distillation and the recent TSD-KD baseline. At 1K generation length, RG-OPD improves over reverse-KL by 2.9 points and over TSD-KD by 4.9 points; in the long-generation setting, it improves over the untuned student by 8.2 points. Our code is available at https://github.com/UoC-tail/RG-OPD.",
+      "code_links_from_meta": "https://github.com/search?q=Reward-Gated%20On-Policy%20Distillation%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "奖励门控的在线策略蒸馏",
+      "institution": "未明确披露",
+      "summary_cn": "本文提出 RG-OPD（Reward-Gated On-Policy Distillation），一种利用验证器反馈来决定何时信任教师模型 logits 的在线策略蒸馏方法。传统在线蒸馏无条件复制教师分布，当教师给错误方案高置信度或给正确但不同路径低置信度时会误导学生。RG-OPD 在稀疏验证器奖励与密集教师 logits 之间架起桥梁，保留 token 级监督的同时过滤误导信号。",
+      "innovations": [
+        "提出奖励门控机制，利用验证器反馈动态判断教师 logits 的可靠性，突破无条件蒸馏的局限",
+        "在稀疏奖励与密集 token 级监督之间建立可操作的连接，兼顾监督密度与信号质量",
+        "在推理和编程基准上显著超越 vanilla reverse-KL 蒸馏和 TSD-KD 方法，长序列生成场景提升达 8.2 个点"
+      ],
+      "scenario_cn": "解决在线策略蒸馏中教师模型不可靠 logits 误导学生的问题，适用于 LLM 推理能力蒸馏、代码生成模型压缩、以及任何需要将强 teacher 知识高效迁移至小模型的场景",
+      "title_en": "Reward-Gated On-Policy Distillation",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2607.03948v1",
+      "title": "Online Linear Programming for Multi-Objective Routing in LLM Serving",
+      "abstract": "We study the online routing problem in large language model serving, where requests arrive sequentially and must be dispatched to parallel decode workers under tight batch-size and KV-cache constraints. Unlike widely used routing heuristics that are not tied to explicit service-level objectives (SLOs) and offer limited control over latency-throughput trade-offs, we introduce a multi-objective optimization framework that formulates routing as an online linear programming with interpretable decision rewards. We apply an efficient bid-price control policy based on the online linear programming that admits requests when their SLO-weighted benefit exceeds their shadow prices. To meet millisecond decision requirements, we develop a warm-started, projected first-order updates that track the evolving dual shadow prices online with predictable runtime. We integrate our router into the Vidur simulator and demonstrate substantial improvements over standard baselines across multiple SLO regimes, including end-to-end latency, time-to-first-token, throughput, and tail performance. A big picture from our result: a science-based approach outperforms others based on heuristics.",
+      "published": "2026-07-04T16:48:37+00:00",
+      "updated": "2026-07-04T16:48:37+00:00",
+      "authors": [
+        "Zixi Chen",
+        "Yinyu Ye",
+        "Zijie Zhou"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.LG",
+        "math.OC"
+      ],
+      "abs_url": "http://arxiv.org/abs/2607.03948v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.03948v1",
+      "score": 9.6,
+      "topics": [
+        {
+          "name": "LLM 推理加速",
+          "slug": "llm-inference",
+          "hits": [
+            "serving",
+            "throughput",
+            "latency"
+          ]
+        },
+        {
+          "name": "AI Infra / Serving Systems",
+          "slug": "ai-infra-serving",
+          "hits": [
+            "llm serving",
+            "model serving"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "latency",
+        "llm serving",
+        "model serving",
+        "serving",
+        "throughput"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Online%20Linear%20Programming%20for%20Multi-Objective%20Routing%20in%20LLM%20Serving%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "We study the online routing problem in large language model serving, where requests arrive sequentially and must be dispatched to parallel decode workers under tight batch-size and KV-cache constraints. Unlike widely used routing heuristics that are not tied to explicit service-level objectives (SLOs) and offer limited control over latency-throughput trade-offs, we introduce a multi-objective optimization framework that formulates routing as an online linear programming with interpretable decision rewards. We apply an efficient bid-price control policy based on the online linear programming that admits requests when their SLO-weighted benefit exceeds their shadow prices. To meet millisecond decision requirements, we develop a warm-started, projected first-order updates that track the evolving dual shadow prices online with predictable runtime. We integrate our router into the Vidur simulator and demonstrate substantial improvements over standard baselines across multiple SLO regimes, including end-to-end latency, time-to-first-token, throughput, and tail performance. A big picture from our result: a science-based approach outperforms others based on heuristics.",
+      "code_links_from_meta": "https://github.com/search?q=Online%20Linear%20Programming%20for%20Multi-Objective%20Routing%20in%20LLM%20Serving%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "面向LLM服务中多目标路由的在线线性规划",
+      "institution": "未明确披露",
+      "summary_cn": "研究LLM服务系统中的在线路由问题：请求顺序到达，需在并行解码节点间分配，受限于batch size和KV-cache约束。作者将路由建模为在线线性规划的多目标优化框架，引入可解释的决策奖励，并基于bid-price控制策略在请求的SLO加权收益超过影子价格时准入请求。为满足毫秒级决策需求，设计了热启动的投影一阶更新方法来在线追踪对偶影子价格。",
+      "innovations": [
+        "将LLM服务路由形式化为在线线性规划问题，提供可解释的多目标优化框架",
+        "提出基于影子价格的bid-price准入控制策略，显式关联服务等级目标（SLO）",
+        "设计热启动投影一阶更新方法，可在毫秒级实时追踪对偶影子价格"
+      ],
+      "scenario_cn": "解决LLM在线服务中多解码节点间的请求路由与负载均衡问题，适用于需要精细控制延迟-吞吐量权衡的生产级推理系统，尤其适合KV-cache和batch size受限的高并发场景。",
+      "title_en": "Online Linear Programming for Multi-Objective Routing in LLM Serving",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2607.03691v1",
+      "title": "Don't Blame the Large Language Model: How Scaffolding Evolution Shapes Coding Agent Quality",
+      "abstract": "Coding agents, autonomous systems that use large language models (LLMs) to resolve software engineering tasks, rely on agentic scaffolding: a middleware layer in between a developer and a large language model that orchestrates system prompts, tool execution, context management, and iterative reasoning loops. While these scaffoldings evolve at extreme velocities, no study has examined how this evolution affects agent quality (i.e., effectiveness and efficiency) over time. Practitioners regularly report quality regressions after scaffolding updates, yet consistently attribute them to the underlying model rather than the scaffolding itself. In this paper, we address this gap by conducting the first controlled longitudinal study that isolates the scaffolding's contribution. Unlike prior work that fixes the scaffolding and varies the model, we fix the model and vary only the scaffolding, evaluating 35 sequential releases to measure their impact on agent effectiveness and efficiency. We first empirically study the development and release evolution of five major open-source scaffoldings (i.e., Codex, Qwen Code, Gemini, OpenCode, and OpenHands), revealing extreme release velocities exceeding two releases per day and thousands of issues within months. We then perform a controlled deep dive into 35 sequential releases of the Qwen Code CLI, evaluating each against 50 stratified SWE-bench Verified tasks while holding the underlying LLM constant. We trace the resulting quality fluctuations to specific development patterns and architectural components, and illustrate our findings with concrete qualitative evidence linking individual pull requests to measured quality shifts.",
+      "published": "2026-07-04T03:55:25+00:00",
+      "updated": "2026-07-04T03:55:25+00:00",
+      "authors": [
+        "Oussama Ben Sghaier",
+        "Hao Li",
+        "Bram Adams",
+        "Ahmed E. Hassan"
+      ],
+      "categories": [
+        "cs.SE",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "abs_url": "http://arxiv.org/abs/2607.03691v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.03691v1",
+      "score": 9.3,
+      "topics": [
+        {
+          "name": "Agent",
+          "slug": "agent",
+          "hits": [
+            "agent"
+          ]
+        },
+        {
+          "name": "Agent Reasoning / Test-time Scaling",
+          "slug": "agent-reasoning",
+          "hits": [
+            "reasoning"
+          ]
+        },
+        {
+          "name": "Code Agent / SWE Agent",
+          "slug": "code-agent",
+          "hits": [
+            "swe-bench",
+            "coding agent"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "agent",
+        "coding agent",
+        "reasoning",
+        "swe-bench"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Don%27t%20Blame%20the%20Large%20Language%20Model%3A%20How%20Scaffolding%20Evolution%20Shapes%20Coding%20Agent%20Quality%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Coding agents, autonomous systems that use large language models (LLMs) to resolve software engineering tasks, rely on agentic scaffolding: a middleware layer in between a developer and a large language model that orchestrates system prompts, tool execution, context management, and iterative reasoning loops. While these scaffoldings evolve at extreme velocities, no study has examined how this evolution affects agent quality (i.e., effectiveness and efficiency) over time. Practitioners regularly report quality regressions after scaffolding updates, yet consistently attribute them to the underlying model rather than the scaffolding itself. In this paper, we address this gap by conducting the first controlled longitudinal study that isolates the scaffolding's contribution. Unlike prior work that fixes the scaffolding and varies the model, we fix the model and vary only the scaffolding, evaluating 35 sequential releases to measure their impact on agent effectiveness and efficiency. We first empirically study the development and release evolution of five major open-source scaffoldings (i.e., Codex, Qwen Code, Gemini, OpenCode, and OpenHands), revealing extreme release velocities exceeding two releases per day and thousands of issues within months. We then perform a controlled deep dive into 35 sequential releases of the Qwen Code CLI, evaluating each against 50 stratified SWE-bench Verified tasks while holding the underlying LLM constant. We trace the resulting quality fluctuations to specific development patterns and architectural components, and illustrate our findings with concrete qualitative evidence linking individual pull requests to measured quality shifts.",
+      "code_links_from_meta": "https://github.com/search?q=Don%27t%20Blame%20the%20Large%20Language%20Model%3A%20How%20Scaffolding%20Evolution%20Shapes%20Coding%20Agent%20Quality%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "别怪大语言模型：脚手架演化如何塑造编码智能体质量",
+      "summary_cn": "编码智能体（Coding Agent）依赖「智能体脚手架」（agentic scaffolding）—— 位于开发者与 LLM 之间的中间件层，负责编排系统提示、工具执行、上下文管理和迭代推理循环。然而，尽管脚手架以极高的速度演化（超过每天两个版本、数月内数千个 issue），尚无研究考察这种演化如何影响智能体的有效性（effectiveness）和效率（efficiency）。实践者常在脚手架更新后报告质量回退，却始终将其归因于底层模型而非脚手架本身。本文开展首次受控纵向研究，固定底层模型、仅变化脚手架，评估了 Qwen Code CLI 的 35 个连续版本在 SWE-bench Verified 上的表现，并将质量波动追溯到具体的开发模式与架构组件。",
+      "innovations": [
+        "首次将脚手架（而非模型）作为独立变量，进行受控纵向研究，填补了编码智能体质量归因的关键空白",
+        "系统性地分析了五个主流开源脚手架（Codex、Qwen Code、Gemini、OpenCode、OpenHands）的发布演化特征，揭示出每天超过两个版本的极端发布速度",
+        "在固定 LLM 的前提下，对 Qwen Code CLI 的 35 个连续版本逐一在 50 个 SWE-bench Verified 任务上评测，将质量波动直接关联到具体的 PR 与架构变更",
+        "提供了定性的因果证据链，连接个别拉取请求与可测量的质量偏移，为脚手架开发者提供了可操作的改进方向"
+      ],
+      "scenario_cn": "LLM 驱动的编码智能体开发与运维。适用于智能体框架维护者、脚手架开发者以及使用编码智能体的工程团队，帮助他们理解脚手架更新对智能体实际解题能力的真实影响，避免将脚手架引入的回退错误归咎于底层模型。",
+      "title_en": "Don't Blame the Large Language Model: How Scaffolding Evolution Shapes Coding Agent Quality",
+      "institution": "未明确披露",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2607.03953v1",
+      "title": "The Remarkable Effectiveness of Providing AI Agents with Natural Language Tools: A Replication Study Validating NLT Performance Across 14 Models",
+      "abstract": "This study independently replicates and extends the Natural Language Tools (NLT) framework of Johnson et al.~(2025), which questions the use of structured tool calling in large language model (LLM) agentic systems. We evaluated NLT across 14 models and 8,560 trials, adding newer frontier, reasoning, and open-weight models to the original set. The results confirm the core findings and add detail. NLT improves tool-calling accuracy by 14.9 percentage points overall (62.3\\% versus 47.4\\% structured) and reduces critical errors by 93\\% (51 versus 755 errors). The gains depend on model capability: models without native tool calling, reasoning models, and smaller models gain substantially (+24.0pp to +43.1pp), while heavily optimized frontier models (GPT-5, Gemini 2.5 Pro) show smaller or reversed advantages. This matches recent analyses of reinforcement-learning-optimized tool use (Martinez, 2025). NLT also cuts token usage by 25.2\\%. The reliability and efficiency advantages compound in recursive agentic workflows, where agents chain many tool calls across sub-agents: a structured failure triggers retries, fallback routing, and coordination overhead, while NLT avoids most of that cost at the source. This work makes three contributions: (1) the first independent validation of NLT using open-source tooling, (2) evidence that model capability moderates NLT's advantages (Chen et al., 2025; Zhang et al., 2025), and (3) a measurement of NLT's reliability benefit (93\\% fewer errors), its most deployment-relevant property given the known fragility of structured tool calling. NLT is a practical alternative to structured tool calling, especially for production systems that value reliability over parseability.",
+      "published": "2026-07-04T16:59:12+00:00",
+      "updated": "2026-07-04T16:59:12+00:00",
+      "authors": [
+        "Alexander Somma",
+        "Isabelle Plante",
+        "Fred Premji"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "abs_url": "http://arxiv.org/abs/2607.03953v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.03953v1",
+      "score": 8.3,
+      "topics": [
+        {
+          "name": "Agent",
+          "slug": "agent",
+          "hits": [
+            "agent",
+            "ai agent",
+            "tool use"
+          ]
+        },
+        {
+          "name": "Agent Reasoning / Test-time Scaling",
+          "slug": "agent-reasoning",
+          "hits": [
+            "reasoning"
+          ]
+        },
+        {
+          "name": "RAG / Long Context",
+          "slug": "rag-long-context",
+          "hits": [
+            "rag"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "agent",
+        "ai agent",
+        "rag",
+        "reasoning",
+        "tool use"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=The%20Remarkable%20Effectiveness%20of%20Providing%20AI%20Agents%20with%20Natural%20Language%20Tools%3A%20A%20Replication%20Study%20Validating%20NLT%20Performance%20Across%2014%20Models%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "This study independently replicates and extends the Natural Language Tools (NLT) framework of Johnson et al.~(2025), which questions the use of structured tool calling in large language model (LLM) agentic systems. We evaluated NLT across 14 models and 8,560 trials, adding newer frontier, reasoning, and open-weight models to the original set. The results confirm the core findings and add detail. NLT improves tool-calling accuracy by 14.9 percentage points overall (62.3\\% versus 47.4\\% structured) and reduces critical errors by 93\\% (51 versus 755 errors). The gains depend on model capability: models without native tool calling, reasoning models, and smaller models gain substantially (+24.0pp to +43.1pp), while heavily optimized frontier models (GPT-5, Gemini 2.5 Pro) show smaller or reversed advantages. This matches recent analyses of reinforcement-learning-optimized tool use (Martinez, 2025). NLT also cuts token usage by 25.2\\%. The reliability and efficiency advantages compound in recursive agentic workflows, where agents chain many tool calls across sub-agents: a structured failure triggers retries, fallback routing, and coordination overhead, while NLT avoids most of that cost at the source. This work makes three contributions: (1) the first independent validation of NLT using open-source tooling, (2) evidence that model capability moderates NLT's advantages (Chen et al., 2025; Zhang et al., 2025), and (3) a measurement of NLT's reliability benefit (93\\% fewer errors), its most deployment-relevant property given the known fragility of structured tool calling. NLT is a practical alternative to structured tool calling, especially for production systems that value reliability over parseability.",
+      "code_links_from_meta": "https://github.com/search?q=The%20Remarkable%20Effectiveness%20of%20Providing%20AI%20Agents%20with%20Natural%20Language%20Tools%3A%20A%20Replication%20Study%20Validating%20NLT%20Performance%20Across%2014%20Models%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "为AI Agent提供自然语言工具的显著有效性：一项跨14个模型的NLT性能复制验证研究",
+      "summary_cn": "本研究独立复现并扩展了Johnson等人(2025)提出的Natural Language Tools (NLT)框架，该框架主张用自然语言替代结构化工具调用来驱动LLM Agent。在14个模型、8,560次试验中，NLT相比结构化工具调用，整体工具调用准确率提升14.9个百分点（62.3% vs 47.4%），关键错误减少93%（51 vs 755个错误）。优势高度依赖于模型能力：原生无工具调用能力的模型、推理模型和小模型提升显著（+24.0至+43.1个百分点），而高度优化的前沿模型（GPT-5、Gemini 2.5 Pro）优势较小甚至出现反向效果。NLT还节省了25.2%的token消耗。在递归式Agent工作流中，NLT的可靠性和效率优势进一步放大——结构化调用的一次失败会触发重试、回退路由与协调开销，而NLT从源头避免了大部分成本。",
+      "innovations": "1) 首次使用开源工具对NLT框架进行独立验证，消除了原始研究的方法论依赖和潜在偏差；2) 系统揭示了模型能力作为NLT优势调节变量的影响机制——弱模型获益最大、强模型收益递减，为工具调用策略选择提供了首个跨模型谱系的实证依据；3) 量化了NLT的可靠性收益（93%更少关键错误），这是结构化工具调用已知脆弱性背景下最贴近生产部署的价值度量；4) 在递归式多Agent工作流场景中证明了NLT的复合优势——单一结构化调用的失败会产生级联开销，NLT从源头避免了这一成本。",
+      "scenario_cn": "对可靠性要求高于可解析性的生产级Agent系统，特别是递归式多Agent工作流（子Agent间链式工具调用）中优势最显著。同样适合推理模型、小模型或缺乏原生工具调用能力的模型。在前沿大模型（GPT-5、Gemini 2.5 Pro）上效果有限或可能反向，不建议作为默认策略。",
+      "title_en": "The Remarkable Effectiveness of Providing AI Agents with Natural Language Tools: A Replication Study Validating NLT Performance Across 14 Models",
+      "institution": "未明确披露",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2607.03652v1",
+      "title": "ELiTeFormer: An Efficient Transformer for FPGAs",
+      "abstract": "Transformer blocks are prevalent in large language model (LLM) but present deployment challenges due to their challenging computational and memory demands. While prior work has typically optimized attention mechanisms or feed-forward networks (FFNs) separately, few hardware (HW) architecture have jointly addressed both components with co-designed hardware acceleration. We present ELiTeFormer (Efficient Linear Ternary Transformer), the first Transformer model architecture that unifies hybrid linear attention with ultra-low-precision (ternary) linear projections, specifically co-designed for field-programmable gate array (FPGA) deployment. ELiTeFormer achieves 10x model weight compression and 12.8x key-value (KV) cache compression compared to LLaMA 3, while maintaining competitive accuracy (31.9% on the MMLU benchmark, within 3.0% of BitNet b1.58). Our key architectural contribution is a novel processing element (PE) micro-architecture that eliminates all multiplications in ternary linear projections through bitmasking operations, significantly reducing resource utilization by completely avoiding dedicated digital signal processing (DSP) blocks. We simulate, synthesize, and deploy ELiTeFormer targeting a Xilinx VCK5000 Versal board using high-level synthesis (HLS) flows. Block-level simulations show 9.6x speedup for FFN operations and 4.4x speedup for attention compared to standard implementations. End-to-end deployment achieves up to 3.9x lower latency and 3.2x better energy efficiency than LLaMA 3 on an NVIDIA A100 graphics processing unit (GPU) at long context lengths. This represents the first FPGA realization combining linear attention with ternary quantization, demonstrating the viability of algorithm-architecture co-design for next-generation LLM acceleration.",
+      "published": "2026-07-04T00:52:06+00:00",
+      "updated": "2026-07-04T00:52:06+00:00",
+      "authors": [
+        "Victor Agostinelli",
+        "Nicolas Bohm Agostini",
+        "Antonino Tumeo"
+      ],
+      "categories": [
+        "cs.AR",
+        "cs.AI"
+      ],
+      "abs_url": "http://arxiv.org/abs/2607.03652v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.03652v1",
+      "score": 8.2,
+      "topics": [
+        {
+          "name": "LLM 推理加速",
+          "slug": "llm-inference",
+          "hits": [
+            "latency"
+          ]
+        },
+        {
+          "name": "World Model",
+          "slug": "world-model",
+          "hits": [
+            "simulation"
+          ]
+        },
+        {
+          "name": "RAG / Long Context",
+          "slug": "rag-long-context",
+          "hits": [
+            "long context"
+          ]
+        },
+        {
+          "name": "Model Compression / Quantization",
+          "slug": "model-compression",
+          "hits": [
+            "quantization"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "latency",
+        "long context",
+        "quantization",
+        "simulation"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=ELiTeFormer%3A%20An%20Efficient%20Transformer%20for%20FPGAs%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Transformer blocks are prevalent in large language model (LLM) but present deployment challenges due to their challenging computational and memory demands. While prior work has typically optimized attention mechanisms or feed-forward networks (FFNs) separately, few hardware (HW) architecture have jointly addressed both components with co-designed hardware acceleration. We present ELiTeFormer (Efficient Linear Ternary Transformer), the first Transformer model architecture that unifies hybrid linear attention with ultra-low-precision (ternary) linear projections, specifically co-designed for field-programmable gate array (FPGA) deployment. ELiTeFormer achieves 10x model weight compression and 12.8x key-value (KV) cache compression compared to LLaMA 3, while maintaining competitive accuracy (31.9% on the MMLU benchmark, within 3.0% of BitNet b1.58). Our key architectural contribution is a novel processing element (PE) micro-architecture that eliminates all multiplications in ternary linear projections through bitmasking operations, significantly reducing resource utilization by completely avoiding dedicated digital signal processing (DSP) blocks. We simulate, synthesize, and deploy ELiTeFormer targeting a Xilinx VCK5000 Versal board using high-level synthesis (HLS) flows. Block-level simulations show 9.6x speedup for FFN operations and 4.4x speedup for attention compared to standard implementations. End-to-end deployment achieves up to 3.9x lower latency and 3.2x better energy efficiency than LLaMA 3 on an NVIDIA A100 graphics processing unit (GPU) at long context lengths. This represents the first FPGA realization combining linear attention with ternary quantization, demonstrating the viability of algorithm-architecture co-design for next-generation LLM acceleration.",
+      "code_links_from_meta": "https://github.com/search?q=ELiTeFormer%3A%20An%20Efficient%20Transformer%20for%20FPGAs%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "ELiTeFormer：面向FPGA的高效Transformer",
+      "institution": "未明确披露",
+      "summary_cn": "提出ELiTeFormer——首个将混合线性注意力与超低精度（三值）线性投影统一设计的Transformer架构，专为FPGA部署进行软硬件协同设计。相比LLaMA 3实现10倍模型权重压缩和12.8倍KV-cache压缩，MMLU达31.9%（距BitNet b1.58仅3.0%）。核心架构贡献是提出新型PE微架构，通过位掩码操作消除三值线性投影中的所有乘法运算，完全避免使用DSP块。",
+      "innovations": [
+        "首个统一混合线性注意力与三值量化线性投影的Transformer架构，实现算法-架构协同设计",
+        "提出无乘法运算的PE微架构，通过位掩码替代三值投影中的乘法，完全消除DSP依赖",
+        "在Xilinx VCK5000上端到端部署，长上下文下相比A100 GPU上的LLaMA 3延迟降低3.9倍、能效提升3.2倍"
+      ],
+      "scenario_cn": "解决Transformer在FPGA等资源受限硬件上的部署难题，适用于对功耗敏感、需要低延迟推理的边缘/嵌入式场景，以及长序列处理中KV-cache膨胀导致的内存瓶颈问题。",
+      "title_en": "ELiTeFormer: An Efficient Transformer for FPGAs",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2607.03726v1",
+      "title": "SelfMem: Self-Optimizing Memory for AI Agents",
+      "abstract": "While current AI agents support increasingly long context windows, tool use, and skill execution for long-horizon tasks, they still require memory systems to effectively leverage historical experience. Existing memory frameworks typically rely on fixed storage, retrieval, and summarization mechanisms, which can be rigid across different tasks and often require manual tuning. To address this limitation, we propose SelfMem, a self-optimizing memory framework. Inspired by prior work on self-improving AI, we follow the principle of \"teaching an agent to fish rather than giving it a fish.\" Instead of forcing the model to follow a predefined memory strategy or format, SelfMem provides an environment with memory tools and feedback signals that allow the agent to explore, evaluate, and refine its own memory strategy. Our results show that SelfMem consistently outperforms retrieval, compression, and agent-memory baselines on BEAM across conversation scales from 100K to 1M tokens. Compared with the strongest baseline, SelfMem improves the official score by 48.7%, 40.8%, and 41.9% at 100K, 500K, and 1M, respectively. Further question-type analysis shows broad robustness across diverse memory demands, and our optimization study shows that model-guided strategy refinement further improves performance.",
+      "published": "2026-07-04T06:27:19+00:00",
+      "updated": "2026-07-04T06:27:19+00:00",
+      "authors": [
+        "Shu Yang",
+        "Junchao Wu",
+        "Derek F. Wong",
+        "Di Wang"
+      ],
+      "categories": [
+        "cs.CL"
+      ],
+      "abs_url": "http://arxiv.org/abs/2607.03726v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.03726v1",
+      "score": 7.0,
+      "topics": [
+        {
+          "name": "Agent",
+          "slug": "agent",
+          "hits": [
+            "agent",
+            "ai agent",
+            "tool use"
+          ]
+        },
+        {
+          "name": "RAG / Long Context",
+          "slug": "rag-long-context",
+          "hits": [
+            "rag",
+            "long context",
+            "retrieval"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "agent",
+        "ai agent",
+        "long context",
+        "rag",
+        "retrieval",
+        "tool use"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=SelfMem%3A%20Self-Optimizing%20Memory%20for%20AI%20Agents%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "While current AI agents support increasingly long context windows, tool use, and skill execution for long-horizon tasks, they still require memory systems to effectively leverage historical experience. Existing memory frameworks typically rely on fixed storage, retrieval, and summarization mechanisms, which can be rigid across different tasks and often require manual tuning. To address this limitation, we propose SelfMem, a self-optimizing memory framework. Inspired by prior work on self-improving AI, we follow the principle of \"teaching an agent to fish rather than giving it a fish.\" Instead of forcing the model to follow a predefined memory strategy or format, SelfMem provides an environment with memory tools and feedback signals that allow the agent to explore, evaluate, and refine its own memory strategy. Our results show that SelfMem consistently outperforms retrieval, compression, and agent-memory baselines on BEAM across conversation scales from 100K to 1M tokens. Compared with the strongest baseline, SelfMem improves the official score by 48.7%, 40.8%, and 41.9% at 100K, 500K, and 1M, respectively. Further question-type analysis shows broad robustness across diverse memory demands, and our optimization study shows that model-guided strategy refinement further improves performance.",
+      "code_links_from_meta": "https://github.com/search?q=SelfMem%3A%20Self-Optimizing%20Memory%20for%20AI%20Agents%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "SelfMem：AI Agent 的自优化记忆框架",
+      "summary_cn": "现有 AI Agent 虽然支持越来越长的上下文窗口和工具调用，但仍依赖固定策略的记忆系统（固定存储、检索、摘要机制），跨任务时缺乏灵活性、需要手工调参。SelfMem 受自我改进 AI 启发，提出“授人以渔”的思路——不给模型预设记忆策略或格式，而是提供一个带记忆工具和反馈信号的“记忆环境”，让 Agent 通过探索、评估、试错来自主学习和优化自己的记忆策略。在 BEAM 基准上，SelfMem 在 100K、500K、1M 三种对话规模下，相比最强基线分别提升 48.7%、40.8%、41.9%。问题类型分析显示对多样化记忆需求广泛鲁棒；模型引导的策略优化进一步提升性能。",
+      "innovations": [
+        "摒弃预设记忆策略，提出 meta-learning 式的自优化记忆框架，让 Agent 在带记忆工具和反馈信号的环境中自主探索最优策略",
+        "在 100K~1M token 的大规模对话上下文中，三项指标均显著超越检索、压缩和现有 Agent 记忆基线（提升 40%~49%）",
+        "跨问题类型的鲁棒性分析和模型引导策略优化实验验证了框架的泛化能力和进一步改进空间"
+      ],
+      "scenario_cn": "需要长期历史经验积累的 AI Agent 场景，如多轮对话助手、长时任务规划、持续学习的自主 Agent 系统",
+      "title_en": "SelfMem: Self-Optimizing Memory for AI Agents",
+      "institution": "未明确披露",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2607.03968v2",
+      "title": "Refused in Chat, Written in Code: Workflow-Level Jailbreak Construction in IDE Coding Agents",
+      "abstract": "Large language models are increasingly deployed as IDE-integrated coding agents that decompose tasks, generate and edit files, run code, and refine outputs over many turns. Yet their safety is still often evaluated as if they were chatbots: one harmful prompt, one response, judged in isolation. We introduce workflow-level jailbreak construction, a failure mode in which a harmful objective is assembled across ordinary stages of a software-development workflow rather than generated through a single direct prompt. Using GitHub Copilot in Visual Studio Code, we study four closed-weight backends: Claude Sonnet 4.6, Claude Haiku 4.5, Gemini 3.1 Pro, and Gemini 3.5 Flash. Across 204 prompts from Hammurabi's Code, HarmBench, and AdvBench , the models show near-complete refusal under direct chat, CSV-read, and single-step code-fix baselines, with only 8/816 successful responses in each baseline condition. Under the full workflow, however, the same prompts and backends produce 816/816 unsafe teaching-shot completions, all independently confirmed by two expert evaluators under a strict rubric. These results show that conversational refusal benchmarks can substantially overstate the safety of deployed coding agents and motivate defenses that reason about safety across multi-turn IDE workflows and their generated artifacts, not only individual chat turns.",
+      "published": "2026-07-04T17:57:05+00:00",
+      "updated": "2026-07-09T20:41:05+00:00",
+      "authors": [
+        "Abhishek Kumar",
+        "Carsten Maple"
+      ],
+      "categories": [
+        "cs.SE",
+        "cs.AI"
+      ],
+      "abs_url": "http://arxiv.org/abs/2607.03968v2",
+      "pdf_url": "https://arxiv.org/pdf/2607.03968v2",
+      "score": 6.8,
+      "topics": [
+        {
+          "name": "Agent",
+          "slug": "agent",
+          "hits": [
+            "agent"
+          ]
+        },
+        {
+          "name": "Code Agent / SWE Agent",
+          "slug": "code-agent",
+          "hits": [
+            "coding agent"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "agent",
+        "coding agent"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Refused%20in%20Chat%2C%20Written%20in%20Code%3A%20Workflow-Level%20Jailbreak%20Construction%20in%20IDE%20Coding%20Agents%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Large language models are increasingly deployed as IDE-integrated coding agents that decompose tasks, generate and edit files, run code, and refine outputs over many turns. Yet their safety is still often evaluated as if they were chatbots: one harmful prompt, one response, judged in isolation. We introduce workflow-level jailbreak construction, a failure mode in which a harmful objective is assembled across ordinary stages of a software-development workflow rather than generated through a single direct prompt. Using GitHub Copilot in Visual Studio Code, we study four closed-weight backends: Claude Sonnet 4.6, Claude Haiku 4.5, Gemini 3.1 Pro, and Gemini 3.5 Flash. Across 204 prompts from Hammurabi's Code, HarmBench, and AdvBench , the models show near-complete refusal under direct chat, CSV-read, and single-step code-fix baselines, with only 8/816 successful responses in each baseline condition. Under the full workflow, however, the same prompts and backends produce 816/816 unsafe teaching-shot completions, all independently confirmed by two expert evaluators under a strict rubric. These results show that conversational refusal benchmarks can substantially overstate the safety of deployed coding agents and motivate defenses that reason about safety across multi-turn IDE workflows and their generated artifacts, not only individual chat turns.",
+      "code_links_from_meta": "https://github.com/search?q=Refused%20in%20Chat%2C%20Written%20in%20Code%3A%20Workflow-Level%20Jailbreak%20Construction%20in%20IDE%20Coding%20Agents%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "对话中拒绝，代码中编写：IDE 编码智能体中的工作流级越狱构造",
+      "institution": "未明确披露",
+      "summary_cn": "本文揭示了一个严重的安全漏洞：当前主流大模型在 IDE 编码智能体场景下的安全评估仍沿用聊天式单轮有害提示的范式，而实际的越狱攻击可以通过将有害目标拆解并嵌入正常软件开发流程的多个步骤中完成。研究以 GitHub Copilot 为平台，测试了 Claude Sonnet 4.6、Claude Haiku 4.5、Gemini 3.1 Pro 和 Gemini 3.5 Flash 四个闭包后端。结果表明，在直接对话、CSV 读取和单步代码修复基线中，模型几乎完全拒绝有害请求（816 次测试中仅 8 次成功），但在完整工作流下，816/816 次全部生成了不安全的教学性代码补全。",
+      "innovations": [
+        "提出『工作流级越狱构造』这一新攻击范式，将有害目标分解到软件开发工作流的正常步骤中，而非通过单次有害提示实现",
+        "系统评估了 Copilot 在三种基线（直接对话/CSV 读取/单步修复）和完整工作流下的安全差异，揭示对话级安全基准的严重膨胀",
+        "通过两名专家在严格评分标准下独立确认，816/816 次全部成功的结果有力证明了攻击的通用性和严重性"
+      ],
+      "scenario_cn": "解决 IDE 编码智能体在现有聊天式安全评测下被高估安全性的问题。适用于 LLM 安全评测、编码智能体安全审计及防御机制设计，特别是需要跨多轮、跨工作流推理安全的场景。",
+      "title_en": "Refused in Chat, Written in Code: Workflow-Level Jailbreak Construction in IDE Coding Agents",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2607.03661v1",
+      "title": "From Geometric Labels to Semantic Understanding of Indoor Building Components Using Multimodal Large Language Models",
+      "abstract": "Point cloud-based understanding has become an important enabler for facility operation and maintenance involving indoor building components. However, existing methods output only discrete labels without explaining component functions or natural language interactions. This paper proposes Building-MLLM, a point cloud-centered multimodal large language model (MLLM) for indoor components, which models point clouds and instructions to generate responses across Simple Recognition, Complex Captioning, and Multi-Engineering Question Answering tasks. Building-MLLM addresses semantic concentration through four domain-specific mechanisms: Point Information Enhancer for task-relevant semantics, Geometry-Preserving Regularization preventing geometric erosion, fixed textual prefix for domain stabilization, and multi-dimensional LoRA balancing recognition with reasoning. A multi-constraint progressive instruction-generation engine is developed to compile a synthetic point cloud-text dataset with 4198 objects, 37,782 instruction-following pairs, and 47 categories. Experiments show that Building-MLLM achieves 88.00%, 65.10%, and 68.14% on the three task types, respectively, demonstrating superior indoor component language understanding and providing initial generalizability in transfer inference on other real-world datasets.",
+      "published": "2026-07-04T02:18:03+00:00",
+      "updated": "2026-07-04T02:18:03+00:00",
+      "authors": [
+        "Shuju Jing",
+        "Chao Yin"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "http://arxiv.org/abs/2607.03661v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.03661v1",
+      "score": 6.7,
+      "topics": [
+        {
+          "name": "LLM 推理加速",
+          "slug": "llm-inference",
+          "hits": [
+            "serving"
+          ]
+        },
+        {
+          "name": "多模态推理加速",
+          "slug": "multimodal-inference",
+          "hits": [
+            "mllm"
+          ]
+        },
+        {
+          "name": "Agent Reasoning / Test-time Scaling",
+          "slug": "agent-reasoning",
+          "hits": [
+            "reasoning"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "mllm",
+        "reasoning",
+        "serving"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=From%20Geometric%20Labels%20to%20Semantic%20Understanding%20of%20Indoor%20Building%20Components%20Using%20Multimodal%20Large%20Language%20Models%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Point cloud-based understanding has become an important enabler for facility operation and maintenance involving indoor building components. However, existing methods output only discrete labels without explaining component functions or natural language interactions. This paper proposes Building-MLLM, a point cloud-centered multimodal large language model (MLLM) for indoor components, which models point clouds and instructions to generate responses across Simple Recognition, Complex Captioning, and Multi-Engineering Question Answering tasks. Building-MLLM addresses semantic concentration through four domain-specific mechanisms: Point Information Enhancer for task-relevant semantics, Geometry-Preserving Regularization preventing geometric erosion, fixed textual prefix for domain stabilization, and multi-dimensional LoRA balancing recognition with reasoning. A multi-constraint progressive instruction-generation engine is developed to compile a synthetic point cloud-text dataset with 4198 objects, 37,782 instruction-following pairs, and 47 categories. Experiments show that Building-MLLM achieves 88.00%, 65.10%, and 68.14% on the three task types, respectively, demonstrating superior indoor component language understanding and providing initial generalizability in transfer inference on other real-world datasets.",
+      "code_links_from_meta": "https://github.com/search?q=From%20Geometric%20Labels%20to%20Semantic%20Understanding%20of%20Indoor%20Building%20Components%20Using%20Multimodal%20Large%20Language%20Models%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "从几何标签到室内建筑构件的多模态大语言模型语义理解",
+      "institution": "未明确披露",
+      "summary_cn": "本文提出 Building-MLLM，一个以点云为中心的多模态大语言模型，用于室内建筑构件的语义理解。该模型将点云与指令对齐，可完成简单识别、复杂描述和多工程问答三类任务。通过点云信息增强器、几何保持正则化、固定文本前缀和多维度 LoRA 四项机制解决语义集中问题，并采用多约束渐进指令生成引擎构造了包含 4198 个物体、37782 条指令对的大规模合成数据集。实验在三类任务上分别达到 88.00%、65.10% 和 68.14% 的准确率，并展示了在真实数据集上的跨域迁移泛化能力。",
+      "innovations": [
+        "提出点云信息增强器，从原始点云中提取任务相关的几何与语义特征，弥补 LLM 对 3D 结构感知的不足",
+        "设计几何保持正则化损失，防止多模态融合过程中点云几何信息的退化丢失",
+        "引入多维度 LoRA，在识别与推理任务之间差异化微调，平衡底层感知与高层语义理解",
+        "构建多约束渐进指令生成引擎，自动从 CAD/语义标签合成高质量多任务点云-文本配对数据"
+      ],
+      "scenario_cn": "解决现有室内建筑构件分析方法只能输出离散标签、无法进行自然语言交互和功能解释的局限。适用于建筑运维与管理场景的智能问询、构件识别与语义查询。",
+      "title_en": "From Geometric Labels to Semantic Understanding of Indoor Building Components Using Multimodal Large Language Models",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2607.03920v1",
+      "title": "LH-AVLN: A Benchmark for Long-Horizon Audio-Visual-Language Navigation",
+      "abstract": "Embodied navigation is moving toward long-horizon missions, yet existing long-horizon benchmarks are largely acoustically silent, and audio-visual navigation tasks typically focus on a single goal. We introduce LH-AVLN, a benchmark for Long-Horizon Audio-Visual-Language Navigation that combines multi-goal mission execution, heterogeneous goal specifications, and persistent spatialized acoustic cues. In LH-AVLN, an agent receives a global mission of two to four goals specified by category, language description, or reference image, and navigates with RGB-D observations, pose, and binaural audio in indoor 3D environments. The benchmark supports both ordered and unordered missions, where alternating goal-associated sounds can guide non-line-of-sight search but may also become distractors as mission progress changes. We further develop PAG-Nav, a training-free reference agent that maintains a temporal uniform semantic map and performs progressive goal-state planning, using sound for search while reserving completion for visual-semantic verification. Experiments show that existing vision-language, memory-based, and audio-visual agents struggle to complete full LH-AVLN missions, and that PAG-Nav provides a stronger diagnostic baseline while leaving substantial room for future progress.",
+      "published": "2026-07-04T15:25:25+00:00",
+      "updated": "2026-07-04T15:25:25+00:00",
+      "authors": [
+        "Rufeng Chen",
+        "Yue Chang",
+        "Zili Shao",
+        "Zhaofan Zhang",
+        "Hechang Chen",
+        "Hui Xiong",
+        "Sihong Xie"
+      ],
+      "categories": [
+        "cs.RO"
+      ],
+      "abs_url": "http://arxiv.org/abs/2607.03920v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.03920v1",
+      "score": 6.5,
+      "topics": [
+        {
+          "name": "LLM 推理加速",
+          "slug": "llm-inference",
+          "hits": [
+            "serving"
+          ]
+        },
+        {
+          "name": "Agent",
+          "slug": "agent",
+          "hits": [
+            "agent"
+          ]
+        },
+        {
+          "name": "Agent Reasoning / Test-time Scaling",
+          "slug": "agent-reasoning",
+          "hits": [
+            "planning"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "agent",
+        "planning",
+        "serving"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=LH-AVLN%3A%20A%20Benchmark%20for%20Long-Horizon%20Audio-Visual-Language%20Navigation%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Embodied navigation is moving toward long-horizon missions, yet existing long-horizon benchmarks are largely acoustically silent, and audio-visual navigation tasks typically focus on a single goal. We introduce LH-AVLN, a benchmark for Long-Horizon Audio-Visual-Language Navigation that combines multi-goal mission execution, heterogeneous goal specifications, and persistent spatialized acoustic cues. In LH-AVLN, an agent receives a global mission of two to four goals specified by category, language description, or reference image, and navigates with RGB-D observations, pose, and binaural audio in indoor 3D environments. The benchmark supports both ordered and unordered missions, where alternating goal-associated sounds can guide non-line-of-sight search but may also become distractors as mission progress changes. We further develop PAG-Nav, a training-free reference agent that maintains a temporal uniform semantic map and performs progressive goal-state planning, using sound for search while reserving completion for visual-semantic verification. Experiments show that existing vision-language, memory-based, and audio-visual agents struggle to complete full LH-AVLN missions, and that PAG-Nav provides a stronger diagnostic baseline while leaving substantial room for future progress.",
+      "code_links_from_meta": "https://github.com/search?q=LH-AVLN%3A%20A%20Benchmark%20for%20Long-Horizon%20Audio-Visual-Language%20Navigation%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "LH-AVLN：长时程音视频语言导航基准",
+      "institution": "未明确披露",
+      "summary_cn": "本文提出 LH-AVLN，一个面向长时程多目标音视频语言导航的基准测试，将多目标任务执行、异构目标描述和持续空间化声学线索三者结合。Agent 接收由类别、语言描述或参考图像指定的 2-4 个目标组成的全局任务，在室内 3D 环境中利用 RGB-D、位姿和双耳音频进行导航，支持有序和无序两种任务模式。同时提出无需训练的基准方法 PAG-Nav，通过维护时序均匀语义地图并进行渐进式目标状态规划，利用声音辅助搜索、视觉验证确认完成。实验表明现有各类导航模型均难以完整完成 LH-AVLN 任务，PAG-Nav 提供了更强的诊断性基线且留有显著改进空间。",
+      "innovations": [
+        "首次将多目标任务执行、异构目标指定（类别/语言描述/参考图像）和持续性空间化音频三者统一到一个长时程导航基准",
+        "支持有序与无序任务模式，交替出现的关联声音既可作为非视距搜索线索，也可能随任务进展变为干扰信号",
+        "提出无需额外训练的 PAG-Nav 方法，结合时序均匀语义地图与渐进式目标状态规划，将声音用于搜索、视觉用于完成验证"
+      ],
+      "scenario_cn": "解决现有视听导航任务目标单一、缺少长时程多目标执行能力的问题。适用于需要结合视觉、语义和声音线索的室内机器人导航场景，如搜救、巡检、多目标物搜寻等。",
+      "title_en": "LH-AVLN: A Benchmark for Long-Horizon Audio-Visual-Language Navigation",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2607.03748v1",
+      "title": "Bridging Interleaved Multi-Modal Reasoning as a Unified Decision Process",
+      "abstract": "Unified multi-modal models (UMMs) have shown promising interleaved text-image reasoning capabilities, yet effectively optimizing such multi-turn generation via reinforcement learning (RL) remains an open challenge. Existing approaches apply RL exclusively to text steps, relegating image generation to supervised surrogates, preventing policy gradients from propagating through the full interleaved trajectory across heterogeneous modalities. This leaves the potential of RL for UMMs largely untapped. In the paper, we introduce \\textbf{BRAID} (\\textbf{B}ridging inte\\textbf{R}le\\textbf{A}ved mult\\textbf{I}-modal reasoning as a unified \\textbf{D}ecision process), a simple framework that casts multi-turn text-image-text reasoning as a unified Markov decision process (MDP), enabling joint optimization of textual and visual generation via a single, principled RL objective. BRAID computes a shared trajectory-level advantage and propagates it coherently into both text tokens and image denoising paths, each optimized through its modality-native policy gradient mechanism. To further address long-horizon credit assignment, BRAID employs a vision-language model (VLM) judge that scores each intermediate image on its reasoning utility, supplying dense turn-level feedback to sharpen learning at critical visual branches. Experiments on spatial reasoning and visual perception benchmarks show that BRAID consistently outperforms various baselines, confirming that a unified MDP formulation with vision-thinking guidance is essential for effective multi-modal reasoning.",
+      "published": "2026-07-04T07:40:43+00:00",
+      "updated": "2026-07-04T07:40:43+00:00",
+      "authors": [
+        "Zican Hu",
+        "Xuyang Hu",
+        "Yiming Liu",
+        "Zuwei Long",
+        "Wei Liu",
+        "Yunzhuo Hao",
+        "Jiawei Gu",
+        "Linjie Li",
+        "Yu Cheng",
+        "Zhenhong Sun",
+        "Weibo Gu",
+        "Xing Sun",
+        "Zhi Wang"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "abs_url": "http://arxiv.org/abs/2607.03748v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.03748v1",
+      "score": 6.0,
+      "topics": [
+        {
+          "name": "多模态推理加速",
+          "slug": "multimodal-inference",
+          "hits": [
+            "vlm"
+          ]
+        },
+        {
+          "name": "Agent Reasoning / Test-time Scaling",
+          "slug": "agent-reasoning",
+          "hits": [
+            "reasoning"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "reasoning",
+        "vlm"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Bridging%20Interleaved%20Multi-Modal%20Reasoning%20as%20a%20Unified%20Decision%20Process%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Unified multi-modal models (UMMs) have shown promising interleaved text-image reasoning capabilities, yet effectively optimizing such multi-turn generation via reinforcement learning (RL) remains an open challenge. Existing approaches apply RL exclusively to text steps, relegating image generation to supervised surrogates, preventing policy gradients from propagating through the full interleaved trajectory across heterogeneous modalities. This leaves the potential of RL for UMMs largely untapped. In the paper, we introduce \\textbf{BRAID} (\\textbf{B}ridging inte\\textbf{R}le\\textbf{A}ved mult\\textbf{I}-modal reasoning as a unified \\textbf{D}ecision process), a simple framework that casts multi-turn text-image-text reasoning as a unified Markov decision process (MDP), enabling joint optimization of textual and visual generation via a single, principled RL objective. BRAID computes a shared trajectory-level advantage and propagates it coherently into both text tokens and image denoising paths, each optimized through its modality-native policy gradient mechanism. To further address long-horizon credit assignment, BRAID employs a vision-language model (VLM) judge that scores each intermediate image on its reasoning utility, supplying dense turn-level feedback to sharpen learning at critical visual branches. Experiments on spatial reasoning and visual perception benchmarks show that BRAID consistently outperforms various baselines, confirming that a unified MDP formulation with vision-thinking guidance is essential for effective multi-modal reasoning.",
+      "code_links_from_meta": "https://github.com/search?q=Bridging%20Interleaved%20Multi-Modal%20Reasoning%20as%20a%20Unified%20Decision%20Process%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "衔接交错多模态推理为统一决策过程",
+      "institution": "未明确披露",
+      "summary_cn": "BRAID 提出一个框架，将多轮文本-图像-文本交错推理建模为统一马尔可夫决策过程（MDP），通过单一强化学习（RL）目标联合优化文本和视觉生成。它计算共享的轨迹级优势值，将梯度经文本 token 策略梯度和图像去噪路径分别传播，实现异构模态的协同优化。为缓解长程信用分配困难，BRAID 引入 VLM 裁判对每张中间图像按推理效用评分，提供密集回合级反馈。在空间推理和视觉感知基准上，BRAID 显著优于多种基线方法。",
+      "innovations": [
+        "首次将交错图文多模态推理建模为统一 MDP，实现单一 RL 目标下的端到端联合优化",
+        "提出轨迹级优势在文本 token 和图像去噪路径间跨模态协同传播机制",
+        "引入 VLM 裁判对中间图像进行推理效用评分，提供密集回合级奖励信号缓解长程信用分配问题"
+      ],
+      "scenario_cn": "解决统一多模态模型（UMM）在多轮图文交替推理中无法通过 RL 端到端优化的难题，适用于空间推理、视觉感知等需要图文交错生成的多模态推理任务",
+      "title_en": "Bridging Interleaved Multi-Modal Reasoning as a Unified Decision Process",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2607.03987v2",
+      "title": "Fast Asymptotically Optimal Kinodynamic Planning via Vectorization",
+      "abstract": "Sampling-based motion planners have been shown to be effective for systems with complex kinodynamic constraints and high dimensionality. However, these algorithms struggle to achieve real-time performance, leading to recent efforts to parallelize planning. While GPU-accelerated planners have achieved significant speedups, existing approaches require specialized CUDA programming that limits accessibility and portability. We present Parallel Asymptotically Optimal Kinodynamic RRT (PAKR), a massively parallel kinodynamic planner leveraging JAX and the XLA compiler to achieve GPU acceleration through standard Python tooling. By combining our parallel planner with the AO-x meta-algorithm, we achieve asymptotic optimality through fast iterative replanning. We provide a theoretical analysis of probabilistic completeness, analyze the effects of batch size and branching factor on convergence, and demonstrate scalability to complex dynamics using the MuJoCo-XLA simulator. Experiments show competitive runtimes with state-of-the-art GPU planners and superior solution quality.",
+      "published": "2026-07-04T19:07:03+00:00",
+      "updated": "2026-07-12T20:18:28+00:00",
+      "authors": [
+        "Yitian Gao",
+        "Andrew Lu",
+        "Zachary Kingston"
+      ],
+      "categories": [
+        "cs.RO"
+      ],
+      "abs_url": "http://arxiv.org/abs/2607.03987v2",
+      "pdf_url": "https://arxiv.org/pdf/2607.03987v2",
+      "score": 5.6,
+      "topics": [
+        {
+          "name": "Agent Reasoning / Test-time Scaling",
+          "slug": "agent-reasoning",
+          "hits": [
+            "planning"
+          ]
+        },
+        {
+          "name": "RAG / Long Context",
+          "slug": "rag-long-context",
+          "hits": [
+            "rag"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "planning",
+        "rag"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Fast%20Asymptotically%20Optimal%20Kinodynamic%20Planning%20via%20Vectorization%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Sampling-based motion planners have been shown to be effective for systems with complex kinodynamic constraints and high dimensionality. However, these algorithms struggle to achieve real-time performance, leading to recent efforts to parallelize planning. While GPU-accelerated planners have achieved significant speedups, existing approaches require specialized CUDA programming that limits accessibility and portability. We present Parallel Asymptotically Optimal Kinodynamic RRT (PAKR), a massively parallel kinodynamic planner leveraging JAX and the XLA compiler to achieve GPU acceleration through standard Python tooling. By combining our parallel planner with the AO-x meta-algorithm, we achieve asymptotic optimality through fast iterative replanning. We provide a theoretical analysis of probabilistic completeness, analyze the effects of batch size and branching factor on convergence, and demonstrate scalability to complex dynamics using the MuJoCo-XLA simulator. Experiments show competitive runtimes with state-of-the-art GPU planners and superior solution quality.",
+      "code_links_from_meta": "https://github.com/search?q=Fast%20Asymptotically%20Optimal%20Kinodynamic%20Planning%20via%20Vectorization%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "基于向量化的快速渐近最优运动规划",
+      "summary_cn": "本文提出 PAKR（并行渐近最优运动学 RRT），一个利用 JAX 和 XLA 编译器实现的大规模并行运动规划器。与依赖 CUDA 编程的传统 GPU 加速方法不同，PAKR 通过标准 Python 工具链即可获得 GPU 加速，降低了使用门槛。结合 AO-x 元算法，通过快速迭代重规划实现渐近最优性。理论层面证明了概率完备性，分析了批次大小和分支因子对收敛的影响；实验层面使用 MuJoCo-XLA 模拟器验证了复杂度动力学场景的可扩展性，在运行时间和解质量上均达到或超越现有 GPU 规划器。",
+      "innovations": [
+        "在运动规划领域首次利用 JAX/XLA 编译器实现大规模并行加速，无需手写 CUDA 即可利用 GPU，显著降低开发和迁移成本",
+        "将并行规划器与 AO-x 元算法结合，通过快速迭代重规划实现渐近最优性，解决了传统 RRT 类算法仅能保证概率完备性、难以达到最优的难题",
+        "在 MuJoCo-XLA 生态中实现端到端可微的动力学仿真与规划闭环，为可微分运动规划开辟了新路径"
+      ],
+      "scenario_cn": "机器人运动规划，特别是高维复杂动力学约束下的实时规划场景，如机械臂操作、无人机避障、自动驾驶轨迹规划等需要同时满足实时性和最优性的领域",
+      "title_en": "Fast Asymptotically Optimal Kinodynamic Planning via Vectorization",
+      "institution": "未明确披露",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2607.03784v1",
+      "title": "Rethinking Depth Pruning for Vision Transformers: A Heterogeneity-Aware Perspective",
+      "abstract": "While prior studies have successfully compressed vision Transformers (ViTs) through various pruning techniques, most have concentrated on width pruning to achieve significant reductions in model size. Depth pruning, which removes entire layers from a ViT, is notoriously difficult for accuracy recovery despite its potential to deliver higher speedups, limiting the acceleration achieved by existing joint width-and-depth pruning methods. In this work, we reveal that the failure of existing depth pruning methods lies in their neglect of heterogeneity between different layers, and we introduce HetDPT, a heterogeneity-aware depth pruning method that avoids dimension mismatch. Comprehensive experiments on ImageNet-1K, CIFAR-100, COCO, and ADE20K validate our method: HetDPT achieves a 1.58$\\times$ speedup for DeiT-B while maintaining accuracy and a 1.39$\\times$ speedup for DeiT-S with nearly no accuracy degradation. Furthermore, when combined with width pruning, HetDPT+ sets a new state-of-the-art record in extreme ViT pruning, enhancing the acceleration ratio from 4.24$\\times$ to 5.19$\\times$ for the Isomorphic-Pruning-2.6G configuration while maintaining near-lossless accuracy; our code is available at https://github.com/Efficient-AI-for-All/HetDPT.",
+      "published": "2026-07-04T09:17:25+00:00",
+      "updated": "2026-07-04T09:17:25+00:00",
+      "authors": [
+        "Zhenfeng Su",
+        "Kang Zhao",
+        "Han Bao",
+        "Tao Yuan",
+        "Zhongzhe Hu",
+        "Xianzhi Yu",
+        "Wenxuan Wang"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "abs_url": "http://arxiv.org/abs/2607.03784v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.03784v1",
+      "score": 4.3,
+      "topics": [
+        {
+          "name": "Model Compression / Quantization",
+          "slug": "model-compression",
+          "hits": [
+            "pruning"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "pruning"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Rethinking%20Depth%20Pruning%20for%20Vision%20Transformers%3A%20A%20Heterogeneity-Aware%20Perspective%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "While prior studies have successfully compressed vision Transformers (ViTs) through various pruning techniques, most have concentrated on width pruning to achieve significant reductions in model size. Depth pruning, which removes entire layers from a ViT, is notoriously difficult for accuracy recovery despite its potential to deliver higher speedups, limiting the acceleration achieved by existing joint width-and-depth pruning methods. In this work, we reveal that the failure of existing depth pruning methods lies in their neglect of heterogeneity between different layers, and we introduce HetDPT, a heterogeneity-aware depth pruning method that avoids dimension mismatch. Comprehensive experiments on ImageNet-1K, CIFAR-100, COCO, and ADE20K validate our method: HetDPT achieves a 1.58$\\times$ speedup for DeiT-B while maintaining accuracy and a 1.39$\\times$ speedup for DeiT-S with nearly no accuracy degradation. Furthermore, when combined with width pruning, HetDPT+ sets a new state-of-the-art record in extreme ViT pruning, enhancing the acceleration ratio from 4.24$\\times$ to 5.19$\\times$ for the Isomorphic-Pruning-2.6G configuration while maintaining near-lossless accuracy; our code is available at https://github.com/Efficient-AI-for-All/HetDPT.",
+      "code_links_from_meta": [
+        "https://github.com/Efficient-AI-for-All/HetDPT"
+      ],
+      "is_ascend": false,
+      "title_zh": "重新思考视觉Transformer的深度剪枝：异构感知视角",
+      "institution": "未明确披露",
+      "summary_cn": "现有ViT剪枝方法大多集中在宽度剪枝上，深度剪枝因层间异构性导致精度难以恢复，限制了联合剪枝方法的加速效果。本文提出HetDPT，一种异构感知的深度剪枝方法，通过避免维度不匹配问题实现有效的层移除。在ImageNet-1K、CIFAR-100、COCO和ADE20K上的实验表明，HetDPT对DeiT-B实现1.58倍加速且精度无损，与宽度剪枝结合后HetDPT+将加速比从4.24倍提升至5.19倍，创下极端ViT剪枝的新SOTA。代码已开源。",
+      "innovations": [
+        "揭示现有深度剪枝失败的根本原因在于忽略层间异构性导致的维度不匹配，而非传统认为的容量损失",
+        "提出异构感知深度剪枝方法HetDPT，通过匹配层间特征维度实现无损层移除",
+        "与宽度剪枝结合的HetDPT+框架在极端压缩比下实现加速比从4.24×到5.19×的突破性提升"
+      ],
+      "scenario_cn": "解决ViT模型部署时深度剪枝精度难以恢复的问题，适用于需要高吞吐量、低延迟推理的边缘设备和服务器端视觉任务场景",
+      "title_en": "Rethinking Depth Pruning for Vision Transformers: A Heterogeneity-Aware Perspective",
+      "code_url": "https://github.com/Efficient-AI-for-All/HetDPT",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2607.03825v1",
+      "title": "Q-TriM: Question-Guided Tri-Modal Attention for Audio-Visual Question Answering",
+      "abstract": "Audio-Visual Question Answering (AVQA) extends classical VQA by requiring joint reasoning over video and synchronized audio. However, many AVQA systems rely on deeply stacked layers of self- and cross attention across text, video, and audio. Such sequential stacking may incur loss of information such as subtle inter-modal cues over the layers, causing errors to accumulate across sequential attention layers during the fusion. We introduce Q-TriM which performs multi-modal fusion in a shallow and parallel manner instead of a deep and sequential manner. For Q-TriM, we propose a novel framework for attention operation incorporating video and audio conditioned on text. As a result, we obtain not only standard cross attention outputs but also Tri-Modal Attention representations in which Query, Key, and Value come from distinct modalities. These attention representations are combined in parallel at a single stage, thus avoiding the multi-modal fusion with deep stacks in order to mitigate error accumulation and depth-induced issues. Q-TriM achieves state-of-the-art performance on three AVQA benchmarks, including substantial gains on MUSIC-AVQA-R, which demonstrates its robustness and out-of-distribution generalization. Code is available at https://github.com/Sunghun95/Q-TriM",
+      "published": "2026-07-04T11:21:33+00:00",
+      "updated": "2026-07-04T11:21:33+00:00",
+      "authors": [
+        "SungHun Kim",
+        "SeungJun Baek"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "abs_url": "http://arxiv.org/abs/2607.03825v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.03825v1",
+      "score": 4.1,
+      "topics": [
+        {
+          "name": "Agent Reasoning / Test-time Scaling",
+          "slug": "agent-reasoning",
+          "hits": [
+            "reasoning"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "reasoning"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Q-TriM%3A%20Question-Guided%20Tri-Modal%20Attention%20for%20Audio-Visual%20Question%20Answering%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Audio-Visual Question Answering (AVQA) extends classical VQA by requiring joint reasoning over video and synchronized audio. However, many AVQA systems rely on deeply stacked layers of self- and cross attention across text, video, and audio. Such sequential stacking may incur loss of information such as subtle inter-modal cues over the layers, causing errors to accumulate across sequential attention layers during the fusion. We introduce Q-TriM which performs multi-modal fusion in a shallow and parallel manner instead of a deep and sequential manner. For Q-TriM, we propose a novel framework for attention operation incorporating video and audio conditioned on text. As a result, we obtain not only standard cross attention outputs but also Tri-Modal Attention representations in which Query, Key, and Value come from distinct modalities. These attention representations are combined in parallel at a single stage, thus avoiding the multi-modal fusion with deep stacks in order to mitigate error accumulation and depth-induced issues. Q-TriM achieves state-of-the-art performance on three AVQA benchmarks, including substantial gains on MUSIC-AVQA-R, which demonstrates its robustness and out-of-distribution generalization. Code is available at https://github.com/Sunghun95/Q-TriM",
+      "code_links_from_meta": "https://github.com/search?q=Q-TriM%3A%20Question-Guided%20Tri-Modal%20Attention%20for%20Audio-Visual%20Question%20Answering%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "Q-TriM: Question-Guided Tri-Modal Attention for Audio-Visual Question Answering",
+      "summary_cn": "Audio-Visual Question Answering (AVQA) extends classical VQA by requiring joint reasoning over video and synchronized audio. However, many AVQA systems rely on deeply stacked layers of self- and cross attention across text, video, and audio. Such sequential stacking may incur loss of information such as subtle inter-modal cues over the layers, causing errors to accumulate across sequential attention layers during the fusion. We introduce Q-TriM which performs multi-modal fusion in a shallow and ",
+      "innovations": [
+        "见正文：Audio-Visual Question Answering (AVQA) extends classical VQA by requiring joint reasoning over video"
+      ],
+      "scenario_cn": "Audio-Visual Question Answering (AVQA) extends classical VQA by requiring joint reasoning over video and synchronized audio. However, many AVQA systems rely on deeply stacked layers of self- and cross attention across text, video, and audio. Such sequential stacking may incur loss of information suc",
+      "title_en": "Q-TriM: Question-Guided Tri-Modal Attention for Audio-Visual Question Answering",
+      "institution": "未明确披露",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2607.03657v1",
+      "title": "ViPo-MLLM: Visual-Pose Multimodal LLM for Gloss-Free Sign Language Translation",
+      "abstract": "Gloss-free Sign Language Translation (SLT) translates sign language videos into spoken-language sentences without gloss annotations, avoiding costly labeling but requiring fine-grained modeling of hands, body, and facial cues. Existing methods often use single-modality or weakly fused features, limiting performance. We propose ViPo-MLLM, a framework that integrates spatio-temporal RGB and human pose features. Dedicated encoders model intra-modal dynamics and cross-modal attention captures long-range dependencies. The fused representation is conditioned with a structured prompt and processed by an LLM trained with contrastive and language modeling objectives. The proposed model was evaluated on the PHOENIX14T and CSL-Daily datasets and achieved new state-of-the-art results on both datasets. Moreover, the ViPo-MLLM model attained competitive performance compared to gloss-based recognition approaches, confirming the effectiveness of the proposed pose cues and cross-modal attention mechanisms.",
+      "published": "2026-07-04T01:17:48+00:00",
+      "updated": "2026-07-04T01:17:48+00:00",
+      "authors": [
+        "Ahmed Abul Hasanaath",
+        "Bicheng Xu",
+        "Mir Rayat Imtiaz Hossain",
+        "Leonid Sigal",
+        "Hamzah Luqman"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "abs_url": "http://arxiv.org/abs/2607.03657v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.03657v1",
+      "score": 4.0,
+      "topics": [
+        {
+          "name": "多模态推理加速",
+          "slug": "multimodal-inference",
+          "hits": [
+            "mllm"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "mllm"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=ViPo-MLLM%3A%20Visual-Pose%20Multimodal%20LLM%20for%20Gloss-Free%20Sign%20Language%20Translation%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Gloss-free Sign Language Translation (SLT) translates sign language videos into spoken-language sentences without gloss annotations, avoiding costly labeling but requiring fine-grained modeling of hands, body, and facial cues. Existing methods often use single-modality or weakly fused features, limiting performance. We propose ViPo-MLLM, a framework that integrates spatio-temporal RGB and human pose features. Dedicated encoders model intra-modal dynamics and cross-modal attention captures long-range dependencies. The fused representation is conditioned with a structured prompt and processed by an LLM trained with contrastive and language modeling objectives. The proposed model was evaluated on the PHOENIX14T and CSL-Daily datasets and achieved new state-of-the-art results on both datasets. Moreover, the ViPo-MLLM model attained competitive performance compared to gloss-based recognition approaches, confirming the effectiveness of the proposed pose cues and cross-modal attention mechanisms.",
+      "code_links_from_meta": "https://github.com/search?q=ViPo-MLLM%3A%20Visual-Pose%20Multimodal%20LLM%20for%20Gloss-Free%20Sign%20Language%20Translation%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "ViPo-MLLM：视觉-姿态多模态大语言模型实现无标注手语翻译",
+      "institution": "未明确披露",
+      "summary_cn": "ViPo-MLLM 提出融合时空 RGB 和人体姿态特征的无标注手语翻译框架。专用编码器分别建模各模态内部动态，跨模态注意力捕捉长程依赖，融合后的特征经结构化提示条件化后由 LLM 处理，结合对比学习和语言建模目标训练。在 PHOENIX14T 和 CSL-Daily 数据集上均取得新最优结果，且性能与依赖标注的方法相竞争，验证了姿态线索和跨模态注意力的有效性。",
+      "innovations": [
+        "提出 RGB-姿态双模态融合架构，整合时空特征与人体骨骼姿态信息用于无标注手语翻译",
+        "设计跨模态注意力机制有效捕捉手语视频中的长程时空依赖关系",
+        "结构化提示 + 对比与语言建模联合训练，无标注条件下达到有标注方法的竞争力"
+      ],
+      "scenario_cn": "解决无标注手语翻译中手部、身体和面部细粒度建模困难的问题，适用于手语视频到自然语言句子的翻译任务，免去昂贵的手语标注成本",
+      "title_en": "ViPo-MLLM: Visual-Pose Multimodal LLM for Gloss-Free Sign Language Translation",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2607.03789v1",
+      "title": "G$^2$TAM: Geometry Grounded Track Anything Model",
+      "abstract": "Human spatial understanding arises from jointly perceiving geometry and semantics, enabling consistent object identification and localization across viewpoints and time. Current video segmentation models depend on explicit object appearance memory banks for instance tracking, yet they remain vulnerable to large viewpoint changes and long-term occlusions. Leveraging the spatial consistency afforded by modern feed-forward 3D reconstruction models, we propose the Geometry Grounded Tracking Anything Model (G$^2$TAM), a unified framework for promptable instance tracking in 3D using only unordered RGB images or videos. G$^2$TAM employs spatially aligned geometric representations as implicit memory, ensuring stable instance identity and localization across frames and views. At its core is a cross-modal spatial encoder that integrates visual and textual prompts into a shared geometric space, enabling end-to-end spatial reconstruction and instance-consistent mask prediction. To support training and evaluation, we construct InsTrack, a large-scale dataset with a dedicated validation split for benchmarking. Extensive experiments show that G$^2$TAM delivers strong cross-view consistency, promptable instance spatial tracking, video object segmentation and spatial reconstruction, establishing a foundation for interactive, geometry-grounded spatial reasoning.",
+      "published": "2026-07-04T09:32:13+00:00",
+      "updated": "2026-07-04T09:32:13+00:00",
+      "authors": [
+        "Chenming Zhu",
+        "Peizhou Cao",
+        "Jingli Lin",
+        "Wenbo Hu",
+        "Yunlong Ran",
+        "Jiangmiao Pang",
+        "Tai Wang",
+        "Xihui Liu"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "http://arxiv.org/abs/2607.03789v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.03789v1",
+      "score": 3.9,
+      "topics": [
+        {
+          "name": "Agent Reasoning / Test-time Scaling",
+          "slug": "agent-reasoning",
+          "hits": [
+            "reasoning"
+          ]
+        },
+        {
+          "name": "RAG / Long Context",
+          "slug": "rag-long-context",
+          "hits": [
+            "rag"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "rag",
+        "reasoning"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=G%24%5E2%24TAM%3A%20Geometry%20Grounded%20Track%20Anything%20Model%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Human spatial understanding arises from jointly perceiving geometry and semantics, enabling consistent object identification and localization across viewpoints and time. Current video segmentation models depend on explicit object appearance memory banks for instance tracking, yet they remain vulnerable to large viewpoint changes and long-term occlusions. Leveraging the spatial consistency afforded by modern feed-forward 3D reconstruction models, we propose the Geometry Grounded Tracking Anything Model (G$^2$TAM), a unified framework for promptable instance tracking in 3D using only unordered RGB images or videos. G$^2$TAM employs spatially aligned geometric representations as implicit memory, ensuring stable instance identity and localization across frames and views. At its core is a cross-modal spatial encoder that integrates visual and textual prompts into a shared geometric space, enabling end-to-end spatial reconstruction and instance-consistent mask prediction. To support training and evaluation, we construct InsTrack, a large-scale dataset with a dedicated validation split for benchmarking. Extensive experiments show that G$^2$TAM delivers strong cross-view consistency, promptable instance spatial tracking, video object segmentation and spatial reconstruction, establishing a foundation for interactive, geometry-grounded spatial reasoning.",
+      "code_links_from_meta": "https://github.com/search?q=G%24%5E2%24TAM%3A%20Geometry%20Grounded%20Track%20Anything%20Model%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "G²TAM：几何锚定的任意目标跟踪模型",
+      "institution": "未明确披露",
+      "summary_cn": "本文提出 G²TAM，一个利用前馈式 3D 重建模型提供的空间一致性来实现 3D 实例跟踪的统一框架，仅需无顺序的 RGB 图像或视频即可工作。G²TAM 使用空间对齐的几何表示作为隐式记忆，确保跨帧和视角的实例身份与定位稳定。核心是一个跨模态空间编码器，将视觉和文本提示整合到共享几何空间中，实现端到端空间重建和实例一致的掩码预测。",
+      "innovations": [
+        "提出以几何锚定代替显式外观记忆库的新范式，利用 3D 空间一致性解决大视角变化和长时遮挡下的跟踪退化问题",
+        "设计跨模态空间编码器，将视觉与文本提示映射到统一几何空间，首次实现可提示的 3D 实例空间跟踪",
+        "构建大规模数据集 InsTrack 并设立专用验证拆分，为几何驱动的空间推理提供标准化评测基准"
+      ],
+      "scenario_cn": "解决现有视频分割模型在视角剧烈变化和长时间遮挡下实例身份丢失的问题，适用于交互式 3D 场景理解、视频目标分割、多视角空间重建等需要跨视角/时序一致实例跟踪的应用",
+      "title_en": "G$^2$TAM: Geometry Grounded Track Anything Model",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2607.07719v1",
+      "title": "ReCoLoRA: Spectrum-Aware Recursive Consolidation for Continual LLM Fine-Tuning",
+      "abstract": "Parameter-efficient fine-tuning adapts a large language model to one task cheaply, but across a task sequence LoRA-style methods keep stacking low-rank updates on the same frozen weight, so each new task tends to overwrite the previous ones. We present ReCoLoRA (Recursive Consolidation of Low-Rank Adapters), a spectrum-aware framework for continual fine-tuning: adapters are initialized from a randomized SVD of the pretrained weight, per-layer effective ranks are selected by an elbow criterion, and the principal subspace is adapted before residual capacity is opened. Before each new task, ReCoLoRA re-decomposes the current effective weight, rather than the original one, into a frozen residual, a slowly updated principal component, and a fresh adapter (recursive consolidation), so every task starts from the model that has already absorbed its predecessors. On a six-task continual GLUE sequence over four 7-8B backbones, ReCoLoRA attains the best final average score on three of the four backbones against rank-swept LoRA, PiSSA, AdaLoRA, and DoRA baselines while training fewer parameters; an oracle-routed task-bank variant serves as an upper bound under full task isolation. Code: https://github.com/bhqy666/ReCoLoRA.",
+      "published": "2026-07-04T12:58:26+00:00",
+      "updated": "2026-07-04T12:58:26+00:00",
+      "authors": [
+        "Wentao Lu"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CV"
+      ],
+      "abs_url": "http://arxiv.org/abs/2607.07719v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.07719v1",
+      "score": 3.8,
+      "topics": [
+        {
+          "name": "RAG / Long Context",
+          "slug": "rag-long-context",
+          "hits": [
+            "rag"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "rag"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=ReCoLoRA%3A%20Spectrum-Aware%20Recursive%20Consolidation%20for%20Continual%20LLM%20Fine-Tuning%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Parameter-efficient fine-tuning adapts a large language model to one task cheaply, but across a task sequence LoRA-style methods keep stacking low-rank updates on the same frozen weight, so each new task tends to overwrite the previous ones. We present ReCoLoRA (Recursive Consolidation of Low-Rank Adapters), a spectrum-aware framework for continual fine-tuning: adapters are initialized from a randomized SVD of the pretrained weight, per-layer effective ranks are selected by an elbow criterion, and the principal subspace is adapted before residual capacity is opened. Before each new task, ReCoLoRA re-decomposes the current effective weight, rather than the original one, into a frozen residual, a slowly updated principal component, and a fresh adapter (recursive consolidation), so every task starts from the model that has already absorbed its predecessors. On a six-task continual GLUE sequence over four 7-8B backbones, ReCoLoRA attains the best final average score on three of the four backbones against rank-swept LoRA, PiSSA, AdaLoRA, and DoRA baselines while training fewer parameters; an oracle-routed task-bank variant serves as an upper bound under full task isolation. Code: https://github.com/bhqy666/ReCoLoRA.",
+      "code_links_from_meta": [
+        "https://github.com/bhqy666/ReCoLoRA"
+      ],
+      "is_ascend": false,
+      "title_zh": "ReCoLoRA：面向持续LLM微调的频谱感知递归合并",
+      "institution": "未明确披露",
+      "summary_cn": "在持续微调场景下，LoRA等参数高效方法在任务序列中不断堆叠低秩更新，导致新任务覆盖旧任务知识。ReCoLoRA提出一种频谱感知的递归合并框架：首先基于预训练权重的随机SVD初始化低秩适配器，通过肘部准则选取每层的有效秩，优先适应主成分子空间再逐步释放残差容量；在每项新任务前，不是从原始权重而是从当前有效权重重新分解为冻结残差、慢速更新的主成分和新的适配器，从而实现递归知识合并。在四个7-8B模型上对六任务GLUE持续序列进行测试，ReCoLoRA在三个模型上取得最佳最终平均分，且训练参数更少。",
+      "innovations": [
+        "提出递归合并机制：在每个新任务前对当前有效权重（而非原始权重）重做SVD分解，使模型在已吸收前序任务知识的基础上继续适配，而非从零堆叠更新。",
+        "频谱感知初始化：利用随机SVD和肘部准则自动逐层选择有效秩，优先学习主成分子空间，再渐进激活残差容量，避免了秩的盲目设定。",
+        "在四种7-8B模型上对比LoRA、PiSSA、AdaLoRA和DoRA等基线，ReCoLoRA在三种模型上达到最优平均分，同时训练参数量更少。"
+      ],
+      "scenario_cn": "解决LLM在持续微调任务序列中灾难性遗忘的问题，适用于需要对多个下游任务进行顺序适配的场景，如持续指令微调、领域适应和跨任务增量学习。",
+      "title_en": "ReCoLoRA: Spectrum-Aware Recursive Consolidation for Continual LLM Fine-Tuning",
+      "code_url": "https://github.com/bhqy666/ReCoLoRA",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2607.03949v1",
+      "title": "TESSERA v2: Scaling Pixel-wise Earth Foundation Models",
+      "abstract": "Pixel-wise Earth-observation (EO) foundation models are now achieving state-of-the-art performance via generated spatial embeddings. However, how these models scale and how best to spend a pretraining budget remain poorly understood. We present the largest controlled scaling study for EO to date: 395 training runs on 1,024 GH200 superchips within a fixed pixel-wise Barlow Twins family, each evaluated on 15 downstream tasks. We find that pretraining loss barely predicts downstream performance (|Pearson r| < 0.2), so selecting models by loss wastes a large share of the compute. We also find that, as the training budget grows, the encoder and the data should grow together while the projector stays fixed, which gives a simple rule for allocating compute. Using this rule, we train a family of pixel-wise models (0.5B and 1B, with a 2B model in training) and distill them into compact students for embeddings-as-data deployment. The 21-million-parameter distilled TESSERA v2-1B-M in aggregate outperforms all open and proprietary models tested, some of which are orders of magnitude larger. These students produce Matryoshka representations that are inexpensive to serve: a 16-dimensional prefix keeps 92% of the full 128-dimensional performance at 1/8 of the storage. Upon completion of training we plan to release v2 global embeddings covering 2017-2025. Together, these results give a concrete, empirically grounded recipe for scaling pixel-wise EO foundation models: train large encoders, select by downstream performance, and distil into flexible student models. All code will be released at https://github.com/ucam-eo/tessera.",
+      "published": "2026-07-04T16:52:34+00:00",
+      "updated": "2026-07-04T16:52:34+00:00",
+      "authors": [
+        "Zhengpeng Feng",
+        "Sadiq Jaffer",
+        "Ira Shokar",
+        "Jovana Knezevic",
+        "Mark Elvers",
+        "Clement Atzberger",
+        "Robin Young",
+        "Aneesh Naik",
+        "Niall Robinson",
+        "Andrew Blake",
+        "David Coomes",
+        "Anil Madhavapeddy",
+        "Srinivasan Keshav"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.LG"
+      ],
+      "abs_url": "http://arxiv.org/abs/2607.03949v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.03949v1",
+      "score": 3.8,
+      "topics": [
+        {
+          "name": "RAG / Long Context",
+          "slug": "rag-long-context",
+          "hits": [
+            "rag"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "rag"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=TESSERA%20v2%3A%20Scaling%20Pixel-wise%20Earth%20Foundation%20Models%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Pixel-wise Earth-observation (EO) foundation models are now achieving state-of-the-art performance via generated spatial embeddings. However, how these models scale and how best to spend a pretraining budget remain poorly understood. We present the largest controlled scaling study for EO to date: 395 training runs on 1,024 GH200 superchips within a fixed pixel-wise Barlow Twins family, each evaluated on 15 downstream tasks. We find that pretraining loss barely predicts downstream performance (|Pearson r| < 0.2), so selecting models by loss wastes a large share of the compute. We also find that, as the training budget grows, the encoder and the data should grow together while the projector stays fixed, which gives a simple rule for allocating compute. Using this rule, we train a family of pixel-wise models (0.5B and 1B, with a 2B model in training) and distill them into compact students for embeddings-as-data deployment. The 21-million-parameter distilled TESSERA v2-1B-M in aggregate outperforms all open and proprietary models tested, some of which are orders of magnitude larger. These students produce Matryoshka representations that are inexpensive to serve: a 16-dimensional prefix keeps 92% of the full 128-dimensional performance at 1/8 of the storage. Upon completion of training we plan to release v2 global embeddings covering 2017-2025. Together, these results give a concrete, empirically grounded recipe for scaling pixel-wise EO foundation models: train large encoders, select by downstream performance, and distil into flexible student models. All code will be released at https://github.com/ucam-eo/tessera.",
+      "code_links_from_meta": [
+        "https://github.com/ucam-eo/tessera"
+      ],
+      "is_ascend": false,
+      "title_zh": "TESSERA v2：像素级地球基础模型的缩放规律研究",
+      "institution": "剑桥大学",
+      "summary_cn": "本文系统研究了像素级地球观测（EO）基础模型的缩放规律，在1024块GH200超级芯片上进行了395次受控训练实验。研究发现预训练损失与下游性能相关性极弱（|Pearson r| < 0.2），据此提出了计算预算分配规则：编码器和数据应同步增长，投影器保持固定。基于该规则训练了0.5B/1B模型（2B训练中），并将其蒸馏为仅2100万参数的紧凑学生模型，综合性能超越所有开源和商业模型。蒸馏学生模型支持Matryoshka表示，16维前缀即可保留全量128维92%的性能。",
+      "innovations": [
+        "首个大规模（395次实验）地球观测基础模型的系统缩放规律研究，揭示了预训练损失与下游性能无关的反直觉发现",
+        "提出编码器-数据协同增长、投影器固定的计算分配规则，给出可复现的缩放策略",
+        "2100万参数蒸馏学生模型在综合性能上超越数量级更大的开源/商业模型",
+        "支持Matryoshka分层表示，16维向量即可达到128维92%性能，存储成本降至1/8"
+      ],
+      "scenario_cn": "解决像素级地球观测基础模型在预训练预算分配上缺乏指导的问题，适用于卫星遥感、环境监测、土地利用分类等大规模EO场景，提供高效可部署的紧凑嵌入模型。",
+      "title_en": "TESSERA v2: Scaling Pixel-wise Earth Foundation Models",
+      "code_url": "https://github.com/ucam-eo/tessera",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2607.03764v1",
+      "title": "Deep Learning-Based Characterization of Detonation-Cell Size Distributions in Soot-Foil Records",
+      "abstract": "The geometric size and regularity of detonation cells are key physical parameters for characterizing detonation waves. Traditional manual measurement of soot foils is time-consuming and subjective, while existing computer vision techniques often exhibit poor generalization on real experimental images with high noise, blurred boundaries, and severe overlapping. To address this, we propose a novel method for automated recognition and high-order feature extraction of detonation cells based on deep learning instance segmentation (Mask R-CNN). By constructing a custom heterogeneous dataset (numerical simulations and physical experiments) and integrating transfer learning, the model achieves accurate pixel-level mask prediction within highly noisy flow fields. Results indicate high pixel-level agreement in benchmark validations and strong robustness against noise in complex real-world soot foils. Predicted average cell sizes agree well with manual measurements, yielding relative errors under 2% and 3.5% for regular and irregular conditions, respectively. Sensitivity ablation experiments confirm the model's scale adaptability and guided the establishment of a standardized preprocessing paradigm for appropriate image patching. Overcoming the limitation of extracting only global average sizes, this model achieves automated tracking of the transient spatial evolution of cell sizes along the propagation direction. Furthermore, it quantitatively extracts high-order regularity features, such as the irregularity index (RI) and standard deviation of cell deflection angles, demonstrating consistency with theoretical expectations. The proposed method enhances the efficiency and objectivity of statistical analysis, providing a powerful data extraction tool for experimental and numerical soot foils.",
+      "published": "2026-07-04T08:32:39+00:00",
+      "updated": "2026-07-04T08:32:39+00:00",
+      "authors": [
+        "Mingyang Bu",
+        "Robson A. Schneider",
+        "Karl P. Chatelain",
+        "Mhedine Alicherif",
+        "Yingchen Shi",
+        "Andrés Z. Mendiburu",
+        "Deanna A. Lacoste",
+        "Bing Wang"
+      ],
+      "categories": [
+        "eess.IV",
+        "cs.CV"
+      ],
+      "abs_url": "http://arxiv.org/abs/2607.03764v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.03764v1",
+      "score": 3.7,
+      "topics": [
+        {
+          "name": "World Model",
+          "slug": "world-model",
+          "hits": [
+            "simulation"
+          ]
+        },
+        {
+          "name": "RAG / Long Context",
+          "slug": "rag-long-context",
+          "hits": [
+            "rag"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "rag",
+        "simulation"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Deep%20Learning-Based%20Characterization%20of%20Detonation-Cell%20Size%20Distributions%20in%20Soot-Foil%20Records%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "The geometric size and regularity of detonation cells are key physical parameters for characterizing detonation waves. Traditional manual measurement of soot foils is time-consuming and subjective, while existing computer vision techniques often exhibit poor generalization on real experimental images with high noise, blurred boundaries, and severe overlapping. To address this, we propose a novel method for automated recognition and high-order feature extraction of detonation cells based on deep learning instance segmentation (Mask R-CNN). By constructing a custom heterogeneous dataset (numerical simulations and physical experiments) and integrating transfer learning, the model achieves accurate pixel-level mask prediction within highly noisy flow fields. Results indicate high pixel-level agreement in benchmark validations and strong robustness against noise in complex real-world soot foils. Predicted average cell sizes agree well with manual measurements, yielding relative errors under 2% and 3.5% for regular and irregular conditions, respectively. Sensitivity ablation experiments confirm the model's scale adaptability and guided the establishment of a standardized preprocessing paradigm for appropriate image patching. Overcoming the limitation of extracting only global average sizes, this model achieves automated tracking of the transient spatial evolution of cell sizes along the propagation direction. Furthermore, it quantitatively extracts high-order regularity features, such as the irregularity index (RI) and standard deviation of cell deflection angles, demonstrating consistency with theoretical expectations. The proposed method enhances the efficiency and objectivity of statistical analysis, providing a powerful data extraction tool for experimental and numerical soot foils.",
+      "code_links_from_meta": "https://github.com/search?q=Deep%20Learning-Based%20Characterization%20of%20Detonation-Cell%20Size%20Distributions%20in%20Soot-Foil%20Records%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "基于深度学习的烟膜记录中爆轰胞尺寸分布表征",
+      "institution": "未明确披露",
+      "summary_cn": "爆轰胞的几何尺寸和规则性是表征爆轰波的关键物理参数，传统手工测量烟膜耗时且主观，现有CV方法在真实实验图像上泛化性差。本文基于Mask R-CNN实例分割提出自动化爆轰胞识别与高阶特征提取方法，通过构建数值模拟与物理实验的异构数据集并引入迁移学习，在高噪声流场中实现像素级掩膜预测。实验表明平均胞尺寸预测相对误差在规则/不规则条件下分别低于2%和3.5%，并首次实现胞尺寸沿传播方向的空间演化自动追踪。",
+      "innovations": [
+        "将深度学习实例分割首次应用于爆轰胞识别，在强噪声、模糊边界、严重重叠的真实烟膜图像上取得鲁棒分割",
+        "构建数值模拟与物理实验混合的异构训练集，结合迁移学习克服真实标注数据不足",
+        "突破传统方法仅提取全局平均尺寸的限制，实现沿传播方向胞尺寸瞬态空间演化的自动化追踪",
+        "定量提取不规则指数(RI)和胞偏转角标准差等高阶规则性特征，与理论预期一致"
+      ],
+      "scenario_cn": "解决爆轰物理实验中烟膜记录分析效率低、主观性强的问题，适用于爆轰波特性研究、含能材料性能评估和爆炸流体力学实验数据的自动化统计分析",
+      "title_en": "Deep Learning-Based Characterization of Detonation-Cell Size Distributions in Soot-Foil Records",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2607.03739v1",
+      "title": "A Failure-Mode Benchmark for Polymorphic Sybil Poisoning in RAG",
+      "abstract": "We release a benchmark and failure-mode-aware evaluation framework for grounded QA under coordinated retrieval poisoning. The framework partitions reader outputs into four mutually exclusive categories (\\emph{gold}, \\emph{hijack}, \\emph{abstention}, \\emph{drift}), with instance-level paired clean-to-poison transition matrices and a Forced Exposure protocol isolating reader-side conflict resolution from retrieval variance. We introduce \\emph{polymorphic sybil poisoning}, a coordinated attack class in which $S$ lexically diverse passages jointly support an attacker-chosen target while evading lexical near-duplicate filters that fully detect monomorphic baselines (capturing the residual 14.2\\% with E5 cosine raises false-positive rate 9$\\times$ on legitimate same-topic pairs). A monomorphic-polymorphic ablation under Forced Exposure isolates the diversity dimension and reveals a $+$18.8pp hijack amplification (95\\% paired bootstrap CI $[+15.4, +22.4]$, $B{=}5{,}000$): monomorphic copies register only 4.0\\% as hijack while polymorphic surface diversity recovers 22.8\\% -- a 5.7$\\times$ amplification of the ASR-visible attack channel. ASR alone treats every non-target output identically; under attack, abstention and drift together hold 47-66\\% of output mass, unmonitored by ASR+ACC, and two readers at nearly identical ASR (within 0.2pp) differ by 16.5pp on abstention and 17.2pp on drift -- failure profiles invisible to ASR. We release the frozen benchmark (3{,}145 questions, 2{,}982 retained sybil groups; $S{=}6$ chosen to dominate top-10 retrieval slots, §\\ref{sec:setup}), the official four-way evaluator, paired-transition utilities, and the Forced Exposure harness across five readers (7B-120B), two retrievers, and two cross-validation datasets (TriviaQA, 2Wiki), under CC~BY-SA~4.0 (data) and MIT (software); release information in §\\ref{sec:release}.",
+      "published": "2026-07-04T06:56:06+00:00",
+      "updated": "2026-07-04T06:56:06+00:00",
+      "authors": [
+        "Donghyun Lee",
+        "Juntae Kim"
+      ],
+      "categories": [
+        "cs.CR",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "abs_url": "http://arxiv.org/abs/2607.03739v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.03739v1",
+      "score": 3.6,
+      "topics": [
+        {
+          "name": "RAG / Long Context",
+          "slug": "rag-long-context",
+          "hits": [
+            "rag",
+            "retrieval"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "rag",
+        "retrieval"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=A%20Failure-Mode%20Benchmark%20for%20Polymorphic%20Sybil%20Poisoning%20in%20RAG%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "We release a benchmark and failure-mode-aware evaluation framework for grounded QA under coordinated retrieval poisoning. The framework partitions reader outputs into four mutually exclusive categories (\\emph{gold}, \\emph{hijack}, \\emph{abstention}, \\emph{drift}), with instance-level paired clean-to-poison transition matrices and a Forced Exposure protocol isolating reader-side conflict resolution from retrieval variance. We introduce \\emph{polymorphic sybil poisoning}, a coordinated attack class in which $S$ lexically diverse passages jointly support an attacker-chosen target while evading lexical near-duplicate filters that fully detect monomorphic baselines (capturing the residual 14.2\\% with E5 cosine raises false-positive rate 9$\\times$ on legitimate same-topic pairs). A monomorphic-polymorphic ablation under Forced Exposure isolates the diversity dimension and reveals a $+$18.8pp hijack amplification (95\\% paired bootstrap CI $[+15.4, +22.4]$, $B{=}5{,}000$): monomorphic copies register only 4.0\\% as hijack while polymorphic surface diversity recovers 22.8\\% -- a 5.7$\\times$ amplification of the ASR-visible attack channel. ASR alone treats every non-target output identically; under attack, abstention and drift together hold 47-66\\% of output mass, unmonitored by ASR+ACC, and two readers at nearly identical ASR (within 0.2pp) differ by 16.5pp on abstention and 17.2pp on drift -- failure profiles invisible to ASR. We release the frozen benchmark (3{,}145 questions, 2{,}982 retained sybil groups; $S{=}6$ chosen to dominate top-10 retrieval slots, §\\ref{sec:setup}), the official four-way evaluator, paired-transition utilities, and the Forced Exposure harness across five readers (7B-120B), two retrievers, and two cross-validation datasets (TriviaQA, 2Wiki), under CC~BY-SA~4.0 (data) and MIT (software); release information in §\\ref{sec:release}.",
+      "code_links_from_meta": "https://github.com/search?q=A%20Failure-Mode%20Benchmark%20for%20Polymorphic%20Sybil%20Poisoning%20in%20RAG%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "RAG中多态女巫投毒的故障模式基准",
+      "institution": "未明确披露",
+      "summary_cn": "本文提出了一个针对检索增强生成（RAG）系统在协调检索投毒攻击下的故障模式基准和评估框架。框架将阅读器输出划分为四个互斥类别（正确、劫持、放弃、漂移），并引入「多态女巫投毒」攻击——S条词汇多样化的段落协同支撑攻击者目标，同时规避词汇近重复检测。实验表明，多态攻击相比同质攻击的劫持率从4.0%跃升至22.8%（放大5.7倍）。ASR指标无法监测到放弃和漂移两类故障，二者在攻击下占据47-66%的输出。",
+      "innovations": [
+        "提出四分类（正确/劫持/放弃/漂移）故障评估框架及强制暴露协议，隔离阅读器端冲突解决与检索方差",
+        "引入多态女巫投毒攻击，利用词汇多样性绕过传统近重复过滤器，劫持放大率5.7倍",
+        "揭示ASR+ACC指标盲区：放弃和漂移两类故障在攻击下占输出近半，两个ASR相同的阅读器在放弃率上可差16.5个百分点",
+        "发布冻结基准（3145问题、2982多态投毒组）、四路评估器、配对转换工具和强制暴露测试框架"
+      ],
+      "scenario_cn": "解决RAG系统在投毒攻击下缺乏细粒度故障诊断能力的问题，适用于安全关键的RAG部署场景，如知识问答、法律咨询、医疗问答等对检索内容安全要求高的应用。",
+      "title_en": "A Failure-Mode Benchmark for Polymorphic Sybil Poisoning in RAG",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2607.04008v1",
+      "title": "Candidate-Constrained Retrieval-Augmented Generation for LongEval-RAG: System Design and Empirical Analysis",
+      "abstract": "We present a candidate-constrained retrieval-augmented generation system for LongEval-RAG, where each query is associated with an organizer-provided candidate set and all retrieved evidence and final citations must remain within that set. The system combines deterministic provenance tracking with passage-based retrieval, deterministic query expansion, pseudo-relevance feedback (PRF), reciprocal rank fusion (RRF), lightweight evidence reranking, citation-aware evidence aggregation, and optional MiniLM sentence reranking. We evaluate ten pipeline variants using a primary organizer evaluation and a supplementary self-generated diagnostic protocol. The primary evaluation shows that the strongest balanced variant is rule-minilm: a rule-based chunking pipeline with query expansion, PRF, RRF, reranking, citation prior, and late MiniLM sentence selection. This variant obtains the highest BERTScore, retrieval precision, nugget coverage, and average grade among our submissions. The result suggests that the main gain does not come from more complex semantic or topic-shift chunking, but from pairing stable rule-based evidence units with sentence-level neural selection before generation. The supplementary LLM-judge evaluation remains useful for early diagnosis and additional analysis, but it emphasizes different systems than the primary gold-answer and nugget-based evaluation, highlighting the need for multi-metric RAG evaluation.",
+      "published": "2026-07-04T20:07:57+00:00",
+      "updated": "2026-07-04T20:07:57+00:00",
+      "authors": [
+        "Yingdong Yang",
+        "Haijian Wu"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.IR"
+      ],
+      "abs_url": "http://arxiv.org/abs/2607.04008v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.04008v1",
+      "score": 3.6,
+      "topics": [
+        {
+          "name": "RAG / Long Context",
+          "slug": "rag-long-context",
+          "hits": [
+            "rag",
+            "retrieval"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "rag",
+        "retrieval"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Candidate-Constrained%20Retrieval-Augmented%20Generation%20for%20LongEval-RAG%3A%20System%20Design%20and%20Empirical%20Analysis%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "We present a candidate-constrained retrieval-augmented generation system for LongEval-RAG, where each query is associated with an organizer-provided candidate set and all retrieved evidence and final citations must remain within that set. The system combines deterministic provenance tracking with passage-based retrieval, deterministic query expansion, pseudo-relevance feedback (PRF), reciprocal rank fusion (RRF), lightweight evidence reranking, citation-aware evidence aggregation, and optional MiniLM sentence reranking. We evaluate ten pipeline variants using a primary organizer evaluation and a supplementary self-generated diagnostic protocol. The primary evaluation shows that the strongest balanced variant is rule-minilm: a rule-based chunking pipeline with query expansion, PRF, RRF, reranking, citation prior, and late MiniLM sentence selection. This variant obtains the highest BERTScore, retrieval precision, nugget coverage, and average grade among our submissions. The result suggests that the main gain does not come from more complex semantic or topic-shift chunking, but from pairing stable rule-based evidence units with sentence-level neural selection before generation. The supplementary LLM-judge evaluation remains useful for early diagnosis and additional analysis, but it emphasizes different systems than the primary gold-answer and nugget-based evaluation, highlighting the need for multi-metric RAG evaluation.",
+      "code_links_from_meta": "https://github.com/search?q=Candidate-Constrained%20Retrieval-Augmented%20Generation%20for%20LongEval-RAG%3A%20System%20Design%20and%20Empirical%20Analysis%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "候选约束检索增强生成在LongEval-RAG中的系统设计与实证分析",
+      "institution": "未明确披露",
+      "summary_cn": "本文针对LongEval-RAG任务提出候选约束检索增强生成系统，每个查询关联一个主办方提供的候选集，所有检索证据和最终引用必须落在候选集内。系统组合了确定性溯源追踪、段落检索、查询扩展、伪相关反馈、倒数排名融合、轻量证据重排序、引用感知证据聚合和可选MiniLM句子重排序等模块。实验表明最优变体为rule-minilm管线，即将基于规则的稳定证据单元与句子级神经选择相结合，而非更复杂的语义或主题漂移分块策略。补充的LLM评判评估对早期诊断有用，但与基于黄金答案的评估强调不同指标，突出了多指标RAG评估的必要性。",
+      "innovations": [
+        "提出候选约束RAG框架，严格限定检索和引用必须在指定候选集内，适合闭域RAG评估场景",
+        "系统性消融10种变体管线，揭示基于规则分块+句级神经筛选的组合优于复杂语义分块方法",
+        "引入多指标评估协议（BERTScore、检索精度、nugget覆盖等），发现LLM评判与黄金答案评估存在系统性偏差"
+      ],
+      "scenario_cn": "解决闭域RAG场景中检索范围受限、引用来源必须可控的问题，适用于赛事评估、企业知识库等需要精确溯源和约束检索的应用场景。",
+      "title_en": "Candidate-Constrained Retrieval-Augmented Generation for LongEval-RAG: System Design and Empirical Analysis",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    }
+  ]
+}
