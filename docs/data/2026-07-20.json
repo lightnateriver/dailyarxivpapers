@@ -1,0 +1,3449 @@
+{
+  "date": "2026-07-20",
+  "count": 92,
+  "fetched_count": 454,
+  "open_source_count": 0,
+  "topics": [
+    {
+      "name": "Agent",
+      "slug": "agent",
+      "count": 28
+    },
+    {
+      "name": "Agent Reasoning / Test-time Scaling",
+      "slug": "agent-reasoning",
+      "count": 18
+    },
+    {
+      "name": "RAG / Long Context",
+      "slug": "rag-long-context",
+      "count": 11
+    },
+    {
+      "name": "多模态推理加速",
+      "slug": "multimodal-inference",
+      "count": 9
+    },
+    {
+      "name": "Model Compression / Quantization",
+      "slug": "model-compression",
+      "count": 7
+    },
+    {
+      "name": "LLM 推理加速",
+      "slug": "llm-inference",
+      "count": 6
+    },
+    {
+      "name": "World Model",
+      "slug": "world-model",
+      "count": 6
+    },
+    {
+      "name": "Video Generation",
+      "slug": "video-generation",
+      "count": 5
+    },
+    {
+      "name": "AI Infra / Serving Systems",
+      "slug": "ai-infra-serving",
+      "count": 1
+    },
+    {
+      "name": "Code Agent / SWE Agent",
+      "slug": "code-agent",
+      "count": 1
+    }
+  ],
+  "papers": [
+    {
+      "id": "2607.16184v1",
+      "title": "PagedWeight: Efficient MoE LLM Serving with Dynamic Quality-Aware Weight Quantization",
+      "abstract": "",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Yuchen Yang",
+        "Yifan Zhao",
+        "Anisha Dasgupta",
+        "Sasa Misailovic"
+      ],
+      "categories": [
+        "cs.LG"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.16184",
+      "pdf_url": "https://arxiv.org/pdf/2607.16184",
+      "score": 12.2,
+      "topics": [
+        {
+          "name": "LLM 推理加速",
+          "slug": "llm-inference",
+          "hits": [
+            "serving"
+          ]
+        },
+        {
+          "name": "AI Infra / Serving Systems",
+          "slug": "ai-infra-serving",
+          "hits": [
+            "llm serving"
+          ]
+        },
+        {
+          "name": "Model Compression / Quantization",
+          "slug": "model-compression",
+          "hits": [
+            "quantization"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "llm serving",
+        "quantization",
+        "serving"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=PagedWeight%3A%20Efficient%20MoE%20LLM%20Serving%20with%20Dynamic%20Quality-Aware%20Weight%20Quantization%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.15439v1",
+      "title": "Do Coding Agents Need Executable World Models, Simplification, and Verification to Solve ARC-AGI-3?",
+      "abstract": " Comments: 31 pages, 2 figures",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Sergey Rodionov"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.15439",
+      "pdf_url": "https://arxiv.org/pdf/2607.15439",
+      "score": 10.2,
+      "topics": [
+        {
+          "name": "Agent",
+          "slug": "agent",
+          "hits": [
+            "agent"
+          ]
+        },
+        {
+          "name": "World Model",
+          "slug": "world-model",
+          "hits": [
+            "world model"
+          ]
+        },
+        {
+          "name": "Code Agent / SWE Agent",
+          "slug": "code-agent",
+          "hits": [
+            "coding agent"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "agent",
+        "coding agent",
+        "world model"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Do%20Coding%20Agents%20Need%20Executable%20World%20Models%2C%20Simplification%2C%20and%20Verification%20to%20Solve%20ARC-AGI-3%3F%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.16193v1",
+      "title": "Knowing the Self, Understanding the World: A Dual-Cognition Benchmark for UAV Spatio-temporal Reasoning with MLLMs",
+      "abstract": " Comments: 11 pages, 4 figures, 7 tables. Project website: this https URL",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Like Liu",
+        "Zhengzheng Xu",
+        "Haitao He",
+        "Hongzhe Li",
+        "Shuchang Zhang",
+        "Dian Shao"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.16193",
+      "pdf_url": "https://arxiv.org/pdf/2607.16193",
+      "score": 7.8,
+      "topics": [
+        {
+          "name": "多模态推理加速",
+          "slug": "multimodal-inference",
+          "hits": [
+            "mllm"
+          ]
+        },
+        {
+          "name": "Agent Reasoning / Test-time Scaling",
+          "slug": "agent-reasoning",
+          "hits": [
+            "reasoning"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "mllm",
+        "reasoning"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Knowing%20the%20Self%2C%20Understanding%20the%20World%3A%20A%20Dual-Cognition%20Benchmark%20for%20UAV%20Spatio-temporal%20Reasoning%20with%20MLLMs%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.16161v1",
+      "title": "Adaptive Fault Injection Planning for Multi-Layer Self-Healing AI Infrastructure",
+      "abstract": "",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Saurabh Kulkarni",
+        "Yuxin Yang",
+        "Rohan Kulkarni",
+        "Gautam Nayak"
+      ],
+      "categories": [
+        "cs.ET"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.16161",
+      "pdf_url": "https://arxiv.org/pdf/2607.16161",
+      "score": 7.8,
+      "topics": [
+        {
+          "name": "Agent Reasoning / Test-time Scaling",
+          "slug": "agent-reasoning",
+          "hits": [
+            "planning"
+          ]
+        },
+        {
+          "name": "AI Infra / Serving Systems",
+          "slug": "ai-infra-serving",
+          "hits": [
+            "ai infrastructure"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "ai infrastructure",
+        "planning"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Adaptive%20Fault%20Injection%20Planning%20for%20Multi-Layer%20Self-Healing%20AI%20Infrastructure%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.15388v1",
+      "title": "Precise but Uncoupled: Reviewer Precision Does Not Guarantee Critique Uptake in Multi-Agent Math Reasoning",
+      "abstract": " Comments: 48 pages, 20 figures, 25 tables. Public release website: this https URL",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Chih-Hsuan Yang",
+        "Jingyan Jiang",
+        "Vikram Vasudevan",
+        "Cheng-Hau Yang",
+        "Huihuo Zheng",
+        "Le Chen",
+        "Eliu A. Huerta",
+        "Venkatram Vishwanath",
+        "Ian T. Foster",
+        "Rajeev Thakur"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.15388",
+      "pdf_url": "https://arxiv.org/pdf/2607.15388",
+      "score": 7.8,
+      "topics": [
+        {
+          "name": "Agent",
+          "slug": "agent",
+          "hits": [
+            "agent",
+            "multi-agent"
+          ]
+        },
+        {
+          "name": "Agent Reasoning / Test-time Scaling",
+          "slug": "agent-reasoning",
+          "hits": [
+            "reasoning"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "agent",
+        "multi-agent",
+        "reasoning"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Precise%20but%20Uncoupled%3A%20Reviewer%20Precision%20Does%20Not%20Guarantee%20Critique%20Uptake%20in%20Multi-Agent%20Math%20Reasoning%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.15367v1",
+      "title": "AnovaX: A Local, Multi-Agent Voice Assistant with LLM Planning, Typed Executors, and Adaptive Recovery",
+      "abstract": "",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Raunak B Sinha"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.15367",
+      "pdf_url": "https://arxiv.org/pdf/2607.15367",
+      "score": 7.8,
+      "topics": [
+        {
+          "name": "Agent",
+          "slug": "agent",
+          "hits": [
+            "agent",
+            "multi-agent"
+          ]
+        },
+        {
+          "name": "Agent Reasoning / Test-time Scaling",
+          "slug": "agent-reasoning",
+          "hits": [
+            "planning"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "agent",
+        "multi-agent",
+        "planning"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=AnovaX%3A%20A%20Local%2C%20Multi-Agent%20Voice%20Assistant%20with%20LLM%20Planning%2C%20Typed%20Executors%2C%20and%20Adaptive%20Recovery%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.16190v1",
+      "title": "FVAttn: Adaptive Sparse Attention with Runtime Load Balancing for Video Generation",
+      "abstract": "",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Hao Liu",
+        "Chenghuan Huang",
+        "Ye Huang",
+        "Zhiying Wen",
+        "Hao Liu",
+        "Mohan Zhang",
+        "Chen Li",
+        "Ziyang Ma",
+        "Jing Lyu",
+        "Jiangsu Du"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.16190",
+      "pdf_url": "https://arxiv.org/pdf/2607.16190",
+      "score": 7.6,
+      "topics": [
+        {
+          "name": "Video Generation",
+          "slug": "video-generation",
+          "hits": [
+            "video generation"
+          ]
+        },
+        {
+          "name": "AI Infra / Serving Systems",
+          "slug": "ai-infra-serving",
+          "hits": [
+            "load balancing"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "load balancing",
+        "video generation"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=FVAttn%3A%20Adaptive%20Sparse%20Attention%20with%20Runtime%20Load%20Balancing%20for%20Video%20Generation%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.15736v1",
+      "title": "Better Starts, Better Ends: Bootstrapped Iterative Self-Reasoning Distillation for Compressed Reasoning",
+      "abstract": "",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Leichao Dong",
+        "Dongxu Zhang",
+        "Yiding Sun",
+        "Qirui Wang",
+        "Yuhan Wang",
+        "Lin Chen",
+        "Jihua Zhu"
+      ],
+      "categories": [
+        "cs.CL"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.15736",
+      "pdf_url": "https://arxiv.org/pdf/2607.15736",
+      "score": 7.6,
+      "topics": [
+        {
+          "name": "Agent Reasoning / Test-time Scaling",
+          "slug": "agent-reasoning",
+          "hits": [
+            "reasoning"
+          ]
+        },
+        {
+          "name": "Model Compression / Quantization",
+          "slug": "model-compression",
+          "hits": [
+            "distillation"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "distillation",
+        "reasoning"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Better%20Starts%2C%20Better%20Ends%3A%20Bootstrapped%20Iterative%20Self-Reasoning%20Distillation%20for%20Compressed%20Reasoning%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.15592v1",
+      "title": "MGDT: MLLM-Guided Diffusion Transformer with Relation-Adaptive Mixture-of-Experts for Multimodal Knowledge Graph Completion",
+      "abstract": " Comments: 8pages, 6 figures",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Xu Hou",
+        "Meiyu Liang",
+        "Wei Huang",
+        "Yawen Li",
+        "Zhe Xue",
+        "Wu Liu",
+        "Guanhua Ye",
+        "Lei Shi",
+        "Kangkang Lu"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.15592",
+      "pdf_url": "https://arxiv.org/pdf/2607.15592",
+      "score": 7.6,
+      "topics": [
+        {
+          "name": "多模态推理加速",
+          "slug": "multimodal-inference",
+          "hits": [
+            "mllm"
+          ]
+        },
+        {
+          "name": "Video Generation",
+          "slug": "video-generation",
+          "hits": [
+            "diffusion transformer"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "diffusion transformer",
+        "mllm"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=MGDT%3A%20MLLM-Guided%20Diffusion%20Transformer%20with%20Relation-Adaptive%20Mixture-of-Experts%20for%20Multimodal%20Knowledge%20Graph%20Completion%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.15505v1",
+      "title": "Fast and Scalable Caputo Fractional Gradient Descent via Perturbation-Preserving Memory Compression",
+      "abstract": "",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Hwanseo Lee",
+        "Junseo Lee",
+        "Hyunju Kim"
+      ],
+      "categories": [
+        "math.OC",
+        "cs.LG",
+        "cs.NE",
+        "math.NA"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.15505",
+      "pdf_url": "https://arxiv.org/pdf/2607.15505",
+      "score": 7.6,
+      "topics": [
+        {
+          "name": "LLM 推理加速",
+          "slug": "llm-inference",
+          "hits": [
+            "serving"
+          ]
+        },
+        {
+          "name": "RAG / Long Context",
+          "slug": "rag-long-context",
+          "hits": [
+            "memory compression"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "memory compression",
+        "serving"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Fast%20and%20Scalable%20Caputo%20Fractional%20Gradient%20Descent%20via%20Perturbation-Preserving%20Memory%20Compression%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.15901v1",
+      "title": "DSWorld: A Data Science World Model for Efficient Autonomous Agents",
+      "abstract": "",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Zherui Yang",
+        "Fan Liu",
+        "Hao Liu"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.15901",
+      "pdf_url": "https://arxiv.org/pdf/2607.15901",
+      "score": 7.4,
+      "topics": [
+        {
+          "name": "Agent",
+          "slug": "agent",
+          "hits": [
+            "agent",
+            "autonomous agent"
+          ]
+        },
+        {
+          "name": "World Model",
+          "slug": "world-model",
+          "hits": [
+            "world model"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "agent",
+        "autonomous agent",
+        "world model"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=DSWorld%3A%20A%20Data%20Science%20World%20Model%20for%20Efficient%20Autonomous%20Agents%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.15550v1",
+      "title": "SeerGuard: A Safety Framework for Mobile GUI Agents via World Model Prediction",
+      "abstract": " Comments: 19 pages, 8 figures",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Xue Yu",
+        "Bo Yuan",
+        "Pengshuai Yang",
+        "Kailin Zhao",
+        "Hong Hu",
+        "Junlan Feng"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.15550",
+      "pdf_url": "https://arxiv.org/pdf/2607.15550",
+      "score": 7.4,
+      "topics": [
+        {
+          "name": "Agent",
+          "slug": "agent",
+          "hits": [
+            "agent",
+            "gui agent"
+          ]
+        },
+        {
+          "name": "World Model",
+          "slug": "world-model",
+          "hits": [
+            "world model"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "agent",
+        "gui agent",
+        "world model"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=SeerGuard%3A%20A%20Safety%20Framework%20for%20Mobile%20GUI%20Agents%20via%20World%20Model%20Prediction%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.15673v1",
+      "title": "Beyond Detection: Agentic Attack Synthesis and Simulation for Smart Contracts",
+      "abstract": "",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Xianhao Zhang",
+        "Jing Sun",
+        "Zijian Zhang",
+        "Ye Liu",
+        "Zhe Hou",
+        "Jiaqi Gao",
+        "Yuqiang Sun"
+      ],
+      "categories": [
+        "cs.CR"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.15673",
+      "pdf_url": "https://arxiv.org/pdf/2607.15673",
+      "score": 7.0,
+      "topics": [
+        {
+          "name": "Agent",
+          "slug": "agent",
+          "hits": [
+            "agent"
+          ]
+        },
+        {
+          "name": "World Model",
+          "slug": "world-model",
+          "hits": [
+            "simulation"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "agent",
+        "simulation"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Beyond%20Detection%3A%20Agentic%20Attack%20Synthesis%20and%20Simulation%20for%20Smart%20Contracts%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.15600v1",
+      "title": "Geometric Distillation from Rectified Stereo: Leveraging Epipolar Cues for Monocular Depth",
+      "abstract": "",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Jung-Hee Kim",
+        "Xiaoming Liu"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.15600",
+      "pdf_url": "https://arxiv.org/pdf/2607.15600",
+      "score": 7.0,
+      "topics": [
+        {
+          "name": "RAG / Long Context",
+          "slug": "rag-long-context",
+          "hits": [
+            "rag"
+          ]
+        },
+        {
+          "name": "Model Compression / Quantization",
+          "slug": "model-compression",
+          "hits": [
+            "distillation"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "distillation",
+        "rag"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Geometric%20Distillation%20from%20Rectified%20Stereo%3A%20Leveraging%20Epipolar%20Cues%20for%20Monocular%20Depth%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.15696v1",
+      "title": "PCTD: Preference-Guided Counterfactual Task Decomposition for Agent Tool Retrieval",
+      "abstract": "",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Chu Zhao",
+        "Lei Tang",
+        "Minghang Li",
+        "Jianzhe Zhao",
+        "Guibing Guo",
+        "Zhengzong Chen",
+        "Yuanyuan Zhao",
+        "Fei Huang"
+      ],
+      "categories": [
+        "cs.IR"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.15696",
+      "pdf_url": "https://arxiv.org/pdf/2607.15696",
+      "score": 6.8,
+      "topics": [
+        {
+          "name": "Agent",
+          "slug": "agent",
+          "hits": [
+            "agent"
+          ]
+        },
+        {
+          "name": "RAG / Long Context",
+          "slug": "rag-long-context",
+          "hits": [
+            "retrieval"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "agent",
+        "retrieval"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=PCTD%3A%20Preference-Guided%20Counterfactual%20Task%20Decomposition%20for%20Agent%20Tool%20Retrieval%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.16163v1",
+      "title": "Revisiting Real-Time Interval and Throughput Maximization",
+      "abstract": " Comments: arXiv admin note: text overlap with arXiv:2511.16023",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Allan Borodin",
+        "Changdao He",
+        "Nadim Mottu"
+      ],
+      "categories": [
+        "cs.DS"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.16163",
+      "pdf_url": "https://arxiv.org/pdf/2607.16163",
+      "score": 4.4,
+      "topics": [
+        {
+          "name": "LLM 推理加速",
+          "slug": "llm-inference",
+          "hits": [
+            "throughput"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "throughput"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Revisiting%20Real-Time%20Interval%20and%20Throughput%20Maximization%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.16100v1",
+      "title": "Every Microsecond Matters: Achieving Near Speed-of-Light Latency in GPU Collectives",
+      "abstract": "",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Siyuan Shen",
+        "Anton Korzh",
+        "John Bachan",
+        "Tiancheng Chen",
+        "Arnav Goel",
+        "Ludwig Schneider",
+        "Pouya Kousha",
+        "Zhenhao He",
+        "Sylvain Jeaugey",
+        "Kamil Iskra",
+        "Nishank Chandawala",
+        "Jeff R. Hammond",
+        "Torsten Hoefler"
+      ],
+      "categories": [
+        "cs.DC"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.16100",
+      "pdf_url": "https://arxiv.org/pdf/2607.16100",
+      "score": 4.4,
+      "topics": [
+        {
+          "name": "LLM 推理加速",
+          "slug": "llm-inference",
+          "hits": [
+            "latency"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "latency"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Every%20Microsecond%20Matters%3A%20Achieving%20Near%20Speed-of-Light%20Latency%20in%20GPU%20Collectives%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.15498v1",
+      "title": "VarRate: Training-Free Variable-Rate KV Cache Compression for Long-Context LLMs",
+      "abstract": " Comments: 20 pages, 8 figures, 24 tables. Includes appendix with additional experiments and analyses",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Shahrzad Esmat",
+        "Dhawal Shah",
+        "Ali Jannesari"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.15498",
+      "pdf_url": "https://arxiv.org/pdf/2607.15498",
+      "score": 4.4,
+      "topics": [
+        {
+          "name": "LLM 推理加速",
+          "slug": "llm-inference",
+          "hits": [
+            "kv cache"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "kv cache"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=VarRate%3A%20Training-Free%20Variable-Rate%20KV%20Cache%20Compression%20for%20Long-Context%20LLMs%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.15413v1",
+      "title": "FSZ: Breaking the Prediction-Throughput Trade-off in GPU Lossy Compression",
+      "abstract": " Comments: Accepted at SC26",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Jiajun Huang"
+      ],
+      "categories": [
+        "cs.DC",
+        "cs.PF"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.15413",
+      "pdf_url": "https://arxiv.org/pdf/2607.15413",
+      "score": 4.4,
+      "topics": [
+        {
+          "name": "LLM 推理加速",
+          "slug": "llm-inference",
+          "hits": [
+            "throughput"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "throughput"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=FSZ%3A%20Breaking%20the%20Prediction-Throughput%20Trade-off%20in%20GPU%20Lossy%20Compression%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.16105v1",
+      "title": "Attention-Guided Saliency Maps for Interpreting Visualization Literacy in VLMs",
+      "abstract": " Comments: To be presented at IEEE VIS 2026",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Maeve Hutchinson",
+        "Abderrahmane Wassim Mehdaoui",
+        "Pranava Madhyastha"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.HC"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.16105",
+      "pdf_url": "https://arxiv.org/pdf/2607.16105",
+      "score": 4.0,
+      "topics": [
+        {
+          "name": "多模态推理加速",
+          "slug": "multimodal-inference",
+          "hits": [
+            "vlm"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "vlm"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Attention-Guided%20Saliency%20Maps%20for%20Interpreting%20Visualization%20Literacy%20in%20VLMs%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.16094v1",
+      "title": "How Do VLMs Fail? Vision-Operation Misalignment in Compositional VQA",
+      "abstract": " Comments: Accepted at ACM Multimedia 2026",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Navya Gupta",
+        "Bingjie Xu",
+        "Avinash Anand",
+        "Timothy Liu",
+        "Zhengchen Zhang"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.16094",
+      "pdf_url": "https://arxiv.org/pdf/2607.16094",
+      "score": 4.0,
+      "topics": [
+        {
+          "name": "多模态推理加速",
+          "slug": "multimodal-inference",
+          "hits": [
+            "vlm"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "vlm"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=How%20Do%20VLMs%20Fail%3F%20Vision-Operation%20Misalignment%20in%20Compositional%20VQA%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.15942v1",
+      "title": "More with Less: a Large Scale Remote Sensing VLM with a Simple Recipe",
+      "abstract": "",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Stefan Maria Ailuro",
+        "Mario Markov",
+        "Mohammad Mahdi",
+        "Luc Van Gool",
+        "Danda Pani Paudel"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.LG"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.15942",
+      "pdf_url": "https://arxiv.org/pdf/2607.15942",
+      "score": 4.0,
+      "topics": [
+        {
+          "name": "多模态推理加速",
+          "slug": "multimodal-inference",
+          "hits": [
+            "vlm"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "vlm"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=More%20with%20Less%3A%20a%20Large%20Scale%20Remote%20Sensing%20VLM%20with%20a%20Simple%20Recipe%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.15876v1",
+      "title": "Yarrow: Reconciling Effects Handlers and Region-Based Memory Management",
+      "abstract": "",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Anders Alnor Mathiasen",
+        "Amin Timany",
+        "Lars Birkedal"
+      ],
+      "categories": [
+        "cs.PL"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.15876",
+      "pdf_url": "https://arxiv.org/pdf/2607.15876",
+      "score": 4.0,
+      "topics": [
+        {
+          "name": "AI Infra / Serving Systems",
+          "slug": "ai-infra-serving",
+          "hits": [
+            "memory management"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "memory management"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Yarrow%3A%20Reconciling%20Effects%20Handlers%20and%20Region-Based%20Memory%20Management%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.15781v1",
+      "title": "AgentFAIR: A Multi-Agent Collaborative Framework for FAIRness Evaluation of Geospatial Datasets",
+      "abstract": "",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Ming Chen",
+        "Pranav Pai"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.ET",
+        "cs.MA"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.15781",
+      "pdf_url": "https://arxiv.org/pdf/2607.15781",
+      "score": 4.0,
+      "topics": [
+        {
+          "name": "Agent",
+          "slug": "agent",
+          "hits": [
+            "agent",
+            "multi-agent"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "agent",
+        "multi-agent"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=AgentFAIR%3A%20A%20Multi-Agent%20Collaborative%20Framework%20for%20FAIRness%20Evaluation%20of%20Geospatial%20Datasets%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.15778v1",
+      "title": "Modularized Dynamic-Granularity Video LLM for Multi-Event Long Video Understanding",
+      "abstract": " Comments: Accepted by 2026 IEEE International Conference on Multimedia and Expo (ICME 2026)",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Wei Feng",
+        "Xin Wang",
+        "Yu-Wei Zhan",
+        "Yuwei Zhou",
+        "Wenwu Zhu"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.15778",
+      "pdf_url": "https://arxiv.org/pdf/2607.15778",
+      "score": 4.0,
+      "topics": [
+        {
+          "name": "多模态推理加速",
+          "slug": "multimodal-inference",
+          "hits": [
+            "video understanding"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "video understanding"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Modularized%20Dynamic-Granularity%20Video%20LLM%20for%20Multi-Event%20Long%20Video%20Understanding%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.15772v1",
+      "title": "SlotMem: Character-Addressable Internal Memory for Narrative Long Video Generation",
+      "abstract": "",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Yilai Liu",
+        "Xin Zhang",
+        "Shiyuan Zhang",
+        "Hongyang Du"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.15772",
+      "pdf_url": "https://arxiv.org/pdf/2607.15772",
+      "score": 4.0,
+      "topics": [
+        {
+          "name": "Video Generation",
+          "slug": "video-generation",
+          "hits": [
+            "video generation",
+            "long video generation"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "long video generation",
+        "video generation"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=SlotMem%3A%20Character-Addressable%20Internal%20Memory%20for%20Narrative%20Long%20Video%20Generation%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.15689v1",
+      "title": "Efficient Frame Selection for Long Videos at Test Time with Attention-Based MLLM Selectors",
+      "abstract": "",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Yilin Wang",
+        "Xiangxi Zheng",
+        "Dongxing Mao",
+        "Linjie Li",
+        "Zhengyuan Yang",
+        "Ping Yu",
+        "Rui Yan",
+        "Yuan Yao",
+        "Alex Jinpeng Wang"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.15689",
+      "pdf_url": "https://arxiv.org/pdf/2607.15689",
+      "score": 4.0,
+      "topics": [
+        {
+          "name": "多模态推理加速",
+          "slug": "multimodal-inference",
+          "hits": [
+            "mllm"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "mllm"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Efficient%20Frame%20Selection%20for%20Long%20Videos%20at%20Test%20Time%20with%20Attention-Based%20MLLM%20Selectors%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.15661v1",
+      "title": "Model Merging for Medical LVLMs: A Benchmark and a Winner-Take-All Approach",
+      "abstract": " Comments: Project Page: this https URL",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Lichao Mou",
+        "Shilan Zhang",
+        "Chunlei Li",
+        "Bingcong Yan",
+        "Jingliang Hu",
+        "Yilei Shi",
+        "Shengwu Xiong",
+        "Xiao Xiang Zhu",
+        "Lei Li",
+        "Yaxiong Chen"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.15661",
+      "pdf_url": "https://arxiv.org/pdf/2607.15661",
+      "score": 4.0,
+      "topics": [
+        {
+          "name": "多模态推理加速",
+          "slug": "multimodal-inference",
+          "hits": [
+            "vlm"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "vlm"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Model%20Merging%20for%20Medical%20LVLMs%3A%20A%20Benchmark%20and%20a%20Winner-Take-All%20Approach%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.15657v1",
+      "title": "Do Agents Dream of False Memories? Black-box Visual Attacks on Long-term Memory in Multimodal AI Agents",
+      "abstract": " Comments: 34 pages, 5 figures, 15 tables",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Halima Bouzidi",
+        "Mboutidem Ekemini Mkpong",
+        "Mohammad Abdullah Al Faruque"
+      ],
+      "categories": [
+        "cs.CR",
+        "cs.CV",
+        "cs.LG"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.15657",
+      "pdf_url": "https://arxiv.org/pdf/2607.15657",
+      "score": 4.0,
+      "topics": [
+        {
+          "name": "Agent",
+          "slug": "agent",
+          "hits": [
+            "agent",
+            "ai agent"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "agent",
+        "ai agent"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Do%20Agents%20Dream%20of%20False%20Memories%3F%20Black-box%20Visual%20Attacks%20on%20Long-term%20Memory%20in%20Multimodal%20AI%20Agents%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.15572v1",
+      "title": "A PI+R Control Scheme Based on Multi-agent Systems for Economic Dispatch in Isolated BESSs",
+      "abstract": "",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Yalin Zhang",
+        "Zhongxin Liu",
+        "Zengqiang Chen"
+      ],
+      "categories": [
+        "eess.SY"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.15572",
+      "pdf_url": "https://arxiv.org/pdf/2607.15572",
+      "score": 4.0,
+      "topics": [
+        {
+          "name": "Agent",
+          "slug": "agent",
+          "hits": [
+            "agent",
+            "multi-agent"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "agent",
+        "multi-agent"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=A%20PI%2BR%20Control%20Scheme%20Based%20on%20Multi-agent%20Systems%20for%20Economic%20Dispatch%20in%20Isolated%20BESSs%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.15299v1",
+      "title": "MLLM-DataEngine: Closing the Loop of Multimodal Instruction Tuning Data Generation",
+      "abstract": " Comments: 6 pages, 4 figures, 7 tables; accepted by ICME 2026",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Zhiyuan Zhao",
+        "Bin Wang",
+        "Linke Ouyang",
+        "Yiqi Lin",
+        "Pan Zhang",
+        "Xiaoyi Dong",
+        "Jiaqi Wang",
+        "Conghui He"
+      ],
+      "categories": [
+        "cs.MM",
+        "cs.CV",
+        "cs.LG"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.15299",
+      "pdf_url": "https://arxiv.org/pdf/2607.15299",
+      "score": 4.0,
+      "topics": [
+        {
+          "name": "多模态推理加速",
+          "slug": "multimodal-inference",
+          "hits": [
+            "mllm"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "mllm"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=MLLM-DataEngine%3A%20Closing%20the%20Loop%20of%20Multimodal%20Instruction%20Tuning%20Data%20Generation%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.15280v1",
+      "title": "GraphDx: A Cost-Aware Knowledge-Enhanced Multi-Agent Framework for Sequential Diagnosis",
+      "abstract": "",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Shaoting Tan",
+        "Ning Liu",
+        "Yuntao Du",
+        "Shuyue Wei",
+        "Wu Shuai",
+        "Qian Li",
+        "Yanyu Xu",
+        "Wei Zhang",
+        "Lizhen Cui",
+        "Haitao Yuan"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.15280",
+      "pdf_url": "https://arxiv.org/pdf/2607.15280",
+      "score": 4.0,
+      "topics": [
+        {
+          "name": "Agent",
+          "slug": "agent",
+          "hits": [
+            "agent",
+            "multi-agent"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "agent",
+        "multi-agent"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=GraphDx%3A%20A%20Cost-Aware%20Knowledge-Enhanced%20Multi-Agent%20Framework%20for%20Sequential%20Diagnosis%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.16097v1",
+      "title": "Understanding Reasoning from Pretraining to Post-Training",
+      "abstract": "",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Jingyan Shen",
+        "Ang Li",
+        "Salman Rahman",
+        "Yifan Sun",
+        "Micah Goldblum",
+        "Matus Telgarsky",
+        "Pavel Izmailov"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.16097",
+      "pdf_url": "https://arxiv.org/pdf/2607.16097",
+      "score": 3.8,
+      "topics": [
+        {
+          "name": "Agent Reasoning / Test-time Scaling",
+          "slug": "agent-reasoning",
+          "hits": [
+            "reasoning"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "reasoning"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Understanding%20Reasoning%20from%20Pretraining%20to%20Post-Training%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.16057v1",
+      "title": "Frontier AI performance across the business disciplines: a case-grounded benchmark of knowledge work and analytical reasoning",
+      "abstract": "",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Ajay Patel",
+        "Kartik Hosanagar",
+        "Ramayya Krishnan",
+        "Chris Callison-Burch",
+        "Karim Lakhani",
+        "Mitch Weiss"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.16057",
+      "pdf_url": "https://arxiv.org/pdf/2607.16057",
+      "score": 3.8,
+      "topics": [
+        {
+          "name": "Agent Reasoning / Test-time Scaling",
+          "slug": "agent-reasoning",
+          "hits": [
+            "reasoning"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "reasoning"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Frontier%20AI%20performance%20across%20the%20business%20disciplines%3A%20a%20case-grounded%20benchmark%20of%20knowledge%20work%20and%20analytical%20reasoning%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.15969v1",
+      "title": "Vessel Trajectory Prediction using COLREGs-aware Optimal Planning",
+      "abstract": " Comments: 6 pages, 11 figures. This work has been accepted to IFAC2026 for publication under a Creative Commons Licence CC-BY-NC-ND",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "David Kaikkonen",
+        "Fredrik Ljungberg",
+        "Erik Frisk"
+      ],
+      "categories": [
+        "eess.SY",
+        "cs.RO"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.15969",
+      "pdf_url": "https://arxiv.org/pdf/2607.15969",
+      "score": 3.8,
+      "topics": [
+        {
+          "name": "Agent Reasoning / Test-time Scaling",
+          "slug": "agent-reasoning",
+          "hits": [
+            "planning"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "planning"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Vessel%20Trajectory%20Prediction%20using%20COLREGs-aware%20Optimal%20Planning%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.15933v1",
+      "title": "Distributional Matching for Vector Quantization: A Unified Theoretical and Empirical Framework",
+      "abstract": " Comments: 33 pages, 17 figures, and 16 tables. arXiv admin note: substantial text overlap with arXiv:2506.15078",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Xianghong Fang",
+        "Litao Guo",
+        "Hengchao Chen",
+        "Yuxuan Zhang",
+        "XiaofanXia",
+        "Dingjie Song",
+        "Yexin Liu",
+        "Hao Wang",
+        "Harry Yang",
+        "Qiang Sun",
+        "Yuan Yuan"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.15933",
+      "pdf_url": "https://arxiv.org/pdf/2607.15933",
+      "score": 3.8,
+      "topics": [
+        {
+          "name": "Model Compression / Quantization",
+          "slug": "model-compression",
+          "hits": [
+            "quantization"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "quantization"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Distributional%20Matching%20for%20Vector%20Quantization%3A%20A%20Unified%20Theoretical%20and%20Empirical%20Framework%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.15919v1",
+      "title": "On the Failure of Boundary-Seeking Distillation in Bottlenecked Generative Architectures",
+      "abstract": "",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Mohamed Amine Kina"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.15919",
+      "pdf_url": "https://arxiv.org/pdf/2607.15919",
+      "score": 3.8,
+      "topics": [
+        {
+          "name": "Model Compression / Quantization",
+          "slug": "model-compression",
+          "hits": [
+            "distillation"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "distillation"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=On%20the%20Failure%20of%20Boundary-Seeking%20Distillation%20in%20Bottlenecked%20Generative%20Architectures%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.15810v1",
+      "title": "QUADS: Stabilizing NVFP4 Reinforcement Learning for MoE via QUantization-error Alignment across Dual Sides",
+      "abstract": "",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Zhengyang Zhuge",
+        "Hao Yu",
+        "Xin Wang",
+        "Zheng Li",
+        "Yizhong Cao",
+        "Dayiheng Liu",
+        "Jianwei Zhang"
+      ],
+      "categories": [
+        "cs.LG"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.15810",
+      "pdf_url": "https://arxiv.org/pdf/2607.15810",
+      "score": 3.8,
+      "topics": [
+        {
+          "name": "Model Compression / Quantization",
+          "slug": "model-compression",
+          "hits": [
+            "quantization"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "quantization"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=QUADS%3A%20Stabilizing%20NVFP4%20Reinforcement%20Learning%20for%20MoE%20via%20QUantization-error%20Alignment%20across%20Dual%20Sides%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.15776v1",
+      "title": "NeurOWL: An LLM-Based Neural-symbolic Framework for Incomplete OWL Ontology Reasoning",
+      "abstract": "",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Hui Yang",
+        "Jiaoyan Chen",
+        "Yiping Song",
+        "Renate Schmidt",
+        "Wen Zhang"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.15776",
+      "pdf_url": "https://arxiv.org/pdf/2607.15776",
+      "score": 3.8,
+      "topics": [
+        {
+          "name": "Agent Reasoning / Test-time Scaling",
+          "slug": "agent-reasoning",
+          "hits": [
+            "reasoning"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "reasoning"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=NeurOWL%3A%20An%20LLM-Based%20Neural-symbolic%20Framework%20for%20Incomplete%20OWL%20Ontology%20Reasoning%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.15740v1",
+      "title": "Debiasing Text-to-Image Evaluation via Implicit Cultural Alignment Reward Modeling",
+      "abstract": " Comments: 15 pages, 2 figures",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Bo-An Chang",
+        "Yu-Chih Chen"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.LG",
+        "cs.MM"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.15740",
+      "pdf_url": "https://arxiv.org/pdf/2607.15740",
+      "score": 3.8,
+      "topics": [
+        {
+          "name": "Agent Reasoning / Test-time Scaling",
+          "slug": "agent-reasoning",
+          "hits": [
+            "reward model"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "reward model"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Debiasing%20Text-to-Image%20Evaluation%20via%20Implicit%20Cultural%20Alignment%20Reward%20Modeling%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.15732v1",
+      "title": "IoUPD: IoU-Aware Privileged Distillation for Visual Grounding with Multimodal Large Language Models",
+      "abstract": " Comments: 16 pages, 7 figures, 10 tables",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Xiuyuan Zhu",
+        "Ke Lu",
+        "Hao Wu",
+        "Zijin Du",
+        "Dongming Zhang",
+        "Jian Xue"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.15732",
+      "pdf_url": "https://arxiv.org/pdf/2607.15732",
+      "score": 3.8,
+      "topics": [
+        {
+          "name": "Model Compression / Quantization",
+          "slug": "model-compression",
+          "hits": [
+            "distillation"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "distillation"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=IoUPD%3A%20IoU-Aware%20Privileged%20Distillation%20for%20Visual%20Grounding%20with%20Multimodal%20Large%20Language%20Models%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.15701v1",
+      "title": "RAVEN: Reinforcement-Adaptive Visibility-Graph Planning for Robust Humanoid Navigation with Collision-Free MPC",
+      "abstract": "",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Ruochen Hou",
+        "Shiqi Wang",
+        "Beom Jun Kim",
+        "Hanzhang Fang",
+        "Mehak Singal",
+        "Dennis W. Hong"
+      ],
+      "categories": [
+        "cs.RO"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.15701",
+      "pdf_url": "https://arxiv.org/pdf/2607.15701",
+      "score": 3.8,
+      "topics": [
+        {
+          "name": "Agent Reasoning / Test-time Scaling",
+          "slug": "agent-reasoning",
+          "hits": [
+            "planning"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "planning"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=RAVEN%3A%20Reinforcement-Adaptive%20Visibility-Graph%20Planning%20for%20Robust%20Humanoid%20Navigation%20with%20Collision-Free%20MPC%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.15686v1",
+      "title": "S1-Omni: A Unified Multimodal Reasoning Model for Scientific Understanding, Prediction, and Generation",
+      "abstract": "",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Jiahao Zhao",
+        "Junyi Liu",
+        "Lifeng Xu",
+        "Nan Xu",
+        "Qingli Wang",
+        "Qingxiao Li",
+        "Tianle Chen",
+        "Xiaoyu Wu",
+        "Yawen Zheng",
+        "Zikai Wang",
+        "Guanming Liu",
+        "Hequn Zhou",
+        "Jingyi Wang",
+        "Jingyuan Shu",
+        "Keqi Wang",
+        "Li He",
+        "Songyang Diao",
+        "Wenhui Xu",
+        "Xinyu Ren",
+        "Yaqin Fan",
+        "Yujin Zhou",
+        "Zhanao Yao"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.15686",
+      "pdf_url": "https://arxiv.org/pdf/2607.15686",
+      "score": 3.8,
+      "topics": [
+        {
+          "name": "Agent Reasoning / Test-time Scaling",
+          "slug": "agent-reasoning",
+          "hits": [
+            "reasoning"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "reasoning"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=S1-Omni%3A%20A%20Unified%20Multimodal%20Reasoning%20Model%20for%20Scientific%20Understanding%2C%20Prediction%2C%20and%20Generation%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.15674v1",
+      "title": "A Generative Partially Specified Finite State Machine Approach to Complex Behaviour Planning",
+      "abstract": " Comments: Accepted for publication in the 2026 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS). 9 pages, 10 figures, 1 table",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Kalana Ratnayake",
+        "Michael Pritchard",
+        "David Hinwood",
+        "Maleen Jayasuriya",
+        "Damith Herath"
+      ],
+      "categories": [
+        "cs.RO"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.15674",
+      "pdf_url": "https://arxiv.org/pdf/2607.15674",
+      "score": 3.8,
+      "topics": [
+        {
+          "name": "Agent Reasoning / Test-time Scaling",
+          "slug": "agent-reasoning",
+          "hits": [
+            "planning"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "planning"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=A%20Generative%20Partially%20Specified%20Finite%20State%20Machine%20Approach%20to%20Complex%20Behaviour%20Planning%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.15562v1",
+      "title": "Hard Rules, Soft Preferences: Bridging Reasoning, Learning, and Optimization for Personalized Packing Checklist Generation",
+      "abstract": "",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Himel Dev",
+        "Madhusudan Basak",
+        "Tanmoy Sen",
+        "Paromita Shome",
+        "Bashima Islam"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.15562",
+      "pdf_url": "https://arxiv.org/pdf/2607.15562",
+      "score": 3.8,
+      "topics": [
+        {
+          "name": "Agent Reasoning / Test-time Scaling",
+          "slug": "agent-reasoning",
+          "hits": [
+            "reasoning"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "reasoning"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Hard%20Rules%2C%20Soft%20Preferences%3A%20Bridging%20Reasoning%2C%20Learning%2C%20and%20Optimization%20for%20Personalized%20Packing%20Checklist%20Generation%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.15508v1",
+      "title": "Multi-Objective Kinodynamic Motion Planning with Asymptotic Pareto Optimality",
+      "abstract": "",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Yusif Razzaq",
+        "Anne Theurkauf",
+        "Nisar Ahmed",
+        "Morteza Lahijanian"
+      ],
+      "categories": [
+        "cs.RO"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.15508",
+      "pdf_url": "https://arxiv.org/pdf/2607.15508",
+      "score": 3.8,
+      "topics": [
+        {
+          "name": "Agent Reasoning / Test-time Scaling",
+          "slug": "agent-reasoning",
+          "hits": [
+            "planning"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "planning"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Multi-Objective%20Kinodynamic%20Motion%20Planning%20with%20Asymptotic%20Pareto%20Optimality%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.15467v1",
+      "title": "ADS-C: Antidistillation Sampling for Classification",
+      "abstract": " Comments: 20 pages, 28 figures",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Khawaja Abaid Ullah",
+        "Mohammad Javad Khojasteh"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.CR"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.15467",
+      "pdf_url": "https://arxiv.org/pdf/2607.15467",
+      "score": 3.8,
+      "topics": [
+        {
+          "name": "Model Compression / Quantization",
+          "slug": "model-compression",
+          "hits": [
+            "distillation"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "distillation"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=ADS-C%3A%20Antidistillation%20Sampling%20for%20Classification%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.15442v1",
+      "title": "Beyond a Joke: Multi-Angle Reasoning for Detecting and Explaining Harmful Humor in Memes",
+      "abstract": " Comments: Accepted for Publication at AAAI-ICWSM 2027",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Shanhong Liu",
+        "Pai Chet Ng",
+        "De Wen Soh",
+        "Malika Meghjani",
+        "Konstantinos N. Plataniotis"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.15442",
+      "pdf_url": "https://arxiv.org/pdf/2607.15442",
+      "score": 3.8,
+      "topics": [
+        {
+          "name": "Agent Reasoning / Test-time Scaling",
+          "slug": "agent-reasoning",
+          "hits": [
+            "reasoning"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "reasoning"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Beyond%20a%20Joke%3A%20Multi-Angle%20Reasoning%20for%20Detecting%20and%20Explaining%20Harmful%20Humor%20in%20Memes%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.15421v1",
+      "title": "qZACH-ViT: Quantization-Aware Intrinsic Explanations with Recursive Attribution-Stabilized Optimization",
+      "abstract": " Comments: 31 pages, 8 figures, 10 tables. Includes executable mixed-precision ONNX INT8 deployment validation across 210 checkpoints",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Athanasios Angelakis"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.CV"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.15421",
+      "pdf_url": "https://arxiv.org/pdf/2607.15421",
+      "score": 3.8,
+      "topics": [
+        {
+          "name": "Model Compression / Quantization",
+          "slug": "model-compression",
+          "hits": [
+            "quantization"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "quantization"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=qZACH-ViT%3A%20Quantization-Aware%20Intrinsic%20Explanations%20with%20Recursive%20Attribution-Stabilized%20Optimization%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.15418v1",
+      "title": "DrawingVQA: A Real-World Benchmark for Multi-Depth Visual-Textual Reasoning on Construction Drawings",
+      "abstract": " Comments: CVPR 2026 Findings accepted paper",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Yoonhwa Jung",
+        "Junryu Fu",
+        "Mani Golparvar-Fard"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.CV"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.15418",
+      "pdf_url": "https://arxiv.org/pdf/2607.15418",
+      "score": 3.8,
+      "topics": [
+        {
+          "name": "Agent Reasoning / Test-time Scaling",
+          "slug": "agent-reasoning",
+          "hits": [
+            "reasoning"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "reasoning"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=DrawingVQA%3A%20A%20Real-World%20Benchmark%20for%20Multi-Depth%20Visual-Textual%20Reasoning%20on%20Construction%20Drawings%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.15374v1",
+      "title": "Reasoning-Guided Part-Level Visual Grounding via Reinforcement Learning",
+      "abstract": " Comments: ECCV 2026",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Kazi Sajeed Mehrab",
+        "Hani Alomari",
+        "Najibul Haque Sarker",
+        "Chia-Wei Tang",
+        "Zaber Ibn Abdul Hakim",
+        "Anuj Karpatne",
+        "Chris Thomas"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.15374",
+      "pdf_url": "https://arxiv.org/pdf/2607.15374",
+      "score": 3.8,
+      "topics": [
+        {
+          "name": "Agent Reasoning / Test-time Scaling",
+          "slug": "agent-reasoning",
+          "hits": [
+            "reasoning"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "reasoning"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Reasoning-Guided%20Part-Level%20Visual%20Grounding%20via%20Reinforcement%20Learning%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.15286v1",
+      "title": "Hidden in Thought: Transferable Chain-of-Thought Artifacts Induce Harmful Behavior",
+      "abstract": "",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Ali khalil",
+        "Aly M. Kassem",
+        "Mohamed Abdelrazek",
+        "Santu Rana",
+        "Negar Rostamzadeh",
+        "Golnoosh Farnadi"
+      ],
+      "categories": [
+        "cs.CR",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.15286",
+      "pdf_url": "https://arxiv.org/pdf/2607.15286",
+      "score": 3.8,
+      "topics": [
+        {
+          "name": "Agent Reasoning / Test-time Scaling",
+          "slug": "agent-reasoning",
+          "hits": [
+            "chain-of-thought"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "chain-of-thought"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Hidden%20in%20Thought%3A%20Transferable%20Chain-of-Thought%20Artifacts%20Induce%20Harmful%20Behavior%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.15281v1",
+      "title": "Causal-Audit: Explicit and Auditable Graph-based Reasoning via Target-Aware Causal Chain Construction",
+      "abstract": "",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Su Lan",
+        "Xuefei Yin",
+        "Yanming Zhu",
+        "Alan Wee-Chung Liew"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.15281",
+      "pdf_url": "https://arxiv.org/pdf/2607.15281",
+      "score": 3.8,
+      "topics": [
+        {
+          "name": "Agent Reasoning / Test-time Scaling",
+          "slug": "agent-reasoning",
+          "hits": [
+            "reasoning"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "reasoning"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Causal-Audit%3A%20Explicit%20and%20Auditable%20Graph-based%20Reasoning%20via%20Target-Aware%20Causal%20Chain%20Construction%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2605.26772v1",
+      "title": "Beyond a Single Direction: Chain-of-Thought Disrupts Simple Steering of Refusal",
+      "abstract": "",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Kia-Jüng Yang",
+        "Dominik Meier",
+        "Jiachen Zhao",
+        "Terry Ruas",
+        "Bela Gipp"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "abs_url": "https://arxiv.org/abs/2605.26772",
+      "pdf_url": "https://arxiv.org/pdf/2605.26772",
+      "score": 3.8,
+      "topics": [
+        {
+          "name": "Agent Reasoning / Test-time Scaling",
+          "slug": "agent-reasoning",
+          "hits": [
+            "chain-of-thought"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "chain-of-thought"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Beyond%20a%20Single%20Direction%3A%20Chain-of-Thought%20Disrupts%20Simple%20Steering%20of%20Refusal%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.15450v1",
+      "title": "Prediction-Only Distillation in Linear and Logistic Regression",
+      "abstract": " Comments: 73 pages, 21 figures, 12 tables",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Hien Dang",
+        "Pratik Patil",
+        "Alessandro Rinaldo"
+      ],
+      "categories": [
+        "math.ST",
+        "cs.LG",
+        "stat.ML"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.15450",
+      "pdf_url": "https://arxiv.org/pdf/2607.15450",
+      "score": 3.8,
+      "topics": [
+        {
+          "name": "Model Compression / Quantization",
+          "slug": "model-compression",
+          "hits": [
+            "distillation"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "distillation"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Prediction-Only%20Distillation%20in%20Linear%20and%20Logistic%20Regression%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.16189v1",
+      "title": "Searching Videos as Trees: Self-Correcting Agents for Grounded Long Video QA",
+      "abstract": "",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Ce Zhang",
+        "Ziyang Wang",
+        "Yulu Pan",
+        "Oluwatumininu Oguntola",
+        "Pranav Wagh",
+        "Qiyu Wu",
+        "Hiromi Wakaki",
+        "Mohit Bansal",
+        "Gedas Bertasius"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.16189",
+      "pdf_url": "https://arxiv.org/pdf/2607.16189",
+      "score": 3.6,
+      "topics": [
+        {
+          "name": "Agent",
+          "slug": "agent",
+          "hits": [
+            "agent"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "agent"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Searching%20Videos%20as%20Trees%3A%20Self-Correcting%20Agents%20for%20Grounded%20Long%20Video%20QA%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.16169v1",
+      "title": "When Does Muon Help Agentic Reinforcement Learning?",
+      "abstract": "",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Kai Ruan",
+        "Jinghao Lin",
+        "Zihe Huang",
+        "Ziqi Zhou",
+        "Qianshan Wei",
+        "Xuan Wang",
+        "Hao Sun"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.16169",
+      "pdf_url": "https://arxiv.org/pdf/2607.16169",
+      "score": 3.6,
+      "topics": [
+        {
+          "name": "Agent",
+          "slug": "agent",
+          "hits": [
+            "agent"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "agent"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=When%20Does%20Muon%20Help%20Agentic%20Reinforcement%20Learning%3F%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.16109v1",
+      "title": "The Honest Quorum Problem: Epistemic Byzantine Fault Tolerance for Agentic Infrastructure",
+      "abstract": " Comments: 26 pages, 2 figures, 5 tables",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Jun He",
+        "Deying Yu"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.DC",
+        "cs.MA"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.16109",
+      "pdf_url": "https://arxiv.org/pdf/2607.16109",
+      "score": 3.6,
+      "topics": [
+        {
+          "name": "Agent",
+          "slug": "agent",
+          "hits": [
+            "agent"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "agent"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=The%20Honest%20Quorum%20Problem%3A%20Epistemic%20Byzantine%20Fault%20Tolerance%20for%20Agentic%20Infrastructure%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.15948v1",
+      "title": "TARS: A Theory-of-Mind Agent for Personalized In-IDE Code Comprehension",
+      "abstract": " Comments: Accepted at ICSME 2026, Tool Demonstration and Data Showcase Track",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Leopoldo Todisco",
+        "Antonio Della Porta",
+        "Stefano Lambiase",
+        "Fabio Palomba"
+      ],
+      "categories": [
+        "cs.SE"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.15948",
+      "pdf_url": "https://arxiv.org/pdf/2607.15948",
+      "score": 3.6,
+      "topics": [
+        {
+          "name": "Agent",
+          "slug": "agent",
+          "hits": [
+            "agent"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "agent"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=TARS%3A%20A%20Theory-of-Mind%20Agent%20for%20Personalized%20In-IDE%20Code%20Comprehension%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.15854v1",
+      "title": "Agentic Synthesis against Counterexample-Supplemented Sketches",
+      "abstract": " Comments: 32 pages, 5 displayed figures (4 distinct screenshots). Includes the CatSynth artifact supplement. Code and captured experiment artifacts: this https URL",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Muness Castle",
+        "Eric Rubeck"
+      ],
+      "categories": [
+        "cs.SE",
+        "cs.AI"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.15854",
+      "pdf_url": "https://arxiv.org/pdf/2607.15854",
+      "score": 3.6,
+      "topics": [
+        {
+          "name": "Agent",
+          "slug": "agent",
+          "hits": [
+            "agent"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "agent"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Agentic%20Synthesis%20against%20Counterexample-Supplemented%20Sketches%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.15849v1",
+      "title": "Test-Time Noise Guided Adaptation for Realistic Autoregressive Video Generation",
+      "abstract": " Comments: ECCV2026",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Dimitrios Karageorgiou",
+        "Symeon Papadopoulos",
+        "Ioannis Kompatsiaris",
+        "Efstratios Gavves"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.15849",
+      "pdf_url": "https://arxiv.org/pdf/2607.15849",
+      "score": 3.6,
+      "topics": [
+        {
+          "name": "Video Generation",
+          "slug": "video-generation",
+          "hits": [
+            "video generation"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "video generation"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Test-Time%20Noise%20Guided%20Adaptation%20for%20Realistic%20Autoregressive%20Video%20Generation%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.15846v1",
+      "title": "DSTAR: Accelerating Diffusion Transformers via Spatial and Temporal Redundancy Reduction",
+      "abstract": " Comments: Accepted to the 59th IEEE/ACM International Symposium on Microarchitecture (MICRO 2026)",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Chi Zhang",
+        "Jieru Zhao",
+        "Yu Feng",
+        "Chen Zhang",
+        "Quan Chen",
+        "Minyi Guo"
+      ],
+      "categories": [
+        "cs.AR"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.15846",
+      "pdf_url": "https://arxiv.org/pdf/2607.15846",
+      "score": 3.6,
+      "topics": [
+        {
+          "name": "Video Generation",
+          "slug": "video-generation",
+          "hits": [
+            "diffusion transformer"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "diffusion transformer"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=DSTAR%3A%20Accelerating%20Diffusion%20Transformers%20via%20Spatial%20and%20Temporal%20Redundancy%20Reduction%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.15845v1",
+      "title": "Knowledge-Centric Agents for Workflow Generation",
+      "abstract": " Comments: Accepted to ECCV 2026",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Zhendong Li",
+        "Lei Sun",
+        "Ruibo Ming",
+        "He Zhang",
+        "Danda Pani Paudel",
+        "Luc Van Gool",
+        "Jinjin Gu"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.15845",
+      "pdf_url": "https://arxiv.org/pdf/2607.15845",
+      "score": 3.6,
+      "topics": [
+        {
+          "name": "Agent",
+          "slug": "agent",
+          "hits": [
+            "agent"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "agent"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Knowledge-Centric%20Agents%20for%20Workflow%20Generation%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.15769v1",
+      "title": "Making Agent-Mediated Contributions Governable: A Project-Level Governance Manifest for Open-Source AI Collaboration",
+      "abstract": " Comments: Preprint. Under journal review",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Jinjin Gao",
+        "Luyang Li",
+        "Shufen Guo",
+        "Ligang He",
+        "Xiaoning Sun"
+      ],
+      "categories": [
+        "cs.SE",
+        "cs.CY"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.15769",
+      "pdf_url": "https://arxiv.org/pdf/2607.15769",
+      "score": 3.6,
+      "topics": [
+        {
+          "name": "Agent",
+          "slug": "agent",
+          "hits": [
+            "agent"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "agent"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Making%20Agent-Mediated%20Contributions%20Governable%3A%20A%20Project-Level%20Governance%20Manifest%20for%20Open-Source%20AI%20Collaboration%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.15715v1",
+      "title": "Behavioral Controllability of Agentic Models for Information Extraction: From Fixed Workflows to Reflective Agents",
+      "abstract": "",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Lujia Zhang",
+        "Xingzhou Chen",
+        "Hongwei Feng"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.15715",
+      "pdf_url": "https://arxiv.org/pdf/2607.15715",
+      "score": 3.6,
+      "topics": [
+        {
+          "name": "Agent",
+          "slug": "agent",
+          "hits": [
+            "agent"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "agent"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Behavioral%20Controllability%20of%20Agentic%20Models%20for%20Information%20Extraction%3A%20From%20Fixed%20Workflows%20to%20Reflective%20Agents%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.15684v1",
+      "title": "Understanding Agent-Reactive Bugs at the Model-Harness Boundary: An Empirical Study of LLM Agent Issue Reports",
+      "abstract": "",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Jingyi Chen",
+        "Songqiang Chen",
+        "Hengcheng Zhu",
+        "Jialun Cao",
+        "Jiasi Shen",
+        "Shing-Chi Cheung"
+      ],
+      "categories": [
+        "cs.SE"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.15684",
+      "pdf_url": "https://arxiv.org/pdf/2607.15684",
+      "score": 3.6,
+      "topics": [
+        {
+          "name": "Agent",
+          "slug": "agent",
+          "hits": [
+            "agent"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "agent"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Understanding%20Agent-Reactive%20Bugs%20at%20the%20Model-Harness%20Boundary%3A%20An%20Empirical%20Study%20of%20LLM%20Agent%20Issue%20Reports%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.15667v1",
+      "title": "PE-Field 4D: Video Generation Models as Canvas",
+      "abstract": "",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Yunpeng Bai",
+        "Haoxiang Li",
+        "Qixing Huang"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.15667",
+      "pdf_url": "https://arxiv.org/pdf/2607.15667",
+      "score": 3.6,
+      "topics": [
+        {
+          "name": "Video Generation",
+          "slug": "video-generation",
+          "hits": [
+            "video generation"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "video generation"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=PE-Field%204D%3A%20Video%20Generation%20Models%20as%20Canvas%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.15660v1",
+      "title": "ToolVerse: Unlocking Massive Environments and Long-Horizon Tasks for Agentic Reinforcement Learning",
+      "abstract": "",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Shuaiyu Zhou",
+        "Fengpeng Yue",
+        "Zengjie Hu",
+        "Yuanzhe Shen",
+        "Chenyang Zhang",
+        "feng hong",
+        "Cao Liu",
+        "Ke Zeng"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.15660",
+      "pdf_url": "https://arxiv.org/pdf/2607.15660",
+      "score": 3.6,
+      "topics": [
+        {
+          "name": "Agent",
+          "slug": "agent",
+          "hits": [
+            "agent"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "agent"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=ToolVerse%3A%20Unlocking%20Massive%20Environments%20and%20Long-Horizon%20Tasks%20for%20Agentic%20Reinforcement%20Learning%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.15596v1",
+      "title": "From Neural Intent to Cryptographic Authorization: Governing Agentic Workflows",
+      "abstract": "",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Jiasi Weng",
+        "Jian Weng",
+        "Minrong Chen",
+        "Ming Li",
+        "Jia-Nan Liu",
+        "Zhi Li",
+        "Yue Zhang"
+      ],
+      "categories": [
+        "cs.CR"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.15596",
+      "pdf_url": "https://arxiv.org/pdf/2607.15596",
+      "score": 3.6,
+      "topics": [
+        {
+          "name": "Agent",
+          "slug": "agent",
+          "hits": [
+            "agent"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "agent"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=From%20Neural%20Intent%20to%20Cryptographic%20Authorization%3A%20Governing%20Agentic%20Workflows%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.15593v1",
+      "title": "Scalable LLM Agent Tool Access in the Cloud",
+      "abstract": "",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Mingxin Li",
+        "Enge Song",
+        "Yueshang Zuo",
+        "Xiaodong Liu",
+        "Rong Wen",
+        "Qiang Fu",
+        "Gianni Antichi",
+        "Jian He",
+        "Jing Tie",
+        "Zhou Shao",
+        "Xiaobo Xue",
+        "Xiong Xiao",
+        "Luyao Zhong",
+        "Shaokai Zhang",
+        "Jiangu Zhao",
+        "Jianyuan Lu",
+        "Shize Zhang",
+        "Xiaoqing Sun",
+        "Changgang Zheng",
+        "Zihao Fan",
+        "Haonan Li",
+        "Tian Pan",
+        "Xiaomin Wu",
+        "Yang Song",
+        "Xing Li",
+        "Biao Lyu",
+        "Meng Li",
+        "Haipeng Dai",
+        "Guihai Chen",
+        "Shunmin Zhu"
+      ],
+      "categories": [
+        "cs.DC",
+        "cs.AI",
+        "cs.NI"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.15593",
+      "pdf_url": "https://arxiv.org/pdf/2607.15593",
+      "score": 3.6,
+      "topics": [
+        {
+          "name": "Agent",
+          "slug": "agent",
+          "hits": [
+            "agent"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "agent"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Scalable%20LLM%20Agent%20Tool%20Access%20in%20the%20Cloud%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.15557v1",
+      "title": "SkillCorpus: Consolidating and Evaluating the Open Skill Ecosystem for Real-World LLM Agents",
+      "abstract": "",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Yanze Wang",
+        "Pengfei Yao",
+        "Tianyi Sun",
+        "Chuanrui Hu",
+        "Yan Xiao",
+        "Yunyun Han",
+        "Jun Sun",
+        "Yafeng Deng"
+      ],
+      "categories": [
+        "cs.CL"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.15557",
+      "pdf_url": "https://arxiv.org/pdf/2607.15557",
+      "score": 3.6,
+      "topics": [
+        {
+          "name": "Agent",
+          "slug": "agent",
+          "hits": [
+            "agent"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "agent"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=SkillCorpus%3A%20Consolidating%20and%20Evaluating%20the%20Open%20Skill%20Ecosystem%20for%20Real-World%20LLM%20Agents%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.15545v1",
+      "title": "CoWeaver: A Bi-directional, Learnable and Explainable Matching Engine for Mixed Human-Agent Science Collaboration",
+      "abstract": "",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Jiayao Gu",
+        "Kexin Chu",
+        "Peidong Liu",
+        "Yue Yang",
+        "Lynn Ai",
+        "Qi Zhang",
+        "Ling Yang",
+        "Tianyu Shi"
+      ],
+      "categories": [
+        "cs.MA",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.15545",
+      "pdf_url": "https://arxiv.org/pdf/2607.15545",
+      "score": 3.6,
+      "topics": [
+        {
+          "name": "Agent",
+          "slug": "agent",
+          "hits": [
+            "agent"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "agent"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=CoWeaver%3A%20A%20Bi-directional%2C%20Learnable%20and%20Explainable%20Matching%20Engine%20for%20Mixed%20Human-Agent%20Science%20Collaboration%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.15544v1",
+      "title": "EpiNarrate: Agentic Generation of Grounded Narratives from Epidemiological Scenario Projections",
+      "abstract": "",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Rituparna Datta",
+        "Srini Venkatramanan",
+        "Bryan L. Lewis",
+        "Yiqi Su",
+        "Harry Hochheiser",
+        "Lucie Contamin",
+        "Parantapa Bhattacharya",
+        "Naren Ramakrishnan",
+        "Anil Vullikanti"
+      ],
+      "categories": [
+        "cs.CL"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.15544",
+      "pdf_url": "https://arxiv.org/pdf/2607.15544",
+      "score": 3.6,
+      "topics": [
+        {
+          "name": "Agent",
+          "slug": "agent",
+          "hits": [
+            "agent"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "agent"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=EpiNarrate%3A%20Agentic%20Generation%20of%20Grounded%20Narratives%20from%20Epidemiological%20Scenario%20Projections%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.15434v1",
+      "title": "Coercion and Deception in AI-to-AI Management: An Agentic Benchmark of Unprompted Escalation",
+      "abstract": "",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Jasmine Brazilek",
+        "Maheep Chaudhary",
+        "Zoe Lu",
+        "Miles Tidmarsh"
+      ],
+      "categories": [
+        "cs.MA",
+        "cs.AI",
+        "cs.CR"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.15434",
+      "pdf_url": "https://arxiv.org/pdf/2607.15434",
+      "score": 3.6,
+      "topics": [
+        {
+          "name": "Agent",
+          "slug": "agent",
+          "hits": [
+            "agent"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "agent"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Coercion%20and%20Deception%20in%20AI-to-AI%20Management%3A%20An%20Agentic%20Benchmark%20of%20Unprompted%20Escalation%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.15314v1",
+      "title": "Cura 1T: Specialized Model for Agentic Healthcare",
+      "abstract": " Comments: Model: this https URL Docs: this https URL Github: this https URL",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "actAVA AI",
+        "Haolin Chen",
+        "Leon Qi",
+        "Steve Brown",
+        "Deon Metelski",
+        "Tao Xia",
+        "Joonyul Lee",
+        "Qixuan Wang",
+        "Kevin Riley",
+        "Frank Wang",
+        "Weiran Yao"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.15314",
+      "pdf_url": "https://arxiv.org/pdf/2607.15314",
+      "score": 3.6,
+      "topics": [
+        {
+          "name": "Agent",
+          "slug": "agent",
+          "hits": [
+            "agent"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "agent"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Cura%201T%3A%20Specialized%20Model%20for%20Agentic%20Healthcare%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.16123v1",
+      "title": "BayesContact: Uncertain Pose Estimation via Visuo-Tactile Proposals and Simulation-based Inference",
+      "abstract": "",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Aditya Kamireddypalli",
+        "Matias Mattamala",
+        "Joao Moura",
+        "Russell Buchanan",
+        "Sethu Vijayakumar",
+        "Subramanian Ramamoorthy"
+      ],
+      "categories": [
+        "cs.RO"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.16123",
+      "pdf_url": "https://arxiv.org/pdf/2607.16123",
+      "score": 3.4,
+      "topics": [
+        {
+          "name": "World Model",
+          "slug": "world-model",
+          "hits": [
+            "simulation"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "simulation"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=BayesContact%3A%20Uncertain%20Pose%20Estimation%20via%20Visuo-Tactile%20Proposals%20and%20Simulation-based%20Inference%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.15935v1",
+      "title": "Learning Reach-Avoid Task with Reinforcement Learning: Vectorized Simulation and Benchmark",
+      "abstract": "",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Jonas Weihing",
+        "Shahram Eivazi"
+      ],
+      "categories": [
+        "cs.RO",
+        "cs.LG"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.15935",
+      "pdf_url": "https://arxiv.org/pdf/2607.15935",
+      "score": 3.4,
+      "topics": [
+        {
+          "name": "World Model",
+          "slug": "world-model",
+          "hits": [
+            "simulation"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "simulation"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Learning%20Reach-Avoid%20Task%20with%20Reinforcement%20Learning%3A%20Vectorized%20Simulation%20and%20Benchmark%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.15898v1",
+      "title": "Orbis 2: A Hierarchical World Model for Driving",
+      "abstract": " Comments: Project page: this https URL",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Sudhanshu Mittal",
+        "Arian Mousakhan",
+        "Silvio Galesso",
+        "Karim Farid",
+        "Jonannes Dienert",
+        "Rajat Sahay",
+        "Thomas Brox"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.LG",
+        "cs.RO"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.15898",
+      "pdf_url": "https://arxiv.org/pdf/2607.15898",
+      "score": 3.4,
+      "topics": [
+        {
+          "name": "World Model",
+          "slug": "world-model",
+          "hits": [
+            "world model"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "world model"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Orbis%202%3A%20A%20Hierarchical%20World%20Model%20for%20Driving%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.15656v1",
+      "title": "Learning a System-Level Surrogate for Hydraulic Excavators: A Simulation-to-Real LSTM Approach",
+      "abstract": "",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Shuai Wang",
+        "Shen Wang",
+        "Qiang Wang",
+        "Muguo Du",
+        "Donghai Shi",
+        "Chenyu Wang",
+        "Xiaofeng Tao"
+      ],
+      "categories": [
+        "cs.RO",
+        "eess.SY"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.15656",
+      "pdf_url": "https://arxiv.org/pdf/2607.15656",
+      "score": 3.4,
+      "topics": [
+        {
+          "name": "World Model",
+          "slug": "world-model",
+          "hits": [
+            "simulation"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "simulation"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Learning%20a%20System-Level%20Surrogate%20for%20Hydraulic%20Excavators%3A%20A%20Simulation-to-Real%20LSTM%20Approach%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.15527v1",
+      "title": "Physics-aware Masked Diffusion-based Flood Simulation for Urban Fisheye Disaster Detection",
+      "abstract": "",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Sodtavilan Odonchimed",
+        "Tsogt Enkhbayar",
+        "Oyunzul Munkhtamga",
+        "Munkhjargal Gochoo"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.15527",
+      "pdf_url": "https://arxiv.org/pdf/2607.15527",
+      "score": 3.4,
+      "topics": [
+        {
+          "name": "World Model",
+          "slug": "world-model",
+          "hits": [
+            "simulation"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "simulation"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Physics-aware%20Masked%20Diffusion-based%20Flood%20Simulation%20for%20Urban%20Fisheye%20Disaster%20Detection%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.15290v1",
+      "title": "An FFT-Based Direct Splitting Method for Efficient Micromagnetic Simulations",
+      "abstract": "",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Hang Qi",
+        "Changqing Ye",
+        "Xiaofei Guan"
+      ],
+      "categories": [
+        "math.NA"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.15290",
+      "pdf_url": "https://arxiv.org/pdf/2607.15290",
+      "score": 3.4,
+      "topics": [
+        {
+          "name": "World Model",
+          "slug": "world-model",
+          "hits": [
+            "simulation"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "simulation"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=An%20FFT-Based%20Direct%20Splitting%20Method%20for%20Efficient%20Micromagnetic%20Simulations%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.16003v1",
+      "title": "Accelerated Exact Recovery from Noisy Data via Averaging and Noise-Aware Adaptive Bregman-Kaczmarz",
+      "abstract": " Comments: 33 pages, 6 figures",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Lionel Tondji",
+        "Abakar A. Mahamat",
+        "Idriss Tondji"
+      ],
+      "categories": [
+        "math.NA",
+        "math.OC"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.16003",
+      "pdf_url": "https://arxiv.org/pdf/2607.16003",
+      "score": 3.2,
+      "topics": [
+        {
+          "name": "RAG / Long Context",
+          "slug": "rag-long-context",
+          "hits": [
+            "rag"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "rag"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Accelerated%20Exact%20Recovery%20from%20Noisy%20Data%20via%20Averaging%20and%20Noise-Aware%20Adaptive%20Bregman-Kaczmarz%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.15963v1",
+      "title": "A Human-Centric Evaluation of a Retrieval-Augmented Generation System for Explaining Quebec Insurance Contracts",
+      "abstract": " Comments: Accepter to HCII 2026",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "David Beauchemin",
+        "Richard Khoury"
+      ],
+      "categories": [
+        "cs.HC"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.15963",
+      "pdf_url": "https://arxiv.org/pdf/2607.15963",
+      "score": 3.2,
+      "topics": [
+        {
+          "name": "RAG / Long Context",
+          "slug": "rag-long-context",
+          "hits": [
+            "retrieval"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "retrieval"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=A%20Human-Centric%20Evaluation%20of%20a%20Retrieval-Augmented%20Generation%20System%20for%20Explaining%20Quebec%20Insurance%20Contracts%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.15937v1",
+      "title": "The Language of Security: How Prompt Syntax Shapes Secure Code Generation in Open LLMs",
+      "abstract": " Comments: Accepted at ICSME 2026",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Matteo Cicalese",
+        "Antonio Della Porta",
+        "Stefano Lambiase",
+        "Emanuele Iannone",
+        "Torge Hinrichs",
+        "Riccardo Scandariato",
+        "Fabio Palomba"
+      ],
+      "categories": [
+        "cs.CR",
+        "cs.SE"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.15937",
+      "pdf_url": "https://arxiv.org/pdf/2607.15937",
+      "score": 3.2,
+      "topics": [
+        {
+          "name": "Code Agent / SWE Agent",
+          "slug": "code-agent",
+          "hits": [
+            "code generation"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "code generation"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=The%20Language%20of%20Security%3A%20How%20Prompt%20Syntax%20Shapes%20Secure%20Code%20Generation%20in%20Open%20LLMs%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.15912v1",
+      "title": "HETA++: Global Structure-from-Motion with Hybrid Explicit Translation Averaging",
+      "abstract": "",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Peilin Tao",
+        "Hainan Cui",
+        "Mengqi Rong",
+        "Shuhan Shen"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.15912",
+      "pdf_url": "https://arxiv.org/pdf/2607.15912",
+      "score": 3.2,
+      "topics": [
+        {
+          "name": "RAG / Long Context",
+          "slug": "rag-long-context",
+          "hits": [
+            "rag"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "rag"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=HETA%2B%2B%3A%20Global%20Structure-from-Motion%20with%20Hybrid%20Explicit%20Translation%20Averaging%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.15890v1",
+      "title": "Exo2EgoPose: Leveraging Exocentric Demonstrations for Vision-Language guided Egocentric 3D Hand Pose Forecasting",
+      "abstract": " Comments: Accepted by ACMMM 2026",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Zhaofeng Shi",
+        "Heqian Qiu",
+        "Lanxiao Wang",
+        "Xiang Li",
+        "Hongliang Li"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.15890",
+      "pdf_url": "https://arxiv.org/pdf/2607.15890",
+      "score": 3.2,
+      "topics": [
+        {
+          "name": "RAG / Long Context",
+          "slug": "rag-long-context",
+          "hits": [
+            "rag"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "rag"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Exo2EgoPose%3A%20Leveraging%20Exocentric%20Demonstrations%20for%20Vision-Language%20guided%20Egocentric%203D%20Hand%20Pose%20Forecasting%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.15875v1",
+      "title": "Scientific Claim-Source Retrieval Revisited: A Comparative Study of Style Transfer and Re-Ranking",
+      "abstract": " Comments: Accepted at CLEF 2026 (Best of Labs)",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Tobias Schreieder",
+        "Harsh Khandelwal",
+        "Yu-Ling Zhong",
+        "Michael Färber"
+      ],
+      "categories": [
+        "cs.IR"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.15875",
+      "pdf_url": "https://arxiv.org/pdf/2607.15875",
+      "score": 3.2,
+      "topics": [
+        {
+          "name": "RAG / Long Context",
+          "slug": "rag-long-context",
+          "hits": [
+            "retrieval"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "retrieval"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Scientific%20Claim-Source%20Retrieval%20Revisited%3A%20A%20Comparative%20Study%20of%20Style%20Transfer%20and%20Re-Ranking%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.15809v1",
+      "title": "From Similarity to Feasibility: Diffusion-Refined Retrieval-Augmented Generation for Distribution Network Optimization",
+      "abstract": "",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Yuxuan Chen",
+        "Haipeng Xie",
+        "Shuo Dai",
+        "Ruoyi Xu",
+        "Zhaohong Bie"
+      ],
+      "categories": [
+        "eess.SY"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.15809",
+      "pdf_url": "https://arxiv.org/pdf/2607.15809",
+      "score": 3.2,
+      "topics": [
+        {
+          "name": "RAG / Long Context",
+          "slug": "rag-long-context",
+          "hits": [
+            "retrieval"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "retrieval"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=From%20Similarity%20to%20Feasibility%3A%20Diffusion-Refined%20Retrieval-Augmented%20Generation%20for%20Distribution%20Network%20Optimization%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.15762v1",
+      "title": "GapForge: Directed Compiler Fuzzing via Coverage-Gap Analysis",
+      "abstract": "",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Mingxuan Zhu",
+        "Qingyuan Liang",
+        "Junjie Chen",
+        "Zhihong Xue",
+        "Dan Hao"
+      ],
+      "categories": [
+        "cs.SE"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.15762",
+      "pdf_url": "https://arxiv.org/pdf/2607.15762",
+      "score": 3.2,
+      "topics": [
+        {
+          "name": "RAG / Long Context",
+          "slug": "rag-long-context",
+          "hits": [
+            "rag"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "rag"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=GapForge%3A%20Directed%20Compiler%20Fuzzing%20via%20Coverage-Gap%20Analysis%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.15738v1",
+      "title": "EduGuard: A Safe RAG-Based LLM Tutor for Programming Education",
+      "abstract": "",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "S M Asif Hossain",
+        "Ruksat Khan Shayoni",
+        "M. F. Mridha",
+        "Jungpil Shin"
+      ],
+      "categories": [
+        "cs.CY"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.15738",
+      "pdf_url": "https://arxiv.org/pdf/2607.15738",
+      "score": 3.2,
+      "topics": [
+        {
+          "name": "RAG / Long Context",
+          "slug": "rag-long-context",
+          "hits": [
+            "rag"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "rag"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=EduGuard%3A%20A%20Safe%20RAG-Based%20LLM%20Tutor%20for%20Programming%20Education%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.15460v1",
+      "title": "Stochastic Multi-Segment Scheduling of Variable-Speed Pumped Storage Hydropower for Energy and Ancillary Services Provision",
+      "abstract": " Comments: 33 pages, 8 figures, 7 tables",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Kyung-bin Kwon",
+        "SangWoo Park",
+        "Dam Kim"
+      ],
+      "categories": [
+        "eess.SY"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.15460",
+      "pdf_url": "https://arxiv.org/pdf/2607.15460",
+      "score": 3.2,
+      "topics": [
+        {
+          "name": "RAG / Long Context",
+          "slug": "rag-long-context",
+          "hits": [
+            "rag"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "rag"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Stochastic%20Multi-Segment%20Scheduling%20of%20Variable-Speed%20Pumped%20Storage%20Hydropower%20for%20Energy%20and%20Ancillary%20Services%20Provision%20arxiv%20github&type=repositories"
+    },
+    {
+      "id": "2607.15283v1",
+      "title": "Adaptive Retrieval Strategies for Biomedical Question Answering",
+      "abstract": "",
+      "published": "2026-07-20T00:00:00+00:00",
+      "updated": "2026-07-20T00:00:00+00:00",
+      "authors": [
+        "Han Yue",
+        "Eric Zhou",
+        "Alex Hu",
+        "Xueshen Li",
+        "Yuan Zhang",
+        "Jinfeng Zhang"
+      ],
+      "categories": [
+        "cs.IR"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.15283",
+      "pdf_url": "https://arxiv.org/pdf/2607.15283",
+      "score": 3.2,
+      "topics": [
+        {
+          "name": "RAG / Long Context",
+          "slug": "rag-long-context",
+          "hits": [
+            "retrieval"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "retrieval"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Adaptive%20Retrieval%20Strategies%20for%20Biomedical%20Question%20Answering%20arxiv%20github&type=repositories"
+    }
+  ]
+}
