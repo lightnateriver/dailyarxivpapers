@@ -1,0 +1,2330 @@
+{
+  "date": "2026-07-21",
+  "count": 42,
+  "fetched_count": 1082,
+  "papers": [
+    {
+      "id": "2607.16716v1",
+      "title": "RECON: Benchmarking Agent Memory for Compositional Reasoning over Long Contexts",
+      "abstract": " Comments: 25 pages",
+      "published": "2026-07-21T00:00:00+00:00",
+      "updated": "2026-07-21T00:00:00+00:00",
+      "authors": [
+        "Mihir Shriniwas Arya"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.16716",
+      "pdf_url": "https://arxiv.org/pdf/2607.16716",
+      "score": 11.0,
+      "topics": [
+        {
+          "name": "Agent",
+          "slug": "agent",
+          "hits": [
+            "agent",
+            "agent memory"
+          ]
+        },
+        {
+          "name": "Agent Reasoning / Test-time Scaling",
+          "slug": "agent-reasoning",
+          "hits": [
+            "reasoning"
+          ]
+        },
+        {
+          "name": "RAG / Long Context",
+          "slug": "rag-long-context",
+          "hits": [
+            "long context"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "agent",
+        "agent memory",
+        "long context",
+        "reasoning"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=RECON%3A%20Benchmarking%20Agent%20Memory%20for%20Compositional%20Reasoning%20over%20Long%20Contexts%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": " Comments: 25 pages",
+      "code_links_from_meta": "https://github.com/search?q=RECON%3A%20Benchmarking%20Agent%20Memory%20for%20Compositional%20Reasoning%20over%20Long%20Contexts%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "RECON: Benchmarking Agent Memory for Compositional Reasoning over Long Contexts",
+      "summary_cn": " Comments: 25 pages",
+      "innovations": [
+        "见正文： Comments: 25 pages"
+      ],
+      "scenario_cn": " Comments: 25 pages",
+      "title_en": "RECON: Benchmarking Agent Memory for Compositional Reasoning over Long Contexts",
+      "institution": "未明确披露",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2607.16955v1",
+      "title": "CADENCE: Closing the Reasoning Gap via Coverage-Adaptive On-Policy Distillation",
+      "abstract": "",
+      "published": "2026-07-21T00:00:00+00:00",
+      "updated": "2026-07-21T00:00:00+00:00",
+      "authors": [
+        "Satyam Kumar",
+        "Saurabh Jha"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.16955",
+      "pdf_url": "https://arxiv.org/pdf/2607.16955",
+      "score": 10.8,
+      "topics": [
+        {
+          "name": "Agent Reasoning / Test-time Scaling",
+          "slug": "agent-reasoning",
+          "hits": [
+            "reasoning"
+          ]
+        },
+        {
+          "name": "RAG / Long Context",
+          "slug": "rag-long-context",
+          "hits": [
+            "rag"
+          ]
+        },
+        {
+          "name": "Model Compression / Quantization",
+          "slug": "model-compression",
+          "hits": [
+            "distillation"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "distillation",
+        "rag",
+        "reasoning"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=CADENCE%3A%20Closing%20the%20Reasoning%20Gap%20via%20Coverage-Adaptive%20On-Policy%20Distillation%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "",
+      "code_links_from_meta": "https://github.com/search?q=CADENCE%3A%20Closing%20the%20Reasoning%20Gap%20via%20Coverage-Adaptive%20On-Policy%20Distillation%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "CADENCE：通过覆盖自适应在线策略蒸馏弥合理推理差距",
+      "summary_cn": "论文系统诊断了在线策略知识蒸馏（On-policy Knowledge Distillation）中三个叠加失效模式：（1）冷启动崩溃（Cold-start Collapse）——新初始化的学生模型对教师偏好的推理token赋予近乎零的概率质量，反向KL梯度信号极弱导致无法自举；（2）状态无关的散度调度（State-agnostic Divergence Scheduling）——现有方法仅基于训练步数进行前向KL到反向KL的线性插值，忽略了学生实际覆盖教师分布的进度，导致简单/困难prompt均使用同一调度；（3）二元奖励稀疏性（Binary Reward Sparsity）——通过/不通过信号丢弃了部分正确轨迹中的有用信息，在~49%预训练准确率下51%的轨迹获得零奖励。CADENCE框架提出DRIFT机制（逐token前向KL与反向KL代理目标的凸混合），并在此基础上扩展六个组件：COVA（覆盖自适应β调度，条件加速前向→反向过渡）、FTB（分叉token增强，基于全局熵参考在高熵位置集中梯度）、CCD（稠密奖励，为数值接近但不完全正确的轨迹提供部分信用）、LAP（偏向简洁的正确轨迹强化）、EMR（熵匹配校正规整化器）、BSD（自举自蒸馏阶段）。",
+      "innovations": "（1）首次系统识别并针对性修复在线策略推理蒸馏的三个叠加失效模式，每个组件都有明确的故障靶向；（2）COVA提出基于学生覆盖教师分布的EMA指标条件性加速前向→反向KL过渡，而非固定时间表，实现数据自适应的散度调度；（3）FTB使用全局归一化熵参考（H_ref=2.0 nat）对高熵位置进行跨序列可比的梯度增强，避免了逐轨迹最大归一化导致的序列间不可比问题；（4）CCD引入数学题数值接近度部分信用机制（p_i ∈ [0,1]），将非零奖励覆盖率从~49%提升至~55%；（5）在单台Apple Mac Studio（64GB统一内存）上完成全部实验，证明无需数据中心级硬件即可达到强推理质量；（6）引入五个诊断指标（SAG选择能力差距、FTA分叉token准确率、KLPE KL路径效率、CNI计算归一化改进、RLD响应长度分布）分解蒸馏质量的机制性贡献；（7）消融实验显示组件间存在2.8×超加性正向交互效应，整体大于部分之和。",
+      "scenario_cn": "适用于资源受限设备上的小模型推理能力蒸馏场景，特别是数学推理（GSM8K、MATH-500）的提升。核心价值在于让0.5B参数级别的小模型在消费级硬件上通过蒸馏获得显著推理能力提升（1.5B教师→69.8% GSM8K，闭合法教师差距的63.2%；3B教师→72.1%，闭合法76.2%差距），无需数据中心级算力。方法对任何需要将大模型推理能力迁移到紧凑部署模型的场景均有参考意义。",
+      "title_en": "CADENCE: Closing the Reasoning Gap via Coverage-Adaptive On-Policy Distillation",
+      "institution": "未明确披露",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2607.17558v1",
+      "title": "Why Does Feedback-Augmented Self-Distillation Fail to Improve Retrieval-Interleaved Search Agents?",
+      "abstract": "",
+      "published": "2026-07-21T00:00:00+00:00",
+      "updated": "2026-07-21T00:00:00+00:00",
+      "authors": [
+        "Fan Yang",
+        "Rui Meng",
+        "Yuxin Wen"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.17558",
+      "pdf_url": "https://arxiv.org/pdf/2607.17558",
+      "score": 10.6,
+      "topics": [
+        {
+          "name": "Agent",
+          "slug": "agent",
+          "hits": [
+            "agent"
+          ]
+        },
+        {
+          "name": "RAG / Long Context",
+          "slug": "rag-long-context",
+          "hits": [
+            "retrieval"
+          ]
+        },
+        {
+          "name": "Model Compression / Quantization",
+          "slug": "model-compression",
+          "hits": [
+            "distillation"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "agent",
+        "distillation",
+        "retrieval"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Why%20Does%20Feedback-Augmented%20Self-Distillation%20Fail%20to%20Improve%20Retrieval-Interleaved%20Search%20Agents%3F%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "",
+      "code_links_from_meta": "https://github.com/search?q=Why%20Does%20Feedback-Augmented%20Self-Distillation%20Fail%20to%20Improve%20Retrieval-Interleaved%20Search%20Agents%3F%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "为什么反馈增强的自蒸馏无法改进检索交错的搜索智能体？",
+      "summary_cn": "本文系统研究在线策略自蒸馏（OPSD）在复杂智能体搜索任务中的表现，提出了反馈增强自蒸馏（FA-SD）算法。实验发现，模型倾向于生成固定的推理-搜索模板轨迹，这些轨迹看似多样实则与输入问题无关，导致基于KL散度的自蒸馏信号失去意义——作者称之为\"解码坍塌\"（decoding collapse）。即使自教师模型本身表现更好，其监督信号的不一致性（分解为模型不一致和提示不一致）使得蒸馏学习极不稳定，其中提示不一致性对监督信号质量的损害最为严重。",
+      "innovations": [
+        "识别并命名了解码坍塌（decoding collapse）：自蒸馏中模型输出模板化、与输入无关的轨迹，使KL信号失效，且现有评估指标无法捕捉这一缺陷",
+        "将监督不一致性分解为模型不一致和提示不一致两类，定量证明提示不一致是破坏自蒸馏信号质量的主因",
+        "提出EMA（指数移动平均）教师策略来稳定自教师模型，提供更一致的监督信号；尽管需要预热期且中期效果回退，但最终能稳定提升模型性能",
+        "在检索交错型搜索智能体场景中首次系统评估自蒸馏的失败模式，填补了OPSD在复杂智能体任务上的研究空白"
+      ],
+      "scenario_cn": "适用于检索增强生成（RAG）场景中的搜索智能体训练，尤其是基于搜索交互的问答系统、信息检索与推理结合的智能体系统。也适用于自蒸馏/知识蒸馏方法的理论分析和改进，以及对智能体训练中监督信号质量敏感的模型优化场景。",
+      "title_en": "Why Does Feedback-Augmented Self-Distillation Fail to Improve Retrieval-Interleaved Search Agents?",
+      "institution": "未明确披露",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2607.17269v1",
+      "title": "An Explicit World Model Based on Data-First Ontology: DaoQL Multimodal Storage Validation and Counterfactual Reasoning Evaluation",
+      "abstract": " Comments: 20 pages, 2 figures. Code: this https URL",
+      "published": "2026-07-21T00:00:00+00:00",
+      "updated": "2026-07-21T00:00:00+00:00",
+      "authors": [
+        "Zhanbo Li",
+        "Shifeng Wu",
+        "Xiangjin Meng",
+        "Wenjie Cai"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.DB"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.17269",
+      "pdf_url": "https://arxiv.org/pdf/2607.17269",
+      "score": 10.4,
+      "topics": [
+        {
+          "name": "Agent Reasoning / Test-time Scaling",
+          "slug": "agent-reasoning",
+          "hits": [
+            "reasoning"
+          ]
+        },
+        {
+          "name": "World Model",
+          "slug": "world-model",
+          "hits": [
+            "world model"
+          ]
+        },
+        {
+          "name": "RAG / Long Context",
+          "slug": "rag-long-context",
+          "hits": [
+            "rag"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "rag",
+        "reasoning",
+        "world model"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=An%20Explicit%20World%20Model%20Based%20on%20Data-First%20Ontology%3A%20DaoQL%20Multimodal%20Storage%20Validation%20and%20Counterfactual%20Reasoning%20Evaluation%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": " Comments: 20 pages, 2 figures. Code: this https URL",
+      "code_links_from_meta": "https://github.com/search?q=An%20Explicit%20World%20Model%20Based%20on%20Data-First%20Ontology%3A%20DaoQL%20Multimodal%20Storage%20Validation%20and%20Counterfactual%20Reasoning%20Evaluation%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "基于数据优先本体论的显式世界模型：DaoQL多模态存储验证与反事实推理评估",
+      "institution": "重庆大学数学与统计学院；广东技术师范大学",
+      "summary_cn": "本文提出「数据优先本体论」的显式世界模型框架，将大语言模型（LLM）视为推理与语言引擎，将确定性知识迁移到名为DaoQL的显式多模态数据库中。系统在一个进程内集成图、列、向量和全文四种检索引擎，在五领域反事实实验（n=1250）中，DaoQL+GPT-4o实现94%的可组合反事实分解能力，比纯GPT-4o高出49个百分点。论文明确区分了可证明的理论结构、初步实证证据和架构路线图声明。",
+      "innovations": [
+        "提出数据优先本体论，将确定性知识从隐式神经权重剥离到显式数据库，从架构层面根本解决LLM的幻觉、知识冻结、可解释性差和难以修改四大结构性风险",
+        "形式化定义显式世界模型，证明在规则独立性、确定性评估和固定冲突解决条件下，显式模型是可组合反事实分解的充分条件；隐式模型因缺乏原子读/增量语义而无法提供同等架构保证",
+        "设计并实现DaoQL多模态统一存储引擎，单进程内融合图、列、向量、全文四种引擎，在嵌入式同机部署下实现图BFS 1.20ms、HNSW 83.1μs、Fluent混合查询105.8μs的亚毫秒级查询能力"
+      ],
+      "scenario_cn": "适用于医疗、金融等对知识确定性、可追溯性和可修改性有严格要求的精密领域，以及需要显式反事实推理和因果分解能力的高可靠性应用场景",
+      "title_en": "An Explicit World Model Based on Data-First Ontology: DaoQL Multimodal Storage Validation and Counterfactual Reasoning Evaluation",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2607.18002v1",
+      "title": "ExpertPlex: A High-Goodput Disaggregated Serving System for MoE LLMs with Adaptive Persistent Kernels",
+      "abstract": "",
+      "published": "2026-07-21T00:00:00+00:00",
+      "updated": "2026-07-21T00:00:00+00:00",
+      "authors": [
+        "Bingyang Wu",
+        "Chao Jin",
+        "Zili Zhang",
+        "Xinming Wei",
+        "Yinmin Zhong",
+        "Ruidong Zhu",
+        "Chengxu Yang",
+        "Xin Jin",
+        "Yuliang Liu"
+      ],
+      "categories": [
+        "cs.DC"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.18002",
+      "pdf_url": "https://arxiv.org/pdf/2607.18002",
+      "score": 8.8,
+      "topics": [
+        {
+          "name": "LLM 推理加速",
+          "slug": "llm-inference",
+          "hits": [
+            "serving"
+          ]
+        },
+        {
+          "name": "AI Infra / Serving Systems",
+          "slug": "ai-infra-serving",
+          "hits": [
+            "serving system",
+            "disaggregated serving"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "disaggregated serving",
+        "serving",
+        "serving system"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=ExpertPlex%3A%20A%20High-Goodput%20Disaggregated%20Serving%20System%20for%20MoE%20LLMs%20with%20Adaptive%20Persistent%20Kernels%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "",
+      "code_links_from_meta": "https://github.com/search?q=ExpertPlex%3A%20A%20High-Goodput%20Disaggregated%20Serving%20System%20for%20MoE%20LLMs%20with%20Adaptive%20Persistent%20Kernels%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "ExpertPlex：面向MoE大模型的高有效吞吐量解耦服务系统，采用自适应持久化内核",
+      "institution": "北京大学",
+      "summary_cn": "针对MoE大模型在预填充（prefill）和解码（decode）阶段的资源隔离痛点，ExpertPlex提出一种新的解耦方案——在prefill和decode阶段之间共享巨型MoE专家权重，同时将轻量级注意力模块分离。该方法消除了超过95%的重复模型权重，并利用自适应持久化内核（adaptive persistent kernels）在tile粒度调度动态稀疏专家计算，实现高效隔离执行。实验在MiniMax-M2.7和GLM-5.1-FP8上验证，相比实例级prefill-decode解耦提升有效吞吐量（goodput）达2.01倍，相比Green Context共置方案提升1.66倍。",
+      "innovations": [
+        "提出MoE跨阶段共享+注意力解耦的混合架构：共享占模型95%以上参数量的专家权重，仅解耦轻量注意力模块，兼顾资源复用与通信优化",
+        "设计自适应持久化内核（adaptive persistent kernels），在tile粒度调度动态专家计算，消除头部阻塞和预留资源空闲问题",
+        "实现注意力发起的MoE通信机制（attention-initiated MoE communication），避免prefill和decode流量的网络干扰，支持跨阶段计算通信重叠",
+        "提出tile-to-cluster模型用于端到端优化，在真实SLO约束下最大化goodput"
+      ],
+      "scenario_cn": "适用于大规模MoE大模型（如MiniMax-M2.7、GLM-5.1-FP8）的生产推理服务场景，特别是prefill和decode资源配比动态变化、专家负载层间不均衡的多GPU集群部署。解决现有实例级解耦资源粒度粗、Green Context共置头部阻塞的工程痛点。",
+      "title_en": "ExpertPlex: A High-Goodput Disaggregated Serving System for MoE LLMs with Adaptive Persistent Kernels",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2607.18141v1",
+      "title": "HyMCache: A KV Cache Framework for Multi-Turn LLM Serving with CXL-Hybrid Memory",
+      "abstract": "",
+      "published": "2026-07-21T00:00:00+00:00",
+      "updated": "2026-07-21T00:00:00+00:00",
+      "authors": [
+        "Hakbeom Jang",
+        "Inho Song",
+        "Sam H. Noh",
+        "Jongryool Kim"
+      ],
+      "categories": [
+        "cs.DC"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.18141",
+      "pdf_url": "https://arxiv.org/pdf/2607.18141",
+      "score": 8.8,
+      "topics": [
+        {
+          "name": "LLM 推理加速",
+          "slug": "llm-inference",
+          "hits": [
+            "kv cache",
+            "serving"
+          ]
+        },
+        {
+          "name": "AI Infra / Serving Systems",
+          "slug": "ai-infra-serving",
+          "hits": [
+            "llm serving"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "kv cache",
+        "llm serving",
+        "serving"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=HyMCache%3A%20A%20KV%20Cache%20Framework%20for%20Multi-Turn%20LLM%20Serving%20with%20CXL-Hybrid%20Memory%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "",
+      "code_links_from_meta": "https://github.com/search?q=HyMCache%3A%20A%20KV%20Cache%20Framework%20for%20Multi-Turn%20LLM%20Serving%20with%20CXL-Hybrid%20Memory%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "HyMCache：基于CXL混合内存的多轮对话LLM服务KV Cache框架",
+      "institution": "SK hynix America / Virginia Tech",
+      "summary_cn": "多轮对话和Agent型LLM工作负载大量复用已处理的上下文，KV Cache复用成为减少冗余计算的关键，但瓶颈转向了存储和提供可复用KV状态的内存层。HyMCache提出集成CXL混合内存（CXL-HM）的KV Cache框架，CXL-HM在设备内结合少量DRAM与大容量SSD后端，通过CXL接口暴露。利用多轮KV Cache访问读密集、可预测、只追加的特性，HyMCache重新设计了CXL-HM内的DRAM管理层，采用请求级前缀预取和机会性写缓冲，将延迟敏感的读取放到设备DRAM中，实现DRAM级效率但SSD级成本。在真实CXL-HM原型上，同等DRAM预算下HyMCache在单节点服务中超过本地LMCache 3.0倍，在PD解耦服务中超过1.45倍；与1TB分布式DRAM Mooncake相比，性能仅低约30%，但DRAM用量减少16倍。",
+      "innovations": [
+        "首个在真实CXL-HM硬件原型上设计并验证的KV Cache框架，利用CXL-HM设备内小DRAM+大SSD的异构特性替代昂贵的分布式DRAM方案",
+        "利用多轮KV Cache访问的read-dominant、predictable、append-only三大特征，定制CXL-HM设备DRAM管理层，提出请求级前缀预取和机会性写缓冲策略",
+        "相比同等DRAM预算的LMCache实现3.0倍单节点性能和1.45倍PD解耦性能，相比TB级Mooncake仅损失30%性能但节省16倍DRAM成本"
+      ],
+      "scenario_cn": "适用于多轮对话、长上下文和Agent型LLM推理服务场景，尤其是需要TB级共享KV Cache容量但希望降低DRAM成本的生产集群。解决GPU HBM和主机DRAM成本过高、无法扩展至TB级共享上下文的实际问题，为CXL混合内存硬件在LLM推理场景中的落地提供系统级方案。",
+      "title_en": "HyMCache: A KV Cache Framework for Multi-Turn LLM Serving with CXL-Hybrid Memory",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2607.16892v1",
+      "title": "Robust KV Cache Management for LLM Serving under Output Token Length Uncertainty",
+      "abstract": " Comments: 10 figures, 10 pages",
+      "published": "2026-07-21T00:00:00+00:00",
+      "updated": "2026-07-21T00:00:00+00:00",
+      "authors": [
+        "Jiaming Cheng",
+        "Duong The Do",
+        "Duong Tung Nguyen"
+      ],
+      "categories": [
+        "cs.NI"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.16892",
+      "pdf_url": "https://arxiv.org/pdf/2607.16892",
+      "score": 8.8,
+      "topics": [
+        {
+          "name": "LLM 推理加速",
+          "slug": "llm-inference",
+          "hits": [
+            "kv cache",
+            "serving"
+          ]
+        },
+        {
+          "name": "AI Infra / Serving Systems",
+          "slug": "ai-infra-serving",
+          "hits": [
+            "llm serving"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "kv cache",
+        "llm serving",
+        "serving"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Robust%20KV%20Cache%20Management%20for%20LLM%20Serving%20under%20Output%20Token%20Length%20Uncertainty%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": " Comments: 10 figures, 10 pages",
+      "code_links_from_meta": "https://github.com/search?q=Robust%20KV%20Cache%20Management%20for%20LLM%20Serving%20under%20Output%20Token%20Length%20Uncertainty%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "输出Token长度不确定下LLM服务的鲁棒KV缓存管理",
+      "institution": "未明确披露",
+      "summary_cn": "针对LLM推理服务中KV缓存必须在请求到达时预分配但输出Token长度未知的根本矛盾，提出一个鲁棒的KV缓存管理框架。该框架联合优化GPU并行度配置、每类请求的KV缓存预留量、异构服务组的请求路由以及共享Prompt的前缀缓存，并纳入延迟SLO约束。通过Wasserstein分布鲁棒优化(DRO)建模输出长度不确定性和负载分布漂移，设计可扩展的块坐标下降算法求解混合整数问题。在BurstGPT、Azure和ShareGPT等生产级工作负载上验证，相比固定分位数方法降低最高56%成本。",
+      "innovations": [
+        "首次将Wasserstein分布鲁棒优化引入KV缓存管理，从理论上建模输出Token长度的分布不确定性及负载漂移",
+        "揭示了最优预留的临界分位数结构，能根据抢占成本和内存成本自动调整预留分位数，无需手工调参",
+        "联合优化GPU并行配置、预留分配、请求路由和前缀缓存四个相互耦合的决策维度，整体性优于逐项优化",
+        "在多个生产LLM负载轨迹上验证，最高降低56%成本的同时维持P99延迟、goodput和SLO达标率"
+      ],
+      "scenario_cn": "解决GPU集群上LLM推理系统的KV缓存预留与输出长度未知之间的核心矛盾，适用于生产级LLM serving系统（如vLLM、TensorRT-LLM）的调度器与资源分配器优化",
+      "title_en": "Robust KV Cache Management for LLM Serving under Output Token Length Uncertainty",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2607.16930v1",
+      "title": "A Multi-Agent System for 5G Throughput Prediction in Multi-Operator Urban Environments",
+      "abstract": "",
+      "published": "2026-07-21T00:00:00+00:00",
+      "updated": "2026-07-21T00:00:00+00:00",
+      "authors": [
+        "Muhammad Kabeer",
+        "Rosdiadee Nordin",
+        "Nadiva Nuriftitah",
+        "Sian Lun Lau"
+      ],
+      "categories": [
+        "cs.NI",
+        "cs.AI",
+        "eess.SP"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.16930",
+      "pdf_url": "https://arxiv.org/pdf/2607.16930",
+      "score": 8.4,
+      "topics": [
+        {
+          "name": "LLM 推理加速",
+          "slug": "llm-inference",
+          "hits": [
+            "throughput"
+          ]
+        },
+        {
+          "name": "Agent",
+          "slug": "agent",
+          "hits": [
+            "agent",
+            "multi-agent"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "agent",
+        "multi-agent",
+        "throughput"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=A%20Multi-Agent%20System%20for%205G%20Throughput%20Prediction%20in%20Multi-Operator%20Urban%20Environments%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "",
+      "code_links_from_meta": "https://github.com/search?q=A%20Multi-Agent%20System%20for%205G%20Throughput%20Prediction%20in%20Multi-Operator%20Urban%20Environments%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "面向多运营商城市环境的5G吞吐量预测多智能体系统",
+      "institution": "Sunway University (马来西亚) / Lancaster University (英国)",
+      "summary_cn": "针对传统单体重力学习模型在多运营商、多移动模式和多流量类型场景下泛化能力差的问题，提出一种分层多智能体系统(TMAS)。TMAS将边缘遥测数据动态路由到上下文感知的领域微智能体，在马来西亚双威城采集的48,618个样本上验证，覆盖三家一级运营商、三种移动模式（高架步道、地面穿梭巴士、高架快速公交）和三种流量特征（持续下载、持续上传、自适应视频流）。智能体路由开销仅0.004-0.126ms，R²最高0.931，MAE低至0.53 Mbps。",
+      "innovations": [
+        "提出分层多智能体架构(TMAS)，通过领域微智能体实现多运营商/多移动模式/多流量特征的精准吞吐量预测，突破传统单模型泛化瓶颈",
+        "在真实城市环境中系统化采集覆盖3运营商×3移动模式×3流量特征的48K+样本数据集，填补该领域公开数据空白",
+        "智能体路由开销仅0.004-0.126ms，微智能体训练和推理延迟极低，满足6G实时资源编排的严格时序要求",
+        "相比传统单模型方法显著提升预测精度（R²达0.931，MAE 0.53 Mbps），验证了多智能体分解策略在异构网络中的有效性"
+      ],
+      "scenario_cn": "解决多运营商异构城市环境中5G/6G吞吐量预测准确性不足的问题，适用于智能网络资源编排、自适应视频流码率优化、多运营商网络管理与移动性预测等场景",
+      "title_en": "A Multi-Agent System for 5G Throughput Prediction in Multi-Operator Urban Environments",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2607.16488v1",
+      "title": "Auto-Scaling Heterogeneous Neural Processing Units for Energy and Cost-Efficient LLM Serving",
+      "abstract": " Comments: Accepted to MICRO'26",
+      "published": "2026-07-21T00:00:00+00:00",
+      "updated": "2026-07-21T00:00:00+00:00",
+      "authors": [
+        "Yuqi Xue",
+        "Jichuan Chang",
+        "Jian Huang"
+      ],
+      "categories": [
+        "cs.AR"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.16488",
+      "pdf_url": "https://arxiv.org/pdf/2607.16488",
+      "score": 8.4,
+      "topics": [
+        {
+          "name": "LLM 推理加速",
+          "slug": "llm-inference",
+          "hits": [
+            "serving"
+          ]
+        },
+        {
+          "name": "AI Infra / Serving Systems",
+          "slug": "ai-infra-serving",
+          "hits": [
+            "llm serving"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "llm serving",
+        "serving"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Auto-Scaling%20Heterogeneous%20Neural%20Processing%20Units%20for%20Energy%20and%20Cost-Efficient%20LLM%20Serving%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": " Comments: Accepted to MICRO'26",
+      "code_links_from_meta": "https://github.com/search?q=Auto-Scaling%20Heterogeneous%20Neural%20Processing%20Units%20for%20Energy%20and%20Cost-Efficient%20LLM%20Serving%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "面向能效与成本效益的 LLM 服务的异构 NPU 自动缩放框架",
+      "institution": "University of Illinois Urbana-Champaign; Google",
+      "summary_cn": "现代云平台广泛部署了多代 NPU 芯片（如 Google TPU），但缺乏管理 NPU 异构性的系统支持，无法充分挖掘不同版本 NPU 在能效和成本上的潜力。本文提出 NeuScale，一个面向云平台的异构 NPU 自动缩放框架，通过 vPod 抽象屏蔽不同 NPU 版本的硬件差异，基于 roofline 模型的轻量分析为 LLM 推理请求做最佳 vPod 分配，并支持 vPod 的垂直扩缩容（scale up/down）与水平扩缩容（scale in/out）。基于生产级 NPU 模拟器的评估表明，NeuScale 能显著提升成本效率和 SLO 满足率。",
+      "innovations": [
+        "提出 vPod 抽象层，统一封装不同版本 NPU 的核心硬件参数（算力、带宽、内存等），兼容现有 ML 框架，向下屏蔽异构性，向上提供统一资源视图",
+        "设计基于 roofline 模型的轻量最佳匹配分配策略，为不同 LLM 推理请求自动选择性价比最优的 NPU 版本与资源配比",
+        "支持细粒度的动态资源供给，同时调节 vPod 配置（scale up/down）和 vPod 数量（scale in/out），适配负载波动并合并低负载组",
+        "在生产级 NPU 模拟器上验证，对多代 Google TPU 异构集群实现了成本效率与 SLO 满足率的大幅提升"
+      ],
+      "scenario_cn": "解决云平台多代 NPU（如 TPU v4/v5/v6）共存的异构集群中，LLM 推理服务面临的手动选卡难、资源利用率低、成本不可控的问题。适用于大规模云 LLM 推理服务（如搜索、对话、代码生成等）的自动资源调度与成本优化场景。",
+      "title_en": "Auto-Scaling Heterogeneous Neural Processing Units for Energy and Cost-Efficient LLM Serving",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2607.16326v1",
+      "title": "CRISP: Pre-LLM Yet Text-Driven Visual Token Pruning for Efficient LVLM Inference",
+      "abstract": " Comments: Accepted by the 2026 IEEE International Conference on Multimedia and Expo (ICME 2026) as Oral",
+      "published": "2026-07-21T00:00:00+00:00",
+      "updated": "2026-07-21T00:00:00+00:00",
+      "authors": [
+        "Xu Li",
+        "Yi Zheng",
+        "Mengyang Zhao",
+        "Yuxuan Liang",
+        "Zhe Liu",
+        "Rui Zhu",
+        "Xiaolei Chen",
+        "Wei Zhou",
+        "Baoquan Zhao",
+        "Juncen Guo"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.16326",
+      "pdf_url": "https://arxiv.org/pdf/2607.16326",
+      "score": 8.2,
+      "topics": [
+        {
+          "name": "多模态推理加速",
+          "slug": "multimodal-inference",
+          "hits": [
+            "vlm",
+            "visual token pruning"
+          ]
+        },
+        {
+          "name": "Model Compression / Quantization",
+          "slug": "model-compression",
+          "hits": [
+            "pruning"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "pruning",
+        "visual token pruning",
+        "vlm"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=CRISP%3A%20Pre-LLM%20Yet%20Text-Driven%20Visual%20Token%20Pruning%20for%20Efficient%20LVLM%20Inference%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": " Comments: Accepted by the 2026 IEEE International Conference on Multimedia and Expo (ICME 2026) as Oral",
+      "code_links_from_meta": "https://github.com/search?q=CRISP%3A%20Pre-LLM%20Yet%20Text-Driven%20Visual%20Token%20Pruning%20for%20Efficient%20LVLM%20Inference%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "CRISP：LLM 前端的文本驱动视觉 Token 剪枝用于高效 LVLM 推理",
+      "institution": "复旦大学计算机科学技术学院 / 智能机器人研究院; 卡迪夫大学计算机与信息学院; 中山大学人工智能学院",
+      "summary_cn": "大型视觉语言模型需处理数百到数千个视觉 token，推理开销巨大。现有视觉 token 剪枝方法要么在 LLM 前做文本无关的启发式剪枝（精度损失大），要么在 LLM 内部做剪枝（效率低且跨模态注意力噪声大）。本文提出 CRISP，一种在 LLM 之前进行、但由文本驱动的视觉 token 剪枝框架，采用两阶段流水线：第一阶段识别与文本查询对齐的视觉 token，第二阶段通过语义多样性增强保留必要的场景上下文。在 LLaVA-1.5 和 LLaVA-NeXT 上的实验表明，在激进剪枝率下仍能保持 99.5% 的准确率，同时减少 2 倍以上的推理开销和延迟。",
+      "innovations": [
+        "首次提出在 LLM 前端进行文本驱动的视觉 token 剪枝：利用文本指令（而非视觉启发式）引导视觉 token 的选择，兼顾指令相关性和场景完整性",
+        "设计两阶段流水线：第一阶段通过跨模态对齐定位与文本查询相关的视觉 token；第二阶段通过语义多样性采样补全背景上下文信息，避免过度裁剪损场景理解",
+        "在激进剪枝率（保留极少量 token）下仍能保持高达 99.5% 的原始准确率，同时实现 2 倍以上的推理延迟与开销降低",
+        "引入基于 CLS 注意力的安全回退机制：当文本指令缺乏具体名词信息时自动降级为纯视觉全局语义筛选，保证鲁棒性"
+      ],
+      "scenario_cn": "解决 LVLM 推理时视觉 token 数量过大导致的高延迟和高计算成本问题。适用于资源受限环境下的多模态推理应用（如移动端、边缘部署），以及需要高吞吐量的在线视觉问答、图像描述、文档理解等场景。",
+      "title_en": "CRISP: Pre-LLM Yet Text-Driven Visual Token Pruning for Efficient LVLM Inference",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2607.17331v1",
+      "title": "Agentic ERP: Multi-Agent Large Language Model Architecture for Autonomous Enterprise Resource Planning",
+      "abstract": "",
+      "published": "2026-07-21T00:00:00+00:00",
+      "updated": "2026-07-21T00:00:00+00:00",
+      "authors": [
+        "Zhihao Liu",
+        "Tianyu Wang",
+        "Xi Vincent Wang",
+        "Lihui Wang"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.MA"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.17331",
+      "pdf_url": "https://arxiv.org/pdf/2607.17331",
+      "score": 7.8,
+      "topics": [
+        {
+          "name": "Agent",
+          "slug": "agent",
+          "hits": [
+            "agent",
+            "multi-agent"
+          ]
+        },
+        {
+          "name": "Agent Reasoning / Test-time Scaling",
+          "slug": "agent-reasoning",
+          "hits": [
+            "planning"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "agent",
+        "multi-agent",
+        "planning"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Agentic%20ERP%3A%20Multi-Agent%20Large%20Language%20Model%20Architecture%20for%20Autonomous%20Enterprise%20Resource%20Planning%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "",
+      "code_links_from_meta": "https://github.com/search?q=Agentic%20ERP%3A%20Multi-Agent%20Large%20Language%20Model%20Architecture%20for%20Autonomous%20Enterprise%20Resource%20Planning%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "Agentic ERP：面向自主企业资源规划的多智能体大语言模型架构",
+      "institution": "KTH Royal Institute of Technology",
+      "summary_cn": "提出 Agentic ERP，一种将角色对齐的 LLM 智能体与风险分级的 Human-in-the-Loop 机制以及基于图的编排器相结合的专家系统架构，在真实 ERP 后端上执行端到端业务流程。将自主 ERP 操作建模为结构化企业状态上的约束序贯决策问题，通过角色对齐智能体分解降低工具选择复杂度。在三种评估层次（场景任务套件、六种编排范式对比、365 天智能体仿真）上显著优于基于规则的 RPA 基线和无干预基线，实现零缺货运行一年。",
+      "innovations": [
+        "提出 Planner-Executor-Reflector-Responder 四阶段图式编排框架，将生成与评估解耦，通过外部化评分标准和 Sprint 契约实现可检查的专家系统制品",
+        "将自主 ERP 决策形式化为约束序贯决策问题，理论论证角色对齐智能体可降低每步工具选择的复杂度",
+        "设计风险分级的人力监督机制（risk-tiered human-in-the-loop harness），平衡自主性与安全性",
+        "在 365 天智能体仿真中零缺货运行，而基于规则的基线累积数百次缺货，验证了长期稳定运行的可行性"
+      ],
+      "scenario_cn": "解决企业资源规划（ERP）系统中大量运营决策仍需人工专家处理、传统规则自动化无法应对异常和跨职能协调的问题。适用于制造业、供应链管理等领域，将 ERP 从被动记录交易升级为主动执行运营决策。",
+      "title_en": "Agentic ERP: Multi-Agent Large Language Model Architecture for Autonomous Enterprise Resource Planning",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2607.18006v1",
+      "title": "MADA-RL: Multi-Agent Debate-Aware Reinforcement Learning for Parameter-Efficient Reasoning in Compact Models",
+      "abstract": " Comments: 20 pages, 3 figures, 9 tables, 2 algorithms, under review at TMLR",
+      "published": "2026-07-21T00:00:00+00:00",
+      "updated": "2026-07-21T00:00:00+00:00",
+      "authors": [
+        "Martino M. L. Pulici",
+        "Cuong Xuan Chu",
+        "Evgeny Kharlamov",
+        "Zifeng Ding",
+        "Volker Tresp",
+        "Yunpu Ma"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL",
+        "cs.MA"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.18006",
+      "pdf_url": "https://arxiv.org/pdf/2607.18006",
+      "score": 7.8,
+      "topics": [
+        {
+          "name": "Agent",
+          "slug": "agent",
+          "hits": [
+            "agent",
+            "multi-agent"
+          ]
+        },
+        {
+          "name": "Agent Reasoning / Test-time Scaling",
+          "slug": "agent-reasoning",
+          "hits": [
+            "reasoning"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "agent",
+        "multi-agent",
+        "reasoning"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=MADA-RL%3A%20Multi-Agent%20Debate-Aware%20Reinforcement%20Learning%20for%20Parameter-Efficient%20Reasoning%20in%20Compact%20Models%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": " Comments: 20 pages, 3 figures, 9 tables, 2 algorithms, under review at TMLR",
+      "code_links_from_meta": "https://github.com/search?q=MADA-RL%3A%20Multi-Agent%20Debate-Aware%20Reinforcement%20Learning%20for%20Parameter-Efficient%20Reasoning%20in%20Compact%20Models%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "MADA-RL：面向紧凑模型参数高效推理的多智能体辩论感知强化学习",
+      "institution": "LMU Munich / Siemens AG",
+      "summary_cn": "提出 MADA-RL，一种后训练框架，将紧凑模型（≤4B 参数）分化为生成器和评判者角色，通过辩论感知的强化学习信号进行训练，仅用 LoRA 微调少量参数。核心贡献是反事实评判者优势（counterfactual critic advantage）：一种动态角色条件基线，将评判者的优势定义为自身奖励减去生成器集成按样本的准确率，显式优化评判者超越生成器共识而非简单复现正确答案。在五个数学推理基准上，将 DeepSeek-R1-Distill-Qwen-1.5B 的准确率从 39.9% 提升至 41.9%，仅使用全量微调 1/16 的可训练参数，位于准确率-参数量 Pareto 前沿。",
+      "innovations": [
+        "提出反事实评判者优势，将评判者优势定义为自身奖励与生成器集成逐实例准确率之差，实现比静态均值归一化更精准的信用分配",
+        "多智能体辩论感知 RL 框架，通过 LoRA 将单个紧凑模型特化为生成器与评判者角色，训练参数仅为全量微调的 1/16",
+        "部署阶段采用轻量级多轮协议组合特化智能体，无需引入额外模型",
+        "控制实验证明训练的评判者学会纠正而非模仿生成器错误，揭示了能力来源"
+      ],
+      "scenario_cn": "解决紧凑大语言模型（≤4B 参数量）在有限训练预算下推理能力提升困难的问题。适用于数学推理等需要精确逻辑的认知任务，为资源受限场景下的模型后训练提供参数高效的方案。",
+      "title_en": "MADA-RL: Multi-Agent Debate-Aware Reinforcement Learning for Parameter-Efficient Reasoning in Compact Models",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2607.16199v1",
+      "title": "PlanFlip: Attacking Multi-Agent LLM Systems via Planning-Phase Prompt Injection",
+      "abstract": "",
+      "published": "2026-07-21T00:00:00+00:00",
+      "updated": "2026-07-21T00:00:00+00:00",
+      "authors": [
+        "Yuhang Wang"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.16199",
+      "pdf_url": "https://arxiv.org/pdf/2607.16199",
+      "score": 7.8,
+      "topics": [
+        {
+          "name": "Agent",
+          "slug": "agent",
+          "hits": [
+            "agent",
+            "multi-agent"
+          ]
+        },
+        {
+          "name": "Agent Reasoning / Test-time Scaling",
+          "slug": "agent-reasoning",
+          "hits": [
+            "planning"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "agent",
+        "multi-agent",
+        "planning"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=PlanFlip%3A%20Attacking%20Multi-Agent%20LLM%20Systems%20via%20Planning-Phase%20Prompt%20Injection%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "",
+      "code_links_from_meta": "https://github.com/search?q=PlanFlip%3A%20Attacking%20Multi-Agent%20LLM%20Systems%20via%20Planning-Phase%20Prompt%20Injection%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "PlanFlip: Attacking Multi-Agent LLM Systems via Planning-Phase Prompt Injection",
+      "summary_cn": "",
+      "innovations": [
+        "见正文："
+      ],
+      "scenario_cn": "",
+      "title_en": "PlanFlip: Attacking Multi-Agent LLM Systems via Planning-Phase Prompt Injection",
+      "institution": "未明确披露",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2607.16492v1",
+      "title": "WeedExpert-R1: Incentivizing Botanical Reasoning in MLLMs with Reinforcement Learning for Precision Weed Grounding",
+      "abstract": "",
+      "published": "2026-07-21T00:00:00+00:00",
+      "updated": "2026-07-21T00:00:00+00:00",
+      "authors": [
+        "Zonglin Yang",
+        "Wei-Zhen Liang",
+        "Nevin Lawrence",
+        "Xin Qiao",
+        "Benjamin Riggan",
+        "Chi-En Chiang",
+        "Fuchen Li"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.16492",
+      "pdf_url": "https://arxiv.org/pdf/2607.16492",
+      "score": 7.8,
+      "topics": [
+        {
+          "name": "多模态推理加速",
+          "slug": "multimodal-inference",
+          "hits": [
+            "mllm"
+          ]
+        },
+        {
+          "name": "Agent Reasoning / Test-time Scaling",
+          "slug": "agent-reasoning",
+          "hits": [
+            "reasoning"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "mllm",
+        "reasoning"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=WeedExpert-R1%3A%20Incentivizing%20Botanical%20Reasoning%20in%20MLLMs%20with%20Reinforcement%20Learning%20for%20Precision%20Weed%20Grounding%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "",
+      "code_links_from_meta": "https://github.com/search?q=WeedExpert-R1%3A%20Incentivizing%20Botanical%20Reasoning%20in%20MLLMs%20with%20Reinforcement%20Learning%20for%20Precision%20Weed%20Grounding%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "WeedExpert-R1：用强化学习激励多模态大模型的植物学推理实现精准杂草定位",
+      "institution": "未明确披露",
+      "summary_cn": "该论文提出 WeedExpert-R1，一个通过可验证奖励学习视觉化植物学推理的多模态模型。它结合人工整理的植物性状词典与审计-合成 LLM 工作流，自动生成细粒度杂草识别的思维链推理数据进行监督微调，并应用 GRPO 强化学习优化。在 37 个杂草物种、6 个数据集上，WeedExpert-R1-4B 以 75.82% 的精确集合精度超越了 GPT-5.4 和 Gemini-3.1-Pro 等闭源模型以及 Qwen3-VL-30B 等更大的开源模型。",
+      "innovations": [
+        "提出植物性状词典配合审计-合成 LLM 工作流，自动生成杂草识别的领域特定思维链推理数据，解决 MLLM 植物学知识不足的问题",
+        "将 GRPO 强化学习引入多模态杂草定位任务，设计格式、准确率、实例计数和响应长度多维可验证奖励函数",
+        "在未见过的杂草物种上展现开放词汇泛化能力，无需重新训练即可跨区域、跨作物部署"
+      ],
+      "scenario_cn": "解决精准农业中杂草的物种级识别与实例级定位问题，适用于跨区域、跨作物的自动杂草检测，减少除草剂滥用",
+      "title_en": "WeedExpert-R1: Incentivizing Botanical Reasoning in MLLMs with Reinforcement Learning for Precision Weed Grounding",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2607.16311v1",
+      "title": "Seeing What Is Actually There: PriVE-Bench and PriVE-Tools for Counterfactual Evaluation of Agentic Visual Evidence in VLMs",
+      "abstract": "",
+      "published": "2026-07-21T00:00:00+00:00",
+      "updated": "2026-07-21T00:00:00+00:00",
+      "authors": [
+        "Jingyu Sun",
+        "Jiachen Tu",
+        "Yuyang Xue",
+        "Yaoxin Jiang",
+        "Guoyi Xu",
+        "Zhengtao Yao",
+        "Rui Qian",
+        "Yizheng Sun",
+        "Hongpeng Zhou",
+        "Jingyuan Sun",
+        "Yan Lin"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.16311",
+      "pdf_url": "https://arxiv.org/pdf/2607.16311",
+      "score": 7.6,
+      "topics": [
+        {
+          "name": "多模态推理加速",
+          "slug": "multimodal-inference",
+          "hits": [
+            "vlm"
+          ]
+        },
+        {
+          "name": "Agent",
+          "slug": "agent",
+          "hits": [
+            "agent"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "agent",
+        "vlm"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Seeing%20What%20Is%20Actually%20There%3A%20PriVE-Bench%20and%20PriVE-Tools%20for%20Counterfactual%20Evaluation%20of%20Agentic%20Visual%20Evidence%20in%20VLMs%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "",
+      "code_links_from_meta": "https://github.com/search?q=Seeing%20What%20Is%20Actually%20There%3A%20PriVE-Bench%20and%20PriVE-Tools%20for%20Counterfactual%20Evaluation%20of%20Agentic%20Visual%20Evidence%20in%20VLMs%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "看清真实存在：PriVE-Bench 与 PriVE-Tools——基于反事实的 VLM 代理视觉证据评估",
+      "institution": "未明确披露",
+      "summary_cn": "该论文提出 PriVE-Bench，一个基于配对原始图像与反事实图像的基准测试，用于检测 VLM 是真正基于图像像素回答还是依赖语言/类别先验。进一步提出 PriVE-Tools，一个受代理视觉系统启发的扩展框架，评估边界框、裁剪、缩放面板、轮廓等工具导出的视觉证据能否帮助 VLM 在先验冲突时做出正确推理。实验发现视觉证据工具在某些场景下有效，但并非万能——即使显式提供相关视觉证据，多个模型仍然会跟随语言和类别先验。",
+      "innovations": [
+        "提出反事实图像配对评估方法，系统检测 VLM 依赖语言先验而非视觉证据的回答失败模式",
+        "设计 PriVE-Tools 框架，首次定量评估边界框、裁剪、缩放、轮廓等工具化视觉证据对 VLM 反事实推理的影响",
+        "发现视觉证据工具并非通用解决方案，揭示了即使在明确提供局部视觉证据时多个模型仍会坚持先验的关键现象"
+      ],
+      "scenario_cn": "解决 VLM 在多模态推理中过度依赖语言先验而忽视真实视觉证据的问题，适用于需要可靠视觉问答的代理系统、具身智能和视觉推理安全评估场景",
+      "title_en": "Seeing What Is Actually There: PriVE-Bench and PriVE-Tools for Counterfactual Evaluation of Agentic Visual Evidence in VLMs",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2607.17675v1",
+      "title": "ShotPlan: Cinematic Video Generation with Learnable Planning Token",
+      "abstract": " Comments: Project page: this https URL",
+      "published": "2026-07-21T00:00:00+00:00",
+      "updated": "2026-07-21T00:00:00+00:00",
+      "authors": [
+        "Su Guo",
+        "Guangce Liu",
+        "Haosen Yang",
+        "Jiepeng Wang",
+        "Cong Liu",
+        "Junqi Liu",
+        "Haibin Huang",
+        "Hongxun Yao",
+        "Chi Zhang",
+        "Xuelong Li"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.17675",
+      "pdf_url": "https://arxiv.org/pdf/2607.17675",
+      "score": 7.4,
+      "topics": [
+        {
+          "name": "Agent Reasoning / Test-time Scaling",
+          "slug": "agent-reasoning",
+          "hits": [
+            "planning"
+          ]
+        },
+        {
+          "name": "Video Generation",
+          "slug": "video-generation",
+          "hits": [
+            "video generation"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "planning",
+        "video generation"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=ShotPlan%3A%20Cinematic%20Video%20Generation%20with%20Learnable%20Planning%20Token%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": " Comments: Project page: this https URL",
+      "code_links_from_meta": "https://github.com/search?q=ShotPlan%3A%20Cinematic%20Video%20Generation%20with%20Learnable%20Planning%20Token%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "ShotPlan：基于可学习规划标记的电影级视频生成",
+      "institution": "中国电信人工智能研究院（TeleAI）；哈尔滨工业大学",
+      "summary_cn": "现有视频生成模型在单镜头生成上表现出色，但缺乏多镜头叙事所需的显式镜头规划能力。本文提出ShotPlan框架，在视频扩散基础模型之上引入可学习的「规划标记」（Planning Token），捕获镜头级过渡线索并与原始视频生成标记无缝集成。规划标记配备分数时域旋转位置编码（FRoPE），可在帧级别精确建模镜头过渡时间点。实验表明ShotPlan在镜头管理的灵活性和镜头间一致性上显著超越现有电影级视频生成方法。",
+      "innovations": [
+        "提出可学习规划标记（Planning Token）机制，显式建模镜头级过渡信息，使多镜头电影级视频生成在单一生成序列中实现可控",
+        "设计分数时域旋转位置编码（FRoPE），突破标准视频生成标记的时域表示粒度，实现帧级别的镜头过渡时间点精确控制",
+        "统一框架同时支持硬切（Hard Cut）与软过渡（如交叉溶解），并可扩展至时域定位的相机运动控制，具备通用性"
+      ],
+      "scenario_cn": "解决现有视频生成模型缺乏多镜头叙事规划和镜头间一致性的问题，适用于电影制作、广告创意、短视频内容生产等需要多镜头叙事结构和镜头级时间控制的创作场景",
+      "title_en": "ShotPlan: Cinematic Video Generation with Learnable Planning Token",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2607.16973v1",
+      "title": "TurboVec: A Case Study in Cost-Efficient Private Retrieval for Enterprise RAG via Codebook-Oblivious Quantization",
+      "abstract": "",
+      "published": "2026-07-21T00:00:00+00:00",
+      "updated": "2026-07-21T00:00:00+00:00",
+      "authors": [
+        "Navnit Shukla",
+        "Kamal Pandey",
+        "Omsankar Tiwari"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.IR"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.16973",
+      "pdf_url": "https://arxiv.org/pdf/2607.16973",
+      "score": 7.4,
+      "topics": [
+        {
+          "name": "RAG / Long Context",
+          "slug": "rag-long-context",
+          "hits": [
+            "rag",
+            "retrieval"
+          ]
+        },
+        {
+          "name": "Model Compression / Quantization",
+          "slug": "model-compression",
+          "hits": [
+            "quantization"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "quantization",
+        "rag",
+        "retrieval"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=TurboVec%3A%20A%20Case%20Study%20in%20Cost-Efficient%20Private%20Retrieval%20for%20Enterprise%20RAG%20via%20Codebook-Oblivious%20Quantization%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "",
+      "code_links_from_meta": "https://github.com/search?q=TurboVec%3A%20A%20Case%20Study%20in%20Cost-Efficient%20Private%20Retrieval%20for%20Enterprise%20RAG%20via%20Codebook-Oblivious%20Quantization%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "TurboVec: A Case Study in Cost-Efficient Private Retrieval for Enterprise RAG via Codebook-Oblivious Quantization",
+      "summary_cn": "",
+      "innovations": [
+        "见正文："
+      ],
+      "scenario_cn": "",
+      "title_en": "TurboVec: A Case Study in Cost-Efficient Private Retrieval for Enterprise RAG via Codebook-Oblivious Quantization",
+      "institution": "未明确披露",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2607.16565v1",
+      "title": "AlterAtlas: Shifting Travel Planning from AI Generation to Validation via Persona-Driven Simulations",
+      "abstract": " Comments: 11 pages, 8 figures. For associated codebase, see this https URL",
+      "published": "2026-07-21T00:00:00+00:00",
+      "updated": "2026-07-21T00:00:00+00:00",
+      "authors": [
+        "William Huang",
+        "Ruofei Du",
+        "Yang Zhang"
+      ],
+      "categories": [
+        "cs.HC"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.16565",
+      "pdf_url": "https://arxiv.org/pdf/2607.16565",
+      "score": 7.2,
+      "topics": [
+        {
+          "name": "Agent Reasoning / Test-time Scaling",
+          "slug": "agent-reasoning",
+          "hits": [
+            "planning"
+          ]
+        },
+        {
+          "name": "World Model",
+          "slug": "world-model",
+          "hits": [
+            "simulation"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "planning",
+        "simulation"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=AlterAtlas%3A%20Shifting%20Travel%20Planning%20from%20AI%20Generation%20to%20Validation%20via%20Persona-Driven%20Simulations%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": " Comments: 11 pages, 8 figures. For associated codebase, see this https URL",
+      "code_links_from_meta": "https://github.com/search?q=AlterAtlas%3A%20Shifting%20Travel%20Planning%20from%20AI%20Generation%20to%20Validation%20via%20Persona-Driven%20Simulations%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "AlterAtlas: Shifting Travel Planning from AI Generation to Validation via Persona-Driven Simulations",
+      "summary_cn": " Comments: 11 pages, 8 figures. For associated codebase, see this https URL",
+      "innovations": [
+        "见正文： Comments: 11 pages, 8 figures. For associated codebase, see this https URL"
+      ],
+      "scenario_cn": " Comments: 11 pages, 8 figures. For associated codebase, see this https URL",
+      "title_en": "AlterAtlas: Shifting Travel Planning from AI Generation to Validation via Persona-Driven Simulations",
+      "institution": "未明确披露",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2607.17973v1",
+      "title": "SAGE: Subgoal-Conditioned Action Generation for Latent World Model Planning",
+      "abstract": "",
+      "published": "2026-07-21T00:00:00+00:00",
+      "updated": "2026-07-21T00:00:00+00:00",
+      "authors": [
+        "Letian Cheng",
+        "Qi Zhang",
+        "Yisen Wang"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.17973",
+      "pdf_url": "https://arxiv.org/pdf/2607.17973",
+      "score": 7.2,
+      "topics": [
+        {
+          "name": "Agent Reasoning / Test-time Scaling",
+          "slug": "agent-reasoning",
+          "hits": [
+            "planning"
+          ]
+        },
+        {
+          "name": "World Model",
+          "slug": "world-model",
+          "hits": [
+            "world model"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "planning",
+        "world model"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=SAGE%3A%20Subgoal-Conditioned%20Action%20Generation%20for%20Latent%20World%20Model%20Planning%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "",
+      "code_links_from_meta": "https://github.com/search?q=SAGE%3A%20Subgoal-Conditioned%20Action%20Generation%20for%20Latent%20World%20Model%20Planning%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "SAGE: Subgoal-Conditioned Action Generation for Latent World Model Planning",
+      "summary_cn": "",
+      "innovations": [
+        "见正文："
+      ],
+      "scenario_cn": "",
+      "title_en": "SAGE: Subgoal-Conditioned Action Generation for Latent World Model Planning",
+      "institution": "未明确披露",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2607.16316v1",
+      "title": "Eddy-VL 1.9B: Structural Pruning and Layered Distillation for Edge-Deployable Multimodal Embedding",
+      "abstract": " Comments: 11pages,4figures,Model weights and inference code are available on Hugging Face",
+      "published": "2026-07-21T00:00:00+00:00",
+      "updated": "2026-07-21T00:00:00+00:00",
+      "authors": [
+        "HanYeong Cho",
+        "Changwoo Kim",
+        "Taeuk Chu",
+        "Jimin Park"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.16316",
+      "pdf_url": "https://arxiv.org/pdf/2607.16316",
+      "score": 4.2,
+      "topics": [
+        {
+          "name": "Model Compression / Quantization",
+          "slug": "model-compression",
+          "hits": [
+            "pruning",
+            "distillation"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "distillation",
+        "pruning"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Eddy-VL%201.9B%3A%20Structural%20Pruning%20and%20Layered%20Distillation%20for%20Edge-Deployable%20Multimodal%20Embedding%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": " Comments: 11pages,4figures,Model weights and inference code are available on Hugging Face",
+      "code_links_from_meta": "https://github.com/search?q=Eddy-VL%201.9B%3A%20Structural%20Pruning%20and%20Layered%20Distillation%20for%20Edge-Deployable%20Multimodal%20Embedding%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "Eddy-VL 1.9B：结构性剪枝与分层蒸馏实现边缘可部署的多模态嵌入",
+      "institution": "未明确披露（作者为韩国研究者）",
+      "summary_cn": "本文提出 Eddy-VL 1.9B，一个基于 Qwen3-VL-Embedding-2B 压缩得到的多模态嵌入模型，专为离线边缘端视觉-语言检索设计。压缩采用两步策略：探针驱动的结构性剪枝——基于相邻层线性 CKA 相似度移除 4 个冗余文本解码层（28→24）；分层知识蒸馏——包含 hole-covering 师生映射、中间层注意力图 1-CKA 对齐以及 Matryoshka 维度蒸馏。模型参数量降至 1.92B（减少约9.5%），MMEB-V2 上保留教师 91.7% 性能（63.2 vs 68.9），正向延迟降低约10%。组合推理能力在 SugarCrepe、MR2-Bench、ARO 等基准上几乎无损。",
+      "innovations": [
+        "提出探针驱动的结构性剪枝策略：以相邻层线性 CKA 相似度为排序指标，精准定位并移除冗余 Transformer 层",
+        "设计分层知识蒸馏框架：同时对齐中间层注意力图（1-CKA 损失）与最终层输出（MSE + Cosine + Matryoshka 维度损失），最大化知识迁移",
+        "在仅 9.5% 参数缩减和 10% 延迟降低下保留 91.7% 的教师模型性能，且组合推理能力几乎完全保持"
+      ],
+      "scenario_cn": "解决气隙/离线环境中无法调用云 API 的多模态检索难题，适用于法证调查、安防侦查、军用侦查等对延迟敏感且不允许网络连接的边缘部署场景",
+      "title_en": "Eddy-VL 1.9B: Structural Pruning and Layered Distillation for Edge-Deployable Multimodal Embedding",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2607.16296v1",
+      "title": "Efficient EEG Seizure Detection Using INT8 Quantization, Channel Pruning, and Spiking Neural Networks",
+      "abstract": "",
+      "published": "2026-07-21T00:00:00+00:00",
+      "updated": "2026-07-21T00:00:00+00:00",
+      "authors": [
+        "Kartikey Ahlawat"
+      ],
+      "categories": [
+        "eess.SP",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.16296",
+      "pdf_url": "https://arxiv.org/pdf/2607.16296",
+      "score": 4.2,
+      "topics": [
+        {
+          "name": "Model Compression / Quantization",
+          "slug": "model-compression",
+          "hits": [
+            "quantization",
+            "pruning"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "pruning",
+        "quantization"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Efficient%20EEG%20Seizure%20Detection%20Using%20INT8%20Quantization%2C%20Channel%20Pruning%2C%20and%20Spiking%20Neural%20Networks%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "",
+      "code_links_from_meta": "https://github.com/search?q=Efficient%20EEG%20Seizure%20Detection%20Using%20INT8%20Quantization%2C%20Channel%20Pruning%2C%20and%20Spiking%20Neural%20Networks%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "使用INT8量化、通道剪枝和脉冲神经网络的高效脑电图癫痫检测",
+      "institution": "未明确披露",
+      "summary_cn": "针对可穿戴和植入式癫痫监测设备功耗与内存受限的问题，本文以CHB-MIT头皮脑电图数据集上的1D CNN癫痫检测器为基线，系统研究了三种受大脑启发的效率优化策略：通过参数迁移将CNN转换为脉冲神经网络(SNN)、脑电图通道剪枝结合2:4结构化权重稀疏、以及基于FX和ONNX工作流的INT8量化（含量化感知训练和算子融合）。量化后的CNN模型存储从1.63MB降至0.44MB，单次推理能量降低64%，CPU延迟加速2.8倍，同时AUC保持不变甚至略有提升。",
+      "innovations": [
+        "在同一1D CNN基线框架下系统对比了SNN转换、通道剪枝+结构化稀疏、INT8量化三种正交的效率优化方向，提供了公平的横向比较基准",
+        "通过参数迁移方式将预训练CNN转换为SNN，在保持检测精度的同时实现了稀疏时间活动特性",
+        "提出了面向脑电图信号的通道剪枝结合2:4结构化稀疏方案，将输入通道和非零权重减半且仅带来轻微精度损失",
+        "构建了完整的INT8量化流水线，结合量化感知训练和算子融合，在CHB-MIT数据集上实现了73%的模型体积压缩"
+      ],
+      "scenario_cn": "解决连续脑电图监测中深度学习模型在可穿戴/植入设备上部署时的功耗和内存瓶颈，适用于实时癫痫发作检测的移动端和嵌入式场景",
+      "title_en": "Efficient EEG Seizure Detection Using INT8 Quantization, Channel Pruning, and Spiking Neural Networks",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2607.16248v1",
+      "title": "High-accuracy Low-Bit KV-Cache Quantization via Local Distribution Restoration",
+      "abstract": "",
+      "published": "2026-07-21T00:00:00+00:00",
+      "updated": "2026-07-21T00:00:00+00:00",
+      "authors": [
+        "Gradwell Dzikanyanga",
+        "Yanqi Pan",
+        "Weihao Yang",
+        "Donglei Wu",
+        "Wen Xia",
+        "Hao Huang"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.16248",
+      "pdf_url": "https://arxiv.org/pdf/2607.16248",
+      "score": 4.2,
+      "topics": [
+        {
+          "name": "Model Compression / Quantization",
+          "slug": "model-compression",
+          "hits": [
+            "quantization",
+            "low-bit"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "low-bit",
+        "quantization"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=High-accuracy%20Low-Bit%20KV-Cache%20Quantization%20via%20Local%20Distribution%20Restoration%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "",
+      "code_links_from_meta": "https://github.com/search?q=High-accuracy%20Low-Bit%20KV-Cache%20Quantization%20via%20Local%20Distribution%20Restoration%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "通过局部分布恢复实现高精度低位KV缓存量化",
+      "institution": "未明确披露",
+      "summary_cn": "长上下文大语言模型推理依赖KV缓存，低位量化能降低内存和带宽开销但严重损害质量（1-bit量化使Llama-3.1-8B在RULER上的准确率从84.2%骤降至47.8%）。本文发现根本原因并非通常认为的logits绝对误差，而是top-K区域logits分布发生结构性的局部排序错乱。为此提出局部分布恢复技术DGAP，通过从量化logits特征中检测高风险解码步骤，在token选择前仅恢复选定top-K候选的原始分布。在Llama-3.1-8B上，DGAP将1-bit KV缓存的RULER准确率从47.8%恢复至83.2%，分布漂移从0.38降至0.14；该方法在Llama、Mistral、Qwen系列模型上均保持极低位KV缓存容量且解码开销适中。",
+      "innovations": [
+        "揭示了低位KV缓存量化性能下降的根本原因是logits在top-K区域的局部排序错乱(结构化局部误排)，而非传统观点认为的绝对logits误差",
+        "提出了局部分布恢复方法，仅对高风险解码步中的top-K候选分布进行恢复，而非全局修正，精度-效率权衡更优",
+        "设计了高效的风险检测器和校正器（DGAP），在极低位量化（含1-bit）下Llama-3.1-8B的RULER准确率从47.8%恢复至83.2%",
+        "跨Llama、Mistral、Qwen多系列模型验证了方法的通用性，解码开销增加有限"
+      ],
+      "scenario_cn": "解决长上下文大语言模型推理中KV缓存内存瓶颈问题，适用于内存受限的LLM推理服务系统，尤其需要极低位量化（1-2 bit）以大幅压缩KV缓存场景",
+      "title_en": "High-accuracy Low-Bit KV-Cache Quantization via Local Distribution Restoration",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2607.16280v1",
+      "title": "3D FaceShell: Attribute Transfer in 3D Face Avatars as a VLM Defense Mechanism",
+      "abstract": " Comments: ECCV 2026",
+      "published": "2026-07-21T00:00:00+00:00",
+      "updated": "2026-07-21T00:00:00+00:00",
+      "authors": [
+        "Weston Bondurant",
+        "Srijan Das",
+        "Hieu Le",
+        "Stephanie Schuckers"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.16280",
+      "pdf_url": "https://arxiv.org/pdf/2607.16280",
+      "score": 4.0,
+      "topics": [
+        {
+          "name": "多模态推理加速",
+          "slug": "multimodal-inference",
+          "hits": [
+            "vlm"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "vlm"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=3D%20FaceShell%3A%20Attribute%20Transfer%20in%203D%20Face%20Avatars%20as%20a%20VLM%20Defense%20Mechanism%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": " Comments: ECCV 2026",
+      "code_links_from_meta": "https://github.com/search?q=3D%20FaceShell%3A%20Attribute%20Transfer%20in%203D%20Face%20Avatars%20as%20a%20VLM%20Defense%20Mechanism%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "3D FaceShell：3D人脸头像中的属性迁移作为VLM防御机制",
+      "institution": "University of North Carolina at Charlotte",
+      "summary_cn": "本文提出3D FaceShell框架，通过在3D人脸表示上附加一个可学习的高斯壳（Gaussian shell），产生细微且空间分布的几何扰动，从而在不改变人脸几何保真度和身份特征的前提下，引导视觉语言模型(VLM)对3D模型渲染出的人脸产生期望的语义解释。现有防御手段主要在2D图像空间操作，无法处理3D人脸表示的语义级隐私泄露问题。3D FaceShell通过多视角嵌入对齐优化扰动，使其在不同渲染视角下保持一致的对抗效果且视觉不可察觉。在名人3D人脸头像和多个黑盒VLM上的实验表明，该方法在保持高感知相似度和身份一致性的同时，显著提升了VLM属性推断的注入率和失配率。",
+      "innovations": [
+        "首次在3D空间（而非2D图像空间）构建VLM防御机制，通过可学习高斯壳实现3D表示级别的语义操纵",
+        "提出多视角嵌入对齐优化策略，确保扰动在不同渲染视角下的一致性，克服单视角攻击在多视角下的失效问题",
+        "在保持3D人脸几何结构和身份特征不变的前提下，有效重定向VLM对敏感属性的推断，实现隐私保护与视觉质量的平衡"
+      ],
+      "scenario_cn": "解决3D人脸头像（如数字人、远程呈现、动画资产）在共享后，VLM可从中推断敏感属性（年龄、性别、种族等）的隐私泄露问题。适用于需要保护人脸数据隐私的3D资产发布、虚拟角色部署、个性化媒体等场景。",
+      "title_en": "3D FaceShell: Attribute Transfer in 3D Face Avatars as a VLM Defense Mechanism",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2607.17279v1",
+      "title": "Between Safe Boundaries: Exploiting Temporal Consistency for Jailbreaking Text-To-Video Generation Models",
+      "abstract": "",
+      "published": "2026-07-21T00:00:00+00:00",
+      "updated": "2026-07-21T00:00:00+00:00",
+      "authors": [
+        "Xingkai Peng",
+        "Jun Jiang",
+        "Jiayang Liu",
+        "Kejiang Chen",
+        "Weiming Zhang"
+      ],
+      "categories": [
+        "cs.CR",
+        "cs.AI",
+        "cs.MM"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.17279",
+      "pdf_url": "https://arxiv.org/pdf/2607.17279",
+      "score": 4.0,
+      "topics": [
+        {
+          "name": "Video Generation",
+          "slug": "video-generation",
+          "hits": [
+            "video generation",
+            "text-to-video"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "text-to-video",
+        "video generation"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Between%20Safe%20Boundaries%3A%20Exploiting%20Temporal%20Consistency%20for%20Jailbreaking%20Text-To-Video%20Generation%20Models%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "",
+      "code_links_from_meta": "https://github.com/search?q=Between%20Safe%20Boundaries%3A%20Exploiting%20Temporal%20Consistency%20for%20Jailbreaking%20Text-To-Video%20Generation%20Models%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "安全边界之间：利用时间一致性攻破文生视频生成模型",
+      "institution": "中国科学技术大学",
+      "summary_cn": "本文揭示了文生视频（T2V）模型在对抗性攻击下的新漏洞——时间一致性。现有针对T2V的越狱方法多从文生图攻击迁移而来，忽略了视频生成特有的时间维度特征，且需要大量视频级查询优化，在黑盒场景下不可行。作者提出BSB框架，将有害意图编码为两个各自无害的边界状态之间的过渡，利用视频生成过程中插值的中间帧产生不安全内容。BSB在廉价的文本代理空间中进行蒙特卡洛树搜索（MCTS），并定期用稀疏视频级评估校准搜索结果，实现了查询高效的攻击。",
+      "innovations": [
+        "首次将时间一致性识别为T2V模型越狱攻击的关键攻击面，提出基于边界状态过渡的编码范式",
+        "用蒙特卡洛树搜索（MCTS）在文本代理空间进行结构化探索，取代传统启发式局部搜索，显著降低查询预算",
+        "在Veo 3.1、Sora 2、Seedance和Kling v1等商业T2V模型上验证，平均攻击成功率超越现有最强基线18.6%"
+      ],
+      "scenario_cn": "解决T2V生成模型的安全鲁棒性评估问题，适用于商业文生视频服务的红队测试、安全护栏有效性评估以及生成式AI系统的安全审计",
+      "title_en": "Between Safe Boundaries: Exploiting Temporal Consistency for Jailbreaking Text-To-Video Generation Models",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2607.16726v1",
+      "title": "Can Experts Adapt Without Training? On Test-Time Modality Generalization in MVLMs",
+      "abstract": " Comments: Accepted to MICCAI 2026",
+      "published": "2026-07-21T00:00:00+00:00",
+      "updated": "2026-07-21T00:00:00+00:00",
+      "authors": [
+        "Raza Imam",
+        "Darakshan Rashid",
+        "Yutong Xie",
+        "Dwarikanath Mahapatra",
+        "Brejesh Lall",
+        "Mohammad Yaqub"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.16726",
+      "pdf_url": "https://arxiv.org/pdf/2607.16726",
+      "score": 4.0,
+      "topics": [
+        {
+          "name": "多模态推理加速",
+          "slug": "multimodal-inference",
+          "hits": [
+            "vlm"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "vlm"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Can%20Experts%20Adapt%20Without%20Training%3F%20On%20Test-Time%20Modality%20Generalization%20in%20MVLMs%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": " Comments: Accepted to MICCAI 2026",
+      "code_links_from_meta": "https://github.com/search?q=Can%20Experts%20Adapt%20Without%20Training%3F%20On%20Test-Time%20Modality%20Generalization%20in%20MVLMs%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "专家无需训练即可适应？——MVLM中的测试时模态泛化研究",
+      "institution": "Mohamed bin Zayed University of Artificial Intelligence; Khalifa University; Indian Institute of Technology Delhi",
+      "summary_cn": "本文研究医学视觉语言模型(MVLM)在面对未见过的模态和领域时的测试时模态泛化问题。作者从混合专家(MoE)视角出发，提出了一个完全无需优化的框架MoBE（Mixture-of-Bayesian Experts），在推理阶段动态选择并自适应地聚合模态专家。MoBE结合熵引导的动态路由和逐专家的贝叶斯自适应机制，使专家能够在无梯度更新的情况下在线更新置信度并调整自身行为。在多个医学影像基准上的实验表明，MoBE在已见、未见和异质模态场景下分别比SOTA测试时自适应方法高出+4.72、+7.17和+4.3的平均准确率。",
+      "innovations": [
+        "揭示并形式化了测试时模态泛化中的\"专化-泛化\"两难困境：盲目聚合专家会稀释模态知识，而选择高置信单专家则在域偏移下失配",
+        "提出MoBE框架，完全无需参数更新/梯度计算，仅通过熵引导动态路由+贝叶斯逐专家后验更新实现测试时自适应",
+        "在已见、未见和异质模态三大类医学影像基准上系统评估，证明无训练专家自适应策略在模态泛化上优于传统TTA方法"
+      ],
+      "scenario_cn": "解决MVLM在实际部署中因测试模态与训练模态分布不同而导致性能崩溃的问题。适用于医学影像分析中的零样本跨模态分类场景，如使用单一训练模态（X光）的模型推广到未见过的CT、MRI、超声、内窥镜等异质医学影像模态，无需收集新数据和重新训练。代码已开源：https://github.com/BioMedIA-MBZUAI/MoBE-A-Test-Time-Modality-Generalization-Method",
+      "title_en": "Can Experts Adapt Without Training? On Test-Time Modality Generalization in MVLMs",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2607.16947v1",
+      "title": "When Physical Preferences Meet Semantic Constraints: Physical and Semantic Direct Preference Optimization for Text-to-Video Generation",
+      "abstract": " Comments: This work is accepted by ACM MM 2026",
+      "published": "2026-07-21T00:00:00+00:00",
+      "updated": "2026-07-21T00:00:00+00:00",
+      "authors": [
+        "Siwei Meng",
+        "Yawei Luo",
+        "Shu Zhang",
+        "Ping Liu"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.16947",
+      "pdf_url": "https://arxiv.org/pdf/2607.16947",
+      "score": 4.0,
+      "topics": [
+        {
+          "name": "Video Generation",
+          "slug": "video-generation",
+          "hits": [
+            "video generation",
+            "text-to-video"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "text-to-video",
+        "video generation"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=When%20Physical%20Preferences%20Meet%20Semantic%20Constraints%3A%20Physical%20and%20Semantic%20Direct%20Preference%20Optimization%20for%20Text-to-Video%20Generation%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": " Comments: This work is accepted by ACM MM 2026",
+      "code_links_from_meta": "https://github.com/search?q=When%20Physical%20Preferences%20Meet%20Semantic%20Constraints%3A%20Physical%20and%20Semantic%20Direct%20Preference%20Optimization%20for%20Text-to-Video%20Generation%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "当物理偏好遇到语义约束：文生视频的物理与语义直接偏好优化",
+      "institution": "内华达大学雷诺分校、浙江大学、独立研究者",
+      "summary_cn": "文生视频（T2V）生成模型在追求视觉逼真度的同时，提升物理合理性往往以牺牲与输入文本的语义一致性为代价。本文将其形式化为一个有约束的偏好优化问题，提出物理与语义直接偏好优化（PSDPO）。该方法根据物理信号与语义信号的一致性程度，动态调整每个偏好对的贡献权重；梯度分析表明PSDPO将冲突对的语义漂移控制在可控残差范围内，并进一步提出分阶段优化协议以累积减少漂移。PSDPO完全运行在标准DPO框架内，无需辅助模型或额外损失项。",
+      "innovations": [
+        "将物理合理性与语义一致性之间的冲突形式化为约束偏好优化问题，从理论层面揭示了物理-语义冲突的系统性成因",
+        "提出PSDPO方法，通过梯度级分析和分阶段优化协议，在标准DPO框架内同时优化物理与语义偏好，无需额外模型或损失项",
+        "在VideoPhy-2上物理合理性提升达2倍，同时在VBench上保持强语义一致性，优于现有偏好基线的平衡能力"
+      ],
+      "scenario_cn": "解决T2V生成中物理真实感与文本对齐不可兼得的固有问题，适用于需要高物理真实感的视频生成任务（如物理模拟、教学演示、自动驾驶场景生成等），以及追求提示语义忠实度的创意视频制作",
+      "title_en": "When Physical Preferences Meet Semantic Constraints: Physical and Semantic Direct Preference Optimization for Text-to-Video Generation",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2607.17070v1",
+      "title": "Bridging the Information Gap: Semantic Densification and Hindsight Distillation for Cold-Start Prediction",
+      "abstract": "",
+      "published": "2026-07-21T00:00:00+00:00",
+      "updated": "2026-07-21T00:00:00+00:00",
+      "authors": [
+        "Hao Duong Le",
+        "Yifei Gao",
+        "Huan Li",
+        "Lun Jiang",
+        "Chen Bai",
+        "Ke Xing",
+        "Chen Zhang"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.17070",
+      "pdf_url": "https://arxiv.org/pdf/2607.17070",
+      "score": 3.8,
+      "topics": [
+        {
+          "name": "Model Compression / Quantization",
+          "slug": "model-compression",
+          "hits": [
+            "distillation"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "distillation"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Bridging%20the%20Information%20Gap%3A%20Semantic%20Densification%20and%20Hindsight%20Distillation%20for%20Cold-Start%20Prediction%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "",
+      "code_links_from_meta": "https://github.com/search?q=Bridging%20the%20Information%20Gap%3A%20Semantic%20Densification%20and%20Hindsight%20Distillation%20for%20Cold-Start%20Prediction%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "弥合信息鸿沟：面向冷启动预测的语义稠密化与事后知识蒸馏",
+      "institution": "未明确披露",
+      "summary_cn": "电商新用户冷启动预测（LTV和CVR）因交互历史稀疏而极具挑战。现有方法分为两条路线——LLM语义增强和利用特权信息学习（LUPI）——各有局限：LLM输出非结构化推理文本，噪声大且难以落地上线；朴素教师-学生蒸馏则因特权教师与稀疏学生之间的信息差而脆弱，且该信息差在不同用户间异质。本文提出SemRaD框架，通过结构化语义推理流水线（发现-策展-审核工作流）为每个用户生成稠密语义画像和事后蒸馏目标，再经由事后感知蒸馏网络（含蒸馏专家模块）处理用户间的异质性信息差。在大规模工业数据集上LTV Gini提升1.9%、CVR AUROC提升1.0%，在Keeta平台的四周在线A/B测试确认LTV+1.0%/CVR+0.43%，且仅用9%训练数据即匹配生产系统的LTV表现。",
+      "innovations": [
+        "提出结构化语义推理流水线（Discover-Curate-Audit），将LLM自由文本推理转化为结构化稠密语义画像，替代传统非结构化语义增强，提升可操作性",
+        "设计事后蒸馏目标（Hindsight Distillation Target），融合转化前与转化后的推理信息，解决特权知识蒸馏中的信息差问题",
+        "引入事后感知蒸馏网络与蒸馏专家模块（Distillation Experts），自适应处理不同用户间异质的信息差距，提升蒸馏效果",
+        "语义门控编码器（Semantic-Gated Encoder）自动聚焦画像中最具信息量的维度，实现高效推理部署"
+      ],
+      "scenario_cn": "解决电商/外卖平台新用户冷启动场景下用户生命周期价值（LTV）和转化率（CVR）的预测难题，尤其适用于交互数据稀疏、需要快速冷启动的工业推荐系统",
+      "title_en": "Bridging the Information Gap: Semantic Densification and Hindsight Distillation for Cold-Start Prediction",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2607.17568v1",
+      "title": "CoCurve: Cross-Module Co-Pruning Curvature for Training-Free Structured LLM Pruning",
+      "abstract": "",
+      "published": "2026-07-21T00:00:00+00:00",
+      "updated": "2026-07-21T00:00:00+00:00",
+      "authors": [
+        "Zhiren Gong",
+        "Zihao Zeng",
+        "Zijie Wang",
+        "Tiantong Wang",
+        "Chau Yuen",
+        "Wei Yang Bryan Lim"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.17568",
+      "pdf_url": "https://arxiv.org/pdf/2607.17568",
+      "score": 3.8,
+      "topics": [
+        {
+          "name": "Model Compression / Quantization",
+          "slug": "model-compression",
+          "hits": [
+            "pruning"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "pruning"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=CoCurve%3A%20Cross-Module%20Co-Pruning%20Curvature%20for%20Training-Free%20Structured%20LLM%20Pruning%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "",
+      "code_links_from_meta": "https://github.com/search?q=CoCurve%3A%20Cross-Module%20Co-Pruning%20Curvature%20for%20Training-Free%20Structured%20LLM%20Pruning%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "CoCurve：跨模块协同剪枝曲率——无需训练的结构化LLM剪枝方法",
+      "institution": "未明确披露",
+      "summary_cn": "现有无训练结构化剪枝方法独立评估每个计算单元（注意力头、FFN通道组）的重要性，隐式假设剪枝一组单元的损失等于各单元损失之和。这一假设在Transformer中不成立：各子层通过共享残差流耦合，两个单独看似不重要的单元可能联合不可或缺，独立打分会错误地将它们同时移除。本文提出CoCurve，一种仅需校准数据、无需微调的结构化剪枝方法。通过对冻结模型与其遮蔽副本间的token级KL散度进行二阶泰勒展开，得到单一Fisher矩阵：对角项为经典节点重要性，非对角项为协同剪枝曲率——即同时移除两个单元带来的额外损失。利用单次消融可加性近似，完整的M×M交互矩阵仅需M次前向传播即可恢复，无需成对遍历或梯度计算。剪枝最终转化为一个带统一Attention-FFN预算约束的二次规划问题，一次性求解完成。",
+      "innovations": [
+        "首次在无训练结构化剪枝中显式建模跨模块（Attention+FFN）联合依赖关系，捕捉残差流引起的耦合效应，突破独立重要性假设的局限",
+        "提出协同剪枝曲率（Co-Pruning Curvature）概念，通过Fisher矩阵非对角项量化同时移除两个单元的额外联合损失",
+        "基于单次消融可加性近似（single-ablation additivity approximation），将O(M²)的成对交互计算简化为M次前向传播的Gram矩阵乘积，计算效率极高",
+        "将联合剪枝问题表述为带预算约束的二次规划，一次性求解最优剪枝方案，无需标签、微调或恢复训练"
+      ],
+      "scenario_cn": "适用于大语言模型部署前的结构化压缩，尤其适合在缺乏微调计算资源的情况下对Transformer架构LLM进行注意力头和FFN通道的联合剪枝，降低模型推理延迟和显存占用",
+      "title_en": "CoCurve: Cross-Module Co-Pruning Curvature for Training-Free Structured LLM Pruning",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2607.16208v1",
+      "title": "ColGraphRAG: Late-Interaction Evidence Retrieval for Multimodal GraphRAG",
+      "abstract": "",
+      "published": "2026-07-21T00:00:00+00:00",
+      "updated": "2026-07-21T00:00:00+00:00",
+      "authors": [
+        "Seonok Kim"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.16208",
+      "pdf_url": "https://arxiv.org/pdf/2607.16208",
+      "score": 3.6,
+      "topics": [
+        {
+          "name": "RAG / Long Context",
+          "slug": "rag-long-context",
+          "hits": [
+            "rag",
+            "retrieval"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "rag",
+        "retrieval"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=ColGraphRAG%3A%20Late-Interaction%20Evidence%20Retrieval%20for%20Multimodal%20GraphRAG%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "",
+      "code_links_from_meta": "https://github.com/search?q=ColGraphRAG%3A%20Late-Interaction%20Evidence%20Retrieval%20for%20Multimodal%20GraphRAG%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "ColGraphRAG: Late-Interaction Evidence Retrieval for Multimodal GraphRAG",
+      "summary_cn": "",
+      "innovations": [
+        "见正文："
+      ],
+      "scenario_cn": "",
+      "title_en": "ColGraphRAG: Late-Interaction Evidence Retrieval for Multimodal GraphRAG",
+      "institution": "未明确披露",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2607.17538v1",
+      "title": "D-NOVA: In-Storage Retrieval Accelerator via Dual-Bound 3D NAND-Optimized Similarity Search with Vector Adaptation",
+      "abstract": " Comments: Accepted at the 59th IEEE/ACM International Symposium on Microarchitecture (MICRO 2026), Athens, Greece. Chang Eun Song and Sumukh Pinge are co-first authors and contributed equally",
+      "published": "2026-07-21T00:00:00+00:00",
+      "updated": "2026-07-21T00:00:00+00:00",
+      "authors": [
+        "Chang Eun Song",
+        "Sumukh Pinge",
+        "Tianqi Zhang",
+        "Sung Eun Kim",
+        "Tajana S. Rosing",
+        "Mingu Kang"
+      ],
+      "categories": [
+        "cs.AR",
+        "cs.CL",
+        "cs.DB",
+        "cs.ET",
+        "cs.IR"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.17538",
+      "pdf_url": "https://arxiv.org/pdf/2607.17538",
+      "score": 3.6,
+      "topics": [
+        {
+          "name": "RAG / Long Context",
+          "slug": "rag-long-context",
+          "hits": [
+            "rag",
+            "retrieval"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "rag",
+        "retrieval"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=D-NOVA%3A%20In-Storage%20Retrieval%20Accelerator%20via%20Dual-Bound%203D%20NAND-Optimized%20Similarity%20Search%20with%20Vector%20Adaptation%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": " Comments: Accepted at the 59th IEEE/ACM International Symposium on Microarchitecture (MICRO 2026), Athens, Greece. Chang Eun Song and Sumukh Pinge are co-first authors and contributed equally",
+      "code_links_from_meta": "https://github.com/search?q=D-NOVA%3A%20In-Storage%20Retrieval%20Accelerator%20via%20Dual-Bound%203D%20NAND-Optimized%20Similarity%20Search%20with%20Vector%20Adaptation%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "D-NOVA：基于双界3D NAND优化的相似性搜索与向量适配的存内检索加速器",
+      "summary_cn": "RAG通过从外部知识库检索相关信息来增强LLM的事实性，但其稠密向量检索带来了显著的延迟和能效开销，成为主要性能瓶颈。已有的存内加速器虽试图减少数据搬运，但仍有约70%的检索时间消耗在内存外的主机或嵌入式处理器上。D-NOVA提出一种硬件-软件协同设计的全存内检索加速器，将基于IVF（倒排文件）的层次化检索流程直接嵌入NAND存储阵列内部执行。通过设计新的距离度量——双界紧致相似性感测（DTS），专为NAND串内搜索定制；同时引入轻量级对比适配器（0.4M参数），将嵌入向量映射到DTS友好的域，在提升性能和能效的同时恢复接近软件精度的召回率。在6个RAG基准上的评估表明，相比CPU基线加速最高达41.7倍，能效提升71倍；相比最先进的存内RAG加速器吞吐量提升最高12.13倍，能效提升1.26倍。",
+      "innovations": [
+        "提出DTS（Dual-Bound Tight Similarity Sensing）度量：利用3D NAND串的串联二进制导通特性，通过上下界（UBS、LBS）和补码（Comp UBS）实现针对NAND阵列的精确离散相似性搜索，无需修改阵列结构",
+        "全存内三级IVF检索流水线：将聚类选择、粗排、精排完全在NAND阵列内通过二进制阈值感测完成，仅在控制器端做轻量排序，彻底避免了候选向量搬离NAND的开销",
+        "轻量级对比适配器：训练一次（离线0.4M参数）即可将通用编码器（MiniLM/mpnet）的输出重塑为DTS友好的表示，将Recall@100差距从3.77-4.54%缩小至1.43-1.76%，且新增文档无需重训练适配器",
+        "Stage-Aware m-Adaptive 感测：对精度关键阶段（聚类选择、精排）用小m（1-2）保精度，对吞吐关键阶段（粗排）用大m（4-8）提并行度，实现精度与吞吐的灵活折中",
+        "局部性感知映射：将属于同一聚类的向量连续存放在相邻NAND子块，降低每次查询激活的子块数约38-44%，减少平面冲突提升稳态吞吐"
+      ],
+      "scenario_cn": "RAG系统的向量检索加速场景，特别适用于大规模知识库（百万至千万级文档）的在线检索，如开放域问答（NQ）、多跳推理（HotpotQA）、事实验证（FEVER）等。因采用NAND存储内计算，适合数据中心和企业级SSD融入RAG流水线，在存储端就近完成检索，显著降低LLM推理系统中的检索延迟和能耗瓶颈。",
+      "title_en": "D-NOVA: In-Storage Retrieval Accelerator via Dual-Bound 3D NAND-Optimized Similarity Search with Vector Adaptation",
+      "institution": "未明确披露",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2607.18227v1",
+      "title": "FlowMimic: Mask-free Visual Editing and Generation with Pixel-pair Warped Flow Field for Online Video Editing Data Generation and Modality Mimicry",
+      "abstract": " Comments: Due to file size constraints, the figures in the arXiv file have been heavily lossy-compressed. Please visit the uncompressed file at: this https URL",
+      "published": "2026-07-21T00:00:00+00:00",
+      "updated": "2026-07-21T00:00:00+00:00",
+      "authors": [
+        "Dingyun Zhang",
+        "Lixue Gong",
+        "Wei Liu"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.18227",
+      "pdf_url": "https://arxiv.org/pdf/2607.18227",
+      "score": 3.6,
+      "topics": [
+        {
+          "name": "Video Generation",
+          "slug": "video-generation",
+          "hits": [
+            "video editing"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "video editing"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=FlowMimic%3A%20Mask-free%20Visual%20Editing%20and%20Generation%20with%20Pixel-pair%20Warped%20Flow%20Field%20for%20Online%20Video%20Editing%20Data%20Generation%20and%20Modality%20Mimicry%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": " Comments: Due to file size constraints, the figures in the arXiv file have been heavily lossy-compressed. Please visit the uncompressed file at: this https URL",
+      "code_links_from_meta": "https://github.com/search?q=FlowMimic%3A%20Mask-free%20Visual%20Editing%20and%20Generation%20with%20Pixel-pair%20Warped%20Flow%20Field%20for%20Online%20Video%20Editing%20Data%20Generation%20and%20Modality%20Mimicry%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "FlowMimic：基于像素对扭曲流场实现无需掩码的视觉编辑与生成——在线视频编辑数据生成与模态模仿",
+      "institution": "未明确披露",
+      "summary_cn": "FlowMimic探索将图像和视频两个模态的生成与编辑能力整合到单一模型中。当前视频编辑数据的收集严重依赖人工标注掩码、I2V模型配对合成等繁琐流程，编辑任务多样性远不如图像编辑。作者提出像素对时间扭曲流场（Pixel-pair Temporal Warped Flow Field），直接从图像编辑样本实时生成对应视频编辑样本，无需人工标注。同时设计模态模仿生成损失和编辑损失，通过相互模仿对齐两模态的输出分布。此外，引入指代表达式分割等感知任务及相关损失函数，让模型无需外部工具即可自主完成指令驱动的区域定位与编辑。",
+      "innovations": [
+        "提出像素对时间扭曲流场，实现从图像编辑数据到视频编辑数据的零成本实时转换，彻底免去掩码标注和I2V模型合成等耗时流程",
+        "设计模态模仿生成损失与模态模仿编辑损失，通过双向模仿对齐图像和视频两个模态的输出分布，实现多模态编辑能力融合",
+        "引入感知级任务（指代表达式分割等）及相关潜空间/注意力损失，使模型自主内化语言指令→区域定位→局部修改的端到端能力，无需外部MLLM或掩码序列辅助"
+      ],
+      "scenario_cn": "解决视频编辑数据收集成本高、编辑任务多样性受限的问题，适用于需要统一处理图像和视频编辑任务的场景，如在线视频编辑数据生成、语言驱动的图像/视频局部编辑、指代式视觉编辑等，可大幅降低视频编辑模型的训练数据门槛。",
+      "title_en": "FlowMimic: Mask-free Visual Editing and Generation with Pixel-pair Warped Flow Field for Online Video Editing Data Generation and Modality Mimicry",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2607.17985v1",
+      "title": "Keyframe-Anchored Identity Preservation for Sequential-Action Video Generation",
+      "abstract": "",
+      "published": "2026-07-21T00:00:00+00:00",
+      "updated": "2026-07-21T00:00:00+00:00",
+      "authors": [
+        "Zhenjie Liu",
+        "Binyan Chen",
+        "Hao Chen",
+        "Tong Pan",
+        "Shangfei Wang"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.MM"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.17985",
+      "pdf_url": "https://arxiv.org/pdf/2607.17985",
+      "score": 3.6,
+      "topics": [
+        {
+          "name": "Video Generation",
+          "slug": "video-generation",
+          "hits": [
+            "video generation"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "video generation"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Keyframe-Anchored%20Identity%20Preservation%20for%20Sequential-Action%20Video%20Generation%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "",
+      "code_links_from_meta": "https://github.com/search?q=Keyframe-Anchored%20Identity%20Preservation%20for%20Sequential-Action%20Video%20Generation%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "关键帧锚定的身份保持序列动作视频生成",
+      "institution": "未明确披露",
+      "summary_cn": "该论文针对身份保持文本到视频生成中的新挑战——序列化动作视频生成（IPVG26挑战赛Track 2），提出一种无需训练的流水线框架。模型接收一系列带时间戳的动作描述文本，需要让指定主体按顺序执行这些动作并保持外观连贯性。作者设计了包含动作感知提示优化、身份保持关键帧生成和身份感知推理增强的三阶段流程，有效解决端到端视频生成器在动作累积过程中出现的外观漂移问题。该方法在官方排行榜上获得第三名。",
+      "innovations": [
+        "提出训练无关的三阶段流水线框架，将序列动作视频生成解耦为关键帧生成与中间帧插值两个子问题，无需额外训练即可实现身份保持",
+        "设计动作感知提示优化（Action-aware Prompt Polishment）阶段，将序列动作描述自动转换为描述每个动作终止状态的图像生成提示",
+        "提出身份感知推理增强方法，结合多参考引导和身份驱动噪声搜索，在采样过程中强化身份保真度"
+      ],
+      "scenario_cn": "解决传统身份保持视频生成无法处理多步骤连续动作序列的问题，适用于需要角色/物体按特定顺序执行一系列动作的视频生成场景，如虚拟主播、数字人、影视预可视化、游戏角色动画等。",
+      "title_en": "Keyframe-Anchored Identity Preservation for Sequential-Action Video Generation",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2607.17585v1",
+      "title": "Pixel-Space Diffusion Transformers",
+      "abstract": "",
+      "published": "2026-07-21T00:00:00+00:00",
+      "updated": "2026-07-21T00:00:00+00:00",
+      "authors": [
+        "Renye Yan",
+        "Jikang Cheng",
+        "You Wu",
+        "Ling Liang",
+        "Wei Peng",
+        "Athanasios V. Vasilakos",
+        "Qingyu Zhao",
+        "Yu Zhang",
+        "Ehsan Adeli",
+        "Kilian M. Pohl",
+        "Guoying Zhao"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.17585",
+      "pdf_url": "https://arxiv.org/pdf/2607.17585",
+      "score": 3.6,
+      "topics": [
+        {
+          "name": "Video Generation",
+          "slug": "video-generation",
+          "hits": [
+            "diffusion transformer"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "diffusion transformer"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Pixel-Space%20Diffusion%20Transformers%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "",
+      "code_links_from_meta": "https://github.com/search?q=Pixel-Space%20Diffusion%20Transformers%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "像素空间扩散Transformer",
+      "institution": "多机构合作（作者来自Stanford University、University of Oulu、University of Agder等多所高校）",
+      "summary_cn": "这是一篇关于像素空间扩散Transformer（pDiTs）的综合性综述论文。论文系统梳理了从潜空间扩散模型到像素空间直接建模的技术演进路线，分析了消除VAE瓶颈后在高维建模中面临的核心挑战，包括噪声调度、损失加权、token效率及可扩展架构设计。还探讨了像素空间建模在多模态统一系统中的潜力，即在同一token空间中联合处理像素、文本和任务条件。",
+      "innovations": [
+        "首次系统性地从模型架构、连续生成机制和多模态统一建模三个视角综述像素空间扩散Transformer领域",
+        "深入分析了潜空间扩散模型中固定视觉tokenizer导致的纹理丢失与生成-重建目标不匹配等根本性局限",
+        "识别并归纳了像素空间高维建模中的关键技术挑战（噪声调度、损失加权、token效率、可扩展架构）",
+        "提出了像素空间建模可作为统一多模态视觉基础模型的路标，弥合视觉理解与生成之间的差距"
+      ],
+      "scenario_cn": "解决潜空间扩散模型在细粒度纹理保留和高保真生成方面的局限性，适用于高分辨率图像合成、视频生成以及统一视觉理解与生成的多模态基础模型研究",
+      "title_en": "Pixel-Space Diffusion Transformers",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2607.18155v1",
+      "title": "Testing Retrieval-Augmented Generation Systems with Chunk Coverage",
+      "abstract": " Comments: ISSTA 2026",
+      "published": "2026-07-21T00:00:00+00:00",
+      "updated": "2026-07-21T00:00:00+00:00",
+      "authors": [
+        "Jinhan Kim",
+        "Samuele Pasini",
+        "Paolo Tonella"
+      ],
+      "categories": [
+        "cs.SE"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.18155",
+      "pdf_url": "https://arxiv.org/pdf/2607.18155",
+      "score": 3.6,
+      "topics": [
+        {
+          "name": "RAG / Long Context",
+          "slug": "rag-long-context",
+          "hits": [
+            "rag",
+            "retrieval"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "rag",
+        "retrieval"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Testing%20Retrieval-Augmented%20Generation%20Systems%20with%20Chunk%20Coverage%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": " Comments: ISSTA 2026",
+      "code_links_from_meta": "https://github.com/search?q=Testing%20Retrieval-Augmented%20Generation%20Systems%20with%20Chunk%20Coverage%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "Testing Retrieval-Augmented Generation Systems with Chunk Coverage",
+      "summary_cn": " Comments: ISSTA 2026",
+      "innovations": [
+        "见正文： Comments: ISSTA 2026"
+      ],
+      "scenario_cn": " Comments: ISSTA 2026",
+      "title_en": "Testing Retrieval-Augmented Generation Systems with Chunk Coverage",
+      "institution": "未明确披露",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2607.16757v1",
+      "title": "A New Branching Bisimulation for Probabilistic Processes",
+      "abstract": " Comments: 18 pages, 1 figure",
+      "published": "2026-07-21T00:00:00+00:00",
+      "updated": "2026-07-21T00:00:00+00:00",
+      "authors": [
+        "Guo Li",
+        "Zhaokai Li",
+        "Xinxin Liu",
+        "Zhiming Liu",
+        "Quan Sun",
+        "Wei Zhang"
+      ],
+      "categories": [
+        "cs.LO"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.16757",
+      "pdf_url": "https://arxiv.org/pdf/2607.16757",
+      "score": 3.4,
+      "topics": [
+        {
+          "name": "World Model",
+          "slug": "world-model",
+          "hits": [
+            "simulation"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "simulation"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=A%20New%20Branching%20Bisimulation%20for%20Probabilistic%20Processes%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": " Comments: 18 pages, 1 figure",
+      "code_links_from_meta": "https://github.com/search?q=A%20New%20Branching%20Bisimulation%20for%20Probabilistic%20Processes%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "概率过程的一种新分支互模拟关系",
+      "institution": "中国高校/研究机构（作者均为中国学者）",
+      "summary_cn": "本文为概率过程提出了一种新的分支互模拟等价关系，该关系比任何已知的能抽象不可观测动作的等价关系更加精细。论文证明了该关系的带根版本（rooted version）对于包含静态构造、动态构造以及递归的标准概率进程语言构成同余关系。",
+      "innovations": [
+        "提出了一种新的概率过程分支互模拟关系，其区分能力优于现有的所有可抽象不可观测动作的等价关系",
+        "证明了带根版本是包含静态和动态构造以及递归的概率进程语言上的同余关系",
+        "为概率进程理论中不可观测动作的抽象问题提供了更精细的等价刻画工具"
+      ],
+      "scenario_cn": "解决概率并发系统中不可观测动作的抽象与等价性判定问题，适用于概率进程演算的理论研究、形式化验证及并发系统的行为等价性分析",
+      "title_en": "A New Branching Bisimulation for Probabilistic Processes",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2607.16386v1",
+      "title": "An Interactive Interface for Control Integration in Mid-Fidelity Wind Farm Simulation",
+      "abstract": "",
+      "published": "2026-07-21T00:00:00+00:00",
+      "updated": "2026-07-21T00:00:00+00:00",
+      "authors": [
+        "Zekai Chen",
+        "Casey Heiskell",
+        "Ryozo Nagamune"
+      ],
+      "categories": [
+        "eess.SY"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.16386",
+      "pdf_url": "https://arxiv.org/pdf/2607.16386",
+      "score": 3.4,
+      "topics": [
+        {
+          "name": "World Model",
+          "slug": "world-model",
+          "hits": [
+            "simulation"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "simulation"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=An%20Interactive%20Interface%20for%20Control%20Integration%20in%20Mid-Fidelity%20Wind%20Farm%20Simulation%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "",
+      "code_links_from_meta": "https://github.com/search?q=An%20Interactive%20Interface%20for%20Control%20Integration%20in%20Mid-Fidelity%20Wind%20Farm%20Simulation%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "An Interactive Interface for Control Integration in Mid-Fidelity Wind Farm Simulation",
+      "summary_cn": "",
+      "innovations": [
+        "见正文："
+      ],
+      "scenario_cn": "",
+      "title_en": "An Interactive Interface for Control Integration in Mid-Fidelity Wind Farm Simulation",
+      "institution": "未明确披露",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2607.16501v1",
+      "title": "Certifiable Safe Model-Based Reinforcement Learning with Control-Affine Dynamics Approximation",
+      "abstract": " Comments: 8 pages, accepted to IROS 2026",
+      "published": "2026-07-21T00:00:00+00:00",
+      "updated": "2026-07-21T00:00:00+00:00",
+      "authors": [
+        "Hao Zhou",
+        "Yanze Zhang",
+        "Cameron Reid",
+        "Wenhao Luo"
+      ],
+      "categories": [
+        "cs.RO"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.16501",
+      "pdf_url": "https://arxiv.org/pdf/2607.16501",
+      "score": 3.4,
+      "topics": [
+        {
+          "name": "World Model",
+          "slug": "world-model",
+          "hits": [
+            "model-based reinforcement learning"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "model-based reinforcement learning"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Certifiable%20Safe%20Model-Based%20Reinforcement%20Learning%20with%20Control-Affine%20Dynamics%20Approximation%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": " Comments: 8 pages, accepted to IROS 2026",
+      "code_links_from_meta": "https://github.com/search?q=Certifiable%20Safe%20Model-Based%20Reinforcement%20Learning%20with%20Control-Affine%20Dynamics%20Approximation%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "Certifiable Safe Model-Based Reinforcement Learning with Control-Affine Dynamics Approximation",
+      "summary_cn": " Comments: 8 pages, accepted to IROS 2026",
+      "innovations": [
+        "见正文： Comments: 8 pages, accepted to IROS 2026"
+      ],
+      "scenario_cn": " Comments: 8 pages, accepted to IROS 2026",
+      "title_en": "Certifiable Safe Model-Based Reinforcement Learning with Control-Affine Dynamics Approximation",
+      "institution": "未明确披露",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2607.17453v1",
+      "title": "Combining model checking with simulation-based techniques for protocol verification",
+      "abstract": "",
+      "published": "2026-07-21T00:00:00+00:00",
+      "updated": "2026-07-21T00:00:00+00:00",
+      "authors": [
+        "Takanori Ishibashi",
+        "Kazuhiro Ogata"
+      ],
+      "categories": [
+        "cs.SE"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.17453",
+      "pdf_url": "https://arxiv.org/pdf/2607.17453",
+      "score": 3.4,
+      "topics": [
+        {
+          "name": "World Model",
+          "slug": "world-model",
+          "hits": [
+            "simulation"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "simulation"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Combining%20model%20checking%20with%20simulation-based%20techniques%20for%20protocol%20verification%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "",
+      "code_links_from_meta": "https://github.com/search?q=Combining%20model%20checking%20with%20simulation-based%20techniques%20for%20protocol%20verification%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "结合模型检验与仿真技术的协议验证方法",
+      "institution": "日本北陆先端科学技术大学院大学（JAIST）",
+      "summary_cn": "本文提出一种将模型检验与仿真关系（simulation relation）相结合的方法，用于解决协议验证中的状态空间爆炸问题。以简单通信协议（SCP）、交替比特协议（ABP）和滑动窗口协议（SWP）三个逐步复杂的状态机为案例，先在抽象层SCP上做直接模型检验，再通过仿真关系将ABP和SWP的恒定性质量约简到SCP上验证。实验表明，直接对ABP和SWP进行模型检验在大参数下不可行，而所提方法通过组合仿真关系链（SWP→ABP→SCP）实现了在极小状态机上的有效验证。",
+      "innovations": [
+        "提出利用仿真关系的组合传递性（SWP→ABP→SCP）将大规模协议验证问题约简到高度抽象的小状态机上，而非直接面对原始状态空间",
+        "形式化建模了从SCP到SWP的递进抽象层级体系，为不同复杂度的通信协议提供了统一的验证框架",
+        "在OTS/CafeOBJ形式化方法框架下实现了仿真关系的构造与验证，确保约简过程的数学严谨性"
+      ],
+      "scenario_cn": "解决通信协议形式化验证中因通道容量、窗口大小等参数增大导致状态空间爆炸、直接模型检验不可行的问题。适用于需要严格保证恒定性安全属性的通信协议（如滑动窗口协议）的自动化验证，也适用于其他需要抵抗状态爆炸的并发系统验证场景。",
+      "title_en": "Combining model checking with simulation-based techniques for protocol verification",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2607.17725v1",
+      "title": "Fast VEM Fluid Simulation",
+      "abstract": "",
+      "published": "2026-07-21T00:00:00+00:00",
+      "updated": "2026-07-21T00:00:00+00:00",
+      "authors": [
+        "Runze Zhang",
+        "Bo Ren"
+      ],
+      "categories": [
+        "cs.GR"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.17725",
+      "pdf_url": "https://arxiv.org/pdf/2607.17725",
+      "score": 3.4,
+      "topics": [
+        {
+          "name": "World Model",
+          "slug": "world-model",
+          "hits": [
+            "simulation"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "simulation"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Fast%20VEM%20Fluid%20Simulation%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "",
+      "code_links_from_meta": "https://github.com/search?q=Fast%20VEM%20Fluid%20Simulation%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "快速虚元法流体模拟",
+      "institution": "南开大学计算机学院 VCIP 实验室",
+      "summary_cn": "本文提出FastVEM，一个高效的边界贴合流体模拟框架，大幅降低了复杂边界下流-固交互模拟的计算成本。核心思路是自顶向下协同设计数值离散化、网格构建和线性求解器：采用虚元法（Virtual Element Method, VEM）离散在不规则边界贴合网格上鲁棒地约束不可压缩性和边界条件；提出保凸切分网格策略生成适合模拟的边界贴合网格；开发了Galerkin几何多重网格求解器加速压力投影阶段，其中无扩散延拓算子防止粗层矩阵稠密化。相比已有基于切分网格的流体模拟器，FastVEM在压力投影阶段提速可达100倍。",
+      "innovations": [
+        "首次将虚元法（VEM）引入流体模拟的边界贴合离散化，在不规则多边形/多面体网格上鲁棒处理不可压缩约束与边界条件",
+        "提出保凸切分网格（convexity-preserving cut-cell）策略，克服了传统切分网格导致病态线性系统的根本问题",
+        "针对VEM离散的压力投影方程，设计了无扩散延拓算子和边界感知嵌套网格层次的Galerkin几何多重网格求解器，避免粗层矩阵稠密化，实现高达100倍加速"
+      ],
+      "scenario_cn": "解决复杂几何边界下流体-固体交互模拟计算代价高昂的痛点（传统切分网格法压力投影阶段因病态线性系统而极其缓慢）。适用于需要高保真边界流动细节的计算机图形学场景——如带复杂障碍物的烟雾/水流动画、漩涡分离和涡街现象模拟、以及需要快速迭代的视觉特效制作。代码开源：https://oliver-zrz-cyber.github.io/FastVEM/",
+      "title_en": "Fast VEM Fluid Simulation",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2607.16279v1",
+      "title": "A Step Forward Towards Trustworthy Risk-Aware Facial Retrieval (RA-FR)",
+      "abstract": " Comments: Accepted at the 28th International Conference on Pattern Recognition (ICPR 2026). Extended version with additional citations and expanded sections",
+      "published": "2026-07-21T00:00:00+00:00",
+      "updated": "2026-07-21T00:00:00+00:00",
+      "authors": [
+        "Muhammad Emmad Siddiqui",
+        "Muhammad Rafi"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.16279",
+      "pdf_url": "https://arxiv.org/pdf/2607.16279",
+      "score": 3.2,
+      "topics": [
+        {
+          "name": "RAG / Long Context",
+          "slug": "rag-long-context",
+          "hits": [
+            "retrieval"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "retrieval"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=A%20Step%20Forward%20Towards%20Trustworthy%20Risk-Aware%20Facial%20Retrieval%20%28RA-FR%29%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": " Comments: Accepted at the 28th International Conference on Pattern Recognition (ICPR 2026). Extended version with additional citations and expanded sections",
+      "code_links_from_meta": "https://github.com/search?q=A%20Step%20Forward%20Towards%20Trustworthy%20Risk-Aware%20Facial%20Retrieval%20%28RA-FR%29%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "迈向可信赖的 Risk-Aware 人脸检索 (RA-FR)",
+      "institution": "未明确披露",
+      "summary_cn": "本文提出 RA-FR 框架，解决非约束监控场景下传统 Top-k 人脸检索在域偏移（低分辨率、运动模糊、光照变化）时召回率急剧下降的问题。该方法将检索从固定 Top-k 转为自适应集生成，通过混合盲人脸修复（InterLCM + DiffBIR）降低认知不确定性，利用自监督 DINOv1 ViT-B + GGeM Pooling 提取鲁棒特征，并基于 Conformal Prediction 和 Hoeffding 不等式动态校准检索集大小。在 IMFDB 基准上，以约 10 张的平均检索集大小持续满足 5% 的风险目标。",
+      "innovations": [
+        "提出 InterLCM + DiffBIR 混合盲人脸修复技术，系统性地降低监控场景下的 aleatoric 不确定性",
+        "采用自监督 DINOv1 ViT-B + GGeM Pooling 提取对修复过程鲁棒的判别性视觉特征",
+        "利用 Conformal Prediction 和 Hoeffding 不等式对检索集大小进行理论保证的动态校准，提供可审计的决策边界"
+      ],
+      "scenario_cn": "解决非约束监控环境下人脸检索漏报率不可控的可靠性瓶颈，适用于安防监控、执法调查等对假阴性零容忍的高风险人脸识别场景",
+      "title_en": "A Step Forward Towards Trustworthy Risk-Aware Facial Retrieval (RA-FR)",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2607.16692v1",
+      "title": "Dependency-Guided Code Generation: Structured Matrix Decomposition and Consistency-Guided Refinement",
+      "abstract": " Comments: 12 pages",
+      "published": "2026-07-21T00:00:00+00:00",
+      "updated": "2026-07-21T00:00:00+00:00",
+      "authors": [
+        "Mingqiao Mo",
+        "Yangchen Zeng",
+        "Zikai Xiao",
+        "Xin Xiao",
+        "Wenhua Nie",
+        "Zhaolu Kang",
+        "Guangyuan Dong",
+        "Kai Shu",
+        "Hao Zhang",
+        "Xiaodong Fan"
+      ],
+      "categories": [
+        "cs.SE",
+        "cs.CL"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.16692",
+      "pdf_url": "https://arxiv.org/pdf/2607.16692",
+      "score": 3.2,
+      "topics": [
+        {
+          "name": "Code Agent / SWE Agent",
+          "slug": "code-agent",
+          "hits": [
+            "code generation"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "code generation"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Dependency-Guided%20Code%20Generation%3A%20Structured%20Matrix%20Decomposition%20and%20Consistency-Guided%20Refinement%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": " Comments: 12 pages",
+      "code_links_from_meta": "https://github.com/search?q=Dependency-Guided%20Code%20Generation%3A%20Structured%20Matrix%20Decomposition%20and%20Consistency-Guided%20Refinement%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "依赖引导的代码生成：结构化矩阵分解与一致性驱动的精炼",
+      "summary_cn": "提出一种感知依赖的代码生成框架，将代码实体（函数、类、文件）建模为有向图，把实体间的依赖关系分解为两个互补分量：一个量化矩阵（Quantized Matrix），捕获强显式依赖（函数调用、继承、模块导入）；一个稀疏低秩分解（Sparse Low-Rank Factorization），建模弱隐式交互（间接耦合、共享设计模式、高阶语义耦合）。通过交替优化（Alternating Optimization）联合学习两个分量，在生成阶段将学到的依赖结构作为约束注入，利用 Jaccard 相似度衡量语义与结构一致性，不满足时迭代精炼。在 CodeXGLUE（Java↔C# 翻译）、CONCODE（自然语言→Java 方法生成）和 APPS（程序综合，含隐藏测试用例）三个 benchmark 上全面超越 Transformer、CodeBERT、GraphCodeBERT、PLBART、CodeT5 等基线，BLEU / Exact Match / CodeBLEU 均有显著提升，APPS 上 Strict Accuracy 提升约 1-2 个百分点。",
+      "innovations": [
+        "提出混合依赖矩阵分解方法——量化矩阵（强/显式依赖） + 低秩矩阵分解（弱/隐式交互），首次在代码生成中显式区分关键与非关键依赖",
+        "设计交替优化算法联合学习两个分解分量，无需人工标注依赖关系，完全从数据中自动学习",
+        "引入一致性驱动精炼机制：生成后通过 Jaccard 相似度对齐语义视图与结构视图，不达标则迭代修正，保证代码全局结构正确性",
+        "提出强依赖稀疏三元组存储（Sparse Triplet Representation），大幅提升大规模代码库下的存储效率和计算可扩展性"
+      ],
+      "scenario_cn": "仓库级代码生成、跨语言代码翻译（如 Java↔C#）、根据自然语言描述在复杂项目中生成方法/函数、需要严格全局结构一致性的程序综合任务。适用于 LLM 作为代码助手时需保持生成代码与既有代码库架构完全兼容的生产场景。",
+      "title_en": "Dependency-Guided Code Generation: Structured Matrix Decomposition and Consistency-Guided Refinement",
+      "institution": "未明确披露",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2607.17420v1",
+      "title": "The Librarian Who Refused to Code: Model-Dependent Identity Enactment in LLM Code Generation",
+      "abstract": " Comments: 17 pages, 3 tables, no figures. Ancillary files include raw completions, derived scores, analysis scripts, persona texts, and preregistration",
+      "published": "2026-07-21T00:00:00+00:00",
+      "updated": "2026-07-21T00:00:00+00:00",
+      "authors": [
+        "Shayell Aharon Salomon",
+        "Noam Israel",
+        "Ido Safruti",
+        "Amir Shaked"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.SE"
+      ],
+      "abs_url": "https://arxiv.org/abs/2607.17420",
+      "pdf_url": "https://arxiv.org/pdf/2607.17420",
+      "score": 3.2,
+      "topics": [
+        {
+          "name": "Code Agent / SWE Agent",
+          "slug": "code-agent",
+          "hits": [
+            "code generation"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "code generation"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=The%20Librarian%20Who%20Refused%20to%20Code%3A%20Model-Dependent%20Identity%20Enactment%20in%20LLM%20Code%20Generation%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": " Comments: 17 pages, 3 tables, no figures. Ancillary files include raw completions, derived scores, analysis scripts, persona texts, and preregistration",
+      "code_links_from_meta": "https://github.com/search?q=The%20Librarian%20Who%20Refused%20to%20Code%3A%20Model-Dependent%20Identity%20Enactment%20in%20LLM%20Code%20Generation%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "The Librarian Who Refused to Code: Model-Dependent Identity Enactment in LLM Code Generation",
+      "summary_cn": " Comments: 17 pages, 3 tables, no figures. Ancillary files include raw completions, derived scores, analysis scripts, persona texts, and preregistration",
+      "innovations": [
+        "见正文： Comments: 17 pages, 3 tables, no figures. Ancillary files include raw completions, derived scores, "
+      ],
+      "scenario_cn": " Comments: 17 pages, 3 tables, no figures. Ancillary files include raw completions, derived scores, analysis scripts, persona texts, and preregistration",
+      "title_en": "The Librarian Who Refused to Code: Model-Dependent Identity Enactment in LLM Code Generation",
+      "institution": "未明确披露",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    }
+  ]
+}
