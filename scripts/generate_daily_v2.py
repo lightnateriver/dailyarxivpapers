@@ -159,7 +159,7 @@ def is_valid_summary(text: str) -> bool:
     """Check if hermes returned a real summary vs empty/useless/comment text."""
     if not text or len(text.strip()) < 20:
         return False
-    low = text.lower()
+    low = text.strip().lower()
     if low.startswith('comments:') or 'accepted by' in low or 'accepted for' in low:
         return False
     if low.startswith('this paper') and len(text) < 50:
