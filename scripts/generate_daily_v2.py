@@ -260,7 +260,13 @@ def build_page(meta: dict, enriched_list: list[dict]) -> str:
                 'url': p.get('abs_url') or '',
             })
             code_html = f'<a href="{html.escape(p.get("code_url") or "")}">Code</a>' if p.get('code_url') else ''
-            innov = ''.join(f'<li>{html.escape(x)}</li>' for x in p.get('innovations', []))
+            innov_items = p.get('innovations', [])
+            if isinstance(innov_items, str):
+                raw = innov_items
+                innov_items = [x.strip() for x in raw.split('\n') if x.strip()]
+                if not innov_items:
+                    innov_items = [raw.strip()]
+            innov = ''.join(f'<li>{html.escape(x)}</li>' for x in innov_items[:5])
             badges = [f'<span class="badge">{html.escape(t["name"])}' + '</span>' for t in p.get('topics', [])[:3]]
             badges.append(f'<span class="badge {"open" if p.get("code_url") else "closed"}">{html.escape(p.get("opensource_status", "未确认开源"))}</span>')
             if p.get('is_ascend'):

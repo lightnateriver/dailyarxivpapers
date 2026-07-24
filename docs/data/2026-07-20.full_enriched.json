@@ -644,7 +644,9 @@
       "is_ascend": false,
       "title_zh": "从校正双目中几何蒸馏：利用极线线索提升单目深度估计",
       "summary_cn": "单目深度基础模型在多样环境下已展现出出色的泛化能力，但在度量深度估计（metric depth estimation）上仍存在尺度模糊问题，导致即使相对几何结构准确，预测的绝对尺度也经常偏移。相反，近期多视角基础模型利用跨视图线索学习鲁棒的场景级几何与一致尺度，但在单图推理时由于缺乏显式几何约束而性能大幅退化。本文提出EpiDistill（极线蒸馏）框架，通过Rectified Stereo Tokens将多视图模型的尺度感知几何先验迁移到单目深度模型中，使单视图预测模型在推理时不需多视图输入也能保留极线注意力模式并维持几何一致性。在ETH3D和DIODE等尺度对齐关键的数据集上，零样本度量深度估计显著提升；方法模型无关，可一致提升UniDepthV2、DepthPro等SOTA ViT基础模型的表现。",
-      "innovations": "1. 提出EpiDistill（极线蒸馏）框架，首次将多视图模型的尺度感知几何先验通过蒸馏方式迁移至单目深度模型；2. 设计Rectified Stereo Tokens，在训练时模拟双目极线注意力模式，使单目模型学会隐式编码几何约束；3. 推理时无需多视图输入，模型仍能保持对尺度一致性的感知；4. 模型无关（model-agnostic），可即插即用于多种ViT架构的单目深度模型。",
+      "innovations": [
+        "1. 提出EpiDistill（极线蒸馏）框架，首次将多视图模型的尺度感知几何先验通过蒸馏方式迁移至单目深度模型；2. 设计Rectified Stereo Tokens，在训练时模拟双目极线注意力模式，使单目模型学会隐式编码几何约束；3. 推理时无需多视图输入，模型仍能保持对尺度一致性的感知；4. 模型无关（model-agnostic），可即插即用于多种ViT架构的单目深度模型。"
+      ],
       "scenario_cn": "适用于需要精确度量深度估计的计算机视觉场景，如自动驾驶、机器人导航、AR/VR、三维重建等。尤其适合仅有单目摄像头可用但需要输出绝对尺度信息的应用环境。",
       "title_en": "Geometric Distillation from Rectified Stereo: Leveraging Epipolar Cues for Monocular Depth",
       "institution": "未明确披露",
@@ -1645,7 +1647,12 @@
       "is_ascend": false,
       "title_zh": "PE-Field 4D：将视频生成模型作为几何画布",
       "summary_cn": "本文重新审视了视频扩散Transformer中位置编码（Positional Encoding）的作用，证明其在提供几何感知控制方面具有天然的 spatial bias。作者提出了一种几何感知交叉注意力机制（Geometry-Aware Cross-Attention），将参考图像/帧编码为具有投影位置编码的结构化上下文 token，使目标视频的 latent token 能够从位置对齐的区域检索内容。具体而言，上下文 token 采用目标视图2D重投影 + 深度感知消歧的投影位置编码方案，同时保留生成视频 latent 的原始时空位置编码，从而在不破坏预训练视频模型原生 latent 结构的前提下注入几何引导。该方法无需复杂的3D重建或额外训练模块，直接在预训练 DiT 上微调即可实现可控视频生成。代码已开源。",
-      "innovations": "1. 首次系统性地证明视频扩散 Transformer 的位置编码可作为几何感知控制的通用接口（spatial bias），而非仅为 token 排序信号；\n2. 提出投影位置编码（Projected Positional Encoding），将参考帧 token 按其目标视图中的投影位置重新编码，结合深度信息消除歧义，实现跨视角的几何对应关系建模；\n3. 几何感知交叉注意力机制将参考帧转化为结构化几何上下文，而非简单的 appearance hint，支持相机重轨迹、新视角合成、几何感知视频编辑等多种 4D 编辑任务；\n4. 保留预训练模型原始时空位置编码，避免对模型原生 latent 结构的破坏，属于轻量微调方案，训练和推理效率高，且同时支持静态与动态场景。",
+      "innovations": [
+        "1. 首次系统性地证明视频扩散 Transformer 的位置编码可作为几何感知控制的通用接口（spatial bias），而非仅为 token 排序信号；",
+        "2. 提出投影位置编码（Projected Positional Encoding），将参考帧 token 按其目标视图中的投影位置重新编码，结合深度信息消除歧义，实现跨视角的几何对应关系建模；",
+        "3. 几何感知交叉注意力机制将参考帧转化为结构化几何上下文，而非简单的 appearance hint，支持相机重轨迹、新视角合成、几何感知视频编辑等多种 4D 编辑任务；",
+        "4. 保留预训练模型原始时空位置编码，避免对模型原生 latent 结构的破坏，属于轻量微调方案，训练和推理效率高，且同时支持静态与动态场景。"
+      ],
       "scenario_cn": "适用于需要精确几何控制的视频生成与编辑场景，包括：相机重轨迹（改变参考视频的相机运动路径）、新视角视频合成（从单视角生成多视角一致视频）、几何感知视频编辑（保持场景几何结构下的内容替换/修改）、物体运动合成与姿态引导动画等 4D 生成任务。",
       "title_en": "PE-Field 4D: Video Generation Models as Canvas",
       "institution": "未明确披露",

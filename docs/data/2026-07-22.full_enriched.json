@@ -347,7 +347,9 @@
       "is_ascend": false,
       "title_zh": "基于灵活生成意义与表达替代方案的计算语用推理模型",
       "summary_cn": "本文提出SAGE（ScAffolded Generative models for Explanation）框架，将认知模型的解释性透明度与语言模型的生成灵活性相结合，用于建模语用推理中的替代方案推理过程。SAGE将语用过程分解为三个模块：提议器（proposer，使用语言模型生成开放式的候选替代方案空间）、评估器（evaluator，评估替代方案的语义、复杂度或典型性）、选择器（selector，实现基于规则的认知任务分析计算步骤）。在指称表达生成、方式（M-）含义、Gricean对话含义三项案例研究中验证，SAGE模型整体准确率高且往往超越基线。组件级分析揭示了一个不对称现象：LM提议器能可靠生成适合语用建模的替代方案，而LM评估器更适合提供直觉判断而非理论或正式度量的判断。",
-      "innovations": "1. 提出SAGE框架，将神经符号方法应用于语用推理，首次实现了替代方案集合的开放生成而非人工指定；2. 将语用推理解耦为提议-评估-选择三个可独立分析和消融的模块化架构；3. 系统揭示了LM在不同语用子任务中的能力不对称性——生成替代方案能力强于形式化评估。",
+      "innovations": [
+        "1. 提出SAGE框架，将神经符号方法应用于语用推理，首次实现了替代方案集合的开放生成而非人工指定；2. 将语用推理解耦为提议-评估-选择三个可独立分析和消融的模块化架构；3. 系统揭示了LM在不同语用子任务中的能力不对称性——生成替代方案能力强于形式化评估。"
+      ],
       "scenario_cn": "计算认知科学、语用推理模型、人机对话系统的语用理解、神经符号AI的评估基准方法学",
       "title_en": "Computational models of pragmatic reasoning with flexible generation of meaning and expression alternatives",
       "institution": "未明确披露",
@@ -1449,7 +1451,9 @@
       "is_ascend": false,
       "title_zh": "DuSPiT：双分支子块像素扩散Transformer",
       "summary_cn": "现有像素空间扩散Transformer将每个图像块（patch）压缩为单个token，迫使单一表示同时承担全局通信与细粒度外观建模的双重任务，导致表示质量受限。本文提出DuSPiT（Dual-branch SubPatch Pixel Transformer），通过双分支架构分离全局结构推理与局部外观建模：（1）紧凑基分支（base branch）负责高效的全局patch级推理与语义沟通；（2）高容量像素分支（pixel branch）按子块（subpatch）分组组织，保留像素级丰富外观细节，不经过激进压缩。两分支通过交叉注意力（cross-attention）交互，基分支为纯内部结构瓶颈，像素分支直接预测干净图像。此外引入层次化位置编码，对齐patch级布局与subpatch级空间细节。在ImageNet 512×512上，DuSPiT-G/32以1.69B参数、329GFLOPs取得FID 1.52，超越同规模JiT-G/32（2B参数、384GFLOPs，FID 1.78），在像素空间扩散模型中达到了最佳的生成质量-计算效率权衡。",
-      "innovations": "1. 双分支设计显式分离全局推理与局部纹理建模，打破patch token单一表示的信息瓶颈；2. 像素分支采用subpatch分组组织，保留patch内部空间结构，而非简单的高维向量；3. 非对称交叉注意力设计：仅subpatch token从patch token获取上下文，避免局部细节干扰全局表示；4. 层次化位置编码融合patch级别位置与subpatch级别相对偏移，协调粗细粒度的空间对应关系。",
+      "innovations": [
+        "1. 双分支设计显式分离全局推理与局部纹理建模，打破patch token单一表示的信息瓶颈；2. 像素分支采用subpatch分组组织，保留patch内部空间结构，而非简单的高维向量；3. 非对称交叉注意力设计：仅subpatch token从patch token获取上下文，避免局部细节干扰全局表示；4. 层次化位置编码融合patch级别位置与subpatch级别相对偏移，协调粗细粒度的空间对应关系。"
+      ],
       "scenario_cn": "高分辨率图像生成：需精细纹理和锐利结构细节的像素级扩散生成任务，如ImageNet类条件图像生成、高质量文本到图像合成、以及需要保真度优于压缩效率的生成场景。代码已开源：https://github.com/yunpeng1998/DuSPiT",
       "title_en": "DuSPiT: Dual-Branch Sub-Patch Pixel Diffusion Transformer",
       "institution": "未明确披露",
