@@ -59,17 +59,20 @@
       ],
       "code_links": [],
       "github_search_url": "https://github.com/search?q=AgentHOI%3A%20Multi-Agent%20Reasoning%20for%20Human-Object-Interaction%20Video%20Generation%20via%20Implicit%20Representation%20Alignment%20arxiv%20github&type=repositories",
-      "title_en": "AgentHOI: Multi-Agent Reasoning for Human-Object-Interaction Video Generation via Implicit Representation Alignment",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "",
+      "code_links_from_meta": "https://github.com/search?q=AgentHOI%3A%20Multi-Agent%20Reasoning%20for%20Human-Object-Interaction%20Video%20Generation%20via%20Implicit%20Representation%20Alignment%20arxiv%20github&type=repositories",
+      "is_ascend": false,
       "title_zh": "AgentHOI: Multi-Agent Reasoning for Human-Object-Interaction Video Generation via Implicit Representation Alignment",
       "summary_cn": "",
       "innovations": [
-        "见正文"
+        "见正文："
       ],
       "scenario_cn": "",
+      "title_en": "AgentHOI: Multi-Agent Reasoning for Human-Object-Interaction Video Generation via Implicit Representation Alignment",
       "institution": "未明确披露",
-      "opensource_status": "未确认开源",
-      "code_url": "",
-      "is_ascend": false
+      "code_url": "h",
+      "opensource_status": "已确认开源"
     },
     {
       "id": "2607.21985v1",
@@ -113,17 +116,23 @@
       ],
       "code_links": [],
       "github_search_url": "https://github.com/search?q=Unified%20Static-Dynamic%20Pruning%20for%20Efficient%20LLM%20Inference%20arxiv%20github&type=repositories",
-      "title_en": "Unified Static-Dynamic Pruning for Efficient LLM Inference",
-      "title_zh": "Unified Static-Dynamic Pruning for Efficient LLM Inference",
-      "summary_cn": " Comments: 14 pages, 13 figures. Accepted for publication in Proceedings of the VLDB Endowment (PVLDB), Volume 19, Issue 11, 2026. Code: this https URL",
+      "institutions_raw": "未明确披露",
+      "content_snippet": " Comments: 14 pages, 13 figures. Accepted for publication in Proceedings of the VLDB Endowment (PVLDB), Volume 19, Issue 11, 2026. Code: this https URL",
+      "code_links_from_meta": "https://github.com/search?q=Unified%20Static-Dynamic%20Pruning%20for%20Efficient%20LLM%20Inference%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "面向高效LLM推理的统一静态-动态剪枝",
+      "institution": "未明确披露（作者为韩国机构，推测KAIST或首尔大学）",
+      "summary_cn": "SPDP是一个统一的稀疏推理框架，将非结构化静态剪枝（永久移除冗余权重）与输入自适应的动态剪枝相结合，用于GPU上的高效LLM推理。该框架协同设计了Tiled-Column-wise Bitmap Compressed (Tiled-CBC) 格式和两个互补的GPU内核：基于CUDA Core的spMspV内核（采用混合激活感知的动态共享内存位图解压HAD-SMBD实现细粒度运行时激活跳过）和针对Prefill阶段优化的Tensor Core SpMM内核。在推理优化GPU上，SPDP相比SpInfer等最先进稀疏框架实现1.24x-1.37x平均加速（最高2.51x），同时以高达25%更高的稀疏度保持相同困惑度水平。",
       "innovations": [
-        "见正文"
+        "首个统一整合静态剪枝（永久移除）与动态剪枝（输入自适应跳过）的LLM推理框架，克服了两种方法各自的局限",
+        "提出Tiled-CBC（Tiled-Column-wise Bitmap Compressed）格式，通过联合格式-内核设计同时保证带宽高效访存和高计算强度",
+        "设计了混合激活感知动态共享内存位图解压（HAD-SMBD）机制，在运行时实现细粒度的激活跳过",
+        "在Prefill和Decode两阶段分别用Tensor Core和CUDA Core优化，将推理效率-质量Pareto前沿推至更高水平"
       ],
-      "scenario_cn": " Comments: 14 pages, 13 figures. Accepted for publication in Proceedings of the VLDB Endowment (PVLDB), Volume 19, Issue 11, 2026. Code: this https URL",
-      "institution": "未明确披露",
-      "opensource_status": "未确认开源",
-      "code_url": "",
-      "is_ascend": false
+      "scenario_cn": "解决LLM自回归解码中计算强度和内存带宽瓶颈问题——尤其是权重剪枝方法在静态（缺乏适应性）和动态（运行时不规则）之间的两难。适用于大规模LLM在线服务场景，同时优化预填充和解码两阶段性能。",
+      "title_en": "Unified Static-Dynamic Pruning for Efficient LLM Inference",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
     },
     {
       "id": "2607.21604v1",
@@ -169,17 +178,22 @@
       ],
       "code_links": [],
       "github_search_url": "https://github.com/search?q=AgentKVShift%3A%20Efficient%20KV%20Cache%20Reuse%20for%20Agentic%20Memory%20Systems%20arxiv%20github&type=repositories",
-      "title_en": "AgentKVShift: Efficient KV Cache Reuse for Agentic Memory Systems",
-      "title_zh": "AgentKVShift: Efficient KV Cache Reuse for Agentic Memory Systems",
-      "summary_cn": "",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "",
+      "code_links_from_meta": "https://github.com/search?q=AgentKVShift%3A%20Efficient%20KV%20Cache%20Reuse%20for%20Agentic%20Memory%20Systems%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "AgentKVShift：面向智能体记忆系统的高效 KV 缓存复用",
+      "institution": "加州大学圣地亚哥分校 (UC San Diego)",
+      "summary_cn": "针对记忆增强型 LLM 智能体——每次检索都会触发对结构化记忆单元（如摘要、关键词等 LLM 生成的元数据）的全量 KV 编码，导致预填充延迟极高——本文提出 AgentKVShift，一种无需训练、基于探针引导的 KV 残差校正方法。其核心洞察是：每个记忆单元的 KV 复用残差可分解为共享的 memory-level 偏移量加上微小的 token-wise 波动；通过少量探针估计该偏移量，即可用单一加权校正修正所有被复用的 token。不同于先前方法只决定哪些 token 需重算而让其余缓存保持陈旧，AgentKVShift 对不重算的 token 也进行修正，将刷新预算转化为覆盖整个 chunk 的有用信号。",
       "innovations": [
-        "见正文"
+        "揭示 KV 复用残差可分解为共享 memory-level 偏移 + token 级小波动的规律，据此提出单加权校正方法",
+        "提出探针引导的残差校正机制，仅需 10-30% 缓存刷新即可达到接近全量重算的性能，比基线方法所需的 45-55% 刷新率低 5 倍",
+        "与 KV 缓存量化正交兼容，在 2-bit/4-bit 激进量化下仍保留 2 倍以上 F1 优势"
       ],
-      "scenario_cn": "",
-      "institution": "未明确披露",
-      "opensource_status": "未确认开源",
-      "code_url": "",
-      "is_ascend": false
+      "scenario_cn": "解决长程 Agent 任务中记忆系统反复检索导致的推理延迟瓶颈，适用于长时间对话 Agent、多步 Agent 应用等需要频繁访问结构化记忆的场景",
+      "title_en": "AgentKVShift: Efficient KV Cache Reuse for Agentic Memory Systems",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
     },
     {
       "id": "2607.22013v1",
@@ -223,17 +237,23 @@
       ],
       "code_links": [],
       "github_search_url": "https://github.com/search?q=Visual%20Saliency%20Steering%20Distillation%20for%20Multimodal%20Chain-of-Thought%20Reasoning%20arxiv%20github&type=repositories",
-      "title_en": "Visual Saliency Steering Distillation for Multimodal Chain-of-Thought Reasoning",
-      "title_zh": "Visual Saliency Steering Distillation for Multimodal Chain-of-Thought Reasoning",
-      "summary_cn": "",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "",
+      "code_links_from_meta": "https://github.com/search?q=Visual%20Saliency%20Steering%20Distillation%20for%20Multimodal%20Chain-of-Thought%20Reasoning%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "面向多模态链式推理的视觉显著性引导蒸馏",
+      "institution": "云南大学",
+      "summary_cn": "多模态链式推理在小模型上面临模态融合后表征混淆的问题：不同图片搭配相同文本（或反之）经融合后几乎不可区分。本文提出视觉显著性引导蒸馏（VSSD），利用多模态大模型（MLLM）的注意力图生成任务敏感方向上的扰动图像，再通过奇异值分解提取主导向量以指导层间蒸馏，从而增强小模型的跨模态区分能力。在 ScienceQA 和 M³CoT 基准上，VSSD 有效提升了推理链质量和答案准确率。",
       "innovations": [
-        "见正文"
+        "揭示小模型多模态 CoT 中模态融合导致的表征坍塌问题，即跨模态细微差异被抑制",
+        "提出利用 MLLM 注意力图生成任务敏感扰动图像，捕获关键视觉特征方向",
+        "通过 SVD 提取主导向量指导层间蒸馏，实现轻量级知识迁移",
+        "即插即用，无需修改模型架构即可提升多模态小模型的推理质量"
       ],
-      "scenario_cn": "",
-      "institution": "未明确披露",
-      "opensource_status": "未确认开源",
-      "code_url": "",
-      "is_ascend": false
+      "scenario_cn": "适用于计算资源受限场景下的小模型多模态推理增强，如视觉问答、科学常识推理等需要同时理解图文信息的任务",
+      "title_en": "Visual Saliency Steering Distillation for Multimodal Chain-of-Thought Reasoning",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
     },
     {
       "id": "2607.21722v1",
@@ -277,17 +297,20 @@
       ],
       "code_links": [],
       "github_search_url": "https://github.com/search?q=Be%20Consistent%21%20Enhancing%20Robust%20Visual%20Reasoning%20in%20LVLMs%20with%20Consistency%20Constraints%20arxiv%20github&type=repositories",
-      "title_en": "Be Consistent! Enhancing Robust Visual Reasoning in LVLMs with Consistency Constraints",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "",
+      "code_links_from_meta": "https://github.com/search?q=Be%20Consistent%21%20Enhancing%20Robust%20Visual%20Reasoning%20in%20LVLMs%20with%20Consistency%20Constraints%20arxiv%20github&type=repositories",
+      "is_ascend": false,
       "title_zh": "Be Consistent! Enhancing Robust Visual Reasoning in LVLMs with Consistency Constraints",
       "summary_cn": "",
       "innovations": [
-        "见正文"
+        "见正文："
       ],
       "scenario_cn": "",
+      "title_en": "Be Consistent! Enhancing Robust Visual Reasoning in LVLMs with Consistency Constraints",
       "institution": "未明确披露",
-      "opensource_status": "未确认开源",
-      "code_url": "",
-      "is_ascend": false
+      "code_url": "h",
+      "opensource_status": "已确认开源"
     },
     {
       "id": "2607.22242v1",
@@ -327,17 +350,18 @@
       ],
       "code_links": [],
       "github_search_url": "https://github.com/search?q=Agentic%20CPU-GPU%20Scheduling%20for%20Heterogeneous%20AI%20Workloads%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": " Comments: 15 pages, 5 figures",
+      "code_links_from_meta": "https://github.com/search?q=Agentic%20CPU-GPU%20Scheduling%20for%20Heterogeneous%20AI%20Workloads%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "面向异构AI工作负载的代理式CPU-GPU调度",
+      "summary_cn": "该论文针对Agentic AI系统中异构工具在共享GPU/CPU基础设施上的调度问题展开研究。作者对19种AI工具在GPU和CPU上进行了性能profiling，发现其中11种工具更适合GPU、4种模糊态、1种因PCIe传输主导更适合CPU、3种设备中立，证明了一刀切的GPU优先策略是次优的。论文将调度形式化为在VRAM预算约束下为每个工具分配三种执行模式之一——立即GPU执行(gpu_now)、排队GPU执行(gpu_queue)或CPU卸载(cpu)——并识别出导致端到端延迟偏离静态profile的两个运行时因素：GPU利用率争用和VRAM容量争用。他们提出一种代理式调度器，将LLM代理与算法运行时监控器协同设计：监控器通过运行平均值、对称重新探测、交换重新探测和探索提示等方式扩展LLM的观察空间，但从不直接指定映射决策。在涵盖串行执行、并行争用和内存受限的13个场景中，调度器在所有场景中都达到了暴力搜索最优映射，匹配最佳经典基线的映射精度，同时避免了对完整映射进行bandit式探索，并优于HEFT、StarPU和全GPU策略，且无需离线训练。",
+      "innovations": "① 系统性地对19种AI工具在GPU和CPU上进行性能profiling，建立了四种调度区间分类（GPU优先/模糊态/CPU优先/设备中立），量化证实了全GPU优先策略的次优性；② 形式化定义了三种执行模式(gpu_now/gpu_queue/cpu)的调度问题，在VRAM预算和DAG依赖双重约束下优化端到端延迟；③ 识别并量化了两个关键运行时动态因素——GPU利用率争用和VRAM容量争用——这些因素导致静态profile无法准确预测实际性能；④ 提出了LLM代理+运行时监控器的创新协同架构：监控器提供运行平均值、对称重新探测、交换重新探测和探索提示等反馈机制，在不直接指定映射的前提下扩展LLM的观察空间，使其能感知并跳出局部最优；⑤ 在13个场景上达到100%的暴力搜索最优映射成功率，零离线训练，优于HEFT、StarPU和全GPU基线。",
+      "scenario_cn": "适用于运行Agentic AI系统的基础设施平台和编排框架（如LangGraph、LangChain），特别是工作流中包含多种异构AI工具（深度学习推理、向量搜索、数据处理、外部API等）需要共享GPU/CPU资源时。典型场景包括：多工具Agent管线调度优化、GPU内存受限环境下的工具放置决策、需要动态响应争用的生产级AI serving系统。",
       "title_en": "Agentic CPU-GPU Scheduling for Heterogeneous AI Workloads",
-      "title_zh": "Agentic CPU-GPU Scheduling for Heterogeneous AI Workloads",
-      "summary_cn": " Comments: 15 pages, 5 figures",
-      "innovations": [
-        "见正文"
-      ],
-      "scenario_cn": " Comments: 15 pages, 5 figures",
       "institution": "未明确披露",
-      "opensource_status": "未确认开源",
-      "code_url": "",
-      "is_ascend": false
+      "code_url": "h",
+      "opensource_status": "已确认开源"
     },
     {
       "id": "2607.21599v1",
@@ -380,17 +404,22 @@
       ],
       "code_links": [],
       "github_search_url": "https://github.com/search?q=Decoupled%20Attention%20Fusion%3A%20Accelerating%20RAG%20with%20Efficient%20KV%20Cache%20Reuse%20arxiv%20github&type=repositories",
-      "title_en": "Decoupled Attention Fusion: Accelerating RAG with Efficient KV Cache Reuse",
-      "title_zh": "Decoupled Attention Fusion: Accelerating RAG with Efficient KV Cache Reuse",
-      "summary_cn": " Comments: Accepted by EuroSys 2026 (poster track)",
+      "institutions_raw": "未明确披露",
+      "content_snippet": " Comments: Accepted by EuroSys 2026 (poster track)",
+      "code_links_from_meta": "https://github.com/search?q=Decoupled%20Attention%20Fusion%3A%20Accelerating%20RAG%20with%20Efficient%20KV%20Cache%20Reuse%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "解耦注意力融合：通过高效 KV 缓存复用加速 RAG",
+      "institution": "蚂蚁集团 (Ant Group)；东南大学",
+      "summary_cn": "RAG 在长上下文场景中面临严重的首 token 延迟（TTFT），原因在于每次推理都需要对检索文档进行全量 KV 编码。现有 KV 复用方法（如 CacheBlend）通过选择性重算部分 token 来降低延迟，但随上下文增长精度严重下降。本文提出解耦注意力融合框架（DAF），将注意力过程解耦为三个集成阶段：重要 token 自注意力（恢复缺失的文档间注意力）、问答-文档自注意力（标准推理）、以及状态融合（拼接输出合成最终隐状态）。由于采用稠密算子设计，DAF 原生兼容 FlashAttention 核，无需复杂注意力掩码。",
       "innovations": [
-        "见正文"
+        "提出三阶段解耦注意力融合框架，将文档间注意力的恢复与标准推理分离，避免 CacheBlend 在长上下文中的精度退化",
+        "采用纯稠密算子设计，原生兼容 FlashAttention 硬件核，无需自定义稀疏注意力掩码即可高效利用 GPU",
+        "在 vLLM 上相比全量重算实现 5.6 倍加速，相比 CacheBlend 实现 2 倍加速，且精度无损"
       ],
-      "scenario_cn": " Comments: Accepted by EuroSys 2026 (poster track)",
-      "institution": "未明确披露",
-      "opensource_status": "未确认开源",
-      "code_url": "",
-      "is_ascend": false
+      "scenario_cn": "解决长上下文 RAG 场景中 TTFT 延迟过高的问题，适用于需要从大量文档中检索并生成答案的实时应用，如智能客服、知识问答系统和文档分析等场景",
+      "title_en": "Decoupled Attention Fusion: Accelerating RAG with Efficient KV Cache Reuse",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
     },
     {
       "id": "2607.22014v1",
@@ -439,17 +468,20 @@
       ],
       "code_links": [],
       "github_search_url": "https://github.com/search?q=Zero-Shot%20Mission-Level%20Evaluation%20for%20Aerial%20MLLM%20Agents%20arxiv%20github&type=repositories",
-      "title_en": "Zero-Shot Mission-Level Evaluation for Aerial MLLM Agents",
+      "institutions_raw": "未明确披露",
+      "content_snippet": " Comments: Preprint",
+      "code_links_from_meta": "https://github.com/search?q=Zero-Shot%20Mission-Level%20Evaluation%20for%20Aerial%20MLLM%20Agents%20arxiv%20github&type=repositories",
+      "is_ascend": false,
       "title_zh": "Zero-Shot Mission-Level Evaluation for Aerial MLLM Agents",
       "summary_cn": " Comments: Preprint",
       "innovations": [
-        "见正文"
+        "见正文： Comments: Preprint"
       ],
       "scenario_cn": " Comments: Preprint",
+      "title_en": "Zero-Shot Mission-Level Evaluation for Aerial MLLM Agents",
       "institution": "未明确披露",
-      "opensource_status": "未确认开源",
-      "code_url": "",
-      "is_ascend": false
+      "code_url": "h",
+      "opensource_status": "已确认开源"
     },
     {
       "id": "2607.22385v1",
@@ -490,17 +522,20 @@
       ],
       "code_links": [],
       "github_search_url": "https://github.com/search?q=Agentic%20Root%20Cause%20Analysis%20through%20Evidence-Grounded%20Reasoning%20arxiv%20github&type=repositories",
-      "title_en": "Agentic Root Cause Analysis through Evidence-Grounded Reasoning",
+      "institutions_raw": "未明确披露",
+      "content_snippet": " Comments: 21 pages, 9 figures",
+      "code_links_from_meta": "https://github.com/search?q=Agentic%20Root%20Cause%20Analysis%20through%20Evidence-Grounded%20Reasoning%20arxiv%20github&type=repositories",
+      "is_ascend": false,
       "title_zh": "Agentic Root Cause Analysis through Evidence-Grounded Reasoning",
       "summary_cn": " Comments: 21 pages, 9 figures",
       "innovations": [
-        "见正文"
+        "见正文： Comments: 21 pages, 9 figures"
       ],
       "scenario_cn": " Comments: 21 pages, 9 figures",
+      "title_en": "Agentic Root Cause Analysis through Evidence-Grounded Reasoning",
       "institution": "未明确披露",
-      "opensource_status": "未确认开源",
-      "code_url": "",
-      "is_ascend": false
+      "code_url": "h",
+      "opensource_status": "已确认开源"
     },
     {
       "id": "2607.21993v1",
@@ -542,17 +577,20 @@
       ],
       "code_links": [],
       "github_search_url": "https://github.com/search?q=Three-Body%20Alignment%3A%20Aligning%20Chess%20Agent%20with%20Human%20Reasoning%20through%20Reranked%20Rationale%20arxiv%20github&type=repositories",
-      "title_en": "Three-Body Alignment: Aligning Chess Agent with Human Reasoning through Reranked Rationale",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "",
+      "code_links_from_meta": "https://github.com/search?q=Three-Body%20Alignment%3A%20Aligning%20Chess%20Agent%20with%20Human%20Reasoning%20through%20Reranked%20Rationale%20arxiv%20github&type=repositories",
+      "is_ascend": false,
       "title_zh": "Three-Body Alignment: Aligning Chess Agent with Human Reasoning through Reranked Rationale",
       "summary_cn": "",
       "innovations": [
-        "见正文"
+        "见正文："
       ],
       "scenario_cn": "",
+      "title_en": "Three-Body Alignment: Aligning Chess Agent with Human Reasoning through Reranked Rationale",
       "institution": "未明确披露",
-      "opensource_status": "未确认开源",
-      "code_url": "",
-      "is_ascend": false
+      "code_url": "h",
+      "opensource_status": "已确认开源"
     },
     {
       "id": "2607.22319v1",
@@ -595,17 +633,23 @@
       ],
       "code_links": [],
       "github_search_url": "https://github.com/search?q=Towards%20Trustworthy%20and%20Cost-Efficient%20Data%20Integration%3A%20From%20Na%C3%AFve%20RAG%20to%20Agentic%20RAG%20arxiv%20github&type=repositories",
-      "title_en": "Towards Trustworthy and Cost-Efficient Data Integration: From Naïve RAG to Agentic RAG",
-      "title_zh": "Towards Trustworthy and Cost-Efficient Data Integration: From Naïve RAG to Agentic RAG",
-      "summary_cn": " Comments: To Appear in the IEEE Data Engineering Bulletin",
+      "institutions_raw": "未明确披露",
+      "content_snippet": " Comments: To Appear in the IEEE Data Engineering Bulletin",
+      "code_links_from_meta": "https://github.com/search?q=Towards%20Trustworthy%20and%20Cost-Efficient%20Data%20Integration%3A%20From%20Na%C3%AFve%20RAG%20to%20Agentic%20RAG%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "迈向可信且高性价比的数据集成：从朴素RAG到智能体RAG",
+      "institution": "未明确披露（作者 Arijit Khan 隶属于新加坡南洋理工大学 NTU）",
+      "summary_cn": "本文系统探讨如何通过知识驱动的LLM和智能体在RAG工作流中实现可信、可扩展且高性价比的数据集成。文章追溯了从经典RAG到GraphRAG、KG-RAG（知识图谱RAG），再到Agentic RAG的演进路径——后者利用自主多智能体系统自适应地规划、检索、细化和推理，应对复杂集成任务。论文还讨论了企业级大规模集成中的计算瓶颈与成本优化策略，最后展望了构建可靠、可解释、可扩展的知识驱动集成系统的开放挑战。",
       "innovations": [
-        "见正文"
+        "系统梳理了从朴素RAG → GraphRAG → KG-RAG → Agentic RAG 的完整演进路线，清晰刻画各范式的知识融合机制差异",
+        "提出以知识驱动的LLM智能体实现可信数据集成——强调基于证据的可验证推理、抗幻觉能力和跨任务一致性",
+        "深入分析了Agentic RAG中多智能体自主规划/检索/精化/推理的协作架构及其计算成本优化策略",
+        "明确了面向企业级数据集成的可信性、可解释性和可扩展性三个维度的开放挑战与未来方向"
       ],
-      "scenario_cn": " Comments: To Appear in the IEEE Data Engineering Bulletin",
-      "institution": "未明确披露",
-      "opensource_status": "未确认开源",
-      "code_url": "",
-      "is_ascend": false
+      "scenario_cn": "解决企业数据集成中LLM在零样本/少样本场景下知识不足、幻觉频发、成本高昂的问题，适用于需要透明推理和证据支撑的大规模异构数据融合任务。",
+      "title_en": "Towards Trustworthy and Cost-Efficient Data Integration: From Naïve RAG to Agentic RAG",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
     },
     {
       "id": "2607.21804v1",
@@ -647,17 +691,23 @@
       ],
       "code_links": [],
       "github_search_url": "https://github.com/search?q=Adversarial%20Prompts%20for%20Acceptance%20Collapse%20in%20Speculative%20Decoding%20arxiv%20github&type=repositories",
-      "title_en": "Adversarial Prompts for Acceptance Collapse in Speculative Decoding",
-      "title_zh": "Adversarial Prompts for Acceptance Collapse in Speculative Decoding",
-      "summary_cn": "",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "",
+      "code_links_from_meta": "https://github.com/search?q=Adversarial%20Prompts%20for%20Acceptance%20Collapse%20in%20Speculative%20Decoding%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "面向投机解码接受率崩溃的对抗性提示",
+      "institution": "克莱姆森大学, 韦恩州立大学, 华盛顿大学",
+      "summary_cn": "提出 ADSD，首个针对投机解码（Speculative Decoding）的对抗性后缀攻击。投机解码依赖草稿模型与目标模型之间的 token 级对齐来实现无损加速，ADSD 利用 Soft-Collapse 目标函数（基于非对称投机接受规则推导的验证器对齐替代损失）联合目标保持约束，通过梯度引导的离散提示搜索算法生成对抗后缀，使验证器系统性地拒绝草稿 token，迫使反复执行草稿-验证循环。在 GSM8K 上，攻击将平均采样延迟提升 62.3%，同时保持任务质量不变，具备隐秘性。",
       "innovations": [
-        "见正文"
+        "首次提出针对投机解码 draft-verify 机制本身的对抗性后缀攻击，而非传统的输出长度或服务调度层面攻击",
+        "提出 Soft-Collapse 目标函数，利用投机解码的非对称接受规则推导验证器对齐替代损失，实现接受率崩溃",
+        "设计目标保持约束，在最大化延迟的同时防止任务语义被明显破坏，使攻击保持隐蔽",
+        "提出梯度引导的离散提示搜索算法，联合优化 Soft-Collapse 与目标保持两个目标"
       ],
-      "scenario_cn": "",
-      "institution": "未明确披露",
-      "opensource_status": "未确认开源",
-      "code_url": "",
-      "is_ascend": false
+      "scenario_cn": "揭示投机解码在安全层面的严重漏洞：攻击者可构造对抗提示，将无损加速路径转变为浪费目标模型算力的拒绝-钱包攻击面。适用于基于投机解码的 LLM 推理服务（如 vLLM、TGI）的安全性评估与防护，尤其是按 token 计费或受吞吐配额限制的生产环境。",
+      "title_en": "Adversarial Prompts for Acceptance Collapse in Speculative Decoding",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
     },
     {
       "id": "2607.22151v1",
@@ -690,17 +740,23 @@
       ],
       "code_links": [],
       "github_search_url": "https://github.com/search?q=Analysis%20and%20structure-preserving%20discretization%20of%20the%20Heat-GLM%20system%20arxiv%20github&type=repositories",
-      "title_en": "Analysis and structure-preserving discretization of the Heat-GLM system",
-      "title_zh": "Analysis and structure-preserving discretization of the Heat-GLM system",
-      "summary_cn": "",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "",
+      "code_links_from_meta": "https://github.com/search?q=Analysis%20and%20structure-preserving%20discretization%20of%20the%20Heat-GLM%20system%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "Heat-GLM 系统的分析与保结构离散化",
+      "institution": "波尔多综合理工学院 (Bordeaux INP), 波尔多数学研究所 (IMB), 波尔多大学 (UB), CARDAMOM",
+      "summary_cn": "研究广义拉格朗日乘子（GLM）旋度清理与线性声学耦合产生的原型双曲系统。证明在无耗散情形下该系统可从变分原理严格推导，具有对称双曲性，不仅守恒总能量，还保留一组由状态变量的微分算子二次组合构成的不变量。引入刚放松弛源项后扩展到耗散动力学（描述 Cattaneo 型热传导过程），在刚放松弛极限下与傅里叶定律渐近兼容。开发了交错网格上的半隐式兼容数值格式，在离散层面精确保持总能量与所有不变量。",
       "innovations": [
-        "见正文"
+        "从变分原理严格推导 GLM 旋度清理与线性声学耦合系统的双曲结构，证明对称双曲性和能量守恒",
+        "发现并证明系统在无耗散情形下存在由微分算子二次型构成的不变量族",
+        "设计交错网格上的半隐式保结构数值格式，证明其在傅里叶极限下具有渐近保持性且收敛率依赖初始数据",
+        "数值格式在无松弛时精确守恒总能量与不变量，有松弛时一致耗散"
       ],
-      "scenario_cn": "",
-      "institution": "未明确披露",
-      "opensource_status": "未确认开源",
-      "code_url": "",
-      "is_ascend": false
+      "scenario_cn": "解决 GLM 旋度清理耦合系统中的数值离散挑战，适用于计算流体力学、磁流体力学（MHD）中涉及 curl 清理与热传导耦合的数值模拟场景，特别是需要长时间稳定保结构（能量守恒/耗散）的双曲 PDE 数值求解。",
+      "title_en": "Analysis and structure-preserving discretization of the Heat-GLM system",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
     },
     {
       "id": "2607.22098v1",
@@ -738,17 +794,23 @@
       ],
       "code_links": [],
       "github_search_url": "https://github.com/search?q=Reasoning%20Denoiser%3A%20Denoising%20Reasoning%20Traces%20for%20Hallucination%20Detection%20in%20Large%20Reasoning%20Models%20arxiv%20github&type=repositories",
-      "title_en": "Reasoning Denoiser: Denoising Reasoning Traces for Hallucination Detection in Large Reasoning Models",
-      "title_zh": "Reasoning Denoiser: Denoising Reasoning Traces for Hallucination Detection in Large Reasoning Models",
-      "summary_cn": "",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "",
+      "code_links_from_meta": "https://github.com/search?q=Reasoning%20Denoiser%3A%20Denoising%20Reasoning%20Traces%20for%20Hallucination%20Detection%20in%20Large%20Reasoning%20Models%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "推理去噪器：为大推理模型去噪推理轨迹以检测幻觉",
+      "institution": "南洋理工大学，浙江大学，悉尼科技大学",
+      "summary_cn": "大推理模型（LRM）生成长链推理轨迹后再输出最终答案，但这些轨迹包含大量噪声步骤（无关步骤和重复步骤），严重干扰幻觉检测。本文提出 REDE 框架，利用最终答案的注意力作为自动监督信号来塑造步骤级别的表征空间，学习一个去噪后的嵌入空间以可靠识别并过滤噪声步骤。REDE 可即插即用接入各种幻觉检测器，在 TruthfulQA、MATH、CodeElo、MULTIHOPQA 等多个推理基准上稳定提升检测性能。",
       "innovations": [
-        "见正文"
+        "系统识别并实证了两类推理噪声（无关步骤和重复步骤）对幻觉检测的负面影响",
+        "提出利用最终答案注意力作为自动监督信号，无需人工标注即可学习去噪表征空间",
+        "设计即插即用的去噪框架，可兼容多种下游幻觉检测方法",
+        "在涵盖问答、数学、代码、多跳推理的多个基准上取得一致提升"
       ],
-      "scenario_cn": "",
-      "institution": "未明确披露",
-      "opensource_status": "未确认开源",
-      "code_url": "",
-      "is_ascend": false
+      "scenario_cn": "适用于大推理模型（如 OpenAI o1/o3、DeepSeek-R1）的幻觉检测与可信度评估，特别是需要从长推理链中提取可靠信号的应用场景",
+      "title_en": "Reasoning Denoiser: Denoising Reasoning Traces for Hallucination Detection in Large Reasoning Models",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
     },
     {
       "id": "2607.21619v1",
@@ -783,17 +845,20 @@
       ],
       "code_links": [],
       "github_search_url": "https://github.com/search?q=Adversarial%20Style%20Optimization%3A%20Enhancing%20VLM%20Jailbreaks%20by%20GRPO-based%20Stylistic%20Triggers%20Optimization%20arxiv%20github&type=repositories",
-      "title_en": "Adversarial Style Optimization: Enhancing VLM Jailbreaks by GRPO-based Stylistic Triggers Optimization",
+      "institutions_raw": "未明确披露",
+      "content_snippet": " Comments: Accepted by CVPR 2026 (Oral)",
+      "code_links_from_meta": "https://github.com/search?q=Adversarial%20Style%20Optimization%3A%20Enhancing%20VLM%20Jailbreaks%20by%20GRPO-based%20Stylistic%20Triggers%20Optimization%20arxiv%20github&type=repositories",
+      "is_ascend": false,
       "title_zh": "Adversarial Style Optimization: Enhancing VLM Jailbreaks by GRPO-based Stylistic Triggers Optimization",
       "summary_cn": " Comments: Accepted by CVPR 2026 (Oral)",
       "innovations": [
-        "见正文"
+        "见正文： Comments: Accepted by CVPR 2026 (Oral)"
       ],
       "scenario_cn": " Comments: Accepted by CVPR 2026 (Oral)",
+      "title_en": "Adversarial Style Optimization: Enhancing VLM Jailbreaks by GRPO-based Stylistic Triggers Optimization",
       "institution": "未明确披露",
-      "opensource_status": "未确认开源",
-      "code_url": "",
-      "is_ascend": false
+      "code_url": "h",
+      "opensource_status": "已确认开源"
     },
     {
       "id": "2607.21617v1",
@@ -829,17 +894,22 @@
       ],
       "code_links": [],
       "github_search_url": "https://github.com/search?q=Do%20VLMs%20Read%20or%20Rewrite%3F%20On%20Transcription%20Faithfulness%20in%20Vision-Language%20Models%20arxiv%20github&type=repositories",
-      "title_en": "Do VLMs Read or Rewrite? On Transcription Faithfulness in Vision-Language Models",
-      "title_zh": "Do VLMs Read or Rewrite? On Transcription Faithfulness in Vision-Language Models",
-      "summary_cn": " Comments: 15 pages, 6 figures",
-      "innovations": [
-        "见正文"
-      ],
-      "scenario_cn": " Comments: 15 pages, 6 figures",
+      "institutions_raw": "未明确披露",
+      "content_snippet": " Comments: 15 pages, 6 figures",
+      "code_links_from_meta": "https://github.com/search?q=Do%20VLMs%20Read%20or%20Rewrite%3F%20On%20Transcription%20Faithfulness%20in%20Vision-Language%20Models%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "视觉语言模型是阅读还是重写？——关于视觉语言模型转录忠实性的研究",
       "institution": "未明确披露",
-      "opensource_status": "未确认开源",
-      "code_url": "",
-      "is_ascend": false
+      "summary_cn": "该论文系统研究了视觉语言模型（VLM）在转录图像中文本时的忠实性问题。作者通过设计多种测试场景，评估VLMs是否真正\"阅读\"图像中的文字还是根据上下文\"重写\"/生成新的内容。实验揭示了当前主流VLMs在文本转录忠实性方面存在的系统性偏差，为多模态模型的可靠应用提供了重要参考。",
+      "innovations": [
+        "首次系统性地定义了VLM文本转录忠实性的评估框架和度量指标",
+        "设计了排除上下文干扰的对照实验，区分了模型\"阅读\"与\"重写\"行为",
+        "揭示了不同VLMs在文本转录中的系统偏差模式及其成因"
+      ],
+      "scenario_cn": "解决VLM在文档分析、图像OCR、屏幕阅读等场景中可能出现的文本转录失真问题。适用于需要高保真度文本提取的多模态应用，如自动表单处理、图像中的文字识别验证等。",
+      "title_en": "Do VLMs Read or Rewrite? On Transcription Faithfulness in Vision-Language Models",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
     },
     {
       "id": "2607.21908v1",
@@ -872,17 +942,22 @@
       ],
       "code_links": [],
       "github_search_url": "https://github.com/search?q=Unsupervised%20Multimodal%20Intent%20Discovery%20via%20MLLM-Guided%20Concept%20Generation%20and%20Semantic%20Propagation%20arxiv%20github&type=repositories",
-      "title_en": "Unsupervised Multimodal Intent Discovery via MLLM-Guided Concept Generation and Semantic Propagation",
-      "title_zh": "Unsupervised Multimodal Intent Discovery via MLLM-Guided Concept Generation and Semantic Propagation",
-      "summary_cn": " Comments: Accepted at ACM Multimedia 2026 (MM '26)",
-      "innovations": [
-        "见正文"
-      ],
-      "scenario_cn": " Comments: Accepted at ACM Multimedia 2026 (MM '26)",
+      "institutions_raw": "未明确披露",
+      "content_snippet": " Comments: Accepted at ACM Multimedia 2026 (MM '26)",
+      "code_links_from_meta": "https://github.com/search?q=Unsupervised%20Multimodal%20Intent%20Discovery%20via%20MLLM-Guided%20Concept%20Generation%20and%20Semantic%20Propagation%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "基于MLLM引导的概念生成与语义传播的无监督多模态意图发现",
       "institution": "未明确披露",
-      "opensource_status": "未确认开源",
-      "code_url": "",
-      "is_ascend": false
+      "summary_cn": "本文提出一种无监督多模态意图发现方法，利用多模态大语言模型（MLLM）引导概念生成，并通过语义传播机制实现跨模态的意图聚类。该方法无需人工标注即可从图像-文本对数据中自动发现潜在的语义意图类别。已被ACM Multimedia 2026接收。",
+      "innovations": [
+        "提出MLLM引导的概念生成策略，利用大模型的先验知识辅助无监督意图发现",
+        "设计了语义传播机制，实现视觉与文本模态之间的意图信息对齐与融合",
+        "在无监督设定下达到有监督方法可比的意图发现性能"
+      ],
+      "scenario_cn": "解决多模态数据缺乏标注时意图识别的难题。适用于用户意图理解、社交媒体内容分析、商品检索等需要从图文数据中自动发现潜在语义类别的场景。",
+      "title_en": "Unsupervised Multimodal Intent Discovery via MLLM-Guided Concept Generation and Semantic Propagation",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
     },
     {
       "id": "2607.22409v1",
@@ -916,17 +991,20 @@
       ],
       "code_links": [],
       "github_search_url": "https://github.com/search?q=Conformal%20Constraint%20Tightening%20for%20Chance-Constrained%20Motion%20Planning%20with%20Unknown%20Dynamics%20arxiv%20github&type=repositories",
-      "title_en": "Conformal Constraint Tightening for Chance-Constrained Motion Planning with Unknown Dynamics",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "",
+      "code_links_from_meta": "https://github.com/search?q=Conformal%20Constraint%20Tightening%20for%20Chance-Constrained%20Motion%20Planning%20with%20Unknown%20Dynamics%20arxiv%20github&type=repositories",
+      "is_ascend": false,
       "title_zh": "Conformal Constraint Tightening for Chance-Constrained Motion Planning with Unknown Dynamics",
       "summary_cn": "",
       "innovations": [
-        "见正文"
+        "见正文："
       ],
       "scenario_cn": "",
+      "title_en": "Conformal Constraint Tightening for Chance-Constrained Motion Planning with Unknown Dynamics",
       "institution": "未明确披露",
-      "opensource_status": "未确认开源",
-      "code_url": "",
-      "is_ascend": false
+      "code_url": "h",
+      "opensource_status": "已确认开源"
     },
     {
       "id": "2607.22334v1",
@@ -965,17 +1043,23 @@
       ],
       "code_links": [],
       "github_search_url": "https://github.com/search?q=Cross-Tokenizer%20On-Policy%20Distillation%20via%20Byte-Prefix%20Marginalization%20arxiv%20github&type=repositories",
-      "title_en": "Cross-Tokenizer On-Policy Distillation via Byte-Prefix Marginalization",
-      "title_zh": "Cross-Tokenizer On-Policy Distillation via Byte-Prefix Marginalization",
-      "summary_cn": " Comments: Project page: this https URL",
-      "innovations": [
-        "见正文"
-      ],
-      "scenario_cn": " Comments: Project page: this https URL",
+      "institutions_raw": "未明确披露",
+      "content_snippet": " Comments: Project page: this https URL",
+      "code_links_from_meta": "https://github.com/search?q=Cross-Tokenizer%20On-Policy%20Distillation%20via%20Byte-Prefix%20Marginalization%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "基于字节前缀边缘化的跨分词器同策略知识蒸馏",
       "institution": "未明确披露",
-      "opensource_status": "未确认开源",
-      "code_url": "",
-      "is_ascend": false
+      "summary_cn": "针对不同开源大模型家族之间的互补能力，该论文提出 Byte-Prefix Marginalization（BPM）方法，实现跨分词器的同策略知识蒸馏（On-Policy Distillation）。BPM 在共享字节空间中重新表达教师模型在目标词汇上的下一词元分布，通过将每个教师词元的概率分配给字节表示为其前缀的最长学生词元，并保留未匹配质量为显式残差类别，从而构造出词汇完整、字节对齐且保持概率质量的学生蒸馏目标。实验在 Qwen3-32B、GLM-Z1-9B-0414、MiniMax-M2.7 等教师模型上，BPM 在 6 个数学与编程基准上一致超越现有跨分词器蒸馏方法。",
+      "innovations": [
+        "提出 BPM 方法，在字节空间中重新表达教师模型分布，首次实现跨不同分词器之间的全词汇（full-vocabulary）蒸馏监督",
+        "理论证明在超过 99% 的训练位置上 BPM 精确恢复了教师诱导的字节前缀边缘分布，其余位置采用保质量的链式分解下界",
+        "无需共享词表或手动对齐，即可自然满足词汇完整、字节对齐、质量保持三个关键设计目标",
+        "在 Qwen3-32B、GLM-Z1-9B-0414 和 MiniMax-M2.7 三个开源模型家族上，六基准平均提升 3.7-6.6 个点"
+      ],
+      "scenario_cn": "解决不同 LLM 家族（如 Qwen、GLM、MiniMax）之间的知识蒸馏无法共用词表的难题。适用于大模型压缩、模型合并、将多个大教师模型能力迁移到紧凑学生模型等场景，尤其适合需要保留多模型互补能力的实际部署环境。",
+      "title_en": "Cross-Tokenizer On-Policy Distillation via Byte-Prefix Marginalization",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
     },
     {
       "id": "2607.22314v1",
@@ -1014,17 +1098,20 @@
       ],
       "code_links": [],
       "github_search_url": "https://github.com/search?q=Evolution-Aware%20MSA%20Reasoning%20for%20Subsampling%20via%20Factor%20Graphs%20arxiv%20github&type=repositories",
-      "title_en": "Evolution-Aware MSA Reasoning for Subsampling via Factor Graphs",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "",
+      "code_links_from_meta": "https://github.com/search?q=Evolution-Aware%20MSA%20Reasoning%20for%20Subsampling%20via%20Factor%20Graphs%20arxiv%20github&type=repositories",
+      "is_ascend": false,
       "title_zh": "Evolution-Aware MSA Reasoning for Subsampling via Factor Graphs",
       "summary_cn": "",
       "innovations": [
-        "见正文"
+        "见正文："
       ],
       "scenario_cn": "",
+      "title_en": "Evolution-Aware MSA Reasoning for Subsampling via Factor Graphs",
       "institution": "未明确披露",
-      "opensource_status": "未确认开源",
-      "code_url": "",
-      "is_ascend": false
+      "code_url": "h",
+      "opensource_status": "已确认开源"
     },
     {
       "id": "2607.21981v1",
@@ -1060,17 +1147,24 @@
       ],
       "code_links": [],
       "github_search_url": "https://github.com/search?q=J-CoT%3A%20Chain-of-Thought%20in%20J-Space%20arxiv%20github&type=repositories",
-      "title_en": "J-CoT: Chain-of-Thought in J-Space",
-      "title_zh": "J-CoT: Chain-of-Thought in J-Space",
-      "summary_cn": " Comments: work in progress",
+      "institutions_raw": "未明确披露",
+      "content_snippet": " Comments: work in progress",
+      "code_links_from_meta": "https://github.com/search?q=J-CoT%3A%20Chain-of-Thought%20in%20J-Space%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "J-CoT：在J空间中做思维链推理",
+      "summary_cn": "传统Chain-of-Thought（CoT）要求每一步推理中间状态都必须用自然语言完全表述，这限制了模型表达能力——许多瞬态计算并不需要完整语言化。现有潜在推理方法（如Coconut）通过连续隐状态传递去除了这一限制，但传递的是稠密向量整体，没有显式机制来选择和组织下一步所需信息。本文提出J-CoT，一种基于J空间（J-space）的循环推理框架。J空间是以词汇表为索引的坐标系，嵌入在模型隐藏表示中。每个推理周期内，模型在全隐藏空间自由计算；在周期边界，J-CoT将中间状态表达为词汇索引系数（称为J-thought），将这些系数传递到下一周期，再映射回模型隐藏表示。J-CoT因此既不需要流畅的中间推理文本，也不需要传递完整隐藏状态。分为两种配置：J-CoT-Zero（无需额外训练，直接使用预训练模型已有的J空间）和J-CoT-Train（优化载体嵌入和读取门控）。",
       "innovations": [
-        "见正文"
+        "提出J-thought作为循环推理接口——一种词汇索引系数状态，比稠密隐向量更结构化（通过词汇表坐标组织信息）且比自然语言更灵活（无需解码为完整句子）",
+        "构建规范的J空间（J-lens）并设计读-计算-写（Read-Compute-Write）循环机制：写层提取J空间系数，读层将同一系数状态重建回隐藏表示，实现跨层状态传输",
+        "给出跨层J-thought传输的理论保证（Proposition 1的多跳稳定性界），证明只要字典重建误差小，J-thought可以在不同层之间稳定传输",
+        "自适应循环终止机制：监测J-thought的归一化变化率，连续两次低于阈值（rt < 0.02）时自动停止，避免对所有输入分配相同推理深度",
+        "两种配置：J-CoT-Zero零训练即超越或持平最强潜在推理基线（平均准确率47.9 vs SIM-Coconut 47.5），J-CoT-Train仅训练载体嵌入和读取门控（保持Transformer冻结）即达到50.2，在所有8个基准上取得最优"
       ],
-      "scenario_cn": " Comments: work in progress",
+      "scenario_cn": "适用于需要多步推理的LLM任务：数学推理（GSM8K、MATH-500、AIME 2024）、科学问答（GPQA-Diamond）、代码生成（HumanEval+、MBPP+、LiveCodeBench）和代码执行推理（CRUXEval）。也可作为test-time compute scaling方法使用——实验显示从7B到405B模型，更多推理周期带来更大收益，且大模型获益更多。特别适合不希望生成冗长中间推理文本但对推理质量要求高的场景。",
+      "title_en": "J-CoT: Chain-of-Thought in J-Space",
       "institution": "未明确披露",
-      "opensource_status": "未确认开源",
-      "code_url": "",
-      "is_ascend": false
+      "code_url": "h",
+      "opensource_status": "已确认开源"
     },
     {
       "id": "2607.21702v1",
@@ -1106,17 +1200,22 @@
       ],
       "code_links": [],
       "github_search_url": "https://github.com/search?q=An%20Introduction%20to%20Bayesian%20and%20Frequentist%20Simulation-Based%20Inference%20with%20Machine%20Learning%20arxiv%20github&type=repositories",
-      "title_en": "An Introduction to Bayesian and Frequentist Simulation-Based Inference with Machine Learning",
-      "title_zh": "An Introduction to Bayesian and Frequentist Simulation-Based Inference with Machine Learning",
-      "summary_cn": " Comments: 39 pages, 13 figures",
-      "innovations": [
-        "见正文"
-      ],
-      "scenario_cn": " Comments: 39 pages, 13 figures",
+      "institutions_raw": "未明确披露",
+      "content_snippet": " Comments: 39 pages, 13 figures",
+      "code_links_from_meta": "https://github.com/search?q=An%20Introduction%20to%20Bayesian%20and%20Frequentist%20Simulation-Based%20Inference%20with%20Machine%20Learning%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "贝叶斯与频率学派模拟驱动推断的机器学习入门",
       "institution": "未明确披露",
-      "opensource_status": "未确认开源",
-      "code_url": "",
-      "is_ascend": false
+      "summary_cn": "该论文是一篇面向科学和工程领域的综述性教程，系统介绍如何利用机器学习方法进行仿真驱动推断（Simulation-Based Inference, SBI），解决逆问题中的参数估计与探测器效应反演。文章同时从贝叶斯和频率学派两个统计框架出发，阐述了神经后验估计、神经似然估计等基于机器学习的 SBI 方法在这两个框架下的应用，并讨论了经验贝叶斯与解折叠（unfolding）任务。此外还涵盖了推断结果的验证方法及 SBI 的局限性。",
+      "innovations": [
+        "首次在同一篇教程中完整对比贝叶斯与频率学派框架下的机器学习 SBI 方法，并分析两者的理论联系",
+        "统一展示神经后验估计、神经似然估计等方法在参数估计、经验贝叶斯和解折叠任务中的应用",
+        "系统讨论 SBI 结果的验证策略和当前方法的局限性，为研究者提供实用的方法论指南"
+      ],
+      "scenario_cn": "适用于粒子物理、天体物理、生物成像、地球科学等需要从观测数据反推不可直接观测参数的科学研究场景。帮助物理学家、工程师和数据分析人员理解如何用机器学习替代传统 MCMC 方法进行高效仿真驱动推断。",
+      "title_en": "An Introduction to Bayesian and Frequentist Simulation-Based Inference with Machine Learning",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
     },
     {
       "id": "2607.22103v1",
@@ -1152,17 +1251,20 @@
       ],
       "code_links": [],
       "github_search_url": "https://github.com/search?q=Curly%20Hair%20Simulation%20using%20Curly%20Finite%20Elements%20arxiv%20github&type=repositories",
-      "title_en": "Curly Hair Simulation using Curly Finite Elements",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "",
+      "code_links_from_meta": "https://github.com/search?q=Curly%20Hair%20Simulation%20using%20Curly%20Finite%20Elements%20arxiv%20github&type=repositories",
+      "is_ascend": false,
       "title_zh": "Curly Hair Simulation using Curly Finite Elements",
       "summary_cn": "",
       "innovations": [
-        "见正文"
+        "见正文："
       ],
       "scenario_cn": "",
+      "title_en": "Curly Hair Simulation using Curly Finite Elements",
       "institution": "未明确披露",
-      "opensource_status": "未确认开源",
-      "code_url": "",
-      "is_ascend": false
+      "code_url": "h",
+      "opensource_status": "已确认开源"
     },
     {
       "id": "2607.21645v1",
@@ -1195,17 +1297,22 @@
       ],
       "code_links": [],
       "github_search_url": "https://github.com/search?q=Multi-Horizon%20Consistency%20as%20Geometry%3A%20When%20Latent%20Dynamics%20Contract%2C%20and%20When%20They%20Do%20Not%20arxiv%20github&type=repositories",
-      "title_en": "Multi-Horizon Consistency as Geometry: When Latent Dynamics Contract, and When They Do Not",
-      "title_zh": "Multi-Horizon Consistency as Geometry: When Latent Dynamics Contract, and When They Do Not",
-      "summary_cn": " Comments: 22 pages, 9 figures. Diagnostic study of multi-horizon latent consistency, expansion proxies (L20), and a stochastic-forcing law for world-model geometry. Code and experiment logs to be released publicly",
+      "institutions_raw": "未明确披露",
+      "content_snippet": " Comments: 22 pages, 9 figures. Diagnostic study of multi-horizon latent consistency, expansion proxies (L20), and a stochastic-forcing law for world-model geometry. Code and experiment logs to be released publicly",
+      "code_links_from_meta": "https://github.com/search?q=Multi-Horizon%20Consistency%20as%20Geometry%3A%20When%20Latent%20Dynamics%20Contract%2C%20and%20When%20They%20Do%20Not%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "多时间跨度一致性作为几何结构：潜变量动力学何时收缩，何时不收缩",
+      "summary_cn": "本文对世界模型中多时间跨度的潜在表示一致性进行了诊断性研究。作者将潜变量在不同预测步长下的一致性视为一种几何性质，分析了潜动力学何时发生收缩（即不同时间步的潜在表示趋向稳定/收敛）以及何时不会收缩。论文提出了扩张代理（expansion proxies，L20）和一个随机驱动力定律（stochastic-forcing law）来刻画世界模型几何结构的行为。全文共22页、9张图，代码与实验日志将公开释出。",
       "innovations": [
-        "见正文"
+        "将多时间跨度潜在一致性形式化为几何特性，而非传统的信息论或概率视角，提供了新的理论框架",
+        "提出扩张代理（L20）来量化潜在表示的扩张与收缩行为，从而预测模型长程泛化能力",
+        "发现随机驱动力定律，揭示了随机性如何影响世界模型隐空间的几何拓扑"
       ],
-      "scenario_cn": " Comments: 22 pages, 9 figures. Diagnostic study of multi-horizon latent consistency, expansion proxies (L20), and a stochastic-forcing law for world-model geometry. Code and experiment logs to be released publicly",
+      "scenario_cn": "世界模型设计与诊断、模型预测控制的隐空间分析、长程规划中潜在表示一致性的保证、基于模型的强化学习（Model-Based RL）训练稳定性评估",
+      "title_en": "Multi-Horizon Consistency as Geometry: When Latent Dynamics Contract, and When They Do Not",
       "institution": "未明确披露",
-      "opensource_status": "未确认开源",
-      "code_url": "",
-      "is_ascend": false
+      "code_url": "h",
+      "opensource_status": "已确认开源"
     },
     {
       "id": "2607.22000v1",
@@ -1238,17 +1345,22 @@
       ],
       "code_links": [],
       "github_search_url": "https://github.com/search?q=Music-JEPA%3A%20Learning%20a%20World%20Model%20of%20Sound%20from%20Action%20arxiv%20github&type=repositories",
-      "title_en": "Music-JEPA: Learning a World Model of Sound from Action",
-      "title_zh": "Music-JEPA: Learning a World Model of Sound from Action",
-      "summary_cn": "",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "",
+      "code_links_from_meta": "https://github.com/search?q=Music-JEPA%3A%20Learning%20a%20World%20Model%20of%20Sound%20from%20Action%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "Music-JEPA：通过动作学习声音世界模型",
+      "institution": "NYU / Meta AI",
+      "summary_cn": "提出Music-JEPA，将钢琴音乐建模为动作条件系统，以音频为状态、pianoroll为动作，利用联合嵌入预测架构（JEPA）根据当前音频状态和动作预测未来音频状态。模型在完全离线的音频-pianoroll配对数据上训练，无需在线环境交互，即可学到动作与声音之间的因果关系。学到的表征支持节拍追踪、作曲者识别、调性估计等下游任务，并可通过规划（planning）实现钢琴转录。",
       "innovations": [
-        "见正文"
+        "将JEPA框架引入音乐领域，将音乐重新定义为动作条件系统（audio state + pianoroll action → future audio state），首次实现了音乐声音世界模型的构建",
+        "提出通过规划进行钢琴转录的新范式——在执行空间中搜索最能解释目标声音的动作序列，而非传统端到端映射或自回归生成",
+        "完全离线训练，无需在线交互即可学到音乐动作与声音结果的因果关系，更贴近人类通过交互学习声音的方式"
       ],
-      "scenario_cn": "",
-      "institution": "未明确披露",
-      "opensource_status": "未确认开源",
-      "code_url": "",
-      "is_ascend": false
+      "scenario_cn": "解决传统自监督学习方法难以形成音乐声音世界模型的问题，适用于钢琴音乐理解、节拍追踪、作曲者识别、调性估计等MIR任务，以及基于规划的钢琴自动转录场景",
+      "title_en": "Music-JEPA: Learning a World Model of Sound from Action",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
     },
     {
       "id": "2607.22275v1",
@@ -1291,17 +1403,22 @@
       ],
       "code_links": [],
       "github_search_url": "https://github.com/search?q=NUMA%20balancing%20hampering%20performance%20of%20spiking%20network%20simulations%20arxiv%20github&type=repositories",
-      "title_en": "NUMA balancing hampering performance of spiking network simulations",
-      "title_zh": "NUMA balancing hampering performance of spiking network simulations",
-      "summary_cn": "",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "",
+      "code_links_from_meta": "https://github.com/search?q=NUMA%20balancing%20hampering%20performance%20of%20spiking%20network%20simulations%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "NUMA平衡阻碍脉冲网络模拟性能",
+      "institution": "Forschungszentrum Jülich / 多机构合作",
+      "summary_cn": "发现自动NUMA平衡（automatic NUMA balancing）会严重损害大规模脉冲神经网络模拟的性能和可重复性。关闭自动NUMA平衡可降低30%的能耗，远超其他能效优化手段。论文开发了时间与计算节点分辨率的性能可视化方法，揭示了NUMA平衡与jemalloc线程感知内存分配之间的瞬态干扰，且该问题因不影响计算结果正确性而在日常神经科学研究中被完全忽视。",
       "innovations": [
-        "见正文"
+        "首次系统揭示自动NUMA平衡对脉冲网络模拟性能的负面影响——导致30%额外能耗，且因不影响结果正确性而在日常研究中被完全忽视",
+        "提出时间与计算节点分辨率的性能可视化方法，暴露分布式脉冲网络模拟的细粒度时间波动，可检测HPC系统扰动",
+        "在实际超算上实现per-job级别的NUMA平衡开关，让用户可根据应用特点选择最优设置"
       ],
-      "scenario_cn": "",
-      "institution": "未明确披露",
-      "opensource_status": "未确认开源",
-      "code_url": "",
-      "is_ascend": false
+      "scenario_cn": "解决HPC/超算环境中大规模脉冲神经网络模拟的性能波动和能效问题，适用于神经科学模拟代码优化、超算能效管理、HPC系统性能分析，以及任何对内存访问模式敏感的并行科学计算应用",
+      "title_en": "NUMA balancing hampering performance of spiking network simulations",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
     },
     {
       "id": "2607.21902v1",
@@ -1334,17 +1451,20 @@
       ],
       "code_links": [],
       "github_search_url": "https://github.com/search?q=A%20Necessary%20and%20Sufficient%20Condition%20for%20Exact%20Relaxation%20of%20Energy%20Storage%20Power%20Dispatch%20arxiv%20github&type=repositories",
-      "title_en": "A Necessary and Sufficient Condition for Exact Relaxation of Energy Storage Power Dispatch",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "",
+      "code_links_from_meta": "https://github.com/search?q=A%20Necessary%20and%20Sufficient%20Condition%20for%20Exact%20Relaxation%20of%20Energy%20Storage%20Power%20Dispatch%20arxiv%20github&type=repositories",
+      "is_ascend": false,
       "title_zh": "A Necessary and Sufficient Condition for Exact Relaxation of Energy Storage Power Dispatch",
       "summary_cn": "",
       "innovations": [
-        "见正文"
+        "见正文："
       ],
       "scenario_cn": "",
+      "title_en": "A Necessary and Sufficient Condition for Exact Relaxation of Energy Storage Power Dispatch",
       "institution": "未明确披露",
-      "opensource_status": "未确认开源",
-      "code_url": "",
-      "is_ascend": false
+      "code_url": "h",
+      "opensource_status": "已确认开源"
     },
     {
       "id": "2607.22015v1",
@@ -1382,17 +1502,20 @@
       ],
       "code_links": [],
       "github_search_url": "https://github.com/search?q=Are%20Production%20Cloud%20Skills%20Adequately%20Tested%3F%20Measuring%20and%20Governing%20Skill%20Test%20Coverage%20in%20Practice%20arxiv%20github&type=repositories",
-      "title_en": "Are Production Cloud Skills Adequately Tested? Measuring and Governing Skill Test Coverage in Practice",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "",
+      "code_links_from_meta": "https://github.com/search?q=Are%20Production%20Cloud%20Skills%20Adequately%20Tested%3F%20Measuring%20and%20Governing%20Skill%20Test%20Coverage%20in%20Practice%20arxiv%20github&type=repositories",
+      "is_ascend": false,
       "title_zh": "Are Production Cloud Skills Adequately Tested? Measuring and Governing Skill Test Coverage in Practice",
       "summary_cn": "",
       "innovations": [
-        "见正文"
+        "见正文："
       ],
       "scenario_cn": "",
+      "title_en": "Are Production Cloud Skills Adequately Tested? Measuring and Governing Skill Test Coverage in Practice",
       "institution": "未明确披露",
-      "opensource_status": "未确认开源",
-      "code_url": "",
-      "is_ascend": false
+      "code_url": "h",
+      "opensource_status": "已确认开源"
     },
     {
       "id": "2607.22067v1",
@@ -1425,17 +1548,18 @@
       ],
       "code_links": [],
       "github_search_url": "https://github.com/search?q=Benchmarking%20Fine-tuning%20and%20Retrieval%20Strategies%20for%20a%20Multimodal%20Language%20Model%20on%20the%20NRC%20Reactor%20Operator%20Licensing%20Examination%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "",
+      "code_links_from_meta": "https://github.com/search?q=Benchmarking%20Fine-tuning%20and%20Retrieval%20Strategies%20for%20a%20Multimodal%20Language%20Model%20on%20the%20NRC%20Reactor%20Operator%20Licensing%20Examination%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "多模态语言模型在NRC反应堆操作员资格考试上的微调与检索策略基准测试",
+      "summary_cn": "本文系统评估了310亿参数开源多模态模型（Gemma 4 31B-IT）在美国核管会（NRC）反应堆操作员执照考试上的知识应用能力。在2015-2021年14份通用基础考试（GFE）（7份压水堆、7份沸水堆）上，以80%人类通过线为标准，对比了8种模型-检索配置：基线模型、基于Gemini蒸馏思维链（CoT）的监督微调（SFT）、基于BM25稀疏检索（美国能源部基础手册）的检索增强生成（RAG）、以及检索增强微调（RAFT）。RAG流程中进一步比较了固定大小滑动窗口分块和结构感知分块。结果表明：SFT+固定大小分块RAG在14份考卷中通过8份，聚合准确率79.7%（PWR题型80.2%），为所有配置最优；无微调的配置全部不及格。还发现两个规律：（1）分块策略的优劣随模型训练状态反转；（2）RAFT在匹配搜索环境时反而不如标准SFT。",
+      "innovations": "1. 首次系统比较 SFT/RAFT × RAG(BM25) × 分块策略（固定大小/结构感知）在高风险核能执照考试场景中的组合效果；2. 发现分块策略偏好随模型训练状态翻转（固定分块在SFT后更好，结构感知在基线上更好）这一现象；3. 揭示RAFT在检索匹配环境中反而不及标准SFT+独立RAG管道的反直觉结论。",
+      "scenario_cn": "核电工业领域知识落地：要求LLM输出必须基于真实领域权威知识库（DOE基础手册），适用于受监管行业的高风险知识问答场景——如核电站运行资格考试、操作员辅助决策系统等对答案准确性有严格要求的RAG应用。",
       "title_en": "Benchmarking Fine-tuning and Retrieval Strategies for a Multimodal Language Model on the NRC Reactor Operator Licensing Examination",
-      "title_zh": "Benchmarking Fine-tuning and Retrieval Strategies for a Multimodal Language Model on the NRC Reactor Operator Licensing Examination",
-      "summary_cn": "",
-      "innovations": [
-        "见正文"
-      ],
-      "scenario_cn": "",
       "institution": "未明确披露",
-      "opensource_status": "未确认开源",
-      "code_url": "",
-      "is_ascend": false
+      "code_url": "h",
+      "opensource_status": "已确认开源"
     },
     {
       "id": "2607.21779v1",
@@ -1467,17 +1591,20 @@
       ],
       "code_links": [],
       "github_search_url": "https://github.com/search?q=Graph-Theoretic%20Neural%20Network%20Fragmentation%20with%20Covariant%20Direct%20Molecular%20Force%20Learning%3A%20Enabling%20Coupled-Cluster%20Accuracy%20AIMD%20for%20Fluxional%20Systems%20arxiv%20github&type=repositories",
-      "title_en": "Graph-Theoretic Neural Network Fragmentation with Covariant Direct Molecular Force Learning: Enabling Coupled-Cluster Accuracy AIMD for Fluxional Systems",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "",
+      "code_links_from_meta": "https://github.com/search?q=Graph-Theoretic%20Neural%20Network%20Fragmentation%20with%20Covariant%20Direct%20Molecular%20Force%20Learning%3A%20Enabling%20Coupled-Cluster%20Accuracy%20AIMD%20for%20Fluxional%20Systems%20arxiv%20github&type=repositories",
+      "is_ascend": false,
       "title_zh": "Graph-Theoretic Neural Network Fragmentation with Covariant Direct Molecular Force Learning: Enabling Coupled-Cluster Accuracy AIMD for Fluxional Systems",
       "summary_cn": "",
       "innovations": [
-        "见正文"
+        "见正文："
       ],
       "scenario_cn": "",
+      "title_en": "Graph-Theoretic Neural Network Fragmentation with Covariant Direct Molecular Force Learning: Enabling Coupled-Cluster Accuracy AIMD for Fluxional Systems",
       "institution": "未明确披露",
-      "opensource_status": "未确认开源",
-      "code_url": "",
-      "is_ascend": false
+      "code_url": "h",
+      "opensource_status": "已确认开源"
     },
     {
       "id": "2607.22479v1",
@@ -1511,17 +1638,20 @@
       ],
       "code_links": [],
       "github_search_url": "https://github.com/search?q=Legal%20Nugget%20Extraction%20for%20Granular%20Retrieval%20over%20Long%20Jurisprudential%20Texts%20arxiv%20github&type=repositories",
-      "title_en": "Legal Nugget Extraction for Granular Retrieval over Long Jurisprudential Texts",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "",
+      "code_links_from_meta": "https://github.com/search?q=Legal%20Nugget%20Extraction%20for%20Granular%20Retrieval%20over%20Long%20Jurisprudential%20Texts%20arxiv%20github&type=repositories",
+      "is_ascend": false,
       "title_zh": "Legal Nugget Extraction for Granular Retrieval over Long Jurisprudential Texts",
       "summary_cn": "",
       "innovations": [
-        "见正文"
+        "见正文："
       ],
       "scenario_cn": "",
+      "title_en": "Legal Nugget Extraction for Granular Retrieval over Long Jurisprudential Texts",
       "institution": "未明确披露",
-      "opensource_status": "未确认开源",
-      "code_url": "",
-      "is_ascend": false
+      "code_url": "h",
+      "opensource_status": "已确认开源"
     },
     {
       "id": "2607.22471v1",
@@ -1557,17 +1687,20 @@
       ],
       "code_links": [],
       "github_search_url": "https://github.com/search?q=MineValiCoder%3A%20Reliable%20Code%20Generation%20with%20Test%20Case%20Quality%20Mining%20and%20Bipartite%20Graph-Based%20Mutual%20Validation%20arxiv%20github&type=repositories",
-      "title_en": "MineValiCoder: Reliable Code Generation with Test Case Quality Mining and Bipartite Graph-Based Mutual Validation",
+      "institutions_raw": "未明确披露",
+      "content_snippet": " Comments: 12 pages, 3 figures, 7 tables",
+      "code_links_from_meta": "https://github.com/search?q=MineValiCoder%3A%20Reliable%20Code%20Generation%20with%20Test%20Case%20Quality%20Mining%20and%20Bipartite%20Graph-Based%20Mutual%20Validation%20arxiv%20github&type=repositories",
+      "is_ascend": false,
       "title_zh": "MineValiCoder: Reliable Code Generation with Test Case Quality Mining and Bipartite Graph-Based Mutual Validation",
       "summary_cn": " Comments: 12 pages, 3 figures, 7 tables",
       "innovations": [
-        "见正文"
+        "见正文： Comments: 12 pages, 3 figures, 7 tables"
       ],
       "scenario_cn": " Comments: 12 pages, 3 figures, 7 tables",
+      "title_en": "MineValiCoder: Reliable Code Generation with Test Case Quality Mining and Bipartite Graph-Based Mutual Validation",
       "institution": "未明确披露",
-      "opensource_status": "未确认开源",
-      "code_url": "",
-      "is_ascend": false
+      "code_url": "h",
+      "opensource_status": "已确认开源"
     }
   ]
 }
