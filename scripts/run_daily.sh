@@ -42,6 +42,8 @@ if git rev-parse --verify origin/main >/dev/null 2>&1; then
 fi
 
 # 抓取基础数据（带重试）
+DAILY_HTML="docs/daily/${TARGET_DATE}.html"
+DAILY_JSON="docs/data/${TARGET_DATE}.json"
 retry 3 60 python3 scripts/generate_daily.py --date "${TARGET_DATE}" --fail-on-empty-fetch || {
   echo "[warn] fetch failed after retries; skipping v2 pipeline"
   SKIP_V2=1
@@ -80,8 +82,6 @@ print('fallback ok, kept:', len(enriched))
 "
 fi
 
-DAILY_HTML="docs/daily/${TARGET_DATE}.html"
-DAILY_JSON="docs/data/${TARGET_DATE}.json"
 if [ ! -s "$DAILY_HTML" ] || [ ! -s "$DAILY_JSON" ]; then
   echo "[error] expected output missing: $DAILY_HTML / $DAILY_JSON"
   exit 1
