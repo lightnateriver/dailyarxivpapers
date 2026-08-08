@@ -50,8 +50,8 @@ retry 3 60 python3 scripts/generate_daily.py --date "${TARGET_DATE}" --fail-on-e
 }
 
 if [ "${SKIP_V2:-0}" != "1" ]; then
-  # v2 摘要生成（带独立超时保护）
-  timeout 600 python3 scripts/generate_daily_v2.py --date "${TARGET_DATE}" || {
+  # v2 摘要生成（带独立超时保护；41 篇约需 20-30 分钟）
+  timeout 1800 python3 scripts/generate_daily_v2.py --date "${TARGET_DATE}" || {
     echo "[warn] v2 pipeline failed/timed out; page may have raw abstract content"
   }
 fi
@@ -69,11 +69,17 @@ ROOT = Path('.')
 src = json.loads(Path('$DAILY_JSON').read_text())
 filtered = [p for p in src['papers'] if not is_excluded(p)]
 papers = group_and_cap_candidates(filtered, per_topic_limit=5)
-enriched = [{**p, 'title_en': p['title'], 'title_zh': p['title'],
-  'summary_cn': (p.get('abstract') or '')[:500],
-  'innovations': ['见正文'], 'scenario_cn': (p.get('abstract') or '')[:300],
-  'institution': '未明确披露', 'opensource_status': '未确认开源', 'code_url': '',
-  'is_ascend': ascend_priority(p)} for p in papers]
+enriched = []
+for p in papers:
+    abstext = p.get('abstract') or ''
+    if len(abstext.strip()) < 20:
+        abstext = '论文标题：' + p.get('title', '')
+    enriched.append({**p, 'title_en': p['title'], 'title_zh': p['title'],
+        'summary_cn': abstext[:500],
+        'innovations': ['见正文：' + abstext[:80]],
+        'scenario_cn': abstext[:300],
+        'institution': '未明确披露', 'opensource_status': '未确认开源', 'code_url': '',
+        'is_ascend': ascend_priority(p)})
 enriched = sorted(enriched, key=sort_key)
 Path('$FULL_ENRICHED').write_text(json.dumps({'date':'$TARGET_DATE','count':len(enriched),
   'fetched_count':src['fetched_count'],'papers':enriched}, ensure_ascii=False))
