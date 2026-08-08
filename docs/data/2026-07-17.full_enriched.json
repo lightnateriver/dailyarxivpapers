@@ -101,11 +101,13 @@
       "code_links_from_meta": "https://github.com/search?q=D-cut%3A%20Adaptive%20Verification%20Depth%20Pruning%20for%20Batched%20Speculative%20Decoding%20arxiv%20github&type=repositories",
       "is_ascend": false,
       "title_zh": "D-cut: Adaptive Verification Depth Pruning for Batched Speculative Decoding",
-      "summary_cn": "",
+      "summary_cn": "投机解码（Speculative Decoding）通过并行草稿生成加速 LLM 推理且不损失输出质量，近期并行草稿方法进一步解耦草稿长度与生成延迟，支持更长草稿和更高的平均接受 token 数（MAT）。但在高请求并发下，长草稿会在大量被拒绝的 token 上浪费计算，导致验证开销剧增，甚至使投机解码比自回归解码更慢。D-Cut 提出自适应剪枝方法，跨批次联合挑选草稿 token，把验证预算集中在最可能被接受的 token 上，兼顾吞吐与加速效果。",
       "innovations": [
-        "见正文："
+        "跨请求剪枝（Cross-request Pruning）：观察到并发请求间接受长度差异显著，依据草稿置信度在批次内自适应分配验证预算，而非统一处理所有请求。",
+        "运行时成本模型（Runtime Cost Model）：验证成本与 GPU 架构、并行策略等部署环境强相关，D-Cut 内置成本模型动态调整剪枝深度以适配目标环境。",
+        "显著实验收益：高并发下平均加速比从 1.26× 提升到 1.65×，恢复稠密模型配置中长草稿基线退化（比自回归更慢）场景的加速，MoE 模型上相对自回归解码最高达 3.0× 加速。"
       ],
-      "scenario_cn": "",
+      "scenario_cn": "解决高并发推理场景下投机解码长草稿导致验证开销过大、甚至比自回归解码更慢的问题，适用于稠密与 MoE 大模型的批量推理服务，让投机解码在高并发生产环境保持稳定加速。",
       "title_en": "D-cut: Adaptive Verification Depth Pruning for Batched Speculative Decoding",
       "institution": "未明确披露",
       "code_url": "h",
@@ -347,11 +349,14 @@
       "code_links_from_meta": "https://github.com/search?q=Gold-Guided%20Programmatic%20Distillation%20for%20Financial%20Reasoning%20over%20Hybrid%20Tables%20and%20Text%20arxiv%20github&type=repositories",
       "is_ascend": false,
       "title_zh": "Gold-Guided Programmatic Distillation for Financial Reasoning over Hybrid Tables and Text",
-      "summary_cn": " Comments: 12 pages, 7 figures",
+      "summary_cn": "金融问答常需在混合表格与文本数据上进行多源推理与精确数值计算，而大语言模型虽然能生成中间推理步骤，但自然语言理由易出现算术错误，作为蒸馏监督信号不可靠。本文基于程序化蒸馏思路，用经过执行验证的 Python 程序替代自由文本推理，将大型教师模型的可靠数值推理能力迁移到紧凑的学生模型。实验在 TAT-QA 上验证了框架的有效性：最优 7B 学生模型达到 87.00 EM / 87.18 F1，大幅超过 72B 教师模型（78.46 EM）以及 TAGOP、TAT-LLM 等传统与强 LLM 基线。结果表明，执行验证的程序化蒸馏为训练小模型进行可靠数值推理提供了有效且可扩展的框架。",
       "innovations": [
-        "见正文： Comments: 12 pages, 7 figures"
+        "用执行验证的 Python 程序替代自由文本 rationale 作为蒸馏监督信号，从根本上规避自然语言推理中的算术错误",
+        "利用 gold derivations 引导教师侧程序合成，并只保留执行正确且输出与金标准答案一致的程序，确保监督数据质量",
+        "引入迭代恢复阶段（iterative recovery）：重新处理教师失败的样本，让学生模型在训练中恢复并纳入新验证出的正确程序",
+        "7B 学生模型以 87.00 EM / 87.18 F1 全面超越 72B 教师与 TAGOP、TAT-LLM 等强基线，验证框架的高效性与可扩展性"
       ],
-      "scenario_cn": " Comments: 12 pages, 7 figures",
+      "scenario_cn": "解决混合表格+文本金融问答中数值推理不可靠、自然语言理由难以作为高质量蒸馏信号的问题；适用于金融 QA 等需要精确数值计算场景下用小模型替代大模型做可靠推理。",
       "title_en": "Gold-Guided Programmatic Distillation for Financial Reasoning over Hybrid Tables and Text",
       "institution": "未明确披露",
       "code_url": "h",
@@ -714,11 +719,14 @@
       "code_links_from_meta": "https://github.com/search?q=Leveraging%20Instruction%20Tuning%20and%20Merging%20for%20Reasoning%20Model%20Adaptation%20arxiv%20github&type=repositories",
       "is_ascend": false,
       "title_zh": "Leveraging Instruction Tuning and Merging for Reasoning Model Adaptation",
-      "summary_cn": "",
+      "summary_cn": "推理语言模型（RLM）在数学、编程等可验证领域表现出色，因为这些领域能可靠验证输出，从而支撑强化学习训练；但在缺乏可靠验证器的领域，训练仍然困难。本文发现，大量带人工解答但无推理轨迹的监督微调数据可以被高效利用：先对 RLM 做经典指令微调（不含推理轨迹的 SFT），再将微调后的模型与原始推理模型做模型合并，从而恢复其在目标领域的推理行为。广泛实验表明，该方法在可验证和难以验证的领域（如编程、文本摘要）均能提升 RLM 性能，同时保持其他领域的能力。该方法成本极低，单次改进开销不到 3 美元。",
       "innovations": [
-        "见正文："
+        "提出「指令微调 + 模型合并」两阶段方法，利用无推理轨迹的传统 SFT 数据改进 RLM，绕开对可靠验证器的依赖",
+        "通过将指令微调模型与原始推理模型合并，在目标领域恢复并增强推理行为，同时避免灾难性遗忘、保持其他领域能力",
+        "方法同时适用于可验证与难验证领域（编程、文本摘要等），扩展了 RLM 改进的适用范围",
+        "极致性价比：性能提升只需不到 3 美元的训练成本，适合大规模推广应用"
       ],
-      "scenario_cn": "",
+      "scenario_cn": "解决推理模型在缺乏可靠验证器（如文本摘要等难以自动评判的领域）中难以通过强化学习继续提升的问题，同时盘活海量现成的带人工解答的监督微调数据，为 RLM 的低成本领域适配提供通用方案。",
       "title_en": "Leveraging Instruction Tuning and Merging for Reasoning Model Adaptation",
       "institution": "未明确披露",
       "code_url": "h",
@@ -814,11 +822,14 @@
       "code_links_from_meta": "https://github.com/search?q=A%20structure-preserving%20Numerical%20Method%20for%20the%20Compressible%20Resistive-Hall-MHD%20System%20arxiv%20github&type=repositories",
       "is_ascend": false,
       "title_zh": "A structure-preserving Numerical Method for the Compressible Resistive-Hall-MHD System",
-      "summary_cn": " Comments: 37 pages, 7 figures",
+      "summary_cn": "本文提出一种保持结构的数值方法，用于求解可压缩阻性 Hall-磁流体力学（MHD）模型。方法将微分算子拆分为两部分：由可压缩欧拉方程构成的流体力学部分，以及由洛伦兹力与感应方程耦合构成的磁场部分，分别采用连续 Lagrange 元和 curl-conforming 有限元空间离散。流体部分保持密度与内能的正性、总能守恒及比熵最小值原理，磁场部分则天然保持磁散度对合约束。流体部分用显式 SSP-RK 方法求解，磁场部分用 Crank-Nicolson 方法配合 Newton 迭代求解，并通过 whistler 波、Orszag-Tang 涡和磁重连等基准算例验证了方法的鲁棒性与精度。",
       "innovations": [
-        "见正文： Comments: 37 pages, 7 figures"
+        "算子分裂框架：将阻性 Hall-MHD 拆解为欧拉流体部分与磁场部分，两部分采用匹配的有限元空间（连续 Lagrange 元 + curl-conforming 元），实现各物理结构的分别保持",
+        "磁场部分无需后处理投影即可天然满足 div B 散度对合约束，同时流体部分严格保证密度/内能正性、总能守恒与熵不等式",
+        "给出了 Newton 迭代 Jacobian 的强制性（coercivity）估计，并引入高阶人工电阻率改善非线性残差的条件数与 Jacobian 的可逆性",
+        "在 whistler 波、Orszag-Tang 涡（对比阻性 MHD 与阻性 Hall-MHD）及磁重连等挑战性基准上系统验证了精度与鲁棒性"
       ],
-      "scenario_cn": " Comments: 37 pages, 7 figures",
+      "scenario_cn": "解决可压缩阻性 Hall-MHD 数值模拟中难以同时满足正性保持、能量守恒、熵约束与磁场散度约束的问题；适用于磁重连、等离子体物理、空间与天体等离子体（如太阳风、磁层）等强 Hall 效应场景的高保真数值模拟。",
       "title_en": "A structure-preserving Numerical Method for the Compressible Resistive-Hall-MHD System",
       "institution": "未明确披露",
       "code_url": "h",
@@ -1086,11 +1097,14 @@
       "code_links_from_meta": "https://github.com/search?q=CoEvoT%3A%20Co-Evolving%20Chain-of-Thought%20Prompting%20for%20Graph-LLM%20Reasoning%20arxiv%20github&type=repositories",
       "is_ascend": false,
       "title_zh": "CoEvoT: Co-Evolving Chain-of-Thought Prompting for Graph-LLM Reasoning",
-      "summary_cn": " Comments: Under review",
+      "summary_cn": "CoEvoT 提出一种面向图-LLM 推理的协同进化思维链（CoT）提示框架。现有基于 CoT 的图-LLM 方法在生成中间推理步骤时始终依赖固定不变的图 token，无法对结构线索进行逐步细化。CoEvoT 将文本到图 token 重写与图到文本推理引导耦合为闭环：每个中间文本推理结果通过轻量条件网络更新图 token 证据状态，更新后的 token 再反馈进下一步指令以引导后续推理，实现逐步、状态感知的证据细化而非在固定图快照上推理。在 8 个数据集上的实验表明，CoEvoT 一致优于现有 SOTA 基线。",
       "innovations": [
-        "见正文： Comments: Under review"
+        "提出协同进化闭环框架：文本到图 token 重写与图到文本推理引导相互耦合，推理与图证据状态持续互相更新",
+        "设计轻量条件网络：用每个中间推理步骤动态更新图 token 的证据状态，突破固定图快照的限制",
+        "实现逐步状态感知的证据细化：更新后的图 token 反馈进下一步指令，使结构线索随推理过程逐层精炼",
+        "在 8 个数据集上验证一致超越 SOTA，框架简单且无需额外监督"
       ],
-      "scenario_cn": " Comments: Under review",
+      "scenario_cn": "解决图数据分布偏移下、仅有少量甚至无监督标注时，图-LLM 模型无法在推理过程中动态利用和精炼图结构信息的问题，适用于少标注/无标注图分类、节点预测等图学习任务。",
       "title_en": "CoEvoT: Co-Evolving Chain-of-Thought Prompting for Graph-LLM Reasoning",
       "institution": "未明确披露",
       "code_url": "h",
@@ -1281,11 +1295,13 @@
       "code_links_from_meta": "https://github.com/search?q=3D%20Geometric%20Tooth%20Alignment%20Planning%20via%20Deep%20Reinforcement%20Learning%20arxiv%20github&type=repositories",
       "is_ascend": false,
       "title_zh": "3D Geometric Tooth Alignment Planning via Deep Reinforcement Learning",
-      "summary_cn": "",
+      "summary_cn": "本文提出一种基于深度强化学习的 3D 牙齿几何对齐规划框架，将正畸中从初始错颌畸形到目标对齐状态的连续牙弓轨迹规划建模为马尔可夫决策过程（MDP），在优化几何轨迹的同时融入牙间碰撞避免与路径效率等空间约束。方法基于深度确定性策略梯度（DDPG）算法，在 10K 条基于临床数据的专家治疗方案数据集上验证，实验表明其在路径安全性与几何效率上优于现有基线，为数字化正畸提供了稳健、自动化的对齐路径规划方案。",
       "innovations": [
-        "见正文："
+        "提出 Transformer 智能体建模牙齿间的复杂空间交互，处理高维状态-动作空间，提升策略表达能力",
+        "设计动态掩码机制，限制每个时间步只移动少量牙齿子集，更贴合临床分步对齐的逻辑",
+        "采用两阶段课程学习策略逐步增加任务难度，保证训练稳定性并提升路径搜索效率"
       ],
-      "scenario_cn": "",
+      "scenario_cn": "面向现代数字化正畸领域，自动生成从初始错颌到目标对齐的 3D 牙齿几何对齐轨迹，替代传统人工设计治疗方案，用于正畸治疗路径规划与临床辅助。",
       "title_en": "3D Geometric Tooth Alignment Planning via Deep Reinforcement Learning",
       "institution": "未明确披露",
       "code_url": "h",
@@ -1485,11 +1501,14 @@
       "code_links_from_meta": "https://github.com/search?q=Online%20Beck--Fiala%20Down%20to%20Logarithmic%20Sparsity%20arxiv%20github&type=repositories",
       "is_ascend": false,
       "title_zh": "Online Beck--Fiala Down to Logarithmic Sparsity",
-      "summary_cn": " Comments: 9 pages",
+      "summary_cn": "本文研究组合差异理论中的 Beck-Fiala 猜想：每列至多含 d 个非零元的 {0,1} 矩阵，其差异应为 O(√d)。此前 Bansal 与 Jiang 已在 d ≥ log(T)² 时证明该猜想成立，本文将适用范围推进到 d ≥ log(T)^{1+o(1)}，且关键突破在于该结果是由一个高效的最小化前缀差异（prefix discrepancy）的在线算法实现的。该界限本质最优：已知在 d = o(log T) 时在线前缀差异为 ω(√d)，无法再改进。作为直接推论，Spencer 设定下在线向量平衡的开放问题也随之解决。",
       "innovations": [
-        "见正文： Comments: 9 pages"
+        "将经典离线 Beck-Fiala 猜想的可证明范围从 d ≥ log(T)² 扩展到 d ≥ log(T)^{1+o(1)}",
+        "核心突破在于以高效在线算法实现该结果，直接最小化前缀差异而非仅给出离线存在性证明",
+        "证明结果本质最优性：d = o(log T) 时在线前缀差异下界为 ω(√d)，界限不可再改进",
+        "算法基于紧支撑的 Metropolis 定点游走（fixed-point walk），融合近期在线 Komlós 问题多项工作的思想，并据此解决 Spencer 设定下的在线向量平衡开放问题"
       ],
-      "scenario_cn": " Comments: 9 pages",
+      "scenario_cn": "解决在线设置下 Beck-Fiala 猜想稀疏范围的扩展问题：在每列至多 d 个非零元的 {0,1} 矩阵中在线分配符号，使所有前缀差异保持在 O(√d) 且高效可计算，同时将可证明的稀疏下界推进至 log(T)^{1+o(1)}。",
       "title_en": "Online Beck--Fiala Down to Logarithmic Sparsity",
       "institution": "未明确披露",
       "code_url": "h",
@@ -1531,11 +1550,13 @@
       "code_links_from_meta": "https://github.com/search?q=Inference-Time%20Concept%20Suppression%20and%20Video-Centric%20Evaluation%20for%20Text-to-Video%20Models%20arxiv%20github&type=repositories",
       "is_ascend": false,
       "title_zh": "Inference-Time Concept Suppression and Video-Centric Evaluation for Text-to-Video Models",
-      "summary_cn": " Comments: 29 pages, 9 figures, 11 tables",
+      "summary_cn": "文本生成视频（T2V）模型虽能生成真实且时序连贯的视频，但可控地移除生成器中的某个目标概念仍然困难。与文生图概念擦除不同，T2V 遗忘需要在视频帧间持续抑制目标概念，同时保留非目标主体、动作、场景和时序结构。本文提出 SIRUS，一个免训练的推理期概念级 T2V 遗忘框架：给定目标概念的文本别名，在采样过程中定位并抑制与目标相关的提示证据，无需更新文本编码器或去噪网络。在 CogVideoX 上，SIRUS 在五个安全、物体和风格概念上达到 70.4% 的平均遗忘成功率和 25.7% 的平均帧命中率，优于 VideoEraser 的 44.4%/47.2%，并将 VBench 平均质量下降从 -0.043 改善到 -0.016，在已评估的基线中取得最强的遗忘-质量权衡；在 Wan2.2 上的迁移实验表明其可泛化到现代 T2V 骨干网络。",
       "innovations": [
-        "见正文： Comments: 29 pages, 9 figures, 11 tables"
+        "提出 SIRUS：首个免训练的推理期 T2V 概念遗忘框架，仅利用目标概念的文本别名定位提示证据并在采样时抑制其表达，不更新文本编码器或去噪网络",
+        "设计面向视频的 T2V 遗忘评估框架，从目标遗忘、非目标保留、视频质量、越狱鲁棒性和效率五个维度分别度量，使用视频级失败准则、帧级残留统计、配对保留分析和 VBench 质量诊断",
+        "在 CogVideoX 上以 70.4% 遗忘成功率对比 VideoEraser 44.4%，同时把 VBench 质量下降从 -0.043 压缩到 -0.016，取得最强遗忘-质量权衡；并通过 Wan2.2 迁移实验验证跨骨干泛化能力"
       ],
-      "scenario_cn": " Comments: 29 pages, 9 figures, 11 tables",
+      "scenario_cn": "适用于需要从视频生成模型中可控移除特定概念（如安全敏感内容、特定物体或风格）的场景，例如内容安全治理、版权风格清除等，在保持视频生成质量和非目标内容完整性的同时实现即插即用的推理期概念擦除。",
       "title_en": "Inference-Time Concept Suppression and Video-Centric Evaluation for Text-to-Video Models",
       "institution": "未明确披露",
       "code_url": "h",
@@ -1595,11 +1616,14 @@
       "code_links_from_meta": "https://github.com/search?q=KeyFrame-Compass%3A%20Towards%20Comprehensive%20Evaluation%20of%20Keyframe-Conditioned%20Video%20Generation%20arxiv%20github&type=repositories",
       "is_ascend": false,
       "title_zh": "KeyFrame-Compass: Towards Comprehensive Evaluation of Keyframe-Conditioned Video Generation",
-      "summary_cn": " Comments: 35 pages",
+      "summary_cn": "视频生成正越来越多地采用关键帧驱动的工作流：创作者提供一系列参考图像来引导生成。尽管现有模型已支持多关键帧条件，但能否忠实还原指定关键帧、同时保持整体视频质量仍不明确。KeyFrame-Compass 是首个用于评估关键帧条件视频生成的综合基准，包含 386 个精心筛选的样本，覆盖三个应用领域、两种视频结构、两种提示粒度、两种条件格式和四种关键帧密度，支持多种生成设置下的受控分析。对九个代表性视频生成系统的实验揭示了现有模型的若干根本性局限。",
       "innovations": [
-        "见正文： Comments: 35 pages"
+        "首个面向关键帧条件视频生成评估的综合基准：386 个样本系统覆盖应用领域、视频结构、提示粒度、条件格式、关键帧密度五个维度，实现多设置下的受控对比分析",
+        "提出自动化评估框架，将关键帧执行分解为六个互补指标：存在性、保真度、时序顺序、定位、持久性与唯一性，联合衡量关键帧遵循程度",
+        "整体视频质量采用基于证据的 MLLM 判定（evidence-grounded），并辅以专用感知模型增强，兼顾语义与感知维度",
+        "实验揭示关键发现：模型在忠实关键帧执行与自然视频合成之间存在明显权衡；关键帧约束越密集性能越差；多数开源模型无法将 storyboard-grid 输入正确解读为时序有序的关键帧序列"
       ],
-      "scenario_cn": " Comments: 35 pages",
+      "scenario_cn": "解决关键帧条件视频生成缺乏系统性评估基准的问题——此前无法回答模型能否忠实再现用户指定关键帧、同时维持视频整体质量这一核心疑问。该基准提供受控的评测设置与自动化指标体系，帮助研究者定位模型在关键帧遵循（密集约束、条件格式解析等）上的根本性缺陷。",
       "title_en": "KeyFrame-Compass: Towards Comprehensive Evaluation of Keyframe-Conditioned Video Generation",
       "institution": "未明确披露",
       "code_url": "h",
@@ -2021,11 +2045,11 @@
       "code_links_from_meta": "https://github.com/search?q=Multiscale%20Mixed-Dimensional%20Simulation%20via%20Domain%20Decomposition%20and%20Non-Intrusive%20Neural%20Model%20Order%20Reduction%20arxiv%20github&type=repositories",
       "is_ascend": false,
       "title_zh": "Multiscale Mixed-Dimensional Simulation via Domain Decomposition and Non-Intrusive Neural Model Order Reduction",
-      "summary_cn": " Comments: 43 pages, 7 figures",
+      "summary_cn": "论文标题：Multiscale Mixed-Dimensional Simulation via Domain Decomposition and Non-Intrusi",
       "innovations": [
-        "见正文： Comments: 43 pages, 7 figures"
+        "见正文"
       ],
-      "scenario_cn": " Comments: 43 pages, 7 figures",
+      "scenario_cn": "论文标题：Multiscale Mixed-Dimensional Simulation via Domain Decomposition and Non-Intrusi",
       "title_en": "Multiscale Mixed-Dimensional Simulation via Domain Decomposition and Non-Intrusive Neural Model Order Reduction",
       "institution": "未明确披露",
       "code_url": "h",
@@ -2116,11 +2140,14 @@
       "code_links_from_meta": "https://github.com/search?q=Finite-Sample%20Conformal%20Coverage%20Recovery%20via%20Fusion%20under%20Degraded%20Local%20Guarantees%20in%20Occupancy%20Map%20Estimation%20arxiv%20github&type=repositories",
       "is_ascend": false,
       "title_zh": "Finite-Sample Conformal Coverage Recovery via Fusion under Degraded Local Guarantees in Occupancy Map Estimation",
-      "summary_cn": "",
+      "summary_cn": "多机器人自主建图任务中，高斯过程占用建图（GPOM）等连续建图方法虽能提供空间相关性与不确定性估计，却缺乏严格的有限样本可靠性保证；为此，每个机器人本地地图可借助保形预测（conformal prediction）获得免分布覆盖保证，但这种局部保证在实践中会退化——机器人轨迹的时间相关性破坏了保形校准所需的可交换性，且各机器人只能观测环境中空间有限、非均匀的部分。本文将这些退化后的逐智能体保证作为已知前提，设计了一种分布式融合算法：机器人之间仅交换轻量级标量 e-values，接收方按每邻居域的误覆盖预算与不确定性衰减融合算子进行融合，并在数学上证明融合后的集合值地图无论通信图拓扑或传感器噪声分布如何，都能恢复用户指定的目标覆盖水平。仿真实验表明融合预测器可靠地满足理论覆盖界，且更稠密的通信拓扑能显著缩小未分类区域、提升地图效率。",
       "innovations": [
-        "见正文："
+        "提出一种分布式 e-value 融合算法，仅交换轻量级标量即可将各机器人退化的局部保形覆盖保证恢复为团队级目标覆盖水平",
+        "引入逐邻居域误覆盖预算（per-neighborhood miscoverage budget）与不确定性衰减融合算子（uncertainty-attenuated fusion operator）用于融合接收",
+        "给出与通信图拓扑和传感器噪声分布无关的有限样本覆盖恢复理论保证",
+        "在证据不足的区域主动拒绝给出单一判定（同时返回 free 与 occupied 两个标签），避免过度阈值化导致的错误决策"
       ],
-      "scenario_cn": "",
+      "scenario_cn": "多机器人协同建图/占用地图估计场景，尤其适用于各机器人局部保形预测保证因轨迹时间相关性与空间观测受限而退化、但仍需团队级覆盖可靠性保证的分布式感知系统；融合失败区域以'不表态'代替强制分类，适用于对误分类代价敏感的任务。",
       "title_en": "Finite-Sample Conformal Coverage Recovery via Fusion under Degraded Local Guarantees in Occupancy Map Estimation",
       "institution": "未明确披露",
       "code_url": "h",
@@ -2162,11 +2189,14 @@
       "code_links_from_meta": "https://github.com/search?q=From%20Product-Centred%20Retrieval%20to%20Experience-Led%20Commerce%3ATwelve%20Candidate%20Design%20Principles%20for%20Fashion%20E-Commerce%20User%20Experience%20arxiv%20github&type=repositories",
       "is_ascend": false,
       "title_zh": "From Product-Centred Retrieval to Experience-Led Commerce:Twelve Candidate Design Principles for Fashion E-Commerce User Experience",
-      "summary_cn": "",
+      "summary_cn": "本文提出十二条\"体验导向电商\"（Experience-Led Commerce）候选设计原则，面向高约束、关系型时尚电商场景，通过设计驱动的归纳方法在构建多供应商原型 VogueDrop 的过程中提炼而成。原则覆盖多入口发现、体验连续性、关系型探索、偏好主权、证据范围对应、推荐时可行性、客户兼容的商业排序、自适应但稳定的工作空间、可归属的交易权责、结果关联学习、共享搭配创作以及人对 Agent 的问责交接等维度。每条原则均配以预设假设、主要行为结果指标与拒绝条件，并规划了形成性关键事件研究和预注册的匹配界面实验，体验侧与平台侧结果分开报告。作者明确以时尚作为有界验证域，不声称这些原则普适适用于所有电商。",
       "innovations": [
-        "见正文："
+        "系统化提出12条可证伪的候选设计原则，每一条都配套预设假设、主要行为结果指标和拒绝条件，形成可检验的设计理论而非泛泛建议",
+        "覆盖从检索到交易全链路的完整原则谱系，特别关注多入口发现、偏好主权与人对Agent的问责交接等新型交互问题",
+        "采用\"构建原型+归纳提炼\"的设计主导方法，并以时尚电商作为有意选择的有界领域，使尺码、材质、搭配等交互失效点可观察，同时克制地不宣称普适性",
+        "规划了形成性关键事件研究与预注册的匹配界面实验双轨验证方案，并区分用户体验与平台侧指标分开报告"
       ],
-      "scenario_cn": "",
+      "scenario_cn": "适用于高约束、关系型时尚电商平台（尤其多供应商场景）的用户体验设计，解决用户在尺码匹配、材质与搭配决策、身份敏感偏好、卖家碎片化、视觉对应和交付时效等环节中的交互断裂问题。",
       "title_en": "From Product-Centred Retrieval to Experience-Led Commerce:Twelve Candidate Design Principles for Fashion E-Commerce User Experience",
       "institution": "未明确披露",
       "code_url": "h",

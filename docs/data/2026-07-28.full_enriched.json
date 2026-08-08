@@ -605,11 +605,14 @@
       "code_links_from_meta": "https://github.com/search?q=MarineEVT%3A%20Advancing%20Event-Centric%20Marine%20Video%20Understanding%20via%20Visual%20Tool%20Reasoning%20arxiv%20github&type=repositories",
       "is_ascend": false,
       "title_zh": "MarineEVT: Advancing Event-Centric Marine Video Understanding via Visual Tool Reasoning",
-      "summary_cn": " Comments: Accepted to The 19th European Conference on Computer Vision (ECCV) 2026",
+      "summary_cn": "该工作聚焦视觉语言模型（VLM）在视频领域性能退化的问题，特别是海事视频理解面临的领域专业知识要求高、关键事件稀疏且不可预测的挑战。作者构建了首个事件中心的海事视频理解数据集 MarineEVT，包含 2 万条多任务、视频级视觉问答数据对，覆盖海洋理解与分析的多个维度。基于该数据集，提出事件中心视觉工具集成推理框架 EVT-R1，利用强大视觉工具驱动模型定位并解读与视觉问题及人类意图对齐的关键信息。EVT-R1 与 11 个 SOTA VLM 对比，分别超过最强开源模型 5.22 分、最强商业模型 11.09 分，为海洋生态发现与海洋教育奠定基础。",
       "innovations": [
-        "见正文： Comments: Accepted to The 19th European Conference on Computer Vision (ECCV) 2026"
+        "构建首个事件中心的海事视频理解数据集 MarineEVT，含 20K 多任务视频级 VQA 数据对，覆盖多个海洋理解与分析维度",
+        "提出 EVT-R1（Event-centric Visual Tool-integrated Reasoning）方法，将海事视频理解分解为事件中心的视觉工具集成推理过程，用工具驱动模型定位和解读关键信息",
+        "在多种设置下与 11 个 SOTA VLM 系统对比，EVT-R1 超越最强开源模型 5.22 分、最强商业模型 11.09 分",
+        "面向生态发现与海洋教育场景，支持海洋动态解读、生态交互推理与可持续海洋视频理解分析"
       ],
-      "scenario_cn": " Comments: Accepted to The 19th European Conference on Computer Vision (ECCV) 2026",
+      "scenario_cn": "解决 VLM 在视频领域（尤其海事视频）性能退化问题：海事视频中信息事件稀疏、不可预测、分布不均，且需大量领域专业知识，传统视频 VLM 难以定位和解读关键信息。应用场景包括海洋生态发现、海洋教育，以及面向可持续发展的海洋视频理解与分析。",
       "title_en": "MarineEVT: Advancing Event-Centric Marine Video Understanding via Visual Tool Reasoning",
       "institution": "未明确披露",
       "code_url": "h",
@@ -837,11 +840,11 @@
       "code_links_from_meta": "https://github.com/search?q=DeepLens%20Diagnosis%20Agent%3A%20Agentic%20Workflow%20Design%20Lets%20a%20Small%20Reasoning%20Model%20Compete%20with%20Frontier%20LLMs%20arxiv%20github&type=repositories",
       "is_ascend": false,
       "title_zh": "DeepLens Diagnosis Agent: Agentic Workflow Design Lets a Small Reasoning Model Compete with Frontier LLMs",
-      "summary_cn": " Comments: 20 pages, 5 figures, 5 tables. Technical report, John Snow Labs",
+      "summary_cn": "论文标题：DeepLens Diagnosis Agent: Agentic Workflow Design Lets a Small Reasoning Model C",
       "innovations": [
-        "见正文： Comments: 20 pages, 5 figures, 5 tables. Technical report, John Snow Labs"
+        "见正文"
       ],
-      "scenario_cn": " Comments: 20 pages, 5 figures, 5 tables. Technical report, John Snow Labs",
+      "scenario_cn": "论文标题：DeepLens Diagnosis Agent: Agentic Workflow Design Lets a Small Reasoning Model C",
       "title_en": "DeepLens Diagnosis Agent: Agentic Workflow Design Lets a Small Reasoning Model Compete with Frontier LLMs",
       "institution": "未明确披露",
       "code_url": "h",
@@ -1165,11 +1168,13 @@
       "code_links_from_meta": "https://github.com/search?q=Reasoning%20to%20Regulate%3A%20Chain-of-Thought%20for%20Traffic%20Rule%20Understanding%20arxiv%20github&type=repositories",
       "is_ascend": false,
       "title_zh": "Reasoning to Regulate: Chain-of-Thought for Traffic Rule Understanding",
-      "summary_cn": " Comments: Technical Report",
+      "summary_cn": "本文提出一种将思维链（CoT）能力引入视觉语言模型（VLM）的框架，用于自动驾驶中的交通规则理解。作者指出规则理解本质是推理问题——规则是否适用取决于标志与车道空间布局及场景上下文的关联，而非简单的识别任务。为此设计了可扩展的 CoT 数据构建流水线：先用强 LLM 通过两轮策略引导生成推理过程，再用 VLM 验证器过滤错误样本，得到高质量的（CoT, 答案）对。训练上采用两阶段方案：先 SFT 学习从推理到答案的生成，再用带答案锚定细粒度奖励的 GRPO 强化学习提升最终答案准确率。在 MapDR 数据集上的实验表明，该方法显著提升了可解释性与准确率，是首个基于推理的法规感知自动驾驶框架。",
       "innovations": [
-        "见正文： Comments: Technical Report"
+        "将交通规则理解重新定义为推理问题而非直接序列预测，显式建模标志语义与地图结构之间的关联",
+        "提出可扩展的 CoT 数据策展流水线：LLM 两轮策略自举生成推理过程 + VLM 验证器过滤错误样本，产出高质量（CoT, 答案）训练对",
+        "采用 SFT（教推理到答案生成）+ GRPO 强化学习（基于答案的细粒度奖励）的两阶段训练方案，兼顾可解释性与最终准确率"
       ],
-      "scenario_cn": " Comments: Technical Report",
+      "scenario_cn": "解决自动驾驶中交通标志规则理解准确率低、缺乏可解释性的问题，使系统在解读限速、禁行等标志时能结合车道级地图上下文进行符合法规的推理判断。",
       "title_en": "Reasoning to Regulate: Chain-of-Thought for Traffic Rule Understanding",
       "institution": "未明确披露",
       "code_url": "h",
@@ -1416,11 +1421,11 @@
       "code_links_from_meta": "https://github.com/search?q=Bigger%20or%20Cheaper%3F%20Scale%20and%20Quantization%20Effects%20on%20Uncertainty%20Signals%20in%20Vision-Language%20Models%20Under%20Image%20Degradation%20arxiv%20github&type=repositories",
       "is_ascend": false,
       "title_zh": "Bigger or Cheaper? Scale and Quantization Effects on Uncertainty Signals in Vision-Language Models Under Image Degradation",
-      "summary_cn": " Comments: 12 pages, 4 figures. Code and data: this https URL",
+      "summary_cn": "论文标题：Bigger or Cheaper? Scale and Quantization Effects on Uncertainty Signals in Visi",
       "innovations": [
-        "见正文： Comments: 12 pages, 4 figures. Code and data: this https URL"
+        "见正文"
       ],
-      "scenario_cn": " Comments: 12 pages, 4 figures. Code and data: this https URL",
+      "scenario_cn": "论文标题：Bigger or Cheaper? Scale and Quantization Effects on Uncertainty Signals in Visi",
       "title_en": "Bigger or Cheaper? Scale and Quantization Effects on Uncertainty Signals in Vision-Language Models Under Image Degradation",
       "institution": "未明确披露",
       "code_url": "h",
@@ -1510,11 +1515,14 @@
       "code_links_from_meta": "https://github.com/search?q=Context-Aware%20Concept%20Distillation%20for%20Trustworthy%20Flood%20Prediction%20arxiv%20github&type=repositories",
       "is_ascend": false,
       "title_zh": "Context-Aware Concept Distillation for Trustworthy Flood Prediction",
-      "summary_cn": " Comments: to be published in IJCAI 2026 proceedings",
+      "summary_cn": "洪水风险管理的有效依赖准确预报，但 SOTA 深度学习模型的\"黑盒\"特性阻碍了高风险公共安全决策中的信任与问责。现有 XAI 方法只能给出局部归因，无法提供应急响应部门所需的可验证、具有操作意义的因果解释。为此作者提出上下文感知概念蒸馏（CACD）框架，与领域专家合作将不透明的 LSTM 蒸馏为可解释、符合水文学语义的代理模型，并引入无监督流程发现\"水文语言\"概念体系。模型在 5,203 个流域上取得高保真度（中位 NSE 0.70），在未见未来数据上显著优于 MLP 等黑盒基线，证明了人类可解释概念足以重建洪水动态。",
       "innovations": [
-        "见正文： Comments: to be published in IJCAI 2026 proceedings"
+        "提出 CACD 框架，将黑盒 LSTM 洪水模型蒸馏为可解释的、水文学感知的代理模型，而非简单的事后归因解释",
+        "设计无监督管线自动发现\"水文语言\"（Hydrological Language），从数据中提取人类可理解的水文概念",
+        "引入残差超网络（Residual Hypernetwork），根据静态流域特征动态调节各概念的贡献，实现上下文感知的概念建模",
+        "在 5,203 个全球流域上验证，以中位 NSE 0.70 的高保真度逼近黑盒模型，同时保持完全可解释性"
       ],
-      "scenario_cn": " Comments: to be published in IJCAI 2026 proceedings",
+      "scenario_cn": "解决高利害公共安全场景（洪水预报）中深度学习模型\"黑盒\"导致的信任与问责难题，为灾害应急响应部门提供既能保持预报精度、又可验证和审查的透明决策依据，在 AI 精度与环境决策透明度之间取得平衡。",
       "title_en": "Context-Aware Concept Distillation for Trustworthy Flood Prediction",
       "institution": "未明确披露",
       "code_url": "h",
@@ -1716,11 +1724,11 @@
       "code_links_from_meta": "https://github.com/search?q=EgoPlay%3A%20Event-Triggered%20Video%20Editing%20for%20Egocentric%20Streams%20arxiv%20github&type=repositories",
       "is_ascend": false,
       "title_zh": "EgoPlay: Event-Triggered Video Editing for Egocentric Streams",
-      "summary_cn": " Comments: Accepted to SIGGRAPH Asia 2026 as a Conference Paper. Project page: this https URL",
+      "summary_cn": "论文标题：EgoPlay: Event-Triggered Video Editing for Egocentric Streams",
       "innovations": [
-        "见正文： Comments: Accepted to SIGGRAPH Asia 2026 as a Conference Paper. Project page: this https URL"
+        "见正文"
       ],
-      "scenario_cn": " Comments: Accepted to SIGGRAPH Asia 2026 as a Conference Paper. Project page: this https URL",
+      "scenario_cn": "论文标题：EgoPlay: Event-Triggered Video Editing for Egocentric Streams",
       "title_en": "EgoPlay: Event-Triggered Video Editing for Egocentric Streams",
       "institution": "未明确披露",
       "code_url": "h",
@@ -1826,11 +1834,13 @@
       "code_links_from_meta": "https://github.com/search?q=MPR-CiteG%3A%20Enhancing%20RAG%20with%20Multi-Portfolio%20Retrieval%20and%20Citation-Grounded%20Generation%20arxiv%20github&type=repositories",
       "is_ascend": false,
       "title_zh": "MPR-CiteG: Enhancing RAG with Multi-Portfolio Retrieval and Citation-Grounded Generation",
-      "summary_cn": " Comments: 12 pages, 1 figure, 7 tables. The 1st International Workshop on Retrieval-Driven Generative AI & ScienceON AI Challenge 2025@CIKM",
+      "summary_cn": "MPR-CiteG 是一个面向 RAG 的检索与生成增强框架，在 ScienceON AI 挑战赛中获得第二名。框架由双组件构成：Multi-Portfolio Retriever（MPR）通过多组合检索策略高效获取多样且相关的信息，Citation-Grounded Generation（CiteG）模块则确保生成内容的事实一致性并显式标注来源。在挑战赛数据集上的实验验证了该方法的有效性与可靠性，代码已开源。",
       "innovations": [
-        "见正文： Comments: 12 pages, 1 figure, 7 tables. The 1st International Workshop on Retrieval-Driven Generati"
+        "提出 MPR 多组合检索器，从多个检索视角/来源中高效获取多样化且相关的候选信息，缓解单一检索的覆盖不足问题",
+        "设计 CiteG 引文落地生成模块，让每个生成输出都与可验证来源绑定，从机制上抑制幻觉",
+        "将检索与引文生成解耦为双组件协同系统，兼顾检索效率与输出可归因性，并给出完整开源实现"
       ],
-      "scenario_cn": " Comments: 12 pages, 1 figure, 7 tables. The 1st International Workshop on Retrieval-Driven Generative AI & ScienceON AI Challenge 2025@CIKM",
+      "scenario_cn": "解决生成式 AI 中检索效率低下与生成结果缺乏来源验证两大问题，适用于需要可信、可溯源答案的 RAG 问答场景（如科技文献/科学信息服务），让模型不仅能生成信息，还能把回答锚定在可靠证据上。",
       "title_en": "MPR-CiteG: Enhancing RAG with Multi-Portfolio Retrieval and Citation-Grounded Generation",
       "institution": "未明确披露",
       "code_url": "h",
@@ -1974,11 +1984,13 @@
       "code_links_from_meta": "https://github.com/search?q=Action%20from%20Adjacent%20Set%20in%20Physical%20Space%20Outperforms%20the%20Best%20Prediction%20in%20World%20Models%20arxiv%20github&type=repositories",
       "is_ascend": false,
       "title_zh": "Action from Adjacent Set in Physical Space Outperforms the Best Prediction in World Models",
-      "summary_cn": " Comments: 26 pages, 7 figures. Includes supplementary material",
+      "summary_cn": "基于采样与潜在世界模型的控制器为每个候选动作序列预测终端代价并取最小者执行，但即使终端代价完美反映真实目标，残差预测误差也可能让不可行序列获得异常低的代价，且候选池越大这种\"提议过生成\"（proposal overgeneration）失败越严重——Cube 执行审计中，候选预算从72增至288时，按最小潜在代价选择的可执行率从0.375降至0.062。论文提出相邻集合动作重建（ASAR）：在低代价候选中基于标准化早期动作前缀测量密度，从物理空间中的相邻集合重建完整序列，并以最小代价序列作为轻量锚点。在 Carry and Release 的75个查询上，Kernel ASAR 在72/144/288候选下，事件完成成功率较直接最小化代价选择分别提升28.0/24.0/18.7个百分点（潜在代价）和18.7/20.0/17.3个百分点（轨迹可达代价）。",
       "innovations": [
-        "见正文： Comments: 26 pages, 7 figures. Includes supplementary material"
+        "识别并形式化\"提议过生成\"条件性失败：更大的采样池给残差预测误差更多机会以异常低代价压倒可行序列，即使代价预测完全准确也会失败",
+        "提出 ASAR 动作重建框架：在低代价候选中以标准化早期动作前缀测量密度，从相邻集合重建完整动作序列，并用最小代价序列作轻量锚点，摆脱对\"最佳预测\"的直接依赖",
+        "对有限候选池给出理论刻画：从下尾风险、相关半径支撑统计量以及显式局部可行性条件下的序列包含关系三个角度分析选择失败风险"
       ],
-      "scenario_cn": " Comments: 26 pages, 7 figures. Includes supplementary material",
+      "scenario_cn": "解决基于潜在世界模型的采样型控制（如模型预测控制）中，残差预测误差导致不可行动作序列被误选而任务执行失败的问题；适用于需要长时程物理交互（如抓取、搬运、释放）的机器人控制场景。",
       "title_en": "Action from Adjacent Set in Physical Space Outperforms the Best Prediction in World Models",
       "institution": "未明确披露",
       "code_url": "h",
@@ -2112,11 +2124,14 @@
       "code_links_from_meta": "https://github.com/search?q=AssumptionMiner%3A%20Extracting%2C%20Tracing%2C%20and%20Revising%20Implicit%20Assumptions%20in%20LLM%20Code%20Generation%20arxiv%20github&type=repositories",
       "is_ascend": false,
       "title_zh": "AssumptionMiner: Extracting, Tracing, and Revising Implicit Assumptions in LLM Code Generation",
-      "summary_cn": " Comments: 20 pages, 6 figures, 9 tables. Submitted to IEEE Transactions on Software Engineering. Replication package: this https URL",
+      "summary_cn": "AssumptionMiner 是一个将 LLM 代码生成中的隐含假设显式化的框架：当提示词未明确输入格式、错误处理或设计决策时，LLM 会自行填补这些缺口，而框架将这些隐含假设提取为结构化“假设层”，供开发者检查、确认或修订。它基于 AST 依赖图实现定向再生成，只重写被修订假设影响的代码区域。作者构建了包含 180 个模糊编程任务、676 条标注假设的基准（含人工验证子集），实验显示置信加权集成的假设提取 F1 达 0.816，比最强离线基线提升 3.6 倍，AST 引导的定位与定向再生成也更精确。结果表明：显式化假设能显著提升 LLM 代码生成的透明度与可控性。",
       "innovations": [
-        "见正文： Comments: 20 pages, 6 figures, 9 tables. Submitted to IEEE Transactions on Software Engineering. Re"
+        "提出“假设层”（assumption layer）作为一等公民产物：把 LLM 推断出的约束和设计决策结构化表示，让开发者可以查看、确认或修订",
+        "基于 AST 的依赖图实现定向再生成：修订某条假设后仅重新生成受影响的代码，而非整文件重写",
+        "发布基准：180 个模糊编程任务、676 条人工标注假设，并包含人工验证的代码定位子集",
+        "置信加权集成提取假设，F1 达 0.816，较最强离线基线提升 3.6 倍"
       ],
-      "scenario_cn": " Comments: 20 pages, 6 figures, 9 tables. Submitted to IEEE Transactions on Software Engineering. Replication package: this https URL",
+      "scenario_cn": "解决现实提示词常缺乏完整规格、LLM 用隐藏的隐含假设填补缺口，导致生成的代码虽能通过测试却违背开发者意图的问题，即代码生成过程缺乏透明度和可控性。",
       "title_en": "AssumptionMiner: Extracting, Tracing, and Revising Implicit Assumptions in LLM Code Generation",
       "institution": "未明确披露",
       "code_url": "h",

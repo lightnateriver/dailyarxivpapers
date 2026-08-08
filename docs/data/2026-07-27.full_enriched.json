@@ -302,11 +302,14 @@
       "code_links_from_meta": "https://github.com/search?q=Be%20Consistent%21%20Enhancing%20Robust%20Visual%20Reasoning%20in%20LVLMs%20with%20Consistency%20Constraints%20arxiv%20github&type=repositories",
       "is_ascend": false,
       "title_zh": "Be Consistent! Enhancing Robust Visual Reasoning in LVLMs with Consistency Constraints",
-      "summary_cn": "提出一致性约束方法，增强大视觉语言模型（LVLMs）在视觉推理任务中的鲁棒性。",
+      "summary_cn": "本文指出现有 LVLM 视觉推理评测大多聚焦符号化数学/科学问题和简单视觉任务，难以评估复杂视觉推理与逻辑一致性。为此作者提出 ConVBench 基准：每张图片配两个逻辑等价问题，覆盖动作与状态、复杂计数、空间推理、因果与意图理解、常识推理、时间感知六类；并定义逻辑一致性与稳健准确率两个联合评估指标。同时提出 ConVLM 模型，通过基于 GRPO 的强化学习配合新型一致性奖励，用自动生成的逻辑等价问答对和准确率+一致性双奖励设计，提升模型的推理一致性与稳健性。该框架在有或无严格答案监督下均能工作。",
       "innovations": [
-        "见正文：提出一致性约束方法，增强大视觉语言模型（LVLMs）在视觉推理任务中的鲁棒性。"
+        "提出 ConVBench：首个面向复杂视觉推理的基准，每张图片配一对逻辑等价问题，覆盖动作状态、复杂计数、空间推理、因果意图、常识推理、时间感知六类",
+        "定义逻辑一致性（logical consistency）与稳健准确率（robust accuracy）两个指标，联合评估模型回答的正确性与一致性",
+        "提出 ConVLM：基于 GRPO 强化学习的一致性奖励方法，采用自动生成的逻辑等价问答对，结合准确率与一致性信号的双奖励设计",
+        "框架在有/无严格答案监督两种设定下都有效，可扩展用于多类 LVLM 推理增强"
       ],
-      "scenario_cn": "提出一致性约束方法，增强大视觉语言模型（LVLMs）在视觉推理任务中的鲁棒性。",
+      "scenario_cn": "解决 LVLM 在复杂视觉推理任务中易出错且回答逻辑不一致的问题——现有评测基准缺乏对复杂视觉推理与逻辑一致性的度量，导致模型看似能力强却不可靠。该工作通过一致性约束的评测与训练，提升模型在复杂视觉场景下推理的正确性与逻辑自洽性，面向需要高可靠推理能力的真实应用。",
       "title_en": "Be Consistent! Enhancing Robust Visual Reasoning in LVLMs with Consistency Constraints",
       "institution": "未明确披露",
       "code_url": "h",
@@ -473,11 +476,14 @@
       "code_links_from_meta": "https://github.com/search?q=Zero-Shot%20Mission-Level%20Evaluation%20for%20Aerial%20MLLM%20Agents%20arxiv%20github&type=repositories",
       "is_ascend": false,
       "title_zh": "Zero-Shot Mission-Level Evaluation for Aerial MLLM Agents",
-      "summary_cn": " Comments: Preprint",
+      "summary_cn": "论文提出 MissionBench，一个面向空中 3D 环境 MLLM 智能体的任务级（mission-level）评估基准，包含 5 个模拟 3D 环境、4 类任务族共 120 个任务。智能体须仅凭第一视角观测与动作历史自主完成规划、导航和结果上报，全程不允许空中领域微调。对 22 个开源与闭源 MLLM 的评测显示，最强模型成功率不足 35%，而人类达 84.4%，凸显多步具身任务的难度；同时缩放（scaling）带来稳定增益，表明更大通用模型具备更强的零样本具身能力。分析进一步指出，任务级胜任需要空间感知之外的多步规划与自适应推理等多能力协同，并强调闭环评估的重要性。",
       "innovations": [
-        "见正文： Comments: Preprint"
+        "提出 MissionBench 基准：120 个任务、5 个模拟 3D 环境、4 类任务族，首次面向空中场景做任务级（而非单步）MLLM 评估",
+        "严格的零样本设定：智能体仅凭 egocentric 观测与动作历史完成规划-导航-报告全流程，无任何 aerial-specific 微调",
+        "系统性评测 22 个开源/闭源 MLLM，量化了模型与人类（84.4%）之间的巨大差距，并给出跨模型家族的 scaling 能力增益分析",
+        "能力归因分析：证明任务级表现需要多步规划、自适应推理与空间感知协同，据此主张闭环评估范式"
       ],
-      "scenario_cn": " Comments: Preprint",
+      "scenario_cn": "解决通用 MLLM 能否仅凭一条高层指令完成长程具身任务这一缺乏评测基准的问题，为空中具身智能体（如无人机）的零样本任务级能力提供可复现的评估方法与 scaling 趋势洞察。",
       "title_en": "Zero-Shot Mission-Level Evaluation for Aerial MLLM Agents",
       "institution": "未明确披露",
       "code_url": "h",
@@ -527,11 +533,14 @@
       "code_links_from_meta": "https://github.com/search?q=Agentic%20Root%20Cause%20Analysis%20through%20Evidence-Grounded%20Reasoning%20arxiv%20github&type=repositories",
       "is_ascend": false,
       "title_zh": "Agentic Root Cause Analysis through Evidence-Grounded Reasoning",
-      "summary_cn": " Comments: 21 pages, 9 figures",
+      "summary_cn": "本文提出 AgentRCA，一个零样本（zero-shot）智能体框架，用于基于证据的工业异常根因分析。它不再学习故障到原因的固定映射，而是在推理时将数据驱动的数字孪生（建模正常系统动态）与工具增强的大语言模型结合：智能体迭代收集统计证据、评估竞争性假设，最终定位最能解释观测行为的物理故障。在真实多相流设施和大型化工厂上的实验表明，其诊断性能可与完全监督的基线相媲美，且无需故障相关的标注训练数据。",
       "innovations": [
-        "见正文： Comments: 21 pages, 9 figures"
+        "零样本智能体推理框架：不依赖故障样本训练，通过推理期假设验证替代监督式故障分类，解决标注稀缺问题",
+        "数字孪生 + 工具增强 LLM 的协作架构：以正常动态模型提供证据来源，LLM 智能体负责假设生成与迭代验证",
+        "透明的推理轨迹：显式地将观测症状链接到潜在物理原因，打破现有方法的黑盒特性",
+        "跨领域可迁移：在真实多相流设施与大型化工装置两类工业场景上达到与监督基线相当的诊断性能"
       ],
-      "scenario_cn": " Comments: 21 pages, 9 figures",
+      "scenario_cn": "解决工业异常根因诊断中假设提出与证据收集仍依赖人工、且现有数据驱动方法不可解释且缺乏故障标注样本的问题，为可扩展的工业根因分析提供自动化基础。",
       "title_en": "Agentic Root Cause Analysis through Evidence-Grounded Reasoning",
       "institution": "未明确披露",
       "code_url": "h",
@@ -850,11 +859,11 @@
       "code_links_from_meta": "https://github.com/search?q=Adversarial%20Style%20Optimization%3A%20Enhancing%20VLM%20Jailbreaks%20by%20GRPO-based%20Stylistic%20Triggers%20Optimization%20arxiv%20github&type=repositories",
       "is_ascend": false,
       "title_zh": "Adversarial Style Optimization: Enhancing VLM Jailbreaks by GRPO-based Stylistic Triggers Optimization",
-      "summary_cn": " Comments: Accepted by CVPR 2026 (Oral)",
+      "summary_cn": "论文标题：Adversarial Style Optimization: Enhancing VLM Jailbreaks by GRPO-based Stylistic",
       "innovations": [
-        "见正文： Comments: Accepted by CVPR 2026 (Oral)"
+        "见正文"
       ],
-      "scenario_cn": " Comments: Accepted by CVPR 2026 (Oral)",
+      "scenario_cn": "论文标题：Adversarial Style Optimization: Enhancing VLM Jailbreaks by GRPO-based Stylistic",
       "title_en": "Adversarial Style Optimization: Enhancing VLM Jailbreaks by GRPO-based Stylistic Triggers Optimization",
       "institution": "未明确披露",
       "code_url": "h",
@@ -1692,11 +1701,11 @@
       "code_links_from_meta": "https://github.com/search?q=MineValiCoder%3A%20Reliable%20Code%20Generation%20with%20Test%20Case%20Quality%20Mining%20and%20Bipartite%20Graph-Based%20Mutual%20Validation%20arxiv%20github&type=repositories",
       "is_ascend": false,
       "title_zh": "MineValiCoder: Reliable Code Generation with Test Case Quality Mining and Bipartite Graph-Based Mutual Validation",
-      "summary_cn": " Comments: 12 pages, 3 figures, 7 tables",
+      "summary_cn": "论文标题：MineValiCoder: Reliable Code Generation with Test Case Quality Mining and Bipart",
       "innovations": [
-        "见正文： Comments: 12 pages, 3 figures, 7 tables"
+        "见正文"
       ],
-      "scenario_cn": " Comments: 12 pages, 3 figures, 7 tables",
+      "scenario_cn": "论文标题：MineValiCoder: Reliable Code Generation with Test Case Quality Mining and Bipart",
       "title_en": "MineValiCoder: Reliable Code Generation with Test Case Quality Mining and Bipartite Graph-Based Mutual Validation",
       "institution": "未明确披露",
       "code_url": "h",

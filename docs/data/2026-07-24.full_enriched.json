@@ -51,11 +51,14 @@
       "code_links_from_meta": "https://github.com/search?q=CANN%20Bench%3A%20Benchmarking%20Agent%20Generated%20Kernels%20against%20Real%20NPU%20and%20Algorithmic%20Limits%20arxiv%20github&type=repositories",
       "is_ascend": true,
       "title_zh": "CANN Bench: Benchmarking Agent Generated Kernels against Real NPU and Algorithmic Limits",
-      "summary_cn": "",
+      "summary_cn": "本文提出 CANN Bench，一个面向华为昇腾 NPU 上 AI 生成算子代码的开源评测基准。当前版本覆盖 53 个算子、1060 个测试用例，分为四个难度等级（从简单逐元素算子到 MoE 分发与 FlashAttention 内核），支持 FP16、BF16、FP32、INT8 四种精度。评测采用三维加权综合评分，将编译、功能正确性、性能作为独立轴，性能对照开箱即用的 PyTorch-on-Ascend 基线与基于真实硬件的解析性能上限（HAP），确保分数反映真实优化空间而非测量噪声。",
       "innovations": [
-        "见正文："
+        "首个面向昇腾 NPU 的 AI 生成算子基准，覆盖 53 算子/1060 用例、四档难度与四种精度格式",
+        "提出三维加权综合评分，将编译、功能正确性、性能作为独立轴，为内核生成智能体提供原则性奖励信号",
+        "设计基于真实硬件的 Hardware-Anchored Performance (HAP) 解析性能上限，对照 PyTorch-on-Ascend 基线分级评分，排除测量伪影",
+        "评测框架从设计上抗 reward hacking，随官方 CANN 仓库版本化，支持长期社区共建"
       ],
-      "scenario_cn": "",
+      "scenario_cn": "解决现有内核生成基准几乎只聚焦 CUDA 和 Triton、编程模型暴露度较低的硬件生态缺乏统一评测基线的问题，为昇腾生态提供可量化、可复现、可持续维护的 AI 算子编写能力标尺。",
       "title_en": "CANN Bench: Benchmarking Agent Generated Kernels against Real NPU and Algorithmic Limits",
       "institution": "未明确披露",
       "code_url": "h",
@@ -171,11 +174,14 @@
       "code_links_from_meta": "https://github.com/search?q=Delivery%2C%20Not%20Storage%3A%20Cue-Anchored%20Working%20Memory%20as%20a%20Harness%20Property%20for%20Coding%20Agents%20arxiv%20github&type=repositories",
       "is_ascend": false,
       "title_zh": "Delivery, Not Storage: Cue-Anchored Working Memory as a Harness Property for Coding Agents",
-      "summary_cn": "",
+      "summary_cn": "论文提出，编码智能体的记忆不应只依赖显式写入的文档型记忆（指令文件、计划产物、自动写入的记忆目录），而应包含第二层：情境绑定的操作性记忆（坑点、位置、本地约定），这些知识是工作时无意识编码的，并由情境线索自动唤起。作者认为这第二层记忆才是长时间运行智能体的关键承重层，必须作为 harness（框架）属性实现，而非留给智能体自行选择。文中给出基于认知科学（记忆卸载、偶然编码、事件前瞻记忆）的两层设计理论、线索锚定记忆模型，并在真实编码任务上做了受控实验。",
       "innovations": [
-        "见正文："
+        "提出两层级记忆设计理论：将认知科学中的记忆卸载、偶然编码、事件前瞻记忆分别映射到架构需求，论证情境绑定记忆必须由 harness 承载。",
+        "设计线索锚定记忆模型：每条记忆携带一等的触发条件，覆盖可组合的词汇表（路径、符号、语义、事件、时间），由 harness 确定性求值——现有学术与已发布系统均未提供此组合能力。",
+        "受控实验证明自主记忆使用几乎为零（114 轮对话中 0 次记忆操作），而确定性注入每次命中且零误报；39% 的会话内重读内容在压缩边界前重复购买。",
+        "重复压缩衰减探针：仅存于对话中的 10 个事实在第一次摘要后即消失，108 次压缩中 106 次缺席；而由 harness 持有的存储注入同样事实，可完好穿越全部 138 次压缩续接。"
       ],
-      "scenario_cn": "",
+      "scenario_cn": "解决长时运行编码智能体记忆不可靠的问题：对话记忆会随压缩丢失，而完全依赖智能体主动读写文档记忆在实践中几乎不被使用。该方案让 harness 按情境线索确定性注入关键操作知识，保证长期任务中事实不被遗忘。",
       "title_en": "Delivery, Not Storage: Cue-Anchored Working Memory as a Harness Property for Coding Agents",
       "institution": "未明确披露",
       "code_url": "h",
@@ -286,11 +292,14 @@
       "code_links_from_meta": "https://github.com/search?q=ElasticTTT%3A%20Prior-Preserving%20Test-Time%20Tuning%20for%20Video%20Editing%20arxiv%20github&type=repositories",
       "is_ascend": false,
       "title_zh": "ElasticTTT: Prior-Preserving Test-Time Tuning for Video Editing",
-      "summary_cn": "",
+      "summary_cn": "本文指出在预训练扩散模型上做 Test-Time Tuning（TTT）进行视频编辑时存在一个根本性错配：生成模型本质是分布映射，而标准 TTT 是单点优化，这会引发“Prior Collapse”退化状态——模型丢弃文本条件和空间潜变量，把生成结果坍缩回源视频，或纠缠不同区域的特征。为此作者提出 ElasticTTT 框架，通过保留先验生成分布、恢复生成弹性来解决该问题。实验与理论分析表明 ElasticTTT 能有效保留基座模型的生成先验，在一次性视频编辑任务上达到 SOTA 效果。",
       "innovations": [
-        "见正文："
+        "提出 Target Distribution Regularization（目标分布正则化），防止模型陷入尖锐的记忆化极小值，避免先验坍缩",
+        "设计 Contrastive CFG（对比式分类器自由引导），在推理时引导生成远离源视频偏差",
+        "引入 Asynchronous Noise Schedule（异步噪声调度），在编辑过程中保留未编辑区域的内容一致性",
+        "从理论上分析了 TTT 单点优化与生成式分布映射错配导致 Prior Collapse 的机制，并给出系统化解法"
       ],
-      "scenario_cn": "",
+      "scenario_cn": "解决一次性（one-shot）视频编辑中基于 TTT 的扩散模型在优化后先验崩塌、生成退化为复制源视频或区域特征纠缠的问题，适用于无需大量训练数据、单视频级适配的视频编辑场景。",
       "title_en": "ElasticTTT: Prior-Preserving Test-Time Tuning for Video Editing",
       "institution": "未明确披露",
       "code_url": "h",
@@ -517,11 +526,14 @@
       "code_links_from_meta": "https://github.com/search?q=GRADRAG%3A%20Cross-Component%20Prompt%20Adaptation%20for%20Coordinated%20Multi-Agent%20RAG%20arxiv%20github&type=repositories",
       "is_ascend": false,
       "title_zh": "GRADRAG: Cross-Component Prompt Adaptation for Coordinated Multi-Agent RAG",
-      "summary_cn": " Comments: 8 pages",
+      "summary_cn": "多智能体RAG系统目前大多孤立地优化各个组件，缺乏跨管线的协调。GRADRAG将RAG流水线建模为计算图，把结构化评估反馈反向传播给上游智能体，实现跨组件的提示词自适应。评估器(Evaluator)对下游答案和支撑证据提出可操作的批评意见，提示词优化器(Prompt Optimizer)据此迭代更新检索器、图构造器、回答器等自适应智能体，并在输出满意时触发早停。在SQUALITY和QMSUM基准上，扁平分块检索与图检索两种范式下均一致优于只更新最终生成器的一步精炼基线，LLM评判的成对比较净偏好优势达12-15个百分点，且大部分收益在两轮精炼内即可实现。",
       "innovations": [
-        "见正文： Comments: 8 pages"
+        "将RAG管线建模为计算图，评估反馈沿图反向传播，协同优化检索、图构造、回答等所有上游组件，而非只精炼最终生成器",
+        "评估器同时批评答案质量与支撑证据，生成结构化、可操作的反馈，由提示词优化器迭代更新各自适应智能体的提示词",
+        "内置早停机制：评估器判定输出已达标即停止迭代，避免无效精炼轮次、控制推理成本",
+        "同时覆盖扁平分块检索（IRCoT式查询精炼）与图检索（实体-关系图迭代构建）两种检索范式，验证框架的通用性"
       ],
-      "scenario_cn": " Comments: 8 pages",
+      "scenario_cn": "解决多智能体RAG中组件被孤立优化、端到端质量提升受限的问题，适用于多跳问答、会议摘要等需要检索与生成协同提升的复杂问答场景。",
       "title_en": "GRADRAG: Cross-Component Prompt Adaptation for Coordinated Multi-Agent RAG",
       "institution": "未明确披露",
       "code_url": "h",
@@ -639,11 +651,11 @@
       "code_links_from_meta": "https://github.com/search?q=SPORD%3A%20A%20Simulation-Propose-then-OR-Dispose%20Approach%20for%20Supply%20Chain%20Planning%20arxiv%20github&type=repositories",
       "is_ascend": false,
       "title_zh": "SPORD: A Simulation-Propose-then-OR-Dispose Approach for Supply Chain Planning",
-      "summary_cn": "",
+      "summary_cn": "论文标题：SPORD: A Simulation-Propose-then-OR-Dispose Approach for Supply Chain Planning",
       "innovations": [
-        "见正文："
+        "见正文"
       ],
-      "scenario_cn": "",
+      "scenario_cn": "论文标题：SPORD: A Simulation-Propose-then-OR-Dispose Approach for Supply Chain Planning",
       "title_en": "SPORD: A Simulation-Propose-then-OR-Dispose Approach for Supply Chain Planning",
       "institution": "未明确披露",
       "code_url": "h",
@@ -745,11 +757,14 @@
       "code_links_from_meta": "https://github.com/search?q=A%20stability-preserving%20polytopal%20discontinuous%20Galerkin%20method%20for%20the%20Fisher-Kolmogorov%20model%20with%20applications%20to%20neurodegenerative%20diseases%20arxiv%20github&type=repositories",
       "is_ascend": false,
       "title_zh": "A stability-preserving polytopal discontinuous Galerkin method for the Fisher-Kolmogorov model with applications to neurodegenerative diseases",
-      "summary_cn": "",
+      "summary_cn": "本文针对神经退行性疾病（如阿尔茨海默病、帕金森病）研究中广泛使用的 Fisher-Kolmogorov 非线性反应扩散模型，提出并分析了一种修正版本，通过在非稳定平衡点 c=0 附近稳定动力学行为，使解的非负性（物理上代表相对浓度）在离散层面也能得到保持。空间离散采用多边形/多面体网格上的间断伽辽金（discontinuous Galerkin）方法，时间离散采用 Crank-Nicolson 格式，并推导了半离散问题的稳定性与先验误差估计。二维与三维收敛性实验验证了理论结果，最终通过对二维脑组织切片中 α-突触核蛋白扩散的模拟展示了该方法的高阶精度与鲁棒性。",
       "innovations": [
-        "见正文："
+        "提出对 Fisher-Kolmogorov 模型的修正形式，在非稳定平衡点 c=0 附近稳定动力学，从离散层面保持解的非负性，避免非物理、不稳定的数值近似",
+        "采用多边形/多面体（polytopal）网格上的间断伽辽金空间离散与 Crank-Nicolson 时间积分格式相结合，适合处理脑组织等复杂几何区域",
+        "为半离散问题建立了严格的稳定性分析和 a-priori 误差估计，并在二维、三维上通过收敛性实验验证",
+        "在二维聚合脑组织切片上完成 α-突触核蛋白扩散的真实模拟，证明方法的高阶精度与鲁棒性"
       ],
-      "scenario_cn": "",
+      "scenario_cn": "解决神经退行性疾病建模中蛋白病（如 α-突触核蛋白）在脑组织中扩散的数值模拟问题——传统离散方法在复杂多边形网格上易丢失解的非负性并产生不稳定近似，该方法保证物理解释的浓度保持非负且数值稳定，适用于阿尔茨海默病、帕金森病等蛋白聚集扩散的高精度仿真。",
       "title_en": "A stability-preserving polytopal discontinuous Galerkin method for the Fisher-Kolmogorov model with applications to neurodegenerative diseases",
       "institution": "未明确披露",
       "code_url": "h",
@@ -903,11 +918,14 @@
       "code_links_from_meta": "https://github.com/search?q=Token%20Budget%20Saturation%20and%20Mechanistic%20Early%20Detection%20of%20Reasoning%20Non-Convergence%20in%20Chain-of-Thought%20Models%20arxiv%20github&type=repositories",
       "is_ascend": false,
       "title_zh": "Token Budget Saturation and Mechanistic Early Detection of Reasoning Non-Convergence in Chain-of-Thought Models",
-      "summary_cn": "",
+      "summary_cn": "该论文研究了 DeepSeek-R1-Distill-Qwen-7B 等链式思维推理模型的双峰收敛现象：生成要么在 token 预算内完成（收敛），要么耗尽预算仍未得出结论（非收敛）。实证显示收敛生成在 AIME 1983-2024 上准确率达 90.3%，而非收敛生成仅 6.6%，整体收敛率 62.0%。通过在隐状态激活上训练线性探针，发现 token 150 处 layer-20 的激活能以 AUC 0.608（5 折交叉验证 ±0.080）在生成早期预测收敛命运，且稳定优于基于 token 熵与重复统计的行为基线；不过置换检验 p=0.063，信号温和、样本量不足以在常规阈值下确证。",
       "innovations": [
-        "见正文："
+        "系统刻画了 CoT 推理模型的双峰收敛模式（收敛 vs 非收敛），并量化其对 AIME 准确率的巨大差异（90.3% vs 6.6%）。",
+        "首次用线性探针在隐状态激活（token 50-300）上做收敛命运的机制性早期检测：layer-20 在 token 150 处达 AUC 0.608，且 token 50 起即可高于随机水平。",
+        "激活探针在收敛预测上一致优于基于 token 熵和重复统计的行为基线。",
+        "提出利用中间表征中的收敛信号实现早期退出（early-exit）推理与自适应算力分配。"
       ],
-      "scenario_cn": "",
+      "scenario_cn": "解决长链推理（CoT）场景下模型耗尽 token 预算仍得不到结论的算力浪费问题——在生成早期利用内部表征判断推理是否会收敛，为 early-exit 推理和自适应算力分配铺路。",
       "title_en": "Token Budget Saturation and Mechanistic Early Detection of Reasoning Non-Convergence in Chain-of-Thought Models",
       "institution": "未明确披露",
       "code_url": "h",
@@ -949,11 +967,14 @@
       "code_links_from_meta": "https://github.com/search?q=What%20is%20Good%3F%20Extracting%20and%20Testing%20Implicit%20Theories%20of%20Literary%20Quality%20from%20LLM%20Reasoning%20Traces%20arxiv%20github&type=repositories",
       "is_ascend": false,
       "title_zh": "What is Good? Extracting and Testing Implicit Theories of Literary Quality from LLM Reasoning Traces",
-      "summary_cn": "",
+      "summary_cn": "本研究通过两项实验探究了具备推理能力的LLM（以DeepSeek为代表）如何评价文学质量。实验一构建了从经典文学到匿名论坛帖子、覆盖六个质量等级的30篇真实文本基准，从模型推理轨迹中提取其隐含的质量理论，五轮复现达到79.3%的平均分级准确率，揭示模型更看重意图性而非正确性，优先关注写作技法、深度与独特声音。实验二对五篇经典散文进行六种系统退化操作（词汇简化、节奏扁平化、意象移除、声音泛化、结构简化、组合退化），发现词汇简化造成的最小质量损失（0.41±0.46分）远低于结构（2.78）与声音（2.34）损失，组合退化破坏性极强（-5.64）但呈次可加性。研究表明LLM的写作质量判断是整体性的、作者特定的，且对结构特征的敏感度高于词汇特征。",
       "innovations": [
-        "见正文："
+        "构建了横跨六个质量等级（经典文学到匿名论坛帖）的30篇真实文本基准，并通过LLM推理轨迹而非最终答案提取其内隐质量理论",
+        "设计了对照性熟悉度实验，用风格匹配但不可辨识的仿写文段检测源文本识别对质量评分的影响",
+        "提出系统化文本退化操作框架（词汇/节奏/意象/声音/结构/组合六种），量化各维度对质量评分的边际贡献并发现次可加性",
+        "跨模型（DeepSeek与Qwen QwQ）验证了质量判断模式的定性一致性"
       ],
-      "scenario_cn": "",
+      "scenario_cn": "解决文学研究与计算语言学中\"何为好写作\"难以量化的问题，为自动化写作反馈系统和计算美学研究提供了可解释的LLM质量判断机制与实证基准。",
       "title_en": "What is Good? Extracting and Testing Implicit Theories of Literary Quality from LLM Reasoning Traces",
       "institution": "未明确披露",
       "code_url": "h",
@@ -1513,11 +1534,14 @@
       "code_links_from_meta": "https://github.com/search?q=QuantiBias%3A%20Benchmarking%20Quantization-Induced%20Bias%20in%20LLMs%20arxiv%20github&type=repositories",
       "is_ascend": false,
       "title_zh": "QuantiBias: Benchmarking Quantization-Induced Bias in LLMs",
-      "summary_cn": " Comments: Benchmark protocol on Hugging Face: this https URL",
+      "summary_cn": "几乎所有大规模部署的大语言模型都会经过量化压缩，但这一步骤被默认为无害、很少重新做安全检验。QuantiBias 发现量化的主要副作用是引入偏见，而这种偏见会绕过标准安全评估：量化模型依然能拒绝有害请求、不过度拒绝良性提示、在多项选择中选出无偏答案，但在开放式问答中，独立裁判评测显示约四分之一（24%~27%，8 种语言均如此）的回答会主动输出刻板印象。量化模型通过了所有常规检查，却以明显更高的偏见水平触达用户。",
       "innovations": [
-        "见正文： Comments: Benchmark protocol on Hugging Face: this https URL"
+        "提出 QuantiBias 基准：将生成式多语言刻板印象探测与拒答、多项选择对照组配对，隔离并测量开放式生成中的量化诱导偏见，并对生成内容的严重程度分级",
+        "首次系统揭示量化是隐蔽的偏见来源：模型、训练、提示词全部固定时，标准安全检查（拒答/过度拒答/无偏选择题）全部通过，而开放式回答的偏见显著上升",
+        "同时评估带推理与不带推理两种构建，发现推理前置在部分压缩方法上可将偏见减半，对其他方法则完全无效，并给出压缩精度分配与偏见抑制信号缺失的归因",
+        "跨两个骨干模型（Qwen、Gemma）、五类压缩方法家族、八个基准的全面评估，验证了选择性缺口是稳健结论"
       ],
-      "scenario_cn": " Comments: Benchmark protocol on Hugging Face: this https URL",
+      "scenario_cn": "面向量化 LLM 上线前的安全与公平性评估场景：当模型需要经过量化压缩再部署时，仅靠短格式安全测试（拒答、多项选择）无法发现量化引入的开放式偏见，必须用生成式多语言刻板印象探测对量化版本重新评估。",
       "title_en": "QuantiBias: Benchmarking Quantization-Induced Bias in LLMs",
       "institution": "未明确披露",
       "code_url": "h",
@@ -1565,11 +1589,14 @@
       "code_links_from_meta": "https://github.com/search?q=GraphVid%3A%20Interactive%20Graph-Controllable%20Video%20Generation%20arxiv%20github&type=repositories",
       "is_ascend": false,
       "title_zh": "GraphVid: Interactive Graph-Controllable Video Generation",
-      "summary_cn": "",
+      "summary_cn": "GraphVid 是一种基于结构化交互图（interaction graph）的条件图像到视频生成模型，用户通过描述多目标之间关系的交互图即可实现灵活且精确的多主体控制，避免了文本提示或轨迹控制难以精确指定多目标交互的痛点（轨迹控制在遮挡/重叠时会产生歧义）。作者同时构建了 GraphVid-Bench，一个大规模以交互为中心、带结构化关系标注的视频数据集，用于训练交互感知的视频生成模型。相比 Motion-I2V 等运动控制方法，GraphVid 在训练数据和可训练参数显著更少的情况下，FID 最高降低 39.9%、FVD 降低 37.6%，PSNR 从 9.87 提升到 15.98，SSIM 从 0.38 提升到 0.61。",
       "innovations": [
-        "见正文："
+        "提出 GraphVid，以结构化交互图作为图像到视频生成的控制接口，支持交互式、可编辑的多主体精确控制，替代难以精确表达多目标交互的文本/轨迹控制。",
+        "构建 GraphVid-Bench 大规模交互中心视频数据集，附带结构化关系标注，为交互感知视频生成模型的训练提供数据基础。",
+        "在训练数据和可训练参数均明显少于 Motion-I2V 的条件下实现更强的可控性和视频质量（FID 最高降 39.9%、FVD 降 37.6%，PSNR 9.87→15.98、SSIM 0.38→0.61）。",
+        "验证了结构化语义接口作为可控视频生成新范式的潜力，为后续研究提供了新方向。"
       ],
-      "scenario_cn": "",
+      "scenario_cn": "解决文本提示和像素级轨迹控制在复杂场景中无法精确指定多目标交互关系的问题，特别适用于遮挡、重叠场景下需要灵活而精确地控制多个主体交互的视频生成任务。",
       "title_en": "GraphVid: Interactive Graph-Controllable Video Generation",
       "institution": "未明确披露",
       "code_url": "h",
@@ -1664,11 +1691,13 @@
       "code_links_from_meta": "https://github.com/search?q=MagicMakeup%3A%20A%20Region-Controllable%20Diffusion%20Transformer%20for%20High-Fidelity%20Makeup-Transfer%20arxiv%20github&type=repositories",
       "is_ascend": false,
       "title_zh": "MagicMakeup: A Region-Controllable Diffusion Transformer for High-Fidelity Makeup-Transfer",
-      "summary_cn": "",
+      "summary_cn": "本文提出 MagicMakeup，一个基于扩散 Transformer（DiT）的化妆迁移框架，在保持源人脸身份的同时将参考妆容精确迁移到指定区域。针对像素-注意力错位导致的区域控制弱、双图条件下迁移与保留概念耦合、以及缺乏高分辨率区域标注数据集三大问题，作者提出 Token-Aligned Region Gating（将像素掩码与注意力对齐并施加区域级 logit 门控）和 Cross-Modal Perception Guidance（对齐文本与图像特征以解耦迁移/保留概念），并设计了区域级卸妆数据流水线生成 1024×1024 成对数据、建立合成+真实场景统一基准。实验表明该方法在区域可控性、妆容保真度和身份保持上均显著优于现有方法，且对风格、种族和姿态具有较强鲁棒性。",
       "innovations": [
-        "见正文："
+        "Token-Aligned Region Gating：将像素掩码与注意力机制对齐，施加区域级 logit 门控，实现精确的区域指定编辑，避免妆容溢出到非目标区域",
+        "Cross-Modal Perception Guidance：对齐文本与图像特征，增强跨模态概念感知，清晰分离'迁移'与'保留'概念，解耦妆容属性与源人脸身份",
+        "构建区域级卸妆（region-specific makeup removal）数据生成流水线，产出身份一致、带区域标签的 1024×1024 成对数据，并建立合成与真实场景下的统一评测基准"
       ],
-      "scenario_cn": "",
+      "scenario_cn": "解决化妆迁移中区域可控性弱、妆容保真度不足与身份保持困难的问题；适用于需要精细指定编辑区域（如仅眼影、仅唇妆）的高保真人像美妆编辑场景，覆盖多种风格、种族与姿态。",
       "title_en": "MagicMakeup: A Region-Controllable Diffusion Transformer for High-Fidelity Makeup-Transfer",
       "institution": "未明确披露",
       "code_url": "h",
@@ -1812,11 +1841,14 @@
       "code_links_from_meta": "https://github.com/search?q=Weak%20Private%20Information%20Retrieval%20for%20Graph-based%20Storage%20arxiv%20github&type=repositories",
       "is_ascend": false,
       "title_zh": "Weak Private Information Retrieval for Graph-based Storage",
-      "summary_cn": "",
+      "summary_cn": "本文研究图结构分布式存储系统中的弱私有信息检索（G-WPIR）问题。在基于图复制的存储系统中，服务器是图的顶点、每个文件存储在成对服务器上并对应一条边；传统 G-PIR 要求完美信息论隐私（零泄露），本文首次放宽该隐私约束以换取更高的下载速率。作者为任意图提出了通用 G-WPIR 协议，并在互信息泄露与最大泄露两种度量下刻画了速率与隐私之间的权衡，方案采用最小子包化（体现文件大小约束）和简单的概率化查询实现平滑折中。最后将该协议推广到完全图与完全二分图两类特殊图结构，并给出相应的速率-隐私权衡。",
       "innovations": [
-        "见正文："
+        "首次正式提出图结构存储下的弱私有信息检索（G-WPIR）问题，在放弃完美隐私后获得比 G-PIR 更高的速率",
+        "为任意图设计通用 G-WPIR 协议，在互信息泄露与最大泄露两种经典度量下刻画完整的速率-隐私权衡",
+        "采用最小子包化（满足文件大小约束）与简单概率化查询实现，获得平滑可控的隐私-速率折中",
+        "将协议扩展至完全图与完全二分图，分别给出对应的速率-隐私权衡结果"
       ],
-      "scenario_cn": "",
+      "scenario_cn": "解决传统图结构私有信息检索在完美隐私约束下下载速率受限的问题：当允许一定程度的隐私泄露时，如何在提升检索速率的同时给出可量化的隐私损失，为实际分布式存储系统中带宽与隐私的权衡提供理论支撑。",
       "title_en": "Weak Private Information Retrieval for Graph-based Storage",
       "institution": "未明确披露",
       "code_url": "h",
@@ -2060,11 +2092,11 @@
       "code_links_from_meta": "https://github.com/search?q=Search%20Hardness-Aware%20LLM-Based%20Problem%20Formulation%20for%20Expensive%20Simulation-Driven%20Design%20arxiv%20github&type=repositories",
       "is_ascend": false,
       "title_zh": "Search Hardness-Aware LLM-Based Problem Formulation for Expensive Simulation-Driven Design",
-      "summary_cn": "",
+      "summary_cn": "论文标题：Search Hardness-Aware LLM-Based Problem Formulation for Expensive Simulation-Dri",
       "innovations": [
-        "见正文："
+        "见正文"
       ],
-      "scenario_cn": "",
+      "scenario_cn": "论文标题：Search Hardness-Aware LLM-Based Problem Formulation for Expensive Simulation-Dri",
       "title_en": "Search Hardness-Aware LLM-Based Problem Formulation for Expensive Simulation-Driven Design",
       "institution": "未明确披露",
       "code_url": "h",
@@ -2111,11 +2143,13 @@
       "code_links_from_meta": "https://github.com/search?q=Achieving%20Text-based%20Person%20Retrieval%20with%20Any%20Granularity%20arxiv%20github&type=repositories",
       "is_ascend": false,
       "title_zh": "Achieving Text-based Person Retrieval with Any Granularity",
-      "summary_cn": " Comments: TPAMI-2026 Accepted Paper",
+      "summary_cn": "本文关注文本行人检索中查询粒度不确定这一关键但未充分研究的问题，提出\"任意粒度文本行人检索\"新范式并给出系统性解决方案。作者形式化定义了五级粒度谱系，通过多粒度文本标注引擎构建了全面标注的高质量数据集UFine6926-MG。在全面诊断现有方法局限后，提出跨模态多粒度对齐与匹配框架CMAM，包含正交专家感知、概率对齐和粒度一致性推理三大机制。实验表明CMAM在所有粒度层级上均显著优于现有最优方法。",
       "innovations": [
-        "见正文： Comments: TPAMI-2026 Accepted Paper"
+        "构建UFine6926-MG多粒度数据集，并设计多粒度文本标注引擎实现全粒度综合标注",
+        "提出MG-Eval整体评测基准，包含渐进细化文本与跨身份标签，并配套定制评测指标与协议",
+        "提出CMAM框架：正交专家感知解耦粒度相关特征，概率对齐建模查询不确定下的多对多匹配，粒度一致性推理通过跨模态粒度联合验证引导特征学习"
       ],
-      "scenario_cn": " Comments: TPAMI-2026 Accepted Paper",
+      "scenario_cn": "解决真实场景中用户查询粒度（从粗粒度到细粒度）不确定导致文本行人检索性能不稳定的问题，使检索系统在任意粒度查询下都能保持可靠表现，推动更实用的行人检索系统落地。",
       "title_en": "Achieving Text-based Person Retrieval with Any Granularity",
       "institution": "未明确披露",
       "code_url": "h",
