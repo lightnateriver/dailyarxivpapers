@@ -152,9 +152,13 @@ def parse_recent_block(block: str, target: dt.date) -> list[dict]:
         subject_text = strip_tags(subjects_match.group(1)) if subjects_match else ""
         cats = re.findall(r"\(([a-z\-]+\.[A-Z]{2})\)", subject_text)
         abstract = strip_tags(abstract_match.group(1)) if abstract_match else ""
-        comments = strip_tags(comments_match.group(1)) if comments_match else ""
-        if comments:
-            abstract = f"{abstract} {comments}"
+        # 注意：recent 列表页不含 abstract 正文（只有 Comments），
+        # 不要把 Comments 拼进 abstract，避免 "Comments: Accepted by..." 污染数据
+        # 真实 abstract 由 v2 管道从 abs 页补抓
+        if not abstract:
+            comments = strip_tags(comments_match.group(1)) if comments_match else ""
+            if comments:
+                abstract = f"Comments: {comments}"
         bare_id = arxiv_id.removesuffix("v1")
         papers.append({
             "id": arxiv_id,

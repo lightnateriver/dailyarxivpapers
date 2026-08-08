@@ -194,6 +194,10 @@ def summarize_batch(batch: list[dict]) -> list[dict]:
         for i, item in enumerate(results):
             orig = batch[i] if i < len(batch) else None
             abstext = (orig.get('abstract', '') or '') if orig else ''
+            if not is_valid_summary(abstext):
+                # abstract 也是 Comments/空时，用标题兜底，避免无意义内容
+                title_fb = ('论文标题：' + orig['title']) if orig and orig.get('title') else ''
+                abstext = title_fb
             if not is_valid_summary(item.get('summary_cn', '')):
                 item['summary_cn'] = abstext[:500]
             if not is_valid_summary(item.get('scenario_cn', '')):
