@@ -305,8 +305,17 @@ def main():
         if p['id'] in resume_map:
             continue
         print(f'prepare {idx}/{len(papers)} {p["id"]}', flush=True)
-        # Use abstract from base JSON; skip external fetch to avoid network stalls
+        # base 列表页不含真实 abstract（只有 Comments），需要时从 abs 页补抓
         abstract = p.get('abstract', '')
+        low = abstract.strip().lower()
+        if not abstract or len(abstract.strip()) < 40 or low.startswith('comments:') or 'accepted by' in low or 'accepted for' in low:
+            try:
+                cached = parse_abs_cached(p)
+                fetched_abs = cached.get('abstract', '')
+                if fetched_abs and len(fetched_abs.strip()) >= 40 and not fetched_abs.strip().lower().startswith('comments:'):
+                    abstract = fetched_abs
+            except Exception:
+                pass
         work.append({
             **p,
             'institutions_raw': '未明确披露',

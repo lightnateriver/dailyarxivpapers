@@ -38,11 +38,14 @@
       "github_search_url": "https://github.com/search?q=Multi-Year%20Geospatial%20Reasoning%20using%20Interannually-Consistent%20Historical%20Predictions%20as%20a%20Free%20Input%20Modality%20arxiv%20github&type=repositories",
       "title_en": "Multi-Year Geospatial Reasoning using Interannually-Consistent Historical Predictions as a Free Input Modality",
       "title_zh": "Multi-Year Geospatial Reasoning using Interannually-Consistent Historical Predictions as a Free Input Modality",
-      "summary_cn": " Comments: 17 pages, 7 figures",
+      "summary_cn": "该论文提出把地球观测（EO）系统自身积累的历史预测档案和外部协作方提供的辅助图层（如 BVL 掩膜）作为“免费输入模态”反馈进模型，使单年、单任务的像素分类器升级为能跨年份推理的系统，并以 Copernicus HRL Croplands 作物类型产品为测试床验证。在约 540 万标注像素的泛欧数据集上，加入历史预测序列后作物类别 F1 提升 1.6 个百分点，且修正了原先偏向 recall 的错误分布，多年生与树作物收益最大（橄榄 +4.6、果树 +3.7、坚果 +3.2 pp）。在历史年份与目标年份间一致地表示 BVL 掩膜，可再带来约 2.5 pp 的提升。整体是一条低成本、可迁移到任意已有多年处理流水线的通用配方。",
       "innovations": [
-        "见正文"
+        "提出 CTY（Crop Type）embedding 编码器：将每个历史预测表示为置信度加权、按时间排序的分类 token，并在年份轴上做注意力，让模型真正“跨年推理”而非仅在网络外部做规则后处理",
+        "系统化研究了外部辅助图层 BVL 掩膜在模型输入与输出中的表示方式，并强调历史年份与目标年份的表示一致性",
+        "针对重标注非作物像素带来的评估偏差，只在 18 个作物类别上评测并分别报告 precision 与 recall，保证设计对比公平",
+        "把原本丢弃的两类信号（自家历史预测档案 + 合作方辅助图层）以极低成本并入模型，形成通用的多年推理配方"
       ],
-      "scenario_cn": " Comments: 17 pages, 7 figures",
+      "scenario_cn": "解决业务化地球观测产品生产中模型无法利用自身多年预测档案与外部辅助图层的问题，适用于土地覆盖/作物类型制图等逐年更新、已积累多年推理历史的 EO 生产流水线，可在不改动下游架构的前提下低成本升级为跨年一致性更强的模型。",
       "institution": "未明确披露",
       "opensource_status": "未确认开源",
       "code_url": "",
@@ -104,11 +107,14 @@
       "github_search_url": "https://github.com/search?q=M%24%5E3%24Prune%3A%20Hierarchical%20Collaborative%20Pruning%20for%20Efficient%20Multi-Modal%20Multi-Agent%20Retrieval-Augmented%20Generation%20arxiv%20github&type=repositories",
       "title_en": "M$^3$Prune: Hierarchical Collaborative Pruning for Efficient Multi-Modal Multi-Agent Retrieval-Augmented Generation",
       "title_zh": "M$^3$Prune: Hierarchical Collaborative Pruning for Efficient Multi-Modal Multi-Agent Retrieval-Augmented Generation",
-      "summary_cn": " Comments: Accepted by ACM MM2026",
+      "summary_cn": "多模态检索增强生成（mRAG）中，多智能体系统通过智能体间通信能取得优于单模型的集体智能，但代价是高昂的 token 开销与计算成本。为此本文提出 M3Prune，一种多模态多智能体层级通信图剪枝框架：先在文本与视觉模态内部做图稀疏化，保留任务关键通信边；再构建跨模态通信图，并用模态对齐分数剪枝冗余的跨模态连接、鼓励一致的跨模态推理；最后渐进式剪除冗余边，得到高效的层级拓扑结构。在通用与领域专用 mRAG 基准上，M3Prune 均优于单智能体及强多智能体 mRAG 系统，同时显著提升 token 效率。",
       "innovations": [
-        "见正文"
+        "提出模态内（intra-modal）图稀疏化：分别在文本与视觉模态中识别任务关键的通信链路，剪除冗余边。",
+        "设计模态间（inter-modal）通信图剪枝：结合模态对齐分数（modality alignment score）稀疏化跨模态连接，引导一致性跨模态推理。",
+        "渐进式层级剪枝：从模态内到模态间逐级剪除冗余边，得到高效的层级通信拓扑，兼顾性能与 token 开销。",
+        "在通用与领域专用 mRAG 基准上验证：同时超越单智能体和强多智能体基线，并显著降低 token 消耗。"
       ],
-      "scenario_cn": " Comments: Accepted by ACM MM2026",
+      "scenario_cn": "解决多模态多智能体 RAG 系统通信边冗余导致的 token 开销大、计算成本高的问题，适用于需要大规模部署多智能体 mRAG 的场景（如多模态问答与知识密集型推理），在保持甚至提升任务性能的同时显著节约推理资源。",
       "institution": "未明确披露",
       "opensource_status": "未确认开源",
       "code_url": "",
@@ -278,11 +284,14 @@
       "github_search_url": "https://github.com/search?q=APQF%3A%20Agentic%20Profiling-Guided%20Structured%20Pruning%20and%20Mixed-Precision%20Quantization%20with%20Adaptive%20Fine-Tuning%20arxiv%20github&type=repositories",
       "title_en": "APQF: Agentic Profiling-Guided Structured Pruning and Mixed-Precision Quantization with Adaptive Fine-Tuning",
       "title_zh": "APQF: Agentic Profiling-Guided Structured Pruning and Mixed-Precision Quantization with Adaptive Fine-Tuning",
-      "summary_cn": " Comments: 22 pages, 7 figures",
+      "summary_cn": "APQF 是一个基于智能体的自动化模型压缩框架，将结构化剪枝、混合精度量化感知训练与精度恢复整合为一条完整流水线。profiling agent 先测量模型各层的计算成本分布与剪枝敏感度，再由 LLM planner 据此提出逐层剪枝比例、逐层位宽和恢复策略，并在执行前验证。在 ImageNet-1k 上 APQF 将计算量（bit-operations）降至原来的 5.6%-7.7%（约 13-18 倍压缩），同时精度接近基线；在 20 万张图像预算下 Top-1 比现有联合剪枝+量化方法高约 17 个百分点。消融实验表明，相同计算量下均匀压缩的精度损失最大。",
       "innovations": [
-        "见正文"
+        "首次将 LLM 引导、profiling 数据驱动的决策与完全训练感知的剪枝+量化流水线结合，同时适用于 CNN 与视觉 Transformer",
+        "profiling agent 量化跨层成本分布与各层剪枝敏感度，作为逐层剪枝比例、逐层位宽和恢复策略的证据基础",
+        "引入自适应微调（adaptive fine-tuning）实现精度恢复，与训练感知的混合精度量化感知训练协同",
+        "VGG7 上仅用基线 0.41% 的 bit-operations 即达 93.15% 精度，是该压缩水平下唯一优于全精度基线的方案"
       ],
-      "scenario_cn": " Comments: 22 pages, 7 figures",
+      "scenario_cn": "解决现有剪枝与量化依赖人工专家选择、难以跨架构推广、且统一压缩设置忽视不同层对压缩的差异化响应而导致精度损失的问题，为资源受限的边缘设备提供自动化、高精度的模型压缩方案。",
       "institution": "未明确披露",
       "opensource_status": "未确认开源",
       "code_url": "",
@@ -391,11 +400,14 @@
       "github_search_url": "https://github.com/search?q=DASH%3A%20Divergence-Adaptive%20Supervision%20Horizons%20for%20On-Policy%20Self-Distillation%20of%20Reasoning%20Models%20arxiv%20github&type=repositories",
       "title_en": "DASH: Divergence-Adaptive Supervision Horizons for On-Policy Self-Distillation of Reasoning Models",
       "title_zh": "DASH: Divergence-Adaptive Supervision Horizons for On-Policy Self-Distillation of Reasoning Models",
-      "summary_cn": " Comments: 17 pages, 4 figures, 9 tables. Code at this https URL",
+      "summary_cn": "本文针对在线策略自蒸馏（OPSD）在推理模型强化学习中的信号稀疏问题提出改进。OPSD 通过查询特权教师模型在学生的各前缀位置提供密集的 token 级分布监督，但作者发现标准 OPSD 未充分利用 rollout 的时间结构：它对每个位置的局部散度（divergence）赋予相同权重，忽略了相同散度可能源于不同教师-学生分歧历史这一时序差异。为此提出的 DASH 方法将每个局部蒸馏信号与序列级均值的差距映射为自适应传播门控，并用其控制反向多步聚合，从而根据生成过程中局部散度的演变动态调整 token 级监督权重。在三个数学推理基准、三个模型规模上的实验显示，DASH 在所有基准和规模上均优于匹配的 vanilla OPSD 复跑，且不增加任何额外的教师或学生前向计算。",
       "innovations": [
-        "见正文"
+        "提出 DASH 方法，将局部蒸馏信号与序列级均值的偏差映射为自适应传播门控，动态调节 token 级监督权重",
+        "用传播门控控制反向多步聚合，使监督权重能感知生成过程中散度的时序演变（分歧历史）",
+        "复用 OPSD 已计算的教师/学生分布，收益零额外前向开销",
+        "在三个数学推理基准、三个模型规模上全面超越 vanilla OPSD，验证了时序自适应监督的有效性"
       ],
-      "scenario_cn": " Comments: 17 pages, 4 figures, 9 tables. Code at this https URL",
+      "scenario_cn": "适用于使用 RLVR（可验证奖励强化学习）训练推理模型、并采用在线策略自蒸馏（OPSD）提供密集 token 级监督的场景，尤其是数学推理等长链生成任务，可在不增加额外计算成本的前提下提升推理能力。",
       "institution": "未明确披露",
       "opensource_status": "未确认开源",
       "code_url": "",
@@ -444,11 +456,13 @@
       "github_search_url": "https://github.com/search?q=On-Policy%20Delta%20Distillation%20for%20Multilingual%20Math%20Reasoning%20arxiv%20github&type=repositories",
       "title_en": "On-Policy Delta Distillation for Multilingual Math Reasoning",
       "title_zh": "On-Policy Delta Distillation for Multilingual Math Reasoning",
-      "summary_cn": " Comments: 9 pages, 3 figures, 10 tables",
+      "summary_cn": "本文研究 On-Policy Distillation (OPD) 及其改进变体 On-Policy Delta Distillation (OPD²) 在多语言数学推理场景下的有效性，覆盖英语、韩语和日语三种语言。OPD² 将「经过后训练的教师模型与其基础模型之间的概率差距」作为学习信号，相比原始 OPD 的完整输出分布蒸馏更具针对性。基于 Qwen3 的实验表明，OPD² 在所有语言上一致优于原始 OPD，其中韩语和日语上的提升尤为显著，并总体缩小了英语与韩语之间的性能差距。作者进一步发现，仅用英语数据训练 OPD 也能提升韩语和日语的表现，但往往会将模型回答风格向英语偏移，凸显了多语言数据对保持目标语言回答的必要性。",
       "innovations": [
-        "见正文"
+        "提出 OPD²：用教师模型与其基础模型之间的概率差（delta）替代完整教师输出作为蒸馏信号，减少噪声并聚焦于后训练带来的增量知识",
+        "首次系统评估 OPD 家族方法在多语言（英/韩/日）数学推理上的表现，并量化了跨语言性能差距的收窄情况",
+        "通过实验揭示英语单语蒸馏对低资源语言（韩语、日语）的迁移收益与其「回答语言漂移」副作用，验证多语言混合数据的关键价值"
       ],
-      "scenario_cn": " Comments: 9 pages, 3 figures, 10 tables",
+      "scenario_cn": "解决多语言环境下大语言模型数学推理后训练的问题：如何在不需要强化学习复杂奖励设计的前提下，用蒸馏方式提升非英语语言（尤其韩语、日语）的数学推理能力，并同时控制回答的语言一致性，避免模型被英语数据带偏。",
       "institution": "未明确披露",
       "opensource_status": "未确认开源",
       "code_url": "",
@@ -495,11 +509,13 @@
       "github_search_url": "https://github.com/search?q=RP-OPSD%3A%20Reasoning-Pivot-Guided%20On-Policy%20Self-Distillation%20for%20Multilingual%20Reasoning%20Transfer%20arxiv%20github&type=repositories",
       "title_en": "RP-OPSD: Reasoning-Pivot-Guided On-Policy Self-Distillation for Multilingual Reasoning Transfer",
       "title_zh": "RP-OPSD: Reasoning-Pivot-Guided On-Policy Self-Distillation for Multilingual Reasoning Transfer",
-      "summary_cn": " Comments: 16 pages. Under review",
+      "summary_cn": "本文针对多语言推理迁移问题，指出现有同策略自蒸馏（OPSD）虽能提供稠密的 token 级监督，但并未显式优先关注对跨语言迁移最关键的推理信号。作者将目标语言的推理分解为表层文本生成与推理枢轴（reasoning pivot，即推进或重定向推理过程、塑造后续推断的决策）两部分，提出 RP-OPSD 方法：利用教师视图在有/无英文参考答案时匹配对之间的分布偏移作为操作化代理，引导特权蒸馏（privileged distillation）与参考答案锚定。在覆盖 17 种语言、多个难度级别的数学推理基准上，RP-OPSD 超越了强多语言推理基线与各类 OPSD 变体。",
       "innovations": [
-        "见正文"
+        "提出推理枢轴概念：将推理过程划分为表层文本与驱动推理前进的关键决策点，首次把特权蒸馏聚焦到对跨语言迁移最关键的 token 上",
+        "设计分布偏移代理：用匹配教师视图在有无英文参考答案条件下的分布差异，无监督地识别推理枢轴 token，避免人工标注",
+        "推理枢轴引导的特权蒸馏与参考锚定机制：对推理控制和问题条件化的状态更新 token 加强监督，同时降低纯表层实现 token 的权重"
       ],
-      "scenario_cn": " Comments: 16 pages. Under review",
+      "scenario_cn": "解决低资源语言上大模型推理能力迁移不足的问题——现有蒸馏目标不加区分地监督所有 token，导致跨语言推理信号被稀释。适用于需要把高资源语言（如英语）的推理能力高效迁移到 17 种目标语言的多语言数学推理场景，代码已开源。",
       "institution": "未明确披露",
       "opensource_status": "未确认开源",
       "code_url": "",
@@ -722,11 +738,14 @@
       "github_search_url": "https://github.com/search?q=AgentOPSD%3A%20Recursive%20Self-Distillation%20for%20Agentic%20Reinforcement%20Learning%20arxiv%20github&type=repositories",
       "title_en": "AgentOPSD: Recursive Self-Distillation for Agentic Reinforcement Learning",
       "title_zh": "AgentOPSD: Recursive Self-Distillation for Agentic Reinforcement Learning",
-      "summary_cn": " Comments: Code: this https URL",
+      "summary_cn": "可验证奖励强化学习在长程、多轮 agentic 任务中常难以将稀疏的结果奖励归因到少数决定性决策上；现有特权自蒸馏方法提供了更稠密的监督，但并未解决局部信号如何表征时序信用的问题。AgentOPSD 提出一种免 critic 的递归 turn 级信用分配方法：将 token 级 teacher-student log-probability 差距聚合成 turn 级证据，并在 log-odds 空间递归更新贝叶斯信念状态，从而把稀疏的结果监督转化为原则化的 turn 级信用信号。该方法与标准策略优化完全兼容，既不需要额外的 critic 也不需要额外 rollout。在 ALFWorld、WebShop 和 Search-QA 上使用 Qwen2.5 3B/7B 评估，AgentOPSD 全面超越 GRPO 和强自蒸馏基线，在 ALFWorld 上配合 Qwen2.5-7B 达到 89.1% 的成功率。",
       "innovations": [
-        "见正文"
+        "提出免 critic 的递归 turn 级信用分配框架，将 token 级 teacher-student log-probability 差距聚合为 turn 级证据，替代稀疏的结果级奖励",
+        "在 log-odds 空间递归更新贝叶斯信念状态，得到有理论依据的 turn 级重加权方案，将稀疏结果监督转换为稠密局部信用信号",
+        "通过相邻信念状态间的边际信念修正（marginal belief revision）识别决定性 turn（pivotal turns），精确指认影响最终结果的关键决策",
+        "与标准策略优化完全兼容，无需额外 critic 或额外 rollout，实现成本低、集成简单"
       ],
-      "scenario_cn": " Comments: Code: this https URL",
+      "scenario_cn": "解决长程多轮 agentic 推理/交互任务中信用分配困难的问题：当稀疏的最终结果奖励无法反映中途哪个决策真正决定成败时（如 ALFWorld 具身任务、WebShop 购物、Search-QA 搜索问答），为策略优化提供 turn 级的稠密信用信号以提升训练效果。",
       "institution": "未明确披露",
       "opensource_status": "未确认开源",
       "code_url": "",
@@ -948,11 +967,14 @@
       "github_search_url": "https://github.com/search?q=Routing%20LLM%20Inference%20to%20the%20Cleanest%20Grid%20in%20Real%20Time%20arxiv%20github&type=repositories",
       "title_en": "Routing LLM Inference to the Cleanest Grid in Real Time",
       "title_zh": "Routing LLM Inference to the Cleanest Grid in Real Time",
-      "summary_cn": " Comments: 18 pages, 4 figures. Live multi-region GPU validation plus a one-year historical marginal-emissions replay",
+      "summary_cn": "大语言模型推理是快速增长的电负荷，其边际碳强度在不同电网区域及一天内的不同时段相差超过一个数量级，因此请求放置（request placement）成为无需重训、无需改硬件的减碳杠杆。本文基于边际运行排放率（MOER）信号，在多区域 GPU 测试床上对碳感知推理路由进行了实时验证，并具备三个以往工作少有的特性：盲基线是真实生产环境的压力路由而非均匀放置、逐请求能耗来自 NVIDIA DCGM 遥测加实测并发曲线而非铭牌 TDP、每个请求均按历史 MOER 而非仅按驱动决策的预测值做碳结算。实时验证的核心结论是可行性：MOER 信号可严格且可逆地叠加在生产路由之上，将推理路由到更清洁的电网且未观察到任何调度失败。作者再用一年小时级 MOER 数据在跨区域美国本土机群上回放模拟，主配置下碳感知放置相比轮询将 GPU 可归因运营排放降低 50.9%（95% bootstrap CI 48.5-53.3%），其中会话固定前按小时最低 MOER 路由的贡献约为静态年均 MOER 策略之外的 22.4 个百分点。",
       "innovations": [
-        "见正文"
+        "以真实生产环境的压力式路由器（而非均匀放置）作为盲基线，首次在严格对比下验证碳感知路由的增量收益",
+        "基于 NVIDIA DCGM 遥测和实测并发曲线对每个请求做能耗归因，取代传统的铭牌 TDP 估算",
+        "对每个请求按历史 MOER（而非仅决策时预测值）做碳结算，量化了预测误差导致的收益上界",
+        "碳感知路由以严格且可逆的叠加层形式覆盖在生产路由器之上，在实时多区域测试中无任何调度失败"
       ],
-      "scenario_cn": " Comments: 18 pages, 4 figures. Live multi-region GPU validation plus a one-year historical marginal-emissions replay",
+      "scenario_cn": "解决多区域 GPU 集群中 LLM 推理请求的碳排放优化问题：利用实时 MOER 信号将推理请求路由到当时最'干净'的电网区域，在不重新训练模型、不更换硬件的前提下显著降低推理运营碳排放。",
       "institution": "未明确披露",
       "opensource_status": "未确认开源",
       "code_url": "",
@@ -994,11 +1016,14 @@
       "github_search_url": "https://github.com/search?q=Diff-VF%3A%20Training-free%20High-quality%20Long%20Video%20Generation%20via%20Diffusion%20Model%20arxiv%20github&type=repositories",
       "title_en": "Diff-VF: Training-free High-quality Long Video Generation via Diffusion Model",
       "title_zh": "Diff-VF: Training-free High-quality Long Video Generation via Diffusion Model",
-      "summary_cn": " Comments: Accepted for publication in ACM Transactions on Multimedia Computing, Communications, and Applications (TOMM)",
+      "summary_cn": "Diff-VF 提出一种无需训练、即插即用且与模型无关的框架，将现有短视频扩散模型直接扩展为长视频生成器，无需修改或微调基础模型。它通过混合噪声初始化（HNI）约束全局语义、加权窗口采样（WWS）消除窗口间不连续、时序扩展采样（TES）建立长程依赖，三者互补解决长视频生成中的时序一致性与运动多样性矛盾。扩展的 Skip Residual Guidance 通过依赖时间步的引导在保真度与真实感之间取得平衡。在 VBench-Long 上，Diff-VF 相比 FreeNoise、FreeLong、RIFLEx 等基线实现了时序一致性与运动多样性更优的平衡，并保持有竞争力的逐帧质量，在两种不同时空建模策略的基础模型上均验证了通用性。",
       "innovations": [
-        "见正文"
+        "提出混合噪声初始化（HNI）：在初始化阶段融合短窗口噪声以约束全局语义，避免长视频整体漂移",
+        "提出加权窗口采样（WWS）：对重叠窗口区域施加加权融合，消除窗口边界处的画面不连续问题",
+        "提出时序扩展采样（TES）：通过时间步变化的融合策略建立跨窗口长程依赖，同时保持多样化运动",
+        "扩展出 Skip Residual Guidance：时间步相关的引导机制用于长视频增强，动态平衡生成保真度与真实感"
       ],
-      "scenario_cn": " Comments: Accepted for publication in ACM Transactions on Multimedia Computing, Communications, and Applications (TOMM)",
+      "scenario_cn": "适用于基于扩散模型的长视频生成与增强场景：用户可直接将任意已训练的短视频扩散模型（如不同时空建模策略的视频骨干）零训练升级为长视频生成器，用于影视级长镜头、多镜头叙事视频等内容创作。也可作为长视频质量增强的后处理工具，在保持内容保真的同时提升动态真实感。",
       "institution": "未明确披露",
       "opensource_status": "未确认开源",
       "code_url": "",
@@ -1041,11 +1066,13 @@
       "github_search_url": "https://github.com/search?q=Evidence-Driven%20Dynamic%20Visual%20Selector%20for%20Efficient%20Long%20Video%20Understanding%20arxiv%20github&type=repositories",
       "title_en": "Evidence-Driven Dynamic Visual Selector for Efficient Long Video Understanding",
       "title_zh": "Evidence-Driven Dynamic Visual Selector for Efficient Long Video Understanding",
-      "summary_cn": " Comments: Project Page: this https URL",
+      "summary_cn": "针对多模态大模型（MLLM）长视频理解中现有关键帧选择方法依赖外部代理评分器和刚性启发式规则、与目标模型内在证据错位的问题，提出基于目标 MLLM 内部注意力证据的细粒度动态视觉选择框架 EviSelect。该方法通过高度压缩的视觉输入和稀疏注意力高效近似注意力图，将其作为结构化先验指导分布感知的动态采样。基于三种互补注意力组件设计的轻量选择器，既能精确定位与查询相关的时间戳，又能自适应调整局部采样率与空间分辨率。在三个长视频理解基准上，EviSelect 以削减约 50% 视觉 token 的成本实现 3.9 倍端到端加速，且性能优于现有方法。",
       "innovations": [
-        "见正文"
+        "首次利用目标 MLLM 内部注意力证据（而非外部代理评分器）驱动视觉选择，通过压缩输入+稀疏注意力高效近似注意力图，与完整注意力高度对齐",
+        "设计轻量选择器，基于三种互补注意力组件同时完成查询相关时间戳定位与局部采样率、空间分辨率的自适应调整",
+        "将证据条件下的时空采样建模为随机策略，用 GRPO 在联合准确率-效率奖励下优化，通过组间相对比较鼓励按视频信息密度动态分配计算"
       ],
-      "scenario_cn": " Comments: Project Page: this https URL",
+      "scenario_cn": "解决长视频理解中现有帧选择方法与目标 MLLM 内在证据不一致、无法适配非均匀时空信息密度的问题，适用于对长视频进行高效准确的问答与理解推理场景。",
       "institution": "未明确披露",
       "opensource_status": "未确认开源",
       "code_url": "",
@@ -1357,11 +1384,14 @@
       "github_search_url": "https://github.com/search?q=Flow-Map%20Distillation%20on%20Relation%20Manifolds%20for%20Image%20Restoration%20arxiv%20github&type=repositories",
       "title_en": "Flow-Map Distillation on Relation Manifolds for Image Restoration",
       "title_zh": "Flow-Map Distillation on Relation Manifolds for Image Restoration",
-      "summary_cn": " Comments: 9 pages, 7 figures. Accepted to ACM Multimedia 2026",
+      "summary_cn": "本文提出 Flow-Map Distillation on Relation Manifolds (FoRM)，将基于关系矩阵的知识蒸馏重新建模为关系流形上的连续流映射问题：教师与学生网络的关系状态不再是静态对齐目标，而是通过学习一个流映射算子 F_θ(z, t, s)，直接从当前时刻 t 的状态预测任意目标时刻 s 的关系状态，从而提供更丰富的轨迹级监督信号。为保证全局自一致性，FoRM 引入安全半群一致性约束，利用真实桥接状态强制组合一致性，消除幻影状态误差累积；端点到锚定损失则防止算子偏离教师目标。在超分、去雨、去噪、去模糊、低光增强五个图像复原任务上的大量实验表明，FoRM 在多种骨干网络上一致超越 SOTA 蒸馏基线，相比朴素流匹配蒸馏训练方差降低约 50%，同时复原质量更优。",
       "innovations": [
-        "见正文"
+        "将关系型知识蒸馏从静态对齐重构为关系流形上的连续流映射问题，提出直接预测任意时刻关系状态的流映射算子 F_θ(z, t, s)，提供轨迹级监督而非单一速度场回归",
+        "引入安全半群一致性约束（safe semigroup consistency），利用真实桥接状态强制组合一致性，从机制上消除幻影状态误差累积",
+        "设计端点锚定损失（endpoint anchoring loss）约束算子不偏离教师目标状态",
+        "在五种图像复原任务与多骨干架构上取得一致提升，并将训练方差较朴素流匹配蒸馏降低约 50%"
       ],
-      "scenario_cn": " Comments: 9 pages, 7 figures. Accepted to ACM Multimedia 2026",
+      "scenario_cn": "解决现有图像复原知识蒸馏方法将知识转移视为静态目标对齐、忽略转移过程动态结构的问题，适用于超分、去雨、去噪、去模糊、低光增强等图像复原任务的教师-学生蒸馏训练，兼顾更好复原质量与更稳定的训练过程。",
       "institution": "未明确披露",
       "opensource_status": "未确认开源",
       "code_url": "",
@@ -1507,11 +1537,14 @@
       "github_search_url": "https://github.com/search?q=A%20Paragraph%20is%20Worth%20a%20Thousand%20Captions%3A%20Rethinking%20Text%20Supervision%20for%20Vision-Language%20Retrieval%20arxiv%20github&type=repositories",
       "title_en": "A Paragraph is Worth a Thousand Captions: Rethinking Text Supervision for Vision-Language Retrieval",
       "title_zh": "A Paragraph is Worth a Thousand Captions: Rethinking Text Supervision for Vision-Language Retrieval",
-      "summary_cn": " Comments: Accepted at the MUCG workshop, ECCV 2026",
+      "summary_cn": "本文重新审视了对比式视觉-语言模型（如 CLIP、BLIP）的长文本检索能力瓶颈：它们通常只在短图像标题上训练，限制了从详细文本描述检索图像的效果。作者提出一个更简单的问题——训练文本的粒度本身是否就决定了长文本检索性能，并对此进行了从单句标题到多句段落的系统性对照研究。通过基于 Qwen2-VL 和 Llama 3.2 Vision 的合成数据流水线，为 50 万张 CC3M 图像生成多样化标题、困难负样本和质量评分的段落，并在冻结视觉编码器、仅微调 BLIP 文本编码器的 10 种配置下隔离文本粒度的影响。实验表明，段落监督模型在 ShareGPT4V 上与 Long-CLIP-L 持平，在 DOCCI 图像到文本检索上超越其 14 个点以上，且无需任何架构改动。",
       "innovations": [
-        "见正文"
+        "提出并验证了训练文本粒度（而非位置编码扩展）是决定长文本检索性能的关键因素，仅靠段落级监督即可超越 Long-CLIP 等架构改动方案",
+        "构建了基于 Qwen2-VL 与 Llama 3.2 Vision 的合成数据流水线，可批量生成多样化标题、困难负样本及质量评分的段落级训练数据",
+        "在冻结视觉编码器、只微调文本编码器的严格对照框架下完成 10 种训练配置的系统性消融，解耦了文本粒度、标题多样性、困难负样本等因素的独立影响",
+        "发现段落监督能有效利用长 token 序列（单标题训练在 60 token 以上性能明显退化），且标题多样性对短标题检索收益递减、困难负样本在纯文本微调中反而有害"
       ],
-      "scenario_cn": " Comments: Accepted at the MUCG workshop, ECCV 2026",
+      "scenario_cn": "解决图文对比检索模型无法从详细长文本描述中准确检索图像的问题，适用于需要长描述查询的图像检索场景，如细粒度图像检索、图文搜索及基于复杂描述的多模态理解任务。",
       "institution": "未明确披露",
       "opensource_status": "未确认开源",
       "code_url": "",
@@ -1644,11 +1677,11 @@
       "github_search_url": "https://github.com/search?q=MAVISEG%3A%20Manifold%20Propagation%20and%20Visual%20Prototypes%20for%20Zero-Shot%20Open-Vocabulary%20Segmentation%20in%20Diffusion%20Transformers%20arxiv%20github&type=repositories",
       "title_en": "MAVISEG: Manifold Propagation and Visual Prototypes for Zero-Shot Open-Vocabulary Segmentation in Diffusion Transformers",
       "title_zh": "MAVISEG: Manifold Propagation and Visual Prototypes for Zero-Shot Open-Vocabulary Segmentation in Diffusion Transformers",
-      "summary_cn": " Comments: 20 pages, 14 figures, 9 tables. Preprint under review",
+      "summary_cn": "论文标题：MAVISEG: Manifold Propagation and Visual Prototypes for Zero-Shot Open-Vocabular",
       "innovations": [
         "见正文"
       ],
-      "scenario_cn": " Comments: 20 pages, 14 figures, 9 tables. Preprint under review",
+      "scenario_cn": "论文标题：MAVISEG: Manifold Propagation and Visual Prototypes for Zero-Shot Open-Vocabular",
       "institution": "未明确披露",
       "opensource_status": "未确认开源",
       "code_url": "",
@@ -1692,11 +1725,14 @@
       "github_search_url": "https://github.com/search?q=Vorch-IR%3A%20Long-Form%20Unified%20Multimodal%20Identity%20Replacement%20Video%20Generation%20arxiv%20github&type=repositories",
       "title_en": "Vorch-IR: Long-Form Unified Multimodal Identity Replacement Video Generation",
       "title_zh": "Vorch-IR: Long-Form Unified Multimodal Identity Replacement Video Generation",
-      "summary_cn": " Comments: Project page: this https URL",
+      "summary_cn": "Vorch-IR 提出一个基于 LTX2 的统一视频身份替换框架，支持单人和双人身份替换，并可选择性地同时替换背景。模型以驱动视频、索引参考图和文本编辑指令为联合条件，参考图无需与驱动视频的姿势、布局或空间配置匹配，其作为主体或背景参考的角色由指令指定。训练时通过自注意力融合密集视觉条件，用跨注意力建立视觉-语言语义对应，并设计了自动数据构建流水线来合成四种编辑设置下的成对监督数据。实验在自动指标和成对人工评估中均展现了较强的身份保持、动作保真和时间一致性，时序重叠推理策略还可在无需自回归续写的情况下将短视频模型扩展到分钟级生成。",
       "innovations": [
-        "见正文"
+        "统一框架：单模型同时支持单人/双人身份替换及可选背景替换，参考图无需与驱动视频在姿势、布局上对齐，角色由文本指令指定，灵活性高于依赖掩码或姿态等任务特定结构控制的既有方法",
+        "自动数据构建流水线：合成覆盖全部四种编辑设置（单人/双人 × 是否替换背景）的成对监督数据，缓解多人替换场景配对训练数据稀缺的问题",
+        "视觉-语言联合条件设计：密集视觉条件经自注意力融合，视觉-语言上下文经跨注意力建立语义对应，并融合 LTX2 视频先验保证运动与时间一致性",
+        "时序重叠推理策略：无需自回归续写即可将短片段模型扩展到分钟级长视频生成"
       ],
-      "scenario_cn": " Comments: Project page: this https URL",
+      "scenario_cn": "解决现有视频身份替换方法局限于单人场景、且依赖掩码/姿态等任务特定结构控制、难以融入通用多模态编辑系统的问题，为通用多模态视频编辑提供支持单人与双人（可选换背景）的灵活身份替换能力。",
       "institution": "未明确披露",
       "opensource_status": "未确认开源",
       "code_url": "",
@@ -1735,11 +1771,11 @@
       "github_search_url": "https://github.com/search?q=Accurate%20simulation%20of%20delamination%20with%20a%20resin-rich%20layer-dependent%20penalty%20stiffness%20based%20on%20structural%20cohesive%20elements%20arxiv%20github&type=repositories",
       "title_en": "Accurate simulation of delamination with a resin-rich layer-dependent penalty stiffness based on structural cohesive elements",
       "title_zh": "Accurate simulation of delamination with a resin-rich layer-dependent penalty stiffness based on structural cohesive elements",
-      "summary_cn": " Comments: 45 pages, 30 figures",
+      "summary_cn": "论文标题：Accurate simulation of delamination with a resin-rich layer-dependent penalty st",
       "innovations": [
         "见正文"
       ],
-      "scenario_cn": " Comments: 45 pages, 30 figures",
+      "scenario_cn": "论文标题：Accurate simulation of delamination with a resin-rich layer-dependent penalty st",
       "institution": "未明确披露",
       "opensource_status": "未确认开源",
       "code_url": "",
@@ -1778,11 +1814,13 @@
       "github_search_url": "https://github.com/search?q=ChromOps.jl%3A%20High-order%20simulation%20and%20discrete%20forward%20sensitivity%20analysis%20for%20chromatography%20models%20arxiv%20github&type=repositories",
       "title_en": "ChromOps.jl: High-order simulation and discrete forward sensitivity analysis for chromatography models",
       "title_zh": "ChromOps.jl: High-order simulation and discrete forward sensitivity analysis for chromatography models",
-      "summary_cn": " Comments: 25 pages, 10 figures, preprint",
+      "summary_cn": "本文提出了 ChromOps.jl，一个完全可微分的 Julia 色谱求解器，将高阶空间离散与离散前向灵敏度分析（DFSA）相结合，用于解决机理色谱模型中基于梯度的参数估计与优化的计算成本问题。作者在六组分离子交换色谱问题（含空间位阻质量作用动力学）上对比了两种高阶离散方法：有限差分求和分部（FD-SBP）与间断伽辽金谱元法（DG-SEM）。两者在人工构造问题上均达到理论收敛阶，其中 FD-SBP 在前向（primal）与对偶（dual）仿真中展现出更优的工作-精度性能且实现更简单。",
       "innovations": [
-        "见正文"
+        "首次将离散前向灵敏度分析（DFSA）引入色谱建模：梯度计算成本约为 1.4(1+Np) 次前向求解，即每额外一个参数仅需约 1.4 次前向求解（Np 最大 24 个参数单次同步传播）",
+        "primal 与 dual 求解共用同一代码路径，自动提供用户自定义目标函数的精确梯度，完全无需手写链式法则代码",
+        "系统对比 FD-SBP 与 DG-SEM 两种高阶空间离散在色谱问题上的收敛性与工作-精度表现，验证了 FD-SBP 的实用性优势"
       ],
-      "scenario_cn": " Comments: 25 pages, 10 figures, preprint",
+      "scenario_cn": "解决色谱过程开发中梯度型参数估计与优化因计算开销大、目标函数梯度推导繁琐而受阻的问题，为机理色谱模型提供高效、自动可微的梯度计算，支持梯度下降式的参数标定与工艺优化。",
       "institution": "未明确披露",
       "opensource_status": "未确认开源",
       "code_url": "",
