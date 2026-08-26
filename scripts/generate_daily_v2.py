@@ -180,9 +180,10 @@ def summarize_batch(batch: list[dict]) -> list[dict]:
     prompt = (
         '你是认真读论文的研究助理。严格输出 JSON 数组，不要输出任何额外文字。\n'
         '字段固定：id, title_zh, institution, summary_cn, innovations, scenario_cn。\n'
-        '要求：title_zh 准确翻译英文标题；summary_cn 2-4 句中文讲清楚论文做什么；'
-        'innovations 2-4 条真实创新点；scenario_cn 说明解决的问题和适用场景。\n'
-        '用中文。\n\n'
+        '要求：title_zh 准确翻译英文标题；summary_cn 用2-4句中文准确说明这篇论文独有的研究问题、方法设计和主要结果，必须包含论文特有的方法名、系统名、数据集或关键技术；'
+        'innovations 必须是JSON数组，包含2-4条具体创新，每条写明论文特有的方法、机制、数据集、指标或实验发现；'
+        'scenario_cn 用1-2句中文说明实际解决的问题和适用系统/业务场景，不要复述summary_cn的方法过程。\n'
+        '禁止输出Comments、Accepted by、见正文、论文标题式占位、纯英文内容、与摘要无关的套话或三个字段之间的大段重复。\n\n'
         f'{json.dumps(payload, ensure_ascii=False)}'
     )
     try:

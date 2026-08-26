@@ -52,40 +52,18 @@ retry 3 60 python3 scripts/generate_daily.py --date "${TARGET_DATE}" --fail-on-e
 if [ "${SKIP_V2:-0}" != "1" ]; then
   # v2 摘要生成（带独立超时保护；41 篇约需 20-30 分钟）
   timeout 1800 python3 scripts/generate_daily_v2.py --date "${TARGET_DATE}" || {
-    echo "[warn] v2 pipeline failed/timed out; page may have raw abstract content"
+    echo "[error] v2 pipeline failed/timed out; refusing to publish a low-quality fallback page"
+    exit 1
   }
+else
+  echo "[error] base fetch failed; refusing to publish"
+  exit 1
 fi
 
-# 如果 v2 失败但基础数据存在，用降级方案生成页面
 FULL_ENRICHED="docs/data/${TARGET_DATE}.full_enriched.json"
-if [ ! -s "$FULL_ENRICHED" ] && [ -s "$DAILY_JSON" ]; then
-  echo "[info] v2 enriched data missing; building fallback page"
-  python3 -c "
-import json, sys
-from pathlib import Path
-sys.path.insert(0, 'scripts')
-from generate_daily_v2 import is_excluded, group_and_cap_candidates, ascend_priority, build_page, sort_key
-ROOT = Path('.')
-src = json.loads(Path('$DAILY_JSON').read_text())
-filtered = [p for p in src['papers'] if not is_excluded(p)]
-papers = group_and_cap_candidates(filtered, per_topic_limit=5)
-enriched = []
-for p in papers:
-    abstext = p.get('abstract') or ''
-    if len(abstext.strip()) < 20:
-        abstext = '论文标题：' + p.get('title', '')
-    enriched.append({**p, 'title_en': p['title'], 'title_zh': p['title'],
-        'summary_cn': abstext[:500],
-        'innovations': ['见正文：' + abstext[:80]],
-        'scenario_cn': abstext[:300],
-        'institution': '未明确披露', 'opensource_status': '未确认开源', 'code_url': '',
-        'is_ascend': ascend_priority(p)})
-enriched = sorted(enriched, key=sort_key)
-Path('$FULL_ENRICHED').write_text(json.dumps({'date':'$TARGET_DATE','count':len(enriched),
-  'fetched_count':src['fetched_count'],'papers':enriched}, ensure_ascii=False))
-Path('$DAILY_HTML').write_text(build_page(src, enriched))
-print('fallback ok, kept:', len(enriched))
-"
+if [ ! -s "$FULL_ENRICHED" ]; then
+  echo "[error] enriched output missing: $FULL_ENRICHED"
+  exit 1
 fi
 
 if [ ! -s "$DAILY_HTML" ] || [ ! -s "$DAILY_JSON" ]; then
@@ -104,6 +82,12 @@ assert payload.get("count") == len(payload.get("papers", []))
 assert "class=\"category-card\"" in html.read_text(encoding="utf-8") or payload.get("count") == 0
 print({"verified": True, "date": payload.get("date"), "count": payload.get("count"), "topics": len(payload.get("topics", [])), "open_source_count": payload.get("open_source_count", 0)})
 PY
+
+# 发布前质量闸门：任何一篇摘要/创新点/场景不合格，整天不 commit、不 push。
+python3 scripts/validate_daily_v2.py --date "${TARGET_DATE}" --root . || {
+  echo "[error] daily v2 quality gate failed; refusing to commit or push ${TARGET_DATE}"
+  exit 1
+}
 
 # 自动重建首页 index.html
 python3 - <<PY
