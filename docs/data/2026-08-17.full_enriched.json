@@ -749,11 +749,14 @@
       "code_links_from_meta": "https://github.com/search?q=MedClaw%3A%20Heuristic%20Agent%20Harness%20for%20Long-Horizon%20Surgical%20Video%20Reasoning%20arxiv%20github&type=repositories",
       "is_ascend": false,
       "title_zh": "MedClaw: Heuristic Agent Harness for Long-Horizon Surgical Video Reasoning",
-      "summary_cn": "Understanding tens-of-minutes surgical videos requires long-horizon temporal reasoning, answering what happens before, after, or across stages of a procedure by grounding the question in visual evidence spread across time. Existing approaches handle this poorly: a one-shot vision-language model (VLM) compresses the whole procedure to fit its context window and loses the detail a \"before\" or \"after\" question depends on, while video agents that train the model where to look are data-hungry and tra",
+      "summary_cn": "MedClaw针对数十分钟神经外科视频中的跨阶段时序推理问题，将文本编排器与冻结视觉语言子代理分离，由编排器规划取证步骤，调用查看、裁剪、检查帧和外部知识检索工具。其无梯度、奖励门控的启发式技能蒸馏循环从低分轨迹中提炼可复用技能，仅用约100个标注样本扩展技能库；在MedClawBench的1,123个问题及公开讲座视频测试集上，四项评测维度均超过一次性VLM和通用视频智能体，且在长时域、域外神经外科视频上提升最大。",
       "innovations": [
-        "见正文：Understanding tens-of-minutes surgical videos requires long-horizon temporal reasoning, answering wh"
+        "提出可审计的文本编排器—冻结视觉语言子代理架构，将推理规划与像素感知解耦",
+        "提出奖励门控的无梯度Heuristic Skill Distillation，从低分轨迹中筛选技能并形成外部技能库，特别获得directed re-look检索技能",
+        "构建去泄漏、医生参与标注的MedClawBench，覆盖自建长时域神经外科录像和留出的公开讲座视频",
+        "约100个标注样本即可适应新任务，并在两类数据集和四项指标上稳定优于对比方法"
       ],
-      "scenario_cn": "Understanding tens-of-minutes surgical videos requires long-horizon temporal reasoning, answering what happens before, after, or across stages of a procedure by grounding the question in visual evidence spread across time. Existing approaches handle this poorly: a one-shot vision-language model (VLM",
+      "scenario_cn": "该方法解决长视频中需要根据分散视觉证据判断手术前后关系、跨阶段事件及关键操作的问题，适合手术教学分析、术中视频检索、术后复盘和医学视频问答系统。",
       "title_en": "MedClaw: Heuristic Agent Harness for Long-Horizon Surgical Video Reasoning",
       "institution": "未明确披露",
       "code_url": "h",
@@ -1197,13 +1200,13 @@
       "title_zh": "见红思恶：视觉语言模型中的颜色偏见",
       "institution": "未明确披露",
       "innovations": [
-        "提出 Stealth Visual Prompts：在不改变语义内容的前提下系统控制渲染文本的颜色、对比度等视觉样式，为量化 VLM 视觉偏见提供了可控实验范式",
-        "首次系统度量单词着色对情感分析的影响：绿色正向词会一致地将情感预测推向正向，且 VLM 难以正确处理负向词",
-        "发现文本-背景对比度降低会加剧模型对视觉显著线索的依赖，显著增加 VQA 错误输出",
-        "将观测到的行为偏差与视觉编码器潜在表征的变化相关联，提供了机制层面的解释"
+        "提出“隐蔽视觉提示”，在不改变文字语义的情况下独立操控颜色和对比度",
+        "发现绿色积极词会造成情感预测正向偏移并削弱模型对消极词的识别",
+        "通过分析视觉编码器潜在表征，建立颜色变化与语义判断偏移之间的关联",
+        "证明降低文字背景对比度会提高视觉线索依赖并导致更多视觉问答错误。"
       ],
-      "scenario_cn": "针对 VLM 在招聘辅助、推荐系统等工业决策场景部署时可能存在的视觉样式系统性偏差问题，揭示渲染文本的颜色、对比度等视觉因素会背离人类语义理解地引导模型解读，为构建更可靠、更公平的 VLM 决策系统及相应的鲁棒性测试提供依据。",
-      "summary_cn": "Vision language models (VLMs) are increasingly used in industrial decision-making systems, such as recruitment support and recommendation. This motivates careful analysis of how VLMs process visual and textual information. In this work, we study how VLMs interpret text rendered as an image, and investigate the influence of visual styling biases. To this end, we introduce Stealth Visual Prompts, which subtly change visual styling of text, such as color and contrast, while preserving semantic cont",
+      "scenario_cn": "该研究揭示了图像化文本的排版样式可能诱导视觉语言模型偏离人类语义理解，适用于招聘辅助、推荐系统等依赖视觉语言模型进行文本分析的工业决策场景。",
+      "summary_cn": "论文研究视觉语言模型如何解读图像中的文字及其视觉样式偏差，提出“隐蔽视觉提示”方法，通过控制文字颜色、对比度等样式而保持语义不变，系统测量其对模型判断的影响。实验发现，将积极词汇标为绿色会持续推动情感预测转向正面，使模型忽略文本中的消极词；降低文字与背景的对比度则会增强模型对视觉显著线索的依赖，并增加视觉问答错误，其机制与视觉编码器潜在表征变化相关。",
       "title_en": "Seeing Red, Thinking Bad: Color Bias in Vision Language Models",
       "code_url": "h",
       "opensource_status": "已确认开源"
@@ -2132,10 +2135,13 @@
       "code_links_from_meta": "https://github.com/search?q=Rethinking%20Automated%20Program%20Repair%3A%20The%20Impact%20of%20Bug%20Complexity%2C%20Fault%20Localization%2C%20and%20LLM%20Cost-efficiency%20arxiv%20github&type=repositories",
       "is_ascend": false,
       "title_en": "Rethinking Automated Program Repair: The Impact of Bug Complexity, Fault Localization, and LLM Cost-efficiency",
-      "summary_cn": "Background: Software bugs remain a critical challenge in development, necessitating effective Automated Program Repair (APR) techniques. While Large Language Model (LLM)-based APR systems have shown promise, prior studies primarily focus on overall repair effectiveness. The effects of bug complexity, fault localization, reasoning settings, and repair cost-effectiveness remain insufficiently explored. Aims: This study presents a comprehensive empirical analysis of LLM-based APR, focusing on how r",
-      "scenario_cn": "Background: Software bugs remain a critical challenge in development, necessitating effective Automated Program Repair (APR) techniques. While Large Language Model (LLM)-based APR systems have shown promise, prior studies primarily focus on overall repair effectiveness. The effects of bug complexity",
+      "summary_cn": "本文系统研究缺陷复杂度、故障定位精度与推理设置如何影响大语言模型自动程序修复，并通过多维实证框架和统计分析评估 ChatRepair、CodeCorrector 在 DeepSeek、GPT、Llama 上的表现。实验发现，结构复杂缺陷和不精确故障定位会显著增加修复难度，但基于大语言模型的修复仍具竞争力；高成本模型和更强推理设置并不必然带来更高成本效率，低成本模型能够修复超过50%的中等复杂度缺陷。",
+      "scenario_cn": "本文为如何根据缺陷难度、定位质量和预算选择大语言模型自动程序修复方案提供了实证依据。研究结果适用于持续集成、代码审查和面向大规模软件仓库的自动缺陷修复系统。",
       "innovations": [
-        "见正文：Background: Software bugs remain a critical challenge in development, necessitat"
+        "构建同时覆盖缺陷复杂度、故障定位策略、推理设置与计算成本的多维评估框架",
+        "揭示故障定位不精确会进一步扩大 ChatRepair 与 CodeCorrector 的修复效果差距",
+        "发现 GPT-5 比 DeepSeek-V4-pro 和 DeepSeek-V3.2 分别多修复7个和39个复杂缺陷",
+        "验证 DeepSeek-V3.2 的总修复成本具有最佳成本效率，而更高模型成本并不稳定提升修复收益。"
       ],
       "title_zh": "Rethinking Automated Program Repair: The Impact of Bug Complexity, Fault Localization, and LLM Cost-efficiency",
       "institution": "未明确披露",

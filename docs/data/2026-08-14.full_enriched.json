@@ -1076,11 +1076,14 @@
       "code_links_from_meta": "https://github.com/search?q=Beyond%20Correctness%3A%20Benchmarking%20and%20Aligning%20Response%20Behaviors%20in%20Hybrid-Thinking%20MLLMs%20arxiv%20github&type=repositories",
       "is_ascend": false,
       "title_zh": "Beyond Correctness: Benchmarking and Aligning Response Behaviors in Hybrid-Thinking MLLMs",
-      "summary_cn": "Hybrid-thinking multimodal large language models (MLLMs) allow a single model to alternate between deliberative thinking and latency-efficient non-thinking inference. Although these modes differ in reasoning budget, their delivered responses should satisfy the same user-facing standard. Correctness alone may not characterize this response quality; we therefore evaluate task accuracy and response-pattern failures as complementary outcomes. We study this gap through \\textbf{response-pattern alignm",
+      "summary_cn": "论文研究混合思维多模态大模型在思考与非思考接口之间是否保持一致且可接受的最终响应行为，并将任务准确率与响应模式失败作为互补评价。作者构建包含2415个多模态提示的PatternEval诊断基准，覆盖视觉感知与定位、结构化图像理解和多模态知识推理，系统检测思维链泄漏、响应重复、逻辑矛盾和表演式推理四类失败。实验发现不同提供商模型普遍存在响应模式失效，非思考推理的失败率显著更高；在Qwen3-VL-4B和Qwen3-VL-8B上结合PatternRM与PatternRL进行带模式特定惩罚的强化学习，可缓解跨模式失配，但会带来轻微任务性能损失。",
       "innovations": [
-        "见正文：Hybrid-thinking multimodal large language models (MLLMs) allow a single model to alternate between d"
+        "提出覆盖三类多模态任务、含2415个提示的失败增强基准PatternEval",
+        "将链式思考泄漏、响应重复、逻辑矛盾和表演式推理纳入响应模式对齐评测",
+        "设计响应级奖励模型PatternRM与加入模式特定惩罚的强化学习方法PatternRL",
+        "在Qwen3-VL-4B/8B实验中验证该训练机制能降低思考与非思考接口的系统性失配，代价仅为边际任务性能下降。"
       ],
-      "scenario_cn": "Hybrid-thinking multimodal large language models (MLLMs) allow a single model to alternate between deliberative thinking and latency-efficient non-thinking inference. Although these modes differ in reasoning budget, their delivered responses should satisfy the same user-facing standard. Correctness ",
+      "scenario_cn": "解决同一混合思维模型在不同推理模式下最终回答风格和可靠性不一致、仅看正确率难以发现异常的问题。适用于需要在高质量思考推理与低延迟非思考推理之间切换的多模态问答、视觉理解和知识推理系统。",
       "title_en": "Beyond Correctness: Benchmarking and Aligning Response Behaviors in Hybrid-Thinking MLLMs",
       "institution": "未明确披露",
       "code_url": "h",
