@@ -244,11 +244,27 @@ def ensure_css():
         css += '\n.deep-card { background: #fffdf8; border: 1px solid var(--line); }\n.deep-title-en { font-size: 22px; line-height: 1.35; margin-top: 8px; }\n.deep-title-zh { font-size: 15px; color: var(--teal); margin-top: 6px; font-weight: 700; }\n.deep-inst { font-size: 12px; color: var(--muted); margin-top: 8px; }\n.deep-body { grid-template-columns: 1fr 1fr; }\n.deep-summary { grid-column: 1; }\n.deep-innovation { grid-column: 2; }\n.deep-scenario { grid-column: 1 / -1; }\n@media (max-width: 800px) { .deep-body { grid-template-columns: 1fr; } .deep-summary, .deep-innovation, .deep-scenario { grid-column: 1; } }\n'
         CSS.write_text(css, encoding='utf-8')
 
+def normalize_topics(p: dict) -> list[dict]:
+    """Normalize topic objects/strings from old and new enriched data."""
+    out = []
+    for i, topic in enumerate(p.get('topics') or []):
+        if isinstance(topic, str):
+            name = topic.strip() or 'Other'
+            slug = re.sub(r'[^a-z0-9]+', '-', name.lower()).strip('-') or f'topic-{i}'
+            out.append({'name': name, 'slug': slug})
+        elif isinstance(topic, dict):
+            name = str(topic.get('name') or topic.get('title') or 'Other')
+            slug = str(topic.get('slug') or re.sub(r'[^a-z0-9]+', '-', name.lower()).strip('-') or f'topic-{i}')
+            out.append({'name': name, 'slug': slug})
+    return out or [{'name': 'Other', 'slug': 'other'}]
+
 def build_page(meta: dict, enriched_list: list[dict]) -> str:
     groups = {}
     for p in enriched_list:
-        topic = p['topics'][0]['name'] if p.get('topics') else 'Other'
-        slug = p['topics'][0]['slug'] if p.get('topics') else 'other'
+        topics = normalize_topics(p)
+        p = {**p, 'topics': topics}
+        topic = topics[0]['name']
+        slug = topics[0]['slug']
         groups.setdefault((topic, slug), []).append(p)
     ordered_groups = sorted(groups.items(), key=lambda kv: (-len(kv[1]), kv[0][0]))
     nav = ''.join(f'<a class="nav-chip" href="#{html.escape(slug)}">{html.escape(name)} · {len(items)} 篇</a>' for (name, slug), items in ordered_groups)

@@ -1202,11 +1202,14 @@
       "code_links_from_meta": "https://github.com/search?q=ArmorOCR%3A%20Grounded%20Adversarial%20Visual%20Perception%20via%20Observation-Transferred%20Self-Distillation%20arxiv%20github&type=repositories",
       "is_ascend": false,
       "title_zh": "ArmorOCR: Grounded Adversarial Visual Perception via Observation-Transferred Self-Distillation",
-      "summary_cn": "Large multimodal models (LMMs) have demonstrated strong OCR recognition capabilities, yet remain vulnerable to adversarial visual text that is readable to humans but challenging for models to localize and recognize. Existing OCR benchmarks mainly focus on natural or document-style text, while adversarial OCR evaluations remain limited in scale, task coverage, or region-aware evaluation. In this paper, we formulate adversarial OCR as a \\textbf{grounded OCR perception} task and introduce \\textbf{A",
+      "summary_cn": "论文研究人类可读但多模态模型难以定位和识别的对抗性视觉文本问题，将其定义为有区域定位依据的对抗性光学字符识别任务。论文提出两阶段的装甲式光学字符识别框架，先利用特权变换观测进行在策略自蒸馏，再通过带任务条件奖励的群体相对策略优化，联合提升文本定位、识别、完整文本检测和视觉问答能力。实验表明，该方法在对抗性识别及通用光学字符识别基准上均有稳定改进，同时保持了较强的通用识别能力。",
       "innovations": [
-        "见正文：Large multimodal models (LMMs) have demonstrated strong OCR recognition capabilities, yet remain vul"
+        "构建包含390张图像、区域级标注、5个主要类别和13种细粒度对抗类型的对抗性光学字符识别基准",
+        "通过在策略自蒸馏从特权变换观测中补足模型缺失的对抗性视觉感知能力",
+        "设计带定位、识别、完整文本检测和视觉问答任务条件奖励的群体相对策略优化，细化有依据的文本感知",
+        "在多个对抗性和通用光学字符识别基准上验证鲁棒性提升与通用能力保持"
       ],
-      "scenario_cn": "Large multimodal models (LMMs) have demonstrated strong OCR recognition capabilities, yet remain vulnerable to adversarial visual text that is readable to humans but challenging for models to localize and recognize. Existing OCR benchmarks mainly focus on natural or document-style text, while advers",
+      "scenario_cn": "该方法解决了多模态模型面对伪装、扰动或特殊排布的视觉文本时难以准确定位和识别的问题。适用于需要可靠读取复杂场景文字的多模态模型评测、视觉问答、图像内容理解和鲁棒文字识别系统。",
       "title_en": "ArmorOCR: Grounded Adversarial Visual Perception via Observation-Transferred Self-Distillation",
       "institution": "未明确披露",
       "code_url": "h",
