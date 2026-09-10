@@ -1,0 +1,1943 @@
+{
+  "date": "2026-09-03",
+  "count": 36,
+  "fetched_count": 632,
+  "papers": [
+    {
+      "id": "2609.01608v1",
+      "title": "WMLLM: Self-Evolving Optimization Agents via Predict-Then-Act World Modeling",
+      "abstract": "Black-box optimization problems remain challenging because of large, weakly structured, and high-dimensional search spaces. Existing methods often suffer from poor sample efficiency because they rely on direct candidate generation or trial-and-error refinement. A natural way to improve search efficiency is to use world modeling, which can help identify promising optimization directions before costly evaluation. Large language models can predict the outcomes of these candidates with nontrivial accuracy because of their implicit knowledge. Motivated by this observation, we propose WMLLM, a self-evolving optimization-agent framework based on predict-then-act world modeling. The agent first predicts promising directions and then acts to generate candidates. Combined with agentic multi-turn refinement, population-based search, and reinforcement learning, WMLLM refines both its implicit world model and its optimization strategy during search. Experiments on black-box optimization tasks, especially multi-objective molecular optimization, show that WMLLM improves sample efficiency and final optimization performance. On the multi-objective molecular optimization benchmark, WMLLM achieves state-of-the-art results under a limited evaluation budget.",
+      "published": "2026-09-03T00:00:00+00:00",
+      "updated": "2026-09-03T00:00:00+00:00",
+      "authors": [
+        "Zhongzheng Li",
+        "Qingsong Ran",
+        "Shikun Feng",
+        "Nian Ran",
+        "Wenhao Li",
+        "Xiaoyuan Zhang",
+        "Yue Wang",
+        "Xiaoguang Zhao"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "abs_url": "https://arxiv.org/abs/2609.01608",
+      "pdf_url": "https://arxiv.org/pdf/2609.01608",
+      "score": 11.0,
+      "topics": [
+        {
+          "name": "多模态推理加速",
+          "slug": "multimodal-inference",
+          "hits": [
+            "mllm"
+          ]
+        },
+        {
+          "name": "Agent",
+          "slug": "agent",
+          "hits": [
+            "agent"
+          ]
+        },
+        {
+          "name": "World Model",
+          "slug": "world-model",
+          "hits": [
+            "world model"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "agent",
+        "mllm",
+        "world model"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=WMLLM%3A%20Self-Evolving%20Optimization%20Agents%20via%20Predict-Then-Act%20World%20Modeling%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Black-box optimization problems remain challenging because of large, weakly structured, and high-dimensional search spaces. Existing methods often suffer from poor sample efficiency because they rely on direct candidate generation or trial-and-error refinement. A natural way to improve search efficiency is to use world modeling, which can help identify promising optimization directions before costly evaluation. Large language models can predict the outcomes of these candidates with nontrivial accuracy because of their implicit knowledge. Motivated by this observation, we propose WMLLM, a self-evolving optimization-agent framework based on predict-then-act world modeling. The agent first predicts promising directions and then acts to generate candidates. Combined with agentic multi-turn refinement, population-based search, and reinforcement learning, WMLLM refines both its implicit world model and its optimization strategy during search. Experiments on black-box optimization tasks, especially multi-objective molecular optimization, show that WMLLM improves sample efficiency and final optimization performance. On the multi-objective molecular optimization benchmark, WMLLM achieves state-of-the-art results under a limited evaluation budget.",
+      "code_links_from_meta": "https://github.com/search?q=WMLLM%3A%20Self-Evolving%20Optimization%20Agents%20via%20Predict-Then-Act%20World%20Modeling%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "WMLLM：通过先预测后行动的世界建模实现自进化优化智能体",
+      "institution": "未明确披露",
+      "summary_cn": "针对大规模、弱结构化和高维黑盒优化空间中评估成本高、样本效率低的问题，论文提出基于先预测后行动世界建模的 WMLLM 框架。WMLLM 先利用大语言模型预测候选方向的潜在结果，再生成候选解，并结合智能体多轮 refinement、基于种群的搜索和强化学习，在搜索过程中同时优化隐式世界模型与优化策略。在黑盒优化任务，尤其是多目标分子优化基准上，WMLLM 在有限评估预算下取得了最先进的最终优化性能和样本效率。",
+      "innovations": [
+        "提出 WMLLM 先预测后行动的世界建模机制，使大语言模型先判断有前景的优化方向，再生成候选解，减少直接试错式搜索带来的评估浪费。",
+        "将智能体多轮 refinement 与基于种群的搜索结合，使候选解能够根据连续搜索反馈逐步改进。",
+        "引入强化学习，在优化过程中联合更新隐式世界模型和优化策略，使智能体具备自进化能力。",
+        "在多目标分子优化基准的有限评估预算设置下取得 state-of-the-art 结果，验证了该框架对样本效率和最终优化质量的提升。"
+      ],
+      "scenario_cn": "适用于分子设计、材料发现、超参数搜索和工程参数调优等黑盒优化场景，尤其适合每次候选评估都昂贵、搜索空间维度高且缺乏明确梯度的系统。",
+      "title_en": "WMLLM: Self-Evolving Optimization Agents via Predict-Then-Act World Modeling",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2609.01962v1",
+      "title": "Post-Training Ternarization of Qwen3-4B Capability, Effective Bit Budget, Storage Compression, and Deployment",
+      "abstract": "Ultra-low-bit language models can reduce storage and memory bandwidth, but a nominal \"1.58-bit\" label does not fully describe the stored representation, retained capability, or runtime behavior. We study an end-to-end post-training conversion of Qwen, an instruction-tuned 4B-parameter model, using KOTMS rotation, E2M-ATQ ternarization, and GPTQ-style error compensation from TWLA. The experiment is weight-only: activations remain at 16-bit precision, so ILA-AMP is omitted. We evaluate effective bit accounting, task capability retention, perplexity, calibration sensitivity, checkpoint composition, and deployment behavior. The final conversion uses 1.641 effective bits per weight for quantized linear weights, with 81.62% of model parameters targeted. Across ten scored capability comparisons, accuracy falls from 64.5% to 54.7%. Degradation is uneven: BoolQ retains 84.6% chance-corrected teacher performance, while ARC-Challenge retains 43.8%. Perplexity rises from 13.639 to 18.748 on WikiText-2, 24.700 to 31.992 on PTB, and 19.831 to 28.966 on C4. A subsequent packing run preserves the ternary planes and scales, reducing reported model size from 8.29 GiB to 3.96 GiB with essentially unchanged perplexity. A separate third-party packing attempt was lossy and is excluded from the primary artifact claim. The packed artifact has not been benchmarked end-to-end for task accuracy or generation throughput. A preliminary Triton GEMV microbenchmark is 4.6x slower than FP16 cuBLAS on one tested shape. We therefore do not claim that compression alone yields faster inference.",
+      "published": "2026-09-03T00:00:00+00:00",
+      "updated": "2026-09-03T00:00:00+00:00",
+      "authors": [
+        "Anirudh Malik",
+        "M Sparsh Mehra",
+        "Poojith Devan"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "abs_url": "https://arxiv.org/abs/2609.01962",
+      "pdf_url": "https://arxiv.org/pdf/2609.01962",
+      "score": 8.1,
+      "topics": [
+        {
+          "name": "LLM 推理加速",
+          "slug": "llm-inference",
+          "hits": [
+            "throughput"
+          ]
+        },
+        {
+          "name": "RAG / Long Context",
+          "slug": "rag-long-context",
+          "hits": [
+            "rag"
+          ]
+        },
+        {
+          "name": "Model Compression / Quantization",
+          "slug": "model-compression",
+          "hits": [
+            "quantization",
+            "activation quantization"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "activation quantization",
+        "quantization",
+        "rag",
+        "throughput"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Post-Training%20Ternarization%20of%20Qwen3-4B%20Capability%2C%20Effective%20Bit%20Budget%2C%20Storage%20Compression%2C%20and%20Deployment%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Ultra-low-bit language models can reduce storage and memory bandwidth, but a nominal \"1.58-bit\" label does not fully describe the stored representation, retained capability, or runtime behavior. We study an end-to-end post-training conversion of Qwen, an instruction-tuned 4B-parameter model, using KOTMS rotation, E2M-ATQ ternarization, and GPTQ-style error compensation from TWLA. The experiment is weight-only: activations remain at 16-bit precision, so ILA-AMP is omitted. We evaluate effective bit accounting, task capability retention, perplexity, calibration sensitivity, checkpoint composition, and deployment behavior. The final conversion uses 1.641 effective bits per weight for quantized linear weights, with 81.62% of model parameters targeted. Across ten scored capability comparisons, accuracy falls from 64.5% to 54.7%. Degradation is uneven: BoolQ retains 84.6% chance-corrected teacher performance, while ARC-Challenge retains 43.8%. Perplexity rises from 13.639 to 18.748 on WikiText-2, 24.700 to 31.992 on PTB, and 19.831 to 28.966 on C4. A subsequent packing run preserves the ternary planes and scales, reducing reported model size from 8.29 GiB to 3.96 GiB with essentially unchanged perplexity. A separate third-party packing attempt was lossy and is excluded from the primary artifact claim. The packed artifact has not been benchmarked end-to-end for task accuracy or generation throughput. A preliminary Triton GEMV microbenchmark is 4.6x slower than FP16 cuBLAS on one tested shape. We therefore do not claim that compression alone yields faster inference.",
+      "code_links_from_meta": "https://github.com/search?q=Post-Training%20Ternarization%20of%20Qwen3-4B%20Capability%2C%20Effective%20Bit%20Budget%2C%20Storage%20Compression%2C%20and%20Deployment%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "Qwen3-4B能力的训练后三值化：有效比特预算、存储压缩与部署",
+      "institution": "未明确披露",
+      "summary_cn": "论文对指令微调的4B参数Qwen3模型开展端到端训练后三值化，重点分析名义“1.58比特”之外的实际存储表示、能力保留和运行时行为。方法结合KOTMS旋转、E2M-ATQ三值化以及来自TWLA的GPTQ式误差补偿，仅对权重进行量化并保持激活为16位；最终量化线性权重的有效位宽为每权重1.641比特，覆盖81.62%的模型参数。十项能力评测的准确率由64.5%降至54.7%，WikiText-2、PTB和C4上的困惑度也分别从13.639升至18.748、从24.700升至31.992以及从19.831升至28.966；进一步无损打包后模型大小由8.29 GiB降至3.96 GiB，但单个形状上的初步Triton GEMV测试仍比FP16 cuBLAS慢4.6倍。",
+      "innovations": [
+        "将KOTMS旋转、E2M-ATQ三值化和TWLA中的GPTQ式误差补偿组合成Qwen3-4B训练后三值化流程，并明确采用权重仅量化设置，因激活保持16位而省略ILA-AMP。",
+        "提出按实际量化线性权重、未量化参数及缩放因子等组成部分核算有效比特预算；最终量化权重达到1.641 effective bits per weight，覆盖模型参数的81.62%。",
+        "系统评估三值化后的能力保持与退化差异：十项能力比较的总体准确率从64.5%降至54.7%，BoolQ保留教师模型经机会校正后性能的84.6%，而ARC-Challenge仅保留43.8%。",
+        "通过保留三值平面和缩放因子的打包运行将模型报告大小从8.29 GiB压缩到3.96 GiB，困惑度基本不变；同时Triton GEMV微基准比单一测试形状上的FP16 cuBLAS慢4.6倍，说明存储压缩不能直接推出推理加速。"
+      ],
+      "scenario_cn": "适用于受显存容量、磁盘空间或内存带宽限制的模型存储与分发场景，尤其是需要在有限资源设备上保存4B级语言模型的部署系统。若目标是降低生成延迟或提高吞吐量，还必须结合经过验证的低比特运行时内核，不能仅依据压缩后的模型体积作出性能判断。",
+      "title_en": "Post-Training Ternarization of Qwen3-4B Capability, Effective Bit Budget, Storage Compression, and Deployment",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2609.02270v1",
+      "title": "CrashDiffuser: VLM-Guided Collision Intent Reasoning for Fine-Grained Safety-Critical Traffic Scenario Generation",
+      "abstract": "Generating safety-critical scenarios is essential for evaluating autonomous driving systems. However, existing generators primarily focus on inducing collisions and offer limited control over where contact occurs on the target vehicle. In this paper, we study fine-grained safety-critical scenario generation, where success requires both a target collision and a specified head, rear, or side contact region. We propose CrashDiffuser, a closed-loop VLM-guided diffusion framework that decouples semantic collision reasoning from continuous trajectory synthesis through a hierarchical collision-intent interface derived from the requested target contact region. At initialization, the VLM extracts reusable scene-level context; at each replanning step, it predicts a structured action tuple describing speed change, turning behavior, and collision stage. This intent conditions a diffusion model to generate executable adversarial trajectories, while collision-guided sampling, candidate selection, and short-horizon replanning adapt generation to the target vehicle's evolving behavior. On WOMD-derived closed-loop scenarios, CrashDiffuser achieves a target-collision rate of 50.33% in a single attempt and 67.98% after three attempts, together with a contact-region control success rate of 40.05% and competitive trajectory naturalness. Component ablations further support the proposed design.",
+      "published": "2026-09-03T00:00:00+00:00",
+      "updated": "2026-09-03T00:00:00+00:00",
+      "authors": [
+        "Shucheng Zhang",
+        "Yuang Zhang",
+        "Bingzhang Wang",
+        "Muhammad Monjurul Karim",
+        "Kehua Chen",
+        "Yinhai Wang"
+      ],
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "abs_url": "https://arxiv.org/abs/2609.02270",
+      "pdf_url": "https://arxiv.org/pdf/2609.02270",
+      "score": 7.8,
+      "topics": [
+        {
+          "name": "多模态推理加速",
+          "slug": "multimodal-inference",
+          "hits": [
+            "vlm"
+          ]
+        },
+        {
+          "name": "Agent Reasoning / Test-time Scaling",
+          "slug": "agent-reasoning",
+          "hits": [
+            "reasoning"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "reasoning",
+        "vlm"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=CrashDiffuser%3A%20VLM-Guided%20Collision%20Intent%20Reasoning%20for%20Fine-Grained%20Safety-Critical%20Traffic%20Scenario%20Generation%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Generating safety-critical scenarios is essential for evaluating autonomous driving systems. However, existing generators primarily focus on inducing collisions and offer limited control over where contact occurs on the target vehicle. In this paper, we study fine-grained safety-critical scenario generation, where success requires both a target collision and a specified head, rear, or side contact region. We propose CrashDiffuser, a closed-loop VLM-guided diffusion framework that decouples semantic collision reasoning from continuous trajectory synthesis through a hierarchical collision-intent interface derived from the requested target contact region. At initialization, the VLM extracts reusable scene-level context; at each replanning step, it predicts a structured action tuple describing speed change, turning behavior, and collision stage. This intent conditions a diffusion model to generate executable adversarial trajectories, while collision-guided sampling, candidate selection, and short-horizon replanning adapt generation to the target vehicle's evolving behavior. On WOMD-derived closed-loop scenarios, CrashDiffuser achieves a target-collision rate of 50.33% in a single attempt and 67.98% after three attempts, together with a contact-region control success rate of 40.05% and competitive trajectory naturalness. Component ablations further support the proposed design.",
+      "code_links_from_meta": "https://github.com/search?q=CrashDiffuser%3A%20VLM-Guided%20Collision%20Intent%20Reasoning%20for%20Fine-Grained%20Safety-Critical%20Traffic%20Scenario%20Generation%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "CrashDiffuser：VLM 引导的碰撞意图推理与细粒度安全关键交通场景生成",
+      "institution": "未明确披露",
+      "summary_cn": "针对现有自动驾驶安全场景生成器能够诱发碰撞、但难以控制目标车辆具体接触区域的问题，论文研究了同时指定碰撞目标和车头、车尾或车侧接触区域的细粒度安全关键场景生成。论文提出闭环 VLM 引导的 CrashDiffuser，通过由目标接触区域构造的分层碰撞意图接口，将语义碰撞推理与连续轨迹合成解耦；VLM 在初始化时提取场景上下文，并在每次重新规划时预测包含速度变化、转向行为和碰撞阶段的结构化动作元组，再由扩散模型生成可执行的对抗轨迹。基于 WOMD 衍生的闭环场景，CrashDiffuser 单次尝试的目标碰撞率为 50.33%，三次尝试后提升至 67.98%，接触区域控制成功率达到 40.05%，同时保持具有竞争力的轨迹自然性。",
+      "innovations": [
+        "提出由目标接触区域驱动的分层 collision-intent interface，将 VLM 的语义碰撞意图推理与扩散模型的连续轨迹生成进行解耦。",
+        "设计结构化动作元组，显式表示速度变化、转向行为和碰撞阶段，并用其条件化扩散模型生成针对性的可执行对抗轨迹。",
+        "引入 collision-guided sampling、候选轨迹选择和短时域闭环 replanning，使生成过程能够根据目标车辆不断变化的行为进行适应。",
+        "在 WOMD-derived 闭环场景上实现 50.33% 的单次目标碰撞率、67.98% 的三次尝试碰撞率和 40.05% 的接触区域控制成功率，组件消融实验支持各设计的有效性。"
+      ],
+      "scenario_cn": "适用于自动驾驶系统的安全评测、仿真测试和对抗性场景库构建，能够针对车头、车尾或车侧等指定碰撞区域生成更具控制性的危险交通情境。",
+      "title_en": "CrashDiffuser: VLM-Guided Collision Intent Reasoning for Fine-Grained Safety-Critical Traffic Scenario Generation",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2609.01913v1",
+      "title": "MERGED: Multimodal Entity Resolution via Generated Expert Reasoning Distillation",
+      "abstract": "In product entity resolution, relationship definitions constantly evolve with business needs, yet adapting to each change traditionally requires slow, costly human annotation that is often noisy and carries no reasoning. Large vision-language models (VLMs) prompted zero-shot can adapt to a new definition immediately and supply the reasoning that human labels lack, but their cost and latency are prohibitive at production scale. We present MERGED, a distillation framework that transfers not just labels but structured reasoning from large teacher VLMs into a compact 7B-parameter student, requiring no human annotation. Multiple teachers label each product pair and articulate the reasoning behind their decision: agreement pairs supply supervised fine-tuning, while disagreements are resolved by a meta-judge into preference pairs for Direct Preference Optimization. Evaluated against human-labeled ground truth on a multilingual e-commerce dataset, the resulting student improves PR-AUC by 13.79% over the same backbone trained on human labels and surpasses the larger Qwen2.5-32B-VL baseline by 6.32% at 6x lower cost, while also yielding tighter label-reasoning alignment (over 10% above Qwen2.5-32B-VL). Moreover, re-applying MERGED from an existing checkpoint adapts to a new relationship definition with only 10K samples, improving PR-AUC by 6.97% over zero-shot and outperforming from-scratch training. MERGED enables rapid adaptation to evolving relationship definitions, supporting a new one in days rather than months, at a cost and latency suitable for large-scale industrial deployment.",
+      "published": "2026-09-03T00:00:00+00:00",
+      "updated": "2026-09-03T00:00:00+00:00",
+      "authors": [
+        "You-Lin Chen",
+        "Kyoungjun Park",
+        "Bin Xu",
+        "Prithviraj Sen",
+        "Pedro Herrero-Vidal"
+      ],
+      "categories": [
+        "cs.IR"
+      ],
+      "abs_url": "https://arxiv.org/abs/2609.01913",
+      "pdf_url": "https://arxiv.org/pdf/2609.01913",
+      "score": 7.6,
+      "topics": [
+        {
+          "name": "Agent Reasoning / Test-time Scaling",
+          "slug": "agent-reasoning",
+          "hits": [
+            "reasoning"
+          ]
+        },
+        {
+          "name": "Model Compression / Quantization",
+          "slug": "model-compression",
+          "hits": [
+            "distillation"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "distillation",
+        "reasoning"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=MERGED%3A%20Multimodal%20Entity%20Resolution%20via%20Generated%20Expert%20Reasoning%20Distillation%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "In product entity resolution, relationship definitions constantly evolve with business needs, yet adapting to each change traditionally requires slow, costly human annotation that is often noisy and carries no reasoning. Large vision-language models (VLMs) prompted zero-shot can adapt to a new definition immediately and supply the reasoning that human labels lack, but their cost and latency are prohibitive at production scale. We present MERGED, a distillation framework that transfers not just labels but structured reasoning from large teacher VLMs into a compact 7B-parameter student, requiring no human annotation. Multiple teachers label each product pair and articulate the reasoning behind their decision: agreement pairs supply supervised fine-tuning, while disagreements are resolved by a meta-judge into preference pairs for Direct Preference Optimization. Evaluated against human-labeled ground truth on a multilingual e-commerce dataset, the resulting student improves PR-AUC by 13.79% over the same backbone trained on human labels and surpasses the larger Qwen2.5-32B-VL baseline by 6.32% at 6x lower cost, while also yielding tighter label-reasoning alignment (over 10% above Qwen2.5-32B-VL). Moreover, re-applying MERGED from an existing checkpoint adapts to a new relationship definition with only 10K samples, improving PR-AUC by 6.97% over zero-shot and outperforming from-scratch training. MERGED enables rapid adaptation to evolving relationship definitions, supporting a new one in days rather than months, at a cost and latency suitable for large-scale industrial deployment.",
+      "code_links_from_meta": "https://github.com/search?q=MERGED%3A%20Multimodal%20Entity%20Resolution%20via%20Generated%20Expert%20Reasoning%20Distillation%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "MERGED：通过生成式专家推理蒸馏实现多模态实体解析",
+      "institution": "未明确披露",
+      "summary_cn": "本文针对电商商品实体解析中关系定义持续变化、人工标注昂贵且缺乏推理依据的问题，提出 MERGED 蒸馏框架，将大型视觉语言模型（VLM）的标签与结构化推理共同迁移到紧凑的 7B 参数学生模型中。多个教师 VLM 对商品对进行标注并解释判断依据，一致样本用于监督微调，分歧样本交由 meta-judge 裁决后构造成偏好对进行 Direct Preference Optimization（DPO）。在多语言电商数据集的人类标注测试集上，MERGED 相比使用相同骨干网络和人工标签训练的模型将 PR-AUC 提升 13.79%，以六分之一成本超过 Qwen2.5-32B-VL 6.32%；从已有检查点适配新关系定义时，仅用 1 万个样本即可比零样本提升 6.97%，并优于从头训练。",
+      "innovations": [
+        "提出 MERGED，将大型教师 VLM 的结构化判别推理而非仅最终标签蒸馏到 7B 学生模型，增强标签与理由的一致性。",
+        "设计多教师协作机制：教师一致样本用于监督微调，教师分歧样本通过 meta-judge 转换为 DPO 偏好对，利用分歧信息提升训练信号质量。",
+        "在多语言电商商品实体解析数据集上，相比同骨干人工标注训练模型的 PR-AUC 提升 13.79%，并以六倍成本优势超过 Qwen2.5-32B-VL 6.32%。",
+        "支持关系定义的快速迁移：从已有检查点出发仅使用 10K 样本即可比零样本 PR-AUC 提升 6.97%，且优于从头训练，标签—推理对齐度超过 Qwen2.5-32B-VL 10%。"
+      ],
+      "scenario_cn": "该方法适用于大型电商目录中的商品去重、变体识别、品牌或属性关系匹配等生产系统，尤其适合业务关系定义频繁调整的场景。它能够在降低视觉语言模型推理成本与延迟的同时，缩短新关系规则从人工标注到上线的周期。",
+      "title_en": "MERGED: Multimodal Entity Resolution via Generated Expert Reasoning Distillation",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2609.02253v1",
+      "title": "APEx: Distillation of Agent Procedural Experience for Adaptive Deep Research Question Answering",
+      "abstract": "Deep research agents augment large language models with external tools to answer complex, long-horizon questions through multi-turn reasoning. Learning from prior experience is crucial for continual improvement, yet existing methods either retrieve verbose task-specific traces that burden decision-making, or distill procedural skills that remain decoupled from downstream policy adaptation. We propose APEx, a hierarchical experience utilization framework that organizes interaction history into instance-level trajectory memories and category-level procedural skills, and couples them through a closed-loop architecture of Executor, Distiller, and Planner. The three modules are optimized via a three-stage alternating GRPO training paradigm, enabling reward-guided skill distillation rather than fixed-prompt generation. At test time, distilled skills serve as procedural priors for online Planner adaptation through skill-guided test-time reinforcement learning, allowing ground-truth-free self-improvement with skill-alignment regularization to prevent policy drift. Experiments on 7 benchmarks demonstrate that APEx achieves state-of-the-art performance, surpassing GPT-5.4 by 14.7 points and the strongest memory-augmented baseline by 3.0 points.",
+      "published": "2026-09-03T00:00:00+00:00",
+      "updated": "2026-09-03T00:00:00+00:00",
+      "authors": [
+        "Jie Ding",
+        "Rui Sun",
+        "Xinyuan Zhang",
+        "Zeyu Zhang",
+        "Xin Liu"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "abs_url": "https://arxiv.org/abs/2609.02253",
+      "pdf_url": "https://arxiv.org/pdf/2609.02253",
+      "score": 7.4,
+      "topics": [
+        {
+          "name": "Agent",
+          "slug": "agent",
+          "hits": [
+            "agent"
+          ]
+        },
+        {
+          "name": "Model Compression / Quantization",
+          "slug": "model-compression",
+          "hits": [
+            "distillation"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "agent",
+        "distillation"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=APEx%3A%20Distillation%20of%20Agent%20Procedural%20Experience%20for%20Adaptive%20Deep%20Research%20Question%20Answering%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Deep research agents augment large language models with external tools to answer complex, long-horizon questions through multi-turn reasoning. Learning from prior experience is crucial for continual improvement, yet existing methods either retrieve verbose task-specific traces that burden decision-making, or distill procedural skills that remain decoupled from downstream policy adaptation. We propose APEx, a hierarchical experience utilization framework that organizes interaction history into instance-level trajectory memories and category-level procedural skills, and couples them through a closed-loop architecture of Executor, Distiller, and Planner. The three modules are optimized via a three-stage alternating GRPO training paradigm, enabling reward-guided skill distillation rather than fixed-prompt generation. At test time, distilled skills serve as procedural priors for online Planner adaptation through skill-guided test-time reinforcement learning, allowing ground-truth-free self-improvement with skill-alignment regularization to prevent policy drift. Experiments on 7 benchmarks demonstrate that APEx achieves state-of-the-art performance, surpassing GPT-5.4 by 14.7 points and the strongest memory-augmented baseline by 3.0 points.",
+      "code_links_from_meta": "https://github.com/search?q=APEx%3A%20Distillation%20of%20Agent%20Procedural%20Experience%20for%20Adaptive%20Deep%20Research%20Question%20Answering%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "APEx：面向自适应深度研究问答的智能体程序化经验蒸馏",
+      "summary_cn": "APEx针对深度研究智能体在复杂、多轮、长程问答中难以有效利用历史经验的问题，提出分层经验利用框架。该方法将交互历史组织为实例级轨迹记忆和类别级程序化技能，并通过执行器、蒸馏器与规划器构成闭环。模型采用三阶段交替式GRPO训练，使技能蒸馏受到任务奖励引导，而不是依赖固定提示词生成。测试阶段，蒸馏出的技能作为程序化先验，引导规划器进行测试时强化学习，在没有标准答案的情况下实现在线自我改进，并利用技能一致性正则避免策略漂移。作者在7个基准测试上进行了实验，报告显示APEx较GPT-5.4提升14.7分，较最强的记忆增强基线提升3.0分。",
+      "innovations": [
+        "提出实例级轨迹记忆与类别级程序化技能相结合的分层经验表示，兼顾具体任务经验与可迁移操作规律。",
+        "设计执行器、蒸馏器和规划器组成的闭环架构，将经验提取、技能学习与策略适配统一起来。",
+        "采用三阶段交替式GRPO训练，使程序化技能蒸馏直接受奖励信号优化，减少固定提示词式技能生成与下游策略脱节的问题。",
+        "在测试时将蒸馏技能作为规划先验，并结合测试时强化学习实现无标准答案的持续自我改进。",
+        "引入技能一致性正则化，在允许规划策略适应新问题的同时抑制策略漂移。"
+      ],
+      "scenario_cn": "适用于需要调用搜索、浏览、代码执行或其他外部工具来解决复杂事实型问题的深度研究智能体，尤其适合长程、多轮、跨领域问答场景。它可以利用过去任务中形成的程序化经验，帮助智能体更快规划检索与推理步骤，并在缺少人工标注答案的部署环境中进行在线适应。",
+      "title_en": "APEx: Distillation of Agent Procedural Experience for Adaptive Deep Research Question Answering",
+      "institution": "未明确披露",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2609.02074v1",
+      "title": "CHIME: Credit-Aware Hierarchical Memory Evolution for Long-Horizon Agentic Planning",
+      "abstract": "Planning is a central capability that enables agents to decompose complex long-horizon tasks into manageable steps. Test-time search and training-based methods improve planning but incur high inference costs or require expensive training data. Self-evolving memory instead accumulates reusable experience from agent interaction outcomes into an external memory bank, so planning capability keeps improving at inference time without parameter updates. However, existing self-evolving memory methods share an inherent credit assignment problem: they rely on final task outcomes as feedback, but such outcomes conflate plan quality with execution errors and environmental factors, so the accumulated planning experience is often biased and noisy. To address this problem, we propose Credit-Aware Hierarchical Memory Evolution (CHIME), a self-evolving memory framework that maintains a separate planning bank and execution bank and follows an attribute-before-memorize principle: CHIME first attributes each task outcome to the plan, the execution, both, or neither, and then updates only the corresponding memory bank. Extensive experiments on four long-horizon agent benchmarks show that CHIME consistently outperforms state-of-the-art training-based and self-evolving memory baselines. Further analyses reveal several interesting findings. For example, CHIME accumulates effective memory with far fewer items. In addition, the learned memory values faithfully reflect downstream utility: high-quality planning memories are more valuable than execution memories. Finally, the accumulated memory effectively transfers across backbone models. Code will be released at this https URL .",
+      "published": "2026-09-03T00:00:00+00:00",
+      "updated": "2026-09-03T00:00:00+00:00",
+      "authors": [
+        "Yongshi Ye",
+        "Tian Lan",
+        "Feihu Jiang",
+        "Muyang Ye",
+        "Bin Zhu",
+        "Qianghuai Jia",
+        "Longyue Wang",
+        "Zhao Xu",
+        "Weihua Luo",
+        "Xiaodong Shi"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "abs_url": "https://arxiv.org/abs/2609.02074",
+      "pdf_url": "https://arxiv.org/pdf/2609.02074",
+      "score": 7.4,
+      "topics": [
+        {
+          "name": "Agent",
+          "slug": "agent",
+          "hits": [
+            "agent"
+          ]
+        },
+        {
+          "name": "Agent Reasoning / Test-time Scaling",
+          "slug": "agent-reasoning",
+          "hits": [
+            "planning"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "agent",
+        "planning"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=CHIME%3A%20Credit-Aware%20Hierarchical%20Memory%20Evolution%20for%20Long-Horizon%20Agentic%20Planning%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Planning is a central capability that enables agents to decompose complex long-horizon tasks into manageable steps. Test-time search and training-based methods improve planning but incur high inference costs or require expensive training data. Self-evolving memory instead accumulates reusable experience from agent interaction outcomes into an external memory bank, so planning capability keeps improving at inference time without parameter updates. However, existing self-evolving memory methods share an inherent credit assignment problem: they rely on final task outcomes as feedback, but such outcomes conflate plan quality with execution errors and environmental factors, so the accumulated planning experience is often biased and noisy. To address this problem, we propose Credit-Aware Hierarchical Memory Evolution (CHIME), a self-evolving memory framework that maintains a separate planning bank and execution bank and follows an attribute-before-memorize principle: CHIME first attributes each task outcome to the plan, the execution, both, or neither, and then updates only the corresponding memory bank. Extensive experiments on four long-horizon agent benchmarks show that CHIME consistently outperforms state-of-the-art training-based and self-evolving memory baselines. Further analyses reveal several interesting findings. For example, CHIME accumulates effective memory with far fewer items. In addition, the learned memory values faithfully reflect downstream utility: high-quality planning memories are more valuable than execution memories. Finally, the accumulated memory effectively transfers across backbone models. Code will be released at this https URL .",
+      "code_links_from_meta": "https://github.com/search?q=CHIME%3A%20Credit-Aware%20Hierarchical%20Memory%20Evolution%20for%20Long-Horizon%20Agentic%20Planning%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "CHIME：面向长时程智能体规划的信用感知分层记忆演化",
+      "summary_cn": "长时程智能体需要将复杂任务拆解为多个步骤，但现有的测试时搜索和基于训练的方法通常带来较高的推理成本或数据构建成本。自演化记忆方法能够将交互过程中积累的经验写入外部记忆库，在无需更新模型参数的情况下逐步提升规划能力。然而，现有方法通常只依据最终任务结果更新记忆，难以区分失败究竟源于规划质量、执行错误还是环境因素，因而容易积累偏置和噪声经验。CHIME提出信用感知的分层记忆演化框架，先将任务结果归因于规划、执行、二者共同作用或二者都无关，再仅更新对应的记忆库。实验表明，该方法在四个长时程智能体基准上持续优于训练式方法和自演化记忆基线，并且能够用更少的记忆条目积累有效经验。",
+      "innovations": [
+        "将外部记忆拆分为规划记忆库和执行记忆库，避免不同来源的经验相互污染。",
+        "提出“先归因、后记忆”的更新原则，根据任务结果判断问题来自规划、执行、两者共同作用还是其他因素，再选择性写入记忆。",
+        "通过信用分配缓解最终结果反馈所造成的规划质量评估偏差，使记忆内容更准确地反映其对下游任务效用的贡献。",
+        "分析发现，高质量规划记忆通常比执行记忆更有价值；CHIME能够以更少的记忆条目获得有效提升，且记忆可以跨骨干模型迁移。"
+      ],
+      "scenario_cn": "适用于需要多步决策和长期任务分解的智能体系统，例如复杂网页操作、工具调用、任务规划和多阶段环境交互。尤其适合希望在测试时持续积累经验、但不希望频繁训练或更新模型参数的场景；规划模块与执行模块可以分别维护和优化记忆，从而降低执行噪声对长期规划能力的影响。",
+      "title_en": "CHIME: Credit-Aware Hierarchical Memory Evolution for Long-Horizon Agentic Planning",
+      "institution": "未明确披露",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2609.02462v1",
+      "title": "VIPS: Vehicle-Infrastructure Cooperative Planning Benchmark via Pseudo-Simulation",
+      "abstract": "End-to-end autonomous driving in urban environments requires robust decision-making under partial observability and complex multi-agent interactions. Severe occlusions and dense traffic at intersections limit the perception capability of single-agent systems, motivating recent efforts on Vehicle-to-Infrastructure (V2I) cooperation for perception and planning. However, existing evaluation protocols face a fundamental trade-off: open-loop evaluation fails to capture error accumulation and recovery from deviations, while closed-loop evaluation is costly, difficult to scale, and often relies on simulated environments that may suffer from domain gaps. To bridge this gap, we propose VIPS, a benchmark for cooperative autonomous driving in V2I settings based on pseudo-simulation. VIPS extends pseudo-simulation by integrating vehicle and infrastructure observations. This enables scalable yet realistic evaluation of robustness and error propagation without full simulation. We further present CoS-V2X, a cooperative planning framework based on sparse representations. CoS-V2X models vehicle-infrastructure interactions using compact features for efficient communication and robust decision-making under heterogeneous observations. Code and dataset are available at this https URL .",
+      "published": "2026-09-03T00:00:00+00:00",
+      "updated": "2026-09-03T00:00:00+00:00",
+      "authors": [
+        "Hoonhee Cho",
+        "Jae-Young Kang",
+        "Giwon Lee",
+        "Hyemin Yang",
+        "Heejun Park",
+        "Kuk-Jin Yoon"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "https://arxiv.org/abs/2609.02462",
+      "pdf_url": "https://arxiv.org/pdf/2609.02462",
+      "score": 7.2,
+      "topics": [
+        {
+          "name": "Agent Reasoning / Test-time Scaling",
+          "slug": "agent-reasoning",
+          "hits": [
+            "planning"
+          ]
+        },
+        {
+          "name": "World Model",
+          "slug": "world-model",
+          "hits": [
+            "simulation"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "planning",
+        "simulation"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=VIPS%3A%20Vehicle-Infrastructure%20Cooperative%20Planning%20Benchmark%20via%20Pseudo-Simulation%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "End-to-end autonomous driving in urban environments requires robust decision-making under partial observability and complex multi-agent interactions. Severe occlusions and dense traffic at intersections limit the perception capability of single-agent systems, motivating recent efforts on Vehicle-to-Infrastructure (V2I) cooperation for perception and planning. However, existing evaluation protocols face a fundamental trade-off: open-loop evaluation fails to capture error accumulation and recovery from deviations, while closed-loop evaluation is costly, difficult to scale, and often relies on simulated environments that may suffer from domain gaps. To bridge this gap, we propose VIPS, a benchmark for cooperative autonomous driving in V2I settings based on pseudo-simulation. VIPS extends pseudo-simulation by integrating vehicle and infrastructure observations. This enables scalable yet realistic evaluation of robustness and error propagation without full simulation. We further present CoS-V2X, a cooperative planning framework based on sparse representations. CoS-V2X models vehicle-infrastructure interactions using compact features for efficient communication and robust decision-making under heterogeneous observations. Code and dataset are available at this https URL .",
+      "code_links_from_meta": "https://github.com/search?q=VIPS%3A%20Vehicle-Infrastructure%20Cooperative%20Planning%20Benchmark%20via%20Pseudo-Simulation%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "VIPS：通过伪仿真构建的车路协同规划基准",
+      "institution": "未明确披露",
+      "summary_cn": "论文针对城市路口部分可观测、严重遮挡和多智能体交互条件下车路协同自动驾驶规划难以可靠评测的问题，提出基于伪仿真的VIPS基准。VIPS将车辆与基础设施观测整合到伪仿真流程中，在无需完整仿真环境的情况下评估规划系统的鲁棒性、误差传播和偏离恢复能力。论文还提出基于稀疏表示的CoS-V2X协同规划框架，以紧凑特征建模车辆—基础设施交互，实现异构观测条件下的高效通信与稳健决策。",
+      "innovations": [
+        "提出VIPS车路协同规划基准，将车辆观测和基础设施观测共同纳入伪仿真评测，弥合开放环评测无法反映误差累积与闭环仿真成本高、难扩展之间的矛盾。",
+        "扩展伪仿真评测机制，使系统能够在不依赖完整模拟环境的情况下，规模化评估规划偏差、误差传播和恢复鲁棒性。",
+        "提出CoS-V2X协同规划框架，使用稀疏表示和紧凑特征编码车辆—基础设施交互，降低车路通信开销并适应异构观测。",
+        "公开VIPS代码和数据集，为车路协同感知与规划研究提供可复现实验基础。"
+      ],
+      "scenario_cn": "适用于智能路口、车路云协同和V2I自动驾驶系统的规划算法评测，尤其适合需要覆盖遮挡、密集交通及多车交互等复杂情况的规模化测试。它可帮助研发团队在不承担完整闭环仿真成本的前提下发现误差累积和协同决策鲁棒性问题。",
+      "title_en": "VIPS: Vehicle-Infrastructure Cooperative Planning Benchmark via Pseudo-Simulation",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2609.01861v1",
+      "title": "Belief-Calibrated Optimization: An Explicit World Model for Agentic Optimization",
+      "abstract": "The performance of an LLM agent depends on the scaffold around a frozen model. A common way to improve that scaffold is to use a coding agent as an optimizer: it reads current scores and traces and iteratively edits the source, producing a new candidate each round. Each edit is chosen according to a belief about how the environment will respond: what went wrong, and which change should help. That belief is typically implicit. It lives in the coding agent's reasoning on the current call, or remains latent in its parameters, rather than as something written down. Later calls therefore see scores and traces, but they do not use that belief. We introduce Belief-Calibrated Optimization (BCO), a method that writes that belief down as a persistent in-context document and continually revises that document as new candidates are evaluated. The resulting document is a world model: the current account of how the environment responds to edits. Added to an otherwise standard loop, BCO reaches a higher train passrate than a matched control that lacks only the world model, on five benchmarks spanning memory QA, tool-use QA, code-as-action app agents, and terminal agents. The gap remains on every held-out split, which is not used to select the candidate. After a target-model swap, in which the frozen model is replaced and the scaffold is not, the selected BCO scaffold leads on the tasks we test, except where context-window overruns leave it unfinished. An offline ablation then asks whether that gap comes from what the world model says. A fresh predictor given the accumulated document forecasts how the environment will respond more accurately than predictors given either no document or a same-form copy whose content has been falsified. The comparison indicates that the document carries reusable information in its content, not only in its form.",
+      "published": "2026-09-03T00:00:00+00:00",
+      "updated": "2026-09-03T00:00:00+00:00",
+      "authors": [
+        "Yuhan Chen",
+        "Zhihua Tian",
+        "Mahavir Dabas",
+        "Charith Peris",
+        "Rahul Gupta",
+        "Ming Jin",
+        "Feiyang Kang",
+        "Siyuan Zhang",
+        "Nan Wang",
+        "Ruoxi Jia"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "abs_url": "https://arxiv.org/abs/2609.01861",
+      "pdf_url": "https://arxiv.org/pdf/2609.01861",
+      "score": 7.0,
+      "topics": [
+        {
+          "name": "Agent",
+          "slug": "agent",
+          "hits": [
+            "agent"
+          ]
+        },
+        {
+          "name": "World Model",
+          "slug": "world-model",
+          "hits": [
+            "world model"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "agent",
+        "world model"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Belief-Calibrated%20Optimization%3A%20An%20Explicit%20World%20Model%20for%20Agentic%20Optimization%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "The performance of an LLM agent depends on the scaffold around a frozen model. A common way to improve that scaffold is to use a coding agent as an optimizer: it reads current scores and traces and iteratively edits the source, producing a new candidate each round. Each edit is chosen according to a belief about how the environment will respond: what went wrong, and which change should help. That belief is typically implicit. It lives in the coding agent's reasoning on the current call, or remains latent in its parameters, rather than as something written down. Later calls therefore see scores and traces, but they do not use that belief. We introduce Belief-Calibrated Optimization (BCO), a method that writes that belief down as a persistent in-context document and continually revises that document as new candidates are evaluated. The resulting document is a world model: the current account of how the environment responds to edits. Added to an otherwise standard loop, BCO reaches a higher train passrate than a matched control that lacks only the world model, on five benchmarks spanning memory QA, tool-use QA, code-as-action app agents, and terminal agents. The gap remains on every held-out split, which is not used to select the candidate. After a target-model swap, in which the frozen model is replaced and the scaffold is not, the selected BCO scaffold leads on the tasks we test, except where context-window overruns leave it unfinished. An offline ablation then asks whether that gap comes from what the world model says. A fresh predictor given the accumulated document forecasts how the environment will respond more accurately than predictors given either no document or a same-form copy whose content has been falsified. The comparison indicates that the document carries reusable information in its content, not only in its form.",
+      "code_links_from_meta": "https://github.com/search?q=Belief-Calibrated%20Optimization%3A%20An%20Explicit%20World%20Model%20for%20Agentic%20Optimization%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "信念校准优化：面向智能体优化的显式世界模型",
+      "institution": "未明确披露",
+      "summary_cn": "论文研究如何让编码智能体在迭代优化冻结大语言模型的智能体脚手架时，持续利用对环境响应的判断，而不是每轮仅根据分数和执行轨迹重新推理。作者提出 Belief-Calibrated Optimization（BCO），将“哪些地方出错以及哪些修改可能有效”的信念写入持久化上下文文档，并在评估新候选方案后持续修订，使其形成关于编辑操作与环境响应关系的显式世界模型。在覆盖记忆问答、工具使用问答、代码驱动应用智能体和终端智能体的五个基准上，BCO 的训练集通过率高于不使用世界模型的匹配控制组，并且在所有留出划分上保持优势。更换冻结目标模型而保留脚手架后，BCO 选择的脚手架在测试任务上总体领先；离线消融还表明，该文档的具体内容能够提升环境响应预测准确率，而非仅仅是文档形式起作用。",
+      "innovations": [
+        "提出 Belief-Calibrated Optimization（BCO），把优化智能体对失败原因和修改效果的隐式判断外化为可持续修订的上下文文档，构建显式世界模型。",
+        "在五类基准上将 BCO 与唯一缺少世界模型的匹配控制组比较，发现 BCO 在训练集通过率和全部留出划分上均保持性能优势。",
+        "设计目标模型替换实验：冻结模型更换、智能体脚手架不变时，BCO 选出的脚手架在所测任务上仍总体领先，但上下文窗口溢出会导致部分运行未完成。",
+        "通过离线预测器消融比较真实累积文档、无文档和内容被篡改的同格式文档，证明世界模型携带的是可复用的具体信息，而不只是文档结构带来的效果。"
+      ],
+      "scenario_cn": "适用于自动改进 LLM 智能体脚手架的优化系统，例如工具调用代理、终端操作代理和代码驱动的应用代理。它能够减少跨迭代重复试错，并在目标模型更换后复用积累的环境响应知识。",
+      "title_en": "Belief-Calibrated Optimization: An Explicit World Model for Agentic Optimization",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2609.02885v1",
+      "title": "Discriminative World Models for Web Agents",
+      "abstract": "Recent web agents use world models for test-time action selection by sampling candidate actions, predicting the resulting web states, and ranking them with a ranker model or a Process Reward Model (PRM). These world models are typically trained via supervised next-state prediction to generate fixed representations like HTML or AXTree snapshots. However, this objective is misaligned with the downstream ranker, which relies on predicted states being discriminative across candidates to accurately score them. To address this, we introduce predicted-state matching, a training objective where the predicted representation must distinguish the true resulting state from those reached by alternative actions. We train these models using a branching web-agent dataset derived from WebArena Go-Browse trajectories, where every decision point contains multiple alternative actions and their resulting states. Experiments on our held-out predicted-state matching benchmark show that our approach outperforms world models trained with supervised next-state prediction. We further show that our approach improves PRM-style action ranking on WebPRMBench compared with action-only PRMs and PRMs augmented with supervised-next-state world models. Finally, on WebArena-Lite, using our world model for test-time action selection improves end-to-end task success. Our project page is available at: this https URL .",
+      "published": "2026-09-03T00:00:00+00:00",
+      "updated": "2026-09-03T00:00:00+00:00",
+      "authors": [
+        "Kelvin Li",
+        "Dhruv Pendharkar",
+        "Anish Pahilajani",
+        "Chuyi Shang",
+        "Leon Oks",
+        "Leonid Karlinsky",
+        "Rogerio Feris",
+        "Trevor Darrell",
+        "Roei Herzig"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "abs_url": "https://arxiv.org/abs/2609.02885",
+      "pdf_url": "https://arxiv.org/pdf/2609.02885",
+      "score": 7.0,
+      "topics": [
+        {
+          "name": "Agent",
+          "slug": "agent",
+          "hits": [
+            "agent"
+          ]
+        },
+        {
+          "name": "World Model",
+          "slug": "world-model",
+          "hits": [
+            "world model"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "agent",
+        "world model"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Discriminative%20World%20Models%20for%20Web%20Agents%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Recent web agents use world models for test-time action selection by sampling candidate actions, predicting the resulting web states, and ranking them with a ranker model or a Process Reward Model (PRM). These world models are typically trained via supervised next-state prediction to generate fixed representations like HTML or AXTree snapshots. However, this objective is misaligned with the downstream ranker, which relies on predicted states being discriminative across candidates to accurately score them. To address this, we introduce predicted-state matching, a training objective where the predicted representation must distinguish the true resulting state from those reached by alternative actions. We train these models using a branching web-agent dataset derived from WebArena Go-Browse trajectories, where every decision point contains multiple alternative actions and their resulting states. Experiments on our held-out predicted-state matching benchmark show that our approach outperforms world models trained with supervised next-state prediction. We further show that our approach improves PRM-style action ranking on WebPRMBench compared with action-only PRMs and PRMs augmented with supervised-next-state world models. Finally, on WebArena-Lite, using our world model for test-time action selection improves end-to-end task success. Our project page is available at: this https URL .",
+      "code_links_from_meta": "https://github.com/search?q=Discriminative%20World%20Models%20for%20Web%20Agents%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "面向网页智能体的判别式世界模型",
+      "institution": "未明确披露",
+      "summary_cn": "论文指出，现有网页智能体世界模型通常使用监督式下一状态预测，将候选动作后的网页表示生成为 HTML 或 AXTree 快照，但这种训练目标并不匹配下游排序器或 Process Reward Model（PRM）区分候选动作的需求。作者提出 predicted-state matching 训练目标，要求模型生成的状态表示能够将真实动作产生的状态与其他替代动作产生的状态区分开来，并利用从 WebArena Go-Browse 轨迹构建的分支式网页智能体数据集进行训练。在留出的 predicted-state matching 基准上，该方法优于监督式下一状态预测训练的世界模型；在 WebPRMBench 上，它改善了 PRM 风格的动作排序效果。将该世界模型用于 WebArena-Lite 的测试时动作选择后，网页智能体的端到端任务成功率也得到提升。",
+      "innovations": [
+        "提出 predicted-state matching，将世界模型训练从单纯复现真实下一状态改为区分真实结果状态与替代动作结果状态，使表示学习目标与候选动作排序任务对齐。",
+        "构建源自 WebArena Go-Browse 轨迹的 branching web-agent 数据集，每个决策点包含多个替代动作及其对应结果状态，为判别式训练提供成组对比样本。",
+        "在 held-out predicted-state matching benchmark 上超过监督式 next-state prediction 世界模型，验证预测状态表示的候选动作判别能力。",
+        "在 WebPRMBench 上优于仅使用动作的 PRM 以及结合监督式下一状态世界模型的 PRM，并在 WebArena-Lite 上提升端到端任务成功率。"
+      ],
+      "scenario_cn": "适用于浏览器自动化、网页检索和 Web 任务执行系统，需要从多个候选点击、输入或导航动作中选择最可靠路径的场景。该方法尤其适合与 PRM 或其他测试时动作排序器结合，以降低网页交互中的错误决策。",
+      "title_en": "Discriminative World Models for Web Agents",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2609.01992v1",
+      "title": "ClaimReceipt: Verifying Evidence Sufficiency and Coverage in Agent Evaluations",
+      "abstract": "Agent evaluations face two distinct evidentiary questions: whether a reported claim is recomputable from retained evidence (sufficiency), and whether the retained records cover the committed experiment set (coverage). Generic logs and hash-linked transcripts answer neither reliably. We introduce ClaimReceipt, a claim-relative receipt specification and selective verifier that binds typed transaction evidence to a signed experiment manifest and returns PASS, INVALID, or INCONCLUSIVE per claim. We freeze the specification before implementation (SHA-256 18d109...b81). On 1,392 historical buyer--seller records, a CR-2 verifier reproduces all five manually labeled audit verdicts, exactly replays 600 deterministic and 792 post-generation records, makes every one of 13 declared field groups non-redundant under tested ablations, and returns the expected result on 11/11 semantic faults with 0/8 false positives. We then run a separate prospective CR-3 epoch: 30 assignments are committed before inference, terminal receipts are signed and chained, and private evidence is encrypted for an auditor. Complete evidence yields coverage and accounting PASS; withholding one terminal receipt returns INCONCLUSIVE_COVERAGE, while withholding all private openings preserves coverage and protocol verification but makes economic claims inconclusive, exactly matching a preregistered prediction. Receipt instrumentation adds 0.021% of model-inference time and 9.9 KB per transaction. A specification-legibility probe indicates that our own frozen specification is not yet unambiguous to an independent reader. Claim verification therefore requires both claim-sufficient evidence and a committed universe against which omissions become visible.",
+      "published": "2026-09-03T00:00:00+00:00",
+      "updated": "2026-09-03T00:00:00+00:00",
+      "authors": [
+        "Peiying Zhu",
+        "Sidi Chang"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.CR",
+        "cs.MA"
+      ],
+      "abs_url": "https://arxiv.org/abs/2609.01992",
+      "pdf_url": "https://arxiv.org/pdf/2609.01992",
+      "score": 6.8,
+      "topics": [
+        {
+          "name": "Agent",
+          "slug": "agent",
+          "hits": [
+            "agent"
+          ]
+        },
+        {
+          "name": "RAG / Long Context",
+          "slug": "rag-long-context",
+          "hits": [
+            "rag"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "agent",
+        "rag"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=ClaimReceipt%3A%20Verifying%20Evidence%20Sufficiency%20and%20Coverage%20in%20Agent%20Evaluations%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Agent evaluations face two distinct evidentiary questions: whether a reported claim is recomputable from retained evidence (sufficiency), and whether the retained records cover the committed experiment set (coverage). Generic logs and hash-linked transcripts answer neither reliably. We introduce ClaimReceipt, a claim-relative receipt specification and selective verifier that binds typed transaction evidence to a signed experiment manifest and returns PASS, INVALID, or INCONCLUSIVE per claim. We freeze the specification before implementation (SHA-256 18d109...b81). On 1,392 historical buyer--seller records, a CR-2 verifier reproduces all five manually labeled audit verdicts, exactly replays 600 deterministic and 792 post-generation records, makes every one of 13 declared field groups non-redundant under tested ablations, and returns the expected result on 11/11 semantic faults with 0/8 false positives. We then run a separate prospective CR-3 epoch: 30 assignments are committed before inference, terminal receipts are signed and chained, and private evidence is encrypted for an auditor. Complete evidence yields coverage and accounting PASS; withholding one terminal receipt returns INCONCLUSIVE_COVERAGE, while withholding all private openings preserves coverage and protocol verification but makes economic claims inconclusive, exactly matching a preregistered prediction. Receipt instrumentation adds 0.021% of model-inference time and 9.9 KB per transaction. A specification-legibility probe indicates that our own frozen specification is not yet unambiguous to an independent reader. Claim verification therefore requires both claim-sufficient evidence and a committed universe against which omissions become visible.",
+      "code_links_from_meta": "https://github.com/search?q=ClaimReceipt%3A%20Verifying%20Evidence%20Sufficiency%20and%20Coverage%20in%20Agent%20Evaluations%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "ClaimReceipt：验证智能体评估中的证据充分性与覆盖性",
+      "summary_cn": "本文提出 ClaimReceipt，一种面向具体声明的证据收据规范与选择性验证器，用于解决智能体评估中的两个关键问题：报告的结论是否能够由保留证据重新计算，以及保留的记录是否覆盖了事先承诺的全部实验集合。系统将带类型的交易证据绑定到签名实验清单，并针对每条声明返回 PASS、INVALID 或 INCONCLUSIVE。CR-2 验证器在 1392 条历史买卖记录上复现了全部 5 个经过人工标注的审计结论，准确重放 600 条确定性记录和 792 条生成后记录，并在 11 个语义故障测试中全部识别且无 8 个正常案例的误报。在前瞻性 CR-3 实验中，完整证据可以同时验证覆盖性与账目；缺失一个终端收据会触发覆盖性不确定，而缺失全部私有证据则仍能验证覆盖范围和协议执行，但无法确定经济结论。收据记录仅增加 0.021% 的模型推理时间和每笔交易 9.9 KB 的存储开销。不过，独立读者对冻结规范的理解仍不够一致，说明证据验证不仅需要充分的证据，还需要预先承诺且清晰可解释的实验全集。",
+      "innovations": [
+        "将智能体评估中的证据验证拆分为声明相对的充分性与实验集合覆盖性两个独立维度，避免把通用日志或哈希链误认为能够同时解决这两个问题。",
+        "提出 ClaimReceipt 收据规范，将带类型的交易证据、签名实验清单、终端收据和私有证据开示机制绑定起来，并针对每条声明输出 PASS、INVALID 或 INCONCLUSIVE。",
+        "通过预先冻结规范、消融实验、语义故障注入和前瞻性预注册实验，系统评估字段冗余、故障检测能力、证据缺失后的判定边界以及验证器的可审计性。",
+        "实验证明缺失证据可以被区分为覆盖性缺失和经济声明无法确认，而不是简单地将所有不完整记录判定为失败；同时验证了该机制的较低运行时与存储开销。",
+        "指出规范本身的可读性和无歧义性是证据验证链条中的潜在瓶颈，独立读者无法稳定理解规范时，形式上的可验证性仍不足以保证实际审计可靠性。"
+      ],
+      "scenario_cn": "适用于需要对智能体评测、工具调用、交易执行或多步骤实验进行可复算审计的场景，尤其适合买卖双方记录、模型代理基准测试、合规审查和第三方审计。系统可以验证某项结论是否由现有证据支持，也可以发现已承诺的实验或任务中是否存在未提交记录；对于隐私敏感场景，还可以将私有证据加密交给审计方，仅在必要时开示。不过，如果实验规范表述不清，或关键私有证据未能提供，系统只能给出不确定结论，不能替代规范设计和证据留存本身。",
+      "title_en": "ClaimReceipt: Verifying Evidence Sufficiency and Coverage in Agent Evaluations",
+      "institution": "未明确披露",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2609.02514v1",
+      "title": "AceSpec: An Asymmetric Edge-Cloud Collaborative Framework for Communication-Efficient LLM Inference",
+      "abstract": "Deploying Large Language Models (LLMs) on edge devices typically relies on model compression or split inference. However, compression degrades reasoning capabilities, while split inference suffers from severe Wide Area Network (WAN) communication bottlenecks. Edge-cloud speculative decoding emerges as a promising alternative, leveraging an edge small model to draft tokens for cloud verification. Yet, over volatile WANs, inevitable prediction rejections trigger catastrophic pipeline stalls and network-wide rollbacks, neutralizing collaborative gains. To overcome this, we propose AceSpec, an asymmetric edge-cloud collaborative framework. AceSpec utilizes un-saturated edge compute to proactively construct a probabilistic state cache, effectively transforming network-wide pipeline flushes into $\\mathcal{O}(1)$ local memory lookups. To preserve bandwidth, it employs an asymmetric communication protocol that transmits minimal main-chain indices uplink and compact sparse distributions downlink. Furthermore, we introduce a network-aware, Lagrangian-optimized resource allocation strategy that dynamically maximizes the local cache hit rate. Evaluations demonstrate that AceSpec achieves up to a 3.52$\\times$ throughput speedup and exhibits exceptional bandwidth immunity, sustaining near-peak inference performance even under severely constrained 50 Kbps WAN conditions.",
+      "published": "2026-09-03T00:00:00+00:00",
+      "updated": "2026-09-03T00:00:00+00:00",
+      "authors": [
+        "Yida Zhang",
+        "Zhiyong Gao",
+        "Shuaibing Yue",
+        "Jie Li",
+        "Rui Wang"
+      ],
+      "categories": [
+        "cs.DC"
+      ],
+      "abs_url": "https://arxiv.org/abs/2609.02514",
+      "pdf_url": "https://arxiv.org/pdf/2609.02514",
+      "score": 4.4,
+      "topics": [
+        {
+          "name": "LLM 推理加速",
+          "slug": "llm-inference",
+          "hits": [
+            "llm inference"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "llm inference"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=AceSpec%3A%20An%20Asymmetric%20Edge-Cloud%20Collaborative%20Framework%20for%20Communication-Efficient%20LLM%20Inference%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Deploying Large Language Models (LLMs) on edge devices typically relies on model compression or split inference. However, compression degrades reasoning capabilities, while split inference suffers from severe Wide Area Network (WAN) communication bottlenecks. Edge-cloud speculative decoding emerges as a promising alternative, leveraging an edge small model to draft tokens for cloud verification. Yet, over volatile WANs, inevitable prediction rejections trigger catastrophic pipeline stalls and network-wide rollbacks, neutralizing collaborative gains. To overcome this, we propose AceSpec, an asymmetric edge-cloud collaborative framework. AceSpec utilizes un-saturated edge compute to proactively construct a probabilistic state cache, effectively transforming network-wide pipeline flushes into $\\mathcal{O}(1)$ local memory lookups. To preserve bandwidth, it employs an asymmetric communication protocol that transmits minimal main-chain indices uplink and compact sparse distributions downlink. Furthermore, we introduce a network-aware, Lagrangian-optimized resource allocation strategy that dynamically maximizes the local cache hit rate. Evaluations demonstrate that AceSpec achieves up to a 3.52$\\times$ throughput speedup and exhibits exceptional bandwidth immunity, sustaining near-peak inference performance even under severely constrained 50 Kbps WAN conditions.",
+      "code_links_from_meta": "https://github.com/search?q=AceSpec%3A%20An%20Asymmetric%20Edge-Cloud%20Collaborative%20Framework%20for%20Communication-Efficient%20LLM%20Inference%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "AceSpec：一种通信高效的大语言模型推理非对称边缘—云协同框架",
+      "institution": "未明确披露",
+      "summary_cn": "论文针对易波动广域网环境下边缘—云协同推测解码因预测拒绝导致流水线停顿、网络回滚和吞吐下降的问题，提出 AceSpec 框架。AceSpec 利用边缘设备未饱和的计算资源主动构建概率状态缓存，将全网流水线刷新转化为 O(1) 的本地内存查找；同时设计非对称通信协议，上行仅传输主链索引，下行传输紧凑的稀疏概率分布。实验表明，AceSpec 的吞吐最高提升 3.52 倍，并在 50 Kbps 的极端受限 WAN 条件下仍能维持接近峰值的推理性能。",
+      "innovations": [
+        "提出概率状态缓存机制，使用边缘侧预计算状态将预测拒绝引发的网络级流水线刷新转化为 O(1) 本地查找。",
+        "设计非对称边缘—云通信协议：上行传输最小化的主链索引，下行传输紧凑稀疏分布，以降低推测解码的 WAN 带宽开销。",
+        "提出网络感知的拉格朗日优化资源分配策略，根据网络状态动态最大化本地缓存命中率。",
+        "实验显示最高获得 3.52 倍吞吐加速，并在 50 Kbps WAN 下表现出显著的带宽免疫能力。"
+      ],
+      "scenario_cn": "适用于通过不稳定或低带宽广域网连接边缘设备与云端大模型的推理系统，例如边缘智能网关、远程终端和分布式 AI 服务。该框架重点解决边缘侧算力未充分利用以及网络波动造成的推理吞吐骤降问题。",
+      "title_en": "AceSpec: An Asymmetric Edge-Cloud Collaborative Framework for Communication-Efficient LLM Inference",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2609.02135v1",
+      "title": "Constraint-Preserving Genetic Algorithms for Embedding Linear Codes into Self-Orthogonal Codes",
+      "abstract": "In this paper, we aim to construct binary optimal self-orthogonal codes using shortest self-orthogonal embedding methods. For this purpose, we design a heuristic framework based on a genetic algorithm. We explore the search space of shortest self-orthogonal embeddings using a fitness function based on the minimum distance and the number of minimum-weight codewords. We construct \\emph{constraint-preserving} crossover and mutation operations so that every chromosome yields a valid self-orthogonal embedding, while high-fitness structural features, such as favorable subsequences of orthogonal generators, are propagated across generations. We also analyze the time and storage complexity of the algorithm, and validate our design through an ablation study on guided crossover and a comparison with random search under an equal time budget. Using this method, we obtain $66$ new binary optimal self-orthogonal codes that meet the upper bound, together with $135$ further self-orthogonal codes attaining the best minimum distance found so far.",
+      "published": "2026-09-03T00:00:00+00:00",
+      "updated": "2026-09-03T00:00:00+00:00",
+      "authors": [
+        "Haeun Lim",
+        "Junmin An",
+        "Jon-Lark Kim"
+      ],
+      "categories": [
+        "cs.IT"
+      ],
+      "abs_url": "https://arxiv.org/abs/2609.02135",
+      "pdf_url": "https://arxiv.org/pdf/2609.02135",
+      "score": 4.4,
+      "topics": [
+        {
+          "name": "LLM 推理加速",
+          "slug": "llm-inference",
+          "hits": [
+            "serving"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "serving"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Constraint-Preserving%20Genetic%20Algorithms%20for%20Embedding%20Linear%20Codes%20into%20Self-Orthogonal%20Codes%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "In this paper, we aim to construct binary optimal self-orthogonal codes using shortest self-orthogonal embedding methods. For this purpose, we design a heuristic framework based on a genetic algorithm. We explore the search space of shortest self-orthogonal embeddings using a fitness function based on the minimum distance and the number of minimum-weight codewords. We construct \\emph{constraint-preserving} crossover and mutation operations so that every chromosome yields a valid self-orthogonal embedding, while high-fitness structural features, such as favorable subsequences of orthogonal generators, are propagated across generations. We also analyze the time and storage complexity of the algorithm, and validate our design through an ablation study on guided crossover and a comparison with random search under an equal time budget. Using this method, we obtain $66$ new binary optimal self-orthogonal codes that meet the upper bound, together with $135$ further self-orthogonal codes attaining the best minimum distance found so far.",
+      "code_links_from_meta": "https://github.com/search?q=Constraint-Preserving%20Genetic%20Algorithms%20for%20Embedding%20Linear%20Codes%20into%20Self-Orthogonal%20Codes%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "将线性码嵌入自正交码的约束保持遗传算法",
+      "institution": "未明确披露",
+      "summary_cn": "论文研究如何利用最短自正交嵌入方法构造达到上界的二进制最优自正交码，并为此设计了一个基于遗传算法的启发式搜索框架。该方法以最小距离和最小重量码字数量构成适应度函数，并设计约束保持的交叉与变异操作，使每条染色体始终对应有效的自正交嵌入，同时传播正交生成元的有利子序列结构。实验通过引导式交叉消融和等时间预算下的随机搜索对比进行验证，获得了 66 个达到上界的新二进制最优自正交码，以及 135 个达到当前最佳已知最小距离的其他自正交码。",
+      "innovations": [
+        "构建面向最短自正交嵌入搜索的遗传算法框架，以最小距离和最小重量码字数量联合定义适应度。",
+        "提出约束保持的交叉与变异算子，使遗传搜索过程中的每个染色体都满足自正交嵌入约束。",
+        "利用正交生成元的有利子序列传播高适应度结构，并通过引导式交叉消融实验验证其贡献。",
+        "在等时间预算随机搜索对比中，构造出 66 个达到理论上界的新二进制最优自正交码和 135 个达到当前最佳最小距离的自正交码。"
+      ],
+      "scenario_cn": "适用于二进制纠错码设计、组合搜索和编码理论中的高质量自正交码构造任务。该方法可在严格结构约束下减少无效搜索，并扩展已知最优码的构造集合。",
+      "title_en": "Constraint-Preserving Genetic Algorithms for Embedding Linear Codes into Self-Orthogonal Codes",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2609.02155v1",
+      "title": "Exact Limits of Random Projections for Preserving Geometry: Distance Recovery, Nearest-Neighbor Rankings, and Covariance Shape in Gaussian Models",
+      "abstract": "The Johnson-Lindenstrauss (JL) lemma guarantees that a random projection of $n$ points to $m=O(\\varepsilon^{-2}\\log n)$ dimensions preserves pairwise squared distances within relative error $\\varepsilon$ with high probability, and this dimension order is asymptotically optimal. In high dimensions, however, distances concentrate around a baseline while key geometric information lies in much smaller fluctuations. We show that the JL bound can therefore be uninformative about retained geometry: an independent Gaussian replacement map can satisfy it even though the replacement cloud is independent of the original data. We then ask how well any decoder can recover a feature $f(D)$ of a squared distance $D$ from a linear sketch. Under squared-error loss, the optimal decoder is conditional expectation, so recovery defines a linear operator whose singular values quantify feature recovery. For isotropic Gaussian data ($\\Sigma=\\sigma^2 I_d$), we diagonalize this operator in closed form. For fixed $k$ with $m,d-m\\to\\infty$, its $k$th singular value satisfies $\\ell_k\\approx(m/ d)^{k/2}$. This yields three sharp consequences. A rank-$m$ sketch retains at most an $m/d$ fraction of the variance of any feature of one squared distance. If $m\\to\\infty$ and $m/d\\to0$, the expected Kendall correlation is $\\frac{2}{\\pi}\\sqrt{m/d}(1+o(1))$; for fixed $q$, nearest- neighbor agreement tends to $1/q$. Yet one projection can satisfy the JL bound while mean Kendall correlation vanishes when $\\log n\\ll m\\ll d$. After removing scale, Haar-averaged retained covariance-shape information is $(m/d)^2$. Thus JL distance preservation does not quantify the geometry available for comparison or inference.",
+      "published": "2026-09-03T00:00:00+00:00",
+      "updated": "2026-09-03T00:00:00+00:00",
+      "authors": [
+        "Piyush Sao"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.IT",
+        "math.NA",
+        "math.PR",
+        "math.ST"
+      ],
+      "abs_url": "https://arxiv.org/abs/2609.02155",
+      "pdf_url": "https://arxiv.org/pdf/2609.02155",
+      "score": 4.4,
+      "topics": [
+        {
+          "name": "LLM 推理加速",
+          "slug": "llm-inference",
+          "hits": [
+            "serving"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "serving"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Exact%20Limits%20of%20Random%20Projections%20for%20Preserving%20Geometry%3A%20Distance%20Recovery%2C%20Nearest-Neighbor%20Rankings%2C%20and%20Covariance%20Shape%20in%20Gaussian%20Models%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "The Johnson-Lindenstrauss (JL) lemma guarantees that a random projection of $n$ points to $m=O(\\varepsilon^{-2}\\log n)$ dimensions preserves pairwise squared distances within relative error $\\varepsilon$ with high probability, and this dimension order is asymptotically optimal. In high dimensions, however, distances concentrate around a baseline while key geometric information lies in much smaller fluctuations. We show that the JL bound can therefore be uninformative about retained geometry: an independent Gaussian replacement map can satisfy it even though the replacement cloud is independent of the original data. We then ask how well any decoder can recover a feature $f(D)$ of a squared distance $D$ from a linear sketch. Under squared-error loss, the optimal decoder is conditional expectation, so recovery defines a linear operator whose singular values quantify feature recovery. For isotropic Gaussian data ($\\Sigma=\\sigma^2 I_d$), we diagonalize this operator in closed form. For fixed $k$ with $m,d-m\\to\\infty$, its $k$th singular value satisfies $\\ell_k\\approx(m/ d)^{k/2}$. This yields three sharp consequences. A rank-$m$ sketch retains at most an $m/d$ fraction of the variance of any feature of one squared distance. If $m\\to\\infty$ and $m/d\\to0$, the expected Kendall correlation is $\\frac{2}{\\pi}\\sqrt{m/d}(1+o(1))$; for fixed $q$, nearest- neighbor agreement tends to $1/q$. Yet one projection can satisfy the JL bound while mean Kendall correlation vanishes when $\\log n\\ll m\\ll d$. After removing scale, Haar-averaged retained covariance-shape information is $(m/d)^2$. Thus JL distance preservation does not quantify the geometry available for comparison or inference.",
+      "code_links_from_meta": "https://github.com/search?q=Exact%20Limits%20of%20Random%20Projections%20for%20Preserving%20Geometry%3A%20Distance%20Recovery%2C%20Nearest-Neighbor%20Rankings%2C%20and%20Covariance%20Shape%20in%20Gaussian%20Models%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "保持几何结构的随机投影精确极限：高斯模型中的距离恢复、最近邻排序与协方差形状",
+      "institution": "未明确披露",
+      "summary_cn": "本文研究随机线性压缩后究竟保留了多少可用于比较和推断的几何信息，指出 Johnson–Lindenstrauss（JL）界只保证点对平方距离的相对误差，却可能无法反映高维距离微小波动中的有效结构。作者将从线性草图恢复平方距离特征建模为条件期望解码问题，并在各向同性高斯数据上闭式对角化相应恢复算子，证明其第 k 个奇异值近似为 (m/d)^(k/2)。由此得到：秩为 m 的草图至多保留单个平方距离任意特征 m/d 的方差，Kendall 相关约为 (2/π)√(m/d)，固定 q 个候选点的最近邻一致率趋近于 1/q；即使满足 JL 界，在 log n 远小于 m 且 m 远小于 d 时平均 Kendall 相关仍可趋近于零。",
+      "innovations": [
+        "提出基于条件期望最优解码的线性恢复算子框架，用奇异值系统刻画随机投影对平方距离特征的可恢复程度。",
+        "在各向同性高斯模型 Σ=σ²I_d 上闭式求解恢复算子的谱结构，并得到第 k 个奇异值约为 (m/d)^(k/2) 的渐近规律。",
+        "证明 JL 距离保持与实际几何比较能力之间存在显著脱节：投影可满足 JL 界，但在 log n≪m≪d 时平均 Kendall 相关仍趋于零，固定 q 最近邻一致率趋近于 1/q。",
+        "进一步给出协方差形状信息的 Haar 平均保留量约为 (m/d)^2，说明去除整体尺度后，随机投影对形状信息的保留更弱。"
+      ],
+      "scenario_cn": "该结论适用于高维检索、最近邻搜索、距离学习和降维统计推断等系统，可帮助评估压缩表示是否真的保留了排序、匹配和形状信息。对于仅依据 JL 界选择嵌入维度的工程方案，应额外验证下游比较任务的相关性和一致率。",
+      "title_en": "Exact Limits of Random Projections for Preserving Geometry: Distance Recovery, Nearest-Neighbor Rankings, and Covariance Shape in Gaussian Models",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2609.02702v1",
+      "title": "Trace as State: Reasoning Traces as Conditional States for Long-Context Transformers",
+      "abstract": "Transformers process information causally, but long-context reasoning may depend on task state discovered only later. We formalize this mismatch through conditional state update tasks. For causal state update processors, providing the condition first can require exponentially less memory in the worst case than providing it last. Motivated by this principle, we introduce Trace as State. We use collected reasoning traces as a textual proxy for task state and place it before the long-context block on a fresh pass, allowing information derived previously to guide rereading. We conduct extensive experiments on Trace as State and Trace Append, a matched control that uses the same task state proxy but put it after the context. Across three models and three long-context datasets, Trace as State outperforms Trace Append in 26 of 27 reported combinations of model, task, and metric. On GraphWalks Parents, exact match lifts DeepSeek V4 Pro Preview from 29.2% on the initial pass and 43.0% with Trace Appendto 81.8% with Trace as State, and from 66.4% and 83.2% to 100.0% for GLM-5.2. These results show that placing traces before the context can improve long-context reasoning while retaining the causal transformer structure.",
+      "published": "2026-09-03T00:00:00+00:00",
+      "updated": "2026-09-03T00:00:00+00:00",
+      "authors": [
+        "Xu Zou",
+        "Jie Tang"
+      ],
+      "categories": [
+        "cs.CL"
+      ],
+      "abs_url": "https://arxiv.org/abs/2609.02702",
+      "pdf_url": "https://arxiv.org/pdf/2609.02702",
+      "score": 4.2,
+      "topics": [
+        {
+          "name": "Agent Reasoning / Test-time Scaling",
+          "slug": "agent-reasoning",
+          "hits": [
+            "reasoning",
+            "reasoning trace"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "reasoning",
+        "reasoning trace"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Trace%20as%20State%3A%20Reasoning%20Traces%20as%20Conditional%20States%20for%20Long-Context%20Transformers%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Transformers process information causally, but long-context reasoning may depend on task state discovered only later. We formalize this mismatch through conditional state update tasks. For causal state update processors, providing the condition first can require exponentially less memory in the worst case than providing it last. Motivated by this principle, we introduce Trace as State. We use collected reasoning traces as a textual proxy for task state and place it before the long-context block on a fresh pass, allowing information derived previously to guide rereading. We conduct extensive experiments on Trace as State and Trace Append, a matched control that uses the same task state proxy but put it after the context. Across three models and three long-context datasets, Trace as State outperforms Trace Append in 26 of 27 reported combinations of model, task, and metric. On GraphWalks Parents, exact match lifts DeepSeek V4 Pro Preview from 29.2% on the initial pass and 43.0% with Trace Appendto 81.8% with Trace as State, and from 66.4% and 83.2% to 100.0% for GLM-5.2. These results show that placing traces before the context can improve long-context reasoning while retaining the causal transformer structure.",
+      "code_links_from_meta": "https://github.com/search?q=Trace%20as%20State%3A%20Reasoning%20Traces%20as%20Conditional%20States%20for%20Long-Context%20Transformers%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "将推理轨迹作为状态：面向长上下文Transformer的条件状态",
+      "institution": "未明确披露",
+      "summary_cn": "论文研究因果Transformer在处理长上下文时面临的状态顺序错位问题：任务所需的条件可能只有在后文中推理出来，却必须指导对前文的重新读取。作者提出Trace as State，将已收集的推理轨迹作为文本形式的任务状态，置于长上下文之前，在新的前向过程中引导模型重读上下文，并与将轨迹附加在上下文之后的Trace Append进行对照。该方法在3个模型和3个长上下文数据集的27组模型—任务—指标组合中有26组优于Trace Append；在GraphWalks Parents上，DeepSeek V4 Pro Preview的精确匹配率由初始遍历的29.2%和Trace Append的43.0%提升至81.8%，GLM-5.2则由66.4%和83.2%提升至100.0%。",
+      "innovations": [
+        "提出Trace as State，将推理轨迹作为条件状态前置到长上下文之前，使先前推导出的信息能够在新的前向过程中指导Transformer重新读取上下文。",
+        "设计Trace Append匹配对照，在使用相同推理轨迹状态代理的前提下将其置于上下文之后，从而隔离并验证状态位置对长上下文推理的影响。",
+        "在3个模型、3个长上下文数据集和27组模型—任务—指标组合上进行实验，Trace as State在其中26组超过Trace Append。",
+        "在GraphWalks Parents数据集上，DeepSeek V4 Pro Preview精确匹配率达到81.8%，GLM-5.2达到100.0%，显示前置推理轨迹能够显著提升长上下文推理效果，同时保留因果Transformer结构。"
+      ],
+      "scenario_cn": "适用于需要反复检索和整合超长文档、图结构上下文或历史交互信息的问答、分析和Agent推理系统。该方法可在不改变因果Transformer架构的情况下，缓解长上下文任务中的信息定位困难和推理状态丢失问题。",
+      "title_en": "Trace as State: Reasoning Traces as Conditional States for Long-Context Transformers",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2609.02512v1",
+      "title": "Beauty is in the AI of the beholder: MLLMs systematically overrate facial attractiveness",
+      "abstract": "Beauty assessments from Multimodal Large Language Models (MLLMs) are increasingly popular amongst users, companies, and aestheticians. This raises the question of whether these AI models can accurately reflect human judgments of attractiveness. In a pre- registered exploratory study, we compared the attractiveness ratings of 2,513 human participants to four widely used commercial AI models: Claude, Gemini, GPT, and Grok. Results showed that MLLMs systematically rate faces more favourably and within a narrower range than humans and, at the time of study, do not reproduce human ratings in absolute terms. However, MLLMs exhibit strong correlations with human attractiveness judgments, accurately tracking the rank-ordering of faces. MLLMs may judge faces by different cues than humans; only face age was a predictor of facial attractiveness in both humans and MLLMs, with inconsistent patterns across models for ethnicity and gender. AI models strongly agree with one another, except for Grok, which also showed the lowest agreement with humans. Our findings suggest that while they may be able to approximate rank-orderings of human attractiveness, current off-the-shelf commercial MLLMs systematically overrate the beauty of human faces.",
+      "published": "2026-09-03T00:00:00+00:00",
+      "updated": "2026-09-03T00:00:00+00:00",
+      "authors": [
+        "Santiago Grandas",
+        "Juan Sebastian Cely-Acosta",
+        "Mohit Mendiratta",
+        "Shafee Hassan",
+        "Macken Murphy"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.HC"
+      ],
+      "abs_url": "https://arxiv.org/abs/2609.02512",
+      "pdf_url": "https://arxiv.org/pdf/2609.02512",
+      "score": 4.0,
+      "topics": [
+        {
+          "name": "多模态推理加速",
+          "slug": "multimodal-inference",
+          "hits": [
+            "mllm"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "mllm"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Beauty%20is%20in%20the%20AI%20of%20the%20beholder%3A%20MLLMs%20systematically%20overrate%20facial%20attractiveness%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Beauty assessments from Multimodal Large Language Models (MLLMs) are increasingly popular amongst users, companies, and aestheticians. This raises the question of whether these AI models can accurately reflect human judgments of attractiveness. In a pre- registered exploratory study, we compared the attractiveness ratings of 2,513 human participants to four widely used commercial AI models: Claude, Gemini, GPT, and Grok. Results showed that MLLMs systematically rate faces more favourably and within a narrower range than humans and, at the time of study, do not reproduce human ratings in absolute terms. However, MLLMs exhibit strong correlations with human attractiveness judgments, accurately tracking the rank-ordering of faces. MLLMs may judge faces by different cues than humans; only face age was a predictor of facial attractiveness in both humans and MLLMs, with inconsistent patterns across models for ethnicity and gender. AI models strongly agree with one another, except for Grok, which also showed the lowest agreement with humans. Our findings suggest that while they may be able to approximate rank-orderings of human attractiveness, current off-the-shelf commercial MLLMs systematically overrate the beauty of human faces.",
+      "code_links_from_meta": "https://github.com/search?q=Beauty%20is%20in%20the%20AI%20of%20the%20beholder%3A%20MLLMs%20systematically%20overrate%20facial%20attractiveness%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "美取决于观者的 AI：多模态大语言模型系统性高估面部吸引力",
+      "institution": "未明确披露",
+      "summary_cn": "该预注册探索性研究检验 Claude、Gemini、GPT 和 Grok 四类商用多模态大语言模型对人脸吸引力的判断，是否能够反映人类审美。研究将 2,513 名人类参与者的评分与模型评分对照，发现模型普遍给出更高且分布更窄的吸引力分数，因而无法在绝对分值上复现人类判断；但模型与人类评分的面孔排序具有较强相关性。年龄是同时预测人类与模型评分的唯一面部属性，而性别和族裔的影响在不同模型间并不一致；除 Grok 外，各模型彼此的一致性很高，Grok 与人类的一致性也最低。",
+      "innovations": [
+        "以 2,513 名人类参与者为参照，系统比较 Claude、Gemini、GPT、Grok 四个主流商用多模态大语言模型的人脸吸引力评分。",
+        "将评估拆分为绝对评分校准与面孔排序一致性两层：模型在绝对评分上系统性偏高，却能较准确地追踪人类的相对排序。",
+        "揭示模型评分的分布范围显著窄于人类评分，说明现成商用模型对“美”的判断存在普遍偏乐观的校准偏差。",
+        "分析年龄、族裔和性别等线索的作用，发现只有年龄在所有人类与模型判断中稳定相关，且 Grok 的跨模型和人类一致性均最弱。"
+      ],
+      "scenario_cn": "适用于审美咨询、面部图像筛选、医美辅助评估等采用 AI 打分的产品，帮助系统避免把偏高的绝对分数误当作人类社会评价。若业务只需候选对象的相对排序，模型可作为辅助排序工具，但应保留人工校准与公平性审查。",
+      "title_en": "Beauty is in the AI of the beholder: MLLMs systematically overrate facial attractiveness",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2609.01888v1",
+      "title": "Does Playing it Safe Count as Faithfulness? Reassessing LVLM Hallucination Mitigation Methods",
+      "abstract": "Recent inference-time hallucination mitigation methods for large vision-language models (LVLMs) report strong gains on hallucination benchmarks. However, it remains unclear whether lower hallucination scores reflect improved multimodal grounding or more conservative generation. We evaluate six mitigation methods across three LVLMs and four benchmarks, including hallucination-focused evaluation and the diverse capability benchmark MMStar. Our analysis reveals two consistent patterns. First, hallucination reduction is often coupled with reduced informativeness: methods that lower hallucination rates also reduce object recall, visual coverage, or response detailedness. Second, improvements on hallucination benchmarks do not reliably transfer to broader multimodal capabilities, with methods showing inconsistent or degraded performance on fine-grained perception and reasoning tasks. Our findings suggest that current evaluation protocols may overestimate progress by rewarding conservative generation. We argue that hallucination mitigation should be evaluated as a faithfulness--informativeness--capability trade-off rather than through hallucination scores alone.",
+      "published": "2026-09-03T00:00:00+00:00",
+      "updated": "2026-09-03T00:00:00+00:00",
+      "authors": [
+        "Mehrdad Fazli",
+        "Sina Mansouri",
+        "Mohit Marvania",
+        "Ziwei Zhu"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "https://arxiv.org/abs/2609.01888",
+      "pdf_url": "https://arxiv.org/pdf/2609.01888",
+      "score": 4.0,
+      "topics": [
+        {
+          "name": "多模态推理加速",
+          "slug": "multimodal-inference",
+          "hits": [
+            "vlm"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "vlm"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Does%20Playing%20it%20Safe%20Count%20as%20Faithfulness%3F%20Reassessing%20LVLM%20Hallucination%20Mitigation%20Methods%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Recent inference-time hallucination mitigation methods for large vision-language models (LVLMs) report strong gains on hallucination benchmarks. However, it remains unclear whether lower hallucination scores reflect improved multimodal grounding or more conservative generation. We evaluate six mitigation methods across three LVLMs and four benchmarks, including hallucination-focused evaluation and the diverse capability benchmark MMStar. Our analysis reveals two consistent patterns. First, hallucination reduction is often coupled with reduced informativeness: methods that lower hallucination rates also reduce object recall, visual coverage, or response detailedness. Second, improvements on hallucination benchmarks do not reliably transfer to broader multimodal capabilities, with methods showing inconsistent or degraded performance on fine-grained perception and reasoning tasks. Our findings suggest that current evaluation protocols may overestimate progress by rewarding conservative generation. We argue that hallucination mitigation should be evaluated as a faithfulness--informativeness--capability trade-off rather than through hallucination scores alone.",
+      "code_links_from_meta": "https://github.com/search?q=Does%20Playing%20it%20Safe%20Count%20as%20Faithfulness%3F%20Reassessing%20LVLM%20Hallucination%20Mitigation%20Methods%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "一味保守算忠实吗？重新评估视觉语言大模型幻觉缓解方法",
+      "institution": "未明确披露",
+      "summary_cn": "论文重新审视大视觉语言模型的推理时幻觉缓解方法，指出较低的幻觉基准分数未必意味着模型具有更好的多模态事实忠实性。作者在 3 个视觉语言大模型上评测 6 种缓解方法，并覆盖 4 个基准测试（包括 MMStar），发现许多方法通过减少对象召回、视觉覆盖度或回答细节来降低幻觉。进一步实验表明，幻觉基准上的改进难以稳定迁移到细粒度感知与推理任务，因此应以“忠实性—信息量—能力”的权衡而非单一幻觉分数评估方法。",
+      "innovations": [
+        "在 3 个视觉语言大模型上横向评估 6 种推理时幻觉缓解方法，覆盖幻觉导向评测及多能力基准 MMStar。",
+        "提出以对象召回、视觉覆盖度和回答详细程度衡量信息量，揭示降低幻觉率通常伴随着生成内容变少、信息密度下降。",
+        "检验幻觉分数改善向通用多模态能力的迁移性，发现其在细粒度感知和推理任务上表现不稳定，甚至出现退化。",
+        "将评估目标明确为忠实性、信息量与能力之间的三维权衡，指出仅奖励保守回答的既有幻觉协议可能高估方法进展。"
+      ],
+      "scenario_cn": "适用于视觉问答、图像分析助手和多模态客服等需要同时保证事实正确与回答完整的系统。部署方可据此避免采用只会缩短或回避回答、却牺牲业务信息价值的幻觉抑制策略。",
+      "title_en": "Does Playing it Safe Count as Faithfulness? Reassessing LVLM Hallucination Mitigation Methods",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2609.02187v1",
+      "title": "Lightweight Adaptation of General-Purpose VLMs for Multispectral and SAR Image Understanding",
+      "abstract": "General-purpose vision-language models (VLMs) now support strong visual recognition, instruction following, and generation. However, most pretrained visual encoders are built around three-channel natural images and do not directly accommodate observations such as native multispectral measurements or synthetic aperture radar (SAR). Adapting VLMs to these sensors typically requires dedicated encoders and domain pretraining, slowing the reuse of stronger general-purpose checkpoints. We show that the multi-image interface of general-purpose VLMs offers a lightweight alternative. Our protocol renders each observation as five optical views and one SAR view, names them in the prompt, and adapts the language network and selected visual transformer blocks with LoRA. This exposes band composites, spectral indices, and radar backscatter through an existing visual interface. For land-cover recognition, structured supervision couples predicted classes with sensor evidence. We further construct preference pairs in which a true label is omitted while its supporting evidence is retained, encouraging complete predictions that remain consistent with the observations. On a balanced six-class land-cover benchmark derived from BigEarthNet-v2, the adapted Qwen3-VL reaches 0.8275 micro F1. The same input and adaptation protocol improves all four tested VLM architectures and transfers to Sen1Floods11 flood verification and this http URL captioning. Image removal and mismatch controls show that the adapted models use the supplied sensor observations. Together, these results demonstrate that VLMs can be repurposed for multispectral and SAR tasks through rendered inputs and compact LoRA adaptation, without training a new foundation model.",
+      "published": "2026-09-03T00:00:00+00:00",
+      "updated": "2026-09-03T00:00:00+00:00",
+      "authors": [
+        "Shanji Liu",
+        "Kelu Yao",
+        "Junxiao Xue",
+        "Chenghui Lv",
+        "Xiangyang Miao",
+        "Yekai Huang",
+        "Yaying Chen",
+        "Chao Li"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "https://arxiv.org/abs/2609.02187",
+      "pdf_url": "https://arxiv.org/pdf/2609.02187",
+      "score": 4.0,
+      "topics": [
+        {
+          "name": "多模态推理加速",
+          "slug": "multimodal-inference",
+          "hits": [
+            "vlm"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "vlm"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Lightweight%20Adaptation%20of%20General-Purpose%20VLMs%20for%20Multispectral%20and%20SAR%20Image%20Understanding%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "General-purpose vision-language models (VLMs) now support strong visual recognition, instruction following, and generation. However, most pretrained visual encoders are built around three-channel natural images and do not directly accommodate observations such as native multispectral measurements or synthetic aperture radar (SAR). Adapting VLMs to these sensors typically requires dedicated encoders and domain pretraining, slowing the reuse of stronger general-purpose checkpoints. We show that the multi-image interface of general-purpose VLMs offers a lightweight alternative. Our protocol renders each observation as five optical views and one SAR view, names them in the prompt, and adapts the language network and selected visual transformer blocks with LoRA. This exposes band composites, spectral indices, and radar backscatter through an existing visual interface. For land-cover recognition, structured supervision couples predicted classes with sensor evidence. We further construct preference pairs in which a true label is omitted while its supporting evidence is retained, encouraging complete predictions that remain consistent with the observations. On a balanced six-class land-cover benchmark derived from BigEarthNet-v2, the adapted Qwen3-VL reaches 0.8275 micro F1. The same input and adaptation protocol improves all four tested VLM architectures and transfers to Sen1Floods11 flood verification and this http URL captioning. Image removal and mismatch controls show that the adapted models use the supplied sensor observations. Together, these results demonstrate that VLMs can be repurposed for multispectral and SAR tasks through rendered inputs and compact LoRA adaptation, without training a new foundation model.",
+      "code_links_from_meta": "https://github.com/search?q=Lightweight%20Adaptation%20of%20General-Purpose%20VLMs%20for%20Multispectral%20and%20SAR%20Image%20Understanding%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "通用视觉语言模型面向多光谱与合成孔径雷达图像理解的轻量化适配",
+      "institution": "未明确披露",
+      "summary_cn": "论文研究如何在不训练新基础模型的情况下，让以三通道自然图像为主预训练的通用视觉语言模型理解原生多光谱观测和合成孔径雷达（SAR）数据。作者将每个观测渲染为五个光学视图和一个SAR视图，通过提示词命名各视图，并使用LoRA适配语言网络及部分视觉Transformer模块；在土地覆盖识别中，还利用结构化监督和保留传感器证据的偏好对，促使模型输出完整且与观测一致的预测。在基于BigEarthNet-v2构建的六类均衡土地覆盖基准上，适配后的Qwen3-VL取得0.8275的micro F1，统一协议还提升了测试的其他三种VLM架构，并迁移到Sen1Floods11洪水验证和图像描述任务。",
+      "innovations": [
+        "提出基于通用VLM多图像接口的传感器适配协议，将一次多光谱/SAR观测渲染为五个光学视图和一个SAR视图，并在提示词中显式标注视图含义，从而通过现有视觉接口呈现波段组合、光谱指数和雷达后向散射信息。",
+        "采用LoRA联合适配语言网络与选定的视觉Transformer模块，无需为多光谱或SAR重新训练专用视觉编码器或新的基础模型。",
+        "针对土地覆盖识别设计结构化监督，使预测类别与传感器证据关联；同时构造省略真实标签但保留支持证据的偏好对，训练模型生成完整且证据一致的预测。",
+        "在基于BigEarthNet-v2的六类均衡基准上，Qwen3-VL达到0.8275 micro F1；图像移除和视图错配控制实验表明，模型确实利用了提供的传感器观测，而非仅依赖提示或数据偏差。"
+      ],
+      "scenario_cn": "适用于需要同时利用光学多光谱与SAR数据的遥感分析系统，例如土地覆盖制图、洪水核验和遥感图像描述。该方案尤其适合希望快速复用通用VLM检查点、又不具备条件训练专用遥感基础模型的场景。",
+      "title_en": "Lightweight Adaptation of General-Purpose VLMs for Multispectral and SAR Image Understanding",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2609.02131v1",
+      "title": "C$^{3}$T: Counterfactual Causal Reasoning for Sentiment Shifts in Social-Media Conversation Trees",
+      "abstract": "Sentiment in social-media threads does not only vary across posts; it shifts as users react to claims, corrections, evidence, and hostility within a branching reply tree. We study why sentiment changes in rumor-centric conversation trees by treating discourse moves (e.g., denial/correction, evidence/link, toxicity/attack) as candidate interventions and asking (i) what sentiment a reply expresses, (ii) whether the sentiment shifts relative to its parent, and (iii) which prior message most plausibly drove the reply's sentiment. To support this setting, we introduce CaSiRe, a causal sentiment reasoning layer over public rumor conversation datasets that adds post-level sentiment labels, induced parent-child shift labels, calibrated multi-label intervention tags, and explicitly annotated causal-source labels. We then propose C$^{3}$T (Counterfactual Causal Conversation Transformer), a thread-structured temporal model that jointly predicts node sentiment and shifts, learns sparse ancestor attribution, and supports counterfactual queries by forcing conversational intervention embeddings on or off to estimate potential outcomes. Under an event-level split, C$^{3}$T improves out-of-event robustness and attribution over text-only, graph-based, and temporal baselines, and yields interpretable model-based effects: denials/corrections and evidence reduce downstream negativity, while toxicity increases it. We also benchmark open-weight LLM prompting baselines and find that added conversational context helps, but attribution remains less reliable, motivating structure-aware counterfactual modeling for social-media analysis.",
+      "published": "2026-09-03T00:00:00+00:00",
+      "updated": "2026-09-03T00:00:00+00:00",
+      "authors": [
+        "S M Rafiuddin",
+        "Atriya Sen"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "abs_url": "https://arxiv.org/abs/2609.02131",
+      "pdf_url": "https://arxiv.org/pdf/2609.02131",
+      "score": 3.8,
+      "topics": [
+        {
+          "name": "Agent Reasoning / Test-time Scaling",
+          "slug": "agent-reasoning",
+          "hits": [
+            "reasoning"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "reasoning"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=C%24%5E%7B3%7D%24T%3A%20Counterfactual%20Causal%20Reasoning%20for%20Sentiment%20Shifts%20in%20Social-Media%20Conversation%20Trees%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Sentiment in social-media threads does not only vary across posts; it shifts as users react to claims, corrections, evidence, and hostility within a branching reply tree. We study why sentiment changes in rumor-centric conversation trees by treating discourse moves (e.g., denial/correction, evidence/link, toxicity/attack) as candidate interventions and asking (i) what sentiment a reply expresses, (ii) whether the sentiment shifts relative to its parent, and (iii) which prior message most plausibly drove the reply's sentiment. To support this setting, we introduce CaSiRe, a causal sentiment reasoning layer over public rumor conversation datasets that adds post-level sentiment labels, induced parent-child shift labels, calibrated multi-label intervention tags, and explicitly annotated causal-source labels. We then propose C$^{3}$T (Counterfactual Causal Conversation Transformer), a thread-structured temporal model that jointly predicts node sentiment and shifts, learns sparse ancestor attribution, and supports counterfactual queries by forcing conversational intervention embeddings on or off to estimate potential outcomes. Under an event-level split, C$^{3}$T improves out-of-event robustness and attribution over text-only, graph-based, and temporal baselines, and yields interpretable model-based effects: denials/corrections and evidence reduce downstream negativity, while toxicity increases it. We also benchmark open-weight LLM prompting baselines and find that added conversational context helps, but attribution remains less reliable, motivating structure-aware counterfactual modeling for social-media analysis.",
+      "code_links_from_meta": "https://github.com/search?q=C%24%5E%7B3%7D%24T%3A%20Counterfactual%20Causal%20Reasoning%20for%20Sentiment%20Shifts%20in%20Social-Media%20Conversation%20Trees%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "C³T：面向社交媒体对话树情感转变的反事实因果推理",
+      "summary_cn": "社交媒体讨论中的情感会随着用户对观点、纠正、证据和攻击的回应而变化，并呈现出树状传播特征。本文聚焦以谣言为中心的对话树，研究回复表达了什么情感、相较父节点是否发生情感转变，以及哪些历史消息最可能导致该回复的情感变化。作者构建了CaSiRe因果情感推理层，为公开谣言对话数据补充帖子级情感标签、父子节点情感转变标签、多标签话语干预标注和因果来源标注，并提出C³T反事实因果对话Transformer。该模型联合预测节点情感与情感转变，学习稀疏的祖先消息归因，并通过开启或关闭特定话语干预来进行反事实查询。在事件级数据划分下，C³T在跨事件泛化和因果归因方面优于文本、图结构及时序基线；结果显示，否认或纠正以及证据通常能够降低后续负面情绪，而毒性攻击会增强负面情绪。",
+      "innovations": "1. 提出CaSiRe因果情感推理层，将情感状态、父子节点情感转变、话语干预和因果来源统一标注到谣言对话数据中。2. 提出C³T结构化时序模型，联合建模对话节点情感与情感转变，并学习最可能影响当前回复的祖先消息。3. 引入反事实干预机制，通过强制开启或关闭否认、纠正、证据、攻击等话语干预，估计其对后续情感的潜在影响。4. 在事件级划分下验证跨事件鲁棒性和可解释归因，并与开放权重大语言模型提示方法进行比较。",
+      "scenario_cn": "适用于谣言传播监测、社交媒体舆情分析、在线讨论中的情绪演化追踪和有害言论影响评估。模型可以帮助分析某条纠正信息或证据是否缓解了后续负面情绪，也可以定位引发情绪转变的关键历史消息，为舆情干预、事实核查传播效果评估和对话风险预警提供依据。",
+      "title_en": "C$^{3}$T: Counterfactual Causal Reasoning for Sentiment Shifts in Social-Media Conversation Trees",
+      "institution": "未明确披露",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2609.02401v1",
+      "title": "CA-OPD: Confidence-Aware On-Policy Distillation for Structured Visual Prediction",
+      "abstract": "Autoregressive vision language models unify heterogeneous perception tasks but are highly susceptible to compounding errors. On-policy distillation (OPD) bridges the training-inference mismatch by training students on their own rollouts. However, unreliable student predictions, especially early in training, can derail the trajectory and degrade the quality of teacher supervision. While recent interleaved distillation methods allow the teacher to verify and replace student tokens, they primarily rely on rigid ranking metrics rather than exact teacher confidence, and they overlook how intervention decisions can inform token-level supervision. To address this, we introduce Confidence-Aware On-Policy Distillation (CA-OPD), a framework that couples reliable rollout construction with adaptive supervision. CA-OPD utilizes teacher confidence to selectively correct unreliable student transitions, gradually transferring rollout control to the student via a strict-to-relaxed schedule. Crucially, CA-OPD aligns knowledge transfer with these intervention decisions: corrected positions receive direct cross-entropy supervision from the teacher's prediction, while retained positions benefit from the teacher's full predictive distribution. Evaluated in a multi-teacher setting for GUI grounding and optical character recognition, CA-OPD substantially improves the Qwen3.5-0.8B baseline across all six target benchmarks, including gains of $9.50$ points on ScreenSpot-Pro and $6.72$ points on OCRBench-v2 English. Controlled studies further show that the gains depend on intervention placement, progressive rollout control, and intervention-aligned supervision, rather than intervention frequency alone.",
+      "published": "2026-09-03T00:00:00+00:00",
+      "updated": "2026-09-03T00:00:00+00:00",
+      "authors": [
+        "Menghao Li",
+        "Linjie Mu",
+        "Yin Wang",
+        "Haotian Hu",
+        "Yannian Gu",
+        "Lujiayi Xue",
+        "Fanyi Wang"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "https://arxiv.org/abs/2609.02401",
+      "pdf_url": "https://arxiv.org/pdf/2609.02401",
+      "score": 3.8,
+      "topics": [
+        {
+          "name": "Model Compression / Quantization",
+          "slug": "model-compression",
+          "hits": [
+            "distillation"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "distillation"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=CA-OPD%3A%20Confidence-Aware%20On-Policy%20Distillation%20for%20Structured%20Visual%20Prediction%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Autoregressive vision language models unify heterogeneous perception tasks but are highly susceptible to compounding errors. On-policy distillation (OPD) bridges the training-inference mismatch by training students on their own rollouts. However, unreliable student predictions, especially early in training, can derail the trajectory and degrade the quality of teacher supervision. While recent interleaved distillation methods allow the teacher to verify and replace student tokens, they primarily rely on rigid ranking metrics rather than exact teacher confidence, and they overlook how intervention decisions can inform token-level supervision. To address this, we introduce Confidence-Aware On-Policy Distillation (CA-OPD), a framework that couples reliable rollout construction with adaptive supervision. CA-OPD utilizes teacher confidence to selectively correct unreliable student transitions, gradually transferring rollout control to the student via a strict-to-relaxed schedule. Crucially, CA-OPD aligns knowledge transfer with these intervention decisions: corrected positions receive direct cross-entropy supervision from the teacher's prediction, while retained positions benefit from the teacher's full predictive distribution. Evaluated in a multi-teacher setting for GUI grounding and optical character recognition, CA-OPD substantially improves the Qwen3.5-0.8B baseline across all six target benchmarks, including gains of $9.50$ points on ScreenSpot-Pro and $6.72$ points on OCRBench-v2 English. Controlled studies further show that the gains depend on intervention placement, progressive rollout control, and intervention-aligned supervision, rather than intervention frequency alone.",
+      "code_links_from_meta": "https://github.com/search?q=CA-OPD%3A%20Confidence-Aware%20On-Policy%20Distillation%20for%20Structured%20Visual%20Prediction%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "CA-OPD：面向结构化视觉预测的置信度感知在策略蒸馏",
+      "summary_cn": "自回归视觉语言模型能够统一处理多种感知任务，但容易因早期预测错误不断累积而导致后续轨迹失真。在策略蒸馏中，学生模型依据自身生成结果进行训练，可以缓解训练与推理之间的分布不匹配；然而，训练初期学生模型的预测通常不可靠，可能使教师监督建立在错误轨迹上。CA-OPD利用教师模型的预测置信度，选择性地纠正学生模型中不可靠的状态转移，并通过从严格到宽松的调度策略逐步将轨迹控制权交还给学生模型。同时，方法将监督方式与干预决策对齐：被教师纠正的位置使用教师预测结果进行直接交叉熵监督，保留学生预测的位置则利用教师的完整概率分布进行软监督。在多教师设置下的GUI定位和光学字符识别实验中，CA-OPD在六个目标基准上均显著提升了Qwen3.5-0.8B基线性能，其中ScreenSpot-Pro提升9.50个百分点，英文OCRBench-v2提升6.72个百分点。消融实验表明，性能提升主要来自干预位置的选择、渐进式轨迹控制以及与干预决策对齐的监督方式，而不仅仅取决于干预次数。",
+      "innovations": "1. 提出置信度感知的在策略蒸馏框架，通过教师模型的精确置信度识别并纠正学生模型生成轨迹中的不可靠转移。2. 设计从严格干预到宽松干预的渐进式轨迹控制调度，使训练过程逐步减少对教师替换的依赖并提升学生自主生成能力。3. 将干预决策与标记级监督方式绑定：纠正位置采用教师预测的直接交叉熵监督，保留位置采用教师完整预测分布进行软监督。4. 通过多教师GUI定位与OCR实验验证方法的通用性，并证明关键收益来自干预位置和监督对齐，而非单纯增加干预频率。",
+      "scenario_cn": "适用于将较大视觉语言模型的能力蒸馏到小型自回归视觉语言模型的场景，尤其适合GUI界面元素定位、屏幕理解、光学字符识别等需要结构化视觉输出的任务。对于学生模型训练初期预测质量较差、错误容易沿生成序列累积的情况，该方法能够在保留学生自身推理轨迹的同时提供有针对性的教师纠正，从而降低训练与实际推理之间的分布偏移。",
+      "title_en": "CA-OPD: Confidence-Aware On-Policy Distillation for Structured Visual Prediction",
+      "institution": "未明确披露",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2609.01840v1",
+      "title": "Cross-Model Distillation of a Human-Pose Foundation Model from Unannotated Infant Video for Markerless 3D Pose Estimation",
+      "abstract": "Spontaneous movement is one of the earliest windows onto an infant's neuromotor health, and structured clinical instruments that score it are validated early predictors of cerebral-palsy risk. However, they require specially trained raters, are time-consuming, and carry inter-rater variability. This motivates automated, video-based markerless assessment, especially as marker-based motion capture is impractical in infants. Yet the foundation models that make markerless capture possible are trained almost entirely on adults: our recent multi-view infant study found that no single model is jointly best, with strong 2D keypoint accuracy and direct 3D body recovery split across different models. While that study identifies this trade-off, it does not resolve it. Here, we perform cross-model distillation from the Sapiens 2 pose model into the SAM 3D Body model, using unannotated infant video alone. A frozen teacher supplies dense pseudo-labels, and a differentiable renderer aligns the predicted mesh to them in the training loop. On eleven held-out infants (18 sessions, 173 recordings) under our prior study's multi-view protocol, fine-tuning improves same-view 2D keypoint agreement with the Sapiens reference (median body percentage of correct keypoints @ 10px 0.22 -> 0.42, face 0.22 -> 0.42) and Procrustes-aligned mean per joint 3D position error (25.5 -> 22.2 mm). This demonstrates how cross-model distillation improves SAM 3D Body model performance on infants.",
+      "published": "2026-09-03T00:00:00+00:00",
+      "updated": "2026-09-03T00:00:00+00:00",
+      "authors": [
+        "R. James Cotton",
+        "Divya Joshi",
+        "Colleen Peyton"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "https://arxiv.org/abs/2609.01840",
+      "pdf_url": "https://arxiv.org/pdf/2609.01840",
+      "score": 3.8,
+      "topics": [
+        {
+          "name": "Model Compression / Quantization",
+          "slug": "model-compression",
+          "hits": [
+            "distillation"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "distillation"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Cross-Model%20Distillation%20of%20a%20Human-Pose%20Foundation%20Model%20from%20Unannotated%20Infant%20Video%20for%20Markerless%203D%20Pose%20Estimation%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Spontaneous movement is one of the earliest windows onto an infant's neuromotor health, and structured clinical instruments that score it are validated early predictors of cerebral-palsy risk. However, they require specially trained raters, are time-consuming, and carry inter-rater variability. This motivates automated, video-based markerless assessment, especially as marker-based motion capture is impractical in infants. Yet the foundation models that make markerless capture possible are trained almost entirely on adults: our recent multi-view infant study found that no single model is jointly best, with strong 2D keypoint accuracy and direct 3D body recovery split across different models. While that study identifies this trade-off, it does not resolve it. Here, we perform cross-model distillation from the Sapiens 2 pose model into the SAM 3D Body model, using unannotated infant video alone. A frozen teacher supplies dense pseudo-labels, and a differentiable renderer aligns the predicted mesh to them in the training loop. On eleven held-out infants (18 sessions, 173 recordings) under our prior study's multi-view protocol, fine-tuning improves same-view 2D keypoint agreement with the Sapiens reference (median body percentage of correct keypoints @ 10px 0.22 -> 0.42, face 0.22 -> 0.42) and Procrustes-aligned mean per joint 3D position error (25.5 -> 22.2 mm). This demonstrates how cross-model distillation improves SAM 3D Body model performance on infants.",
+      "code_links_from_meta": "https://github.com/search?q=Cross-Model%20Distillation%20of%20a%20Human-Pose%20Foundation%20Model%20from%20Unannotated%20Infant%20Video%20for%20Markerless%203D%20Pose%20Estimation%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "利用未标注婴儿视频对人体姿态基础模型进行跨模型蒸馏，实现无标记三维姿态估计",
+      "institution": "未明确披露",
+      "summary_cn": "针对婴儿自发运动评估依赖专业评估人员、耗时且存在评定者差异的问题，论文仅使用未标注婴儿视频，将 Sapiens 2 姿态模型的知识蒸馏到 SAM 3D Body 模型中。训练时冻结的教师模型提供密集伪标签，并通过可微渲染器将预测人体网格与伪标签对齐，从而改善婴儿场景下的二维关键点和三维姿态恢复。在11名留出婴儿的18次会话、173段录像上，二维关键点 mPCK@10px 的身体和面部指标均由0.22提升至0.42，Procrustes 对齐后的三维平均关节位置误差由25.5毫米降至22.2毫米。",
+      "innovations": [
+        "提出 Debias-SparseGPT 之外独立的跨模型蒸馏方案：将 Sapiens 2 的二维姿态知识迁移至 SAM 3D Body，以解决不同基础模型在二维关键点精度和直接三维身体恢复能力之间的分裂。",
+        "利用冻结的 Sapiens 2 教师模型生成密集伪标签，不依赖人工标注的婴儿姿态数据，降低婴儿视频三维姿态学习的数据标注成本。",
+        "在训练循环中引入可微渲染器，将 SAM 3D Body 预测的人体网格投影结果与教师伪标签对齐，实现二维监督对三维身体模型的间接优化。",
+        "在多视角协议下的11名留出婴儿、18次会话和173段录像上验证效果：身体与面部 mPCK@10px 均从0.22升至0.42，三维关节误差从25.5毫米降至22.2毫米。"
+      ],
+      "scenario_cn": "适用于不便佩戴动作捕捉标记的婴儿视频分析，以及婴儿神经运动健康和脑瘫风险的自动化早期筛查。它可减少对受训评估人员的依赖，并支持医院或研究机构进行大规模、低侵入性的无标记运动评估。",
+      "title_en": "Cross-Model Distillation of a Human-Pose Foundation Model from Unannotated Infant Video for Markerless 3D Pose Estimation",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2609.02496v1",
+      "title": "Debias-SparseGPT: Bias-Aware Pruning for Large Language Models",
+      "abstract": "Model compression techniques such as pruning and quantization facilitate the efficient deployment and acceleration of Large Language Models (LLMs). However, recent studies show that weight sparsification methods, such as SparseGPT, can amplify existing biases in models, with outputs varying significantly depending on persona cues in the prompt. In this paper, we introduce Debias-SparseGPT, a post-training pruning method incorporating representational debiasing using a second-order term defined over demographically contrasting inputs. We perform empirical validation of our method over a wide range of generative LLMs. Across models and sparsity regimes (25%, 50%, and structured 2:4 sparsity), Debias-SparseGPT consistently reduces pruning-induced bias compared to SparseGPT while preserving model perplexity and zero-shot accuracy. Under the most restrictive 2:4 structured sparsity pattern, which most aggressively degrades model quality, augmenting the calibration set with long-context, content-rich examples further improves both downstream performance and fairness. Overall, Debias-SparseGPT advances the bias-performance trade-off while preserving the computational efficiency of sparse models.",
+      "published": "2026-09-03T00:00:00+00:00",
+      "updated": "2026-09-03T00:00:00+00:00",
+      "authors": [
+        "Irina Proskurina",
+        "Guillaume Metzler",
+        "Antoine Gourru",
+        "Julien Velcin"
+      ],
+      "categories": [
+        "cs.CL"
+      ],
+      "abs_url": "https://arxiv.org/abs/2609.02496",
+      "pdf_url": "https://arxiv.org/pdf/2609.02496",
+      "score": 3.8,
+      "topics": [
+        {
+          "name": "Model Compression / Quantization",
+          "slug": "model-compression",
+          "hits": [
+            "pruning"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "pruning"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Debias-SparseGPT%3A%20Bias-Aware%20Pruning%20for%20Large%20Language%20Models%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Model compression techniques such as pruning and quantization facilitate the efficient deployment and acceleration of Large Language Models (LLMs). However, recent studies show that weight sparsification methods, such as SparseGPT, can amplify existing biases in models, with outputs varying significantly depending on persona cues in the prompt. In this paper, we introduce Debias-SparseGPT, a post-training pruning method incorporating representational debiasing using a second-order term defined over demographically contrasting inputs. We perform empirical validation of our method over a wide range of generative LLMs. Across models and sparsity regimes (25%, 50%, and structured 2:4 sparsity), Debias-SparseGPT consistently reduces pruning-induced bias compared to SparseGPT while preserving model perplexity and zero-shot accuracy. Under the most restrictive 2:4 structured sparsity pattern, which most aggressively degrades model quality, augmenting the calibration set with long-context, content-rich examples further improves both downstream performance and fairness. Overall, Debias-SparseGPT advances the bias-performance trade-off while preserving the computational efficiency of sparse models.",
+      "code_links_from_meta": "https://github.com/search?q=Debias-SparseGPT%3A%20Bias-Aware%20Pruning%20for%20Large%20Language%20Models%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "Debias-SparseGPT：面向偏差感知的大语言模型剪枝",
+      "institution": "未明确披露",
+      "summary_cn": "论文研究 SparseGPT 等权重稀疏化方法在压缩大语言模型时可能放大模型既有偏见、并导致不同人物设定提示下输出差异显著的问题。作者提出 Debias-SparseGPT，这是一种后训练剪枝方法，在剪枝目标中加入基于人口统计学对比输入定义的二阶表征去偏项。在多种生成式大语言模型和25%、50%及结构化2:4稀疏率下，Debias-SparseGPT 相比 SparseGPT 持续降低剪枝引入的偏差，同时保持困惑度和零样本准确率；在最严格的2:4稀疏设置中，加入长上下文、内容丰富的校准样本还能进一步提升下游性能与公平性。",
+      "innovations": [
+        "提出 Debias-SparseGPT 后训练剪枝方法，将人口统计学对比输入上的二阶表征去偏项纳入剪枝目标，使稀疏化过程显式考虑公平性。",
+        "在多种生成式大语言模型、25%和50%非结构化稀疏率以及结构化2:4稀疏率下进行验证，结果显示其相较 SparseGPT 能稳定减少剪枝诱发的偏差。",
+        "在2:4结构化稀疏这一最易造成模型质量下降的设置中，使用长上下文、内容丰富的校准集同时改善下游零样本准确率与公平性。",
+        "在降低偏差的同时保持模型困惑度和零样本准确率，改善了稀疏模型的偏差—性能权衡，并保留稀疏部署带来的计算效率。"
+      ],
+      "scenario_cn": "适用于需要低延迟、低显存或高吞吐部署的大语言模型服务，尤其适合聊天助手、内容生成和面向不同人口群体的自动化决策支持系统。该方法可在不放弃结构化稀疏加速收益的前提下，降低模型压缩后产生或放大的群体偏差。",
+      "title_en": "Debias-SparseGPT: Bias-Aware Pruning for Large Language Models",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2609.02646v1",
+      "title": "Differentiable Electricity-Market Clearing for Gradient-Based Planning",
+      "abstract": "Planning a large data center is difficult because a facility big enough to matter changes the electricity prices it will pay. Those prices are set by market clearing, a constrained optimization problem solved anew in every operating condition. However, simulating the market tells a planner how a candidate plan performs but not how to improve it. Here we treat market clearing as a differentiable optimization layer: each forward pass solves the market, and reverse-mode automatic differentiation propagates the planning cost back through the cleared prices to the plan. After validating these gradients against finite differences, we apply them to a concrete problem: allocating 50 MW of data-center load across six candidate buses in two synthetic networks, under a fixed cost per active site, evaluated over 36 operating states. Judged against exhaustive enumeration of all site combinations, gradient optimization recovers the continuous allocations almost exactly, with worst-case objective gaps of 2.3\\% and 8.5\\% of the cost difference between the best and worst single site. Its one systematic error is instructive: near the costs at which a site should close, the smooth relaxation of the discrete site count shrinks the site rather than closing it, so discrete transitions arrive late. Differentiable market clearing thus turns market-aware planning into a problem gradients can search.",
+      "published": "2026-09-03T00:00:00+00:00",
+      "updated": "2026-09-03T00:00:00+00:00",
+      "authors": [
+        "Luca Mungo",
+        "Maarten P. Scholl",
+        "Arnau Quera-Bofarull"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.CY"
+      ],
+      "abs_url": "https://arxiv.org/abs/2609.02646",
+      "pdf_url": "https://arxiv.org/pdf/2609.02646",
+      "score": 3.8,
+      "topics": [
+        {
+          "name": "Agent Reasoning / Test-time Scaling",
+          "slug": "agent-reasoning",
+          "hits": [
+            "planning"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "planning"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Differentiable%20Electricity-Market%20Clearing%20for%20Gradient-Based%20Planning%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Planning a large data center is difficult because a facility big enough to matter changes the electricity prices it will pay. Those prices are set by market clearing, a constrained optimization problem solved anew in every operating condition. However, simulating the market tells a planner how a candidate plan performs but not how to improve it. Here we treat market clearing as a differentiable optimization layer: each forward pass solves the market, and reverse-mode automatic differentiation propagates the planning cost back through the cleared prices to the plan. After validating these gradients against finite differences, we apply them to a concrete problem: allocating 50 MW of data-center load across six candidate buses in two synthetic networks, under a fixed cost per active site, evaluated over 36 operating states. Judged against exhaustive enumeration of all site combinations, gradient optimization recovers the continuous allocations almost exactly, with worst-case objective gaps of 2.3\\% and 8.5\\% of the cost difference between the best and worst single site. Its one systematic error is instructive: near the costs at which a site should close, the smooth relaxation of the discrete site count shrinks the site rather than closing it, so discrete transitions arrive late. Differentiable market clearing thus turns market-aware planning into a problem gradients can search.",
+      "code_links_from_meta": "https://github.com/search?q=Differentiable%20Electricity-Market%20Clearing%20for%20Gradient-Based%20Planning%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "用于基于梯度规划的可微电力市场出清",
+      "summary_cn": "大型数据中心的选址与负载规划会反过来影响其购电价格，而电价由每个运行状态下重新求解的约束优化市场出清过程决定。本文将市场出清建模为可微优化层：前向传播求解市场出清，反向传播则穿过出清价格，将规划成本的梯度传递回数据中心的负载配置方案。作者首先通过有限差分验证梯度的准确性，随后在两个合成电力网络中研究一个具体问题：将总计50 MW的数据中心负载分配到6个候选母线，并在36种运行状态下进行评估，同时考虑每个启用站点的固定成本。与穷举所有站点组合的结果相比，梯度优化几乎准确地恢复了连续负载分配方案；在两个网络中的最坏目标差距分别仅为相对于最佳与最差单站点成本差值的2.3%和8.5%。主要误差出现在站点接近关闭的成本阈值时：由于对离散站点数量采用平滑松弛，优化倾向于缩小站点规模而不是直接关闭站点，导致离散选址转换发生得较晚。总体而言，本文证明了可微市场出清能够把考虑电力市场反馈的数据中心规划转化为可通过梯度搜索求解的问题。",
+      "innovations": "1. 将受约束的电力市场出清过程封装为可微优化层，使市场价格对数据中心规划方案的影响能够通过自动微分反向传播。2. 通过有限差分对反向模式自动微分得到的规划梯度进行验证，确认梯度可用于市场感知的规划优化。3. 在多运行状态、多个候选母线和站点固定成本共同作用的场景下，将梯度优化与站点组合穷举进行比较，展示了连续负载配置的高精度恢复能力。4. 明确揭示了离散站点数量平滑松弛的局限性：在站点关闭边界附近会出现“缩小站点而非关闭站点”的系统性偏差。",
+      "scenario_cn": "适用于大型数据中心或其他高耗电设施的选址、容量配置与负载分配规划，尤其适合设施规模足以影响批发电价、需要同时考虑电网约束和多种运行状态的市场环境。该方法也可推广到任何规划决策会改变优化型市场或资源分配机制结果的场景。",
+      "title_en": "Differentiable Electricity-Market Clearing for Gradient-Based Planning",
+      "institution": "未明确披露",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2609.02160v1",
+      "title": "GeoSPRINT: Geometric Redundancy-Aware Step Pruning for Inference in Diffusion Trajectories",
+      "abstract": "Diffusion models achieve high sample quality but remain expensive at inference time because sampling requires many sequential neural function evaluations (NFEs). Existing acceleration methods either use fixed step-skipping schedules, adapt step sizes based on local numerical error, or require additional training. We introduce GeoSPRINT (Geometric Step Pruning for Inference in Trajectories), a training-free framework for constructing non-uniform sampling schedules from the geometry of denoising trajectories. GeoSPRINT detects geometrically redundant steps using a hyperplanarity test in latent space, implemented efficiently via QR factorization, and converts the resulting redundancy profile into a sampling schedule that allocates more steps to high-curvature regions of the trajectory. In addition, we introduce the trajectory projection score $\\alpha_{\\mathrm{traj}}$, a residual-variance metric that quantifies trajectory straightness and serves as a model-free diagnostic for rectified flow quality. Across CIFAR-10 ($32{\\times}32$), LSUN Church ($256{\\times}256$), and Stable Diffusion v1.5 ($512{\\times}512$ latent), GeoSPRINT consistently improves over uniform DDIM (Denoising Diffusion Implicit Models) schedules at matched NFE budgets. On CIFAR-10, GeoSPRINT improves FID (Fréchet Inception Distance) by 0.7-1.1 over DDIM across 49-89 NFEs and surpasses DPM-Solver++ at NFE${\\geq}30$ despite using a first-order DDIM solver. On LSUN Church, it reduces FID from 1.48 to 1.26 at 52 steps, and on Stable Diffusion v1.5 it achieves up to 1.93 FID improvement over DDIM. These results show that trajectory geometry provides a useful global signal for allocating inference steps and that schedule quality can substantially improve diffusion sampling efficiency without retraining.",
+      "published": "2026-09-03T00:00:00+00:00",
+      "updated": "2026-09-03T00:00:00+00:00",
+      "authors": [
+        "Arpita Joshi"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "abs_url": "https://arxiv.org/abs/2609.02160",
+      "pdf_url": "https://arxiv.org/pdf/2609.02160",
+      "score": 3.8,
+      "topics": [
+        {
+          "name": "Model Compression / Quantization",
+          "slug": "model-compression",
+          "hits": [
+            "pruning"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "pruning"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=GeoSPRINT%3A%20Geometric%20Redundancy-Aware%20Step%20Pruning%20for%20Inference%20in%20Diffusion%20Trajectories%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Diffusion models achieve high sample quality but remain expensive at inference time because sampling requires many sequential neural function evaluations (NFEs). Existing acceleration methods either use fixed step-skipping schedules, adapt step sizes based on local numerical error, or require additional training. We introduce GeoSPRINT (Geometric Step Pruning for Inference in Trajectories), a training-free framework for constructing non-uniform sampling schedules from the geometry of denoising trajectories. GeoSPRINT detects geometrically redundant steps using a hyperplanarity test in latent space, implemented efficiently via QR factorization, and converts the resulting redundancy profile into a sampling schedule that allocates more steps to high-curvature regions of the trajectory. In addition, we introduce the trajectory projection score $\\alpha_{\\mathrm{traj}}$, a residual-variance metric that quantifies trajectory straightness and serves as a model-free diagnostic for rectified flow quality. Across CIFAR-10 ($32{\\times}32$), LSUN Church ($256{\\times}256$), and Stable Diffusion v1.5 ($512{\\times}512$ latent), GeoSPRINT consistently improves over uniform DDIM (Denoising Diffusion Implicit Models) schedules at matched NFE budgets. On CIFAR-10, GeoSPRINT improves FID (Fréchet Inception Distance) by 0.7-1.1 over DDIM across 49-89 NFEs and surpasses DPM-Solver++ at NFE${\\geq}30$ despite using a first-order DDIM solver. On LSUN Church, it reduces FID from 1.48 to 1.26 at 52 steps, and on Stable Diffusion v1.5 it achieves up to 1.93 FID improvement over DDIM. These results show that trajectory geometry provides a useful global signal for allocating inference steps and that schedule quality can substantially improve diffusion sampling efficiency without retraining.",
+      "code_links_from_meta": "https://github.com/search?q=GeoSPRINT%3A%20Geometric%20Redundancy-Aware%20Step%20Pruning%20for%20Inference%20in%20Diffusion%20Trajectories%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "GeoSPRINT：面向扩散轨迹推理的几何冗余感知步数剪枝",
+      "institution": "未明确披露",
+      "summary_cn": "论文提出无需训练的 GeoSPRINT 框架，从扩散模型去噪轨迹的几何结构出发构建非均匀采样调度。它在潜空间中通过基于 QR 分解实现的超平面性检验识别几何冗余步数，并将冗余分布转换为采样计划，在轨迹高曲率区域分配更多步数；同时提出轨迹投影分数 α_traj，以残差方差衡量轨迹直线度并诊断 Rectified Flow 质量。在 CIFAR-10、LSUN Church 和 Stable Diffusion v1.5 上，匹配 NFE 预算时均优于均匀 DDIM 调度：CIFAR-10 的 FID 提升 0.7-1.1，LSUN Church 在 52 步时由 1.48 降至 1.26，Stable Diffusion v1.5 的 FID 最高提升 1.93。",
+      "innovations": [
+        "提出 GeoSPRINT 几何步数剪枝机制，利用潜空间去噪轨迹的超平面性检验识别几何冗余采样步，并通过 QR 分解实现高效计算。",
+        "将轨迹冗余画像转化为非均匀采样调度，在高曲率区域保留更多推理步数，从而无需重新训练即可改善扩散采样效率。",
+        "提出轨迹投影分数 α_traj，通过残差方差量化轨迹直线度，作为与模型结构无关的 Rectified Flow 质量诊断指标。",
+        "在 CIFAR-10、LSUN Church 和 Stable Diffusion v1.5 上验证了方法效果；CIFAR-10 在 NFE 不低于 30 时超过 DPM-Solver++，尽管仅使用一阶 DDIM 求解器。"
+      ],
+      "scenario_cn": "适用于需要降低扩散模型推理延迟和计算成本的图像生成服务，尤其适合无法重新训练模型、但可以调整采样步数和调度策略的部署系统。该方法可在固定 NFE 或延迟预算下提升生成质量，适用于文本生图、图像生成和扩散模型批量推理场景。",
+      "title_en": "GeoSPRINT: Geometric Redundancy-Aware Step Pruning for Inference in Diffusion Trajectories",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2609.02684v1",
+      "title": "H3DNAS: Hardware-Aware ONNX-Native 3D Point Cloud Model Compression",
+      "abstract": "Deploying 3D point cloud models on edge hardware such as the NVIDIA Jetson Orin Nano is severely constrained by compute and memory budgets. Existing compression methods require access to the model's original source code, rendering them inapplicable to the Open Neural Network Exchange (ONNX) binaries commonly distributed by vendors and model repositories. We present \\textbf{H3DNAS}, a hardware-aware model compression framework that operates directly on ONNX computational graphs without requiring original source code, architecture class definition, or gradient access during search. H3DNAS makes three contributions: (1) a \\textbf{Channel Dependency Graph (CDG)} that classifies ONNX operators into four constraint classes and formally establishes that the free parameter fraction $\\rho_f$ is topological invariant, a provable compression ceiling computable in $\\mathcal{O}(|V|+|E|)$; (2) a \\textbf{Two-Stage Hierarchical Search} that prunes candidate architectures by $L_1$-importance channel selection, ranks them by output fidelity as a zero-shot label-free proxy, and applies GhostConv structural mutation to Pareto-optimal candidates; and (3) the \\textbf{first source-code-free compression pipeline for 3D point cloud models}, operating entirely via ONNX graph surgery with no original architecture definition required. On ModelNet40, H3DNAS reduces the number of parameters in PointNet, PointNet++, and PointMLP by $65.5\\%$, $43.2\\%$, and $49.1\\%$, respectively, while achieving $1.99\\times$, $1.29\\times$, and $1.67\\times$ inference speedups with negligible loss in accuracy. The source code is publicly available\\footnote{ this https URL }.",
+      "published": "2026-09-03T00:00:00+00:00",
+      "updated": "2026-09-03T00:00:00+00:00",
+      "authors": [
+        "Anchit Mulye",
+        "Rhythm Baghel",
+        "Sujay Kumar Ingle",
+        "Hardik Jain"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AR",
+        "cs.NE"
+      ],
+      "abs_url": "https://arxiv.org/abs/2609.02684",
+      "pdf_url": "https://arxiv.org/pdf/2609.02684",
+      "score": 3.8,
+      "topics": [
+        {
+          "name": "Model Compression / Quantization",
+          "slug": "model-compression",
+          "hits": [
+            "model compression"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "model compression"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=H3DNAS%3A%20Hardware-Aware%20ONNX-Native%203D%20Point%20Cloud%20Model%20Compression%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Deploying 3D point cloud models on edge hardware such as the NVIDIA Jetson Orin Nano is severely constrained by compute and memory budgets. Existing compression methods require access to the model's original source code, rendering them inapplicable to the Open Neural Network Exchange (ONNX) binaries commonly distributed by vendors and model repositories. We present \\textbf{H3DNAS}, a hardware-aware model compression framework that operates directly on ONNX computational graphs without requiring original source code, architecture class definition, or gradient access during search. H3DNAS makes three contributions: (1) a \\textbf{Channel Dependency Graph (CDG)} that classifies ONNX operators into four constraint classes and formally establishes that the free parameter fraction $\\rho_f$ is topological invariant, a provable compression ceiling computable in $\\mathcal{O}(|V|+|E|)$; (2) a \\textbf{Two-Stage Hierarchical Search} that prunes candidate architectures by $L_1$-importance channel selection, ranks them by output fidelity as a zero-shot label-free proxy, and applies GhostConv structural mutation to Pareto-optimal candidates; and (3) the \\textbf{first source-code-free compression pipeline for 3D point cloud models}, operating entirely via ONNX graph surgery with no original architecture definition required. On ModelNet40, H3DNAS reduces the number of parameters in PointNet, PointNet++, and PointMLP by $65.5\\%$, $43.2\\%$, and $49.1\\%$, respectively, while achieving $1.99\\times$, $1.29\\times$, and $1.67\\times$ inference speedups with negligible loss in accuracy. The source code is publicly available\\footnote{ this https URL }.",
+      "code_links_from_meta": "https://github.com/search?q=H3DNAS%3A%20Hardware-Aware%20ONNX-Native%203D%20Point%20Cloud%20Model%20Compression%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "H3DNAS：硬件感知的原生 ONNX 三维点云模型压缩",
+      "institution": "未明确披露",
+      "summary_cn": "论文提出 H3DNAS，一种无需原始源代码、网络架构定义或梯度访问，直接操作 ONNX 计算图的硬件感知三维点云模型压缩框架，面向 NVIDIA Jetson Orin Nano 等边缘设备。其核心包括 Channel Dependency Graph（CDG）、两阶段分层搜索以及基于 GhostConv 的结构变异：CDG 将 ONNX 算子划分为四类约束，并证明可压缩参数比例 ρ_f 是拓扑不变量，可在线性复杂度下计算压缩上限；搜索阶段先用 L1 重要性进行通道选择，再以无标签输出保真度进行零样本排序。在 ModelNet40 上，H3DNAS 分别将 PointNet、PointNet++ 和 PointMLP 的参数量减少 65.5%、43.2% 和 49.1%，推理速度提升 1.99 倍、1.29 倍和 1.67 倍，同时准确率几乎不损失。",
+      "innovations": [
+        "提出 Channel Dependency Graph（CDG），将 ONNX 算子按通道依赖关系划分为四类约束，并证明自由参数比例 ρ_f 是计算图拓扑不变量，可在 O(|V|+|E|) 时间内得到可压缩上限。",
+        "设计两阶段分层搜索流程，先通过 L1 重要性进行候选通道筛选，再利用无需标签的输出保真度作为零样本代理指标对候选架构排序。",
+        "引入 GhostConv 结构变异，将 Pareto 最优候选进一步转换为更高效的压缩架构，并通过 ONNX 图手术完成模型修改。",
+        "实现首个面向三维点云模型的无源代码压缩流水线；在 ModelNet40 的 PointNet、PointNet++ 和 PointMLP 上分别取得 65.5%、43.2% 和 49.1% 的参数削减及最高 1.99 倍的推理加速。"
+      ],
+      "scenario_cn": "适用于供应商只提供 ONNX 二进制模型、无法获得原始代码或训练梯度的三维点云部署场景。特别适合 Jetson Orin Nano 等计算和内存受限的边缘设备，可用于三维物体分类、点云分析及机器人感知系统。",
+      "title_en": "H3DNAS: Hardware-Aware ONNX-Native 3D Point Cloud Model Compression",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2609.02272v1",
+      "title": "PaperCompiler: Faithful Paper-to-Code Generation via Repository-Level Specification Compilation",
+      "abstract": "Faithfully translating research papers into repository-level implementations remains challenging because papers often describe methods at a high level, leave implementation assumptions implicit, and require generated repositories to preserve method logic, evaluation protocols, and cross-file consistency. Despite recent advances in paper-to-code agents, their intermediate outputs are often presented as free-form plans or summaries that downstream coding agents may ignore, reinterpret, or compress, leading to algorithmic simplification and inconsistent repository structure. To address these challenges, we introduce PaperCompiler, a paper-to-code generation framework that compiles paper-grounded evidence into explicit repository-level implementation specifications. PaperCompiler grounds implementation-relevant evidence while preserving source provenance and distinguishing paper-supported, inferred, externally delegated, and unresolved information. The resulting specifications encode non-degradation requirements, ownership assignments, cross-file dependencies, and file-level constraints. Repository generation proceeds under these compiled specifications while retaining flexibility over local engineering choices not fixed by the paper. PaperCompiler outperforms strong baselines on Paper2CodeBench, achieving a 13.8% relative improvement in reference-based fidelity (from 3.64 to 4.15) and reducing high-severity evaluator critiques (from 13.2% to 6.1%).",
+      "published": "2026-09-03T00:00:00+00:00",
+      "updated": "2026-09-03T00:00:00+00:00",
+      "authors": [
+        "Yunhao Liu",
+        "Hong Phuc Pham",
+        "Jaehong Yoon"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.SE"
+      ],
+      "abs_url": "https://arxiv.org/abs/2609.02272",
+      "pdf_url": "https://arxiv.org/pdf/2609.02272",
+      "score": 3.6,
+      "topics": [
+        {
+          "name": "Code Agent / SWE Agent",
+          "slug": "code-agent",
+          "hits": [
+            "repository-level",
+            "code generation"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "code generation",
+        "repository-level"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=PaperCompiler%3A%20Faithful%20Paper-to-Code%20Generation%20via%20Repository-Level%20Specification%20Compilation%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Faithfully translating research papers into repository-level implementations remains challenging because papers often describe methods at a high level, leave implementation assumptions implicit, and require generated repositories to preserve method logic, evaluation protocols, and cross-file consistency. Despite recent advances in paper-to-code agents, their intermediate outputs are often presented as free-form plans or summaries that downstream coding agents may ignore, reinterpret, or compress, leading to algorithmic simplification and inconsistent repository structure. To address these challenges, we introduce PaperCompiler, a paper-to-code generation framework that compiles paper-grounded evidence into explicit repository-level implementation specifications. PaperCompiler grounds implementation-relevant evidence while preserving source provenance and distinguishing paper-supported, inferred, externally delegated, and unresolved information. The resulting specifications encode non-degradation requirements, ownership assignments, cross-file dependencies, and file-level constraints. Repository generation proceeds under these compiled specifications while retaining flexibility over local engineering choices not fixed by the paper. PaperCompiler outperforms strong baselines on Paper2CodeBench, achieving a 13.8% relative improvement in reference-based fidelity (from 3.64 to 4.15) and reducing high-severity evaluator critiques (from 13.2% to 6.1%).",
+      "code_links_from_meta": "https://github.com/search?q=PaperCompiler%3A%20Faithful%20Paper-to-Code%20Generation%20via%20Repository-Level%20Specification%20Compilation%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "PaperCompiler：通过仓库级规范编译实现忠实的论文到代码生成",
+      "institution": "未明确披露",
+      "summary_cn": "论文研究如何将高层描述、隐含实现假设和分散的评测要求准确转换为保持算法逻辑、评测协议及跨文件一致性的完整代码仓库。作者提出 PaperCompiler，将论文证据编译为带有来源溯源的仓库级实现规范，并区分论文明确支持、推断得到、外部委托和未解决的信息。该规范进一步编码非退化要求、文件职责、跨文件依赖和文件级约束，再指导代码代理生成仓库，同时保留论文未规定的局部工程实现自由度。在 Paper2CodeBench 上，PaperCompiler将参考实现忠实度从3.64提升至4.15，相对提高13.8%，并将高严重性评估批评比例从13.2%降至6.1%。",
+      "innovations": [
+        "提出 PaperCompiler 框架，将论文中的实现相关证据编译为显式的仓库级实现规范，而不是仅生成下游代理可能忽略的自由格式计划。",
+        "保留论文证据的来源溯源，并区分论文支持、推断信息、外部委托信息和未解决信息，降低无依据实现决策的风险。",
+        "在规范中编码非退化要求、文件所有权分配、跨文件依赖和文件级约束，以维护算法逻辑与仓库结构的一致性。",
+        "在 Paper2CodeBench 上将参考实现忠实度由3.64提高到4.15，相对提升13.8%，并将高严重性评估批评从13.2%降至6.1%。"
+      ],
+      "scenario_cn": "适用于将机器学习论文复现为可运行代码仓库、自动构建研究原型以及维护包含多文件依赖和标准化评测流程的科研软件。它重点解决代码代理在论文复现中擅自简化算法、遗漏评测协议和产生跨文件不一致的问题。",
+      "title_en": "PaperCompiler: Faithful Paper-to-Code Generation via Repository-Level Specification Compilation",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2609.02367v1",
+      "title": "The Missing Temporal Link: Temporal Context Routing for Script-Driven Audio-Video Generation",
+      "abstract": "Joint audio-video generation models have made substantial progress in visual quality and audio-visual synchronization. However, they still provide limited control over when shot transitions occur and dialogue is spoken. This limitation constrains their application in script-driven content creation, where timing errors can undermine narrative coherence and the viewing experience. Current joint generators align video and audio representations on a shared temporal axis, yet the precise timing of shots and dialogue specified in a structured prompt is encoded only in the prompt's text representation and remains unaligned with the temporal coordinates of either modality. Consequently, video and audio may remain synchronized with each other while both fail to follow the script timeline. This mismatch motivates us to extend temporal alignment beyond video and audio to include the structured script. We therefore introduce Temporal Context Routing (TCR), which maps the script timing onto the shared temporal axis of video and audio generation and routes each prompt's guidance to the corresponding positions in both modalities. Compared with the baseline on 200 test scripts, TCR reduces Shot Boundary MAE by 96%, from 1.11 s to 0.042 s, and raises Dialogue Acc@0.5 s from 28.3% to 84.1%. TCR achieves these improvements while maintaining visual quality and audio-visual synchronization comparable to those of the baselines. A user study further shows that participants prefer TCR on all five evaluated dimensions.",
+      "published": "2026-09-03T00:00:00+00:00",
+      "updated": "2026-09-03T00:00:00+00:00",
+      "authors": [
+        "Yichen Liu",
+        "Quanwei Zhang",
+        "Haozhe Wang",
+        "Donghao Zhou",
+        "Xiaojie Li",
+        "Yang Shi",
+        "Jiaming Liu",
+        "Ruihua Huang",
+        "Yingtian Zou",
+        "Daquan Zhou"
+      ],
+      "categories": [
+        "cs.MM",
+        "cs.CV"
+      ],
+      "abs_url": "https://arxiv.org/abs/2609.02367",
+      "pdf_url": "https://arxiv.org/pdf/2609.02367",
+      "score": 3.6,
+      "topics": [
+        {
+          "name": "Video Generation",
+          "slug": "video-generation",
+          "hits": [
+            "video generation"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "video generation"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=The%20Missing%20Temporal%20Link%3A%20Temporal%20Context%20Routing%20for%20Script-Driven%20Audio-Video%20Generation%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Joint audio-video generation models have made substantial progress in visual quality and audio-visual synchronization. However, they still provide limited control over when shot transitions occur and dialogue is spoken. This limitation constrains their application in script-driven content creation, where timing errors can undermine narrative coherence and the viewing experience. Current joint generators align video and audio representations on a shared temporal axis, yet the precise timing of shots and dialogue specified in a structured prompt is encoded only in the prompt's text representation and remains unaligned with the temporal coordinates of either modality. Consequently, video and audio may remain synchronized with each other while both fail to follow the script timeline. This mismatch motivates us to extend temporal alignment beyond video and audio to include the structured script. We therefore introduce Temporal Context Routing (TCR), which maps the script timing onto the shared temporal axis of video and audio generation and routes each prompt's guidance to the corresponding positions in both modalities. Compared with the baseline on 200 test scripts, TCR reduces Shot Boundary MAE by 96%, from 1.11 s to 0.042 s, and raises Dialogue Acc@0.5 s from 28.3% to 84.1%. TCR achieves these improvements while maintaining visual quality and audio-visual synchronization comparable to those of the baselines. A user study further shows that participants prefer TCR on all five evaluated dimensions.",
+      "code_links_from_meta": "https://github.com/search?q=The%20Missing%20Temporal%20Link%3A%20Temporal%20Context%20Routing%20for%20Script-Driven%20Audio-Video%20Generation%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "缺失的时间连接：面向脚本驱动音视频生成的时间上下文路由",
+      "institution": "未明确披露",
+      "summary_cn": "论文研究脚本驱动的联合音视频生成中，视频与音频彼此同步却无法准确遵循脚本所规定的镜头切换和对白时间点的问题。作者提出 Temporal Context Routing（TCR），将结构化脚本中的时间信息映射到音视频生成共享的时间轴，并把各段提示词的引导信号路由至两个模态对应的时间位置。在200个测试脚本上，TCR将 Shot Boundary MAE 从1.11秒降至0.042秒，降低96%，并将 Dialogue Acc@0.5 s 从28.3%提升至84.1%，同时保持与基线相当的视觉质量和音视频同步效果。",
+      "innovations": [
+        "提出 Temporal Context Routing（TCR），将结构化脚本时间显式接入音视频共享时间轴，解决脚本时间与模态时间坐标未对齐的问题。",
+        "设计按时间位置路由提示词引导的机制，使镜头切换和对白提示分别作用于视频与音频生成中的对应时刻。",
+        "在200个测试脚本上将 Shot Boundary MAE 从1.11秒降至0.042秒，下降96%。",
+        "将 Dialogue Acc@0.5 s 从28.3%提升至84.1%，且视觉质量和音视频同步性保持在基线水平，用户研究在五个评价维度上均更偏好TCR。"
+      ],
+      "scenario_cn": "适用于根据分镜脚本自动生成短片、广告、影视片段和带对白的视频内容，尤其能解决镜头切换或台词时机错误导致的叙事不连贯问题。",
+      "title_en": "The Missing Temporal Link: Temporal Context Routing for Script-Driven Audio-Video Generation",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2609.01967v1",
+      "title": "A Unified Particle Filter LSTM for Data-Driven Process Simulation",
+      "abstract": "Data-driven process simulation aims to generate realistic case trajectories from historical event logs without requiring an explicitly specified model of the underlying dynamics. Deep sequence models can capture complex temporal dependencies through next-activity probabilities and conditional time distributions. However, event logs provide only a partial view of the underlying process state, often recording activity completions without the corresponding service-start times. Consequently, the same observed process history may be consistent with multiple plausible latent process conditions, whereas standard recurrent models compress each process prefix into a single deterministic recurrent state. We propose a Unified Particle Filter LSTM (Unified PF-LSTM) that maintains and sequentially updates a weighted set of recurrent-state hypotheses. We summarize this particle belief using its weighted mean and learned features based on the moment-generating function. The resulting representation is used to predict a categorical distribution over the next activity and conditional quantiles of the current activity's sojourn time. The framework is trained end-to-end from event-log data and evaluated on three real-world emergency department datasets. The results show that the proposed framework consistently outperforms the considered data-driven baselines in reproducing routing, duration, and system-level behavior across all datasets, with particularly strong gains in settings where complex process dynamics are only partially reflected in the available event logs.",
+      "published": "2026-09-03T00:00:00+00:00",
+      "updated": "2026-09-03T00:00:00+00:00",
+      "authors": [
+        "Parvin Malekzadeh",
+        "Opher Baron",
+        "Dmitry Krass"
+      ],
+      "categories": [
+        "cs.LG",
+        "eess.SP"
+      ],
+      "abs_url": "https://arxiv.org/abs/2609.01967",
+      "pdf_url": "https://arxiv.org/pdf/2609.01967",
+      "score": 3.4,
+      "topics": [
+        {
+          "name": "World Model",
+          "slug": "world-model",
+          "hits": [
+            "simulation"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "simulation"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=A%20Unified%20Particle%20Filter%20LSTM%20for%20Data-Driven%20Process%20Simulation%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Data-driven process simulation aims to generate realistic case trajectories from historical event logs without requiring an explicitly specified model of the underlying dynamics. Deep sequence models can capture complex temporal dependencies through next-activity probabilities and conditional time distributions. However, event logs provide only a partial view of the underlying process state, often recording activity completions without the corresponding service-start times. Consequently, the same observed process history may be consistent with multiple plausible latent process conditions, whereas standard recurrent models compress each process prefix into a single deterministic recurrent state. We propose a Unified Particle Filter LSTM (Unified PF-LSTM) that maintains and sequentially updates a weighted set of recurrent-state hypotheses. We summarize this particle belief using its weighted mean and learned features based on the moment-generating function. The resulting representation is used to predict a categorical distribution over the next activity and conditional quantiles of the current activity's sojourn time. The framework is trained end-to-end from event-log data and evaluated on three real-world emergency department datasets. The results show that the proposed framework consistently outperforms the considered data-driven baselines in reproducing routing, duration, and system-level behavior across all datasets, with particularly strong gains in settings where complex process dynamics are only partially reflected in the available event logs.",
+      "code_links_from_meta": "https://github.com/search?q=A%20Unified%20Particle%20Filter%20LSTM%20for%20Data-Driven%20Process%20Simulation%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "用于数据驱动流程仿真的统一粒子滤波长短期记忆网络",
+      "institution": "未明确披露",
+      "summary_cn": "针对事件日志只能部分反映流程状态、同一观测历史可能对应多个潜在流程条件的问题，论文提出统一粒子滤波长短期记忆网络（Unified PF-LSTM），维护并序贯更新一组带权循环状态假设。模型利用粒子信念的加权均值以及基于矩生成函数学习的特征，联合预测下一活动的类别分布和当前活动停留时间的条件分位数。该方法在三个真实世界急诊科数据集上进行端到端训练与评估，在路由、持续时间和系统级行为复现方面 consistently 优于数据驱动基线，且在流程动力学被事件日志不完整记录的场景中提升尤其明显。",
+      "innovations": [
+        "提出 Unified PF-LSTM，以带权粒子集合表示同一流程前缀对应的多个潜在循环状态假设，克服标准循环模型将前缀压缩为单一确定性状态的局限。",
+        "使用粒子信念的加权均值与基于矩生成函数学习的特征构建状态表示，同时支持下一活动分类预测和当前活动停留时间条件分位数预测。",
+        "在三个真实急诊科事件日志数据集上验证方法，并发现其在路由、持续时间及系统级行为复现指标上 consistently 超越所比较的数据驱动基线。",
+        "Unified PF-LSTM 在底层流程状态只能被部分观测的复杂动态环境中取得更显著的性能增益，说明显式维护状态不确定性有助于提升流程仿真质量。"
+      ],
+      "scenario_cn": "适用于医院急诊、客服处理、生产制造等能够持续记录活动完成事件、但难以完整获得服务开始时间或内部流程状态的业务系统。它可用于生成更真实的流程轨迹，支持容量规划、资源配置、流程优化和系统行为预测。",
+      "title_en": "A Unified Particle Filter LSTM for Data-Driven Process Simulation",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2609.02414v1",
+      "title": "Before the Script, Set the Stage: How Worldview Simulation Amplifies Psychologically Grounded Persuasion in Multi-Turn Jailbreaking",
+      "abstract": "Multi-turn jailbreak attacks demonstrate that harmful intent can be distributed across dialogue, yet existing methods obscure what conversational mechanisms drive vulnerability. We introduce BLUEPRINT, a safety-evaluation framework separating a factorized social-influence strategy space from WORLDVIEWSIM, a cross-turn situational context module. Monte Carlo Tree Search optimizes turn-level combinations of 18 theory-grounded influence factors across a four-turn trajectory. Across six frontier models, BLUEPRINT achieves near-ceiling ASR on major open-weight and proprietary models, while requiring the fewest average queries (2.46). The resulting trajectories further reveal model-specific vulnerability among resistant targets: each responds to distinct influence factors and strategy transitions, yet all share a common recovery pathway-shifting toward concrete, executable task framing consistently escapes hard-refusal states. Ablations confirm operational cues matter most: making requests actionable has the largest impact, gain framing is unusually potent, and some legitimacy appeals can backfire. These findings suggest robust multi-turn safety requires monitoring not only harmful content, but also how dialogue state makes unsafe requests appear concrete and locally executable.",
+      "published": "2026-09-03T00:00:00+00:00",
+      "updated": "2026-09-03T00:00:00+00:00",
+      "authors": [
+        "Siyu Chen",
+        "Haoran Wang",
+        "Xiaojian Li",
+        "Yao Huang",
+        "Yinpeng Dong",
+        "Wei Xu"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "abs_url": "https://arxiv.org/abs/2609.02414",
+      "pdf_url": "https://arxiv.org/pdf/2609.02414",
+      "score": 3.4,
+      "topics": [
+        {
+          "name": "World Model",
+          "slug": "world-model",
+          "hits": [
+            "simulation"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "simulation"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Before%20the%20Script%2C%20Set%20the%20Stage%3A%20How%20Worldview%20Simulation%20Amplifies%20Psychologically%20Grounded%20Persuasion%20in%20Multi-Turn%20Jailbreaking%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Multi-turn jailbreak attacks demonstrate that harmful intent can be distributed across dialogue, yet existing methods obscure what conversational mechanisms drive vulnerability. We introduce BLUEPRINT, a safety-evaluation framework separating a factorized social-influence strategy space from WORLDVIEWSIM, a cross-turn situational context module. Monte Carlo Tree Search optimizes turn-level combinations of 18 theory-grounded influence factors across a four-turn trajectory. Across six frontier models, BLUEPRINT achieves near-ceiling ASR on major open-weight and proprietary models, while requiring the fewest average queries (2.46). The resulting trajectories further reveal model-specific vulnerability among resistant targets: each responds to distinct influence factors and strategy transitions, yet all share a common recovery pathway-shifting toward concrete, executable task framing consistently escapes hard-refusal states. Ablations confirm operational cues matter most: making requests actionable has the largest impact, gain framing is unusually potent, and some legitimacy appeals can backfire. These findings suggest robust multi-turn safety requires monitoring not only harmful content, but also how dialogue state makes unsafe requests appear concrete and locally executable.",
+      "code_links_from_meta": "https://github.com/search?q=Before%20the%20Script%2C%20Set%20the%20Stage%3A%20How%20Worldview%20Simulation%20Amplifies%20Psychologically%20Grounded%20Persuasion%20in%20Multi-Turn%20Jailbreaking%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "在编写脚本之前先搭建场景：世界观模拟如何增强多轮越狱中的心理学基础说服",
+      "institution": "未明确披露",
+      "summary_cn": "针对多轮越狱攻击将有害意图分散在多轮对话中、导致模型脆弱性机制难以解释的问题，论文提出 BLUEPRINT 安全评估框架，将社会影响策略空间与跨轮情境模块 WORLDVIEWSIM 进行因子化分离。BLUEPRINT 使用蒙特卡洛树搜索，在四轮对话轨迹中优化由18个具有理论依据的影响因素构成的逐轮组合。在六个前沿模型上的实验表明，该框架在开源权重模型和专有模型上都达到接近上限的攻击成功率（ASR），平均查询次数仅为2.46；分析还发现，不同模型对影响因素和策略转变的敏感性不同，但将对话转向具体、可执行的任务表述能稳定突破强拒答状态。",
+      "innovations": [
+        "提出 BLUEPRINT，将18个心理学理论驱动的社会影响因素组织为可因子化的策略空间，并用 WORLDVIEWSIM 建模跨轮情境，使多轮越狱策略与对话场景状态能够分别分析。",
+        "采用蒙特卡洛树搜索优化四轮攻击轨迹，在六个前沿模型上实现接近上限的攻击成功率（ASR），平均查询次数为2.46。",
+        "通过跨模型轨迹分析揭示模型特异性的脆弱性：不同抵抗性模型对影响因素及策略转移的响应不同，但共同存在从强拒答转向具体、可执行任务框架的恢复路径。",
+        "消融实验显示，操作性线索影响最大，可执行请求的增益最强；gain framing 特别有效，而部分合法性诉求反而可能产生反效果。"
+      ],
+      "scenario_cn": "该框架适用于大语言模型上线前的多轮安全评测、红队测试和对话防护策略设计，可帮助系统识别对话状态如何使危险请求看起来局部合理且可执行。研究结论也适用于构建面向多轮上下文的拒答监控、风险升级检测和安全策略回退机制。",
+      "title_en": "Before the Script, Set the Stage: How Worldview Simulation Amplifies Psychologically Grounded Persuasion in Multi-Turn Jailbreaking",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2609.02716v1",
+      "title": "Card-Based Computation in the Virtual Player Simulation Model",
+      "abstract": "Player simulation has recently emerged as a new direction in card-based cryptography, with protocols developed for simulating virtual players in physical card games such as Old Maid, UNO, and President. Unlike conventional card-based secure computation, player simulation imposes additional constraints: the cards represent a persistent game state, the remaining cards in a virtual player's hand must be preserved after each action, and it is desirable to represent each card in the game by a single physical card. In this paper, we study generic card-based computation in the virtual player simulation model. We focus on games whose cards admit a publicly known ranking and propose two fundamental protocols. First, we present the Play-Minimum protocol, which securely selects and plays the minimum-value card from a virtual player's hand when all cards in the deck have distinct values. By symmetry, the protocol can also be used to play the maximum-value card. Second, we present the Sorting protocol, which securely arranges a virtual player's hand in nondecreasing order and remains applicable when multiple cards have the same value. These protocols provide generic computational primitives independent of any particular card game and constitute a step toward understanding the computational capabilities of the virtual player simulation model.",
+      "published": "2026-09-03T00:00:00+00:00",
+      "updated": "2026-09-03T00:00:00+00:00",
+      "authors": [
+        "Suthee Ruangwises"
+      ],
+      "categories": [
+        "cs.CR"
+      ],
+      "abs_url": "https://arxiv.org/abs/2609.02716",
+      "pdf_url": "https://arxiv.org/pdf/2609.02716",
+      "score": 3.4,
+      "topics": [
+        {
+          "name": "World Model",
+          "slug": "world-model",
+          "hits": [
+            "simulation"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "simulation"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Card-Based%20Computation%20in%20the%20Virtual%20Player%20Simulation%20Model%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Player simulation has recently emerged as a new direction in card-based cryptography, with protocols developed for simulating virtual players in physical card games such as Old Maid, UNO, and President. Unlike conventional card-based secure computation, player simulation imposes additional constraints: the cards represent a persistent game state, the remaining cards in a virtual player's hand must be preserved after each action, and it is desirable to represent each card in the game by a single physical card. In this paper, we study generic card-based computation in the virtual player simulation model. We focus on games whose cards admit a publicly known ranking and propose two fundamental protocols. First, we present the Play-Minimum protocol, which securely selects and plays the minimum-value card from a virtual player's hand when all cards in the deck have distinct values. By symmetry, the protocol can also be used to play the maximum-value card. Second, we present the Sorting protocol, which securely arranges a virtual player's hand in nondecreasing order and remains applicable when multiple cards have the same value. These protocols provide generic computational primitives independent of any particular card game and constitute a step toward understanding the computational capabilities of the virtual player simulation model.",
+      "code_links_from_meta": "https://github.com/search?q=Card-Based%20Computation%20in%20the%20Virtual%20Player%20Simulation%20Model%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "虚拟玩家模拟模型中的基于卡牌的计算",
+      "institution": "未明确披露",
+      "summary_cn": "本文研究虚拟玩家模拟模型中的通用基于卡牌的安全计算问题，该模型要求卡牌持续表示游戏状态、每次操作后保留虚拟玩家手中的剩余卡牌，并尽量让每张游戏卡牌由一张实体卡牌表示。针对卡牌具有公开可知排序的游戏，论文提出 Play-Minimum 协议，在卡牌值互异时安全选出并打出手牌中的最小值卡牌，并可对称地实现最大值卡牌选择；同时提出 Sorting 协议，将手牌安全排列为非递减顺序且支持重复值。两类协议不依赖具体游戏，为虚拟玩家模拟模型提供了通用计算原语。",
+      "innovations": [
+        "提出 Play-Minimum 协议，在保持虚拟玩家剩余手牌和游戏状态的约束下，安全选择并打出手牌中的最小值卡牌；通过对称性可扩展为 Play-Maximum。",
+        "提出 Sorting 协议，将虚拟玩家手牌安全排列为非递减顺序，并支持多张卡牌具有相同值的情况。",
+        "将上述协议抽象为独立于 Old Maid、UNO、President 等具体卡牌游戏的通用计算原语，推进了对虚拟玩家模拟模型计算能力的系统研究。",
+        "围绕公开卡牌排序这一结构化条件，刻画了持久游戏状态、剩余手牌保持和单卡牌表示等约束下的通用安全计算问题。"
+      ],
+      "scenario_cn": "适用于需要在实体卡牌不泄露隐藏信息的前提下执行排序、最值选择和状态更新的实体卡牌密码协议。它可作为 Old Maid、UNO、President 等卡牌游戏中实现隐私保护决策逻辑的底层组件。",
+      "title_en": "Card-Based Computation in the Virtual Player Simulation Model",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2609.02046v1",
+      "title": "Modeling What Changes: Sparse, Residual World Models for Object-Centric Manipulation",
+      "abstract": "Monolithic world models predict the entire next state at every step, spending capacity re-predicting the static majority of a scene and injecting error into it. We ask whether explicitly modeling change (a per-object change gate plus a residual delta head that perturbs only the objects the gate flags) is a more effective and interpretable bias for physical prediction and control. On a MuJoCo tabletop pushing benchmark scaling from 3 to 8 objects, the sparse/residual model predicts next-state poses 2.5 to 4.6 times more accurately than a dense multilayer perceptron at 8.6 to 11.1 times fewer parameters, sustains change-detection F1 of 0.80 to 0.87 where the dense baseline is degenerate, transfers across object counts with zero retraining (99.4 percent F1 retention), and reaches about 90 percent of its full-data accuracy with a quarter of the data. In autoregressive rollout it compounds far less error, hugging the no-motion floor while the dense model drifts. Finally, inside a sampling-based planner, prediction-only models fail (though a true-simulator oracle solves the task with the identical planner, confirming the planner is sound), but once featurized and trained for the states a planner visits, the sparse model begins to plan (0.23 plus or minus 0.06 success over three seeds) while the dense monolith stays at zero at every seed. Modeling what changes, rather than re-predicting the whole world, is a simple, effective bias for object-centric physical AI; code, data generators, and all checkpoints will be released upon publication.",
+      "published": "2026-09-03T00:00:00+00:00",
+      "updated": "2026-09-03T00:00:00+00:00",
+      "authors": [
+        "Param Thakkar",
+        "Parsika Paresh Shah",
+        "Manisha Sushant Gote"
+      ],
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "abs_url": "https://arxiv.org/abs/2609.02046",
+      "pdf_url": "https://arxiv.org/pdf/2609.02046",
+      "score": 3.4,
+      "topics": [
+        {
+          "name": "World Model",
+          "slug": "world-model",
+          "hits": [
+            "world model"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "world model"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Modeling%20What%20Changes%3A%20Sparse%2C%20Residual%20World%20Models%20for%20Object-Centric%20Manipulation%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Monolithic world models predict the entire next state at every step, spending capacity re-predicting the static majority of a scene and injecting error into it. We ask whether explicitly modeling change (a per-object change gate plus a residual delta head that perturbs only the objects the gate flags) is a more effective and interpretable bias for physical prediction and control. On a MuJoCo tabletop pushing benchmark scaling from 3 to 8 objects, the sparse/residual model predicts next-state poses 2.5 to 4.6 times more accurately than a dense multilayer perceptron at 8.6 to 11.1 times fewer parameters, sustains change-detection F1 of 0.80 to 0.87 where the dense baseline is degenerate, transfers across object counts with zero retraining (99.4 percent F1 retention), and reaches about 90 percent of its full-data accuracy with a quarter of the data. In autoregressive rollout it compounds far less error, hugging the no-motion floor while the dense model drifts. Finally, inside a sampling-based planner, prediction-only models fail (though a true-simulator oracle solves the task with the identical planner, confirming the planner is sound), but once featurized and trained for the states a planner visits, the sparse model begins to plan (0.23 plus or minus 0.06 success over three seeds) while the dense monolith stays at zero at every seed. Modeling what changes, rather than re-predicting the whole world, is a simple, effective bias for object-centric physical AI; code, data generators, and all checkpoints will be released upon publication.",
+      "code_links_from_meta": "https://github.com/search?q=Modeling%20What%20Changes%3A%20Sparse%2C%20Residual%20World%20Models%20for%20Object-Centric%20Manipulation%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "建模变化：面向以对象为中心的操作的稀疏残差世界模型",
+      "institution": "未明确披露",
+      "summary_cn": "本文针对整体式世界模型在每一步重复预测场景中大量静态内容、浪费模型容量并累积误差的问题，提出由逐对象变化门控和残差增量头组成的稀疏残差世界模型，仅对被门控标记发生变化的对象预测位姿增量。在 MuJoCo 桌面推推动基准上，当对象数量扩展到 8 个时，该模型的下一状态位姿预测准确率达到稠密多层感知机的 2.5 至 4.6 倍，同时参数量减少 8.6 至 11.1 倍；变化检测 F1 达到 0.80 至 0.87，跨对象数量迁移时无需重新训练且保留 99.4% 的 F1。自回归 rollout 中该模型的误差累积显著更低，在采样式规划中经过面向规划访问状态的特征化训练后取得 0.23±0.06 的成功率，而稠密整体模型在所有随机种子下均为零。",
+      "innovations": [
+        "提出逐对象 change gate 与 residual delta head 的稀疏残差结构，只更新被识别为变化对象的状态，避免整体式模型重复重建静态场景。",
+        "在 MuJoCo 桌面推推动基准上，对象数量从 3 扩展到 8 时，相比稠密多层感知机实现 2.5 至 4.6 倍的位姿预测准确率，并使用少 8.6 至 11.1 倍的参数。",
+        "变化检测 F1 达到 0.80 至 0.87；跨对象数量零样本迁移时 F1 保留率为 99.4%，且仅使用四分之一训练数据即可达到约 90% 的全数据准确率。",
+        "在采样式规划实验中，预测模型直接用于规划会失败；针对规划器实际访问状态进行特征化训练后，稀疏模型取得 0.23±0.06 的三种子成功率，而稠密模型在每个种子下成功率均为 0。"
+      ],
+      "scenario_cn": "适用于桌面操作、机器人推物体和其他以对象为中心的物理控制系统，尤其适合场景中大部分对象保持静止而少数对象发生变化的任务。该模型可降低世界状态预测的参数、数据和 rollout 误差成本，为采样式规划器提供更可靠的预测基础。",
+      "title_en": "Modeling What Changes: Sparse, Residual World Models for Object-Centric Manipulation",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2609.01896v1",
+      "title": "OutageDiT: A Generative Foundation Model for Power Outage Forecasting and Scenario Simulation",
+      "abstract": "Power-outage planning requires scenarios before an event occurs. These scenarios must represent uncertainty in magnitude, timing, and duration while preserving temporal dependence. However, severe events are rare, and data from any single region contain few examples of extreme outage and restoration patterns. To address this challenge, we introduce OutageDiT, a foundation model for generating seven-day outage trajectories at quarter-hour resolution, trained on outage and weather records across the United States. Specifically, a condition encoder processes the historical context and known future covariates once per forecast, and a shallow flow decoder reuses the resulting horizon-aligned states to generate complete trajectories. The resulting samples support point forecasting, uncertainty quantification, and conditional event simulation within one deep generative model. Across outage forecasting benchmarks, OutageDiT improves forecast accuracy and scenario quality over strong baselines and supports zero-shot transfer to held-out regions. Together, these results position conditional outage simulation as a bridge from outage forecasting to operational planning under uncertainty.",
+      "published": "2026-09-03T00:00:00+00:00",
+      "updated": "2026-09-03T00:00:00+00:00",
+      "authors": [
+        "Yunqin Zhu",
+        "Feng Qiu",
+        "Yao Xie"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "abs_url": "https://arxiv.org/abs/2609.01896",
+      "pdf_url": "https://arxiv.org/pdf/2609.01896",
+      "score": 3.4,
+      "topics": [
+        {
+          "name": "World Model",
+          "slug": "world-model",
+          "hits": [
+            "simulation"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "simulation"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=OutageDiT%3A%20A%20Generative%20Foundation%20Model%20for%20Power%20Outage%20Forecasting%20and%20Scenario%20Simulation%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Power-outage planning requires scenarios before an event occurs. These scenarios must represent uncertainty in magnitude, timing, and duration while preserving temporal dependence. However, severe events are rare, and data from any single region contain few examples of extreme outage and restoration patterns. To address this challenge, we introduce OutageDiT, a foundation model for generating seven-day outage trajectories at quarter-hour resolution, trained on outage and weather records across the United States. Specifically, a condition encoder processes the historical context and known future covariates once per forecast, and a shallow flow decoder reuses the resulting horizon-aligned states to generate complete trajectories. The resulting samples support point forecasting, uncertainty quantification, and conditional event simulation within one deep generative model. Across outage forecasting benchmarks, OutageDiT improves forecast accuracy and scenario quality over strong baselines and supports zero-shot transfer to held-out regions. Together, these results position conditional outage simulation as a bridge from outage forecasting to operational planning under uncertainty.",
+      "code_links_from_meta": "https://github.com/search?q=OutageDiT%3A%20A%20Generative%20Foundation%20Model%20for%20Power%20Outage%20Forecasting%20and%20Scenario%20Simulation%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "OutageDiT：用于停电预测与情景模拟的生成式基础模型",
+      "institution": "未明确披露",
+      "summary_cn": "该论文聚焦极端停电事件样本稀缺、单一区域数据难以覆盖停电规模、发生时刻与持续时间不确定性的预测难题。作者提出OutageDiT，在美国跨区域停电与天气记录上训练，生成未来7天、15分钟粒度的完整停电轨迹。模型使用条件编码器一次性编码历史上下文及已知未来协变量，再由浅层流解码器复用与预测范围对齐的状态生成轨迹，从而统一支持点预测、不确定性量化和条件化事件模拟。实验显示，OutageDiT相较强基线提升了停电预测准确性与情景质量，并可零样本迁移到训练中未见的区域。",
+      "innovations": [
+        "提出生成式基础模型OutageDiT，将停电点预测、概率不确定性评估和条件化事件情景模拟整合到同一深度生成框架中。",
+        "面向未来7天、15分钟分辨率的停电轨迹生成：条件编码器仅执行一次历史与未来天气等协变量编码，浅层流解码器复用预测范围对齐状态以生成完整时序轨迹。",
+        "利用全美国范围的停电与天气记录联合训练，缓解单一地区极端停电及恢复模式样本不足的问题。",
+        "在停电预测基准上同时改善预测精度与生成情景质量，并验证了对留出区域的零样本迁移能力。"
+      ],
+      "scenario_cn": "可用于电网运营方在灾害发生前进行抢修人员调度、备用资源配置和恢复计划推演。适合需要依据天气预报评估区域停电风险并制定韧性运营方案的配电网与应急管理系统。",
+      "title_en": "OutageDiT: A Generative Foundation Model for Power Outage Forecasting and Scenario Simulation",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2609.01963v1",
+      "title": "Aggregating Neighbor Embedding Projection and Rank-Based Manifold Learning for Image Retrieval",
+      "abstract": "Content-based image retrieval (CBIR) has advanced significantly with deep learning, yet effectively ranking similar images remains challenging, particularly in high-dimensional feature spaces, where pairwise distances often fail to capture contextual relationships and the semantic gap between visual features and high-level concepts persists. Manifold learning and rank-based refinement methods have emerged as complementary strategies, respectively improving feature representations and exploiting contextual information embedded in ranked lists, such as neighborhood relationships among images. However, combining these projection-based and rank-based strategies to exploit their complementary properties remains a challenging research problem. To address this, we propose a framework that combines neighbor embedding projections with rank-based manifold learning through rank aggregation. Uniform Manifold Approximation and Projection (UMAP) generates alternative low-dimensional feature representations, and ranked lists obtained from UMAP projections and rank-based re-ranking methods are combined using the Borda Count aggregation strategy. Experiments were conducted on several public datasets using deep learning features extracted from ResNet152, Swin Transformer, and DINOv2 models. Results show that the proposed approach improves retrieval effectiveness in several scenarios, particularly when the baseline representation struggles to achieve high precision. The aggregation strategy also often improves the quality of top-ranked positions, leading to competitive Mean Average Precision (MAP) and Precision values across different datasets and feature extractors. These findings suggest that combining projection-based and rank-based manifold learning strategies through rank aggregation can provide complementary contextual information for image retrieval tasks.",
+      "published": "2026-09-03T00:00:00+00:00",
+      "updated": "2026-09-03T00:00:00+00:00",
+      "authors": [
+        "Vinicius Atsushi Sato Kawai",
+        "Gustavo Rosseto Leticio",
+        "Lucas Pascotti Valem",
+        "Daniel Carlos Guimarães Pedronette"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "https://arxiv.org/abs/2609.01963",
+      "pdf_url": "https://arxiv.org/pdf/2609.01963",
+      "score": 3.2,
+      "topics": [
+        {
+          "name": "RAG / Long Context",
+          "slug": "rag-long-context",
+          "hits": [
+            "retrieval"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "retrieval"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Aggregating%20Neighbor%20Embedding%20Projection%20and%20Rank-Based%20Manifold%20Learning%20for%20Image%20Retrieval%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Content-based image retrieval (CBIR) has advanced significantly with deep learning, yet effectively ranking similar images remains challenging, particularly in high-dimensional feature spaces, where pairwise distances often fail to capture contextual relationships and the semantic gap between visual features and high-level concepts persists. Manifold learning and rank-based refinement methods have emerged as complementary strategies, respectively improving feature representations and exploiting contextual information embedded in ranked lists, such as neighborhood relationships among images. However, combining these projection-based and rank-based strategies to exploit their complementary properties remains a challenging research problem. To address this, we propose a framework that combines neighbor embedding projections with rank-based manifold learning through rank aggregation. Uniform Manifold Approximation and Projection (UMAP) generates alternative low-dimensional feature representations, and ranked lists obtained from UMAP projections and rank-based re-ranking methods are combined using the Borda Count aggregation strategy. Experiments were conducted on several public datasets using deep learning features extracted from ResNet152, Swin Transformer, and DINOv2 models. Results show that the proposed approach improves retrieval effectiveness in several scenarios, particularly when the baseline representation struggles to achieve high precision. The aggregation strategy also often improves the quality of top-ranked positions, leading to competitive Mean Average Precision (MAP) and Precision values across different datasets and feature extractors. These findings suggest that combining projection-based and rank-based manifold learning strategies through rank aggregation can provide complementary contextual information for image retrieval tasks.",
+      "code_links_from_meta": "https://github.com/search?q=Aggregating%20Neighbor%20Embedding%20Projection%20and%20Rank-Based%20Manifold%20Learning%20for%20Image%20Retrieval%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "用于图像检索的邻域嵌入投影聚合与基于排序的流形学习",
+      "institution": "未明确披露",
+      "summary_cn": "该论文研究内容图像检索中高维特征的距离度量难以表达上下文邻域关系、视觉特征与语义概念存在鸿沟的问题。作者将UMAP产生的多个低维邻域嵌入表示，与基于排序的流形重排序结果结合，并使用Borda Count对多个候选排序列表进行聚合。实验采用ResNet152、Swin Transformer和DINOv2提取的特征，在多个公开数据集上评估。结果表明，该方法尤其能改善原始表示精度偏低时的检索效果，并经常提高检索结果前列的质量，取得有竞争力的MAP和Precision。",
+      "innovations": [
+        "构建邻域嵌入投影与基于排序的流形学习协同框架，联合利用低维投影中的局部结构信息和重排序列表中的上下文关系。",
+        "使用UMAP生成替代性低维图像特征表示，再将其对应的排序结果与基于排序的重排序结果共同纳入检索决策。",
+        "采用Borda Count排序聚合策略融合多个候选列表，而非依赖单一特征空间中的两两距离。",
+        "在ResNet152、Swin Transformer和DINOv2三类特征提取器及多个公开数据集上验证：该策略可提升MAP、Precision，并改善top-ranked检索位置的结果质量。"
+      ],
+      "scenario_cn": "可服务于商品以图搜图、图库去重、媒体素材检索和数字资产管理等需要返回语义相似图像的系统。尤其适用于已有视觉嵌入模型但检索前排结果不稳定、需要增强相似样本上下文关联的业务。",
+      "title_en": "Aggregating Neighbor Embedding Projection and Rank-Based Manifold Learning for Image Retrieval",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2609.02184v1",
+      "title": "CC-4DGS: Computational Deformation and Point-Cloud Compression for Storage-Efficient Dynamic Gaussian Splatting",
+      "abstract": "Dynamic four-dimensional (4D) Gaussian Splatting has emerged as a powerful explicit representation for high-quality view synthesis, yet existing methods still require tens to hundreds of megabytes per scene due to their heavy reliance on large multi-resolution hash tables and high-dimensional Gaussian attributes. This paper presents CC-4DGS, a storage-efficient and scalable framework that rethinks both deformation modeling and canonical attribute storage. First, we introduce a computational deformation field (CDF) that replaces large multi-resolution learnable hash tables with deterministic dense hash encoding and compact neural decoders, enabling on-the-fly synthesis of deformation features while reducing deformation storage to only 1--3 MB per scene. Second, we propose a compression of canonical point-cloud attributes (CCA) pipeline that compresses high-dimensional spherical harmonic appearance terms and auxiliary Gaussian attributes via conditional autoencoding, selective quantization, and residual codebooks, achieving 3--5$\\times$ point-cloud reduction with negligible quality loss. Together, these components yield a unified representation that preserves real-time rendering performance while reducing total storage to 20--30 MB. Extensive experiments across the N3DV and Technicolor Light Field datasets demonstrate that CC-4DGS achieves reconstruction accuracy comparable to state-of-the-art methods such as Swift4D, while offering significantly improved storage efficiency and favorable runtime-memory trade-offs.",
+      "published": "2026-09-03T00:00:00+00:00",
+      "updated": "2026-09-03T00:00:00+00:00",
+      "authors": [
+        "Kyungdae Park",
+        "Chae Eun Rhee"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "https://arxiv.org/abs/2609.02184",
+      "pdf_url": "https://arxiv.org/pdf/2609.02184",
+      "score": 3.2,
+      "topics": [
+        {
+          "name": "RAG / Long Context",
+          "slug": "rag-long-context",
+          "hits": [
+            "rag"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "rag"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=CC-4DGS%3A%20Computational%20Deformation%20and%20Point-Cloud%20Compression%20for%20Storage-Efficient%20Dynamic%20Gaussian%20Splatting%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Dynamic four-dimensional (4D) Gaussian Splatting has emerged as a powerful explicit representation for high-quality view synthesis, yet existing methods still require tens to hundreds of megabytes per scene due to their heavy reliance on large multi-resolution hash tables and high-dimensional Gaussian attributes. This paper presents CC-4DGS, a storage-efficient and scalable framework that rethinks both deformation modeling and canonical attribute storage. First, we introduce a computational deformation field (CDF) that replaces large multi-resolution learnable hash tables with deterministic dense hash encoding and compact neural decoders, enabling on-the-fly synthesis of deformation features while reducing deformation storage to only 1--3 MB per scene. Second, we propose a compression of canonical point-cloud attributes (CCA) pipeline that compresses high-dimensional spherical harmonic appearance terms and auxiliary Gaussian attributes via conditional autoencoding, selective quantization, and residual codebooks, achieving 3--5$\\times$ point-cloud reduction with negligible quality loss. Together, these components yield a unified representation that preserves real-time rendering performance while reducing total storage to 20--30 MB. Extensive experiments across the N3DV and Technicolor Light Field datasets demonstrate that CC-4DGS achieves reconstruction accuracy comparable to state-of-the-art methods such as Swift4D, while offering significantly improved storage efficiency and favorable runtime-memory trade-offs.",
+      "code_links_from_meta": "https://github.com/search?q=CC-4DGS%3A%20Computational%20Deformation%20and%20Point-Cloud%20Compression%20for%20Storage-Efficient%20Dynamic%20Gaussian%20Splatting%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "CC-4DGS：面向存储高效动态高斯泼溅的计算变形与点云压缩",
+      "institution": "未明确披露",
+      "summary_cn": "本文针对动态四维高斯泼溅依赖大规模多分辨率哈希表和高维高斯属性、导致单场景存储开销达到数十至数百MB的问题，提出存储高效框架CC-4DGS。该框架以计算变形场（CDF）和规范点云属性压缩（CCA）为核心：CDF采用确定性稠密哈希编码与紧凑神经解码器在线合成变形特征，将变形存储压缩至每场景1–3MB；CCA则结合条件自编码、选择性量化和残差码本压缩球谐外观项及辅助高斯属性。N3DV和Technicolor Light Field数据集上的实验表明，CC-4DGS在重建精度上接近Swift4D，同时将总存储降低至20–30MB，并保持实时渲染性能。",
+      "innovations": [
+        "提出计算变形场（CDF），用确定性稠密哈希编码和紧凑神经解码器替代大规模多分辨率可学习哈希表，将每个场景的变形存储降至1–3MB。",
+        "提出规范点云属性压缩（CCA）流程，通过条件自编码、选择性量化和残差码本联合压缩高维球谐外观系数及辅助高斯属性，实现3–5倍点云压缩且几乎不损失重建质量。",
+        "在N3DV和Technicolor Light Field数据集上验证了统一表示的有效性：重建精度可与Swift4D等先进方法相比，同时显著改善存储效率和运行时内存权衡。",
+        "在降低存储开销的同时保持实时渲染性能，证明变形特征在线合成与规范属性压缩可以兼容动态高斯泼溅的实际部署需求。"
+      ],
+      "scenario_cn": "适用于需要存储和传输大量动态三维场景的实时新视角合成系统，例如沉浸式视频、数字孪生、自由视点视频和边缘渲染平台。它能够缓解动态场景模型体积过大造成的磁盘、显存和网络带宽压力。",
+      "title_en": "CC-4DGS: Computational Deformation and Point-Cloud Compression for Storage-Efficient Dynamic Gaussian Splatting",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2609.02582v1",
+      "title": "EEG-based Visual Retrieval and Reconstruction: From Neurally Visible Optimal Layer to Hierarchical Diffusion Generation",
+      "abstract": "Decoding visual perception from electroencephalography (EEG) is important for non-invasive brain-computer interfaces (BCIs). However, most existing visual decoding pipelines directly align EEG features with semantic features from pretrained vision models. Those EEG signals carry information at more than one level and this practice disregards the varying neural visibility of different visual components in EEG signals, leading to cross modal mismatches and incomplete information use. In this work, we address this limitation through layer-wise contrastive learning. For each subject, the intermediate CLIP layer that maximizes retrieval performance is selected as the Neural Visibility Optimal Layer (NVOL). Built on NVOL, a hierarchical framework couples retrieval and generation through a shared intermediate representation. The retrieval branch fuses multi-NVOL features, aligns them to image embeddings via contrastive learning, and applies cross-domain similarity local scaling (CSLS) at test time to mitigate hubness. The generation branch reconstructs subject-specific NVOL features from EEG using a conditional diffusion prior, maps them to CLIP space through a lightweight adapter, and drives a pretrained Stable Diffusion XL model. Experimental validation on THINGS-EEG showed that, NVOL-based retrieval achieves 78.1\\% mean Top-1 accuracy in 200-way retrieval, rising to 86.4\\% with CSLS. Two-stage NVOL-to-semantic reconstruction also outperforms single-stage final-layer diffusion on semantic and structural metrics. By aligning EEG with layer-wise neural visibility rather than fixed high-level semantics, the proposed framework improves both retrieval accuracy and image reconstruction in EEG-based visual decoding.",
+      "published": "2026-09-03T00:00:00+00:00",
+      "updated": "2026-09-03T00:00:00+00:00",
+      "authors": [
+        "Minyi Wang",
+        "Zhenqin Wu",
+        "Rihui Li"
+      ],
+      "categories": [
+        "cs.HC"
+      ],
+      "abs_url": "https://arxiv.org/abs/2609.02582",
+      "pdf_url": "https://arxiv.org/pdf/2609.02582",
+      "score": 3.2,
+      "topics": [
+        {
+          "name": "RAG / Long Context",
+          "slug": "rag-long-context",
+          "hits": [
+            "retrieval"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "retrieval"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=EEG-based%20Visual%20Retrieval%20and%20Reconstruction%3A%20From%20Neurally%20Visible%20Optimal%20Layer%20to%20Hierarchical%20Diffusion%20Generation%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Decoding visual perception from electroencephalography (EEG) is important for non-invasive brain-computer interfaces (BCIs). However, most existing visual decoding pipelines directly align EEG features with semantic features from pretrained vision models. Those EEG signals carry information at more than one level and this practice disregards the varying neural visibility of different visual components in EEG signals, leading to cross modal mismatches and incomplete information use. In this work, we address this limitation through layer-wise contrastive learning. For each subject, the intermediate CLIP layer that maximizes retrieval performance is selected as the Neural Visibility Optimal Layer (NVOL). Built on NVOL, a hierarchical framework couples retrieval and generation through a shared intermediate representation. The retrieval branch fuses multi-NVOL features, aligns them to image embeddings via contrastive learning, and applies cross-domain similarity local scaling (CSLS) at test time to mitigate hubness. The generation branch reconstructs subject-specific NVOL features from EEG using a conditional diffusion prior, maps them to CLIP space through a lightweight adapter, and drives a pretrained Stable Diffusion XL model. Experimental validation on THINGS-EEG showed that, NVOL-based retrieval achieves 78.1\\% mean Top-1 accuracy in 200-way retrieval, rising to 86.4\\% with CSLS. Two-stage NVOL-to-semantic reconstruction also outperforms single-stage final-layer diffusion on semantic and structural metrics. By aligning EEG with layer-wise neural visibility rather than fixed high-level semantics, the proposed framework improves both retrieval accuracy and image reconstruction in EEG-based visual decoding.",
+      "code_links_from_meta": "https://github.com/search?q=EEG-based%20Visual%20Retrieval%20and%20Reconstruction%3A%20From%20Neurally%20Visible%20Optimal%20Layer%20to%20Hierarchical%20Diffusion%20Generation%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "基于EEG的视觉检索与重建：从神经可见最优层到分层扩散生成",
+      "institution": "未明确披露",
+      "summary_cn": "本文研究如何从脑电图（EEG）信号中恢复人类视觉感知，重点解决将EEG固定对齐到预训练视觉模型高层语义特征所造成的跨模态错配和视觉信息利用不完整问题。方法通过逐层对比学习，为每位受试者选择检索性能最佳的CLIP中间层作为神经可见最优层（NVOL），并在共享中间表示上联合视觉检索与图像生成：检索分支融合多层NVOL特征并采用跨域相似度局部缩放（CSLS）缓解hubness，生成分支则使用条件扩散先验重建受试者特定的NVOL特征，再通过轻量适配器驱动Stable Diffusion XL。THINGS-EEG实验显示，NVOL检索在200选1任务中的平均Top-1准确率达到78.1%，使用CSLS后提升至86.4%；两阶段NVOL到语义空间的重建在语义和结构指标上也优于直接进行最终层扩散重建。",
+      "innovations": [
+        "提出神经可见最优层（NVOL），针对每位受试者从CLIP中间层中选择最适合EEG视觉解码的层，避免预先假设EEG只承载固定层级的高层语义信息。",
+        "构建基于NVOL的检索—生成层次化框架：检索分支融合多层NVOL特征并通过对比学习对齐图像嵌入，生成分支则重建受试者特定的NVOL特征后映射至CLIP空间。",
+        "在THINGS-EEG数据集的200-way视觉检索任务中，NVOL达到78.1%的平均Top-1准确率，结合CSLS后达到86.4%，表明跨域相似度局部缩放能够有效缓解检索中的hubness问题。",
+        "采用条件扩散先验与Stable Diffusion XL完成两阶段NVOL到语义空间的图像重建，其语义和结构指标优于直接从EEG进行最终CLIP层扩散的单阶段方案。"
+      ],
+      "scenario_cn": "适用于非侵入式脑机接口中的视觉意图识别、辅助沟通和神经信号驱动的内容生成。该方法尤其适合需要同时进行候选图像检索和视觉内容重建的EEG解码系统。",
+      "title_en": "EEG-based Visual Retrieval and Reconstruction: From Neurally Visible Optimal Layer to Hierarchical Diffusion Generation",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2609.01865v1",
+      "title": "ExecRetrieval: Measuring the Functional-Correctness Gap in Code-Embedding Retrieval",
+      "abstract": "Embedding-based code retrieval is a core component of coding agents and retrieval-augmented code generation, where retrieving correct code matters more than retrieving lexically similar code. Existing code-retrieval benchmarks do not plant controlled, execution-verified single-edit variants of each query's canonical implementation in the search pool, leaving the question of whether embeddings can functionally discriminate correct from near-clone-but-incorrect code unanswered in a retrieval setting. Resolving this requires a benchmark whose search pool itself contains the relevant counterfactuals -- execution-verified buggy variants near-identical to each canonical -- so that a retriever's rank ordering can be directly tested for functional discrimination rather than topical or identity overlap. We introduce ExecRetrieval, 939 Python tasks each paired with one execution-verified canonical implementation and up to four execution-verified buggy distractors, each generated by a mechanical mutation making a single targeted edit, and evaluate 23 dense embedding configurations plus BM25 under provider-native invocation with paired McNemar tests and query-level bootstrap intervals. With near-clone counterfactuals in the pool, the top hosted system reaches exec@10 = 1.00 but only exec@1 = 0.331; rank-1 misses are paired buggy variants 91.5-99.4% of the time across the four leading systems, and the canonical scores below at least one of its four paired distractors in 67-78% of queries on the leading systems. The full dataset, execution oracle, embedding matrices, environment snapshot, and pairwise statistical tests are released at the URL in Appendix D.",
+      "published": "2026-09-03T00:00:00+00:00",
+      "updated": "2026-09-03T00:00:00+00:00",
+      "authors": [
+        "Aaryan Kapoor",
+        "Md Abdullah Al Hafiz Khan"
+      ],
+      "categories": [
+        "cs.SE",
+        "cs.CL",
+        "cs.IR"
+      ],
+      "abs_url": "https://arxiv.org/abs/2609.01865",
+      "pdf_url": "https://arxiv.org/pdf/2609.01865",
+      "score": 3.2,
+      "topics": [
+        {
+          "name": "RAG / Long Context",
+          "slug": "rag-long-context",
+          "hits": [
+            "retrieval"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "retrieval"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=ExecRetrieval%3A%20Measuring%20the%20Functional-Correctness%20Gap%20in%20Code-Embedding%20Retrieval%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Embedding-based code retrieval is a core component of coding agents and retrieval-augmented code generation, where retrieving correct code matters more than retrieving lexically similar code. Existing code-retrieval benchmarks do not plant controlled, execution-verified single-edit variants of each query's canonical implementation in the search pool, leaving the question of whether embeddings can functionally discriminate correct from near-clone-but-incorrect code unanswered in a retrieval setting. Resolving this requires a benchmark whose search pool itself contains the relevant counterfactuals -- execution-verified buggy variants near-identical to each canonical -- so that a retriever's rank ordering can be directly tested for functional discrimination rather than topical or identity overlap. We introduce ExecRetrieval, 939 Python tasks each paired with one execution-verified canonical implementation and up to four execution-verified buggy distractors, each generated by a mechanical mutation making a single targeted edit, and evaluate 23 dense embedding configurations plus BM25 under provider-native invocation with paired McNemar tests and query-level bootstrap intervals. With near-clone counterfactuals in the pool, the top hosted system reaches exec@10 = 1.00 but only exec@1 = 0.331; rank-1 misses are paired buggy variants 91.5-99.4% of the time across the four leading systems, and the canonical scores below at least one of its four paired distractors in 67-78% of queries on the leading systems. The full dataset, execution oracle, embedding matrices, environment snapshot, and pairwise statistical tests are released at the URL in Appendix D.",
+      "code_links_from_meta": "https://github.com/search?q=ExecRetrieval%3A%20Measuring%20the%20Functional-Correctness%20Gap%20in%20Code-Embedding%20Retrieval%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "ExecRetrieval：衡量代码嵌入检索功能正确性差距",
+      "institution": "未明确披露",
+      "summary_cn": "本文研究代码嵌入检索器能否在语义几乎相同的代码中区分功能正确的实现与仅有单处错误的近克隆代码。作者提出 ExecRetrieval 基准，包含939个Python任务；每个任务配有一个经过执行验证的标准实现，以及最多4个通过机械化单点定向变异生成并经执行验证的错误干扰项。作者在原生调用条件下评测23种稠密嵌入配置和BM25，并结合配对McNemar检验与查询级Bootstrap区间进行统计分析；最佳托管系统的exec@10达到1.00，但exec@1仅为0.331。",
+      "innovations": [
+        "提出ExecRetrieval基准，将经过执行验证的标准实现与最多4个单编辑错误变体同时植入检索池，直接测试检索排序对功能正确性的辨别能力。",
+        "构建包含939个Python任务的反事实代码检索数据集，并公开执行判定器、嵌入矩阵和环境快照。",
+        "系统评测23种稠密代码嵌入配置与BM25，采用配对McNemar检验和查询级Bootstrap区间进行显著性与不确定性分析。",
+        "实验发现，领先系统的排名第一错误结果在91.5%至99.4%的情况下是配对错误变体；在67%至78%的查询中，标准实现的得分低于至少一个配对干扰项，揭示了明显的功能正确性差距。"
+      ],
+      "scenario_cn": "该基准适用于代码智能体、检索增强代码生成和代码搜索系统的功能性评测，可识别那些表面语义相似但会导致程序执行错误的检索结果。它也能帮助工程团队评估代码嵌入模型在真实代码复用与自动生成流程中的可靠性。",
+      "title_en": "ExecRetrieval: Measuring the Functional-Correctness Gap in Code-Embedding Retrieval",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2609.02262v1",
+      "title": "From Detection to Characterization: A Large-Scale Study of Ragebait on Japanese X",
+      "abstract": "Ragebait refers to online content intentionally designed to provoke anger or outrage and thereby increase attention and engagement. However, reliable large-scale detection and systematic analysis of ragebait remain limited, hindering efforts to understand its prevalence, impact, and mitigation. This study aims to develop an effective ragebait detection framework and to clarify the characteristics of ragebait at scale, providing a basis for understanding and mitigating emotionally provocative content online. We constructed a labeled dataset with the assistance of a large language model (LLM) and trained several Japanese language models for ragebait detection. The resulting ensemble classifier was then applied to a large-scale dataset of Japanese-language posts on X. Our analysis shows that ragebait is more prevalent in politically and socially contentious topics, including politics, discrimination, public health, and interpersonal conflict. Ragebait posts also spread faster and receive more negative reactions than non-ragebait posts, particularly anger, fear, disgust, sadness, and surprise. These findings demonstrate the utility of the proposed detector and provide a large-scale characterization of ragebait in Japanese online discourse.",
+      "published": "2026-09-03T00:00:00+00:00",
+      "updated": "2026-09-03T00:00:00+00:00",
+      "authors": [
+        "Zhiyang Qi",
+        "Kazuhiro Ito",
+        "Jinghui Chen",
+        "Hibiki Nakamura",
+        "Zhangxuan Chen",
+        "Erina Murata",
+        "Masaki Chujyo",
+        "Fujio Toriumi"
+      ],
+      "categories": [
+        "cs.SI",
+        "cs.CL"
+      ],
+      "abs_url": "https://arxiv.org/abs/2609.02262",
+      "pdf_url": "https://arxiv.org/pdf/2609.02262",
+      "score": 3.2,
+      "topics": [
+        {
+          "name": "RAG / Long Context",
+          "slug": "rag-long-context",
+          "hits": [
+            "rag"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "rag"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=From%20Detection%20to%20Characterization%3A%20A%20Large-Scale%20Study%20of%20Ragebait%20on%20Japanese%20X%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Ragebait refers to online content intentionally designed to provoke anger or outrage and thereby increase attention and engagement. However, reliable large-scale detection and systematic analysis of ragebait remain limited, hindering efforts to understand its prevalence, impact, and mitigation. This study aims to develop an effective ragebait detection framework and to clarify the characteristics of ragebait at scale, providing a basis for understanding and mitigating emotionally provocative content online. We constructed a labeled dataset with the assistance of a large language model (LLM) and trained several Japanese language models for ragebait detection. The resulting ensemble classifier was then applied to a large-scale dataset of Japanese-language posts on X. Our analysis shows that ragebait is more prevalent in politically and socially contentious topics, including politics, discrimination, public health, and interpersonal conflict. Ragebait posts also spread faster and receive more negative reactions than non-ragebait posts, particularly anger, fear, disgust, sadness, and surprise. These findings demonstrate the utility of the proposed detector and provide a large-scale characterization of ragebait in Japanese online discourse.",
+      "code_links_from_meta": "https://github.com/search?q=From%20Detection%20to%20Characterization%3A%20A%20Large-Scale%20Study%20of%20Ragebait%20on%20Japanese%20X%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "从检测到刻画：日本X平台Ragebait的大规模研究",
+      "institution": "未明确披露",
+      "summary_cn": "本文研究日本语境下故意激起愤怒或强烈情绪、以提升注意力和互动率的Ragebait内容，并试图解决其缺乏可靠大规模检测与系统分析的问题。作者借助大语言模型构建带标签的数据集，训练多个日语语言模型进行Ragebait检测，再将集成分类器应用于大规模日语X平台帖子。研究发现，Ragebait在政治、歧视、公共卫生和人际冲突等争议性主题中更常见，传播速度更快，并比普通帖子获得更多愤怒、恐惧、厌恶、悲伤和惊讶等负面反应。",
+      "innovations": [
+        "利用大语言模型辅助构建日语Ragebait标注数据集，为大规模识别故意煽动愤怒的内容提供训练基础。",
+        "训练多个日语语言模型并组合为集成分类器，再将其扩展应用到大规模日语X平台帖子，实现从检测到群体特征分析。",
+        "在日本X平台语料中发现Ragebait与政治、歧视、公共卫生和人际冲突等社会争议主题高度相关。",
+        "实证表明，Ragebait相较非Ragebait传播更快，并获得更多愤怒、恐惧、厌恶、悲伤和惊讶反应，揭示了其传播与情绪影响特征。"
+      ],
+      "scenario_cn": "该研究适用于社交平台内容治理、舆情监测和在线有害互动分析，可帮助平台识别具有情绪操纵倾向的帖子并评估其传播风险。其日语检测框架也可用于研究日本网络空间中的政治与社会冲突传播。",
+      "title_en": "From Detection to Characterization: A Large-Scale Study of Ragebait on Japanese X",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    }
+  ]
+}
