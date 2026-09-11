@@ -1,0 +1,1967 @@
+{
+  "date": "2026-09-10",
+  "count": 36,
+  "fetched_count": 653,
+  "papers": [
+    {
+      "id": "2609.10372v1",
+      "title": "PACE: Perceived-Latency-Aware Cascading Service Routing and Filler Control for QoE-Efficient Retrieval-Augmented Dialogue Serving",
+      "abstract": "We present the PACE, a framework for retrieval-augmented dialogue serving that formalizes Perceived Time-to-First-Response (PTFR) as a QoE objective and minimizes it under quality/cost constraints. Unlike prior work on cascaded routing, semantic caching, or adaptive retrieval, PACE jointly controls which answer source composes the response and what fills the waiting window. Deployed on a humanoid-robot sales service, it combines three mechanisms: a load-adaptive cascading router, a joint path-filler controller, and volatility-aware cache admission. On 75k CarQA requests, the cascade halves pure-LLM PTFR at P95 (0.29 vs 0.53s at c16). The adaptive controller reaches 0.41s P95, outperforming RAG by 2.4 times at high load with equal quality. The filler controller cuts calls by 94% with zero conflict. Volatility-aware admission reduces stale answers from 86% to 0%. A gating rule ensures the controller never worse than the baseline, with exposure bounded by one hold period. This is the first quantification of filler-answer conflict risk in deployed services.",
+      "published": "2026-09-10T00:00:00+00:00",
+      "updated": "2026-09-10T00:00:00+00:00",
+      "authors": [
+        "Lin Huang",
+        "Yujuan Tan",
+        "Weisheng Li",
+        "Lixiang Zeng",
+        "Kun Yang",
+        "Suihan Xiao"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.RO"
+      ],
+      "abs_url": "https://arxiv.org/abs/2609.10372",
+      "pdf_url": "https://arxiv.org/pdf/2609.10372",
+      "score": 8.0,
+      "topics": [
+        {
+          "name": "LLM 推理加速",
+          "slug": "llm-inference",
+          "hits": [
+            "serving",
+            "latency"
+          ]
+        },
+        {
+          "name": "RAG / Long Context",
+          "slug": "rag-long-context",
+          "hits": [
+            "retrieval"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "latency",
+        "retrieval",
+        "serving"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=PACE%3A%20Perceived-Latency-Aware%20Cascading%20Service%20Routing%20and%20Filler%20Control%20for%20QoE-Efficient%20Retrieval-Augmented%20Dialogue%20Serving%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "We present the PACE, a framework for retrieval-augmented dialogue serving that formalizes Perceived Time-to-First-Response (PTFR) as a QoE objective and minimizes it under quality/cost constraints. Unlike prior work on cascaded routing, semantic caching, or adaptive retrieval, PACE jointly controls which answer source composes the response and what fills the waiting window. Deployed on a humanoid-robot sales service, it combines three mechanisms: a load-adaptive cascading router, a joint path-filler controller, and volatility-aware cache admission. On 75k CarQA requests, the cascade halves pure-LLM PTFR at P95 (0.29 vs 0.53s at c16). The adaptive controller reaches 0.41s P95, outperforming RAG by 2.4 times at high load with equal quality. The filler controller cuts calls by 94% with zero conflict. Volatility-aware admission reduces stale answers from 86% to 0%. A gating rule ensures the controller never worse than the baseline, with exposure bounded by one hold period. This is the first quantification of filler-answer conflict risk in deployed services.",
+      "code_links_from_meta": "https://github.com/search?q=PACE%3A%20Perceived-Latency-Aware%20Cascading%20Service%20Routing%20and%20Filler%20Control%20for%20QoE-Efficient%20Retrieval-Augmented%20Dialogue%20Serving%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "PACE：面向QoE高效检索增强对话服务的感知延迟感知级联路由与填充控制",
+      "institution": "未明确披露",
+      "summary_cn": "论文提出 PACE 框架，将检索增强对话服务中的“感知首响时间”（Perceived Time-to-First-Response, PTFR）显式建模为 QoE 优化目标，并在质量与成本约束下最小化该指标；与已有的级联路由、语义缓存或自适应检索工作不同，PACE 同时联合决策“由哪个答案源组装回复”与“等待窗口内用什么内容填充”。系统由负载自适应的级联路由器、联合路径-填充控制器和波动感知缓存准入三个机制组成，并部署在类人机器人销售服务中验证。在 75k 条 CarQA 请求上，级联方案把纯 LLM 的 P95 PTFR 减半（并发 16 时 0.29s vs 0.53s），自适应控制器达到 0.41s P95，在同等质量下高负载时性能为 RAG 的 2.4 倍；填充控制器在零冲突前提下将调用量削减 94%，波动感知准入把过期答案占比从 86% 降到 0%，并通过门控规则保证控制器表现不劣于基线、暴露窗口不超过一个保持周期。论文首次量化了已部署服务中填充答案冲突的风险。",
+      "innovations": [
+        "首次将 PTFR（感知首响时间）形式化为检索增强对话服务的 QoE 目标，把“等待窗口填充内容”与“答案源路由”纳入同一优化问题进行联合控制，而非像已有级联路由/语义缓存工作只优化其中一环。",
+        "负载自适应级联路由器：在 75k 条 CarQA 请求上使纯 LLM 路径的 P95 首响延迟减半（并发 16 时 0.29s vs 0.53s），高负载下自适应控制器以 0.41s P95 达到 RAG 的 2.4 倍表现且质量持平。",
+        "路径-填充联合控制器将外部调用削减 94% 且实现零填充-答案冲突，并首次对已部署服务中 filler-answer 冲突风险做了量化。",
+        "波动感知（volatility-aware）缓存准入机制把过期答案比例从 86% 降至 0%，配合保证不劣于基线的门控规则，使潜在暴露仅限一个 hold period 之内。"
+      ],
+      "scenario_cn": "面向部署在类人机器人销售服务等强交互、对首响延迟敏感的检索增强对话系统，在质量与调用成本受限的条件下降低用户感知等待并避免展示过期或与最终答案冲突的填充内容。适用于 RAG 问答、智能客服与机器人导购等在线对话服务。",
+      "title_en": "PACE: Perceived-Latency-Aware Cascading Service Routing and Filler Control for QoE-Efficient Retrieval-Augmented Dialogue Serving",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2609.10346v1",
+      "title": "Beyond One-Size-Fits-All: Sample-Adaptive Strategy Routing for Vision Token Pruning in MLLMs",
+      "abstract": "Multimodal large language models (MLLMs) process hundreds or thousands of visual tokens per image, incurring prohibitive inference costs. While existing vision token pruning methods mitigate this overhead, they implicitly assume that a single fixed pruning strategy can be applied uniformly across all inputs. Our analysis further reveals that ranking pruning methods by average benchmark accuracy conceals substantial sample-wise complementarity: although the average-best strategy excels overall, alternative strategies prove superior on a significant fraction of individual samples. To harness this diversity, we propose VIP-Router, a lightweight VIsion Pruning Router that adaptively selects the pruning strategy predicted to be best suited to each input at a specified pruning level. Conditioned on low-cost visual and textual features, VIP-Router identifies the most suitable candidate strategy while retaining full-token inference as an option when pruning is predicted to be unfavorable. Evaluated on a curated suite of pruning-sensitive visual perception benchmarks, VTC-Bench Group A, VIP-Router consistently outperforms the best fixed strategy baseline across all reduction ratios, achieving a 26.9% relative improvement in average accuracy, and a 22.0% relative increase in average utility after accounting for realized token cost. Crucially, VIP-Router operates in a plug-and-play manner without modifying underlying pruning algorithms or model weights, introducing trainable parameters equivalent to merely 0.017\\% of the backbone. Furthermore, VIP-Router proves effective across various MLLM backbones and yields consistent gains on unseen benchmarks, highlighting the potential of sample adaptive routing for visual token pruning.",
+      "published": "2026-09-10T00:00:00+00:00",
+      "updated": "2026-09-10T00:00:00+00:00",
+      "authors": [
+        "Haiji Liang",
+        "Pengfei Zhou",
+        "Zhenglin Wan",
+        "Wei Wang",
+        "Yang You",
+        "Wangbo Zhao"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "abs_url": "https://arxiv.org/abs/2609.10346",
+      "pdf_url": "https://arxiv.org/pdf/2609.10346",
+      "score": 7.8,
+      "topics": [
+        {
+          "name": "多模态推理加速",
+          "slug": "multimodal-inference",
+          "hits": [
+            "mllm"
+          ]
+        },
+        {
+          "name": "Model Compression / Quantization",
+          "slug": "model-compression",
+          "hits": [
+            "pruning"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "mllm",
+        "pruning"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Beyond%20One-Size-Fits-All%3A%20Sample-Adaptive%20Strategy%20Routing%20for%20Vision%20Token%20Pruning%20in%20MLLMs%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Multimodal large language models (MLLMs) process hundreds or thousands of visual tokens per image, incurring prohibitive inference costs. While existing vision token pruning methods mitigate this overhead, they implicitly assume that a single fixed pruning strategy can be applied uniformly across all inputs. Our analysis further reveals that ranking pruning methods by average benchmark accuracy conceals substantial sample-wise complementarity: although the average-best strategy excels overall, alternative strategies prove superior on a significant fraction of individual samples. To harness this diversity, we propose VIP-Router, a lightweight VIsion Pruning Router that adaptively selects the pruning strategy predicted to be best suited to each input at a specified pruning level. Conditioned on low-cost visual and textual features, VIP-Router identifies the most suitable candidate strategy while retaining full-token inference as an option when pruning is predicted to be unfavorable. Evaluated on a curated suite of pruning-sensitive visual perception benchmarks, VTC-Bench Group A, VIP-Router consistently outperforms the best fixed strategy baseline across all reduction ratios, achieving a 26.9% relative improvement in average accuracy, and a 22.0% relative increase in average utility after accounting for realized token cost. Crucially, VIP-Router operates in a plug-and-play manner without modifying underlying pruning algorithms or model weights, introducing trainable parameters equivalent to merely 0.017\\% of the backbone. Furthermore, VIP-Router proves effective across various MLLM backbones and yields consistent gains on unseen benchmarks, highlighting the potential of sample adaptive routing for visual token pruning.",
+      "code_links_from_meta": "https://github.com/search?q=Beyond%20One-Size-Fits-All%3A%20Sample-Adaptive%20Strategy%20Routing%20for%20Vision%20Token%20Pruning%20in%20MLLMs%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "告别一刀切：面向多模态大模型视觉 Token 剪枝的样本自适应策略路由",
+      "institution": "未明确披露",
+      "summary_cn": "本文指出多模态大模型每张图需处理成百上千个视觉 token 导致推理成本高，而现有视觉 token 剪枝方法隐含假设可用单一固定策略统一处理所有输入；作者的分析进一步发现，按平均基准精度对剪枝策略排序会掩盖显著的样本级互补性——平均最优策略在相当比例的单个样本上反而不如其他策略。为此提出 VIP-Router，一个轻量级视觉剪枝路由器，依据低成本视觉与文本特征为每个输入预测在指定剪枝率下最合适的候选策略，并在预测剪枝不利时保留全 token 推理选项。在专为剪枝敏感视觉感知构建的 VTC-Bench Group A 上，VIP-Router 在所有压缩比下均优于最佳固定策略基线，平均精度相对提升 26.9%，计入实际 token 开销后的平均效用相对提升 22.0%，且可插拔使用、不修改底层剪枝算法与模型权重，可训练参数仅约为主干的 0.017%。",
+      "innovations": [
+        "首次系统揭示视觉 token 剪枝策略之间存在样本级互补性，说明平均基准精度排序会低估其他策略在部分样本上的优势",
+        "提出 VIP-Router 样本自适应策略路由：以低成本视觉/文本特征为条件，为每个输入动态选择预测最优的剪枝策略",
+        "支持“拒绝剪枝”选项，在预测剪枝不利时回退到全 token 推理，兼顾精度与开销",
+        "构建剪枝敏感的评估基准 VTC-Bench Group A，并给出计入实际 token 成本的平均效用指标；方法可插拔、仅增加约 0.017% 主干参数量，且在不同 MLLM 主干与未见基准上均有增益"
+      ],
+      "scenario_cn": "适用于需要处理海量图像输入的多模态大模型在线服务与端侧/边缘部署，在不改动现有剪枝算法和模型权重的前提下，按样本难度自适应决定剪多少视觉 token，从而在成本敏感的业务中同时保住简单样本的速度与困难样本的精度。",
+      "title_en": "Beyond One-Size-Fits-All: Sample-Adaptive Strategy Routing for Vision Token Pruning in MLLMs",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2609.09300v1",
+      "title": "Video-MOPD: Multi-Teacher On-Policy Distillation for Video Understanding",
+      "abstract": "Video understanding demands a convergence of complementary capabilities across perception, temporal understanding, and complex reasoning, which are difficult to jointly optimize within a single model. We introduce Video-MOPD-8B, an open-weight model dedicated to video understanding tasks. To fundamentally enhance its capabilities, we conduct targeted reinforcement learning (RL) optimization across three core domains: video temporal grounding (VTG), general video comprehension, and video STEM reasoning. We then unify their complementary capabilities via Multi-Teacher On-Policy Distillation (MOPD), which consolidates expert knowledge by supervising student-generated trajectories with routed teacher feedback. We further introduce Reliability-Aware Informative Sampling (RAIS), which selects examples with consistently reliable teacher supervision and large teacher-student performance gaps. Together, these components enable Video-MOPD-8B to achieve coordinated and comprehensive performance gains across diverse video understanding tasks. Extensive experiments on comprehensive benchmarks covering general video understanding, temporal grounding, video reasoning, and video STEM tasks demonstrate that Video-MOPD-8B achieves state-of-the-art performance among existing models at a comparable scale. The trained model weights are available at this https URL .",
+      "published": "2026-09-10T00:00:00+00:00",
+      "updated": "2026-09-10T00:00:00+00:00",
+      "authors": [
+        "Zhenxin Qin",
+        "Peng Shi",
+        "Cong Han",
+        "Yinlong Qian",
+        "Zequn Jie",
+        "Lin Ma"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "https://arxiv.org/abs/2609.09300",
+      "pdf_url": "https://arxiv.org/pdf/2609.09300",
+      "score": 7.8,
+      "topics": [
+        {
+          "name": "多模态推理加速",
+          "slug": "multimodal-inference",
+          "hits": [
+            "video understanding"
+          ]
+        },
+        {
+          "name": "Model Compression / Quantization",
+          "slug": "model-compression",
+          "hits": [
+            "distillation"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "distillation",
+        "video understanding"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Video-MOPD%3A%20Multi-Teacher%20On-Policy%20Distillation%20for%20Video%20Understanding%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Video understanding demands a convergence of complementary capabilities across perception, temporal understanding, and complex reasoning, which are difficult to jointly optimize within a single model. We introduce Video-MOPD-8B, an open-weight model dedicated to video understanding tasks. To fundamentally enhance its capabilities, we conduct targeted reinforcement learning (RL) optimization across three core domains: video temporal grounding (VTG), general video comprehension, and video STEM reasoning. We then unify their complementary capabilities via Multi-Teacher On-Policy Distillation (MOPD), which consolidates expert knowledge by supervising student-generated trajectories with routed teacher feedback. We further introduce Reliability-Aware Informative Sampling (RAIS), which selects examples with consistently reliable teacher supervision and large teacher-student performance gaps. Together, these components enable Video-MOPD-8B to achieve coordinated and comprehensive performance gains across diverse video understanding tasks. Extensive experiments on comprehensive benchmarks covering general video understanding, temporal grounding, video reasoning, and video STEM tasks demonstrate that Video-MOPD-8B achieves state-of-the-art performance among existing models at a comparable scale. The trained model weights are available at this https URL .",
+      "code_links_from_meta": "https://github.com/search?q=Video-MOPD%3A%20Multi-Teacher%20On-Policy%20Distillation%20for%20Video%20Understanding%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "Video-MOPD：面向视频理解的多教师在线策略蒸馏",
+      "institution": "未明确披露",
+      "summary_cn": "针对视频理解中感知、时序理解与复杂推理三类能力难以在单一模型内联合优化的问题，作者先分别对视频时序定位（VTG）、通用视频理解、视频 STEM 推理三个方向做定向强化学习，得到开源权重模型 Video-MOPD-8B；再用多教师在线策略蒸馏（MOPD）统一这些互补能力，由路由后的教师对“学生自己生成的轨迹”给出反馈进行监督，并引入可靠性感知信息采样（RAIS），只挑选教师监督一致可靠且师生性能差距大的样本参与蒸馏。在通用视频理解、时序定位、视频推理与视频 STEM 等多项基准上，该模型在同等参数规模下取得最优表现。",
+      "innovations": [
+        "提出多教师在线策略蒸馏（MOPD）：不是用教师离线答案做监督，而是用路由后的多教师反馈去监督学生自采样轨迹，把 VTG、通用视频理解、视频 STEM 推理三个领域专家整合进同一个 8B 学生模型",
+        "设计可靠性感知信息采样（RAIS），同时以“教师监督一致性高”和“师生差距大”两个条件筛选训练样本，避免不可靠教师信号并聚焦学习收益最大的样本",
+        "先在三个核心领域分别做定向 RL 再蒸馏的流水线，证明分域 RL 加统一蒸馏优于单模型联合优化",
+        "开源 Video-MOPD-8B 权重，并在通用视频理解、时序定位、视频推理、视频 STEM 四类基准上论证同规模 SOTA"
+      ],
+      "scenario_cn": "解决的是同一套视频理解系统既要看懂内容、又要做时序定位和 STEM 推理，但单模型难以均衡兼顾的落地问题，适合需要低成本部署、只用 8B 级开源模型承载多种视频理解任务的平台，如视频问答、长视频检索与教学内容理解类产品。",
+      "title_en": "Video-MOPD: Multi-Teacher On-Policy Distillation for Video Understanding",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2609.09628v1",
+      "title": "Who Are They to Each Other? Multi-Agent Reasoning for Speaker Relationship Inference",
+      "abstract": "Inferring speaker relationships from spoken conversations is an important step towards socially aware speech understanding. However, this task remains underexplored, and supervised modeling is costly to train and scale. At the same time, existing inference-time LLM approaches provide limited structure for handling subtle, distributed, and multimodal relational cues that may support multiple plausible interpretations. To address these limitations, we introduce a training-free multi-agent reasoning framework that organizes inference through structured interaction among LLM agents, allowing relationship judgments to be proposed, challenged, and adjudicated without task-specific training. We instantiate this framework with two complementary designs. We propose Multi-Role Multi-Agent Debate as a task-specific adaptation of standard multi-agent debate for speaker relationship inference, assigning agents complementary roles or social-theory-grounded perspectives rather than a single undifferentiated viewpoint. In contrast, we introduce Multi-Agent Compete, a competition-based protocol that compares agent judgments through pairwise adjudication, eliminates weaker candidates, and retains the most defensible one. We evaluate these methods on the Seamless Interaction dataset across different modality settings, covering both binary classification and fine-grained relationship-detail prediction. Results suggest that they improve over zero-shot and existing multi-agent baselines in most cases. Human evaluation further suggests that this task is challenging even for people. LLM methods can sometimes outperform human annotators in text-included settings but are less competitive in the audio setting. Together, these findings suggest that relationship inference benefits from structured inference-time interaction among agents, while acoustic cues are not yet fully captured by current models.",
+      "published": "2026-09-10T00:00:00+00:00",
+      "updated": "2026-09-10T00:00:00+00:00",
+      "authors": [
+        "Yaohan Guan",
+        "Yen-Ju Lu",
+        "Yuzhe Wang",
+        "Junhyeok Lee",
+        "Jesus Villalba",
+        "Laureano Moro Velazquez",
+        "Thomas Thebaud",
+        "Najim Dehak"
+      ],
+      "categories": [
+        "cs.MA",
+        "cs.CL",
+        "cs.SD"
+      ],
+      "abs_url": "https://arxiv.org/abs/2609.09628",
+      "pdf_url": "https://arxiv.org/pdf/2609.09628",
+      "score": 7.8,
+      "topics": [
+        {
+          "name": "Agent",
+          "slug": "agent",
+          "hits": [
+            "agent",
+            "multi-agent"
+          ]
+        },
+        {
+          "name": "Agent Reasoning / Test-time Scaling",
+          "slug": "agent-reasoning",
+          "hits": [
+            "reasoning"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "agent",
+        "multi-agent",
+        "reasoning"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Who%20Are%20They%20to%20Each%20Other%3F%20Multi-Agent%20Reasoning%20for%20Speaker%20Relationship%20Inference%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Inferring speaker relationships from spoken conversations is an important step towards socially aware speech understanding. However, this task remains underexplored, and supervised modeling is costly to train and scale. At the same time, existing inference-time LLM approaches provide limited structure for handling subtle, distributed, and multimodal relational cues that may support multiple plausible interpretations. To address these limitations, we introduce a training-free multi-agent reasoning framework that organizes inference through structured interaction among LLM agents, allowing relationship judgments to be proposed, challenged, and adjudicated without task-specific training. We instantiate this framework with two complementary designs. We propose Multi-Role Multi-Agent Debate as a task-specific adaptation of standard multi-agent debate for speaker relationship inference, assigning agents complementary roles or social-theory-grounded perspectives rather than a single undifferentiated viewpoint. In contrast, we introduce Multi-Agent Compete, a competition-based protocol that compares agent judgments through pairwise adjudication, eliminates weaker candidates, and retains the most defensible one. We evaluate these methods on the Seamless Interaction dataset across different modality settings, covering both binary classification and fine-grained relationship-detail prediction. Results suggest that they improve over zero-shot and existing multi-agent baselines in most cases. Human evaluation further suggests that this task is challenging even for people. LLM methods can sometimes outperform human annotators in text-included settings but are less competitive in the audio setting. Together, these findings suggest that relationship inference benefits from structured inference-time interaction among agents, while acoustic cues are not yet fully captured by current models.",
+      "code_links_from_meta": "https://github.com/search?q=Who%20Are%20They%20to%20Each%20Other%3F%20Multi-Agent%20Reasoning%20for%20Speaker%20Relationship%20Inference%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "他们彼此是什么关系？用于说话人关系推断的多智能体推理",
+      "institution": "未明确披露",
+      "summary_cn": "论文针对口语对话中说话人关系推断这一研究不足的任务，指出现有推理期 LLM 方案缺乏结构来处理细微、分散且多模态的关系线索，而监督建模又训练成本高、难扩展，因此提出一个免训练的多智能体推理框架，让 LLM 智能体通过结构化交互提出、质疑并裁决关系判断。框架有两种实例化：Multi-Role Multi-Agent Debate 把标准多智能体辩论改造为角色互补或带有社会理论视角的多角色辩论；Multi-Agent Compete 则用成对裁决（pairwise adjudication）比较各智能体判断、淘汰较弱候选并保留最有辩护力的结论。作者在 Seamless Interaction 数据集上覆盖不同模态设置，评测二分类与细粒度关系细节预测，结果显示多数情况下优于零样本和现有多智能体基线；人工评测表明该任务对人类本身也很难，LLM 在含文本设置下有时能超过人类标注者，但在纯音频设置下竞争力明显下降。",
+      "innovations": [
+        "提出免训练的多智能体推理框架，把说话人关系推断组织为智能体之间的提出-质疑-裁决流程，无需任务特定训练即可扩展。",
+        "Multi-Role Multi-Agent Debate：将标准多智能体辩论改造为角色互补或社会理论视角驱动的多角色辩论，而非单一同质视角投票。",
+        "Multi-Agent Compete：一种基于竞争的协议，通过成对裁决比较智能体判断、淘汰较弱候选、保留最具辩护力的结果。",
+        "在 Seamless Interaction 数据集上跨模态设置评测二分类与细粒度关系预测，并配合人工评测揭示 LLM 在含文本条件下可超过人类标注者、但在纯音频条件下明显落后，说明声学线索尚未被现有模型充分捕捉。"
+      ],
+      "scenario_cn": "用于从真实对话语音中自动推断说话人之间的关系（如亲属、同事、上下级等），可服务于会议记录理解、客服质检、社交与陪伴类语音助手、以及需要“社交感知”的语音理解与检索系统，帮助在缺少人工标注训练数据时以推理期多智能体协作替代监督训练。",
+      "title_en": "Who Are They to Each Other? Multi-Agent Reasoning for Speaker Relationship Inference",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2609.10113v1",
+      "title": "Data-Centric Post-Training for Financial Reasoning: Mining, Distillation, and Verifiable Learning",
+      "abstract": "Financial text, textbooks, and question-answer pairs are abundant, but only a small fraction is directly usable for reasoning-focused post-training. Existing QA pairs often lack explicit reasoning, sufficient context, or reliably verifiable answers, while textbooks must first be transformed into synthetic training examples. We present a data-centric pipeline that constructs complementary corpora by mining open-source reasoning traces, distilling financial instruction data, and generating knowledge-graph-guided question-answer pairs from financial educational material. After semantic deduplication, three lightweight sequence classifiers select finance-relevant examples, reject under-specified questions, and identify tasks suitable for reinforcement learning with compact rule-based verifiers. For model adaptation, we study supervised fine-tuning and reinforcement learning, while self-distilled fine-tuning and post-training model merging are used to prevent the loss of financial capabilities already present in the starting model. We evaluate the adapted language models using FINESSE-Bench, reporting aggregate performance and changes relative to their starting checkpoints. Across the selected comparisons, ordinary SFT reduces FINESSE-Bench accuracy by 3.2-4.0 percentage points, whereas self-distilled SFT improves over the corresponding starting models by 1.0-2.8 points. Equal-weight merging recovers 3.0 points over its SFT parent and finishes 0.9 points above the original model; GRPO on hard tasks adds 0.4 points after self-distilled SFT or 3.0 points when applied directly to verifiable tasks. These results show that retention-aware adaptation can improve financial reasoning without the regressions observed after ordinary SFT.",
+      "published": "2026-09-10T00:00:00+00:00",
+      "updated": "2026-09-10T00:00:00+00:00",
+      "authors": [
+        "Zhirayr Hayrapetyan",
+        "Andrei Kalmykov",
+        "Denis Kokosinskii",
+        "Dmitry Stanishevskii",
+        "Dmitry Zmitrovich"
+      ],
+      "categories": [
+        "cs.CL"
+      ],
+      "abs_url": "https://arxiv.org/abs/2609.10113",
+      "pdf_url": "https://arxiv.org/pdf/2609.10113",
+      "score": 7.6,
+      "topics": [
+        {
+          "name": "Agent Reasoning / Test-time Scaling",
+          "slug": "agent-reasoning",
+          "hits": [
+            "reasoning"
+          ]
+        },
+        {
+          "name": "Model Compression / Quantization",
+          "slug": "model-compression",
+          "hits": [
+            "distillation"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "distillation",
+        "reasoning"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Data-Centric%20Post-Training%20for%20Financial%20Reasoning%3A%20Mining%2C%20Distillation%2C%20and%20Verifiable%20Learning%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Financial text, textbooks, and question-answer pairs are abundant, but only a small fraction is directly usable for reasoning-focused post-training. Existing QA pairs often lack explicit reasoning, sufficient context, or reliably verifiable answers, while textbooks must first be transformed into synthetic training examples. We present a data-centric pipeline that constructs complementary corpora by mining open-source reasoning traces, distilling financial instruction data, and generating knowledge-graph-guided question-answer pairs from financial educational material. After semantic deduplication, three lightweight sequence classifiers select finance-relevant examples, reject under-specified questions, and identify tasks suitable for reinforcement learning with compact rule-based verifiers. For model adaptation, we study supervised fine-tuning and reinforcement learning, while self-distilled fine-tuning and post-training model merging are used to prevent the loss of financial capabilities already present in the starting model. We evaluate the adapted language models using FINESSE-Bench, reporting aggregate performance and changes relative to their starting checkpoints. Across the selected comparisons, ordinary SFT reduces FINESSE-Bench accuracy by 3.2-4.0 percentage points, whereas self-distilled SFT improves over the corresponding starting models by 1.0-2.8 points. Equal-weight merging recovers 3.0 points over its SFT parent and finishes 0.9 points above the original model; GRPO on hard tasks adds 0.4 points after self-distilled SFT or 3.0 points when applied directly to verifiable tasks. These results show that retention-aware adaptation can improve financial reasoning without the regressions observed after ordinary SFT.",
+      "code_links_from_meta": "https://github.com/search?q=Data-Centric%20Post-Training%20for%20Financial%20Reasoning%3A%20Mining%2C%20Distillation%2C%20and%20Verifiable%20Learning%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "面向金融推理的数据中心化后训练：挖掘、蒸馏与可验证学习",
+      "institution": "未明确披露",
+      "summary_cn": "论文针对金融文本、教材与问答数据虽多、但可直接用于推理后训练的样本极少（同类 QA 常缺显式推理、上下文不足或答案不可验证）的问题，提出了一条数据中心化后训练流水线：挖掘开源推理轨迹、蒸馏金融指令数据，并借助知识图谱从金融教材自动生成问答对，从而构建三类互补语料。经语义去重后，用三个轻量序列分类器分别筛选金融相关样本、剔除条件不充分的提问，并识别适合以紧凑规则验证器做强化学习的任务。模型适配阶段对比了监督微调（SFT）与强化学习，并用自蒸馏微调（self-distilled SFT）与后训练模型合并来防止起始模型既有金融能力退化。在 FINESSE-Bench 上，普通 SFT 使准确率下降 3.2–4.0 个百分点，而自蒸馏 SFT 相比起始 checkpoint 提升 1.0–2.8 个百分点；等权重合并比其 SFT 父模型回升 3.0 分、比原始模型高 0.9 分，GRPO 在自蒸馏 SFT 之后再增 0.4 分，直接用于可验证任务时增益达 3.0 分。",
+      "innovations": [
+        "构建三路互补语料的数据中心化流水线：挖掘开源推理轨迹、蒸馏金融指令数据、以知识图谱引导从金融教材生成问答对，专门补足显式推理与可核验答案的缺失。",
+        "用三个轻量序列分类器做数据把关：分别判定金融相关性、拒收条件不充分的提问（under-specified questions），并筛出可由紧凑规则验证器校验的任务，为 GRPO 提供可靠奖励信号。",
+        "提出保留感知（retention-aware）的适配组合：自蒸馏微调（self-distilled SFT）防止起始模型的金融能力被练坏，再配合后训练等权重模型合并，避免普通 SFT 的性能回退。",
+        "在 FINESSE-Bench 上给出可比的量化结论：普通 SFT 下降 3.2–4.0 分，自蒸馏 SFT 提升 1.0–2.8 分，等权重合并较 SFT 父模型回升 3.0 分、较原始模型高 0.9 分，GRPO 直接作用于可验证任务时增益 3.0 分。"
+      ],
+      "scenario_cn": "面向金融机构在自有数据上后训练垂直领域大模型的场景，解决直接微调导致通用能力与既有金融能力被“练坏”的痛点。适用于金融问答、财报与研报推理、金融资质/考试题自动解答等要求答案可核验的问答与决策辅助系统。",
+      "title_en": "Data-Centric Post-Training for Financial Reasoning: Mining, Distillation, and Verifiable Learning",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2609.09578v1",
+      "title": "CityPlanner: A Sandbox Agent for Executable Urban Planning",
+      "abstract": "Urban planning is a real-world spatial optimization problem that requires selecting feasible actions from large candidate spaces under practical objectives such as cost and service quality. Existing optimization and reinforcement learning methods are effective for fixed formulations, but often depend on task-specific representations and constraint handling. We propose \\emph{CityPlanner}, a sandbox-agent framework for executable urban planning. CityPlanner introduces \\emph{UrbanSandbox}, a unified file-based environment where agents inspect task files, generate plans, run evaluators, and revise decisions based on executable feedback. To make learning tractable, we further propose atomic-task reinforcement learning, which decomposes long sandbox trajectories into \\emph{BuildPlan} for initial construction and \\emph{ImprovePlan} for feedback-based refinement. Experiments on a real-world benchmark show that CityPlanner consistently outperforms heuristic, task-specific RL, and general LLM-agent baselines. Ablations verify the contributions of UrbanSandbox, atomic-task RL, and iterative deployment. We release the code and dataset at this https URL",
+      "published": "2026-09-10T00:00:00+00:00",
+      "updated": "2026-09-10T00:00:00+00:00",
+      "authors": [
+        "Wentao Zhang",
+        "Jingyuan Wang",
+        "Zetong Zhou",
+        "Yifan Yang",
+        "Wenrui Wang"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "abs_url": "https://arxiv.org/abs/2609.09578",
+      "pdf_url": "https://arxiv.org/pdf/2609.09578",
+      "score": 7.4,
+      "topics": [
+        {
+          "name": "Agent",
+          "slug": "agent",
+          "hits": [
+            "agent"
+          ]
+        },
+        {
+          "name": "Agent Reasoning / Test-time Scaling",
+          "slug": "agent-reasoning",
+          "hits": [
+            "planning"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "agent",
+        "planning"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=CityPlanner%3A%20A%20Sandbox%20Agent%20for%20Executable%20Urban%20Planning%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Urban planning is a real-world spatial optimization problem that requires selecting feasible actions from large candidate spaces under practical objectives such as cost and service quality. Existing optimization and reinforcement learning methods are effective for fixed formulations, but often depend on task-specific representations and constraint handling. We propose \\emph{CityPlanner}, a sandbox-agent framework for executable urban planning. CityPlanner introduces \\emph{UrbanSandbox}, a unified file-based environment where agents inspect task files, generate plans, run evaluators, and revise decisions based on executable feedback. To make learning tractable, we further propose atomic-task reinforcement learning, which decomposes long sandbox trajectories into \\emph{BuildPlan} for initial construction and \\emph{ImprovePlan} for feedback-based refinement. Experiments on a real-world benchmark show that CityPlanner consistently outperforms heuristic, task-specific RL, and general LLM-agent baselines. Ablations verify the contributions of UrbanSandbox, atomic-task RL, and iterative deployment. We release the code and dataset at this https URL",
+      "code_links_from_meta": "https://github.com/search?q=CityPlanner%3A%20A%20Sandbox%20Agent%20for%20Executable%20Urban%20Planning%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "CityPlanner：面向可执行城市规划的沙箱智能体",
+      "institution": "未明确披露",
+      "summary_cn": "论文把城市规划建模为真实世界中的空间优化问题——需要在成本与服务质量等实际目标下，从庞大的候选动作空间中挑选可行方案；现有优化方法与强化学习虽在固定形式化问题上有效，却往往依赖任务专属的表示与约束处理方式。作者提出城市沙箱智能体框架 CityPlanner，其核心是 UrbanSandbox：一个统一的、基于文件的执行环境，智能体可以在其中检视任务文件、生成规划方案、调用评估器并根据可执行反馈迭代修正决策。为让学习可行，论文进一步提出原子任务强化学习，把冗长的沙箱轨迹拆解为负责初始建设的 BuildPlan 与负责反馈式改进的 ImprovePlan。在真实世界基准上，CityPlanner 稳定超过启发式方法、任务专属 RL 以及通用 LLM 智能体基线，消融实验验证了 UrbanSandbox、原子任务 RL 与迭代部署各自的贡献，并开源了代码与数据集。",
+      "innovations": [
+        "提出 UrbanSandbox 统一文件式沙箱环境，将规划从一次性生成改为“检视任务文件→生成方案→运行评估器→依可执行反馈修正”的闭环流程，使规划结果可被真实执行与验证。",
+        "提出原子任务强化学习，把长程沙箱轨迹显式拆解为 BuildPlan（初始建设）与 ImprovePlan（反馈驱动改进）两个原子任务，解决长轨迹难以训练的问题。",
+        "在真实世界城市基准上同时对比启发式、任务专属 RL 与通用 LLM 智能体三类基线并全面胜出，且通过消融逐项量化 UrbanSandbox、原子任务 RL、迭代部署三个组件的增益。",
+        "公开代码与数据集，使可执行城市规划这一真实空间优化任务具备可复现的评测平台。"
+      ],
+      "scenario_cn": "适用于需要从大规模候选动作中给出可落地空间配置的城市规划与公共设施布局决策场景，例如土地用途分配、服务设施选址等，可运行在需要“方案生成—指标评估—反馈改进”闭环的规划辅助系统中，替代难以迁移的任务专属优化器。",
+      "title_en": "CityPlanner: A Sandbox Agent for Executable Urban Planning",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2609.10315v1",
+      "title": "TRACE: Training Reasoning Agents for Causal Exploration with Synthesized Rewards",
+      "abstract": "Reinforcement learning with verifiable rewards (RLVR) has advanced language-model reasoning in domains such as mathematics and code, where objective answers are inexpensive to check. Diagnostic reasoning over complex data lacks this advantage: establishing the true cause of an anomaly often requires costly expert investigation and may remain ambiguous after the fact. We ask whether this asymmetry of verification can instead be engineered. We sample an intervention, inject it into a controlled simulator, and generate the observations it would produce. The hidden intervention provides an oracle label and objective reward, while the agent must still investigate noisy, confounded, and distributed evidence. We instantiate this approach in TRACE, a digital-advertising diagnostic environment with 12 root causes and fine-grained segment attribution. Agents investigate each episode using Python and SQL and must identify both the root cause and, when applicable, the affected segment assignment. On a held-out 235-episode test set, the strongest prompted baseline, Claude Opus 5, reaches 0.686 FullAttr@1. Supervised fine-tuning raises Qwen3.5-35B-A3B from 0.159 to 0.637, and subsequent RL with synthesized rewards reaches 0.757, outperforming all evaluated prompted baselines, including frontier closed-source models and a prompted Qwen3.5-122B-A10B model. The resulting policy also uses substantially fewer tool calls than the prompted 35B base. These results provide evidence that access to a scalable, objective training signal can be a more important constraint than model scale alone. More broadly, simulation-based verification can make otherwise ambiguous diagnostic reasoning tasks amenable to scalable reinforcement learning.",
+      "published": "2026-09-10T00:00:00+00:00",
+      "updated": "2026-09-10T00:00:00+00:00",
+      "authors": [
+        "Rui Sun",
+        "Zhan Shi",
+        "Bing He"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "abs_url": "https://arxiv.org/abs/2609.10315",
+      "pdf_url": "https://arxiv.org/pdf/2609.10315",
+      "score": 7.4,
+      "topics": [
+        {
+          "name": "Agent",
+          "slug": "agent",
+          "hits": [
+            "agent"
+          ]
+        },
+        {
+          "name": "Agent Reasoning / Test-time Scaling",
+          "slug": "agent-reasoning",
+          "hits": [
+            "reasoning"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "agent",
+        "reasoning"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=TRACE%3A%20Training%20Reasoning%20Agents%20for%20Causal%20Exploration%20with%20Synthesized%20Rewards%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Reinforcement learning with verifiable rewards (RLVR) has advanced language-model reasoning in domains such as mathematics and code, where objective answers are inexpensive to check. Diagnostic reasoning over complex data lacks this advantage: establishing the true cause of an anomaly often requires costly expert investigation and may remain ambiguous after the fact. We ask whether this asymmetry of verification can instead be engineered. We sample an intervention, inject it into a controlled simulator, and generate the observations it would produce. The hidden intervention provides an oracle label and objective reward, while the agent must still investigate noisy, confounded, and distributed evidence. We instantiate this approach in TRACE, a digital-advertising diagnostic environment with 12 root causes and fine-grained segment attribution. Agents investigate each episode using Python and SQL and must identify both the root cause and, when applicable, the affected segment assignment. On a held-out 235-episode test set, the strongest prompted baseline, Claude Opus 5, reaches 0.686 FullAttr@1. Supervised fine-tuning raises Qwen3.5-35B-A3B from 0.159 to 0.637, and subsequent RL with synthesized rewards reaches 0.757, outperforming all evaluated prompted baselines, including frontier closed-source models and a prompted Qwen3.5-122B-A10B model. The resulting policy also uses substantially fewer tool calls than the prompted 35B base. These results provide evidence that access to a scalable, objective training signal can be a more important constraint than model scale alone. More broadly, simulation-based verification can make otherwise ambiguous diagnostic reasoning tasks amenable to scalable reinforcement learning.",
+      "code_links_from_meta": "https://github.com/search?q=TRACE%3A%20Training%20Reasoning%20Agents%20for%20Causal%20Exploration%20with%20Synthesized%20Rewards%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "TRACE：用合成奖励训练因果探索推理智能体",
+      "institution": "未明确披露",
+      "summary_cn": "论文针对可验证奖励强化学习（RLVR）在复杂数据诊断推理中的失效问题：数学与代码有廉价可验证的客观答案，而定位异常真正成因需要昂贵的专家调查且事后往往仍有歧义。作者提出对这一“验证不对称性”进行工程化改造——采样一个干预并注入受控模拟器，生成该干预本应产生的观测，隐藏的干预天然提供 oracle 标签与客观奖励，而智能体仍须在噪声、混杂与分布式证据中自行调查。该方法在 TRACE 数字广告诊断环境中实例化，包含 12 类根因和细粒度细分人群归因，智能体需用 Python 与 SQL 调查每个 episode 并同时给出根因与受影响人群归属。在 235 条留出测试集上，最强提示基线 Claude Opus 5 取得 0.686 FullAttr@1，监督微调把 Qwen3.5-35B-A3B 从 0.159 提升到 0.637，再用合成奖励做 RL 达到 0.757，超过包括前沿闭源模型和提示版 Qwen3.5-122B-A10B 在内的所有提示基线，且工具调用次数显著少于提示版 35B 基线。",
+      "innovations": [
+        "提出基于模拟器注入干预的合成奖励机制：隐藏干预充当 oracle 标签，直接为诊断推理提供规模化、客观的 RLVR 训练信号，绕开昂贵且模糊的专家验证环节。",
+        "构建 TRACE 数字广告诊断环境，含 12 类根因与细粒度细分人群归因，智能体必须以 Python/SQL 多轮工具调用同时完成根因识别与受影响人群归属判定。",
+        "提出 FullAttr@1 这一同时考核根因与人群归属正确性的复合评测指标，并在 235 条留出 episode 测试集上完成基线对照。",
+        "实证发现“训练信号可获得性”比模型规模更关键：SFT+RL 的 Qwen3.5-35B-A3B（0.757）反超规模更大乃至闭源的前沿提示模型，同时工具调用更少。"
+      ],
+      "scenario_cn": "面向复杂业务数据的根因诊断场景，例如广告投放效果异常归因、线上指标波动排查等，可部署为以 SQL/Python 自主调查数据仓库的诊断智能体；为缺少廉价验证标签的领域提供了一条用仿真器批量造训练奖励、从而训练诊断推理策略的可行路径。",
+      "title_en": "TRACE: Training Reasoning Agents for Causal Exploration with Synthesized Rewards",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2609.09985v1",
+      "title": "VLX-VR: An Agentic-Aware Video Reasoning Model",
+      "abstract": "Real-world video understanding requires integrating visual, audio, textual, and temporal evidence distributed across a video. Yet many pipelines use a fixed video context and single-pass inference, limiting adaptive evidence acquisition when observations are incomplete, ambiguous, or conflicting. We present VLX-VR, an agentic-aware video reasoning model trained within a video reasoning framework defined by a Think--Memory--Observation loop. At each step, VLX-VR determines the needed evidence, invokes read_memory or write_memory, incorporates the returned Observation, and decides whether to continue or produce the task output. We train VLX-VR with multimodal data, including videos and agent trajectories, using reinforcement learning to learn evidence acquisition, memory use, and termination. On MINERVA, VLX-VR achieves state-of-the-art performance among the models included in our comparison, with 78.79% accuracy. Under the original three duration groups, its accuracies are 76.70%, 78.73%, and 80.92%, with a cross-duration accuracy variance of 2.97~$\\mathrm{pp}^2$. On correctly answered samples, 96.20% of VLX-VR's reasoning traces are consistent with the MINERVA reference reasoning traces and the evidence described by them, while approximately 75.80% of all evaluated samples satisfy both answer correctness and this evidence-grounded trace criterion. These results show strong performance and broadly stable behavior across durations, while counting, state changes, causal reasoning, and spatial perception remain challenging.",
+      "published": "2026-09-10T00:00:00+00:00",
+      "updated": "2026-09-10T00:00:00+00:00",
+      "authors": [
+        "Sheng Li",
+        "Peng Liu",
+        "Qianqian Zhang",
+        "Tiancheng Zhao"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.CV"
+      ],
+      "abs_url": "https://arxiv.org/abs/2609.09985",
+      "pdf_url": "https://arxiv.org/pdf/2609.09985",
+      "score": 7.4,
+      "topics": [
+        {
+          "name": "Agent",
+          "slug": "agent",
+          "hits": [
+            "agent"
+          ]
+        },
+        {
+          "name": "Agent Reasoning / Test-time Scaling",
+          "slug": "agent-reasoning",
+          "hits": [
+            "reasoning"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "agent",
+        "reasoning"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=VLX-VR%3A%20An%20Agentic-Aware%20Video%20Reasoning%20Model%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Real-world video understanding requires integrating visual, audio, textual, and temporal evidence distributed across a video. Yet many pipelines use a fixed video context and single-pass inference, limiting adaptive evidence acquisition when observations are incomplete, ambiguous, or conflicting. We present VLX-VR, an agentic-aware video reasoning model trained within a video reasoning framework defined by a Think--Memory--Observation loop. At each step, VLX-VR determines the needed evidence, invokes read_memory or write_memory, incorporates the returned Observation, and decides whether to continue or produce the task output. We train VLX-VR with multimodal data, including videos and agent trajectories, using reinforcement learning to learn evidence acquisition, memory use, and termination. On MINERVA, VLX-VR achieves state-of-the-art performance among the models included in our comparison, with 78.79% accuracy. Under the original three duration groups, its accuracies are 76.70%, 78.73%, and 80.92%, with a cross-duration accuracy variance of 2.97~$\\mathrm{pp}^2$. On correctly answered samples, 96.20% of VLX-VR's reasoning traces are consistent with the MINERVA reference reasoning traces and the evidence described by them, while approximately 75.80% of all evaluated samples satisfy both answer correctness and this evidence-grounded trace criterion. These results show strong performance and broadly stable behavior across durations, while counting, state changes, causal reasoning, and spatial perception remain challenging.",
+      "code_links_from_meta": "https://github.com/search?q=VLX-VR%3A%20An%20Agentic-Aware%20Video%20Reasoning%20Model%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "VLX-VR：一种具备智能体意识的视频推理模型",
+      "institution": "未明确披露",
+      "summary_cn": "针对现有视频理解流水线使用固定视频上下文、单次推理，在观测不完整、歧义或冲突时无法自适应补充证据的问题，论文提出 VLX-VR，在 Think–Memory–Observation 循环定义的推理框架内训练。模型每一步自行判断所需证据，调用 read_memory 或 write_memory 并吸收返回的 Observation，再决定继续推理还是输出任务结果；训练数据同时包含视频与智能体交互轨迹，并用强化学习学习取证、记忆使用与终止策略。在 MINERVA 上，VLX-VR 取得对比模型中最优的 78.79% 准确率，三个时长分组分别为 76.70%、78.73%、80.92%，跨时长方差仅 2.97 pp²。在答对的样本中，96.20% 的推理轨迹与 MINERVA 参考推理轨迹及其描述的证据一致，全部评测样本中约 75.80% 同时满足答案正确与该证据可依条件。",
+      "innovations": [
+        "提出 Think–Memory–Observation 三阶段智能体推理循环：模型逐步判定缺失证据，自主调用 read_memory / write_memory 工具获取或写入信息，并据此决定是否终止推理，突破了固定上下文单次前向的限制。",
+        "使用同时包含真实视频与智能体交互轨迹的多模态数据进行强化学习训练，使模型同时学会证据获取、记忆读写与终止决策三类策略，而非仅拟合最终答案。",
+        "在 MINERVA 视频推理基准上取得对比范围内最优 78.79% 准确率，且 76.70% / 78.73% / 80.92% 的三时长分组结果对应仅 2.97 pp² 的跨时长方差，显示长视频下行为稳定。",
+        "引入证据落地的轨迹评估：正确回答样本中 96.20% 的推理轨迹与 MINERVA 参考链及其中描述的证据一致，全体样本约 75.80% 同时满足答案正确与证据一致，并明确指出计数、状态变化、因果推理和空间感知仍是难点。"
+      ],
+      "scenario_cn": "适用于视频问答与长视频内容理解系统，例如监控录像事件检索、赛事或教学视频问答、多模态内容审核与检索增强的视频助手；当单帧或单次观测不足以回答、且信息存在歧义冲突时，系统可主动多次取回证据再作答。",
+      "title_en": "VLX-VR: An Agentic-Aware Video Reasoning Model",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2609.09187v1",
+      "title": "AgenticGen: Reward-Guided Agentic Video Generation for Advertising",
+      "abstract": "Advertising video generation is not only a video synthesis task, but also a product-conditioned reasoning problem whose success is measured by online business metrics. Recent video foundation models can generate realistic clips from multimodal conditions, yet they do not optimize how a product should be transformed into an effective advertisement or how future generation should be improved from online business feedback. To close this loop, we propose AgenticGen, a reward-guided agentic framework that decomposes advertising video generation into two trainable reasoning stages, strategy selection and draft generation, thereby exposing optimization targets that online business feedback can supervise. AgenticGen learns a performance-based reward from accumulated online feedback and a complementary rubric-based reward aligned with human quality standards, then uses them to supervise policy optimization. DPO first moves the agentic policies toward online preferences, and GRPO further refines both stages with process and outcome rewards. Offline experiments validate the reward models and successive policy optimization. Online A/B experiments in the TikTok advertising system show that AgenticGen after DPO and GRPO improves CTR by 2.72%, CVR by 2.63%, and Advv by 9.61% over the SFT baseline.",
+      "published": "2026-09-10T00:00:00+00:00",
+      "updated": "2026-09-10T00:00:00+00:00",
+      "authors": [
+        "Xingyuan Bu",
+        "Chengru Song",
+        "Hao Zhou",
+        "Tao Zhou",
+        "Dong Li",
+        "Wei Li",
+        "Shilong Li",
+        "Hao Shi",
+        "Yongxin Guo",
+        "Donghao Zhou",
+        "Qiangpeng Yang",
+        "Shilei Wen"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "abs_url": "https://arxiv.org/abs/2609.09187",
+      "pdf_url": "https://arxiv.org/pdf/2609.09187",
+      "score": 7.2,
+      "topics": [
+        {
+          "name": "Agent",
+          "slug": "agent",
+          "hits": [
+            "agent"
+          ]
+        },
+        {
+          "name": "Video Generation",
+          "slug": "video-generation",
+          "hits": [
+            "video generation"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "agent",
+        "video generation"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=AgenticGen%3A%20Reward-Guided%20Agentic%20Video%20Generation%20for%20Advertising%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Advertising video generation is not only a video synthesis task, but also a product-conditioned reasoning problem whose success is measured by online business metrics. Recent video foundation models can generate realistic clips from multimodal conditions, yet they do not optimize how a product should be transformed into an effective advertisement or how future generation should be improved from online business feedback. To close this loop, we propose AgenticGen, a reward-guided agentic framework that decomposes advertising video generation into two trainable reasoning stages, strategy selection and draft generation, thereby exposing optimization targets that online business feedback can supervise. AgenticGen learns a performance-based reward from accumulated online feedback and a complementary rubric-based reward aligned with human quality standards, then uses them to supervise policy optimization. DPO first moves the agentic policies toward online preferences, and GRPO further refines both stages with process and outcome rewards. Offline experiments validate the reward models and successive policy optimization. Online A/B experiments in the TikTok advertising system show that AgenticGen after DPO and GRPO improves CTR by 2.72%, CVR by 2.63%, and Advv by 9.61% over the SFT baseline.",
+      "code_links_from_meta": "https://github.com/search?q=AgenticGen%3A%20Reward-Guided%20Agentic%20Video%20Generation%20for%20Advertising%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "AgenticGen：面向广告的奖励引导智能体式视频生成",
+      "institution": "未明确披露",
+      "summary_cn": "论文指出广告视频生成不仅是视频合成任务，更是以线上业务指标为成功标准的、由商品条件驱动的推理问题，而现有视频基础模型既不优化“商品如何转化为有效广告”，也不利用线上业务反馈改进后续生成。为此提出 AgenticGen，把广告视频生成拆成策略选择与草稿生成两个可训练推理阶段，从而暴露可被线上反馈监督的优化目标。方法从累积线上反馈中学习基于表现的奖励，并辅以对齐人类质量标准的评分表奖励作为补充，监督策略优化：先用 DPO 将两个阶段的策略推向线上偏好，再用 GRPO 结合过程奖励与结果奖励精调。离线实验验证了奖励模型与逐级策略优化，TikTok 广告系统线上 A/B 实验显示，经 DPO 与 GRPO 后相较 SFT 基线 CTR 提升 2.72%、CVR 提升 2.63%、Advv 提升 9.61%。",
+      "innovations": [
+        "将广告视频生成重构为“策略选择 + 草稿生成”两阶段可训练智能体策略，使原本只在最终成片上体现的线上业务反馈能够直接监督中间推理环节，形成从投放反馈到生成的闭环。",
+        "设计双奖励体系：从累积线上反馈中学习基于表现（performance-based）的奖励，并引入与人类质量标准对齐的评分表（rubric-based）奖励，兼顾业务效果与内容质量。",
+        "提出 DPO 与 GRPO 递进式优化流程：DPO 先把两阶段策略对齐到线上偏好，GRPO 再以过程奖励与结果奖励联合精调两个阶段，实现分阶段、可验证的策略改进。",
+        "在 TikTok 广告系统完成线上 A/B 验证，DPO+GRPO 相比 SFT 基线将 CTR 提升 2.72%、CVR 提升 2.63%、Advv 提升 9.61%，给出了生成模型直接优化商业指标的实证结果。"
+      ],
+      "scenario_cn": "面向广告素材自动化生产与投放优化：适用于短视频/信息流广告平台的商品推广视频生成系统，用真实投放的点击、转化与广告观看指标反向指导生成策略迭代，帮助广告主以更低成本产出更有效的商品广告。",
+      "title_en": "AgenticGen: Reward-Guided Agentic Video Generation for Advertising",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2609.09987v1",
+      "title": "Beyond Repository Boundaries: Cross-Repository Graph Retrieval for Code Generation",
+      "abstract": "Repository-level code generation requires generated code to be compatible not only with the target repository but also with its dependency environment. Existing retrieval-based methods mainly retrieve context from the local repository, leaving external API usage dependent on the model's pretrained knowledge, which can be insufficient for unseen or version-specific APIs. Moreover, current retrieval strategies largely focus on one-hop evidence and overlook the structural relationships among code components. We propose CrossCoder, a cross-repository code generation framework that explicitly incorporates external libraries into the retrieval context through a unified knowledge graph over repository and library entities. CrossCoder identifies important nodes via planning and semantic retrieval, then selectively expands neighboring nodes to retrieve richer multi-hop contextual evidence for generation. To further evaluate dependency-version compatibility, we introduce VersionExec, an execution-based benchmark derived from BigCodeBench that evaluates generation under different dependency versions. Experimental results on RepoExec, DevEval, and VersionExec demonstrate that CrossCoder consistently improves both functional correctness (up to 6.3% on pass@1) and robustness to dependency-version changes.",
+      "published": "2026-09-10T00:00:00+00:00",
+      "updated": "2026-09-10T00:00:00+00:00",
+      "authors": [
+        "Minh Le-Anh",
+        "Nam Le Hai",
+        "Quyen Tran",
+        "Anh Nguyen Hoang",
+        "Linh Ngo Van",
+        "Bach Le",
+        "Nghi D. Q. Bui"
+      ],
+      "categories": [
+        "cs.SE"
+      ],
+      "abs_url": "https://arxiv.org/abs/2609.09987",
+      "pdf_url": "https://arxiv.org/pdf/2609.09987",
+      "score": 6.4,
+      "topics": [
+        {
+          "name": "RAG / Long Context",
+          "slug": "rag-long-context",
+          "hits": [
+            "retrieval"
+          ]
+        },
+        {
+          "name": "Code Agent / SWE Agent",
+          "slug": "code-agent",
+          "hits": [
+            "code generation"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "code generation",
+        "retrieval"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Beyond%20Repository%20Boundaries%3A%20Cross-Repository%20Graph%20Retrieval%20for%20Code%20Generation%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Repository-level code generation requires generated code to be compatible not only with the target repository but also with its dependency environment. Existing retrieval-based methods mainly retrieve context from the local repository, leaving external API usage dependent on the model's pretrained knowledge, which can be insufficient for unseen or version-specific APIs. Moreover, current retrieval strategies largely focus on one-hop evidence and overlook the structural relationships among code components. We propose CrossCoder, a cross-repository code generation framework that explicitly incorporates external libraries into the retrieval context through a unified knowledge graph over repository and library entities. CrossCoder identifies important nodes via planning and semantic retrieval, then selectively expands neighboring nodes to retrieve richer multi-hop contextual evidence for generation. To further evaluate dependency-version compatibility, we introduce VersionExec, an execution-based benchmark derived from BigCodeBench that evaluates generation under different dependency versions. Experimental results on RepoExec, DevEval, and VersionExec demonstrate that CrossCoder consistently improves both functional correctness (up to 6.3% on pass@1) and robustness to dependency-version changes.",
+      "code_links_from_meta": "https://github.com/search?q=Beyond%20Repository%20Boundaries%3A%20Cross-Repository%20Graph%20Retrieval%20for%20Code%20Generation%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "超越仓库边界：面向代码生成的跨仓库图检索",
+      "institution": "未明确披露",
+      "summary_cn": "针对仓库级代码生成中生成代码不仅需兼容目标仓库还需兼容其依赖环境，而现有检索方法仅从本地仓库取上下文、外部 API 依赖模型预训练知识（对未见或特定版本 API 不足）且多为一跳证据、忽略代码组件间结构关系的问题，本文提出跨仓库代码生成框架 CrossCoder。CrossCoder 在仓库与库实体之上构建统一知识图谱，通过规划（planning）与语义检索定位重要节点，再有选择地扩展邻居节点以获取多跳上下文证据；作者还提出基于执行的基准 VersionExec（由 BigCodeBench 衍生）评估不同依赖版本下的生成兼容性。在 RepoExec、DevEval 与 VersionExec 上，CrossCoder 将功能正确性提升最多 6.3% pass@1，并增强对依赖版本变化的鲁棒性。",
+      "innovations": [
+        "提出 CrossCoder 框架，在仓库与外部库实体上构建统一知识图谱，把外部库 API 显式纳入检索上下文，突破仅本地仓库检索的边界",
+        "采用“规划 + 语义检索定位关键节点，再有选择扩展邻居”的多跳检索策略，获取跨代码组件结构关系的上下文证据",
+        "构建 VersionExec 执行式基准（衍生自 BigCodeBench），首次针对依赖版本变化下的代码生成兼容性进行评估",
+        "在 RepoExec、DevEval、VersionExec 上功能正确性最高提升 6.3% pass@1，并显著提升对依赖版本变化的鲁棒性"
+      ],
+      "scenario_cn": "适用于仓库级代码补全与生成、需要调用外部库 API 的工程化编码场景，特别是依赖版本频繁变化、存在未见/版本特定 API 的真实项目中，可减少因 API 误用或版本不兼容导致的编译与运行失败。",
+      "title_en": "Beyond Repository Boundaries: Cross-Repository Graph Retrieval for Code Generation",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2609.09928v1",
+      "title": "Structural Process Supervision for Latent Chain-of-Thought Reasoning",
+      "abstract": "Latent reasoning approaches enhance token-level efficiency and robustness by replacing verbose, explicit chain-of-thought (CoT) tokens with compact continuous-space embeddings. However, existing methods lack direct process supervision over these latent embeddings, which often leads to representation collapse and uneven information distribution. To address this, we propose Prototype-Mediated Process Supervision (PMPS), which introduces learnable reasoning prototypes as semantic anchors to provide structural process-level supervision for latent reasoning. PMPS projects latent embeddings and explicit CoT embeddings into a shared prototype space, achieving many-to-many soft alignment between unequal-length representations through prototype assignment. Meanwhile, we introduce a Progressive Sequential Alignment (PSA) module to further guide training: positional priors initially encourage sequential alignment structure, then gradually relax to permit adaptive matching. Experimental results show that PMPS compresses output token length to under 50% of explicit CoT on GSM8K-Aug. Compared to leading baseline SIM-CoT, our method achieves average accuracy gains of 2.08% across different model families. On GPT-2, PMPS even surpasses CoT-SFT. On larger models and a more challenging task, PMPS consistently attains the highest accuracy among all latent reasoning methods with comparable output length.",
+      "published": "2026-09-10T00:00:00+00:00",
+      "updated": "2026-09-10T00:00:00+00:00",
+      "authors": [
+        "Yiqi Li",
+        "Xu Chen",
+        "Chen Ju",
+        "Jiangchao Yao",
+        "Zhaoyang Li",
+        "Jinsong Lan",
+        "Xiaoyong Zhu",
+        "Bo Zheng",
+        "Yu Wang"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "abs_url": "https://arxiv.org/abs/2609.09928",
+      "pdf_url": "https://arxiv.org/pdf/2609.09928",
+      "score": 4.6,
+      "topics": [
+        {
+          "name": "Agent Reasoning / Test-time Scaling",
+          "slug": "agent-reasoning",
+          "hits": [
+            "reasoning",
+            "process supervision",
+            "chain-of-thought"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "chain-of-thought",
+        "process supervision",
+        "reasoning"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Structural%20Process%20Supervision%20for%20Latent%20Chain-of-Thought%20Reasoning%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Latent reasoning approaches enhance token-level efficiency and robustness by replacing verbose, explicit chain-of-thought (CoT) tokens with compact continuous-space embeddings. However, existing methods lack direct process supervision over these latent embeddings, which often leads to representation collapse and uneven information distribution. To address this, we propose Prototype-Mediated Process Supervision (PMPS), which introduces learnable reasoning prototypes as semantic anchors to provide structural process-level supervision for latent reasoning. PMPS projects latent embeddings and explicit CoT embeddings into a shared prototype space, achieving many-to-many soft alignment between unequal-length representations through prototype assignment. Meanwhile, we introduce a Progressive Sequential Alignment (PSA) module to further guide training: positional priors initially encourage sequential alignment structure, then gradually relax to permit adaptive matching. Experimental results show that PMPS compresses output token length to under 50% of explicit CoT on GSM8K-Aug. Compared to leading baseline SIM-CoT, our method achieves average accuracy gains of 2.08% across different model families. On GPT-2, PMPS even surpasses CoT-SFT. On larger models and a more challenging task, PMPS consistently attains the highest accuracy among all latent reasoning methods with comparable output length.",
+      "code_links_from_meta": "https://github.com/search?q=Structural%20Process%20Supervision%20for%20Latent%20Chain-of-Thought%20Reasoning%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "面向隐式思维链推理的结构化过程监督",
+      "institution": "未明确披露",
+      "summary_cn": "隐式推理用紧凑的连续空间嵌入替代冗长的显式思维链（CoT）token 以提升 token 效率与鲁棒性，但现有方法缺乏对这些隐层嵌入的直接过程监督，容易造成表示崩塌与信息分布不均。论文提出原型介导的过程监督（Prototype-Mediated Process Supervision, PMPS），引入可学习的推理原型作为语义锚点，将隐式嵌入与显式 CoT 嵌入投影到共享原型空间，通过原型分配实现不等长表示之间的多对多软对齐；并设计渐进式序列对齐（Progressive Sequential Alignment, PSA）模块，先用位置先验鼓励序列对齐结构，再逐步放松以允许自适应匹配。在 GSM8K-Aug 上 PMPS 将输出 token 长度压缩到显式 CoT 的 50% 以下，相比最强基线 SIM-CoT 在不同模型族上平均准确率提升 2.08%；在 GPT-2 上甚至超过 CoT-SFT，并在更大模型与更难任务上以相近输出长度取得所有隐式推理方法中的最高准确率。",
+      "innovations": [
+        "提出 PMPS（Prototype-Mediated Process Supervision）：以可学习推理原型作为语义锚点，为隐式推理嵌入提供结构化的过程级监督，缓解表示崩塌与信息分布不均。",
+        "将隐式嵌入与显式 CoT 嵌入共同投影到共享原型空间并做原型分配，实现不等长表示之间的多对多软对齐，摆脱对严格长度或位置一一对应的依赖。",
+        "设计渐进式序列对齐（PSA）模块：训练初期用位置先验塑造序列对齐结构，随后逐步放松约束以允许自适应匹配。",
+        "实验验证：GSM8K-Aug 上输出长度压至显式 CoT 的 50% 以下，较 SIM-CoT 平均准确率提升 2.08%，在 GPT-2 上超过 CoT-SFT，并在更大模型与更难任务上于同等输出长度下取得最高准确率。"
+      ],
+      "scenario_cn": "面向对推理成本与延迟敏感的 LLM 部署场景：让模型以隐式（连续）思维链在更少输出 token 下完成数学与多步推理，降低推理开销并提升稳定性。适用于数学解题、多步逻辑推理等追求低 token 成本的在线推理服务与高并发/资源受限部署。",
+      "title_en": "Structural Process Supervision for Latent Chain-of-Thought Reasoning",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2609.09748v1",
+      "title": "Epoch: Compiling Diffusion Blocks for Sparse MoE Serving",
+      "abstract": "Diffusion language models generate text by refining a fixed-size block of token positions through many forward passes, a loop that does not match the per-forward execution unit used by most LLM serving systems. A dense MoE runtime binds all work to the refinement-iteration clock: it rebuilds similar routing structure on every forward, recomputes expert outputs for positions whose logits are already dead, and sends those positions through dense expert-parallel collectives. This paper presents \\sys{}, a serving system that treats the diffusion block as a compilation unit. \\sys{} compiles a small \\emph{block plan} for the block-clock structure of one diffusion block and refreshes every value that can affect a live decode decision on the iteration clock. \\sys{} realizes this plan along three dense axes of an MoE forward: \\atlas{} compiles a coverage-driven active expert support per layer while recomputing gate logits every iteration; \\lsp{} keeps full sequence shards as model state but routes only live, newly decoded, and refresh-required positions through fresh routed-expert computation; \\freshlane{} carries this fresh token--expert worklist through expert-parallel dispatch, kernels, and combine, then restores the dense logical shard at the layer boundary. We implement \\sys{} on 8 NVIDIA H100 GPUs and evaluate it on three open-weight block-diffusion MoE models (LLaDA-MoE, LLaDA2.0-mini, and LLaDA2.0-Flash, spanning 7B to 100B total parameters) across GSM8K, HumanEval, MGSM, and MT-Bench. \\sys{} improves end-to-end execution time by up to 2.7$\\times$ over the strongest surviving baseline under the same 8-GPU placement and remains feasible at the largest batch sizes where multiple baselines run out of memory, while preserving task quality relative to the dense reference.",
+      "published": "2026-09-10T00:00:00+00:00",
+      "updated": "2026-09-10T00:00:00+00:00",
+      "authors": [
+        "Jianian Zhu",
+        "Hang Wu",
+        "Yinghui Li",
+        "Haojie Wang",
+        "Ruixuan Li",
+        "Jidong Zhai"
+      ],
+      "categories": [
+        "cs.DC"
+      ],
+      "abs_url": "https://arxiv.org/abs/2609.09748",
+      "pdf_url": "https://arxiv.org/pdf/2609.09748",
+      "score": 4.4,
+      "topics": [
+        {
+          "name": "LLM 推理加速",
+          "slug": "llm-inference",
+          "hits": [
+            "serving"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "serving"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Epoch%3A%20Compiling%20Diffusion%20Blocks%20for%20Sparse%20MoE%20Serving%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Diffusion language models generate text by refining a fixed-size block of token positions through many forward passes, a loop that does not match the per-forward execution unit used by most LLM serving systems. A dense MoE runtime binds all work to the refinement-iteration clock: it rebuilds similar routing structure on every forward, recomputes expert outputs for positions whose logits are already dead, and sends those positions through dense expert-parallel collectives. This paper presents \\sys{}, a serving system that treats the diffusion block as a compilation unit. \\sys{} compiles a small \\emph{block plan} for the block-clock structure of one diffusion block and refreshes every value that can affect a live decode decision on the iteration clock. \\sys{} realizes this plan along three dense axes of an MoE forward: \\atlas{} compiles a coverage-driven active expert support per layer while recomputing gate logits every iteration; \\lsp{} keeps full sequence shards as model state but routes only live, newly decoded, and refresh-required positions through fresh routed-expert computation; \\freshlane{} carries this fresh token--expert worklist through expert-parallel dispatch, kernels, and combine, then restores the dense logical shard at the layer boundary. We implement \\sys{} on 8 NVIDIA H100 GPUs and evaluate it on three open-weight block-diffusion MoE models (LLaDA-MoE, LLaDA2.0-mini, and LLaDA2.0-Flash, spanning 7B to 100B total parameters) across GSM8K, HumanEval, MGSM, and MT-Bench. \\sys{} improves end-to-end execution time by up to 2.7$\\times$ over the strongest surviving baseline under the same 8-GPU placement and remains feasible at the largest batch sizes where multiple baselines run out of memory, while preserving task quality relative to the dense reference.",
+      "code_links_from_meta": "https://github.com/search?q=Epoch%3A%20Compiling%20Diffusion%20Blocks%20for%20Sparse%20MoE%20Serving%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "Epoch：面向稀疏MoE服务的扩散块编译",
+      "institution": "未明确披露",
+      "summary_cn": "扩散语言模型通过多次前向迭代反复精化固定长度的 token 块来生成文本，这一“块-迭代”循环与现有 LLM 服务系统以单次前向为执行单元的设计不匹配：密集 MoE 运行时被强制绑定到精化迭代时钟上，每次前向都要重建相似的专家路由结构、为 logits 已“死亡”的位置重算专家输出，并把它们送入密集专家并行通信。论文提出 Epoch，把整个扩散块视为一个编译单元，为其块时钟结构编译一份轻量的 block plan，并在迭代时钟上刷新所有可能影响在线解码决策的数值。Epoch 沿 MoE 前向的三个密集轴实现该计划：ATLAS 逐层编译覆盖驱动的活跃专家支撑集（门控 logits 每次迭代仍重算），LSP 保留完整序列分片作为模型状态但只让活跃、新解码与需刷新的位置走重新路由的专家计算，FreshLane 则携带这份“新鲜 token-专家”工作清单穿过专家并行 dispatch、kernel 与 combine，并在层边界恢复密集逻辑分片。在 8 张 NVIDIA H100 上对 LLaDA-MoE、LLaDA2.0-mini、LLaDA2.0-Flash（7B 至 100B 总参数）在 GSM8K、HumanEval、MGSM、MT-Bench 上评测，端到端执行时间相比同 8 卡部署下最强可用基线最高提升 2.7 倍，并能在多个基线 OOM 的最大 batch 下仍可运行，同时相对密集参考保持任务质量。",
+      "innovations": [
+        "提出以扩散块为编译单元的 serving 范式 Epoch：为块时钟结构编译 block plan，并在迭代时钟上刷新所有可能impact在线解码决策的值，打破传统 MoE 运行时对精化迭代时钟的绑定。",
+        "ATLAS：按层编译覆盖驱动的活跃专家支撑集（coverage-driven active expert support），同时每次迭代重算门控 logits，避免为已死 logits 的位置重复计算专家输出。",
+        "LSP 与 FreshLane 协同：LSP 以完整序列分片为模型状态、只将活跃/新解码/需刷新的位置送入新鲜路由专家计算；FreshLane 把该 token-专家工作清单贯穿专家并行 dispatch、kernel 与 combine，并在层边界恢复密集逻辑分片。",
+        "在 8×H100 上以 LLaDA-MoE、LLaDA2.0-mini、LLaDA2.0-Flash（7B–100B）在 GSM8K、HumanEval、MGSM、MT-Bench 上验证，端到端最高 2.7 倍加速、最大 batch 下基线 OOM 时仍可运行，且保持相对密集参考的任务质量。"
+      ],
+      "scenario_cn": "解决扩散式（block-diffusion）MoE 大模型在生产 serving 中迭代前向带来的重复路由计算、无效位置专家计算与密集专家并行通信浪费问题，适用于在 H100 等多卡集群上低延迟、高吞吐地部署 LLaDA 系列等稀疏 MoE 扩散语言模型的推理服务场景。",
+      "title_en": "Epoch: Compiling Diffusion Blocks for Sparse MoE Serving",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2609.09768v1",
+      "title": "Fine-Tuning a KV Cache Concatenation-Aware Model or Recomputing KV Caches? Why Not Both?",
+      "abstract": "In Retrieval-Augmented Generation (RAG) systems, a large number of retrieved chunks are concatenated to form the input context so that users can receive high-quality responses based on external knowledge. As a result, the input context length increases substantially, leading to a larger prefill workload and, in turn, a longer time to first token (TTFT). While previous works that reuse precomputed key-value (KV) caches effectively reduce TTFT for long-context inputs, it remains unclear whether response quality is preserved when the input context becomes very long. In this paper, we propose a combined approach that (i) fine-tunes the model while taking KV cache concatenation into account and (ii) selectively recomputes a subset of the KV caches. By applying both techniques, we demonstrate improved accuracy for long-context inputs. Experiments on the RULER benchmark show that, for a 124k-token input, our method improves the RULER score by 9.7 point over the baseline that recomputes KV caches only. Moreover, TTFT is reduced by 80% compared with full attention.",
+      "published": "2026-09-10T00:00:00+00:00",
+      "updated": "2026-09-10T00:00:00+00:00",
+      "authors": [
+        "Fumihiko Tachibana",
+        "Daisuke Miyashita",
+        "Jun Deguchi"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "abs_url": "https://arxiv.org/abs/2609.09768",
+      "pdf_url": "https://arxiv.org/pdf/2609.09768",
+      "score": 4.4,
+      "topics": [
+        {
+          "name": "LLM 推理加速",
+          "slug": "llm-inference",
+          "hits": [
+            "kv cache"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "kv cache"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Fine-Tuning%20a%20KV%20Cache%20Concatenation-Aware%20Model%20or%20Recomputing%20KV%20Caches%3F%20Why%20Not%20Both%3F%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "In Retrieval-Augmented Generation (RAG) systems, a large number of retrieved chunks are concatenated to form the input context so that users can receive high-quality responses based on external knowledge. As a result, the input context length increases substantially, leading to a larger prefill workload and, in turn, a longer time to first token (TTFT). While previous works that reuse precomputed key-value (KV) caches effectively reduce TTFT for long-context inputs, it remains unclear whether response quality is preserved when the input context becomes very long. In this paper, we propose a combined approach that (i) fine-tunes the model while taking KV cache concatenation into account and (ii) selectively recomputes a subset of the KV caches. By applying both techniques, we demonstrate improved accuracy for long-context inputs. Experiments on the RULER benchmark show that, for a 124k-token input, our method improves the RULER score by 9.7 point over the baseline that recomputes KV caches only. Moreover, TTFT is reduced by 80% compared with full attention.",
+      "code_links_from_meta": "https://github.com/search?q=Fine-Tuning%20a%20KV%20Cache%20Concatenation-Aware%20Model%20or%20Recomputing%20KV%20Caches%3F%20Why%20Not%20Both%3F%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "微调 KV 缓存拼接感知模型，还是重算 KV 缓存？为何不两者兼得？",
+      "institution": "未明确披露",
+      "summary_cn": "针对 RAG 系统中大量检索片段被拼接成输入上下文、导致上下文长度剧增、prefill 负载升高和首 token 延迟（TTFT）变长的问题，论文指出已有复用预计算 KV 缓存的方案虽能降低 TTFT，但在输入上下文极长时响应质量是否仍被保持尚不清楚。作者提出组合方案：一方面在微调阶段显式让模型感知 KV 缓存拼接带来的分布偏移，另一方面在推理时有选择地重算一部分 KV 缓存以修正误差。在 RULER 基准上，对 124k token 的输入，该方法比“仅重算 KV 缓存”的基线提升 9.7 分 RULER 分数，同时相比完整注意力将 TTFT 降低约 80%。",
+      "innovations": [
+        "提出 KV cache concatenation-aware 微调：在训练阶段就让模型适应检索片段 KV 直接拼接后的注意力分布，而非只在推理侧做缓存复用",
+        "设计选择性 KV 缓存重算机制，只对缓存子集重新计算 prefill，在质量与重算成本之间取得折中",
+        "在 RULER 上以 124k token 超长输入做实证：相比仅重算基线 RULER 分数 +9.7，TTFT 相比 full attention 降低 80%",
+        "直接回答“复用预计算 KV 缓存是否损害长上下文回答质量”这一此前未澄清的开放问题，并给出训练+重算联合使用的结论"
+      ],
+      "scenario_cn": "适用于以长上下文检索为核心的 RAG 服务系统，用于在超长拼接输入下同时保住回答质量与低首 token 延迟，缓解用户侧的等待体验。",
+      "title_en": "Fine-Tuning a KV Cache Concatenation-Aware Model or Recomputing KV Caches? Why Not Both?",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2609.10494v1",
+      "title": "IBIB: A Protocol for Measuring Enterprise AI Systems by Serving Route, Not Model Identifier",
+      "abstract": "Enterprises deploy systems, not checkpoints. Usable capability depends jointly on weights, serving route, precision, output contract, and harness, yet all 18 audited benchmarks score advertised model identifiers. We treat this as measurement error and give a protocol that makes it reportable. It has three parts. A gold-blind capability-binding preflight verifies that a route can execute the evaluation contract before any task reaches it; a reliability-inclusive first-pass scoring rule keeps failure in the score while keeping unsupported capability out; and adjudication is structurally score-blind. We call the protocol IB2 and release its algorithms, classification tables, request contract, and manifest schemas. Its reference instantiation, 128 locked tasks and 987 assertions over document, spreadsheet, chart, tool and database work, stays sealed: the procedure is the artifact, not the corpus. Across eleven systems, four results. Capability availability is measurable: two complete single-route runs on identical weights later failed distinct predicates of the finalized binding gate, while a third passed that gate before a fresh run. The advertised identifier exposed neither limit. Discrimination is not uniform: four of seven suites saturate under a six-system band, with the spread almost entirely from governed database work and multi-tab joins, so we report interval-backed resolution groups, not ranks; two of the nominal five-label output's four cuts fail multiplicity adjustment. Serving-arm choice moved one declared revision and precision from 77.38 to 82.54, paired interval [0.11,10.60], though the arms differ in access mode, harness generation, and the serving tool-call parser, and harness generation is a property of our evaluator, not any endpoint. Excluding failed responses from denominators changes the point ordering, so reliability inclusion changes a conclusion, not its wording.",
+      "published": "2026-09-10T00:00:00+00:00",
+      "updated": "2026-09-10T00:00:00+00:00",
+      "authors": [
+        "Blake Stenstrom",
+        "Charangan Vasantharajan",
+        "Brian Sathianathan"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "abs_url": "https://arxiv.org/abs/2609.10494",
+      "pdf_url": "https://arxiv.org/pdf/2609.10494",
+      "score": 4.4,
+      "topics": [
+        {
+          "name": "LLM 推理加速",
+          "slug": "llm-inference",
+          "hits": [
+            "serving"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "serving"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=IBIB%3A%20A%20Protocol%20for%20Measuring%20Enterprise%20AI%20Systems%20by%20Serving%20Route%2C%20Not%20Model%20Identifier%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Enterprises deploy systems, not checkpoints. Usable capability depends jointly on weights, serving route, precision, output contract, and harness, yet all 18 audited benchmarks score advertised model identifiers. We treat this as measurement error and give a protocol that makes it reportable. It has three parts. A gold-blind capability-binding preflight verifies that a route can execute the evaluation contract before any task reaches it; a reliability-inclusive first-pass scoring rule keeps failure in the score while keeping unsupported capability out; and adjudication is structurally score-blind. We call the protocol IB2 and release its algorithms, classification tables, request contract, and manifest schemas. Its reference instantiation, 128 locked tasks and 987 assertions over document, spreadsheet, chart, tool and database work, stays sealed: the procedure is the artifact, not the corpus. Across eleven systems, four results. Capability availability is measurable: two complete single-route runs on identical weights later failed distinct predicates of the finalized binding gate, while a third passed that gate before a fresh run. The advertised identifier exposed neither limit. Discrimination is not uniform: four of seven suites saturate under a six-system band, with the spread almost entirely from governed database work and multi-tab joins, so we report interval-backed resolution groups, not ranks; two of the nominal five-label output's four cuts fail multiplicity adjustment. Serving-arm choice moved one declared revision and precision from 77.38 to 82.54, paired interval [0.11,10.60], though the arms differ in access mode, harness generation, and the serving tool-call parser, and harness generation is a property of our evaluator, not any endpoint. Excluding failed responses from denominators changes the point ordering, so reliability inclusion changes a conclusion, not its wording.",
+      "code_links_from_meta": "https://github.com/search?q=IBIB%3A%20A%20Protocol%20for%20Measuring%20Enterprise%20AI%20Systems%20by%20Serving%20Route%2C%20Not%20Model%20Identifier%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "IBIB：以服务路由而非模型标识符来度量企业 AI 系统的协议",
+      "institution": "未明确披露",
+      "summary_cn": "论文指出企业实际部署的是“系统”而不是单个 checkpoint，可用能力同时取决于权重、服务路由、精度、输出契约和评测 harness，但作者审计的 18 个基准全部只对“宣传中的模型标识符”打分，因此把这种偏差当作测量误差并提出可将其公开报告的协议 IB2。IB2 由三部分组成：在任务下发前验证某条路由能否执行评测契约的 gold-blind capability-binding preflight；把失败响应保留在分母中的 reliability-inclusive 首轮打分规则；以及结构上与分数隔离（score-blind）的裁决流程。其参考实现包含 128 个锁定任务和 987 条断言，覆盖文档、电子表格、图表、工具调用与数据库工作，并在 11 个系统上给出四类结果。",
+      "innovations": [
+        "提出 IB2 协议，把度量对象从模型标识符改为“服务路由（serving route）”，将权重、精度、输出契约与 harness 一并纳入能力定义",
+        "三段式机制设计：gold-blind capability-binding preflight 先验证路由可执行评测契约，reliability-inclusive 打分把失败留在分母，裁决环节在结构上对分数盲",
+        "参考实现含 128 个锁定任务与 987 条断言，覆盖文档、电子表格、图表、工具调用和数据库五类工作负载，并发布算法、分类表、请求契约与 manifest schema（流程本身即工件，语料保持封存）",
+        "跨 11 个系统的实测发现：相同权重的两次完整单路由运行分别未通过已定稿 binding gate 的不同谓词（而宣传标识符暴露不出该限制）；七个套件中四个在六系统带宽下饱和，差异几乎全部来自受管控数据库工作与多标签页 join，故只报告带区间的分辨组而非排名；服务臂选择使某声明版本加精度从 77.38 升至 82.54（配对区间 [0.11, 10.60]）；把失败响应排除出分母会改变各系统的点排序"
+      ],
+      "scenario_cn": "面向企业 AI 选型、采购与验收：用于判断同一权重在不同服务路由、精度和工具解析条件下的真实可用能力，产出可复现、可审计的评测结论，而不是照搬模型宣传标识符。",
+      "title_en": "IBIB: A Protocol for Measuring Enterprise AI Systems by Serving Route, Not Model Identifier",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2609.10264v1",
+      "title": "Maverick: Private and Verifiable LLM Inference Made Practical via Matrix-Vector Multiplication Delegation",
+      "abstract": "Open-source large language models (LLMs) are increasingly competitive with closed-source models while offering transparency and the ability to run inference without exposing user inputs to a service provider. However, running large-scale models locally requires substantial computational resources. In practice, users may still resort to a third-party provider, giving rise to privacy and correctness concerns. Existing solutions that address these problems often impose substantial server overhead or introduce additional trust assumptions. In this paper, we present Maverick, a novel approach to private and verifiable LLM inference based on a protocol for delegating matrix-vector multiplication, a dominant operation in LLMs. At its core, Maverick provides, to our knowledge, the first information-theoretically sound verification protocol for matrix-vector multiplication delegation with transparent preprocessing, efficient (batch) verification, and virtually no server overhead. We combine this verification primitive with LPN-based pseudorandom masking to provide input privacy. We implement our matrix-vector delegation primitive and use it to build an end-to-end prototype of Maverick, which we evaluate on Qwen3-4B by measuring throughput in tokens per second. We evaluate client configurations with 1-8 threads. With one client thread and a CPU server using up to 128 threads, Maverick achieves throughput gains over local inference of up to 17x when privacy masks are generated online, 45x when they are precomputed, and 44x when only verification is required. With four client threads, the corresponding gains are 13x, 18x, and 17x. When server computation is no longer the bottleneck, client-side microbenchmarks with simulated network delay show speedups of 12x-20x, 34x-135x, and 38x-157x.",
+      "published": "2026-09-10T00:00:00+00:00",
+      "updated": "2026-09-10T00:00:00+00:00",
+      "authors": [
+        "Ben Merbaum",
+        "Mohammad Amin Raeisi",
+        "Wenhao Wang",
+        "Charalampos Papamanthou",
+        "Katerina Sotiraki",
+        "Fan Zhang"
+      ],
+      "categories": [
+        "cs.CR",
+        "cs.LG"
+      ],
+      "abs_url": "https://arxiv.org/abs/2609.10264",
+      "pdf_url": "https://arxiv.org/pdf/2609.10264",
+      "score": 4.4,
+      "topics": [
+        {
+          "name": "LLM 推理加速",
+          "slug": "llm-inference",
+          "hits": [
+            "llm inference"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "llm inference"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Maverick%3A%20Private%20and%20Verifiable%20LLM%20Inference%20Made%20Practical%20via%20Matrix-Vector%20Multiplication%20Delegation%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Open-source large language models (LLMs) are increasingly competitive with closed-source models while offering transparency and the ability to run inference without exposing user inputs to a service provider. However, running large-scale models locally requires substantial computational resources. In practice, users may still resort to a third-party provider, giving rise to privacy and correctness concerns. Existing solutions that address these problems often impose substantial server overhead or introduce additional trust assumptions. In this paper, we present Maverick, a novel approach to private and verifiable LLM inference based on a protocol for delegating matrix-vector multiplication, a dominant operation in LLMs. At its core, Maverick provides, to our knowledge, the first information-theoretically sound verification protocol for matrix-vector multiplication delegation with transparent preprocessing, efficient (batch) verification, and virtually no server overhead. We combine this verification primitive with LPN-based pseudorandom masking to provide input privacy. We implement our matrix-vector delegation primitive and use it to build an end-to-end prototype of Maverick, which we evaluate on Qwen3-4B by measuring throughput in tokens per second. We evaluate client configurations with 1-8 threads. With one client thread and a CPU server using up to 128 threads, Maverick achieves throughput gains over local inference of up to 17x when privacy masks are generated online, 45x when they are precomputed, and 44x when only verification is required. With four client threads, the corresponding gains are 13x, 18x, and 17x. When server computation is no longer the bottleneck, client-side microbenchmarks with simulated network delay show speedups of 12x-20x, 34x-135x, and 38x-157x.",
+      "code_links_from_meta": "https://github.com/search?q=Maverick%3A%20Private%20and%20Verifiable%20LLM%20Inference%20Made%20Practical%20via%20Matrix-Vector%20Multiplication%20Delegation%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "Maverick：借助矩阵-向量乘法委托实现实用化的私有且可验证 LLM 推理",
+      "institution": "未明确披露",
+      "summary_cn": "本文针对用户在第三方服务器上运行开源大模型时面临的输入隐私泄露与计算结果不可信问题，指出现有方案要么带来高昂服务器开销、要么引入额外信任假设。作者提出 Maverick，其核心是据其所知首个信息论意义上可靠、且支持透明预处理与高效批量校验的矩阵-向量乘法委托验证协议，并将该验证原语与基于 LPN 的伪随机掩码结合以保护输入隐私。作者实现了该委托原语并搭建端到端原型，在 Qwen3-4B 上以每秒 token 数衡量吞吐，客户端使用 1–8 线程、CPU 服务器最多 128 线程：单客户端线程下相对本地推理最高提速 17 倍（掩码在线生成）、45 倍（掩码预计算）、44 倍（仅需验证）；四线程时为 13/18/17 倍，在模拟网络延迟的客户端微基准中提速达 12–157 倍。",
+      "innovations": [
+        "提出首个针对矩阵-向量乘法委托的、具有信息论可靠性保证的验证协议，且要求透明预处理（无需可信第三方或一次性预处理设置）",
+        "设计高效的批量验证机制，使验证过程几乎不给服务器带来额外计算开销",
+        "将验证原语与 LPN 伪随机掩码相结合，在保护输入隐私的同时避免使用重量级密码学原语",
+        "在 Qwen3-4B 上构建端到端原型并按 tokens/s 评测 1–8 客户端线程与最多 128 服务器线程配置，给出在线/预计算掩码及仅验证三种模式下的实测提速曲线"
+      ],
+      "scenario_cn": "面向算力不足、不愿把数据交给第三方、又需要确认服务商没有偷工减料或返回错误结果的自建/外包推理场景，适用于在 CPU 服务器集群上对外提供开源大模型推理服务、由客户端本地做隐私掩码与可验证校验的部署形态。",
+      "title_en": "Maverick: Private and Verifiable LLM Inference Made Practical via Matrix-Vector Multiplication Delegation",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2609.09867v1",
+      "title": "Contextual Utility of Quantization Moves in Extreme Low-Bit LLMs",
+      "abstract": "Post-training quantizers select finite code changes using reconstruction proxies or local loss approximations, but the utility of a quantization move depends on the state through which it is executed. We identify two sources of this contextual dependence. First, the displacement of the move matters: evaluating the gradient at the move midpoint captures curvature accumulated along the move that a current-state linearization omits. Across frozen two-bit moves from Llama-3.2 models, midpoint evaluation predicts the direction of exact endpoint loss changes substantially more accurately than current-state gradients. Second, moves interact: exhaustive lattices of legal quantized states are well approximated by quadratic pseudo-Boolean functions, yet their small pairwise components can determine Pareto fronts and cause different evaluation functionals to prefer opposite directions. These effects explain failures of reconstruction-optimal code re-selection and additive composition. Reading each move at its own midpoint repairs the local selection step and improves downstream accuracy and held-out perplexity, while larger supports require evaluating exact endpoints from the state actually reached. Exact-endpoint beam search finds sparse changes that dominate much larger one-shot updates, and repricing the same moves after intervening changes produces widespread sign reversals. These results show that quantization utility is contextual at the granularity of a few moves: reliable construction must evaluate finite changes along their own paths and compose them from the evolving quantized state.",
+      "published": "2026-09-10T00:00:00+00:00",
+      "updated": "2026-09-10T00:00:00+00:00",
+      "authors": [
+        "Wenxuan Xiao",
+        "Xu Cao"
+      ],
+      "categories": [
+        "cs.DB"
+      ],
+      "abs_url": "https://arxiv.org/abs/2609.09867",
+      "pdf_url": "https://arxiv.org/pdf/2609.09867",
+      "score": 4.2,
+      "topics": [
+        {
+          "name": "Model Compression / Quantization",
+          "slug": "model-compression",
+          "hits": [
+            "quantization",
+            "low-bit"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "low-bit",
+        "quantization"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Contextual%20Utility%20of%20Quantization%20Moves%20in%20Extreme%20Low-Bit%20LLMs%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Post-training quantizers select finite code changes using reconstruction proxies or local loss approximations, but the utility of a quantization move depends on the state through which it is executed. We identify two sources of this contextual dependence. First, the displacement of the move matters: evaluating the gradient at the move midpoint captures curvature accumulated along the move that a current-state linearization omits. Across frozen two-bit moves from Llama-3.2 models, midpoint evaluation predicts the direction of exact endpoint loss changes substantially more accurately than current-state gradients. Second, moves interact: exhaustive lattices of legal quantized states are well approximated by quadratic pseudo-Boolean functions, yet their small pairwise components can determine Pareto fronts and cause different evaluation functionals to prefer opposite directions. These effects explain failures of reconstruction-optimal code re-selection and additive composition. Reading each move at its own midpoint repairs the local selection step and improves downstream accuracy and held-out perplexity, while larger supports require evaluating exact endpoints from the state actually reached. Exact-endpoint beam search finds sparse changes that dominate much larger one-shot updates, and repricing the same moves after intervening changes produces widespread sign reversals. These results show that quantization utility is contextual at the granularity of a few moves: reliable construction must evaluate finite changes along their own paths and compose them from the evolving quantized state.",
+      "code_links_from_meta": "https://github.com/search?q=Contextual%20Utility%20of%20Quantization%20Moves%20in%20Extreme%20Low-Bit%20LLMs%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "极低比特大语言模型中量化移动的上下文效用",
+      "institution": "未明确披露",
+      "summary_cn": "论文指出后训练量化中单个量化“移动”的效用并非固定，而取决于其被执行时所处的量化状态，并识别出两个上下文依赖来源：一是位移本身重要，在移动中点评估梯度能捕捉当前状态线性化所忽略的沿路径累积曲率，在 Llama-3.2 的冻结 2-bit 移动上，中点评估预测精确端点损失变化方向的准确率显著高于当前状态梯度；二是移动之间存在交互，合法量化状态的穷举格点可被二次伪布尔函数良好近似，但其微小的成对分量即可决定 Pareto 前沿，并使不同的评估泛函偏好相反方向。这些效应用来解释“重构最优码重选”与“加性组合”两类失败，而按每个移动自身的中点读取可修复局部选择步骤、提升下游精度与留出困惑度；支持集更大时需从实际到达的状态评估精确端点，精确端点束搜索能找到支配更大量一次性更新的稀疏改动，且在中间改动后对同一批移动重新定价会出现广泛的符号反转。",
+      "innovations": [
+        "提出量化移动的“上下文效用”视角：在移动中点而非当前状态评估梯度，以捕捉沿移动累积的曲率，在 Llama-3.2 冻结 2-bit 移动上对精确端点损失变化方向的预测明显更准",
+        "将合法量化状态的穷举格点近似为二次伪布尔函数，揭示微小的成对交互项即可决定 Pareto 前沿，并使不同评估泛函偏好相反方向",
+        "以该框架解释重构最优码重选（reconstruction-optimal code re-selection）与加性组合（additive composition）两类实际失败模式",
+        "提出精确端点束搜索与在已到达状态上重新定价（repricing）的构造方法：稀疏改动可优于更大的一次性更新，且中间改动后重新定价会导致广泛的方向符号反转"
+      ],
+      "scenario_cn": "适用于把大语言模型权重压缩到 2-bit 等极低比特时的码本选择与逐层/逐组量化调度，帮助部署方避免重构代理指标误导选码，从而在端侧或低成本推理服务中保住精度与困惑度。",
+      "title_en": "Contextual Utility of Quantization Moves in Extreme Low-Bit LLMs",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2609.09854v1",
+      "title": "When Does Low-Bit Quantization Preserve the Decisions of Vector Search?",
+      "abstract": "Low-bit quantization can achieve high recall on some vector representations and fail sharply on others, while average distortion and global rank correlation do not explain the difference. We study quantized vector search at the level of the comparisons consumed by ranking and graph-pruning algorithms. Our first result is a distribution-free decomposition: the probability that a comparison flips is bounded by the probability mass of exact margins near zero plus the tail probability of the calibrated residual. We then account for dependence between residuals that share a query or graph node, and derive covariance-aware second-moment identities and tail bounds under a joint MGF proxy. For a frozen candidate permutation, we prove a deterministic coupling theorem for Vamana neighbour selection: the approximate replay returns the exact neighbour list exactly when all candidate-level pruning actions agree on the frozen exact states. We connect these results to representation geometry through an exact Gaussian oracle, establish a strict correlation gain from a deterministic magnitude bit in an aligned bilinear model, and give a rare-contamination construction showing why marginal Gaussian diagnostics do not imply the required residual tails. When analytical assumptions are unavailable, a held-out block certificate bounds the selective failure risk of a frozen quantized rule. Across learned, classical, and synthetic embeddings, standardized exact margins predict held-out ranking and pruning flip rates substantially better than global rank correlation. The framework applies to coordinate binary codes, RaBitQ, Lucene BBQ, and product quantizers through a common decision interface.",
+      "published": "2026-09-10T00:00:00+00:00",
+      "updated": "2026-09-10T00:00:00+00:00",
+      "authors": [
+        "Wenxuan Xiao",
+        "Xu Cao"
+      ],
+      "categories": [
+        "cs.DB",
+        "cs.IR",
+        "cs.LG"
+      ],
+      "abs_url": "https://arxiv.org/abs/2609.09854",
+      "pdf_url": "https://arxiv.org/pdf/2609.09854",
+      "score": 4.2,
+      "topics": [
+        {
+          "name": "Model Compression / Quantization",
+          "slug": "model-compression",
+          "hits": [
+            "quantization",
+            "low-bit"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "low-bit",
+        "quantization"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=When%20Does%20Low-Bit%20Quantization%20Preserve%20the%20Decisions%20of%20Vector%20Search%3F%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Low-bit quantization can achieve high recall on some vector representations and fail sharply on others, while average distortion and global rank correlation do not explain the difference. We study quantized vector search at the level of the comparisons consumed by ranking and graph-pruning algorithms. Our first result is a distribution-free decomposition: the probability that a comparison flips is bounded by the probability mass of exact margins near zero plus the tail probability of the calibrated residual. We then account for dependence between residuals that share a query or graph node, and derive covariance-aware second-moment identities and tail bounds under a joint MGF proxy. For a frozen candidate permutation, we prove a deterministic coupling theorem for Vamana neighbour selection: the approximate replay returns the exact neighbour list exactly when all candidate-level pruning actions agree on the frozen exact states. We connect these results to representation geometry through an exact Gaussian oracle, establish a strict correlation gain from a deterministic magnitude bit in an aligned bilinear model, and give a rare-contamination construction showing why marginal Gaussian diagnostics do not imply the required residual tails. When analytical assumptions are unavailable, a held-out block certificate bounds the selective failure risk of a frozen quantized rule. Across learned, classical, and synthetic embeddings, standardized exact margins predict held-out ranking and pruning flip rates substantially better than global rank correlation. The framework applies to coordinate binary codes, RaBitQ, Lucene BBQ, and product quantizers through a common decision interface.",
+      "code_links_from_meta": "https://github.com/search?q=When%20Does%20Low-Bit%20Quantization%20Preserve%20the%20Decisions%20of%20Vector%20Search%3F%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "低比特量化何时能保持向量检索的决策不变？",
+      "institution": "未明确披露",
+      "summary_cn": "论文研究低比特量化在何种条件下能保持排序与图剪枝算法所消费的比较决策不变，并指出平均失真与全局秩相关无法解释不同向量表示上召回率差异悬殊的现象。作者首先给出一个无分布假设的分解：一次比较发生翻转的概率被“精确间隔接近零的概率质量”与“校准残差的尾概率”之和所界定，随后进一步考虑共享同一查询或图节点的残差相关性，推导出协方差感知的二阶矩恒等式与联合 MGF 代理下的尾界。针对冻结的候选排列，论文证明了关于 Vamana 邻居选择的确定性耦合定理：近似重放返回的邻居列表与精确列表完全一致，当且仅当所有候选级剪枝动作在冻结的精确状态上彼此一致。作者用精确高斯 oracle 把结论联系到表示几何，证明在对齐双线性模型中加入一个确定性幅度比特可带来严格的秩相关增益，并给出稀疏污染构造以说明边缘高斯诊断不足以推出所需的残差尾；当解析假设不可用时，则以留出分块证书界定冻结量化规则的选择性失败风险。",
+      "innovations": [
+        "无分布假设的比较翻转概率分解：翻转概率由精确间隔近零的概率质量与校准残差尾概率共同上界，并进一步给出协方差感知的二阶矩恒等式与联合 MGF 尾界以处理共享查询/图节点带来的残差相关",
+        "针对 Vamana 邻居选择的确定性耦合定理：近似重放能精确返回邻居列表，当且仅当所有候选级剪枝动作在冻结的精确状态上一致",
+        "借助精确高斯 oracle 把结论连到表示几何，证明对齐双线性模型中一个确定性幅度比特带来严格秩相关增益，并用稀疏污染构造证明边缘高斯诊断不能蕴含所需残差尾",
+        "提出留出分块证书（held-out block certificate）在缺乏解析假设时界定冻结量化规则的选择性失败风险；实验显示标准化精确间隔比全局秩相关更能预测留出排序与剪枝翻转率，框架经统一决策接口覆盖坐标二值码、RaBitQ、Lucene BBQ 与乘积量化器"
+      ],
+      "scenario_cn": "面向采用低比特量化的向量数据库与近似最近邻检索系统（如 Vamana/DiskANN 图索引、Lucene BBQ、RaBitQ），帮助工程团队预先判断某种嵌入表示在量化后是否仍能维持检索决策与邻居列表，从而决定能否安全启用低比特压缩来降低内存与带宽开销。",
+      "title_en": "When Does Low-Bit Quantization Preserve the Decisions of Vector Search?",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2609.09206v1",
+      "title": "MLLMs Hallucinate when Information Distribution Drifts in Synergy Heads",
+      "abstract": "Multimodal Large Language Models (MLLMs) often struggle with hallucinations, thus hindering their reliable practical applications. Existing attention-based mitigation methods mainly rely on indirect signals (e.g., attention weights) that fail to accurately reflect the actual information shift underlying hallucination generation. In this paper, we propose HEAL, Head-lEvel information disentAnglement and caLibration for identifying and mitigating hallucinations. HEAL first employs causal noise intervention on multi-head outputs to filter out causally redundant heads. Subsequently, it disentangles information distribution within the remaining heads via the counterfactual Difference-in-Differences, categorizing heads into four types. Through analysis, we observe: hallucinations happen when information distribution drifts away from a healthy equilibrium in synergy heads, not strongly correlated with the quantity or strength of modality-specific heads. Motivated by this insight, HEAL injects dynamic information calibration factors into the value vectors of synergy heads, and actively regulates visual-language dependencies, steering the output distribution towards factual evidence. Extensive experiments demonstrate that HEAL effectively reduces hallucinations across multiple MLLMs, offering a simple and interpretable pathway to enhance model trustworthiness.",
+      "published": "2026-09-10T00:00:00+00:00",
+      "updated": "2026-09-10T00:00:00+00:00",
+      "authors": [
+        "Meng'en Qin",
+        "Junye Chen",
+        "Jucheng Liu",
+        "Youlu Xing",
+        "Song Wang",
+        "Ruize Han"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.CL"
+      ],
+      "abs_url": "https://arxiv.org/abs/2609.09206",
+      "pdf_url": "https://arxiv.org/pdf/2609.09206",
+      "score": 4.0,
+      "topics": [
+        {
+          "name": "多模态推理加速",
+          "slug": "multimodal-inference",
+          "hits": [
+            "mllm"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "mllm"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=MLLMs%20Hallucinate%20when%20Information%20Distribution%20Drifts%20in%20Synergy%20Heads%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Multimodal Large Language Models (MLLMs) often struggle with hallucinations, thus hindering their reliable practical applications. Existing attention-based mitigation methods mainly rely on indirect signals (e.g., attention weights) that fail to accurately reflect the actual information shift underlying hallucination generation. In this paper, we propose HEAL, Head-lEvel information disentAnglement and caLibration for identifying and mitigating hallucinations. HEAL first employs causal noise intervention on multi-head outputs to filter out causally redundant heads. Subsequently, it disentangles information distribution within the remaining heads via the counterfactual Difference-in-Differences, categorizing heads into four types. Through analysis, we observe: hallucinations happen when information distribution drifts away from a healthy equilibrium in synergy heads, not strongly correlated with the quantity or strength of modality-specific heads. Motivated by this insight, HEAL injects dynamic information calibration factors into the value vectors of synergy heads, and actively regulates visual-language dependencies, steering the output distribution towards factual evidence. Extensive experiments demonstrate that HEAL effectively reduces hallucinations across multiple MLLMs, offering a simple and interpretable pathway to enhance model trustworthiness.",
+      "code_links_from_meta": "https://github.com/search?q=MLLMs%20Hallucinate%20when%20Information%20Distribution%20Drifts%20in%20Synergy%20Heads%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "当信息分布在协同注意力头中发生漂移时，多模态大模型会产生幻觉",
+      "institution": "未明确披露",
+      "summary_cn": "现有基于注意力的幻觉缓解方法依赖注意力权重等间接信号，无法准确反映幻觉生成背后的真实信息偏移，为此作者提出 HEAL（Head-lEvel information disentAnglement and caLibration，头级信息解耦与校准）。HEAL 先对多头输出做因果噪声干预以剔除因果冗余头，再用反事实双重差分（Difference-in-Differences）解耦剩余头内的信息分布，将注意力头划分为四类；分析得到的核心结论是：幻觉出现在“协同头”中信息分布偏离健康均衡时，而与模态专属头的数量或强度并无强相关。据此 HEAL 向协同头的 value 向量注入动态信息校准因子并主动调节视觉—语言依赖，把输出分布拉回事实证据。多款 MLLM 上的实验显示其能有效降低幻觉。",
+      "innovations": [
+        "提出 HEAL 框架，用因果噪声干预过滤因果冗余注意力头，再用反事实双重差分解耦头内信息分布，并把注意力头归为四类，给出头级可解释的幻觉归因",
+        "给出与既有认知不同的实证结论：幻觉的诱因是协同头（synergy heads）中信息分布偏离健康均衡，而非模态专属头的数量或强度，说明此前基于注意力权重的间接信号不可靠",
+        "在协同头的 value 向量上注入动态信息校准因子，并主动调节视觉—语言依赖关系，把输出分布导向事实证据而非仅做注意力重加权",
+        "在多款 MLLM 上验证方法可通用地降低幻觉，且路径简单、可解释性优于现有注意力缓解方案"
+      ],
+      "scenario_cn": "解决的是多模态大模型在图文问答、文档/截图理解等应用中凭空编造视觉内容、难以信任的问题，适合作为推理阶段即插即用的幻觉缓解与可靠性诊断模块，部署在需要高可信输出的多模态对话、质检与辅助决策系统中。",
+      "title_en": "MLLMs Hallucinate when Information Distribution Drifts in Synergy Heads",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2609.10244v1",
+      "title": "Two-Token Features and Small-Large Ensembles for VLM Hallucination Detection",
+      "abstract": "We present our system for the SHROOM-Visions 2026 shared task on character-level VLM hallucination detection. A small ($4$B-parameter) VLM is fine-tuned as a per-token classifier reading a two-token feature from its own hidden states, and is ensembled with a $\\sim$400B zero-shot VLM judge at prediction time. Both components see off-the-shelf OCR of any visible in-image text. We use synthetic hallucination data generated by the large model as a source of ensemble diversity, and use validation to select feature layer, training data and OCR grounding. Our official entry reaches mean Cor $0.487$ / Cor-lbl $0.387$ on the hidden test set, placing $6$th/$28$ (EN), $6$th/$21$ (FR), $8$th/$21$ (IT) and $7$th/$22$ (ZH) on the task's primary Cor-lbl metric.",
+      "published": "2026-09-10T00:00:00+00:00",
+      "updated": "2026-09-10T00:00:00+00:00",
+      "authors": [
+        "Eli Schwartz"
+      ],
+      "categories": [
+        "cs.CL"
+      ],
+      "abs_url": "https://arxiv.org/abs/2609.10244",
+      "pdf_url": "https://arxiv.org/pdf/2609.10244",
+      "score": 4.0,
+      "topics": [
+        {
+          "name": "多模态推理加速",
+          "slug": "multimodal-inference",
+          "hits": [
+            "vlm"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "vlm"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Two-Token%20Features%20and%20Small-Large%20Ensembles%20for%20VLM%20Hallucination%20Detection%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "We present our system for the SHROOM-Visions 2026 shared task on character-level VLM hallucination detection. A small ($4$B-parameter) VLM is fine-tuned as a per-token classifier reading a two-token feature from its own hidden states, and is ensembled with a $\\sim$400B zero-shot VLM judge at prediction time. Both components see off-the-shelf OCR of any visible in-image text. We use synthetic hallucination data generated by the large model as a source of ensemble diversity, and use validation to select feature layer, training data and OCR grounding. Our official entry reaches mean Cor $0.487$ / Cor-lbl $0.387$ on the hidden test set, placing $6$th/$28$ (EN), $6$th/$21$ (FR), $8$th/$21$ (IT) and $7$th/$22$ (ZH) on the task's primary Cor-lbl metric.",
+      "code_links_from_meta": "https://github.com/search?q=Two-Token%20Features%20and%20Small-Large%20Ensembles%20for%20VLM%20Hallucination%20Detection%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "面向 VLM 幻觉检测的双 Token 特征与小模型-大模型集成方案",
+      "institution": "未明确披露",
+      "summary_cn": "本文是作者参加 SHROOM-Visions 2026 字符级 VLM 幻觉检测共享任务的系统报告。方法上把一个 4B 参数的小型 VLM 微调为逐 Token 分类器，从自身隐状态中读取“双 Token 特征”（two-token feature）来判定图像中每个字符是否被幻觉化，并在预测阶段与一个约 400B 参数的零样本 VLM 裁判做集成；两个组件都接收对图像内可见文字的现成 OCR 结果作为 grounding。作者还用大模型生成的合成幻觉数据来制造集成成员之间的差异性，并通过验证集选择特征层、训练数据和 OCR 接地方式。官方提交在隐藏测试集上取得 mean Cor 0.487 / Cor-lbl 0.387，在任务主指标 Cor-lbl 上分别位列英文 6/28、法文 6/21、意大利文 8/21、中文 7/22。",
+      "innovations": [
+        "提出“双 Token 特征”表征：让 4B 小模型直接从自身隐状态读取两枚 Token 的表示做逐 Token 分类，而非依赖外部检测头或全序列打分。",
+        "设计小模型-大模型集成：把微调后的 4B 逐 Token 分类器与约 400B 零样本 VLM 裁判在推理时集成，兼顾细粒度定位与大模型判断力。",
+        "用大模型合成幻觉数据作为集成多样性的来源，并通过验证集系统性选择特征层、训练数据与 OCR grounding 配置。",
+        "在 SHROOM-Visions 2026 多语言隐藏测试集上，Cor-lbl 指标取得英文 6/28、法文 6/21、意大利文 8/21、中文 7/22 的名次，验证了该集成方案的多语言泛化性。"
+      ],
+      "scenario_cn": "解决多模态大模型在有文字图像上“看错/编造字符”的检测问题，适用于 OCR 后处理、文档与图表理解、票据/招牌识别等对字符级可信度有要求的多语言 VLM 线上系统，可在不重训大模型的前提下为已有 VLM 加挂幻觉定位模块。",
+      "title_en": "Two-Token Features and Small-Large Ensembles for VLM Hallucination Detection",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2609.10036v1",
+      "title": "Belief-State Engine: Augmenting LLMs for Principled Planning Under Partial Observability",
+      "abstract": "Large language model agents produce fluent action sequences across a wide range of tasks, yet they fail in characteristic ways once the environment becomes partially observable. Ambiguous feedback pushes them into premature commitments. A single informative observation can collapse their uncertainty onto the wrong hypothesis. Policies drift as the history grows. We trace these symptoms to a common structural cause. An LLM agent, as commonly deployed, is a history-conditioned policy with no explicit belief over hidden state. We propose an architectural fix. The Belief-State Engine (BSE) is an inference module placed outside the LLM. It maintains a Bayesian posterior over the latent states of a given POMDP (Partially Observable Markov Decision Process) model, and at each decision step it exposes only that posterior to the LLM. The raw action-observation log is not shown. We set out a minimal four-axiom specification of what a belief-consistent internal state must satisfy, and prove that the LLM paired with the BSE is a sound Markov policy on the belief MDP induced by the underlying POMDP. It therefore inherits the Bellman optimality guarantees of classical POMDP theory, provided the LLM is never exposed to the raw history. We evaluate the architecture on the Tiger POMDP and a red-team attack-graph task, against six baselines: a reactive LLM, Chain-of-Thought, ReAct, a natural-language belief tracker, QMDP, and POMCP. Across both domains, the BSE-augmented agent improves task return, belief calibration, and decision consistency. Ten targeted ablations isolate the contribution of each architectural choice confirms that the effect is not specific to any one model. Code, environment specifications, prompt templates, and seed logs accompany this paper.",
+      "published": "2026-09-10T00:00:00+00:00",
+      "updated": "2026-09-10T00:00:00+00:00",
+      "authors": [
+        "Arnab Chattopadhayay",
+        "Debdipta Halder"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.LG",
+        "cs.RO"
+      ],
+      "abs_url": "https://arxiv.org/abs/2609.10036",
+      "pdf_url": "https://arxiv.org/pdf/2609.10036",
+      "score": 3.8,
+      "topics": [
+        {
+          "name": "Agent Reasoning / Test-time Scaling",
+          "slug": "agent-reasoning",
+          "hits": [
+            "planning"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "planning"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Belief-State%20Engine%3A%20Augmenting%20LLMs%20for%20Principled%20Planning%20Under%20Partial%20Observability%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Large language model agents produce fluent action sequences across a wide range of tasks, yet they fail in characteristic ways once the environment becomes partially observable. Ambiguous feedback pushes them into premature commitments. A single informative observation can collapse their uncertainty onto the wrong hypothesis. Policies drift as the history grows. We trace these symptoms to a common structural cause. An LLM agent, as commonly deployed, is a history-conditioned policy with no explicit belief over hidden state. We propose an architectural fix. The Belief-State Engine (BSE) is an inference module placed outside the LLM. It maintains a Bayesian posterior over the latent states of a given POMDP (Partially Observable Markov Decision Process) model, and at each decision step it exposes only that posterior to the LLM. The raw action-observation log is not shown. We set out a minimal four-axiom specification of what a belief-consistent internal state must satisfy, and prove that the LLM paired with the BSE is a sound Markov policy on the belief MDP induced by the underlying POMDP. It therefore inherits the Bellman optimality guarantees of classical POMDP theory, provided the LLM is never exposed to the raw history. We evaluate the architecture on the Tiger POMDP and a red-team attack-graph task, against six baselines: a reactive LLM, Chain-of-Thought, ReAct, a natural-language belief tracker, QMDP, and POMCP. Across both domains, the BSE-augmented agent improves task return, belief calibration, and decision consistency. Ten targeted ablations isolate the contribution of each architectural choice confirms that the effect is not specific to any one model. Code, environment specifications, prompt templates, and seed logs accompany this paper.",
+      "code_links_from_meta": "https://github.com/search?q=Belief-State%20Engine%3A%20Augmenting%20LLMs%20for%20Principled%20Planning%20Under%20Partial%20Observability%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "信念状态引擎：增强大语言模型在部分可观测条件下的原则性规划",
+      "institution": "未明确披露",
+      "summary_cn": "论文指出 LLM 智能体在部分可观测环境中失败的共同结构原因：常见部署方式下的 LLM 是一个以历史为条件的策略，对隐藏状态没有显式信念，因而会被模糊反馈逼出过早承诺、被单条信息性观测错误地压缩不确定性、并随历史增长而策略漂移。为此提出信念状态引擎（BSE），这是一个置于 LLM 之外的推理模块，对给定 POMDP 的隐状态维护贝叶斯后验，每一步只把该后验暴露给 LLM，而不再展示原始动作-观测日志。论文给出信念一致内部状态必须满足的四公理最小规范，并证明 LLM+BSE 是底 POMDP 所诱导信念 MDP 上的可靠马尔可夫策略，从而继承经典 POMDP 理论的贝尔曼最优性保证。在 Tiger POMDP 与红队攻击图任务上，对比反应式 LLM、Chain-of-Thought、ReAct、自然语言信念跟踪器、QMDP 与 POMCP 六个基线，BSE 智能体在任务回报、信念校准和决策一致性上均取得提升，十组消融实验分离了各架构选择的贡献。",
+      "innovations": [
+        "把 LLM 智能体在部分可观测下的失败归因为“以历史为条件的策略、缺少显式隐状态信念”这一结构性问题，并用 POMDP 语言给出统一解释",
+        "提出信念状态引擎（BSE）：LLM 之外的贝叶斯后验推理模块，仅向后验而屏蔽原始动作-观测日志，从架构上防止不确定性坍缩与历史漂移",
+        "给出信念一致内部状态的四公理最小规范，并证明 LLM+BSE 构成信念 MDP 上的可靠马尔可夫策略，继承贝尔曼最优性保证",
+        "在 Tiger POMDP 与红队攻击图任务上与 CoT、ReAct、QMDP、POMCP 等六个基线系统对比，并通过十组定向消融验证效果不依赖某一特定模型"
+      ],
+      "scenario_cn": "适用于反馈模糊、信息不完整且历史不断增长的决策系统，例如安全红队攻击图推演、故障或告警信息不完备下的运维决策，以及需要在多轮交互中持续修正不确定性的规划型智能体；它解决的是 LLM 智能体在部分可观测环境下过早定论、信念失真和策略不稳定的问题。",
+      "title_en": "Belief-State Engine: Augmenting LLMs for Principled Planning Under Partial Observability",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2609.09681v1",
+      "title": "Beyond Accuracy: ARIA-Rubrics for Evaluating Audio Reasoning in Large Audio Language Models",
+      "abstract": "Large Audio Language Models (LALMs) have shown strong performance on audio reasoning benchmarks, but accuracy alone cannot distinguish true reasoning from superficial pattern matching, often overestimating reasoning ability since high scores may result from guessing rather than genuine audio understanding. Evaluating the reasoning process itself is essential for improving LALMs' reasoning ability, yet remains challenging. Existing methods either rely on costly human annotation or opaque LLM-as-judge approaches, making them impractical, biased, and lacking transparency. Moreover, audio reasoning introduces unique challenges absent in text-based settings, perceptual hallucination and cross-modal alignment between audio understanding and textual inference, hence text-based evaluation frameworks cannot be directly applied. Therefore, we propose ARIA-Rubrics (Audio Reasoning Integrity Assessment), a lightweight, annotation-free gold reasoning chains, automatic and transparent framework comprising six complementary metrics that evaluate audio reasoning quality across perceptual grounding, reasoning coherence, and answer consistency. We use Chain-of-Thought prompting as an externalization mechanism to make the reasoning process observable. Experiments on 9 models across 2 benchmarks identify three reasoning modes of current LALMs with actionable directions for future development, with ARIA-Rubrics achieving high correlation with human judgments. The code is available at the Github Repository.",
+      "published": "2026-09-10T00:00:00+00:00",
+      "updated": "2026-09-10T00:00:00+00:00",
+      "authors": [
+        "Yupei Li",
+        "Qiyang Sun",
+        "Mohamed Mady",
+        "Chenxi Wang",
+        "Zhengwei Gong",
+        "Berrak Sisman",
+        "Björn Schller"
+      ],
+      "categories": [
+        "cs.SD"
+      ],
+      "abs_url": "https://arxiv.org/abs/2609.09681",
+      "pdf_url": "https://arxiv.org/pdf/2609.09681",
+      "score": 3.8,
+      "topics": [
+        {
+          "name": "Agent Reasoning / Test-time Scaling",
+          "slug": "agent-reasoning",
+          "hits": [
+            "reasoning"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "reasoning"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Beyond%20Accuracy%3A%20ARIA-Rubrics%20for%20Evaluating%20Audio%20Reasoning%20in%20Large%20Audio%20Language%20Models%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Large Audio Language Models (LALMs) have shown strong performance on audio reasoning benchmarks, but accuracy alone cannot distinguish true reasoning from superficial pattern matching, often overestimating reasoning ability since high scores may result from guessing rather than genuine audio understanding. Evaluating the reasoning process itself is essential for improving LALMs' reasoning ability, yet remains challenging. Existing methods either rely on costly human annotation or opaque LLM-as-judge approaches, making them impractical, biased, and lacking transparency. Moreover, audio reasoning introduces unique challenges absent in text-based settings, perceptual hallucination and cross-modal alignment between audio understanding and textual inference, hence text-based evaluation frameworks cannot be directly applied. Therefore, we propose ARIA-Rubrics (Audio Reasoning Integrity Assessment), a lightweight, annotation-free gold reasoning chains, automatic and transparent framework comprising six complementary metrics that evaluate audio reasoning quality across perceptual grounding, reasoning coherence, and answer consistency. We use Chain-of-Thought prompting as an externalization mechanism to make the reasoning process observable. Experiments on 9 models across 2 benchmarks identify three reasoning modes of current LALMs with actionable directions for future development, with ARIA-Rubrics achieving high correlation with human judgments. The code is available at the Github Repository.",
+      "code_links_from_meta": "https://github.com/search?q=Beyond%20Accuracy%3A%20ARIA-Rubrics%20for%20Evaluating%20Audio%20Reasoning%20in%20Large%20Audio%20Language%20Models%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "超越准确率：用于评估大型音频语言模型音频推理能力的 ARIA-Rubrics",
+      "institution": "未明确披露",
+      "summary_cn": "论文指出大型音频语言模型（LALM）在音频推理基准上的高分可能来自猜测而非真实音频理解，仅用准确率会高估其推理能力，而现有评估要么依赖昂贵的人工标注，要么采用不透明的 LLM-as-judge。作者强调音频推理存在文本场景没有的难点——感知幻觉以及音频理解与文本推断之间的跨模态对齐，因此文本评估框架无法直接迁移。为此提出 ARIA-Rubrics（音频推理完整性评估），一个轻量、无需标注金标准推理链、自动且透明的框架，含六个互补指标，从感知基础、推理连贯性和答案一致性三个维度评估推理质量，并以 Chain-of-Thought 提示作为推理过程外化机制。在 2 个基准、9 个模型上的实验识别出当前 LALM 的三种推理模式，并给出可操作的改进方向，ARIA-Rubrics 与人工判断达到高相关性。",
+      "innovations": [
+        "提出 ARIA-Rubrics（Audio Reasoning Integrity Assessment）：无需标注金标准推理链、自动且透明的音频推理质量评估框架，替代昂贵人工标注与不透明 LLM-as-judge",
+        "设计覆盖感知基础（perceptual grounding）、推理连贯性（reasoning coherence）与答案一致性（answer consistency）三个维度的六个互补指标",
+        "指出音频推理特有的感知幻觉与跨模态对齐难题，说明文本评估框架不能直接套用，并引入 Chain-of-Thought 提示作为推理过程外化机制",
+        "在 2 个基准、9 个模型上归纳出当前 LALM 的三种推理模式并给出改进方向，验证框架与人工判断高度相关"
+      ],
+      "scenario_cn": "适用于音频大模型的评测与选型：在语音问答、音频事件理解、多模态语音助手等系统中，用于区分模型是真正做了基于听觉证据的推理还是靠模式匹配与猜测得分，并为模型迭代提供可解释的推理质量诊断依据。",
+      "title_en": "Beyond Accuracy: ARIA-Rubrics for Evaluating Audio Reasoning in Large Audio Language Models",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2609.10177v1",
+      "title": "Beyond Surface Imitation: Contrastive Modeling for Reasoning Path Alignment in Multimodal In-Context Learning",
+      "abstract": "In-context learning (ICL) is widely used in multimodal large language models (MLLMs) and achieves strong performance across a wide range of multimodal tasks. However, existing multimodal ICL methods often rely on surface level imitation of in-context demonstrations, making it difficult for MLLMs to align their responses with the reasoning path required by the given multimodal input. This limitation becomes more pronounced in complex multimodal tasks, thereby restricting further improvements in MLLM performance. To address this issue, we propose a new multimodal ICL framework that combines contrastive demonstration modeling with the self-refinement capability of MLLMs. Specifically, our framework reformulates each demonstration by explicitly contrasting a suboptimal response with a better response under the same input, together with a reasoning path that reveals how the response should be refined. This contrastive formulation makes the reasoning path toward the desired response more explicit and guides the MLLM beyond superficial imitation. Furthermore, because effective refinement depends on the current response, we introduce a response-conditioned retrieval mechanism to select demonstrations whose reasoning paths are more relevant to the current response. In addition, we use a lightweight alignment controller to predict response quality and determine whether further refinement is needed. Experiments on three types of multimodal tasks show that the proposed framework consistently improves MLLM performance, with particularly notable gains on visual question answering (VQA).",
+      "published": "2026-09-10T00:00:00+00:00",
+      "updated": "2026-09-10T00:00:00+00:00",
+      "authors": [
+        "Mingbo Yang",
+        "Wenqiang Wang",
+        "Zhaolu Kang",
+        "Peng Chen",
+        "Yannan Chen",
+        "Sunshang Wang",
+        "Yan Xiao"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "abs_url": "https://arxiv.org/abs/2609.10177",
+      "pdf_url": "https://arxiv.org/pdf/2609.10177",
+      "score": 3.8,
+      "topics": [
+        {
+          "name": "Agent Reasoning / Test-time Scaling",
+          "slug": "agent-reasoning",
+          "hits": [
+            "reasoning"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "reasoning"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Beyond%20Surface%20Imitation%3A%20Contrastive%20Modeling%20for%20Reasoning%20Path%20Alignment%20in%20Multimodal%20In-Context%20Learning%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "In-context learning (ICL) is widely used in multimodal large language models (MLLMs) and achieves strong performance across a wide range of multimodal tasks. However, existing multimodal ICL methods often rely on surface level imitation of in-context demonstrations, making it difficult for MLLMs to align their responses with the reasoning path required by the given multimodal input. This limitation becomes more pronounced in complex multimodal tasks, thereby restricting further improvements in MLLM performance. To address this issue, we propose a new multimodal ICL framework that combines contrastive demonstration modeling with the self-refinement capability of MLLMs. Specifically, our framework reformulates each demonstration by explicitly contrasting a suboptimal response with a better response under the same input, together with a reasoning path that reveals how the response should be refined. This contrastive formulation makes the reasoning path toward the desired response more explicit and guides the MLLM beyond superficial imitation. Furthermore, because effective refinement depends on the current response, we introduce a response-conditioned retrieval mechanism to select demonstrations whose reasoning paths are more relevant to the current response. In addition, we use a lightweight alignment controller to predict response quality and determine whether further refinement is needed. Experiments on three types of multimodal tasks show that the proposed framework consistently improves MLLM performance, with particularly notable gains on visual question answering (VQA).",
+      "code_links_from_meta": "https://github.com/search?q=Beyond%20Surface%20Imitation%3A%20Contrastive%20Modeling%20for%20Reasoning%20Path%20Alignment%20in%20Multimodal%20In-Context%20Learning%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "超越表面模仿：面向多模态上下文学习中推理路径对齐的对比建模",
+      "institution": "未明确披露",
+      "summary_cn": "针对现有多模态上下文学习（ICL）方法只能让 MLLM 表面模仿演示、难以对齐输入所需推理路径的问题，本文提出一种结合对比演示建模与 MLLM 自精炼能力的多模态 ICL 框架。该框架将每个演示重构为同一输入下的“次优回答 vs 更优回答”对比，并附带揭示回答应如何被改进的推理路径，同时引入以当前回答为条件的检索机制（response-conditioned retrieval）挑选推理路径更相关于当前回答的演示，并用轻量级对齐控制器（alignment controller）预测回答质量以决定是否继续精炼。在三类多模态任务上实验一致提升 MLLM 性能，其中视觉问答（VQA）增益尤为显著。",
+      "innovations": [
+        "将每条演示重构为同一输入下次优回答与更优回答的显式对比，并附加解释回答如何被改进的推理路径，使目标推理路径显式化，突破表面模仿",
+        "提出 response-conditioned retrieval 检索机制，依据当前生成回答来挑选推理路径更相关的演示，而非仅按输入相似度检索",
+        "设计轻量级 alignment controller 预测回答质量，自适应决定是否需要进一步自精炼，降低无效精炼开销",
+        "在三类多模态任务上验证，VQA 任务上取得最显著提升，证明对复杂多模态任务的推理路径对齐有效"
+      ],
+      "scenario_cn": "适用于多模态大模型的少样本/上下文学习场景，尤其是需要多步推理的视觉问答、图表理解等复杂多模态任务，可提升模型对演示的推理路径迁移能力与最终回答质量。",
+      "title_en": "Beyond Surface Imitation: Contrastive Modeling for Reasoning Path Alignment in Multimodal In-Context Learning",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2609.10154v1",
+      "title": "CompassOPD: Cross-Family On-Policy Distillation via Within-Family Likelihood Shifts",
+      "abstract": "On-policy distillation (OPD) provides dense token-level supervision on student-generated trajectories. Although OPD performs strongly when teacher and student belong to the same model family, we find that its effectiveness degrades in cross-family settings even after tokenizer alignment, with substantially stronger external teachers offering little additional improvement. To understand this disconnect, we decompose the cross-family OPD signal into two components: an offset between a low-capability teacher-family reference and the student, and the within-family log-likelihood shift from that reference to the strong teacher. Standard OPD transfers both components together, allowing the offset to dominate the update direction and obscure the changes associated with teacher capability improvements. We propose CompassOPD, which removes this offset and transfers the within-family shift, while a frozen student reference anchors updates to the student's initial policy. Thus, both teacher-side and student-side changes are measured within their respective model families. Experiments across three student families and multiple teacher families show that CompassOPD consistently outperforms standard cross-family OPD, improving average reasoning accuracy by up to 5.50 points. For an MoE teacher, we further construct the reference directly from the teacher checkpoint by reducing expert activation, eliminating the need for a separate reference checkpoint while retaining a 3.43-point gain over OPD.",
+      "published": "2026-09-10T00:00:00+00:00",
+      "updated": "2026-09-10T00:00:00+00:00",
+      "authors": [
+        "Naibin Gu",
+        "Qingyi Si",
+        "Chenxu Yang",
+        "Chuanyu Qin",
+        "Junhao Zhou",
+        "Peng Fu",
+        "Zheng Lin",
+        "Weiping Wang"
+      ],
+      "categories": [
+        "cs.LG"
+      ],
+      "abs_url": "https://arxiv.org/abs/2609.10154",
+      "pdf_url": "https://arxiv.org/pdf/2609.10154",
+      "score": 3.8,
+      "topics": [
+        "Model Compression / Quantization"
+      ],
+      "matched_keywords": [
+        "distillation"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=CompassOPD%3A%20Cross-Family%20On-Policy%20Distillation%20via%20Within-Family%20Likelihood%20Shifts%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "On-policy distillation (OPD) provides dense token-level supervision on student-generated trajectories. Although OPD performs strongly when teacher and student belong to the same model family, we find that its effectiveness degrades in cross-family settings even after tokenizer alignment, with substantially stronger external teachers offering little additional improvement. To understand this disconnect, we decompose the cross-family OPD signal into two components: an offset between a low-capability teacher-family reference and the student, and the within-family log-likelihood shift from that reference to the strong teacher. Standard OPD transfers both components together, allowing the offset to dominate the update direction and obscure the changes associated with teacher capability improvements. We propose CompassOPD, which removes this offset and transfers the within-family shift, while a frozen student reference anchors updates to the student's initial policy. Thus, both teacher-side and student-side changes are measured within their respective model families. Experiments across three student families and multiple teacher families show that CompassOPD consistently outperforms standard cross-family OPD, improving average reasoning accuracy by up to 5.50 points. For an MoE teacher, we further construct the reference directly from the teacher checkpoint by reducing expert activation, eliminating the need for a separate reference checkpoint while retaining a 3.43-point gain over OPD.",
+      "code_links_from_meta": "https://github.com/search?q=CompassOPD%3A%20Cross-Family%20On-Policy%20Distillation%20via%20Within-Family%20Likelihood%20Shifts%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "CompassOPD：通过家族内似然偏移实现跨家族在线策略蒸馏",
+      "institution": "未明确披露",
+      "summary_cn": "论文针对在线策略蒸馏（OPD）在教师与学生不属于同一模型家族时效果明显退化的问题——即便完成 tokenizer 对齐，更强的外部教师也几乎带不来额外增益。作者把跨家族 OPD 信号显式拆成两部分：低能力教师家族参考与学生的 offset，以及从该参考到强教师的家族内对数似然偏移（within-family likelihood shift）；标准 OPD 会同时迁移两者，使 offset 主导更新方向，掩盖教师能力提升所带来的变化。为此提出 CompassOPD，剔除 offset、只迁移家族内偏移，并用冻结的学生初始策略作为参考锚定更新，使教师侧与学生侧变化各自在所属家族内度量。在三个学生家族、多个教师家族上实验，平均推理准确率最高提升 5.50 分；对 MoE 教师还通过降低 expert activation 直接从教师 checkpoint 构造参考，省去额外参考模型并保留 3.43 分增益。",
+      "innovations": [
+        "把跨家族 OPD 监督信号分解为跨家族 offset 与家族内对数似然偏移两个分量，指出 offset 主导更新方向是跨家族 OPD 失效的根因",
+        "提出 CompassOPD：移除 offset、仅迁移家族内偏移，并以冻结的学生初始策略锚定学生侧变化，实现教师侧/学生侧变化各自在家族内度量",
+        "在三个学生家族与多个教师家族的实验中，平均推理准确率相比标准跨家族 OPD 最高提升 5.50 分",
+        "针对 MoE 教师，用降低 expert activation 的方式直接从教师 checkpoint 构造家族参考，无需单独参考 checkpoint，仍保持对标准 OPD 的 3.43 分增益"
+      ],
+      "scenario_cn": "解决把更强、但属于不同模型家族（含 MoE）的教师模型能力蒸馏到学生模型时“教师越强收益越小”的实际问题，适用于大模型蒸馏与推理能力提升训练流程，以及需要复用现成强模型而无法获得同家族教师权重压缩场景。",
+      "title_en": "CompassOPD: Cross-Family On-Policy Distillation via Within-Family Likelihood Shifts",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2609.09702v1",
+      "title": "Decision Shifts, Lost Label Functionality, and an Inconclusive Grounding Audit in Correctness-Gated Multi-Teacher Distillation",
+      "abstract": "Candidate decision correctness and rationale grounding are different objectives. We examine correctness-gated multi-teacher distillation in a fixed experiment. Eight arms share 4,330 sources, a 63.9M-parameter student, 12,990 optimization rows, 406 updates, evidence inputs, and a decoder; seven teacher-based arms use one fixed three-response pool. Three seeds are evaluated on 267 held-out examples. Relative to unfiltered distillation, the correctness-weighted arm differed in accuracy by +0.1660 (95% observed-matrix interval [0.0670, 0.2455]), five-label macro-F1 by +0.1323 ([0.0916, 0.1731]), and task-defined conditional unsafe-action rate by -0.4979 ([-0.5926, -0.3686]). These shifts do not imply uniformly better behavior. Source-label SFT had the highest mean macro-F1 (0.586). The weighted arm had zero Refuted recall in every seed, and two seeds assigned NotEnoughInfo to all 167 claim examples. In an availability-amended audit at one reference seed, weighted and unfiltered outputs had 0/20 versus 1/20 evidence-supported positives and 20/20 versus 19/20 positives containing unsupported material. Samples were non-paired, source overlap was not serialized, and the amendment followed automatic summarization but preceded annotation. The audit therefore cannot estimate a common-source grounding effect and is inconclusive about system-level improvement or harm. Hard filtering already achieved 0.660 accuracy, 0.530 macro-F1, and 0.135 conditional unsafe rate. The implemented weighted arm showed no demonstrated incremental decision benefit over hard filtering. This fixed-matrix failure analysis shows decision redistribution with lost label functionality; the available human audit does not establish a grounding gain.",
+      "published": "2026-09-10T00:00:00+00:00",
+      "updated": "2026-09-10T00:00:00+00:00",
+      "authors": [
+        "Xiaofei Feng"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "abs_url": "https://arxiv.org/abs/2609.09702",
+      "pdf_url": "https://arxiv.org/pdf/2609.09702",
+      "score": 3.8,
+      "topics": [
+        "Model Compression / Quantization"
+      ],
+      "matched_keywords": [
+        "distillation"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Decision%20Shifts%2C%20Lost%20Label%20Functionality%2C%20and%20an%20Inconclusive%20Grounding%20Audit%20in%20Correctness-Gated%20Multi-Teacher%20Distillation%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Candidate decision correctness and rationale grounding are different objectives. We examine correctness-gated multi-teacher distillation in a fixed experiment. Eight arms share 4,330 sources, a 63.9M-parameter student, 12,990 optimization rows, 406 updates, evidence inputs, and a decoder; seven teacher-based arms use one fixed three-response pool. Three seeds are evaluated on 267 held-out examples. Relative to unfiltered distillation, the correctness-weighted arm differed in accuracy by +0.1660 (95% observed-matrix interval [0.0670, 0.2455]), five-label macro-F1 by +0.1323 ([0.0916, 0.1731]), and task-defined conditional unsafe-action rate by -0.4979 ([-0.5926, -0.3686]). These shifts do not imply uniformly better behavior. Source-label SFT had the highest mean macro-F1 (0.586). The weighted arm had zero Refuted recall in every seed, and two seeds assigned NotEnoughInfo to all 167 claim examples. In an availability-amended audit at one reference seed, weighted and unfiltered outputs had 0/20 versus 1/20 evidence-supported positives and 20/20 versus 19/20 positives containing unsupported material. Samples were non-paired, source overlap was not serialized, and the amendment followed automatic summarization but preceded annotation. The audit therefore cannot estimate a common-source grounding effect and is inconclusive about system-level improvement or harm. Hard filtering already achieved 0.660 accuracy, 0.530 macro-F1, and 0.135 conditional unsafe rate. The implemented weighted arm showed no demonstrated incremental decision benefit over hard filtering. This fixed-matrix failure analysis shows decision redistribution with lost label functionality; the available human audit does not establish a grounding gain.",
+      "code_links_from_meta": "https://github.com/search?q=Decision%20Shifts%2C%20Lost%20Label%20Functionality%2C%20and%20an%20Inconclusive%20Grounding%20Audit%20in%20Correctness-Gated%20Multi-Teacher%20Distillation%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "决策偏移、标签功能丧失，以及正确性门控多教师蒸馏中一次无定论的事实依据审计",
+      "institution": "未明确披露",
+      "summary_cn": "论文在固定实验矩阵下考察 correctness-gated 多教师蒸馏，指出“候选决策正确性”与“理由事实依据（grounding）”是两个不同目标。八个实验臂共享 4,330 条来源、63.9M 参数学生模型、12,990 行优化样本、406 次更新、证据输入与同一 decoder，其中七个教师臂共用固定的三响应池，三个随机种子在 267 条留出样本上评估。相对未过滤蒸馏，correctness-weighted 臂准确率变化 +0.1660（95% observed-matrix 区间 [0.0670, 0.2455]）、五标签 macro-F1 +0.1323、任务定义的 conditional unsafe-action rate -0.4979。但这些偏移并不代表行为一致变好：source-label SFT 的平均 macro-F1 最高（0.586），加权臂在所有种子中 Refuted recall 均为 0，两个种子把全部 167 条 claim 样例判为 NotEnoughInfo；可用性修正后的人工审计中加权与未过滤输出分别为 0/20 与 1/20 证据支持正例、20/20 与 19/20 含无支撑材料。由于样本非配对、来源重叠未序列化、修正晚于自动摘要且早于标注，该审计无法估计同源 grounding 效应，对系统级改善或损害均无定论；硬过滤本身已达 0.660 准确率、0.530 macro-F1 与 0.135 conditional unsafe rate，加权臂未显示出相对硬过滤的增量决策收益。",
+      "innovations": [
+        "在完全固定、可复现的实验矩阵（4,330 来源、63.9M 学生、12,990 优化行、406 更新、3 种子、267 留出样本、单一三响应教师池）上对 correctness-gated 多教师蒸馏做失败分析，明确区分决策正确性与理由 grounding 两类目标",
+        "量化 correctness-weighted 臂相对未过滤蒸馏的决策再分配：准确率 +0.1660（95% observed-matrix 区间 [0.0670, 0.2455]）、五标签 macro-F1 +0.1323、conditional unsafe-action rate -0.4979",
+        "揭示“标签功能丧失”现象：加权臂所有种子 Refuted recall 为 0，两个种子将全部 167 条 claim 判为 NotEnoughInfo，而 source-label SFT 反而取得最高 macro-F1（0.586）",
+        "给出一次可用性修正的人工审计结果（加权 0/20、未过滤 1/20 证据支持正例）并论证其不可判定：样本非配对、来源重叠未序列化、修正发生于自动摘要之后但标注之前，因而无法估计同源 grounding 效应，也未能超过硬过滤的 0.660 / 0.530 / 0.135 基线"
+      ],
+      "scenario_cn": "用于多教师蒸馏中“是否值得用正确性门控加权教师信号”的工程取舍，避免把决策指标改观误当作事实依据可靠性提升；适用于含 Refuted / NotEnoughInfo 标签的主张审核、合规判定与 safety-critical 分类系统在发布前的蒸馏策略评估。",
+      "title_en": "Decision Shifts, Lost Label Functionality, and an Inconclusive Grounding Audit in Correctness-Gated Multi-Teacher Distillation",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2609.10317v1",
+      "title": "Decoupled Self-Forcing Distillation for Streaming Talking Head Generation",
+      "abstract": "Streaming talking-head generation produces each frame as its driving audio arrives, yet fidelity and efficiency have so far pulled in opposite directions: end-to-end methods condition a video diffusion model on audio directly and achieve high quality but only at large scale, while cheaper two-stage methods generate an intermediate motion representation and trail in fidelity. We argue the cost of the former lies in the target of fusion: the video latent is dominated by identity, appearance and background, none of which audio bears on, so coupling audio to every pixel blurs detail and wastes capacity. We instead fuse conditions in a low-dimensional identity-disentangled motion space, routing audio and motion captions by their temporal granularity, and generate motion latents with a small causal autoregressive transformer that a pretrained diffusion renderer turns into video. Conditions thus control video transitively, and high fidelity no longer requires a large backbone. Streaming this decomposition needs both models to be causal, and the exposure-bias problem could be solved by self-forcing given a bidirectional teacher. But there is no such teacher in motion space. Our decoupled self-forcing distillation resolves both models under one frozen teacher: conditioned on motion, it distills the renderer into a block-causal student; unconditionally, it scores rendered rollouts against real videos, supervising motion by the video it produces. This lifts the fidelity ceiling from the motion generator onto the stronger renderer. The two models run as parallel causal streams, reaching 15.4 FPS at 1.3 s latency with no quality degradation.",
+      "published": "2026-09-10T00:00:00+00:00",
+      "updated": "2026-09-10T00:00:00+00:00",
+      "authors": [
+        "Yanru An",
+        "Ruiyan Wang",
+        "Wenwu Wei",
+        "Rui Bu",
+        "Qi Wang",
+        "Hongwei Hu",
+        "Zhengxue Cheng",
+        "Rong Xie",
+        "Li Song",
+        "Wenjun Zhang"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "https://arxiv.org/abs/2609.10317",
+      "pdf_url": "https://arxiv.org/pdf/2609.10317",
+      "score": 3.8,
+      "topics": [
+        {
+          "name": "Model Compression / Quantization",
+          "slug": "model-compression",
+          "hits": [
+            "distillation"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "distillation"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Decoupled%20Self-Forcing%20Distillation%20for%20Streaming%20Talking%20Head%20Generation%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Streaming talking-head generation produces each frame as its driving audio arrives, yet fidelity and efficiency have so far pulled in opposite directions: end-to-end methods condition a video diffusion model on audio directly and achieve high quality but only at large scale, while cheaper two-stage methods generate an intermediate motion representation and trail in fidelity. We argue the cost of the former lies in the target of fusion: the video latent is dominated by identity, appearance and background, none of which audio bears on, so coupling audio to every pixel blurs detail and wastes capacity. We instead fuse conditions in a low-dimensional identity-disentangled motion space, routing audio and motion captions by their temporal granularity, and generate motion latents with a small causal autoregressive transformer that a pretrained diffusion renderer turns into video. Conditions thus control video transitively, and high fidelity no longer requires a large backbone. Streaming this decomposition needs both models to be causal, and the exposure-bias problem could be solved by self-forcing given a bidirectional teacher. But there is no such teacher in motion space. Our decoupled self-forcing distillation resolves both models under one frozen teacher: conditioned on motion, it distills the renderer into a block-causal student; unconditionally, it scores rendered rollouts against real videos, supervising motion by the video it produces. This lifts the fidelity ceiling from the motion generator onto the stronger renderer. The two models run as parallel causal streams, reaching 15.4 FPS at 1.3 s latency with no quality degradation.",
+      "code_links_from_meta": "https://github.com/search?q=Decoupled%20Self-Forcing%20Distillation%20for%20Streaming%20Talking%20Head%20Generation%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "面向流式说话头生成的解耦自强制蒸馏",
+      "institution": "未明确披露",
+      "summary_cn": "论文针对流式说话头生成中保真度与效率长期对立的问题展开：端到端方法直接把音频条件注入视频扩散模型，质量高但依赖大规模骨干；廉价的两阶段方法先生成中间运动表示再渲染，保真度落后。作者指出前者的代价在于融合目标——视频 latent 被身份、外观与背景主导，音频对这些信息毫无影响，把音频耦合到每个像素会模糊细节并浪费容量，因此改为在低维、身份解耦的运动空间（identity-disentangled motion space）中融合条件，按时间粒度分别路由音频与运动文本描述，并用小型因果自回归 Transformer 生成运动 latent，交由预训练扩散渲染器转成视频。由于运动空间不存在双向 teacher，论文提出解耦自强制蒸馏（decoupled self-forcing distillation）：在同一个冻结 teacher 下，条件分支把渲染器蒸馏为 block-causal 学生，无条件分支用渲染出的 rollout 与真实视频打分来反向监督运动生成。两个模型以并行因果流运行，实测达到 15.4 FPS、1.3 秒延迟且质量不下降。",
+      "innovations": [
+        "把音频条件融合从像素级视频 latent 迁移到低维身份解耦运动空间，条件是传递式地控制视频，使高保真不再需要大骨干网络。",
+        "提出解耦自强制蒸馏：仅用一个冻结 teacher 同时解决两个模型的因果化——以运动为条件把扩散渲染器蒸馏成 block-causal 学生，再无条件地用渲染 rollout 与真实视频对比来监督运动生成，从而把保真度上限从运动生成器抬到更强的渲染器上。",
+        "按时间粒度对音频与运动描述做条件路由，音频与运动分别生成，两个模型作为并行因果流实现流式推理。",
+        "在无质量退化前提下取得 15.4 FPS、1.3 秒延迟的流式生成结果。"
+      ],
+      "scenario_cn": "面向实时数字人与虚拟主播、视频会议化身、虚拟客服/陪伴等边到音频边出帧的低延迟视频生成系统，需要在中等算力下维持高保真流式渲染。",
+      "title_en": "Decoupled Self-Forcing Distillation for Streaming Talking Head Generation",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2609.09243v1",
+      "title": "In RAG We Trust? Measuring Robustness of Retrieval-Augmented Generation Under Document Poisoning",
+      "abstract": "Retrieval-augmented generation (RAG) grounds a language model in retrieved documents, which reduces hallucination but creates a new attack surface: if retrieved text is tampered with, the model may repeat the falsehood. We study how much a small quantized model, Llama 3.1 8B, degrades when a fraction of its retrieved context is poisoned. Three corruption strategies are tested, entity swap, number swap, and negation, each applied to zero, one, two, or three of the three retrieved passages, over a factorial sweep of 588 runs on a fact-checking task built from FEVER. Accuracy falls from 77.9% on clean context to 43.5% when all three passages are corrupted. Entity swap flips the largest share of answers that were correct on clean context. Number-based corruption stays flat while poisoned passages are a minority and jumps once they form a majority, a pattern we re-check with query-level bootstrap intervals. The model rarely invents new falsehoods; its dominant reaction is to abstain, and a lexical overlap proxy of unsupported generation falls under attack rather than rising. The study is a small-scale measurement with coarse automated labels; we treat the strategy contrasts as suggestive until decoding is controlled and stronger adjudication is in place.",
+      "published": "2026-09-10T00:00:00+00:00",
+      "updated": "2026-09-10T00:00:00+00:00",
+      "authors": [
+        "Iliano Fasolino"
+      ],
+      "categories": [
+        "cs.CR",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "abs_url": "https://arxiv.org/abs/2609.09243",
+      "pdf_url": "https://arxiv.org/pdf/2609.09243",
+      "score": 3.6,
+      "topics": [
+        {
+          "name": "RAG / Long Context",
+          "slug": "rag-long-context",
+          "hits": [
+            "rag",
+            "retrieval"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "rag",
+        "retrieval"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=In%20RAG%20We%20Trust%3F%20Measuring%20Robustness%20of%20Retrieval-Augmented%20Generation%20Under%20Document%20Poisoning%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Retrieval-augmented generation (RAG) grounds a language model in retrieved documents, which reduces hallucination but creates a new attack surface: if retrieved text is tampered with, the model may repeat the falsehood. We study how much a small quantized model, Llama 3.1 8B, degrades when a fraction of its retrieved context is poisoned. Three corruption strategies are tested, entity swap, number swap, and negation, each applied to zero, one, two, or three of the three retrieved passages, over a factorial sweep of 588 runs on a fact-checking task built from FEVER. Accuracy falls from 77.9% on clean context to 43.5% when all three passages are corrupted. Entity swap flips the largest share of answers that were correct on clean context. Number-based corruption stays flat while poisoned passages are a minority and jumps once they form a majority, a pattern we re-check with query-level bootstrap intervals. The model rarely invents new falsehoods; its dominant reaction is to abstain, and a lexical overlap proxy of unsupported generation falls under attack rather than rising. The study is a small-scale measurement with coarse automated labels; we treat the strategy contrasts as suggestive until decoding is controlled and stronger adjudication is in place.",
+      "code_links_from_meta": "https://github.com/search?q=In%20RAG%20We%20Trust%3F%20Measuring%20Robustness%20of%20Retrieval-Augmented%20Generation%20Under%20Document%20Poisoning%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "我们还能信任 RAG 吗？文档投毒下检索增强生成的鲁棒性度量",
+      "institution": "未明确披露",
+      "summary_cn": "论文测量 RAG 在检索文档被篡改时的退化程度，以量化后的 Llama 3.1 8B 为被测模型，在基于 FEVER 构建的事实核查任务上跑了 588 组全因子实验，对实体替换、数字替换、否定三种投毒策略各自作用于 3 篇检索段落中的 0/1/2/3 篇进行扫描。结果显示准确率从干净上下文的 77.9% 跌至三段全被污染时的 43.5%，其中实体替换翻转的原本正确回答比例最高；数字类污染在毒段落为少数时基本平稳，一旦成为多数便骤降，作者用查询级 bootstrap 置信区间复核了这一区制切换。模型在攻击下几乎不编造新的错误事实，主导反应是拒答，作为无支撑生成代理指标的词汇重叠度反而下降。",
+      "innovations": [
+        "对量化小模型 Llama 3.1 8B 系统对比实体替换、数字替换、否定三类文档投毒策略，并覆盖被污染段落数为 0/1/2/3 的完整组合",
+        "在 FEVER 衍生的 fact-checking 任务上构建 588 次运行的全因子扫描，给出 77.9%→43.5% 的准确率退化曲线",
+        "发现'毒段落属少数 vs. 属多数'两种行为区制：数字污染在少数时平稳、成为多数后骤降，并用查询级 bootstrap 区间复核该结论",
+        "揭示模型遭投毒后的主导反应是拒答而非编造，且词汇重叠度这一无支撑生成代理指标在攻击下不升反降"
+      ],
+      "scenario_cn": "面向依赖 RAG 做事实核查、知识问答的服务系统：当检索源（网页、文档库、索引）可能被投毒篡改时，模型准确率会腰斩式下降，研究为可信检索、防投毒防护与拒答策略设计提供风险量化依据。",
+      "title_en": "In RAG We Trust? Measuring Robustness of Retrieval-Augmented Generation Under Document Poisoning",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2609.10239v1",
+      "title": "LiteRAG: Cost-Efficient Graph-Based Retrieval-Augmented Generation",
+      "abstract": "Graph-based retrieval can improve multi-hop question answering, but existing approaches often incur high query-time costs and produce diffuse, oversized contexts that reduce generation efficiency. We present LiteRAG, a graph-based retrieval method that replaces expensive retrieval-time LLM control with query-conditioned algorithmic exploration and reasoning-chain context construction. On DistComp, a benchmark for multi-hop retrieval over distributed-systems papers, LiteRAG attains the highest overall quality among the evaluated methods (0.798) while reducing per-query latency by over 100$\\times$ and cost by over 99% relative to GraphRAG Global and DRIFT. On UltraDomain, it matches LinearRAG on overall quality while using about 14$\\times$ fewer tokens. An ablation study indicates that LiteRAG's query-adaptive thresholding and community-aware hub penalization are the main drivers of its token-efficiency gains.",
+      "published": "2026-09-10T00:00:00+00:00",
+      "updated": "2026-09-10T00:00:00+00:00",
+      "authors": [
+        "Daniel Alejandro Coll Tejeda",
+        "Pedro García López",
+        "Daniel Barcelona-Pons"
+      ],
+      "categories": [
+        "cs.IR",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "abs_url": "https://arxiv.org/abs/2609.10239",
+      "pdf_url": "https://arxiv.org/pdf/2609.10239",
+      "score": 3.6,
+      "topics": [
+        {
+          "name": "RAG / Long Context",
+          "slug": "rag-long-context",
+          "hits": [
+            "rag",
+            "retrieval"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "rag",
+        "retrieval"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=LiteRAG%3A%20Cost-Efficient%20Graph-Based%20Retrieval-Augmented%20Generation%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Graph-based retrieval can improve multi-hop question answering, but existing approaches often incur high query-time costs and produce diffuse, oversized contexts that reduce generation efficiency. We present LiteRAG, a graph-based retrieval method that replaces expensive retrieval-time LLM control with query-conditioned algorithmic exploration and reasoning-chain context construction. On DistComp, a benchmark for multi-hop retrieval over distributed-systems papers, LiteRAG attains the highest overall quality among the evaluated methods (0.798) while reducing per-query latency by over 100$\\times$ and cost by over 99% relative to GraphRAG Global and DRIFT. On UltraDomain, it matches LinearRAG on overall quality while using about 14$\\times$ fewer tokens. An ablation study indicates that LiteRAG's query-adaptive thresholding and community-aware hub penalization are the main drivers of its token-efficiency gains.",
+      "code_links_from_meta": "https://github.com/search?q=LiteRAG%3A%20Cost-Efficient%20Graph-Based%20Retrieval-Augmented%20Generation%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "LiteRAG：成本高效的图检索增强生成",
+      "institution": "未明确披露",
+      "summary_cn": "针对图检索增强生成做多跳问答时查询开销高、上下文冗长弥散的问题，论文提出 LiteRAG，用查询条件下的算法化图探索加推理链上下文构建，取代 GraphRAG 类方法依赖的检索期 LLM 控制。在面向分布式系统论文多跳检索的 DistComp 基准上，LiteRAG 取得被评估方法中最高的综合质量（0.798），相对 GraphRAG Global 与 DRIFT 把单查询延迟降低 100 倍以上、成本降低 99% 以上；在 UltraDomain 上它与 LinearRAG 综合质量持平，但 token 用量约为其 1/14。消融实验表明，查询自适应阈值与社区感知 hub 惩罚是 token 效率提升的主要来源。",
+      "innovations": [
+        "提出 LiteRAG，以查询条件下的算法化图探索 + 推理链上下文构建替代检索期 LLM 控制，消除 GraphRAG 类方法的高查询开销",
+        "提出查询自适应阈值（query-adaptive thresholding）机制，按查询动态裁剪图探索范围",
+        "提出社区感知 hub 惩罚（community-aware hub penalization），抑制高连接 hub 节点导致的上下文弥散与超长",
+        "构建多跳检索基准 DistComp（分布式系统论文语料），并在其上与 UltraDomain 验证：0.798 综合质量下延迟降 100x 以上、成本降 99% 以上，UltraDomain 上 token 用量约为 LinearRAG 的 1/14"
+      ],
+      "scenario_cn": "适用于面向大规模文档/论文库的多跳问答且对延迟与费用敏感的 RAG 服务，如企业知识库问答、技术文档检索，可在质量不降甚至提升的前提下大幅压缩单查询延迟与 token 成本。",
+      "title_en": "LiteRAG: Cost-Efficient Graph-Based Retrieval-Augmented Generation",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2609.09757v1",
+      "title": "Arti-JEPA: Adapting Video World Model to Real-Time MRI of the Vocal Tract for Speech-Production Analysis",
+      "abstract": "Real-time MRI (rtMRI) captures the dynamics of the entire vocal tract during speech, but labeled data are scarce and the modality - single-slice, grayscale, low-resolution - differs substantially from the natural videos that video foundation models are trained on. We introduce Arti-JEPA, a joint embedding predictive architecture to model vocal tract rtMRI by continuing its self-supervised objective on about 62h of unlabelled vocal-tract videos, and evaluate the frozen representation on three tasks: cross-domain phoneme prediction (on typical speakers), fluent-vs-disfluent classification (a corpus containing stuttered speech), and characterizing pre/post-operative transfer (after partial glossectomy). Three key findings emerge. (1) A temporal video prior decisively outperforms per-frame image encoders, and latent prediction (V-JEPA) is at least as strong as pixel reconstruction (VideoMAE), with the edge on fine-grained phonemes. (2) Domain adaptation is \\emph{task-dependent}: it roughly doubles cross-domain phoneme prediction $\\kappa$ (to 0.352) but does not help binary stuttering classification. (3) Arti-JEPA was able to recover phoneme signal from pre/post glossectomy speech --- an in-domain probe decodes patients at least as well as a typical speaker, indicating that the residual transfer gap is cross-speaker/domain misalignment, not surgical signal loss, and post-operative decoding does not fall below performance on pre-operative speech. Together, these position a frozen, domain-adapted rtMRI encoder as a reusable measurement tool for articulatory and clinical speech science.",
+      "published": "2026-09-10T00:00:00+00:00",
+      "updated": "2026-09-10T00:00:00+00:00",
+      "authors": [
+        "Hong Nguyen",
+        "Sean Foley",
+        "Christina Hagedorn",
+        "Yijing Lu",
+        "Sudarsana Reddy Kadiri",
+        "Dani Byrd",
+        "Shrikanth Narayanan"
+      ],
+      "categories": [
+        "cs.SD",
+        "cs.CV"
+      ],
+      "abs_url": "https://arxiv.org/abs/2609.09757",
+      "pdf_url": "https://arxiv.org/pdf/2609.09757",
+      "score": 3.4,
+      "topics": [
+        {
+          "name": "World Model",
+          "slug": "world-model",
+          "hits": [
+            "world model"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "world model"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Arti-JEPA%3A%20Adapting%20Video%20World%20Model%20to%20Real-Time%20MRI%20of%20the%20Vocal%20Tract%20for%20Speech-Production%20Analysis%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Real-time MRI (rtMRI) captures the dynamics of the entire vocal tract during speech, but labeled data are scarce and the modality - single-slice, grayscale, low-resolution - differs substantially from the natural videos that video foundation models are trained on. We introduce Arti-JEPA, a joint embedding predictive architecture to model vocal tract rtMRI by continuing its self-supervised objective on about 62h of unlabelled vocal-tract videos, and evaluate the frozen representation on three tasks: cross-domain phoneme prediction (on typical speakers), fluent-vs-disfluent classification (a corpus containing stuttered speech), and characterizing pre/post-operative transfer (after partial glossectomy). Three key findings emerge. (1) A temporal video prior decisively outperforms per-frame image encoders, and latent prediction (V-JEPA) is at least as strong as pixel reconstruction (VideoMAE), with the edge on fine-grained phonemes. (2) Domain adaptation is \\emph{task-dependent}: it roughly doubles cross-domain phoneme prediction $\\kappa$ (to 0.352) but does not help binary stuttering classification. (3) Arti-JEPA was able to recover phoneme signal from pre/post glossectomy speech --- an in-domain probe decodes patients at least as well as a typical speaker, indicating that the residual transfer gap is cross-speaker/domain misalignment, not surgical signal loss, and post-operative decoding does not fall below performance on pre-operative speech. Together, these position a frozen, domain-adapted rtMRI encoder as a reusable measurement tool for articulatory and clinical speech science.",
+      "code_links_from_meta": "https://github.com/search?q=Arti-JEPA%3A%20Adapting%20Video%20World%20Model%20to%20Real-Time%20MRI%20of%20the%20Vocal%20Tract%20for%20Speech-Production%20Analysis%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "Arti-JEPA：将视频世界模型适配到声道实时 MRI 以用于语音产出分析",
+      "institution": "未明确披露",
+      "summary_cn": "针对实时磁共振（rtMRI）能捕捉说话时整个声道动态、但标注数据稀缺且单切片灰度低分辨率与自然视频基础模型预训练分布差异极大的问题，作者提出 Arti-JEPA：在约 62 小时无标注声道视频上延续自监督联合嵌入预测目标，并对冻结表示在三个任务上评估——跨域音素预测、流利/不流利（含口吃语料）二分类、以及部分舌切除手术前后的迁移刻画。主要发现有三：时序视频先验显著优于逐帧图像编码器，且 latent 预测（V-JEPA）至少与像素重建（VideoMAE）相当，在细粒度音素上更有优势；域自适应是任务相关的，可把跨域音素预测 kappa 约提升一倍至 0.352，但对口吃二分类没有帮助；Arti-JEPA 仍能从术前/术后舌切除语音中恢复音素信号，域内探针解码患者的表现不低于典型说话人，说明残余迁移差距来自跨说话人/跨域失配而非手术造成的信号丢失，且术后解码不低于术前。",
+      "innovations": [
+        "提出 Arti-JEPA，把 V-JEPA 式联合嵌入预测自监督目标延续到约 62 小时无标注 rtMRI 声道视频，得到可复用的冻结、域自适应编码器。",
+        "实验证明时序视频先验决定性地优于逐帧图像编码器，latent 预测（V-JEPA）至少与像素重建（VideoMAE）一样强，并在细粒度音素上占优。",
+        "揭示域自适应具有任务依赖性：跨域音素预测 kappa 约翻倍到 0.352，但对口吃/流利二分类无增益。",
+        "证明部分舌切除患者术前/术后语音的音素仍可被解码，残余差距归因于跨说话人与跨域错配而非手术信号损失，术后解码不低于术前。",
+        "构建了覆盖跨域音素预测、口吃分类、术前术后迁移三类任务的冻结表示评测范式，定位为可复用的发音与临床语音科学测量工具。"
+      ],
+      "scenario_cn": "为发音学与临床语音科学提供可复用的 rtMRI 测量编码器，支持跨说话人音素解码、口吃/流利判别以及舌切除等手术前后的语音功能对比评估，降低对昂贵逐任务标注数据的依赖。",
+      "title_en": "Arti-JEPA: Adapting Video World Model to Real-Time MRI of the Vocal Tract for Speech-Production Analysis",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2609.09597v1",
+      "title": "Compact Visuotactile World Models for Lifting: Prediction, Reward Alignment, and Force Constraints",
+      "abstract": "Accurate contact prediction is useful for robotic manipulation only if it supports effective decisions. We investigate this connection using a compact, randomly initialized visuotactile world model, trajectory-level uncertainty calibration, and behavior-initialized actor-critic learning in imagination. On 160 MuJoCo Lift episodes, adding touch reduces endpoint-force prediction error from 1.058 to 0.228 N and interval-peak error from 2.724 to 0.523 N across three training seeds. However, tactile persistence achieves lower errors of 0.095 and 0.498 N, respectively. Two exploratory control rounds comprise 680 executions on 40 independent test initial conditions. A matched reward revision on fresh test environments increases in-distribution 10 cm lifting success from 20.0% to 93.3%, while success within an 8 N per-finger budget reaches only 33.3%, compared with 70.0% for force feedback. Calibration margins reduce force violations at the cost of task completion. In a separate study of public GelSight recordings, a force regressor achieves 0.04234 N error, but frame-level calibration covers only 15.80% of complete trajectories; trajectory-level calibration raises this to 87.36% at nominal 90% coverage. Together, these findings distinguish improvements in sensing and task reward from improvements in force-constrained control. The evidence is limited to public sensing records and simulator execution, without a demonstrated transfer between them.",
+      "published": "2026-09-10T00:00:00+00:00",
+      "updated": "2026-09-10T00:00:00+00:00",
+      "authors": [
+        "Qinzhen Ma",
+        "Sida Peng"
+      ],
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "abs_url": "https://arxiv.org/abs/2609.09597",
+      "pdf_url": "https://arxiv.org/pdf/2609.09597",
+      "score": 3.4,
+      "topics": [
+        {
+          "name": "World Model",
+          "slug": "world-model",
+          "hits": [
+            "world model"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "world model"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Compact%20Visuotactile%20World%20Models%20for%20Lifting%3A%20Prediction%2C%20Reward%20Alignment%2C%20and%20Force%20Constraints%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Accurate contact prediction is useful for robotic manipulation only if it supports effective decisions. We investigate this connection using a compact, randomly initialized visuotactile world model, trajectory-level uncertainty calibration, and behavior-initialized actor-critic learning in imagination. On 160 MuJoCo Lift episodes, adding touch reduces endpoint-force prediction error from 1.058 to 0.228 N and interval-peak error from 2.724 to 0.523 N across three training seeds. However, tactile persistence achieves lower errors of 0.095 and 0.498 N, respectively. Two exploratory control rounds comprise 680 executions on 40 independent test initial conditions. A matched reward revision on fresh test environments increases in-distribution 10 cm lifting success from 20.0% to 93.3%, while success within an 8 N per-finger budget reaches only 33.3%, compared with 70.0% for force feedback. Calibration margins reduce force violations at the cost of task completion. In a separate study of public GelSight recordings, a force regressor achieves 0.04234 N error, but frame-level calibration covers only 15.80% of complete trajectories; trajectory-level calibration raises this to 87.36% at nominal 90% coverage. Together, these findings distinguish improvements in sensing and task reward from improvements in force-constrained control. The evidence is limited to public sensing records and simulator execution, without a demonstrated transfer between them.",
+      "code_links_from_meta": "https://github.com/search?q=Compact%20Visuotactile%20World%20Models%20for%20Lifting%3A%20Prediction%2C%20Reward%20Alignment%2C%20and%20Force%20Constraints%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "面向举取任务的紧凑型视触觉世界模型：预测、奖励对齐与力约束",
+      "institution": "未明确披露",
+      "summary_cn": "论文检验触觉感知能否真正改善受接触力约束的决策，构建了一个参数量紧凑、随机初始化的视触觉世界模型（compact visuotactile world model），并配合轨迹级不确定性校准与行为初始化（behavior-initialized）的 actor-critic 在想象中训练。在 160 条 MuJoCo Lift 回合、3 个随机种子上，加入触觉把末端力预测误差从 1.058 N 降到 0.228 N、区间峰值误差从 2.724 N 降到 0.523 N，而触觉持续输入（tactile persistence）进一步做到 0.095 N 与 0.498 N。两轮探索性控制实验共 680 次执行、40 个独立测试初始条件：修正奖励后同分布 10 cm 举取成功率从 20.0% 升至 93.3%，但满足每指 8 N 力预算的成功率只有 33.3%，明显低于力反馈策略的 70.0%。另在公开 GelSight 记录上，力回归器误差为 0.04234 N，帧级校准仅覆盖 15.80% 的完整轨迹，轨迹级校准在名义 90% 覆盖率下把该比例提到 87.36%。",
+      "innovations": [
+        "将紧凑、随机初始化的视触觉世界模型与行为初始化的 actor-critic 想象训练结合，把接触力预测指标和下游控制决策显式挂钩，而非只报告感知误差。",
+        "提出轨迹级不确定性校准：在公开 GelSight 记录上把覆盖完整轨迹的比例从帧级校准的 15.80% 提升到名义 90% 覆盖率下的 87.36%，并发现收紧校准裕度能减少力越界但会牺牲任务完成率。",
+        "通过对照实验把三类改进拆开评估——感知改进、奖励对齐、力约束控制：奖励修正使 10 cm 举取成功率从 20.0% 增至 93.3%，而 8 N 每指力预算下成功率仅 33.3%，力反馈方案为 70.0%。",
+        "发现输入触觉的时间形式很关键：触觉持续（tactile persistence）在世界模型力预测上误差低于逐帧触觉（0.095 N / 0.498 N 对 0.228 N / 0.523 N）。"
+      ],
+      "scenario_cn": "面向机器人在真实接触中必须控制接触力的操作场景，例如限力抓取、易碎或易滑物体的举取，需要策略在达成任务的同时不超出每指力预算。其价值在于用世界模型在仿真中训练并评估力受限控制策略，并帮助判断投入触觉传感器究竟能否换来可用的力约束性能。",
+      "title_en": "Compact Visuotactile World Models for Lifting: Prediction, Reward Alignment, and Force Constraints",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2609.10050v1",
+      "title": "Grounding Generated Video Plans in Simulation Towards Versatile Dexterous Controllers",
+      "abstract": "Generated hand-object interaction (HOI) videos provide a controllable way to propose manipulation motions. Simulation-based HOI tracking can translate such kinematic references into feasible low-level control, but its scalability is limited by the lack of reliable reference motions. We therefore combine generated videos with simulation-based HOI grounding: during training, generated videos provide diverse motion references for learning a multi-object, multi-trajectory HOI tracker, and at deployment, the video model produces motion plans that are executed by the learned tracker. In particular, we propose a method that enables scalable reference generation by HOI reconstruction with minimal manual intervention and successfully grounds more than 1,500 generated videos in simulation, achieving success rates over 25 percentage points higher than those of baselines during simulation-based training. In real-world closed-loop experiments, it achieves diverse grasps, including functional grasps, non-prehensile manipulation, and post-grasp object-pose tracking. Videos and code are available at this https URL .",
+      "published": "2026-09-10T00:00:00+00:00",
+      "updated": "2026-09-10T00:00:00+00:00",
+      "authors": [
+        "Tianyue Wu",
+        "Boyuan An",
+        "Shuqi Zhao",
+        "Heyu Guo",
+        "Wanli Xing",
+        "Yi Ma",
+        "Kaifeng Zhang",
+        "Ruihai Wu",
+        "Masayoshi Tomizuka"
+      ],
+      "categories": [
+        "cs.RO"
+      ],
+      "abs_url": "https://arxiv.org/abs/2609.10050",
+      "pdf_url": "https://arxiv.org/pdf/2609.10050",
+      "score": 3.4,
+      "topics": [
+        {
+          "name": "World Model",
+          "slug": "world-model",
+          "hits": [
+            "simulation"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "simulation"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Grounding%20Generated%20Video%20Plans%20in%20Simulation%20Towards%20Versatile%20Dexterous%20Controllers%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Generated hand-object interaction (HOI) videos provide a controllable way to propose manipulation motions. Simulation-based HOI tracking can translate such kinematic references into feasible low-level control, but its scalability is limited by the lack of reliable reference motions. We therefore combine generated videos with simulation-based HOI grounding: during training, generated videos provide diverse motion references for learning a multi-object, multi-trajectory HOI tracker, and at deployment, the video model produces motion plans that are executed by the learned tracker. In particular, we propose a method that enables scalable reference generation by HOI reconstruction with minimal manual intervention and successfully grounds more than 1,500 generated videos in simulation, achieving success rates over 25 percentage points higher than those of baselines during simulation-based training. In real-world closed-loop experiments, it achieves diverse grasps, including functional grasps, non-prehensile manipulation, and post-grasp object-pose tracking. Videos and code are available at this https URL .",
+      "code_links_from_meta": "https://github.com/search?q=Grounding%20Generated%20Video%20Plans%20in%20Simulation%20Towards%20Versatile%20Dexterous%20Controllers%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "将生成视频规划接地到仿真中，以获得通用灵巧操作控制器",
+      "institution": "未明确披露",
+      "summary_cn": "论文把生成式手-物交互（HOI）视频与仿真中的 HOI 接地（grounding）结合：训练阶段用生成视频提供多物体、多轨迹的运动参考，学习一个 HOI 跟踪器；部署阶段由视频模型产出操作运动规划，交由学到的跟踪器执行，从而把生成模型仅用于提出可行的运动学参考，而把物理可行性交给仿真跟踪求解。方法采用人工干预极少的 HOI 重建流程实现可扩展的参考生成，在仿真中成功接地超过 1500 段生成视频，仿真训练阶段成功率比基线高出 25 个百分点以上。真机闭环实验中实现了多样化抓取，涵盖功能性抓取、非抓取式操作（non-prehensile manipulation）以及抓取后的物体位姿跟踪。",
+      "innovations": [
+        "提出“生成视频做规划 + 仿真 HOI 接地”的分解式框架：视频模型负责可泛化的运动提案，多物体、多轨迹 HOI 跟踪器负责把参考转为可行低层控制，绕开高质量参考运动稀缺这一扩展性瓶颈。",
+        "设计低人工干预的 HOI 重建流水线来批量生成运动参考，在仿真中成功接地超过 1500 段生成视频，验证了参考数据的可扩展性。",
+        "在基于仿真的训练中成功率比基线高出 25 个百分点以上，并将同一套控制器迁移到真机闭环，完成功能性抓取、非抓取式推/拨操作和抓取后物体位姿跟踪。",
+        "以单个 HOI 跟踪器同时覆盖多物体、多轨迹参考，使一套控制器可执行由生成视频给出的多样操作规划。",
+        "公开了演示视频与代码，便于复现生成视频到仿真的接地流程。"
+      ],
+      "scenario_cn": "用于解决灵巧手操作中“有好想法但缺可靠参考动作”的落地难题：可用少量视频生成模型快速提出抓取与操作方案，再由仿真跟踪器转成可执行控制，适用于需要覆盖多物体、多任务形态的通用灵巧操作机器人系统与数据/策略训练管线。",
+      "title_en": "Grounding Generated Video Plans in Simulation Towards Versatile Dexterous Controllers",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2609.09800v1",
+      "title": "HBFSim: Fast and Faithful Simulation of High-Bandwidth Flash Under Real GPU Execution",
+      "abstract": "Serving a large language model (LLM) is limited by memory capacity. High-Bandwidth Flash (HBF) stacks NAND flash inside the accelerator package, one tier below high-bandwidth memory (HBM); the specification was published on August 3, 2026, and the first inference devices are expected to sample in early 2027. Decisions about capacity and data placement cannot wait for silicon. No existing method settles those decisions: a storage simulator replaying a recorded access sequence never executes the workload, a GPU simulator does not run the real compute kernels, and a cycle-accurate simulator cannot finish one LLM inference run. We present HBFSim, the first evaluation platform that applies HBF timing, capacity, and thermal effects to a real inference workload while that workload executes on a real GPU. HBFSim rewrites PTX, the intermediate code NVIDIA's compiler emits, and gates kernel launches; issue is separated from consumption, so real hardware supplies the computation that hides an access. Timing comes from measurements of a real device rather than a parameter sheet, and junction temperature sets both the rate HBF sustains and the retention deadline that forces refresh writes. HBFSim matches the measured device exactly at all six calibration breakpoints, with zero unsafe launches, and an unmodified vLLM 0.15.1 serving Qwen3-30B-A3B returns the token identifiers of the uninstrumented baseline. The device fast path serves the same Qwen3-30B-A3B case in 2s against 44s on the detailed reference path, 20.8x faster. Before HBF parts sample, HBFSim lets a designer measure a capacity or placement decision under a real workload instead of assuming one.",
+      "published": "2026-09-10T00:00:00+00:00",
+      "updated": "2026-09-10T00:00:00+00:00",
+      "authors": [
+        "Yanpeng Hu",
+        "Yiwei Yang",
+        "Yuanwu Zhu",
+        "Yusheng Zheng",
+        "Wei Zhang",
+        "Andi Quinn"
+      ],
+      "categories": [
+        "cs.AR",
+        "cs.ET"
+      ],
+      "abs_url": "https://arxiv.org/abs/2609.09800",
+      "pdf_url": "https://arxiv.org/pdf/2609.09800",
+      "score": 3.4,
+      "topics": [
+        {
+          "name": "World Model",
+          "slug": "world-model",
+          "hits": [
+            "simulation"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "simulation"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=HBFSim%3A%20Fast%20and%20Faithful%20Simulation%20of%20High-Bandwidth%20Flash%20Under%20Real%20GPU%20Execution%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Serving a large language model (LLM) is limited by memory capacity. High-Bandwidth Flash (HBF) stacks NAND flash inside the accelerator package, one tier below high-bandwidth memory (HBM); the specification was published on August 3, 2026, and the first inference devices are expected to sample in early 2027. Decisions about capacity and data placement cannot wait for silicon. No existing method settles those decisions: a storage simulator replaying a recorded access sequence never executes the workload, a GPU simulator does not run the real compute kernels, and a cycle-accurate simulator cannot finish one LLM inference run. We present HBFSim, the first evaluation platform that applies HBF timing, capacity, and thermal effects to a real inference workload while that workload executes on a real GPU. HBFSim rewrites PTX, the intermediate code NVIDIA's compiler emits, and gates kernel launches; issue is separated from consumption, so real hardware supplies the computation that hides an access. Timing comes from measurements of a real device rather than a parameter sheet, and junction temperature sets both the rate HBF sustains and the retention deadline that forces refresh writes. HBFSim matches the measured device exactly at all six calibration breakpoints, with zero unsafe launches, and an unmodified vLLM 0.15.1 serving Qwen3-30B-A3B returns the token identifiers of the uninstrumented baseline. The device fast path serves the same Qwen3-30B-A3B case in 2s against 44s on the detailed reference path, 20.8x faster. Before HBF parts sample, HBFSim lets a designer measure a capacity or placement decision under a real workload instead of assuming one.",
+      "code_links_from_meta": "https://github.com/search?q=HBFSim%3A%20Fast%20and%20Faithful%20Simulation%20of%20High-Bandwidth%20Flash%20Under%20Real%20GPU%20Execution%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "HBFSim：真实 GPU 执行下高带宽闪存的快速且忠实的仿真",
+      "institution": "未明确披露",
+      "summary_cn": "论文针对 HBF（High-Bandwidth Flash，在加速器封装内堆叠 NAND 闪存、位于 HBM 下一层级）在芯片尚未流片前无法评估容量与数据放置决策的问题——存储仿真器只重放访问序列而不真正执行负载，GPU 仿真器不跑真实计算内核，cycle-accurate 仿真器连一次 LLM 推理都跑不完——提出 HBFSim 评估平台。HBFSim 改写 NVIDIA 编译器输出的 PTX 中间代码并对内核启动进行门控，把发射（issue）与消费（consumption）分离，由真实硬件提供计算来隐藏访问延迟；时序参数取自真实器件实测而非参数手册，结温（junction temperature）同时决定 HBF 可持续的带宽速率和强制刷新写入的保持时间（retention deadline）。结果显示 HBFSim 在全部六个校准断点上与实测器件完全吻合、零不安全启动，未修改的 vLLM 0.15.1 服务 Qwen3-30B-A3B 时返回与未插桩基线完全相同的 token 标识；器件快速路径跑同一 Qwen3-30B-A3B 用例仅需 2 秒，而详细参考路径需 44 秒，加速 20.8 倍。",
+      "innovations": [
+        "PTX 层改写 + 内核启动门控：直接改写 NVIDIA 编译器输出的 PTX 而非在框架层插桩，并将发射与消费解耦，使真实 GPU 计算可以掩盖 HBF 访问延迟，从而在真实推理负载下评测而非重放访问轨迹",
+        "实测驱动的时序与热模型：时序参数来自真实 HBF 器件测量（而非参数表），并由结温同时约束可持续带宽速率与保留期限触发的刷新写入，能刻画容量/热-性能耦合",
+        "校准与正确性双重保证：在六个校准断点上与实测器件精确吻合且零不安全启动；未修改的 vLLM 0.15.1 服务 Qwen3-30B-A3B 返回与未插桩基线完全一致的 token 标识，保证仿真不改变语义",
+        "双路径性能设计：器件快速路径 2 秒完成 Qwen3-30B-A3B 用例，对比详细参考路径 44 秒，取得 20.8 倍加速，使设计空间探索在可接受时间内完成"
+      ],
+      "scenario_cn": "面向 HBF 器件 2027 年初才送样、但 LLM 推理服务的容量规划与数据放置决策必须提前定案的现实需求，让系统/硬件设计者在真实推理负载（如 vLLM + Qwen3-30B-A3B）下量化不同容量与放置方案的性能与热约束，而不是靠假设拍板；适用于加速器封装内闪存层级、长上下文/大模型推理服务的内存-存储协同设计评估。",
+      "title_en": "HBFSim: Fast and Faithful Simulation of High-Bandwidth Flash Under Real GPU Execution",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2609.10058v1",
+      "title": "NOPE-HYPE: A Structured Simulation Workflow for Robust Speech-to-Text Across Diverse Acoustic Environments",
+      "abstract": "Robust speech-to-text translation systems should perform reliably across diverse acoustic conditions, yet practical pipelines lack controllable tools for systematic environment exploration. Large speech models remain sensitive to unseen acoustic conditions, as training data rarely cover the full range of real this http URL present NOPEHYPE, a structured training workflow that combines a controllable environment simulator, coverage-optimal environment reduction on Power Spectral Density (PSD) templates, and a small, interpretable hyperparameter search over simulator knobs. We show that simulator-generated noise achieves performance comparable to balanced realnoise training across Whisper and SeamlessM4T models, provide principled environment prototype sets, and identify practical default simulator configurations from a structured 27-run hyperparameter sweep.",
+      "published": "2026-09-10T00:00:00+00:00",
+      "updated": "2026-09-10T00:00:00+00:00",
+      "authors": [
+        "Niramay M. Patel",
+        "Bibek Behera",
+        "Raksha Sharma"
+      ],
+      "categories": [
+        "cs.SD",
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "abs_url": "https://arxiv.org/abs/2609.10058",
+      "pdf_url": "https://arxiv.org/pdf/2609.10058",
+      "score": 3.4,
+      "topics": [
+        {
+          "name": "World Model",
+          "slug": "world-model",
+          "hits": [
+            "simulation"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "simulation"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=NOPE-HYPE%3A%20A%20Structured%20Simulation%20Workflow%20for%20Robust%20Speech-to-Text%20Across%20Diverse%20Acoustic%20Environments%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Robust speech-to-text translation systems should perform reliably across diverse acoustic conditions, yet practical pipelines lack controllable tools for systematic environment exploration. Large speech models remain sensitive to unseen acoustic conditions, as training data rarely cover the full range of real this http URL present NOPEHYPE, a structured training workflow that combines a controllable environment simulator, coverage-optimal environment reduction on Power Spectral Density (PSD) templates, and a small, interpretable hyperparameter search over simulator knobs. We show that simulator-generated noise achieves performance comparable to balanced realnoise training across Whisper and SeamlessM4T models, provide principled environment prototype sets, and identify practical default simulator configurations from a structured 27-run hyperparameter sweep.",
+      "code_links_from_meta": "https://github.com/search?q=NOPE-HYPE%3A%20A%20Structured%20Simulation%20Workflow%20for%20Robust%20Speech-to-Text%20Across%20Diverse%20Acoustic%20Environments%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "NOPE-HYPE：面向多样化声学环境鲁棒语音转文本的结构化仿真工作流",
+      "institution": "未明确披露",
+      "summary_cn": "论文指出大型语音模型对未见声学条件仍然敏感（训练数据难以覆盖真实噪声的完整范围），而实用语音转文本流水线缺乏可控的环境探索工具，因此提出 NOPE-HYPE 结构化训练工作流：把可控环境仿真器、基于功率谱密度（PSD）模板的覆盖率最优环境约简、以及对仿真器旋钮的小规模可解释超参搜索三者组合起来。作者证明仿真器生成的噪声在 Whisper 与 SeamlessM4T 模型上可取得与平衡真实噪声训练相当的性能，给出有原则的环境原型集，并通过 27 组结构化超参扫描确定可用的默认仿真器配置。",
+      "innovations": [
+        "把噪声环境建模为 PSD 模板上的组合覆盖问题，提出覆盖率最优的环境约简方法，从而以少量有原则的原型环境集合覆盖多样声学条件，替代凭经验挑噪声的做法",
+        "将可控环境仿真器与小型、可解释的仿真器旋钮超参搜索结合，形成端到端可复现的训练工作流，让环境探索从试错变为结构化流程",
+        "在 Whisper 和 SeamlessM4T 两个模型族上实证仿真噪声训练与平衡真实噪声训练性能相当，验证仿真数据可作为真实噪声的可行替代",
+        "通过 27 组超参扫描给出可迁移的默认仿真器配置，降低后续复现与部署的调参成本"
+      ],
+      "scenario_cn": "适用于在真实录音条件不可控、真实噪声语料难以覆盖的场景下构建鲁棒语音识别/语音翻译系统；帮助语音团队用可控仿真环境系统性地评测和提升模型在未见声学条件下的表现，并直接复用其默认仿真配置做训练数据增强。",
+      "title_en": "NOPE-HYPE: A Structured Simulation Workflow for Robust Speech-to-Text Across Diverse Acoustic Environments",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2609.10008v1",
+      "title": "Beyond Similarity: Foundation Models as an Efficient Backbone for Training-Free Composed Video Retrieval",
+      "abstract": "Composed video retrieval (CoVR) searches a gallery for the target video that realizes a natural-language modification of a source clip. However, at gallery scale, this creates a fundamental tension: compact embeddings enable efficient, reusable search but can miss the transient actions, state changes, and subtle constraints that demand fine-grained video reasoning, whereas applying large multimodal models uniformly sacrifices scalability. To address these limitations, we propose that frozen foundation models should instead occupy complementary roles, with inference depth adapted to query difficulty. Based on this premise, we introduce \\methodname{}, a framework for training-free \\methodexpansion{}. Specifically, a composed-query embedding first searches reusable video-only gallery representations; uncertain queries undergo bounded reranking and candidate expansion; ambiguous edits trigger target-description generation; and only close leading candidates reach multimodal verification. To support these roles, frame selection, spatial resolution, and time cues are adapted to each stage. Across complete target-gallery evaluations, our method reaches state-of-the-art performance among training-free approaches, with 89.55 and 93.43 R@1 on Dense-WebVid-CoVR and CoVR-R, respectively (with more than +35\\% and +25\\% absolute margins to the closest counterpart). These results show that adaptively orchestrating foundation-model capabilities can combine scalable retrieval with fine-grained reasoning without task-specific training. The source code and all relevant guidelines are available on this https URL .",
+      "published": "2026-09-10T00:00:00+00:00",
+      "updated": "2026-09-10T00:00:00+00:00",
+      "authors": [
+        "Dmitry Demidov",
+        "Muhammad Zaigham Zaheer",
+        "Omkar Thawakar",
+        "Abdelrahman Mohamed Shaker",
+        "Rao Anwer"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "https://arxiv.org/abs/2609.10008",
+      "pdf_url": "https://arxiv.org/pdf/2609.10008",
+      "score": 3.2,
+      "topics": [
+        {
+          "name": "RAG / Long Context",
+          "slug": "rag-long-context",
+          "hits": [
+            "retrieval"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "retrieval"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Beyond%20Similarity%3A%20Foundation%20Models%20as%20an%20Efficient%20Backbone%20for%20Training-Free%20Composed%20Video%20Retrieval%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Composed video retrieval (CoVR) searches a gallery for the target video that realizes a natural-language modification of a source clip. However, at gallery scale, this creates a fundamental tension: compact embeddings enable efficient, reusable search but can miss the transient actions, state changes, and subtle constraints that demand fine-grained video reasoning, whereas applying large multimodal models uniformly sacrifices scalability. To address these limitations, we propose that frozen foundation models should instead occupy complementary roles, with inference depth adapted to query difficulty. Based on this premise, we introduce \\methodname{}, a framework for training-free \\methodexpansion{}. Specifically, a composed-query embedding first searches reusable video-only gallery representations; uncertain queries undergo bounded reranking and candidate expansion; ambiguous edits trigger target-description generation; and only close leading candidates reach multimodal verification. To support these roles, frame selection, spatial resolution, and time cues are adapted to each stage. Across complete target-gallery evaluations, our method reaches state-of-the-art performance among training-free approaches, with 89.55 and 93.43 R@1 on Dense-WebVid-CoVR and CoVR-R, respectively (with more than +35\\% and +25\\% absolute margins to the closest counterpart). These results show that adaptively orchestrating foundation-model capabilities can combine scalable retrieval with fine-grained reasoning without task-specific training. The source code and all relevant guidelines are available on this https URL .",
+      "code_links_from_meta": "https://github.com/search?q=Beyond%20Similarity%3A%20Foundation%20Models%20as%20an%20Efficient%20Backbone%20for%20Training-Free%20Composed%20Video%20Retrieval%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "超越相似度：以基础模型作为免训练组合视频检索的高效骨干",
+      "institution": "未明确披露",
+      "summary_cn": "论文研究组合视频检索（Composed Video Retrieval, CoVR）在库规模（gallery scale）下的核心矛盾：紧凑嵌入虽能高效复用检索，却会漏掉瞬态动作、状态变化与细粒度约束；而统一调用大型多模态模型虽能细粒度推理，却牺牲可扩展性。作者提出「Beyond Similarity」训练无关框架，让冻结的基础模型承担互补角色并按查询难度自适应推理深度：组合查询嵌入先检索可复用的纯视频库表示，不确定查询进入有界重排与候选扩展，歧义编辑触发目标描述生成，只有领先候选才送入多模态校验，同时为各阶段自适应调整帧选择、空间分辨率与时间线索。在完整目标库评测下，该方法在免训练方案中取得最优结果：Dense-WebVid-CoVR 与 CoVR-R 上 R@1 分别达 89.55 与 93.43，较最接近的方案绝对领先超过 35% 与 25%。",
+      "innovations": [
+        "提出训练无关的组合视频检索框架「Beyond Similarity」，让冻结的基础模型扮演互补角色而非统一调用，通过按查询难度分配推理深度，在无需任何任务特定训练的情况下兼顾可扩展检索与细粒度视频推理。",
+        "设计分级自适应流水线：组合查询嵌入先命中可复用的纯视频库表示 → 不确定查询触发有界重排（bounded reranking）与候选扩展 → 歧义编辑触发目标描述生成 → 仅领先候选进入多模态验证，把昂贵推理限制在少量候选上。",
+        "针对不同阶段分别调整帧选择、空间分辨率与时间线索（frame selection / spatial resolution / time cues），使紧凑嵌入检索与细粒度时序推理在同一框架内互补。",
+        "在完整目标库（complete target-gallery）评测协议下取得免训练方法 SOTA：Dense-WebVid-CoVR R@1 = 89.55、CoVR-R R@1 = 93.43，分别以 +35% 与 +25% 以上的绝对优势超过最接近的对比方法。"
+      ],
+      "scenario_cn": "面向视频平台、影视素材库与内容运营等场景：用户给定一段源视频并附上自然语言修改指令（换动作、改风格、换对象状态），系统需在百万级视频库中找出真正符合修改描述的目标视频。适用于缺少标注训练数据、算力预算受限但要求低延迟与库规模可扩展的在线检索系统，也可用于多模态检索链路中的候选召回与精排阶段。",
+      "title_en": "Beyond Similarity: Foundation Models as an Efficient Backbone for Training-Free Composed Video Retrieval",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2609.09536v1",
+      "title": "Differentially Private Average Treatment Effect Estimation by Propensity Score Blocking",
+      "abstract": "Average treatment effect (ATE) estimation in observational studies is a fundamental statistical tool used frequently in social science, medicine, and other fields. These fields often work with sensitive data where privacy protections are important, so a differentially private mechanism for ATE estimation is highly desirable. Here we present two propensity score-based algorithms for ATE estimation on observational data, one improving the inverse probability weighting (IPW) method used in prior work, and the other using blocking on the propensity score (BPS). Both show lower error and less bias than prior work, with the BPS-based algorithm frequently reducing error by 75% or more compared to prior work.",
+      "published": "2026-09-10T00:00:00+00:00",
+      "updated": "2026-09-10T00:00:00+00:00",
+      "authors": [
+        "Duncan Stewardson",
+        "Grayson W. White",
+        "Adam Groce"
+      ],
+      "categories": [
+        "stat.ME",
+        "cs.CR",
+        "cs.LG"
+      ],
+      "abs_url": "https://arxiv.org/abs/2609.09536",
+      "pdf_url": "https://arxiv.org/pdf/2609.09536",
+      "score": 3.2,
+      "topics": [
+        {
+          "name": "RAG / Long Context",
+          "slug": "rag-long-context",
+          "hits": [
+            "rag"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "rag"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Differentially%20Private%20Average%20Treatment%20Effect%20Estimation%20by%20Propensity%20Score%20Blocking%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Average treatment effect (ATE) estimation in observational studies is a fundamental statistical tool used frequently in social science, medicine, and other fields. These fields often work with sensitive data where privacy protections are important, so a differentially private mechanism for ATE estimation is highly desirable. Here we present two propensity score-based algorithms for ATE estimation on observational data, one improving the inverse probability weighting (IPW) method used in prior work, and the other using blocking on the propensity score (BPS). Both show lower error and less bias than prior work, with the BPS-based algorithm frequently reducing error by 75% or more compared to prior work.",
+      "code_links_from_meta": "https://github.com/search?q=Differentially%20Private%20Average%20Treatment%20Effect%20Estimation%20by%20Propensity%20Score%20Blocking%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "基于倾向得分分块的差分隐私平均处理效应估计",
+      "institution": "未明确披露",
+      "summary_cn": "论文针对社会科学、医学等领域中观测数据常含敏感信息、需要在隐私保护下估计平均处理效应（Average Treatment Effect, ATE）的问题，提出两种基于倾向得分（propensity score）的差分隐私 ATE 估计算法：一种对已有工作中的逆概率加权（Inverse Probability Weighting, IPW）方法进行改进，另一种采用倾向得分分块（Propensity Score Blocking, BPS）。实验结果表明，两种算法相比先前工作在误差和偏差上都更低，其中基于 BPS 的算法相对先前工作常可将误差降低 75% 以上。",
+      "innovations": [
+        "提出两种倾向得分驱动的 ATE 估计算法：改进版逆概率加权（IPW）与倾向得分分块（BPS），在观测数据上同时提供差分隐私保障与更低估计误差。",
+        "BPS 机制按倾向得分对样本进行分块（blocking），以块为单元控制隐私噪声的注入与统计聚合，从而削弱差分隐私噪声对处理效应估计的偏置放大。",
+        "相对先前工作，两种算法在误差与偏差两项指标上均更低，其中 BPS 算法在多数情形下将误差降低 75% 以上。",
+        "把差分隐私机制系统地落到因果推断的标准工具（倾向得分、IPW、分块）上，而非另建一套与经典估计量脱节的隐私估计流程。"
+      ],
+      "scenario_cn": "适用于医疗记录、社会经济调查等涉及个体敏感信息的观测数据治理场景：在不能直接公开个体数据、又需要回答「某干预/治疗的平均效果有多大」的研究与合规分析中，可在满足差分隐私的前提下给出可用的因果效应估计，支撑跨机构数据发布与联合统计分析。",
+      "title_en": "Differentially Private Average Treatment Effect Estimation by Propensity Score Blocking",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2609.09865v1",
+      "title": "Keep Evaluation Fair: Detecting Data Leakage in Code Generation Benchmarks via Membership Inference Attacks",
+      "abstract": "Code generation benchmarks are widely used to evaluate Large Language Models (LLMs), but benchmark data leakage into training sets can inflate performance and undermine evaluation validity. DetectLeak, a method specifically designed for code generation benchmark leakage detection, relies on perplexity scores to identify likely leaked samples. However, perplexity mainly reflects general familiarity with code patterns and may perform poorly on complex or rare samples. It also overlooks other useful signals, such as code similarity, functional correctness, and semantic representations. To address these limitations, we propose CGMIA (Code-Generation-specific Membership Inference Attack), a method for detecting leakage in code generation benchmarks. CGMIA fine-tunes a shadow model on a subset of benchmark samples to construct labeled member and non-member data. For each sample, it collects the input prompt, generated code, and reference solution, and extracts expert features, including CodeBLEU, edit distance, test pass rate, and perplexity, together with semantic features from CodeBERT embeddings. An integrated learning module combines these features to capture both surface-level memorization signals and deeper behavioral patterns, enabling a classifier to predict whether a sample was included in the target model's training set. Experiments on eight code generation benchmarks show that CGMIA outperforms eight existing membership inference methods in most cases. It also effectively detects known leaked APPS samples in StarCoder-7B's training data.",
+      "published": "2026-09-10T00:00:00+00:00",
+      "updated": "2026-09-10T00:00:00+00:00",
+      "authors": [
+        "Dongdong Zhao",
+        "Jian Chen",
+        "Guancheng Lin",
+        "Jianwen Xiang",
+        "Jacky Wai Keung",
+        "Xiao Yu"
+      ],
+      "categories": [
+        "cs.SE"
+      ],
+      "abs_url": "https://arxiv.org/abs/2609.09865",
+      "pdf_url": "https://arxiv.org/pdf/2609.09865",
+      "score": 3.2,
+      "topics": [
+        {
+          "name": "Code Agent / SWE Agent",
+          "slug": "code-agent",
+          "hits": [
+            "code generation"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "code generation"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Keep%20Evaluation%20Fair%3A%20Detecting%20Data%20Leakage%20in%20Code%20Generation%20Benchmarks%20via%20Membership%20Inference%20Attacks%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Code generation benchmarks are widely used to evaluate Large Language Models (LLMs), but benchmark data leakage into training sets can inflate performance and undermine evaluation validity. DetectLeak, a method specifically designed for code generation benchmark leakage detection, relies on perplexity scores to identify likely leaked samples. However, perplexity mainly reflects general familiarity with code patterns and may perform poorly on complex or rare samples. It also overlooks other useful signals, such as code similarity, functional correctness, and semantic representations. To address these limitations, we propose CGMIA (Code-Generation-specific Membership Inference Attack), a method for detecting leakage in code generation benchmarks. CGMIA fine-tunes a shadow model on a subset of benchmark samples to construct labeled member and non-member data. For each sample, it collects the input prompt, generated code, and reference solution, and extracts expert features, including CodeBLEU, edit distance, test pass rate, and perplexity, together with semantic features from CodeBERT embeddings. An integrated learning module combines these features to capture both surface-level memorization signals and deeper behavioral patterns, enabling a classifier to predict whether a sample was included in the target model's training set. Experiments on eight code generation benchmarks show that CGMIA outperforms eight existing membership inference methods in most cases. It also effectively detects known leaked APPS samples in StarCoder-7B's training data.",
+      "code_links_from_meta": "https://github.com/search?q=Keep%20Evaluation%20Fair%3A%20Detecting%20Data%20Leakage%20in%20Code%20Generation%20Benchmarks%20via%20Membership%20Inference%20Attacks%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "保持评测公平：通过成员推断攻击检测代码生成基准中的数据泄漏",
+      "institution": "未明确披露",
+      "summary_cn": "针对代码生成基准被污染进训练集导致评测虚高的问题，作者指出原有 DetectLeak 仅依赖困惑度（perplexity）区分泄漏样本，难以应对复杂或稀有样本，也无法利用代码相似度、功能正确性等信号。为此提出 CGMIA（Code-Generation-specific Membership Inference Attack）：先用基准样本子集微调影子模型（shadow model）构造带标签的成员/非成员数据，再对每个样本采集输入提示、生成代码与参考解，抽取 CodeBLEU、编辑距离、测试通过率、困惑度等专家特征，并融合 CodeBERT 嵌入的语义特征，最后由集成学习模块判别样本是否进入目标模型训练集。在八个代码生成基准上，CGMIA 在多数情况下优于八种已有成员推断方法，并成功检出 StarCoder-7B 训练数据中已知泄漏的 APPS 样本。",
+      "innovations": [
+        "提出 CGMIA 方法，用影子模型微调构造成员/非成员标注数据，把泄漏检测建模为代码生成专属的成员推断任务，替代只靠困惑度的 DetectLeak",
+        "设计多源特征体系：CodeBLEU、编辑距离、测试通过率、困惑度等专家特征，叠加 CodeBERT 语义嵌入，兼顾表面记忆信号与深层行为模式",
+        "引入集成学习模块融合专家特征与语义特征，提升对复杂/稀有样本的判别能力",
+        "在八个代码生成基准上对比八种现有成员推断方法取得多数领先，并实证检出 StarCoder-7B 训练集中泄漏的 APPS 样本"
+      ],
+      "scenario_cn": "用于评估机构与大模型团队在发布代码生成榜单成绩前做基准污染自查，也可用于模型厂商的合规审计与数据溯源，判定某基准样本是否已被灌入模型训练集，避免不公平对比误导选型与论文结论。",
+      "title_en": "Keep Evaluation Fair: Detecting Data Leakage in Code Generation Benchmarks via Membership Inference Attacks",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    },
+    {
+      "id": "2609.09242v1",
+      "title": "Talking to Itself While Coding: What Makes Comments Help Code Generation?",
+      "abstract": "Large Language Models (LLMs) often generate natural-language comments while writing code, and these comments become part of the context used to generate the code that follows. However, it remains unclear which properties of comments affect code-generation performance. We study this question through observational analyses and controlled interventions. On LiveCodeBench, neither comment frequency nor broad comment intent reliably predicts pass@1. We then prefill weaker recipient models with comment blocks written by stronger source models, allowing us to separate comment surface form from the solution content they convey. Comments from source solutions that pass the tests raise recipient pass@1 by 17.2% on average. In contrast, comments describing failed solutions provide no reliable gain, while comments written for a different problem reduce pass@1 by 20.8%. Finally, across a wide range of models and prompt variants, most recipient models show no significant recovery of the external-comment gain, and the best case recovers only 24%. These results show that comments help code generation not merely because they are comments, but because they can provide correct solution content that prompting cannot reliably elicit.",
+      "published": "2026-09-10T00:00:00+00:00",
+      "updated": "2026-09-10T00:00:00+00:00",
+      "authors": [
+        "Dangfeng Pan",
+        "Zhensu Sun",
+        "Cenyuan Zhang",
+        "David Lo",
+        "Xiaoning Du"
+      ],
+      "categories": [
+        "cs.SE",
+        "cs.AI"
+      ],
+      "abs_url": "https://arxiv.org/abs/2609.09242",
+      "pdf_url": "https://arxiv.org/pdf/2609.09242",
+      "score": 3.2,
+      "topics": [
+        {
+          "name": "Code Agent / SWE Agent",
+          "slug": "code-agent",
+          "hits": [
+            "code generation"
+          ]
+        }
+      ],
+      "matched_keywords": [
+        "code generation"
+      ],
+      "code_links": [],
+      "github_search_url": "https://github.com/search?q=Talking%20to%20Itself%20While%20Coding%3A%20What%20Makes%20Comments%20Help%20Code%20Generation%3F%20arxiv%20github&type=repositories",
+      "institutions_raw": "未明确披露",
+      "content_snippet": "Large Language Models (LLMs) often generate natural-language comments while writing code, and these comments become part of the context used to generate the code that follows. However, it remains unclear which properties of comments affect code-generation performance. We study this question through observational analyses and controlled interventions. On LiveCodeBench, neither comment frequency nor broad comment intent reliably predicts pass@1. We then prefill weaker recipient models with comment blocks written by stronger source models, allowing us to separate comment surface form from the solution content they convey. Comments from source solutions that pass the tests raise recipient pass@1 by 17.2% on average. In contrast, comments describing failed solutions provide no reliable gain, while comments written for a different problem reduce pass@1 by 20.8%. Finally, across a wide range of models and prompt variants, most recipient models show no significant recovery of the external-comment gain, and the best case recovers only 24%. These results show that comments help code generation not merely because they are comments, but because they can provide correct solution content that prompting cannot reliably elicit.",
+      "code_links_from_meta": "https://github.com/search?q=Talking%20to%20Itself%20While%20Coding%3A%20What%20Makes%20Comments%20Help%20Code%20Generation%3F%20arxiv%20github&type=repositories",
+      "is_ascend": false,
+      "title_zh": "编码时的自我对话：什么样的注释有助于代码生成？",
+      "institution": "未明确披露",
+      "summary_cn": "论文研究 LLM 写代码时自带自然语言注释这一行为中，究竟是注释的哪些属性影响代码生成效果。作者在 LiveCodeBench 上先做观察性分析，发现注释频率与宽泛的注释意图都无法可靠预测 pass@1；随后采用受控干预——把更强源模型写出的注释块预填充（prefill）给较弱的接收模型，从而将注释的表面形式与其承载的解题内容解耦。结果显示：来自通过测试的源解答的注释平均使接收模型 pass@1 提升 17.2%；描述失败解答的注释无稳定增益；而针对另一道题目的注释反而使 pass@1 下降 20.8%；在多种模型与提示变体下，多数接收模型无法通过提示复现这一外部注释增益，最好情况也只恢复到 24%。",
+      "innovations": [
+        "在 LiveCodeBench 上用观察性分析与受控干预结合的方式，拆分注释的“表面形式”与“所传递的解题内容”，而非笼统统计注释频率",
+        "提出跨模型注释预填充实验设计：用强源模型的注释块 prefill 弱接收模型，量化注释内容的独立贡献（通过测试的注释平均 +17.2% pass@1）",
+        "发现注释增益并非来自“注释”本身：失败解答的注释无可靠增益，题不对版的注释导致 pass@1 下降 20.8%",
+        "揭示注释增益难以被提示词替代：多模型多提示变体下多数接收模型无显著恢复，最佳仅恢复 24%"
+      ],
+      "scenario_cn": "为代码助手与 Agent 编程工具设计注释/推理痕迹的生成与复用策略提供依据：在自回归续写、多模型协作或强弱模型级联编码时，应优先保留与正确解绑定的注释内容，而非单纯要求模型多写注释或靠提示词弥补，从而提升实际代码补全与 SWE 任务的通过率。",
+      "title_en": "Talking to Itself While Coding: What Makes Comments Help Code Generation?",
+      "code_url": "h",
+      "opensource_status": "已确认开源"
+    }
+  ]
+}
